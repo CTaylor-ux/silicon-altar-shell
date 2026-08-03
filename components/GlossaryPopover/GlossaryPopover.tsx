@@ -112,7 +112,7 @@ export default function GlossaryPopover({ token, anchor, frameOffsetTop, onClose
 
       {entry.pending || !entry.definition ? (
         <p className={styles.pending}>
-          Definition pending — this lane postdates the legend copy the rest of the
+          Definition pending. This lane postdates the legend copy the rest of the
           glossary is drawn from.
         </p>
       ) : (

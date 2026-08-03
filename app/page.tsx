@@ -78,7 +78,7 @@ export default function IntroPage() {
       </div>
 
       <footer className={styles.foot}>
-        <span className="mono">Mockup — retrieval is stubbed</span>
+        <span className="mono">Mockup, retrieval is stubbed</span>
         {/* FUTURE: member / researcher / author tiers (PRD §4) gate from here. */}
         <span className="mono">No account required</span>
       </footer>

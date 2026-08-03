@@ -181,7 +181,7 @@ function EmptyState({ question }: { question: string }) {
     <div className={styles.block}>
       <QuestionLine text={question} />
       <p className={styles.empty}>
-        No entry in the corpus answers that. Nothing has been inferred to fill the gap —
+        No entry in the corpus answers that. Nothing has been inferred to fill the gap,
         try naming a year, an instrument, or a place.
       </p>
     </div>
@@ -203,7 +203,7 @@ function ErrorState({
       <p className={styles.error}>
         <span className={styles.errorRule} aria-hidden />
         <span>
-          Retrieval failed{message ? ` — ${message}` : ''}. The corpus was not consulted;
+          Retrieval failed{message ? `: ${message}` : ''}. The corpus was not consulted;
           this is not a "no result".
         </span>
         <button className={`${styles.retry} mono`} onClick={onRetry}>

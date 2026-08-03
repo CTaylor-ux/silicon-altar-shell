@@ -82,7 +82,7 @@ export default function AudioCue({
         onClick={toggle}
         disabled={unavailable}
         aria-label={`${playing ? 'Pause' : 'Play'} ${purpose}`}
-        title={unavailable ? `${purpose} — not yet available` : purpose}
+        title={unavailable ? `${purpose}, not yet available` : purpose}
       >
         {playing ? (
           <span className={styles.pauseGlyph} aria-hidden />

@@ -39,7 +39,7 @@
     "label": "Tier C",
     "kind": "Finding tier",
     "definition": "Reasonable inference, with the inferential step named.",
-    "note": "A C is not a weak claim — it is a differently-warranted one."
+    "note": "A C is not a weak claim, it is a differently-warranted one."
   },
   "tier:D": {
     "label": "Tier D",
@@ -56,7 +56,7 @@
   "stream:S1": {
     "label": "S1",
     "kind": "Sovereignty stream",
-    "definition": "Autochthonous — A00, Xi-Maya, hemispheric aboriginal."
+    "definition": "Autochthonous: A00, Xi-Maya, hemispheric aboriginal."
   },
   "stream:S2": {
     "label": "S2",
@@ -141,12 +141,12 @@
   "tag:CM": {
     "label": "CM",
     "kind": "Technology tag",
-    "definition": "Counter-move — an act of resistance, refusal, or assertion against the operation."
+    "definition": "Counter-move: an act of resistance, refusal, or assertion against the operation."
   },
   "tag:CTX": {
     "label": "CTX",
     "kind": "Technology tag",
-    "definition": "Context — background an event needs to be read correctly, not itself a mechanism."
+    "definition": "Context: background an event needs to be read correctly, not itself a mechanism."
   },
   "_tagNote": "Tags mark which reclassification mechanism an event uses. Most events carry two to four; the operation works by synchronized deployment.",
   "lane:catastrophe": {
@@ -222,7 +222,7 @@
   "dossier": {
     "label": "DOSSIER",
     "kind": "Evidence",
-    "definition": "Opens the evidence behind this row: the sources, their tiers, and the reasoning — including hypotheses the corpus holds rather than asserts.",
+    "definition": "Opens the evidence behind this row: the sources, their tiers, and the reasoning, including hypotheses the corpus holds rather than asserts.",
     "note": "Not every row has one. Rows without a dossier still carry a tier."
   },
   "milestone": {

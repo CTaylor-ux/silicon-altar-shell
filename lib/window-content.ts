@@ -75,9 +75,9 @@ function fallbackGuide(id: number) {
       `This window covers ${range}, in ${entries} entries across ${LANES.length} parallel lanes. ` +
       `Read it across before you read it down: the lanes are laid out to be compared within a ` +
       `year, not consumed one column at a time. What the window is built to show you is what ` +
-      `was happening simultaneously — and the seams between the lanes are the argument.`,
+      `was happening simultaneously, and the seams between the lanes are the argument.`,
     watchForThis:
-      `Tier records the standing of a claim, not the quality of the source behind it — a primary ` +
+      `Tier records the standing of a claim, not the quality of the source behind it: a primary ` +
       `document attached to an interpretive reading does not make the reading less interpretive. ` +
       `${dossiers} rows here carry a DOSSIER badge; those open the evidence and the reasoning ` +
       `underneath the claim.`,
