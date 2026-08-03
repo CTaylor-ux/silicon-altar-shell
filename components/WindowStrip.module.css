@@ -1,0 +1,7 @@
+.strip {
+  position: absolute;
+  /* Top edge clears the position indicator AND the audio cue strip. */
+  inset: calc(var(--topbar-h) + var(--audiobar-h)) 0 var(--querybar-h) 0;
+  overflow: hidden;
+  background: var(--bg);
+}

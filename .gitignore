@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.env.local
+.DS_Store
+
+# Derived from the audit repo by scripts/prepare-windows.mjs.
+# Never edit by hand; never commit. Run `npm run prepare-windows`.
+public/windows/

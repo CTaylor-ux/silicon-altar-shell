@@ -1,0 +1,75 @@
+/*
+ * tokens.css — lifted verbatim from the Windows' own :root.
+ *
+ * The shell does not define a palette. It inherits the one the generator
+ * already emits, so continuity is a structural property rather than a design
+ * goal: if silicon_altar_generator.py's palette shifts, re-copy this block and
+ * the shell follows.
+ *
+ * USAGE RULES (these are what keep the shell deferential):
+ *
+ *   - Shell chrome uses the NEUTRAL ramp only: --bright / --txt / --dim.
+ *     The lane hues (--gold, --crimson, --violet, --umber, --blue, --cyan,
+ *     --steel, --magenta, --lime, --rust, --green, --ash, --indigo, --bronze)
+ *     are SEMANTIC — they encode the fourteen lanes. Chrome that borrows one
+ *     steals meaning from the timeline.
+ *
+ *   - --sig is reserved for answer -> evidence pointing, and nothing else.
+ *     The Windows already use it as the DOSSIER badge ground, so it reads as
+ *     "look here" natively. Using it for generic chrome would dilute that.
+ *
+ *   - --faintxt (3.23:1 on --bg) and --crimson (4.28:1) fail WCAG AA for body
+ *     text. The Windows use them decoratively, which is legitimate. The shell
+ *     must not: anything a user has to READ gets --dim (6.19:1) or better.
+ *     See --text-min below.
+ */
+
+:root {
+  /* surfaces */
+  --bg: #101418;
+  --panel: #141a1f;
+  --panel2: #171e24;
+  --bdr: #232a30;
+  --bdr2: #2c343c;
+  --bdr-faint: #1a2026;
+
+  /* type ramp */
+  --txt: #c8d0d4;
+  --bright: #e8edef;
+  --dim: #8b97a0;
+  --faintxt: #5c6870;
+
+  /* signal — answer->evidence pointing only */
+  --sig: #e05d3a;
+
+  /* lane hues — reference only; shell chrome must not consume these */
+  --gold: #c8a23f;
+  --crimson: #d2495e;
+  --violet: #9d85cf;
+  --umber: #b07c4a;
+  --blue: #5d96c4;
+  --cyan: #4fb3ba;
+  --steel: #8fa6b8;
+  --magenta: #c46a9e;
+  --lime: #9aab4e;
+  --rust: #c0654b;
+  --green: #56a87c;
+  --ash: #d4cdbf;
+  --indigo: #7a70c8;
+  --bronze: #a87844;
+
+  /* shell-only derived tokens */
+  --text-min: var(--dim); /* floor for anything readable */
+  --font-prose: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Sized so question + answer + scope note + target rail + input all fit
+     without scrolling in the common case. 168px clipped the scope note, which
+     is the one thing in the panel that must never be the part that gets cut:
+     it is what separates a sourced fact from the corpus's own reading.
+     Longer exchanges still scroll inside the reserved area. */
+  --querybar-h: 222px;
+  --topbar-h: 44px;
+  --audiobar-h: 34px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}

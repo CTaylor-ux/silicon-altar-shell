@@ -1,0 +1,12 @@
+.view {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.boot {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+}

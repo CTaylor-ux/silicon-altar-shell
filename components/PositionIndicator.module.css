@@ -1,0 +1,122 @@
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--topbar-h);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--bdr);
+  z-index: 20;
+}
+
+.left {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back,
+.guide {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--dim);
+  padding: 5px 9px;
+  border: 1px solid var(--bdr2);
+  border-radius: 3px;
+  transition: color 140ms var(--ease), border-color 140ms var(--ease);
+}
+.back:hover,
+.guide:hover {
+  color: var(--bright);
+  border-color: var(--dim);
+}
+.backGlyph,
+.guideGlyph {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.arrow {
+  width: 26px;
+  height: 26px;
+  font-size: 19px;
+  line-height: 1;
+  color: var(--dim);
+  border: 1px solid var(--bdr2);
+  border-radius: 3px;
+  display: grid;
+  place-items: center;
+  transition: color 140ms var(--ease), border-color 140ms var(--ease);
+}
+.arrow:hover:not(:disabled) {
+  color: var(--bright);
+  border-color: var(--dim);
+}
+.arrow:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.identity {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 430px;
+  justify-content: center;
+}
+
+.position {
+  font-size: 9.5px;
+  color: var(--dim);
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bright);
+  white-space: nowrap;
+}
+
+.range {
+  font-size: 9.5px;
+  color: var(--dim);
+  letter-spacing: 0.6px;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.ticks {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tick {
+  width: 20px;
+  height: 3px;
+  border-radius: 1px;
+  background: var(--bdr2);
+  transition: background 200ms var(--ease), width 200ms var(--ease);
+}
+.tick:hover {
+  background: var(--dim);
+}
+.tickOn {
+  background: var(--bright);
+  width: 30px;
+}

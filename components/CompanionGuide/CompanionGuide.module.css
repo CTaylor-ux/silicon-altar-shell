@@ -1,0 +1,150 @@
+.scrim {
+  position: fixed;
+  inset: 0;
+  /* Dims the window rather than hiding it: the reader should see the room they
+     are about to enter while being told how to read it. */
+  background: rgba(8, 10, 12, 0.82);
+  backdrop-filter: blur(1.5px);
+  display: grid;
+  place-items: center;
+  z-index: 60;
+  padding: 32px;
+  animation: scrimIn 220ms var(--ease);
+}
+
+@keyframes scrimIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.panel {
+  width: min(640px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  background: var(--panel);
+  border: 1px solid var(--bdr2);
+  border-radius: 5px;
+  padding: 26px 30px 22px;
+  animation: panelIn 260ms var(--ease);
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.kicker {
+  font-size: 8.5px;
+  color: var(--dim);
+}
+
+.placeholder {
+  font-size: 8px;
+  color: var(--dim);
+  border: 1px dashed var(--bdr2);
+  border-radius: 2px;
+  padding: 2px 7px;
+  margin-left: auto;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: 27px;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: var(--bright);
+  line-height: 1.12;
+}
+
+.range {
+  margin: 0;
+  font-size: 9.5px;
+  color: var(--dim);
+  letter-spacing: 0.6px;
+  text-transform: none;
+}
+
+.rule {
+  height: 1px;
+  background: var(--bdr);
+  margin: 20px 0;
+}
+
+.section {
+  margin-bottom: 18px;
+}
+
+.label {
+  margin: 0 0 7px;
+  font-size: 8.5px;
+  font-weight: 500;
+  color: var(--dim);
+}
+
+.body {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--txt);
+}
+
+/* The sharpening line gets the same left-rule register the query bar uses for
+   scope notes: it is guidance about how to read, not a claim. */
+.watch {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--dim);
+  border-left: 1px solid var(--bdr2);
+  padding-left: 12px;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid var(--bdr-faint);
+}
+
+.dismiss {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  color: var(--txt);
+  border: 1px solid var(--bdr2);
+  border-radius: 3px;
+  padding: 11px 20px;
+  transition: color 150ms var(--ease), border-color 150ms var(--ease);
+}
+.dismiss:hover {
+  color: var(--bright);
+  border-color: var(--dim);
+}
+
+.arrow {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.hint {
+  font-size: 8.5px;
+  color: var(--dim);
+  margin-left: auto;
+  text-align: right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrim,
+  .panel {
+    animation: none;
+  }
+}

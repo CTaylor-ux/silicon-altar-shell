@@ -1,0 +1,114 @@
+/* Intro — the door, not the house. One screen, no scroll on a large viewport,
+   nothing that competes with what comes next. */
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 0 40px;
+}
+
+.inner {
+  align-self: center;
+  justify-self: center;
+  max-width: 760px;
+  width: 100%;
+  padding: 64px 0 40px;
+}
+
+.eyebrow {
+  font-size: 9.5px;
+  color: var(--dim);
+  margin: 0 0 22px;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 46px;
+  font-weight: 300;
+  letter-spacing: -0.8px;
+  color: var(--bright);
+  line-height: 1.05;
+}
+
+.subtitle {
+  margin: 0 0 30px;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--dim);
+  letter-spacing: 0.2px;
+}
+
+.lead {
+  margin: 0 0 16px;
+  font-size: 14.5px;
+  line-height: 1.68;
+  color: var(--txt);
+  max-width: 66ch;
+}
+
+.leadDim {
+  composes: lead;
+  color: var(--dim);
+}
+
+.rule {
+  height: 1px;
+  background: var(--bdr);
+  margin: 32px 0;
+}
+
+.figures {
+  display: flex;
+  gap: 40px;
+  margin: 0 0 34px;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.figureNum {
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--bright);
+  font-family: var(--font-mono);
+  /* Fixed-width digits so the count-up does not reflow the row as it ticks. */
+  font-variant-numeric: tabular-nums;
+}
+
+.figureLabel {
+  font-size: 8.5px;
+  color: var(--dim);
+}
+
+.enter {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 11px;
+  color: var(--txt);
+  border: 1px solid var(--bdr2);
+  border-radius: 3px;
+  padding: 13px 22px;
+  transition: color 160ms var(--ease), border-color 160ms var(--ease);
+}
+.enter:hover {
+  color: var(--bright);
+  border-color: var(--dim);
+}
+.enterArrow {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.foot {
+  padding: 20px 0 26px;
+  font-size: 9px;
+  color: var(--dim);
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--bdr-faint);
+}

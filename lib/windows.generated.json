@@ -1,0 +1,146 @@
+{
+  "lanes": [
+    {
+      "key": "catastrophe",
+      "label": "Catastrophe",
+      "cls": "ash",
+      "thead": "CATASTROPHE"
+    },
+    {
+      "key": "military",
+      "label": "Military",
+      "cls": "rust",
+      "thead": "MILITARY / INTEL OPS"
+    },
+    {
+      "key": "violence",
+      "label": "Violence",
+      "cls": "crimson",
+      "thead": "VIOLENCE & CLEARING"
+    },
+    {
+      "key": "population",
+      "label": "Population",
+      "cls": "violet",
+      "thead": "POPULATION PROCESSING"
+    },
+    {
+      "key": "legal",
+      "label": "Legal",
+      "cls": "blue",
+      "thead": "LEGAL FRAMEWORK"
+    },
+    {
+      "key": "land",
+      "label": "Land",
+      "cls": "cyan",
+      "thead": "LAND TRANSFER"
+    },
+    {
+      "key": "financial",
+      "label": "Financial",
+      "cls": "gold",
+      "thead": "FINANCIAL ARCHITECTURE"
+    },
+    {
+      "key": "records",
+      "label": "Records",
+      "cls": "umber",
+      "thead": "RECORDS / ARCHIVES"
+    },
+    {
+      "key": "certification",
+      "label": "Certification",
+      "cls": "steel",
+      "thead": "CERTIFICATION EVENTS"
+    },
+    {
+      "key": "information",
+      "label": "Information",
+      "cls": "magenta",
+      "thead": "INFORMATION ARCHITECTURE"
+    },
+    {
+      "key": "innovation",
+      "label": "Innovation",
+      "cls": "lime",
+      "thead": "INNOVATION / RESOURCE"
+    },
+    {
+      "key": "counter-move",
+      "label": "Counter-Move",
+      "cls": "green",
+      "thead": "COUNTER-MOVE / ALLODIAL"
+    },
+    {
+      "key": "sovereign",
+      "label": "Sovereign",
+      "cls": "indigo",
+      "thead": "SOVEREIGN ACT"
+    },
+    {
+      "key": "corporate",
+      "label": "Corporate",
+      "cls": "bronze",
+      "thead": "CORPORATE / CHARTER"
+    }
+  ],
+  "windows": [
+    {
+      "id": 0,
+      "name": "The Template",
+      "yearRange": "deep time to pre-contact",
+      "entries": 77,
+      "dossiers": 43,
+      "rows": 77
+    },
+    {
+      "id": 1,
+      "name": "Launch Codes",
+      "yearRange": "1452 to 1602",
+      "entries": 85,
+      "dossiers": 34,
+      "rows": 85
+    },
+    {
+      "id": 2,
+      "name": "The Corporate Grid",
+      "yearRange": "1602 to 1704",
+      "entries": 97,
+      "dossiers": 57,
+      "rows": 97
+    },
+    {
+      "id": 3,
+      "name": "Colonial Consolidation",
+      "yearRange": "1652 to 1787",
+      "entries": 69,
+      "dossiers": 37,
+      "rows": 69
+    },
+    {
+      "id": 4,
+      "name": "The Transfer",
+      "yearRange": "1787 to 1854",
+      "entries": 72,
+      "dossiers": 51,
+      "rows": 72
+    },
+    {
+      "id": 5,
+      "name": "75-Year Operation",
+      "yearRange": "1854 to 1929",
+      "entries": 188,
+      "dossiers": 64,
+      "rows": 188
+    },
+    {
+      "id": 6,
+      "name": "Digital Migration",
+      "yearRange": "1921 to 2029",
+      "entries": 102,
+      "dossiers": 41,
+      "rows": 102
+    }
+  ]
+}
