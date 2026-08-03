@@ -1,27 +1,63 @@
-# Per-window audio
+# Audio
 
-Drop the seven narration files here, named exactly:
+Two independent narration sets, one per window each, in two namespaces that
+must never collide. Drop files straight into this directory. No code change, no
+rebuild, no server restart.
+
+## Guide narration (the companion-guide modal)
+
+Narrates the guide copy. The control lives **inside** the companion-guide modal,
+labelled "Narrate this guide".
 
 ```
-window-0.m4a   The Template
-window-1.m4a   Launch Codes
-window-2.m4a   The Corporate Grid
-window-3.m4a   Colonial Consolidation
-window-4.m4a   The Transfer
-window-5.m4a   75-Year Operation
-window-6.m4a   Digital Migration
+public/audio/guide-narration-w0.mp3     The Template
+public/audio/guide-narration-w1.mp3     Launch Codes
+public/audio/guide-narration-w2.mp3     The Corporate Grid
+public/audio/guide-narration-w3.mp3     Colonial Consolidation
+public/audio/guide-narration-w4.mp3     The Transfer
+public/audio/guide-narration-w5.mp3     75-Year Operation
+public/audio/guide-narration-w6.mp3     Digital Migration
 ```
 
-Any browser-playable format works — change the extension in
-`lib/window-content.ts` (`audio.src`) to match. `.m4a` and `.mp3` are the safe
-choices; `.wav` will play but is large enough to hurt first load.
+## Intro-block narration (the slim top strip)
 
-Until a file exists the control renders an explicit **"audio not yet available"**
-state rather than a dead play button, so a missing file is visible rather than
-silent.
+A separate track that narrates the window's own intro block. The control is the
+slim strip under the top rail, labelled "Listen first · why this window
+matters". Not yet recorded.
 
-To disable audio for a window entirely, set its `audio` to `null` in
-`lib/window-content.ts`.
+```
+public/audio/intro-narration-w0.mp3  ...  intro-narration-w6.mp3
+```
 
-Unlike `public/windows/`, this directory is **not** gitignored — these are
-source assets, not derived files.
+## Spec
+
+- **Format: MP3.** ElevenLabs exports MP3 natively, so no conversion step, and
+  every browser decodes it. 128 kbps mono is ample for speech; 44.1 kHz or
+  22.05 kHz both work.
+- **Filenames are exact and lowercase.** `guide-narration-w3.mp3`, not
+  `Guide-Narration-W3.mp3` and not `guide-narration-3.mp3`.
+- **Window numbering is 0 to 6**, matching the window ids, so Window 0 is
+  `w0`. There is no `w7`.
+
+## How activation works
+
+Each control probes its own file on mount. Metadata loads, the control becomes
+an active play button showing real duration. The file 404s, the control renders
+"audio not yet available" instead of a dead button.
+
+This is driven by **file presence, not by a flag**, so windows activate
+independently: dropping in `guide-narration-w3.mp3` activates Window 3's guide
+control and changes nothing else. Verified in both directions, including that
+removing a file returns that control to the unavailable state.
+
+The two namespaces are wired to different objects (`audio.guide` and
+`audio.intro` in `lib/guides.json`), so a guide file can never activate an intro
+control or vice versa.
+
+## Changing any of this
+
+Paths live in `lib/guides.json` under each window's `audio` key. To disable a
+control for a window entirely, set that track to `null`.
+
+Unlike `public/windows/`, this directory is **not** gitignored: these are source
+assets, not derived files.

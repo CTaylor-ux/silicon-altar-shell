@@ -129,11 +129,13 @@ and you get real copy for one, generated copy for the other.
   modal. The placeholder text makes no historical claims — it describes how to
   read a window, using facts pulled from `windows.json`. Replace the two prose
   fields and drop the flag; nothing else moves.
-- **Audio files go in `public/audio/`**, two per window:
-  `window-N-intro.m4a` (narrates the window's intro block, top strip) and
-  `window-N-guide.m4a` (narrates the guide, inside the modal). Controls are
-  purpose-labelled so the two are never confused. A missing file renders an
-  explicit "not yet available" state rather than a dead button.
+- **Audio files go in `public/audio/`**, two per window in two namespaces that
+  never collide: `guide-narration-wN.mp3` (narrates the guide, control inside
+  the modal) and `intro-narration-wN.mp3` (narrates the window's intro block,
+  control in the slim top strip). Controls are purpose-labelled and bound to
+  separate objects. Activation is driven by file presence, not a flag: each
+  window activates independently as its file is added, with no code change and
+  no rebuild. See `public/audio/README.md` for the full spec.
 - **`fullGuide`** holds the complete companion guide as one string; blank lines
   split it into sections behind the "Read the full guide" expander. Empty means
   no expander at all.

@@ -17,9 +17,19 @@
     "                  Blank paragraphs split on a double newline. If empty, the",
     "                  expander is not rendered at all.",
     "  dismissLabel    dismiss button text",
-    "  audio.intro     narration for the window's intro block (top strip)",
-    "  audio.guide     narration of the guide copy itself (inside the modal)",
-    "                  Set either to null to hide that control.",
+    "",
+    "AUDIO. Two independent tracks per window, in two separate namespaces that",
+    "must never collide:",
+    "  audio.guide  /audio/guide-narration-wN.mp3  narrates the guide copy;",
+    "               control lives INSIDE the companion-guide modal.",
+    "  audio.intro  /audio/intro-narration-wN.mp3  narrates the window's own",
+    "               intro block; control is the slim strip under the top rail.",
+    "Set either to null to hide that control for that window.",
+    "",
+    "Activation is driven by FILE PRESENCE, not by a flag. Each control probes",
+    "its src on mount: metadata loads means active, a 404 means it renders",
+    "'not yet available'. Windows therefore activate independently as files",
+    "are added, with no code change and no rebuild.",
     "",
     "This file is shell content, NOT L4 corpus data. It deliberately does not",
     "live in windows.json: the audit repo is read-only to this app, and guide",
@@ -33,11 +43,11 @@
     "dismissLabel": "",
     "audio": {
       "intro": {
-        "src": "/audio/window-0-intro.m4a",
+        "src": "/audio/intro-narration-w0.mp3",
         "cue": "Listen first · why this window matters"
       },
       "guide": {
-        "src": "/audio/window-0-guide.m4a",
+        "src": "/audio/guide-narration-w0.mp3",
         "cue": "Narrate this guide"
       }
     }
@@ -50,11 +60,11 @@
     "dismissLabel": "",
     "audio": {
       "intro": {
-        "src": "/audio/window-1-intro.m4a",
+        "src": "/audio/intro-narration-w1.mp3",
         "cue": "Listen first · why this window matters"
       },
       "guide": {
-        "src": "/audio/window-1-guide.m4a",
+        "src": "/audio/guide-narration-w1.mp3",
         "cue": "Narrate this guide"
       }
     }
@@ -67,11 +77,11 @@
     "dismissLabel": "",
     "audio": {
       "intro": {
-        "src": "/audio/window-2-intro.m4a",
+        "src": "/audio/intro-narration-w2.mp3",
         "cue": "Listen first · why this window matters"
       },
       "guide": {
-        "src": "/audio/window-2-guide.m4a",
+        "src": "/audio/guide-narration-w2.mp3",
         "cue": "Narrate this guide"
       }
     }
@@ -84,11 +94,11 @@
     "dismissLabel": "",
     "audio": {
       "intro": {
-        "src": "/audio/window-3-intro.m4a",
+        "src": "/audio/intro-narration-w3.mp3",
         "cue": "Listen first · why this window matters"
       },
       "guide": {
-        "src": "/audio/window-3-guide.m4a",
+        "src": "/audio/guide-narration-w3.mp3",
         "cue": "Narrate this guide"
       }
     }
@@ -101,11 +111,11 @@
     "dismissLabel": "",
     "audio": {
       "intro": {
-        "src": "/audio/window-4-intro.m4a",
+        "src": "/audio/intro-narration-w4.mp3",
         "cue": "Listen first · why this window matters"
       },
       "guide": {
-        "src": "/audio/window-4-guide.m4a",
+        "src": "/audio/guide-narration-w4.mp3",
         "cue": "Narrate this guide"
       }
     }
@@ -118,11 +128,11 @@
     "dismissLabel": "",
     "audio": {
       "intro": {
-        "src": "/audio/window-5-intro.m4a",
+        "src": "/audio/intro-narration-w5.mp3",
         "cue": "Listen first · why this window matters"
       },
       "guide": {
-        "src": "/audio/window-5-guide.m4a",
+        "src": "/audio/guide-narration-w5.mp3",
         "cue": "Narrate this guide"
       }
     }
@@ -135,11 +145,11 @@
     "dismissLabel": "",
     "audio": {
       "intro": {
-        "src": "/audio/window-6-intro.m4a",
+        "src": "/audio/intro-narration-w6.mp3",
         "cue": "Listen first · why this window matters"
       },
       "guide": {
-        "src": "/audio/window-6-guide.m4a",
+        "src": "/audio/guide-narration-w6.mp3",
         "cue": "Narrate this guide"
       }
     }
