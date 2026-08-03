@@ -211,6 +211,8 @@ export default function WindowViewPage() {
       {content && (
         <CompanionGuide
           guide={content.guide}
+          guideAudio={content.guideAudio}
+          windowId={current}
           windowLabel={`Window ${current} of ${WINDOW_COUNT}`}
           yearRange={meta?.yearRange ?? ''}
           open={guideOpen}

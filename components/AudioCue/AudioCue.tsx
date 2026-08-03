@@ -21,6 +21,8 @@ type Props = {
   windowId: number;
   /** Distinguishes this control from the guide narration for screen readers. */
   purpose: string;
+  /** 'docked' pins it under the top rail; 'inline' flows in normal layout. */
+  variant?: 'docked' | 'inline';
 };
 
 const fmt = (s: number) => {
@@ -30,7 +32,12 @@ const fmt = (s: number) => {
   return `${m}:${String(r).padStart(2, '0')}`;
 };
 
-export default function AudioCue({ audio, windowId, purpose }: Props) {
+export default function AudioCue({
+  audio,
+  windowId,
+  purpose,
+  variant = 'docked',
+}: Props) {
   const ref = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const [dur, setDur] = useState(0);
@@ -69,7 +76,7 @@ export default function AudioCue({ audio, windowId, purpose }: Props) {
   const pct = dur > 0 ? (pos / dur) * 100 : 0;
 
   return (
-    <div className={styles.bar}>
+    <div className={`${styles.bar} ${variant === 'inline' ? styles.inline : ''}`}>
       <button
         className={styles.play}
         onClick={toggle}

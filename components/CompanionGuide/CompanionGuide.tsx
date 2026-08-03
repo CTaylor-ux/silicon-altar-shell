@@ -12,12 +12,16 @@
  * already entered does not re-interrupt you.
  */
 
-import { useEffect, useRef } from 'react';
-import type { WindowGuide } from '@/lib/window-content';
+import { useEffect, useRef, useState } from 'react';
+import type { WindowGuide, AudioTrack } from '@/lib/window-content';
+import AudioCue from '../AudioCue/AudioCue';
 import styles from './CompanionGuide.module.css';
 
 type Props = {
   guide: WindowGuide;
+  /** Narration OF THE GUIDE — distinct from the window's intro-block audio. */
+  guideAudio: AudioTrack | null;
+  windowId: number;
   windowLabel: string;
   yearRange: string;
   open: boolean;
@@ -26,6 +30,8 @@ type Props = {
 
 export default function CompanionGuide({
   guide,
+  guideAudio,
+  windowId,
   windowLabel,
   yearRange,
   open,
@@ -34,6 +40,14 @@ export default function CompanionGuide({
   const panelRef = useRef<HTMLDivElement>(null);
   const dismissRef = useRef<HTMLButtonElement>(null);
   const restoreTo = useRef<HTMLElement | null>(null);
+  const [expanded, setExpanded] = useState(false);
+
+  // Collapse the full guide whenever the modal reopens or the window changes:
+  // the short orientation is the default state every time.
+  useEffect(() => {
+    if (!open) setExpanded(false);
+  }, [open]);
+  useEffect(() => setExpanded(false), [windowId]);
 
   useEffect(() => {
     if (!open) return;
@@ -120,6 +134,50 @@ export default function CompanionGuide({
           <h3 className={`${styles.label} mono`}>Watch for this</h3>
           <p className={styles.watch}>{guide.watchForThis}</p>
         </section>
+
+        {/* Narration of the GUIDE copy. Purpose-labelled so it is never
+            confused with the intro-block narration in the top strip. */}
+        {guideAudio && (
+          <div className={styles.audioSlot}>
+            <AudioCue
+              audio={guideAudio}
+              windowId={windowId}
+              purpose="companion guide narration"
+              variant="inline"
+            />
+          </div>
+        )}
+
+        {/* The full guide is opt-in: the short orientation is what the modal
+            is for, and the depth is there for whoever wants it. */}
+        {guide.fullGuide.length > 0 && (
+          <section className={styles.expander}>
+            <button
+              className={`${styles.expandBtn} mono`}
+              onClick={() => setExpanded((v) => !v)}
+              aria-expanded={expanded}
+              aria-controls="sa-guide-full"
+            >
+              <span className={`${styles.chevron} ${expanded ? styles.chevronOpen : ''}`} aria-hidden>
+                ▸
+              </span>
+              {expanded ? 'Hide the full guide' : 'Read the full guide'}
+              <span className={styles.paraCount}>
+                {guide.fullGuide.length} section{guide.fullGuide.length === 1 ? '' : 's'}
+              </span>
+            </button>
+
+            {expanded && (
+              <div id="sa-guide-full" className={styles.full}>
+                {guide.fullGuide.map((p, i) => (
+                  <p key={i} className={styles.fullPara}>
+                    {p}
+                  </p>
+                ))}
+              </div>
+            )}
+          </section>
+        )}
 
         <div className={styles.foot}>
           <button ref={dismissRef} className={`${styles.dismiss} mono`} onClick={onDismiss}>
