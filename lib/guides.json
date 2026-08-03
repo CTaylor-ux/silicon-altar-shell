@@ -25,82 +25,123 @@
     "live in windows.json: the audit repo is read-only to this app, and guide",
     "copy is editorial rather than evidentiary."
   ],
-
   "0": {
     "title": "",
     "whyThisMatters": "",
     "watchForThis": "",
-    "fullGuide": "",
+    "fullGuide": "Window 0 covers deep time to the eve of contact, and it exists to establish one thing: the machinery later deployed in the Americas was not invented there. Every instrument you will meet in the windows that follow, the classification that precedes seizure, the licensed intermediary, the archive that is edited rather than lost, was assembled and tested in Europe and the Mediterranean first. The oldest habit in the window is the one worth carrying forward: end the program, change its name, keep the function.\n\nRead this window across rather than down. A row in the records lane and a row in the financial lane in the same decade are often the same operation seen from two sides. The pattern to watch here is substitution. When a program is shut down the instruments outlive the personnel: an expulsion is followed by intermediaries who take up the same function, and the suppression of an order in 1307 removes the order while its banking technology transfers intact.\n\nTwo moments repay attention. The statute of 1275 installs a sequence, classify, restrict, seize, in that order, where the act of listing is itself what makes the later seizure lawful. That ordering is the template the rest of the corpus tests against evidence. And the 1349 ordinance of laborers opens a chain that takes five centuries to reach its end.\n\nRead the counter side with equal care, because the window is also built to correct an omission. While the instruments are being assembled, Al-Andalus has been a governed estate for five centuries, Cahokia is at its peak in the same years the Templars are forming, and in 1312 Mansa Musa becomes the richest person in recorded history. The destination was neither empty nor waiting, and the window carries the rows to show it.",
     "dismissLabel": "",
     "audio": {
-      "intro": { "src": "/audio/window-0-intro.m4a", "cue": "Listen first · why this window matters" },
-      "guide": { "src": "/audio/window-0-guide.m4a", "cue": "Narrate this guide" }
+      "intro": {
+        "src": "/audio/window-0-intro.m4a",
+        "cue": "Listen first · why this window matters"
+      },
+      "guide": {
+        "src": "/audio/window-0-guide.m4a",
+        "cue": "Narrate this guide"
+      }
     }
   },
   "1": {
     "title": "",
     "whyThisMatters": "",
     "watchForThis": "",
-    "fullGuide": "",
+    "fullGuide": "Window 1 covers 1452 to 1602, the period in which the instruments leave port and first meet a population to run on. Its central finding is narrow and checkable: two documents written forty-one years apart, by men who had never seen the land they were dividing, install the Discovery Doctrine, and in 1823 that doctrine enters United States law, where it has never been overruled.\n\nRead across the rows within a single year. The legal lane carries the authorization, the land and military lanes carry the contact, and the counter-move lane carries what the corpus makes of the sequence. The pattern to watch is order of operations: physical contact in 1492 precedes the authorization of 1493, which means the paperwork ratifies something already done. Once you have seen that inversion once, you will see the window repeat it.\n\nThree installations here are worth entering the window to find. The Requerimiento of 1513 is a notice read aloud and counted as consent whether or not a single listener understood it. The Asiento of 1518 is a licensed labor-supply contract that places a third party between the worker and the end user. And a share certificate is devised in this period that can be sold to a stranger without dissolving the company.\n\nThis is also the window where classification stops being incidental and becomes the mechanism. A graded ancestry ladder sorts people into tiers, and from that point the operation runs on the category rather than on the person. Read that as a jurisdictional move before anything else: what is being assigned and withheld is standing. The rest of the corpus depends on holding that distinction steady.",
     "dismissLabel": "",
     "audio": {
-      "intro": { "src": "/audio/window-1-intro.m4a", "cue": "Listen first · why this window matters" },
-      "guide": { "src": "/audio/window-1-guide.m4a", "cue": "Narrate this guide" }
+      "intro": {
+        "src": "/audio/window-1-intro.m4a",
+        "cue": "Listen first · why this window matters"
+      },
+      "guide": {
+        "src": "/audio/window-1-guide.m4a",
+        "cue": "Narrate this guide"
+      }
     }
   },
   "2": {
     "title": "",
     "whyThisMatters": "",
     "watchForThis": "",
-    "fullGuide": "",
+    "fullGuide": "Window 2 covers 1602 to 1704, the hundred years in which extraction stops being an expedition and becomes an institution. The central finding is that the financial architecture still in use was built here, in the same decades and often by the same hands as the classification apparatus. In 1688 the risk of a slave voyage is priced. In 1693 England invents permanent funded public debt, a state that borrows indefinitely without repaying principal. In 1694 a bank is chartered to hold that debt, and it remains a central bank today.\n\nThe window runs in seven phases, and reading across them matters more than reading any one lane down. The financial, legal and population lanes are doing a single job in parallel: making the operation durable. A charter grants the form, an insurance instrument prices the risk, a statute settles the standing of the people involved. Watch for events that appear in two lanes at once, because those are the seams where the corpus is making its argument rather than reporting.\n\nThe moment that most repays attention is 1682, when the word Moor is merged into a color. The corpus treats this as the hinge of the window: a people holding treaty standing rewritten as a classification without it. Read it as a jurisdictional change rather than a descriptive one, because that is what makes it consequential downstream.\n\nThe window also records refusal, and the refusals are not decorative. In 1680 the Pueblo Revolt expels the Spanish from New Mexico, destroys the records, and restores the prior governance. In 1693 a royal decree offers sanctuary in Florida. The classification is never total, and this is the window where it can be watched being declined in real time.",
     "dismissLabel": "",
     "audio": {
-      "intro": { "src": "/audio/window-2-intro.m4a", "cue": "Listen first · why this window matters" },
-      "guide": { "src": "/audio/window-2-guide.m4a", "cue": "Narrate this guide" }
+      "intro": {
+        "src": "/audio/window-2-intro.m4a",
+        "cue": "Listen first · why this window matters"
+      },
+      "guide": {
+        "src": "/audio/window-2-guide.m4a",
+        "cue": "Narrate this guide"
+      }
     }
   },
   "3": {
     "title": "",
     "whyThisMatters": "",
     "watchForThis": "",
-    "fullGuide": "",
+    "fullGuide": "Window 3 covers 1652 to 1787, and it contains the clearest demonstration of method anywhere in the corpus. Rhode Island shows the whole operation in three moves. In 1652 the Assembly passes what scholarship calls the first anti-slavery statute in the nation, drafted to cover two towns, and not the two that actually held the trade. In 1703 the Assembly formally recognizes slavery and ends the fiction, fifty-one years later. By 1708 there is a three-pound duty on every imported person. The prohibition is not repealed. It is monetized.\n\nRead the window across its nine phases rather than lane by lane. Within seven years three separate labor tracks lock into one architecture, and no single lane will show you that. The pattern to watch is a rule written so that it cannot bind, allowed to stand, then converted into a line of revenue.\n\nOne stretch of eighteen months repays close attention on its own. In May 1717 the Transportation Act receives royal assent. In April 1718 the Old Bailey hands down the first sentences under it. In August 1718 the Eagle Galley departs Blackwall with 106 convicts. In October 1718 a contractor signs a Treasury agreement paying him for each delivered body. Four rows, four lanes: statute, sentence, ship, invoice. The corpus argues that paying a private contractor per head is still executing in the detention contract.\n\nRead the other side of the board in the same months. In March 1718 Emperor Brim of the Coweta convenes Britain, France and Spain and binds all three at once to neutrality in Creek territory. It holds for forty-five years. The year that installs the contract also produces the largest sovereign counter-move in the window.",
     "dismissLabel": "",
     "audio": {
-      "intro": { "src": "/audio/window-3-intro.m4a", "cue": "Listen first · why this window matters" },
-      "guide": { "src": "/audio/window-3-guide.m4a", "cue": "Narrate this guide" }
+      "intro": {
+        "src": "/audio/window-3-intro.m4a",
+        "cue": "Listen first · why this window matters"
+      },
+      "guide": {
+        "src": "/audio/window-3-guide.m4a",
+        "cue": "Narrate this guide"
+      }
     }
   },
   "4": {
     "title": "",
     "whyThisMatters": "",
     "watchForThis": "",
-    "fullGuide": "",
+    "fullGuide": "Window 4 covers 1787 to 1854, the handoff. The franchise stops being European and becomes American law, and of the seven windows this is the one whose installations are most directly still in force. In 1823 the Supreme Court takes a doctrine written by a pope and makes it United States law, defining tribal land title as a right of occupancy the federal government may extinguish at will. It has never been overruled, and a category invented in this window, domestic dependent nation, remains the operative framework of federal Indian law.\n\nRead across the legal, financial and records lanes in the same years, because this window sets out mechanism rather than asserting it. The pattern to watch is title laundering: the sequence by which a contested claim is made clean enough to convey onward.\n\nThe Louisiana Purchase is the moment that most repays attention, and it is worth entering the window to trace in full. The United States does not buy Louisiana from Napoleon. It buys through Baring Brothers of London and Hope and Company of Amsterdam. Napoleon sells eleven and a quarter million dollars of American Treasury bonds to Barings at eighty-seven and a half cents on the dollar and leaves with nine and a half million. Alexander Baring sits at the negotiating table in Paris, then sails to Washington to collect. A British bank finances an American purchase of French-taken, Spanish-managed land while Britain and France are at war.\n\nThe counter side is equally specific. The Moors Sundry Act of 1790 records Congress recognizing Moorish nationals as distinct from the classification then being assembled. The corpus reads that as a question of standing rather than of description, and the distinction is the point.",
     "dismissLabel": "",
     "audio": {
-      "intro": { "src": "/audio/window-4-intro.m4a", "cue": "Listen first · why this window matters" },
-      "guide": { "src": "/audio/window-4-guide.m4a", "cue": "Narrate this guide" }
+      "intro": {
+        "src": "/audio/window-4-intro.m4a",
+        "cue": "Listen first · why this window matters"
+      },
+      "guide": {
+        "src": "/audio/window-4-guide.m4a",
+        "cue": "Narrate this guide"
+      }
     }
   },
   "5": {
     "title": "",
     "whyThisMatters": "",
     "watchForThis": "",
-    "fullGuide": "",
+    "fullGuide": "Window 5 covers 1854 to 1929, seventy-five years in which the machinery and its remedy are installed in the same breath and only part of the remedy survives. Two civil rights acts nine years apart make the point in miniature: one is a working cause of action that can be filed under today, the other was struck down in 1883 and never revived. At 188 entries this is the largest window in the corpus, organized into nine phases.\n\nRead it across, and read the ending with particular care. All nine lanes close within five years of one another, and the corpus notes that no newspaper published the synchronization. That absence is itself a finding, and it is carried in the information lane. The pattern to watch throughout is a remedy enacted alongside the mechanism it is meant to answer, then narrowed by a later court while the mechanism continues.\n\nThe sharpest moment is not a law that lived but a law that died and left its output behind. The Racial Integrity Act was struck down in 1967. The records produced under it did not go with it. The corpus treats this as the cleanest instance of the operation anywhere in the seven windows, because it separates a statute from its product and shows only the statute being repealed.\n\nTwo further things repay attention. A doctrine out of the Insular Cases still governs the constitutional status of Puerto Rico, Guam and American Samoa; judges have criticized it from the bench and none has overruled it. And enrollment rolls compiled by a commission now a century gone remain the operative base roll for five nations. Standing assigned in this window is still deciding who counts.",
     "dismissLabel": "",
     "audio": {
-      "intro": { "src": "/audio/window-5-intro.m4a", "cue": "Listen first · why this window matters" },
-      "guide": { "src": "/audio/window-5-guide.m4a", "cue": "Narrate this guide" }
+      "intro": {
+        "src": "/audio/window-5-intro.m4a",
+        "cue": "Listen first · why this window matters"
+      },
+      "guide": {
+        "src": "/audio/window-5-guide.m4a",
+        "cue": "Narrate this guide"
+      }
     }
   },
   "6": {
     "title": "",
     "whyThisMatters": "",
     "watchForThis": "",
-    "fullGuide": "",
+    "fullGuide": "Window 6 covers 1921 to 2029, and it is where the corpus stops being history. A good deal of this window is live United States Code, and the entries were checked section by section rather than counted. The abrogation of gold clauses is in force. So is the public accommodations guarantee, which had to be built on the commerce power because the identical guarantee from 1875 had been struck down. So is the rule that replaced the national origins quota, in a section that still sorts immigrant visas by country of birth.\n\nRead this window in both directions, because it is the one where the corpus most systematically records findings against its own thesis. Two entries are hedged rather than live: one surveillance authority survives only for investigations already open, and a 1935 grant structure was repealed in 1974 for the fifty states while continuing to run in Puerto Rico, Guam and the Virgin Islands. That second one is the harder finding, because a provision switched off for the states and left executing in the territories is the earlier territorial differential still operating.\n\nThree findings run the other way, and the window has to be read with them in view. In 2020 a court held that a reservation was never disestablished, quoted an 1832 case as controlling law, and opened its judgment on the Trail of Tears. In 1952 the International Court of Justice construed the 1787 treaty with Morocco. In 2023 the Vatican repudiated the Doctrine of Discovery.\n\nThe pattern to watch across the lanes is migration of function rather than repeal. Where an instrument stops executing in one jurisdiction, check whether it is still executing in another.",
     "dismissLabel": "",
     "audio": {
-      "intro": { "src": "/audio/window-6-intro.m4a", "cue": "Listen first · why this window matters" },
-      "guide": { "src": "/audio/window-6-guide.m4a", "cue": "Narrate this guide" }
+      "intro": {
+        "src": "/audio/window-6-intro.m4a",
+        "cue": "Listen first · why this window matters"
+      },
+      "guide": {
+        "src": "/audio/window-6-guide.m4a",
+        "cue": "Narrate this guide"
+      }
     }
   }
 }

@@ -1,66 +1,233 @@
 {
   "_README": [
     "ONE static, portable definition per token. Identical everywhere the token",
-    "appears — no per-window or context-specific variants, by design.",
+    "appears, with no per-window or context-specific variants, by design.",
     "",
     "PROVENANCE: tier, stream, technology-tag, dossier and milestone definitions",
-    "are taken from the generated windows' own legend copy (STREAMS_LEGEND,",
-    "the tlegend tgrid, and the .note line in silicon_altar_generator.py), so",
-    "they match what the documents already assert. Lane definitions pair the",
-    "column header with the execution-order word from the windows' own .note",
-    "line. Three lanes (innovation, sovereign, corporate) postdate that line and",
-    "have no definition in the source; they are marked \"pending\": true and show",
-    "a 'definition pending' note in the popover rather than invented copy.",
+    "are taken from the generated windows' own legend copy (STREAMS_LEGEND, the",
+    "tlegend tgrid, and the .note line in silicon_altar_generator.py).",
+    "",
+    "Lane definitions come from two repo sources. The eleven lanes named in the",
+    "windows' own .note execution-order line pair that word with the column",
+    "header. The remaining three (innovation, sovereign, corporate) take their",
+    "meaning from Silicon_Altar_SCHEMA_v2_2_Delta.md Delta 1 (SCHEMA A.9), which",
+    "states a controlled-vocabulary meaning for each lane token. For innovation",
+    "that entry is filed under the token 'technology'; Silicon_Altar_Known_Bugs.md",
+    "KB-10-01 records this as documentation drift for the same lane and names the",
+    "generator LANES table as source of truth.",
+    "",
+    "No lane is currently marked pending. The 'pending' flag remains supported:",
+    "set \"pending\": true and leave definition empty and the popover says so",
+    "rather than showing invented copy.",
     "",
     "Keys: tier:A-E | stream:S1-S4 | tag:T1-T13,CM,CTX | lane:<data key> |",
     "      dossier | milestone"
   ],
-
-  "tier:A": { "label": "Tier A", "kind": "Finding tier", "definition": "Direct primary-source documentation.", "note": "Tier records the standing of the claim, not the quality of the document behind it." },
-  "tier:B": { "label": "Tier B", "kind": "Finding tier", "definition": "Strong secondary consensus with primary underpinnings.", "note": "Tier records the standing of the claim, not the quality of the document behind it." },
-  "tier:C": { "label": "Tier C", "kind": "Finding tier", "definition": "Reasonable inference, with the inferential step named.", "note": "A C is not a weak claim — it is a differently-warranted one." },
-  "tier:D": { "label": "Tier D", "kind": "Finding tier", "definition": "Synthesis and pattern recognition; a project contribution.", "note": "Tier records the standing of the claim, not the quality of the document behind it." },
-  "tier:E": { "label": "Tier E", "kind": "Finding tier", "definition": "Working hypothesis, insufficient documentation.", "note": "Tier records the standing of the claim, not the quality of the document behind it." },
-
-  "stream:S1": { "label": "S1", "kind": "Sovereignty stream", "definition": "Autochthonous — A00, Xi-Maya, hemispheric aboriginal." },
-  "stream:S2": { "label": "S2", "kind": "Sovereignty stream", "definition": "Pre-Columbian trans-Atlantic contact (Fell, Van Sertima)." },
-  "stream:S3": { "label": "S3", "kind": "Sovereignty stream", "definition": "5th-century Berber-Byzantine Christian migration (Asqu Shamal)." },
-  "stream:S4": { "label": "S4", "kind": "Sovereignty stream", "definition": "Moorish Empire treaty-holding sovereignty, 1750 to 1787." },
-
-  "tag:T1": { "label": "T1", "kind": "Technology tag", "definition": "Spiritual reclassification." },
-  "tag:T2": { "label": "T2", "kind": "Technology tag", "definition": "Jurisdictional reclassification." },
-  "tag:T3": { "label": "T3", "kind": "Technology tag", "definition": "Cartographic reclassification." },
-  "tag:T4": { "label": "T4", "kind": "Technology tag", "definition": "Financial reclassification." },
-  "tag:T5": { "label": "T5", "kind": "Technology tag", "definition": "Phenotypic reclassification." },
-  "tag:T6": { "label": "T6", "kind": "Technology tag", "definition": "Demographic reclassification." },
-  "tag:T7": { "label": "T7", "kind": "Technology tag", "definition": "Archival reclassification." },
-  "tag:T8": { "label": "T8", "kind": "Technology tag", "definition": "Military reclassification." },
-  "tag:T9": { "label": "T9", "kind": "Technology tag", "definition": "Conversion reclassification." },
-  "tag:T10": { "label": "T10", "kind": "Technology tag", "definition": "Infrastructural reclassification." },
-  "tag:T11": { "label": "T11", "kind": "Technology tag", "definition": "Linguistic reclassification." },
-  "tag:T12": { "label": "T12", "kind": "Technology tag", "definition": "Medical / biological reclassification." },
-  "tag:T13": { "label": "T13", "kind": "Technology tag", "definition": "Educational reclassification." },
-  "tag:CM": { "label": "CM", "kind": "Technology tag", "definition": "Counter-move — an act of resistance, refusal, or assertion against the operation." },
-  "tag:CTX": { "label": "CTX", "kind": "Technology tag", "definition": "Context — background an event needs to be read correctly, not itself a mechanism." },
-
+  "tier:A": {
+    "label": "Tier A",
+    "kind": "Finding tier",
+    "definition": "Direct primary-source documentation.",
+    "note": "Tier records the standing of the claim, not the quality of the document behind it."
+  },
+  "tier:B": {
+    "label": "Tier B",
+    "kind": "Finding tier",
+    "definition": "Strong secondary consensus with primary underpinnings.",
+    "note": "Tier records the standing of the claim, not the quality of the document behind it."
+  },
+  "tier:C": {
+    "label": "Tier C",
+    "kind": "Finding tier",
+    "definition": "Reasonable inference, with the inferential step named.",
+    "note": "A C is not a weak claim — it is a differently-warranted one."
+  },
+  "tier:D": {
+    "label": "Tier D",
+    "kind": "Finding tier",
+    "definition": "Synthesis and pattern recognition; a project contribution.",
+    "note": "Tier records the standing of the claim, not the quality of the document behind it."
+  },
+  "tier:E": {
+    "label": "Tier E",
+    "kind": "Finding tier",
+    "definition": "Working hypothesis, insufficient documentation.",
+    "note": "Tier records the standing of the claim, not the quality of the document behind it."
+  },
+  "stream:S1": {
+    "label": "S1",
+    "kind": "Sovereignty stream",
+    "definition": "Autochthonous — A00, Xi-Maya, hemispheric aboriginal."
+  },
+  "stream:S2": {
+    "label": "S2",
+    "kind": "Sovereignty stream",
+    "definition": "Pre-Columbian trans-Atlantic contact (Fell, Van Sertima)."
+  },
+  "stream:S3": {
+    "label": "S3",
+    "kind": "Sovereignty stream",
+    "definition": "5th-century Berber-Byzantine Christian migration (Asqu Shamal)."
+  },
+  "stream:S4": {
+    "label": "S4",
+    "kind": "Sovereignty stream",
+    "definition": "Moorish Empire treaty-holding sovereignty, 1750 to 1787."
+  },
+  "tag:T1": {
+    "label": "T1",
+    "kind": "Technology tag",
+    "definition": "Spiritual reclassification."
+  },
+  "tag:T2": {
+    "label": "T2",
+    "kind": "Technology tag",
+    "definition": "Jurisdictional reclassification."
+  },
+  "tag:T3": {
+    "label": "T3",
+    "kind": "Technology tag",
+    "definition": "Cartographic reclassification."
+  },
+  "tag:T4": {
+    "label": "T4",
+    "kind": "Technology tag",
+    "definition": "Financial reclassification."
+  },
+  "tag:T5": {
+    "label": "T5",
+    "kind": "Technology tag",
+    "definition": "Phenotypic reclassification."
+  },
+  "tag:T6": {
+    "label": "T6",
+    "kind": "Technology tag",
+    "definition": "Demographic reclassification."
+  },
+  "tag:T7": {
+    "label": "T7",
+    "kind": "Technology tag",
+    "definition": "Archival reclassification."
+  },
+  "tag:T8": {
+    "label": "T8",
+    "kind": "Technology tag",
+    "definition": "Military reclassification."
+  },
+  "tag:T9": {
+    "label": "T9",
+    "kind": "Technology tag",
+    "definition": "Conversion reclassification."
+  },
+  "tag:T10": {
+    "label": "T10",
+    "kind": "Technology tag",
+    "definition": "Infrastructural reclassification."
+  },
+  "tag:T11": {
+    "label": "T11",
+    "kind": "Technology tag",
+    "definition": "Linguistic reclassification."
+  },
+  "tag:T12": {
+    "label": "T12",
+    "kind": "Technology tag",
+    "definition": "Medical / biological reclassification."
+  },
+  "tag:T13": {
+    "label": "T13",
+    "kind": "Technology tag",
+    "definition": "Educational reclassification."
+  },
+  "tag:CM": {
+    "label": "CM",
+    "kind": "Technology tag",
+    "definition": "Counter-move — an act of resistance, refusal, or assertion against the operation."
+  },
+  "tag:CTX": {
+    "label": "CTX",
+    "kind": "Technology tag",
+    "definition": "Context — background an event needs to be read correctly, not itself a mechanism."
+  },
   "_tagNote": "Tags mark which reclassification mechanism an event uses. Most events carry two to four; the operation works by synchronized deployment.",
-
-  "lane:catastrophe": { "label": "Catastrophe", "kind": "Lane", "definition": "Shock. The disruption that opens the window for everything downstream." },
-  "lane:military": { "label": "Military / Intel Ops", "kind": "Lane", "definition": "Force. Armed and intelligence operations." },
-  "lane:violence": { "label": "Violence & Clearing", "kind": "Lane", "definition": "Clearing. Removal of people from land and standing." },
-  "lane:population": { "label": "Population Processing", "kind": "Lane", "definition": "Sorting. Classification and movement of people as populations." },
-  "lane:legal": { "label": "Legal Framework", "kind": "Lane", "definition": "Legalization. Statute, charter, and ruling that make the prior columns lawful." },
-  "lane:land": { "label": "Land Transfer", "kind": "Lane", "definition": "Title. Movement of land from one holder to another." },
-  "lane:financial": { "label": "Financial Architecture", "kind": "Lane", "definition": "Extraction. The instruments that convert the operation into revenue." },
-  "lane:records": { "label": "Records / Archives", "kind": "Lane", "definition": "Erasure. Creation, alteration, and destruction of the record itself." },
-  "lane:certification": { "label": "Certification Events", "kind": "Lane", "definition": "Certification. The moment a status is issued and made official." },
-  "lane:information": { "label": "Information Architecture", "kind": "Lane", "definition": "Narrative. How the operation is reported, framed, and remembered." },
-  "lane:counter-move": { "label": "Counter-Move / Allodial", "kind": "Lane", "definition": "Counter-move. Resistance, refusal, and assertions of allodial standing." },
-  "lane:innovation": { "label": "Innovation / Resource", "kind": "Lane", "definition": "", "pending": true },
-  "lane:sovereign": { "label": "Sovereign Act", "kind": "Lane", "definition": "", "pending": true },
-  "lane:corporate": { "label": "Corporate / Charter", "kind": "Lane", "definition": "", "pending": true },
-
-  "dossier": { "label": "DOSSIER", "kind": "Evidence", "definition": "Opens the evidence behind this row: the sources, their tiers, and the reasoning — including hypotheses the corpus holds rather than asserts.", "note": "Not every row has one. Rows without a dossier still carry a tier." },
-
-  "milestone": { "label": "◆ Milestone", "kind": "Marker", "definition": "Marks an event the corpus treats as a turning point in the sequence, not merely an entry within it." }
+  "lane:catastrophe": {
+    "label": "Catastrophe",
+    "kind": "Lane",
+    "definition": "Shock. The disruption that opens the window for everything downstream."
+  },
+  "lane:military": {
+    "label": "Military / Intel Ops",
+    "kind": "Lane",
+    "definition": "Force. Armed and intelligence operations."
+  },
+  "lane:violence": {
+    "label": "Violence & Clearing",
+    "kind": "Lane",
+    "definition": "Clearing. Removal of people from land and standing."
+  },
+  "lane:population": {
+    "label": "Population Processing",
+    "kind": "Lane",
+    "definition": "Sorting. Classification and movement of people as populations."
+  },
+  "lane:legal": {
+    "label": "Legal Framework",
+    "kind": "Lane",
+    "definition": "Legalization. Statute, charter, and ruling that make the prior columns lawful."
+  },
+  "lane:land": {
+    "label": "Land Transfer",
+    "kind": "Lane",
+    "definition": "Title. Movement of land from one holder to another."
+  },
+  "lane:financial": {
+    "label": "Financial Architecture",
+    "kind": "Lane",
+    "definition": "Extraction. The instruments that convert the operation into revenue."
+  },
+  "lane:records": {
+    "label": "Records / Archives",
+    "kind": "Lane",
+    "definition": "Erasure. Creation, alteration, and destruction of the record itself."
+  },
+  "lane:certification": {
+    "label": "Certification Events",
+    "kind": "Lane",
+    "definition": "Certification. The moment a status is issued and made official."
+  },
+  "lane:information": {
+    "label": "Information Architecture",
+    "kind": "Lane",
+    "definition": "Narrative. How the operation is reported, framed, and remembered."
+  },
+  "lane:counter-move": {
+    "label": "Counter-Move / Allodial",
+    "kind": "Lane",
+    "definition": "Counter-move. Resistance, refusal, and assertions of allodial standing."
+  },
+  "lane:innovation": {
+    "label": "Innovation / Resource",
+    "kind": "Lane",
+    "definition": "Installation. Technology and infrastructure laid in, protocols locked down, and the patents and material resources they run on."
+  },
+  "lane:sovereign": {
+    "label": "Sovereign Act",
+    "kind": "Lane",
+    "definition": "Standing. Declarations of sovereign standing, treaties entered as sovereign acts, and resolutions of sovereign bodies."
+  },
+  "lane:corporate": {
+    "label": "Corporate / Charter",
+    "kind": "Lane",
+    "definition": "Charter. Joint-stock formation, franchise grant, and the corporate governance of the entity the operation is contracted through."
+  },
+  "dossier": {
+    "label": "DOSSIER",
+    "kind": "Evidence",
+    "definition": "Opens the evidence behind this row: the sources, their tiers, and the reasoning — including hypotheses the corpus holds rather than asserts.",
+    "note": "Not every row has one. Rows without a dossier still carry a tier."
+  },
+  "milestone": {
+    "label": "◆ Milestone",
+    "kind": "Marker",
+    "definition": "Marks an event the corpus treats as a turning point in the sequence, not merely an entry within it."
+  }
 }
