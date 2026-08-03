@@ -16,6 +16,8 @@ type Props = {
   onGo: (id: number) => void;
   onBackToSelector: () => void;
   onOpenGuide: () => void;
+  legendOpen: boolean;
+  onToggleLegend: () => void;
 };
 
 export default function PositionIndicator({
@@ -23,6 +25,8 @@ export default function PositionIndicator({
   onGo,
   onBackToSelector,
   onOpenGuide,
+  legendOpen,
+  onToggleLegend,
 }: Props) {
   const w = getWindow(current);
   const atStart = current === 0;
@@ -49,6 +53,20 @@ export default function PositionIndicator({
             ◈
           </span>
           <span className="mono">Guide</span>
+        </button>
+
+        {/* Legend is collapsed by default now that every token in the grid
+            explains itself in place. */}
+        <button
+          className={`${styles.guide} ${legendOpen ? styles.guideOn : ''}`}
+          onClick={onToggleLegend}
+          aria-pressed={legendOpen}
+          title="Show or hide the top-of-window legend"
+        >
+          <span className={styles.guideGlyph} aria-hidden>
+            ☰
+          </span>
+          <span className="mono">Legend</span>
         </button>
       </div>
 

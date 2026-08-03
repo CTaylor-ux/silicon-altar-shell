@@ -52,7 +52,7 @@ export default function SelectorPage() {
         <span className="mono">
           {state.history.length > 0
             ? `${state.history.length} question${state.history.length === 1 ? '' : 's'} this session`
-            : 'Mockup — retrieval is stubbed'}
+            : 'Mockup, retrieval is stubbed'}
         </span>
       </footer>
     </main>

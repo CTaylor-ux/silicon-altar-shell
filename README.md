@@ -53,27 +53,90 @@ f'<div class="ev" data-entry-id="{e["id"]}"{dataattr}>'
 
 Once promoted, this script drops to injecting the postMessage bridge only.
 
+## Glossary (in-place help)
+
+`lib/glossary.json` is the single lookup. One static definition per token,
+identical everywhere it appears — no per-window variants, by design.
+
+Tokens are bound **at render time** by the injected bridge, which reads the
+already-rendered document. The generator, the L4 data, and the audit repo's
+generated HTML are untouched. Bound kinds: tier `A–E`, streams `S1–S4`, tags
+`T1–T13` / `CM` / `CTX`, lane labels (row tag, legend swatch, column header),
+the milestone marker, and `DOSSIER` — 2,715 across the seven windows.
+
+Binding is **capture-phase with `stopPropagation`**. This matters: on rows that
+carry a dossier the whole `.en` span already has a click handler, and badges
+live inside it. Capturing on the badge means a badge click gives a definition
+while a click on the row title still opens the dossier.
+
+**One deliberate exception.** The `DOSSIER` badge's own click already opens the
+evidence dossier — the product's primary affordance. Rather than hijack it, its
+definition is reached through a hover `?` on the badge. Every other token uses
+the badge itself as the target, as specified.
+
+Three lanes (`innovation`, `sovereign`, `corporate`) postdate the legend copy
+the rest of the glossary is drawn from and carry `"pending": true`; the popover
+says "definition pending" rather than showing invented copy.
+
+The top-of-window legend is **collapsed by default** now that help is in place.
+The `Legend` button in the top rail flips a root class inside the frame, so no
+control is injected into the generated document.
+
+## Member vs operator view
+
+Members never see build-system notes. Five places print provenance; all are
+hidden behind a root class and revealed only at `?operator=1`:
+
+| where | what |
+|---|---|
+| `.v25-note` | the "emitted by the L1 Generator … hand-editing prohibited per V2.2 §VI" banner |
+| `.statusbar` | `· <amend> DATA-FIRST GENERATED` inside the `LOADED:` line |
+| `.meta` | trailing `<amend> data-first generated` in the stat panel |
+| `.live` | the `GENERATED FROM L4` badge |
+| `.ft` | `<amend> data-first generated • <stamp>` in the footer |
+
+The last four are text fragments inside elements that also carry
+member-relevant content (row/entry/dossier counts), so they are wrapped in
+`.sa-provenance` rather than hidden wholesale — the counts survive.
+
+Verified: hiding the banner shifts the blocks beneath it up by exactly its own
+height (60px) and the sticky offsets stay at 0 and 65 in both views.
+
 ## Swapping guide copy and audio
 
-Both live in **`lib/window-content.ts`**, keyed by window id. Neither component
-knows anything about a specific window, so replacing content changes the product
-without touching wiring.
+Both live in **`lib/guides.json`**, keyed by window id, one record per window so
+copy and audio swap as a unit. Neither component knows anything about a specific
+window, so replacing content changes the product without touching wiring.
+(`lib/window-content.ts` only merges that file with the fallback — don't edit
+copy there.)
 
-```ts
-WINDOW_CONTENT[3] = {
-  guide: { title, whyThisMatters, watchForThis, dismissLabel, placeholder? },
-  audio: { src, cue, durationLabel? },   // null disables the strip for that window
+```jsonc
+"3": {
+  "title": "", "whyThisMatters": "", "watchForThis": "",
+  "fullGuide": "", "dismissLabel": "",
+  "audio": {
+    "intro": { "src": "/audio/window-3-intro.m4a", "cue": "Listen first · why this window matters" },
+    "guide": { "src": "/audio/window-3-guide.m4a", "cue": "Narrate this guide" }
+  }
 }
 ```
+
+Fallback is **per field**: fill `whyThisMatters` and leave `watchForThis` empty
+and you get real copy for one, generated copy for the other.
 
 - **Guide copy is currently PLACEHOLDER** and every entry is flagged
   `placeholder: true`, which renders a visible "Placeholder copy" chip in the
   modal. The placeholder text makes no historical claims — it describes how to
   read a window, using facts pulled from `windows.json`. Replace the two prose
   fields and drop the flag; nothing else moves.
-- **Audio files go in `public/audio/`** as `window-0.m4a` … `window-6.m4a`. See
-  the README there. A missing file renders an explicit "audio not yet available"
-  state rather than a dead button.
+- **Audio files go in `public/audio/`**, two per window:
+  `window-N-intro.m4a` (narrates the window's intro block, top strip) and
+  `window-N-guide.m4a` (narrates the guide, inside the modal). Controls are
+  purpose-labelled so the two are never confused. A missing file renders an
+  explicit "not yet available" state rather than a dead button.
+- **`fullGuide`** holds the complete companion guide as one string; blank lines
+  split it into sections behind the "Read the full guide" expander. Empty means
+  no expander at all.
 
 The guide opens once per window per session (tracked as `guideSeen` in session
 state) and is always re-openable from **Guide** in the top rail.

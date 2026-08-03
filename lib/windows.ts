@@ -29,4 +29,6 @@ export const getWindow = (id: number) => WINDOWS.find((w) => w.id === id);
 export const clampWindowId = (id: number) =>
   Math.max(0, Math.min(WINDOW_COUNT - 1, id));
 
-export const windowSrc = (id: number) => `/windows/window-${id}.html`;
+/** `operator` reveals build-provenance chrome that members never see. */
+export const windowSrc = (id: number, operator = false) =>
+  `/windows/window-${id}.html${operator ? '?operator=1' : ''}`;
