@@ -1,60 +1,68 @@
 /**
- * window-content.ts — the swappable content layer.
+ * window-content.ts — resolves per-window guide copy and audio.
  *
- * Both the companion-guide modal and the audio cue read from here. Neither
- * component knows anything about a specific window; replacing the copy below
- * changes the product without touching any wiring.
+ * SOURCE OF TRUTH IS lib/guides.json. This module only merges it with a
+ * generated fallback so a window can never render a blank modal.
  *
- * ── IMPORTANT ────────────────────────────────────────────────────────────────
- * The guide copy currently in this file is PLACEHOLDER, and every entry is
- * flagged `placeholder: true` so the UI can say so out loud.
+ * Resolution is PER FIELD, not per window: a record that fills in
+ * `whyThisMatters` but leaves `watchForThis` empty gets the real copy for one
+ * and the fallback for the other. Any window still using a fallback for either
+ * visible field is flagged `placeholder: true`, which renders a visible
+ * "Placeholder copy" chip in the modal.
  *
- * It deliberately makes NO historical claims. It describes the instrument — how
- * to read a window, what a tier means, what a dossier badge does — using facts
- * drawn from windows.json (name, year range, entry and dossier counts) and the
- * project's own stated source discipline. That is the one kind of orientation
- * copy that can be written before the real companion guides land without
- * risking an assertion the corpus would have to retract.
- *
- * When the real companion-guide copy arrives: replace `whyThisMatters` and
- * `watchForThis` per window and drop the `placeholder` flag. Nothing else moves.
- * ─────────────────────────────────────────────────────────────────────────────
+ * The fallback text makes NO historical claims — it describes how to read a
+ * window, using figures pulled from windows.json. That is the only orientation
+ * copy that can be generated without risking an assertion the corpus would
+ * have to retract.
  */
 
 import { WINDOWS, LANES } from './windows';
+import guidesRaw from './guides.json';
 
 export type WindowGuide = {
-  /** Modal heading. Defaults to the window name. */
   title: string;
-  /** Lead paragraph — why this window matters. */
   whyThisMatters: string;
-  /** Single sharpening line — the thing to keep an eye on while reading. */
   watchForThis: string;
-  /** Dismiss button label. */
+  /** Complete companion-guide copy, split into paragraphs. Empty = no expander. */
+  fullGuide: string[];
   dismissLabel: string;
-  /** Renders a visible "placeholder copy" marker. Remove with the real copy. */
+  /** True when any visible field fell back to generated copy. */
   placeholder?: boolean;
 };
 
-export type WindowAudio = {
-  /** Served from public/audio/. Missing files degrade to an unavailable state. */
+export type AudioTrack = {
   src: string;
-  /** Framing cue shown beside the control. */
+  /** Framing cue. Also used as the control's accessible purpose label. */
   cue: string;
-  /** Optional label shown until real metadata duration loads. */
   durationLabel?: string;
 };
 
 export type WindowContent = {
   guide: WindowGuide;
-  /** null disables the audio strip for that window entirely. */
-  audio: WindowAudio | null;
+  /** Narration of the window's own intro block — the top strip. */
+  introAudio: AudioTrack | null;
+  /** Narration of the guide copy — lives inside the modal. */
+  guideAudio: AudioTrack | null;
 };
 
-const DEFAULT_CUE = 'Listen first · why this window matters';
+type GuideRecord = {
+  title?: string;
+  whyThisMatters?: string;
+  watchForThis?: string;
+  fullGuide?: string;
+  dismissLabel?: string;
+  audio?: {
+    intro?: AudioTrack | null;
+    guide?: AudioTrack | null;
+  };
+};
 
-/** Placeholder guide, generated per window from real corpus metadata. */
-function placeholderGuide(id: number): WindowGuide {
+const guides = guidesRaw as unknown as Record<string, GuideRecord>;
+
+const filled = (s?: string) => typeof s === 'string' && s.trim().length > 0;
+
+/** Generated fallback, per window, from real corpus metadata. */
+function fallbackGuide(id: number) {
   const w = WINDOWS.find((x) => x.id === id);
   const name = w?.name ?? `Window ${id}`;
   const range = w?.yearRange ?? '';
@@ -74,26 +82,45 @@ function placeholderGuide(id: number): WindowGuide {
       `${dossiers} rows here carry a DOSSIER badge; those open the evidence and the reasoning ` +
       `underneath the claim.`,
     dismissLabel: 'Enter the window',
-    placeholder: true,
   };
 }
 
-/**
- * Per-window content. Audio src points at files that do not exist yet; the
- * control renders an explicit unavailable state rather than a dead button until
- * they are dropped into public/audio/.
- */
+function resolveGuide(id: number): WindowGuide {
+  const rec = guides[String(id)] ?? {};
+  const fb = fallbackGuide(id);
+
+  // Only the two always-visible fields decide the placeholder flag. A missing
+  // fullGuide simply means no expander, which is not a content gap.
+  const usedFallback = !filled(rec.whyThisMatters) || !filled(rec.watchForThis);
+
+  return {
+    title: filled(rec.title) ? rec.title!.trim() : fb.title,
+    whyThisMatters: filled(rec.whyThisMatters) ? rec.whyThisMatters!.trim() : fb.whyThisMatters,
+    watchForThis: filled(rec.watchForThis) ? rec.watchForThis!.trim() : fb.watchForThis,
+    fullGuide: filled(rec.fullGuide)
+      ? rec
+          .fullGuide!.trim()
+          .split(/\n\s*\n/)
+          .map((p) => p.trim())
+          .filter(Boolean)
+      : [],
+    dismissLabel: filled(rec.dismissLabel) ? rec.dismissLabel!.trim() : fb.dismissLabel,
+    placeholder: usedFallback,
+  };
+}
+
 export const WINDOW_CONTENT: Record<number, WindowContent> = Object.fromEntries(
-  WINDOWS.map((w) => [
-    w.id,
-    {
-      guide: placeholderGuide(w.id),
-      audio: {
-        src: `/audio/window-${w.id}.m4a`,
-        cue: DEFAULT_CUE,
-      },
-    } satisfies WindowContent,
-  ])
+  WINDOWS.map((w) => {
+    const rec = guides[String(w.id)] ?? {};
+    return [
+      w.id,
+      {
+        guide: resolveGuide(w.id),
+        introAudio: rec.audio?.intro ?? null,
+        guideAudio: rec.audio?.guide ?? null,
+      } satisfies WindowContent,
+    ];
+  })
 );
 
 export const getWindowContent = (id: number): WindowContent | null =>

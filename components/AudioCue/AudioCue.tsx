@@ -13,10 +13,15 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
-import type { WindowAudio } from '@/lib/window-content';
+import type { AudioTrack } from '@/lib/window-content';
 import styles from './AudioCue.module.css';
 
-type Props = { audio: WindowAudio | null; windowId: number };
+type Props = {
+  audio: AudioTrack | null;
+  windowId: number;
+  /** Distinguishes this control from the guide narration for screen readers. */
+  purpose: string;
+};
 
 const fmt = (s: number) => {
   if (!isFinite(s) || s < 0) return '--:--';
@@ -25,7 +30,7 @@ const fmt = (s: number) => {
   return `${m}:${String(r).padStart(2, '0')}`;
 };
 
-export default function AudioCue({ audio, windowId }: Props) {
+export default function AudioCue({ audio, windowId, purpose }: Props) {
   const ref = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const [dur, setDur] = useState(0);
@@ -69,8 +74,8 @@ export default function AudioCue({ audio, windowId }: Props) {
         className={styles.play}
         onClick={toggle}
         disabled={unavailable}
-        aria-label={playing ? 'Pause narration' : 'Play narration'}
-        title={unavailable ? 'Audio not yet available' : undefined}
+        aria-label={`${playing ? 'Pause' : 'Play'} ${purpose}`}
+        title={unavailable ? `${purpose} — not yet available` : purpose}
       >
         {playing ? (
           <span className={styles.pauseGlyph} aria-hidden />

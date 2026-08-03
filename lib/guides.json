@@ -1,0 +1,106 @@
+{
+  "_README": [
+    "Per-window companion-guide content, keyed by window id (0-6).",
+    "",
+    "This is the ONLY file to edit when guide copy changes. Copy and audio for a",
+    "window live in the same record so they swap as a unit.",
+    "",
+    "Any field left as an empty string falls back to the generated summary in",
+    "lib/window-content.ts, so a window can never render a blank modal. A window",
+    "using ANY fallback field is flagged in the UI as 'Placeholder copy'.",
+    "",
+    "Fields:",
+    "  title           heading in the modal (defaults to the window name)",
+    "  whyThisMatters  short orientation, always visible",
+    "  watchForThis    one sharpening line, always visible",
+    "  fullGuide       complete companion-guide copy, revealed by the expander.",
+    "                  Blank paragraphs split on a double newline. If empty, the",
+    "                  expander is not rendered at all.",
+    "  dismissLabel    dismiss button text",
+    "  audio.intro     narration for the window's intro block (top strip)",
+    "  audio.guide     narration of the guide copy itself (inside the modal)",
+    "                  Set either to null to hide that control.",
+    "",
+    "This file is shell content, NOT L4 corpus data. It deliberately does not",
+    "live in windows.json: the audit repo is read-only to this app, and guide",
+    "copy is editorial rather than evidentiary."
+  ],
+
+  "0": {
+    "title": "",
+    "whyThisMatters": "",
+    "watchForThis": "",
+    "fullGuide": "",
+    "dismissLabel": "",
+    "audio": {
+      "intro": { "src": "/audio/window-0-intro.m4a", "cue": "Listen first · why this window matters" },
+      "guide": { "src": "/audio/window-0-guide.m4a", "cue": "Narrate this guide" }
+    }
+  },
+  "1": {
+    "title": "",
+    "whyThisMatters": "",
+    "watchForThis": "",
+    "fullGuide": "",
+    "dismissLabel": "",
+    "audio": {
+      "intro": { "src": "/audio/window-1-intro.m4a", "cue": "Listen first · why this window matters" },
+      "guide": { "src": "/audio/window-1-guide.m4a", "cue": "Narrate this guide" }
+    }
+  },
+  "2": {
+    "title": "",
+    "whyThisMatters": "",
+    "watchForThis": "",
+    "fullGuide": "",
+    "dismissLabel": "",
+    "audio": {
+      "intro": { "src": "/audio/window-2-intro.m4a", "cue": "Listen first · why this window matters" },
+      "guide": { "src": "/audio/window-2-guide.m4a", "cue": "Narrate this guide" }
+    }
+  },
+  "3": {
+    "title": "",
+    "whyThisMatters": "",
+    "watchForThis": "",
+    "fullGuide": "",
+    "dismissLabel": "",
+    "audio": {
+      "intro": { "src": "/audio/window-3-intro.m4a", "cue": "Listen first · why this window matters" },
+      "guide": { "src": "/audio/window-3-guide.m4a", "cue": "Narrate this guide" }
+    }
+  },
+  "4": {
+    "title": "",
+    "whyThisMatters": "",
+    "watchForThis": "",
+    "fullGuide": "",
+    "dismissLabel": "",
+    "audio": {
+      "intro": { "src": "/audio/window-4-intro.m4a", "cue": "Listen first · why this window matters" },
+      "guide": { "src": "/audio/window-4-guide.m4a", "cue": "Narrate this guide" }
+    }
+  },
+  "5": {
+    "title": "",
+    "whyThisMatters": "",
+    "watchForThis": "",
+    "fullGuide": "",
+    "dismissLabel": "",
+    "audio": {
+      "intro": { "src": "/audio/window-5-intro.m4a", "cue": "Listen first · why this window matters" },
+      "guide": { "src": "/audio/window-5-guide.m4a", "cue": "Narrate this guide" }
+    }
+  },
+  "6": {
+    "title": "",
+    "whyThisMatters": "",
+    "watchForThis": "",
+    "fullGuide": "",
+    "dismissLabel": "",
+    "audio": {
+      "intro": { "src": "/audio/window-6-intro.m4a", "cue": "Listen first · why this window matters" },
+      "guide": { "src": "/audio/window-6-guide.m4a", "cue": "Narrate this guide" }
+    }
+  }
+}

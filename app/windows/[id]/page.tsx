@@ -184,7 +184,11 @@ export default function WindowViewPage() {
 
       {/* Sits directly beneath the top rail, so it is adjacent to the window's
           own intro prose on open without the shell touching the document. */}
-      <AudioCue audio={content?.audio ?? null} windowId={current} />
+      <AudioCue
+        audio={content?.introAudio ?? null}
+        windowId={current}
+        purpose="window intro narration"
+      />
 
       <WindowStrip
         current={current}
