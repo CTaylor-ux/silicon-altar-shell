@@ -37,6 +37,8 @@ type Props = {
   onScroll?: (windowId: number, pos: { x: number; y: number }) => void;
   onNav?: (key: 'ArrowLeft' | 'ArrowRight') => void;
   onTargetMiss?: (entryId: string) => void;
+  /** Reveals build-provenance chrome. Members never see it. */
+  operator?: boolean;
 };
 
 export default function WindowFrame({
@@ -49,6 +51,7 @@ export default function WindowFrame({
   onScroll,
   onNav,
   onTargetMiss,
+  operator = false,
 }: Props) {
   const ref = useRef<HTMLIFrameElement>(null);
   const ready = useRef(false);
@@ -122,7 +125,7 @@ export default function WindowFrame({
       <iframe
         ref={ref}
         className={styles.frame}
-        src={windowSrc(windowId)}
+        src={windowSrc(windowId, operator)}
         title={`Window ${windowId}`}
         loading={active ? 'eager' : 'lazy'}
       />

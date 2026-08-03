@@ -38,6 +38,14 @@ export default function WindowViewPage() {
   /** null = closed. Set to a window id when the guide should be showing. */
   const [guideFor, setGuideFor] = useState<number | null>(null);
 
+  /** Operator view (?operator=1) reveals build-provenance chrome inside the
+   *  window that members must never see. Read from location rather than
+   *  useSearchParams to avoid forcing a Suspense boundary on this route. */
+  const [operator, setOperator] = useState(false);
+  useEffect(() => {
+    setOperator(new URLSearchParams(window.location.search).get('operator') === '1');
+  }, []);
+
   const current = state.currentWindow;
   const content = getWindowContent(current);
   const meta = getWindow(current);
@@ -197,6 +205,7 @@ export default function WindowViewPage() {
         scroll={state.scroll}
         onScroll={onScroll}
         onNav={onNav}
+        operator={operator}
       />
 
       <QueryBar
