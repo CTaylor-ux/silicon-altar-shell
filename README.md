@@ -104,12 +104,11 @@ height (60px) and the sticky offsets stay at 0 and 65 in both views.
 
 ## Swapping guide copy and audio
 
-Both live in **`lib/window-content.ts`**, keyed by window id. Neither component
-knows anything about a specific window, so replacing content changes the product
-without touching wiring.
-
-Edit **`lib/guides.json`** (not `window-content.ts`, which only merges it with
-the fallback):
+Both live in **`lib/guides.json`**, keyed by window id, one record per window so
+copy and audio swap as a unit. Neither component knows anything about a specific
+window, so replacing content changes the product without touching wiring.
+(`lib/window-content.ts` only merges that file with the fallback — don't edit
+copy there.)
 
 ```jsonc
 "3": {
