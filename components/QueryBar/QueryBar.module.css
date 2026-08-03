@@ -227,6 +227,7 @@
 .tierB { color: var(--steel); border-color: rgba(143,166,184,.45); }
 .tierC { color: var(--umber); border-color: rgba(176,124,74,.45); }
 .tierD { color: var(--dim);   border-color: var(--bdr2); }
+.tierE { color: var(--dim);   border-color: var(--bdr2); }
 
 .railTitle {
   font-size: 12px;

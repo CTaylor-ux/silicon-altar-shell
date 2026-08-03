@@ -18,6 +18,8 @@ import QueryBar from '@/components/QueryBar/QueryBar';
 import CompanionGuide from '@/components/CompanionGuide/CompanionGuide';
 import AudioCue from '@/components/AudioCue/AudioCue';
 import GlossaryPopover, { type Anchor } from '@/components/GlossaryPopover/GlossaryPopover';
+import LocatePanel from '@/components/LocatePanel/LocatePanel';
+import type { LocateHit } from '@/lib/locate';
 import { useSession } from '@/lib/session';
 import { query, RetrievalError, type Target } from '@/lib/retrieval';
 import { clampWindowId, getWindow, WINDOW_COUNT } from '@/lib/windows';
@@ -48,6 +50,8 @@ export default function WindowViewPage() {
 
   /** Active glossary token + where it sits inside the frame. */
   const [gloss, setGloss] = useState<{ token: string; anchor: Anchor } | null>(null);
+
+  const [locateOpen, setLocateOpen] = useState(false);
 
   /** Operator view (?operator=1) reveals build-provenance chrome inside the
    *  window that members must never see. Read from location rather than
@@ -183,7 +187,7 @@ export default function WindowViewPage() {
       // While the guide is up it owns the keyboard. It also stops propagation
       // in the capture phase; this is the second line of defence so a future
       // refactor cannot accidentally let Esc skip past it to the selector.
-      if (guideOpen) return;
+      if (guideOpen || locateOpen) return;
       const el = e.target as HTMLElement | null;
       if (el && /^(INPUT|TEXTAREA)$/.test(el.tagName)) {
         if (e.key === 'Escape') (el as HTMLInputElement).blur();
@@ -195,7 +199,7 @@ export default function WindowViewPage() {
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [go, current, backToSelector, guideOpen]);
+  }, [go, current, backToSelector, guideOpen, locateOpen]);
 
   if (!state.hydrated) return <div className={styles.boot} />;
 
@@ -208,6 +212,7 @@ export default function WindowViewPage() {
         onOpenGuide={openGuide}
         legendOpen={legendOpen}
         onToggleLegend={() => setLegendOpen((v) => !v)}
+        onOpenLocate={() => setLocateOpen(true)}
       />
 
       {/* Sits directly beneath the top rail, so it is adjacent to the window's
@@ -259,6 +264,22 @@ export default function WindowViewPage() {
           onDismiss={dismissGuide}
         />
       )}
+
+      <LocatePanel
+        open={locateOpen}
+        onClose={() => setLocateOpen(false)}
+        onGoToEntry={(hit: LocateHit) => {
+          setLocateOpen(false);
+          goToTarget({
+            entryId: hit.id,
+            windowId: hit.window,
+            year: hit.year.display,
+            lane: hit.lane,
+            tier: hit.tier,
+            title: hit.title,
+          });
+        }}
+      />
 
       {/* FUTURE: PRD §2.1 Layer 3 (invite-only source repository) and §4.3
           researcher tier gate the dossier overlay from here. Not in scope. */}

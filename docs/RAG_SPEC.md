@@ -1,6 +1,7 @@
 # Silicon Altar — Query Layer Spec v1
 
-**Status:** proposed, not built. **Scope:** Locate + Converse. **Branch:** to be created.
+**Status:** §1 and §2 BUILT and verified on branch `locate-affordance`. §3 onward proposed.
+**Scope:** Locate + Converse.
 
 This specifies the two affordances that make the query layer real: a deterministic
 **Locate** lookup, and a multi-turn **Converse** surface with per-claim provenance.
@@ -142,14 +143,35 @@ windows themselves teach. `laneSpread` drives a small "what was running" summary
 Each hit is a target: clicking scrolls and highlights the row through the existing
 `postMessage` bridge, unchanged.
 
-### 2.4 Acceptance
+### 2.4 Acceptance — verified against the shipped implementation
 
-- `year: 1120` returns ≥ 1 hit, all in W0, including the ~1100 Templar cluster
-  and the 1139 papal grant.
-- `year: 1700` returns hits from **both** W2 and W3 (their ranges overlap).
-- `year: 1652, laneKeys: ['legal']` returns `w3-1652-legal`.
-- No query returns zero hits for any year between 1000 and 2029.
-- Response is computed without a network call and is byte-identical across runs.
+| query | result |
+|---|---|
+| `1120` | **19 hits, W0 only.** Includes the five `711 to 1248` Al-Andalus rows at offset 0, the 1095 First Crusade cluster, the ~1100 Templar cluster, and 1139 Omne Datum |
+| `1700` | **64 hits, spanning W2 and W3** |
+| `1652` + `lane: 'legal'` | **19 hits across W1/W2/W3**, includes `w3-1652-legal` |
+| every year 1000–2029 | non-empty ✅ |
+| same query twice | byte-identical ✅ |
+| `-300000000` (deep time) | 8 hits, reaches `~300 Ma` and `338K BP` ✅ |
+
+**Two corrections to the earlier prototype**, both of which the shipped code gets
+right and the prototype got wrong:
+
+1. **Range entries.** `1120` falls *inside* `711 to 1248`, so Al-Andalus as a
+   governed estate is genuinely part of what was running at 1120. Distance to a
+   range entry is 0 anywhere inside it. The prototype compared only against
+   `start` and dropped all five rows.
+2. **Neighbour selection.** §2.2 says "the nearest `neighbors` entries **on each
+   side**." The prototype took `neighbors * 2` nearest overall, which is a
+   different rule and returns fewer hits when one side is sparse. The shipped
+   code implements the spec; the prototype's 16 was the deviation, not the target.
+
+The `1652 legal` case reaches W1 because eight-nearest-before within a single lane
+crosses the W1/W2 boundary at 1602. That is correct: the reader asked what is near
+1652 in the legal lane, and the answer legitimately predates the window.
+
+Hits pulled in as neighbours rather than falling inside the span are rendered
+dimmed, so "nearby" is visually distinct from "in the window."
 
 ---
 

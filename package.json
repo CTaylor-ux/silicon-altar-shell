@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "prepare-windows": "node scripts/prepare-windows.mjs",
-    "dev": "npm run prepare-windows && next dev -p 3210",
-    "build": "npm run prepare-windows && next build",
-    "start": "next start -p 3210"
+    "dev": "npm run prepare-windows && npm run prepare-corpus && next dev -p 3210",
+    "build": "npm run prepare-windows && npm run prepare-corpus && next build",
+    "start": "next start -p 3210",
+    "prepare-corpus": "node scripts/prepare-corpus.mjs"
   },
   "dependencies": {
     "next": "15.1.6",

@@ -20,7 +20,9 @@ export type Target = {
   windowId: number;
   year: string;
   lane: string;
-  tier: 'A' | 'B' | 'C' | 'D';
+  /** A-E is the corpus's declared vocabulary (STREAMS_LEGEND tier-legend).
+   *  Only A/B/C have instances today; D and E are valid and unused. */
+  tier: 'A' | 'B' | 'C' | 'D' | 'E';
   title: string;
 };
 

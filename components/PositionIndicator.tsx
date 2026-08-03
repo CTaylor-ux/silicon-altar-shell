@@ -18,6 +18,7 @@ type Props = {
   onOpenGuide: () => void;
   legendOpen: boolean;
   onToggleLegend: () => void;
+  onOpenLocate: () => void;
 };
 
 export default function PositionIndicator({
@@ -27,6 +28,7 @@ export default function PositionIndicator({
   onOpenGuide,
   legendOpen,
   onToggleLegend,
+  onOpenLocate,
 }: Props) {
   const w = getWindow(current);
   const atStart = current === 0;
@@ -67,6 +69,20 @@ export default function PositionIndicator({
             ☰
           </span>
           <span className="mono">Legend</span>
+        </button>
+
+        {/* Deterministic year lookup. Deliberately not in the query bar: a
+            lookup and a conversation are different jobs, and keeping them
+            apart means the query bar survives the conversational layer. */}
+        <button
+          className={styles.guide}
+          onClick={onOpenLocate}
+          title="Locate a year across the windows"
+        >
+          <span className={styles.guideGlyph} aria-hidden>
+            ⌖
+          </span>
+          <span className="mono">Locate</span>
         </button>
       </div>
 

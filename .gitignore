@@ -9,3 +9,4 @@ next-env.d.ts
 # Derived from the audit repo by scripts/prepare-windows.mjs.
 # Never edit by hand; never commit. Run `npm run prepare-windows`.
 public/windows/
+lib/corpus.generated.json
