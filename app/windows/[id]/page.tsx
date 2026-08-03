@@ -17,11 +17,16 @@ import PositionIndicator from '@/components/PositionIndicator';
 import QueryBar from '@/components/QueryBar/QueryBar';
 import CompanionGuide from '@/components/CompanionGuide/CompanionGuide';
 import AudioCue from '@/components/AudioCue/AudioCue';
+import GlossaryPopover, { type Anchor } from '@/components/GlossaryPopover/GlossaryPopover';
 import { useSession } from '@/lib/session';
 import { query, RetrievalError, type Target } from '@/lib/retrieval';
 import { clampWindowId, getWindow, WINDOW_COUNT } from '@/lib/windows';
 import { getWindowContent } from '@/lib/window-content';
 import styles from './window.module.css';
+
+/** Must track --topbar-h / --audiobar-h in styles/tokens.css. */
+const TOPBAR_H = 44;
+const AUDIOBAR_H = 34;
 
 export default function WindowViewPage() {
   const params = useParams<{ id: string }>();
@@ -37,6 +42,12 @@ export default function WindowViewPage() {
 
   /** null = closed. Set to a window id when the guide should be showing. */
   const [guideFor, setGuideFor] = useState<number | null>(null);
+
+  /** Legend starts collapsed (item D); in-place help replaces it. */
+  const [legendOpen, setLegendOpen] = useState(false);
+
+  /** Active glossary token + where it sits inside the frame. */
+  const [gloss, setGloss] = useState<{ token: string; anchor: Anchor } | null>(null);
 
   /** Operator view (?operator=1) reveals build-provenance chrome inside the
    *  window that members must never see. Read from location rather than
@@ -96,6 +107,13 @@ export default function WindowViewPage() {
   }, [current, dispatch]);
 
   const openGuide = useCallback(() => setGuideFor(current), [current]);
+
+  const onGlossary = useCallback(
+    (token: string, rect: Anchor) => setGloss({ token, anchor: rect }),
+    []
+  );
+  // A definition is about one token in one place; moving invalidates it.
+  useEffect(() => setGloss(null), [current]);
 
   /** Move the view to a target, crossing windows when the answer does. */
   const goToTarget = useCallback(
@@ -188,6 +206,8 @@ export default function WindowViewPage() {
         onGo={go}
         onBackToSelector={backToSelector}
         onOpenGuide={openGuide}
+        legendOpen={legendOpen}
+        onToggleLegend={() => setLegendOpen((v) => !v)}
       />
 
       {/* Sits directly beneath the top rail, so it is adjacent to the window's
@@ -206,6 +226,17 @@ export default function WindowViewPage() {
         onScroll={onScroll}
         onNav={onNav}
         operator={operator}
+        legendOpen={legendOpen}
+        onGlossary={onGlossary}
+      />
+
+      {/* Frame's top edge = position rail + audio strip. The frame reports
+          token rects in its own viewport space; this is the offset. */}
+      <GlossaryPopover
+        token={gloss?.token ?? null}
+        anchor={gloss?.anchor ?? null}
+        frameOffsetTop={TOPBAR_H + AUDIOBAR_H}
+        onClose={() => setGloss(null)}
       />
 
       <QueryBar

@@ -23,7 +23,10 @@ export type FrameMessage =
   | { type: 'SA_SCROLL'; x: number; y: number }
   | { type: 'SA_TARGET_HIT'; entryId: string }
   | { type: 'SA_TARGET_MISS'; entryId: string }
-  | { type: 'SA_NAV'; key: 'ArrowLeft' | 'ArrowRight' };
+  | { type: 'SA_NAV'; key: 'ArrowLeft' | 'ArrowRight' }
+  | { type: 'SA_GLOSSARY'; token: string; rect: FrameRect };
+
+export type FrameRect = { top: number; left: number; width: number; height: number };
 
 type Props = {
   windowId: number;
@@ -39,6 +42,10 @@ type Props = {
   onTargetMiss?: (entryId: string) => void;
   /** Reveals build-provenance chrome. Members never see it. */
   operator?: boolean;
+  /** Top-of-window legend visibility. Collapsed by default (item D). */
+  legendOpen?: boolean;
+  /** A definitional token was activated inside the frame. */
+  onGlossary?: (token: string, rect: FrameRect) => void;
 };
 
 export default function WindowFrame({
@@ -52,6 +59,8 @@ export default function WindowFrame({
   onNav,
   onTargetMiss,
   operator = false,
+  legendOpen = false,
+  onGlossary,
 }: Props) {
   const ref = useRef<HTMLIFrameElement>(null);
   const ready = useRef(false);
@@ -91,11 +100,28 @@ export default function WindowFrame({
           acked.current = d.entryId;
           onTargetMiss?.(d.entryId);
           break;
+        case 'SA_GLOSSARY':
+          onGlossary?.(d.token, d.rect);
+          break;
       }
     }
     window.addEventListener('message', onMessage);
     return () => window.removeEventListener('message', onMessage);
-  }, [windowId, initialScroll, onScroll, onNav, onTargetMiss, post]);
+  }, [windowId, initialScroll, onScroll, onNav, onTargetMiss, onGlossary, post]);
+
+  // Legend visibility is a root class inside the frame, so the shell owns the
+  // control without injecting one into the generated document. Retried briefly
+  // because the frame may still be parsing when the state first arrives.
+  useEffect(() => {
+    let tries = 0;
+    let timer: ReturnType<typeof setTimeout>;
+    const send = () => {
+      post({ type: 'SA_LEGEND', open: legendOpen });
+      if (tries++ < 25 && !ready.current) timer = setTimeout(send, 120);
+    };
+    send();
+    return () => clearTimeout(timer);
+  }, [legendOpen, post]);
 
   // Fire the target, retrying until the frame acknowledges it. Gating on a
   // SA_READY flag alone is racy: a neighbour frame that finished parsing before

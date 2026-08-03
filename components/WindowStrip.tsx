@@ -25,6 +25,8 @@ type Props = {
   onNav: (key: 'ArrowLeft' | 'ArrowRight') => void;
   onTargetMiss?: (entryId: string) => void;
   operator?: boolean;
+  legendOpen?: boolean;
+  onGlossary?: (token: string, rect: { top: number; left: number; width: number; height: number }) => void;
 };
 
 export default function WindowStrip({
@@ -36,6 +38,8 @@ export default function WindowStrip({
   onNav,
   onTargetMiss,
   operator,
+  legendOpen,
+  onGlossary,
 }: Props) {
   const mounted = [current - 1, current, current + 1].filter(
     (i) => i >= 0 && i < WINDOW_COUNT
@@ -56,6 +60,8 @@ export default function WindowStrip({
           onNav={onNav}
           onTargetMiss={onTargetMiss}
           operator={operator}
+          legendOpen={legendOpen}
+          onGlossary={id === current ? onGlossary : undefined}
         />
       ))}
     </div>

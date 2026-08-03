@@ -120,3 +120,8 @@
   background: var(--bright);
   width: 30px;
 }
+
+.guideOn {
+  color: var(--bright);
+  border-color: var(--dim);
+}
