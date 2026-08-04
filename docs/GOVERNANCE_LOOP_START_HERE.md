@@ -4,9 +4,16 @@
 layer into the C1/C2/C3 governance pipeline.
 
 Date of handoff: 2026-08-03
-Branch: `answering-layer` — 7 commits ahead of `main`, unmerged.
-`locate-affordance` (2 of those 7) is unmerged beneath it.
-`main` HEAD is `e60171c` "Spec the query layer: Locate + Converse".
+
+**Work on `main`.** Everything described below is merged there: Locate, the
+answering layer, and this document. The `answering-layer`, `locate-affordance`
+and `guide-and-glossary` branches are fully contained in `main` and are safe to
+delete.
+
+Commit hashes changed on 2026-08-03 after the eight most recent commits were
+re-authored from a client GitHub account to CTaylor-ux. The pre-rewrite state
+is retained in `refs/original/` and is not pushed. Any hash referenced in an
+older document will not resolve.
 
 ---
 
