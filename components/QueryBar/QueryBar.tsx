@@ -76,6 +76,12 @@ export default function QueryBar({
      burst closes over the same stale value, so 24 arrow presses moved the bar
      one step instead of twenty-four. Key repeat would stutter identically. */
   const heightRef = useRef(DEFAULT_H);
+  /* Set the moment the reader drags, nudges, or clicks Expand. From then on
+     the panel stops sizing itself: an app that keeps overriding a height you
+     chose is worse than one that never helps. */
+  const userResized = useRef(false);
+  /** Top of the newest exchange, so reading starts at its first line. */
+  const latestRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.documentElement.style.setProperty('--querybar-h', `${height}px`);
@@ -95,7 +101,8 @@ export default function QueryBar({
     };
   }, []);
 
-  const applyHeight = (px: number) => {
+  const applyHeight = (px: number, manual = true) => {
+    if (manual) userResized.current = true;
     const clamped = Math.max(MIN_H, Math.min(px, maxH()));
     heightRef.current = clamped;
     setHeight(clamped);
@@ -143,12 +150,44 @@ export default function QueryBar({
 
   const expanded = height > DEFAULT_H + 40;
 
-  /* Pin to the newest exchange. Scrollback is only useful if arriving at it
-     puts you at the live end; landing at the top of a long history would mean
-     scrolling down to find the answer you just asked for. */
+  /* Size the panel to the answer that just arrived.
+     
+     Before this, an answer landed in a 222px slot and the reader had to go and
+     get it — expand the panel by hand every single time, for something they
+     had just asked for. The panel knows how tall the answer is; it should say
+     so.
+     
+     Capped at 62% of the viewport so the timeline above never disappears, and
+     skipped entirely once the reader has set a height themselves. */
+  useEffect(() => {
+    if (latest?.status !== 'answered' || userResized.current) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    const chrome = heightRef.current - el.clientHeight; // rail + composer + padding
+    const wanted = el.scrollHeight + chrome;
+    if (wanted > heightRef.current) {
+      applyHeight(Math.min(wanted, Math.round(window.innerHeight * 0.62)), false);
+    }
+  }, [latest?.id, latest?.status]);
+
+  /* Land on the FIRST line of the newest exchange, not the last.
+     
+     This used to pin to the bottom of the scroll area, which is right for a
+     chat transcript and wrong for a long-form answer: it dropped the reader at
+     the end of the text they were about to read. Measured by rect rather than
+     offsetTop so it does not depend on which ancestor happens to be
+     positioned. */
   useEffect(() => {
     const el = scrollRef.current;
-    if (el) el.scrollTop = el.scrollHeight;
+    if (!el) return;
+    const blk = latestRef.current;
+    if (blk) {
+      const b = blk.getBoundingClientRect();
+      const c = el.getBoundingClientRect();
+      el.scrollTop = Math.max(0, el.scrollTop + (b.top - c.top));
+    } else {
+      el.scrollTop = el.scrollHeight;
+    }
   }, [latest?.id, latest?.status, height]);
 
   // "/" focuses the query bar from anywhere in the shell.
@@ -243,22 +282,24 @@ export default function QueryBar({
           <PastExchange key={ex.id} exchange={ex} onGoToTarget={onGoToTarget} />
         ))}
 
-        {latest?.status === 'thinking' && <ThinkingState question={latest.question} />}
+        <div ref={latestRef}>
+          {latest?.status === 'thinking' && <ThinkingState question={latest.question} />}
 
-        {latest?.status === 'error' && (
-          <ErrorState question={latest.question} message={latest.error} onRetry={onRetry} />
-        )}
+          {latest?.status === 'error' && (
+            <ErrorState question={latest.question} message={latest.error} onRetry={onRetry} />
+          )}
 
-        {latest?.status === 'empty' && <EmptyState question={latest.question} />}
+          {latest?.status === 'empty' && <EmptyState question={latest.question} />}
 
-        {latest?.status === 'answered' && latest.result && (
-          <AnsweredState
-            question={latest.question}
-            result={latest.result}
-            onGoToTarget={onGoToTarget}
-            onGoToEntry={onGoToEntry}
-          />
-        )}
+          {latest?.status === 'answered' && latest.result && (
+            <AnsweredState
+              question={latest.question}
+              result={latest.result}
+              onGoToTarget={onGoToTarget}
+              onGoToEntry={onGoToEntry}
+            />
+          )}
+        </div>
       </div>
 
       {latest?.status === 'answered' && active && (
