@@ -68,7 +68,9 @@ const WINDOW_META = corpus.windows as {
 
 const LANE_ORDER = new Map(LANES.map((l, i) => [l.key, i]));
 
-export const DEFAULT_SPAN = 25;
+/** "Immediately before, during, and immediately after" — not half a century.
+ *  At 25 a dense window like W5 (~2.5 entries/year) returned 102 rows. */
+export const DEFAULT_SPAN = 10;
 export const DEFAULT_NEIGHBORS = 8;
 
 /** Entries whose normalized year sits within a range, inclusive. */

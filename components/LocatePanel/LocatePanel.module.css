@@ -3,8 +3,15 @@
   inset: 0;
   background: rgba(8, 10, 12, 0.72);
   backdrop-filter: blur(1.5px);
-  display: grid;
-  place-items: start center;
+  /* Flex, not grid. Under `display:grid; place-items:start`, the row is
+     auto-sized, so the panel's `max-height:100%` resolved against a row that
+     was itself sized by the panel: circular, never clamped. The panel grew to
+     1824px in a 1000px viewport, .body never overflowed, and nothing could
+     scroll. A flex item's percentage max-height resolves against the
+     container's definite content box instead. */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   z-index: 55;
   padding: 60px 32px 32px;
   animation: fadeIn 200ms var(--ease);
@@ -317,4 +324,63 @@
   display: flex;
   justify-content: space-between;
   gap: 12px;
+}
+
+/* ------------------------------------------------------- widen control */
+
+.spans {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.spansLabel {
+  font-size: 8.5px;
+  color: var(--dim);
+  margin-right: 2px;
+}
+
+.span {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--dim);
+  border: 1px solid var(--bdr2);
+  border-radius: 3px;
+  padding: 3px 9px;
+  transition: color 140ms var(--ease), border-color 140ms var(--ease);
+}
+.span:hover {
+  color: var(--bright);
+  border-color: var(--dim);
+}
+.spanOn {
+  color: var(--bright);
+  border-color: var(--dim);
+  background: var(--panel2);
+}
+
+/* --------------------------------------------- the "you are here" marker */
+
+.anchor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 8px;
+  padding-left: 4px;
+}
+
+.anchor::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--sig);
+  opacity: 0.5;
+}
+
+.anchorLabel {
+  font-size: 10px;
+  color: var(--sig);
+  letter-spacing: 1.4px;
+  flex: none;
 }

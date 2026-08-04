@@ -13,7 +13,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { parseYearInput, type LocateResult, type LocateHit } from '@/lib/locate';
+import { parseYearInput, DEFAULT_SPAN, type LocateResult, type LocateHit } from '@/lib/locate';
 import { laneVar } from '@/lib/windows';
 import styles from './LocatePanel.module.css';
 
@@ -25,16 +25,21 @@ type Props = {
 };
 
 const EXAMPLES = ['1120', '1492', '1652', '1718', '1863', '1933'];
+const SPANS = [5, 10, 25, 50];
 
 export default function LocatePanel({ open, onClose, onGoToEntry }: Props) {
   const [raw, setRaw] = useState('');
   const [result, setResult] = useState<LocateResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [span, setSpan] = useState<number>(DEFAULT_SPAN);
   const inputRef = useRef<HTMLInputElement>(null);
   const restoreTo = useRef<HTMLElement | null>(null);
+  /** The "you are here" row. Scrolled into view so the queried year is where
+   *  reading starts, rather than 60 rows down a chronological list. */
+  const anchorRef = useRef<HTMLDivElement>(null);
 
-  const run = useCallback(async (yearText: string) => {
+  const run = useCallback(async (yearText: string, spanYears: number) => {
     const year = parseYearInput(yearText);
     if (year === null) {
       setError('Enter a year, for example 1120.');
@@ -47,7 +52,7 @@ export default function LocatePanel({ open, onClose, onGoToEntry }: Props) {
       const res = await fetch('/api/locate', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ year }),
+        body: JSON.stringify({ year, spanYears }),
       });
       if (!res.ok) throw new Error(String(res.status));
       setResult((await res.json()) as LocateResult);
@@ -58,6 +63,16 @@ export default function LocatePanel({ open, onClose, onGoToEntry }: Props) {
       setLoading(false);
     }
   }, []);
+
+  /* Bring the queried year into view once the list has committed.
+     Deliberately an effect and not requestAnimationFrame: rAF does not fire
+     reliably in this app's rendering context (the same reason the in-window
+     scroll animation is timer-driven), and an effect is guaranteed to run
+     after the DOM the ref points at actually exists. */
+  useEffect(() => {
+    if (!result) return;
+    anchorRef.current?.scrollIntoView({ block: 'center', behavior: 'auto' });
+  }, [result]);
 
   useEffect(() => {
     if (!open) return;
@@ -77,6 +92,12 @@ export default function LocatePanel({ open, onClose, onGoToEntry }: Props) {
     };
   }, [open, onClose]);
 
+  // The first window group that actually contains the queried year. Only that
+  // group's marker carries the ref, so scrollIntoView has one unambiguous
+  // target instead of whichever marker happened to render last.
+  const anchorWindowId =
+    result?.windows.find((w) => w.hits.some((h) => h.offsetYears >= 0))?.windowId ?? null;
+
   if (!open) return null;
 
   return (
@@ -95,7 +116,7 @@ export default function LocatePanel({ open, onClose, onGoToEntry }: Props) {
             className={styles.form}
             onSubmit={(e) => {
               e.preventDefault();
-              run(raw);
+              run(raw, span);
             }}
           >
             <input
@@ -126,6 +147,22 @@ export default function LocatePanel({ open, onClose, onGoToEntry }: Props) {
               'Shows what the corpus carries around that year, across every lane, in the windows it falls in.'}
           </p>
 
+          <div className={styles.spans}>
+            <span className={`${styles.spansLabel} mono`}>Window</span>
+            {SPANS.map((sp) => (
+              <button
+                key={sp}
+                className={`${styles.span} ${sp === span ? styles.spanOn : ''}`}
+                onClick={() => {
+                  setSpan(sp);
+                  if (raw.trim()) run(raw, sp);
+                }}
+              >
+                ±{sp}
+              </button>
+            ))}
+          </div>
+
           <div className={styles.examples}>
             {EXAMPLES.map((y) => (
               <button
@@ -133,7 +170,7 @@ export default function LocatePanel({ open, onClose, onGoToEntry }: Props) {
                 className={styles.example}
                 onClick={() => {
                   setRaw(y);
-                  run(y);
+                  run(y, span);
                 }}
               >
                 {y}
@@ -183,9 +220,21 @@ export default function LocatePanel({ open, onClose, onGoToEntry }: Props) {
                     </span>
                   </div>
 
-                  {w.hits.map((h) => (
+                  {w.hits.map((h, i) => (
+                    <div key={`g-${h.id}`}>
+                      {/* the queried year, marked in place */}
+                      {h.offsetYears >= 0 &&
+                        (i === 0 || w.hits[i - 1].offsetYears < 0) && (
+                          <div
+                            ref={w.windowId === anchorWindowId ? anchorRef : undefined}
+                            className={styles.anchor}
+                          >
+                            <span className={`${styles.anchorLabel} mono`}>
+                              {result.query.year}
+                            </span>
+                          </div>
+                        )}
                     <button
-                      key={h.id}
                       className={`${styles.hit} ${h.inSpan ? '' : styles.outOfSpan}`}
                       onClick={() => onGoToEntry(h)}
                       title={h.inSpan ? 'Jump to this row' : 'Nearby. Jump to this row'}
@@ -224,6 +273,7 @@ export default function LocatePanel({ open, onClose, onGoToEntry }: Props) {
                         )}
                       </span>
                     </button>
+                    </div>
                   ))}
                 </section>
               ))}
