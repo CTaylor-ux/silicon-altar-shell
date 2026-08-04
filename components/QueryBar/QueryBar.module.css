@@ -332,3 +332,151 @@
   opacity: 0.35;
   cursor: default;
 }
+
+/* ===================================================== answering layer v1 */
+
+.barExpanded {
+  height: min(62vh, 620px);
+}
+
+.expand {
+  position: absolute;
+  top: -22px;
+  right: 12px;
+  font-size: 8.5px;
+  color: var(--dim);
+  background: var(--panel);
+  border: 1px solid var(--bdr2);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  padding: 4px 10px;
+  letter-spacing: 0.8px;
+  z-index: 21;
+}
+.expand:hover { color: var(--bright); }
+
+/* Inline citation. Reads as a pointer, never as part of the sentence. */
+.cite {
+  font-size: 8.5px;
+  color: var(--sig);
+  border: 1px solid var(--bdr2);
+  border-radius: 2px;
+  padding: 0 4px;
+  margin: 0 2px;
+  vertical-align: 1.5px;
+  letter-spacing: 0.4px;
+  transition: border-color 140ms var(--ease);
+}
+button.cite:hover { border-color: var(--sig); }
+
+/* ---- the outside region -------------------------------------------------
+   Structural separation, not a badge. Different background, its own rule and
+   left inset, so familiarity cannot erode it the way it erodes a label. */
+
+.outside {
+  margin-top: 14px;
+  padding: 11px 14px;
+  background: var(--panel2);
+  border-left: 2px solid var(--umber);
+  border-radius: 0 3px 3px 0;
+}
+
+.outsideTag {
+  display: block;
+  font-size: 8.5px;
+  color: var(--umber);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.outsideText {
+  margin: 0 0 8px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--dim);
+  max-width: 108ch;
+}
+.outsideText:last-child { margin-bottom: 0; }
+
+/* ---- the situating band ------------------------------------------------- */
+
+.nearby {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--bdr-faint);
+}
+
+.nearbyGroup { margin-bottom: 12px; }
+.nearbyGroup:last-child { margin-bottom: 0; }
+
+.nearbyYear {
+  display: block;
+  font-size: 8.5px;
+  color: var(--dim);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.nearbyRows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.nearbyRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--dim);
+  border: 1px solid var(--bdr2);
+  border-radius: 3px;
+  padding: 4px 9px;
+  max-width: 100%;
+  transition: color 140ms var(--ease), border-color 140ms var(--ease);
+}
+.nearbyRow:hover {
+  color: var(--bright);
+  border-color: var(--dim);
+}
+
+.nearbyRowYear { font-size: 9px; color: var(--dim); flex: none; }
+
+.nearbyRowTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 42ch;
+}
+
+/* ---- the citation guard, surfaced rather than swallowed ----------------- */
+
+.stripped {
+  margin: 12px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--txt);
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  border-left: 2px solid var(--crimson);
+  padding-left: 10px;
+  max-width: 100ch;
+}
+
+.strippedTag {
+  font-size: 8.5px;
+  color: var(--crimson);
+  flex: none;
+  letter-spacing: 0.8px;
+}
+
+.usage {
+  margin: 10px 0 0;
+  font-size: 8.5px;
+  color: var(--dim);
+  letter-spacing: 0.6px;
+  opacity: 0.7;
+}

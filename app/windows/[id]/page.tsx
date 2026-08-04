@@ -129,6 +129,22 @@ export default function WindowViewPage() {
     [current, dispatch]
   );
 
+  /** A LocateHit and a Target are the same row seen by two features. One
+   *  mapping, used by both the Locate panel and the answer's situating band. */
+  const goToHit = useCallback(
+    (hit: LocateHit) => {
+      goToTarget({
+        entryId: hit.id,
+        windowId: hit.window,
+        year: hit.year.display,
+        lane: hit.lane,
+        tier: hit.tier,
+        title: hit.title,
+      });
+    },
+    [goToTarget]
+  );
+
   const runQuery = useCallback(
     async (q: string) => {
       abort.current?.abort();
@@ -139,7 +155,19 @@ export default function WindowViewPage() {
       dispatch({ type: 'ASK', id, question: q });
 
       try {
-        const result = await query(q, controller.signal);
+        /* Prior turns, so the exchange is genuinely multi-turn: a reader can
+           push back on an answer rather than only re-query. Capped in the
+           route; capped again here so a long session cannot quietly inflate
+           the uncached portion of every request. */
+        const turns = state.history
+          .filter((h) => h.status === 'answered' && h.result)
+          .slice(-4)
+          .flatMap((h) => [
+            { role: 'user' as const, content: h.question },
+            { role: 'assistant' as const, content: h.result!.answer },
+          ]);
+
+        const result = await query(q, controller.signal, turns);
         dispatch({ type: 'ANSWER', id, result });
         // The answer points at the evidence — so move there without being asked.
         if (result.targets.length) goToTarget(result.targets[0]);
@@ -152,7 +180,7 @@ export default function WindowViewPage() {
         });
       }
     },
-    [dispatch, goToTarget]
+    [dispatch, goToTarget, state.history]
   );
 
   const step = useCallback(
@@ -250,6 +278,7 @@ export default function WindowViewPage() {
         onSubmit={runQuery}
         onStep={step}
         onGoToTarget={goToTarget}
+        onGoToEntry={goToHit}
         onRetry={retry}
       />
 
@@ -270,14 +299,7 @@ export default function WindowViewPage() {
         onClose={() => setLocateOpen(false)}
         onGoToEntry={(hit: LocateHit) => {
           setLocateOpen(false);
-          goToTarget({
-            entryId: hit.id,
-            windowId: hit.window,
-            year: hit.year.display,
-            lane: hit.lane,
-            tier: hit.tier,
-            title: hit.title,
-          });
+          goToHit(hit);
         }}
       />
 

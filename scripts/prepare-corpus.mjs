@@ -37,6 +37,21 @@ const REPO =
 
 const OUT = path.join(process.cwd(), 'lib', 'corpus.generated.json');
 
+/**
+ * The second artifact: the corpus as the model sees it.
+ *
+ * corpus.generated.json is title-level and drives Locate. It deliberately
+ * carries no bodies, because Locate never needs them.
+ *
+ * The answering layer does. An answer built from titles alone reads like a
+ * database report, which is the failure mode the whole design is trying to
+ * avoid. So this emits the full text: bodies, thread links, thread
+ * memberships, plus the corpus's own scope note and framework spine, which
+ * tell the model what this corpus is FOR. Without those two fields the model
+ * cannot tell a genuine gap from a deliberate scoping decision.
+ */
+const PROMPT_OUT = path.join(process.cwd(), 'lib', 'corpus.prompt.txt');
+
 function readEnvLocal(key) {
   try {
     const raw = fs.readFileSync(path.join(process.cwd(), '.env.local'), 'utf8');
@@ -177,6 +192,67 @@ fs.writeFileSync(
   'utf8'
 );
 
+// ---------------------------------------------------------------------------
+// The prompt serialization
+//
+// Stable ordering, because this block is the cached prefix. Any reordering
+// between runs invalidates the cache and costs a full write (~$0.92) on the
+// next call. Sorted by id so the output is byte-identical across runs when the
+// corpus has not changed.
+// ---------------------------------------------------------------------------
+function serializeEntry(e) {
+  const head = [
+    `[${e.id}]`,
+    `W${e.window}`,
+    e.year_label,
+    e.lane,
+    `T${e.tier}`,
+    e.milestone ? 'MILESTONE' : null,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const lines = [head, e.title, (e.body ?? '').trim()];
+  if (e.thread_links?.length) lines.push(`links: ${e.thread_links.join(', ')}`);
+  if (e.thread_memberships?.length) lines.push(`threads: ${e.thread_memberships.join(', ')}`);
+  return lines.filter(Boolean).join('\n');
+}
+
+const promptBody = [...entries]
+  .sort((a, b) => String(a.id).localeCompare(String(b.id)))
+  .map(serializeEntry)
+  .join('\n\n');
+
+const promptText = [
+  'THE SILICON ALTAR CORPUS',
+  '',
+  `Entries: ${entries.length}. Windows: ${windowsList.length}.`,
+  '',
+  'The corpus states its own scope and spine. Both are load-bearing: they are',
+  'how you tell a genuine gap from something deliberately out of scope.',
+  '',
+  `SCOPE NOTE: ${entriesRaw.scope_note ?? '(none declared)'}`,
+  '',
+  `FRAMEWORK SPINE: ${entriesRaw.framework_spine ?? '(none declared)'}`,
+  '',
+  'WINDOWS:',
+  ...windowsList.map(
+    (w) => `  Window ${String(w.id).replace(/\D/g, '')}: ${w.name} (${w.year_range}) - ${w.entries_count} entries`
+  ),
+  '',
+  'Each entry below: [id] window year lane tier [MILESTONE], then title, then',
+  'body, then its curated links to other entries and its thread memberships.',
+  'Tier A is strongest evidence, E weakest. The links are hand-made by the',
+  'operator and are not inferences.',
+  '',
+  '---',
+  '',
+  promptBody,
+  '',
+].join('\n');
+
+fs.writeFileSync(PROMPT_OUT, promptText, 'utf8');
+
 // --- report ----------------------------------------------------------------
 const ce = rows.filter((r) => r.year.era === 'ce').length;
 const deep = rows.length - ce;
@@ -186,4 +262,11 @@ const ranges = rows.filter((r) => r.year.end !== null).length;
 console.log(`  ${rows.length}/${rows.length} entries normalized  (${ce} CE, ${deep} deep time)`);
 console.log(`  ${approx} approximate, ${ranges} ranges, 0 W0/W1 ordinal collisions`);
 console.log(`  ${(fs.statSync(OUT).size / 1024).toFixed(0)} KB -> lib/corpus.generated.json`);
+
+const promptKb = fs.statSync(PROMPT_OUT).size / 1024;
+console.log(
+  `  ${promptKb.toFixed(0)} KB -> lib/corpus.prompt.txt  (~${Math.round(
+    promptText.length / 3.6 / 1000
+  )}k tokens, the cached prefix)`
+);
 console.log('  Audit repo untouched (read-only).\n');
