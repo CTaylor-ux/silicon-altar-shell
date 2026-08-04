@@ -141,20 +141,33 @@ claims fail independently. That is `kind='correction'`, `route='corpus_touch'`.
 
 ## 5. What has to be built, in order
 
-### Phase 1 — Triage + record (no database)
+### Phase 1 — Triage + record ✅ BUILT 2026-08-04
 
-Append-only JSONL, shaped to C2's `candidate` columns so the migration later is
-a copy rather than a redesign.
+`lib/record.ts` + `scripts/records.mjs`. Every exchange appends to
+`records/queries.jsonl`; a triage call (Opus 5, effort low, forced JSON schema)
+flags the minority that are installable. Field names are C2's `candidate`
+columns verbatim, so the Neon move is a COPY.
 
-Two distinct things, do not conflate:
-- **Log every exchange.** `corpus-complete` answers are logged too, as evidence
-  of coverage and demand. This is the ledger's own rule.
-- **Stage only what is installable.** A correction, a new fact, a correlation.
-  If every exchange stages a candidate, the backlog drowns in a week.
+Review with `npm run records`: bare for the open queue, `--show <id>` for one in
+full with its decision history, `--set <id> <status> [reason]` for the C2
+lifecycle, `--demand` for which entries answers lean on, `--stale` for
+corrections whose target text has moved.
 
-Columns available today without extra work: `captured_at`, `trigger_context`
-(the question), `raw_content` (the answer), `surfaced_by`, `surface`, plus
-usage/cost. Citations map to `correlation_edge` rows with `dst_kind='corpus'`.
+`prepare-corpus.mjs` now emits a per-entry `contentHash`; a correction pins the
+hash of the text it argued with, which is what `--stale` compares.
+
+Structured output IS correct here — the opposite of the answering layer's call.
+Forcing a schema onto prose degrades prose; forcing one onto a classification is
+what a classification is.
+
+Triage runs on `claude-opus-5` per the project default. `claude-haiku-4-5` is a
+one-line change in `TRIAGE_MODEL` and roughly a quarter of the cost —
+the operator's decision, not one to make silently.
+
+**Verified:** a correction query staged `correction/corpus_touch` against
+`E-W0-010-01`; a plain date lookup logged as demand only. Status changes append
+rather than rewrite. Rejecting without a reason is refused. Stale detection
+proven by perturbing the derived corpus.
 
 ### Phase 2 — Extraction pass
 
@@ -218,8 +231,8 @@ correction targets a specific wording and you will want to know which.
   Indian law post-allotment, New Deal labour exclusions.
 
 **Not built, deliberately**
-Streaming, ledger write, operator/member posture split, on-demand dossier fetch,
-auth, deployment, rate limiting.
+Streaming, operator/member posture split, on-demand dossier fetch, auth,
+deployment, rate limiting. (The ledger write is now built — see Phase 1.)
 
 **Security note:** there is no rate limit. Not a problem on localhost. The day
 this is deployed without auth, it is an open tap on the API key at ~$0.09/query.
