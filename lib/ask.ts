@@ -237,6 +237,18 @@ export function situate(
     .map((id) => BY_ID.get(id)?.year.start)
     .filter((y): y is number => typeof y === 'number');
 
+  /* Weight, so relevance rather than chronology decides which bands survive.
+   *
+   * A year the model DECLARED is what the answer turned on. A year that merely
+   * appears under a citation may be a passing background reference. Counting
+   * both equally and then taking the earliest four produced a real failure: a
+   * question about 1513-1525 came back offering 1400, 1420 and 1454, because
+   * three incidental citations (Fugger 1367, the Reconquista, the Medici)
+   * sorted ahead of every year the question was about. */
+  const weight = new Map<number, number>();
+  for (const y of fromCitations) weight.set(y, (weight.get(y) ?? 0) + 1);
+  for (const y of parsed.years) weight.set(y, (weight.get(y) ?? 0) + 4);
+
   const candidates = Array.from(new Set([...fromCitations, ...parsed.years]))
     // Deep time (negative, or a 300-million-year orogeny) has no meaningful
     // "what else was happening that decade". Skip it rather than return noise.
@@ -258,9 +270,18 @@ export function situate(
     else clusters.push([y]);
   }
 
+  // Keep the four heaviest clusters, then restore chronological order for
+  // display. Ties break toward the later cluster: when an answer spans a long
+  // arc, the recent end is nearly always the part being asked about.
   const years = clusters
+    .map((c) => ({
+      label: Math.round((c[0] + c[c.length - 1]) / 2),
+      score: c.reduce((sum, y) => sum + (weight.get(y) ?? 0), 0),
+    }))
+    .sort((a, b) => b.score - a.score || b.label - a.label)
     .slice(0, 4)
-    .map((c) => Math.round((c[0] + c[c.length - 1]) / 2));
+    .sort((a, b) => a.label - b.label)
+    .map((c) => c.label);
 
   const alreadyShown = new Set(parsed.citedIds);
 

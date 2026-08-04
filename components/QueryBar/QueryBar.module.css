@@ -335,10 +335,6 @@
 
 /* ===================================================== answering layer v1 */
 
-.barExpanded {
-  height: min(62vh, 620px);
-}
-
 .expand {
   position: absolute;
   top: -22px;
@@ -479,4 +475,35 @@ button.cite:hover { border-color: var(--sig); }
   color: var(--dim);
   letter-spacing: 0.6px;
   opacity: 0.7;
+}
+
+/* ------------------------------------------------------------ drag handle */
+
+.handle {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 9px;
+  cursor: ns-resize;
+  z-index: 22;
+  display: grid;
+  place-items: center;
+  touch-action: none;
+}
+
+.handleGrip {
+  width: 46px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--bdr2);
+  transition: background 140ms var(--ease), width 140ms var(--ease);
+}
+.handle:hover .handleGrip,
+.handle:focus-visible .handleGrip {
+  background: var(--dim);
+  width: 84px;
+}
+.handle:focus-visible {
+  outline: none;
 }

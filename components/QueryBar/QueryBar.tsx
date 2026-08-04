@@ -21,6 +21,14 @@ import { SUGGESTED_QUERIES } from '@/lib/stub-index';
 import { laneLabel, laneVar, getWindow } from '@/lib/windows';
 import styles from './QueryBar.module.css';
 
+/** Floor: the input row and the target rail must never be draggable out of
+ *  reach. You should not be able to put this thing in a state where you cannot
+ *  type into it. */
+const MIN_H = 132;
+const DEFAULT_H = 222;
+const H_KEY = 'silicon-altar-querybar-h';
+const maxH = () => Math.round(window.innerHeight * 0.85);
+
 type Props = {
   latest: Exchange | null;
   targetIndex: number;
@@ -41,12 +49,88 @@ export default function QueryBar({
   onRetry,
 }: Props) {
   const [value, setValue] = useState('');
-  /* The bar is 222px, which was right when answers were two stub sentences.
-     A real answer is prose plus an outside region plus a situating band, and
-     reading that through a 130px slot would make the design look worse than it
-     is. Expanding is opt-in so the default still refuses to become a reader. */
-  const [expanded, setExpanded] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  /* The bar was a fixed 222px, which was right when answers were two stub
+     sentences. A real answer is prose plus an outside region plus a situating
+     band, and reading that through a 130px slot makes the design look worse
+     than it is.
+     
+     Height drives the --querybar-h custom property rather than a local style,
+     because WindowStrip is already inset by that same variable. Set it once
+     and the timeline above reflows to match for free. */
+  const [height, setHeight] = useState<number>(DEFAULT_H);
+  const dragging = useRef(false);
+  /* Synchronous mirror of `height`. State alone is not enough: every call in a
+     burst closes over the same stale value, so 24 arrow presses moved the bar
+     one step instead of twenty-four. Key repeat would stutter identically. */
+  const heightRef = useRef(DEFAULT_H);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--querybar-h', `${height}px`);
+  }, [height]);
+
+  // Restore the reader's chosen height, and hand the variable back on unmount
+  // so views without a query bar are not left with a stale inset.
+  useEffect(() => {
+    const saved = Number(sessionStorage.getItem(H_KEY));
+    if (saved >= MIN_H) {
+      const restored = Math.min(saved, maxH());
+      heightRef.current = restored;
+      setHeight(restored);
+    }
+    return () => {
+      document.documentElement.style.removeProperty('--querybar-h');
+    };
+  }, []);
+
+  const applyHeight = (px: number) => {
+    const clamped = Math.max(MIN_H, Math.min(px, maxH()));
+    heightRef.current = clamped;
+    setHeight(clamped);
+    try {
+      sessionStorage.setItem(H_KEY, String(clamped));
+    } catch {
+      // Non-fatal: remembering the height is a nicety.
+    }
+  };
+
+  /** Relative moves read the ref, not the render's closure, so bursts compose. */
+  const nudge = (delta: number) => applyHeight(heightRef.current + delta);
+
+  const onHandleDown = (e: React.PointerEvent) => {
+    e.preventDefault();
+    dragging.current = true;
+    // Capture is an optimisation, not a requirement: the move/up listeners are
+    // on window either way. Uncaught, a throw here would abort the handler
+    // before those listeners were attached and the drag would die silently.
+    try {
+      (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    } catch {
+      /* proceed without capture */
+    }
+
+    const move = (ev: PointerEvent) => {
+      if (!dragging.current) return;
+      // Dragging up grows the bar, so height is distance from the bottom.
+      applyHeight(window.innerHeight - ev.clientY);
+    };
+    const up = () => {
+      dragging.current = false;
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+
+  /** Keyboard equivalent, so the handle is not mouse-only. */
+  const onHandleKey = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowUp') { e.preventDefault(); nudge(40); }
+    if (e.key === 'ArrowDown') { e.preventDefault(); nudge(-40); }
+  };
+
+  const expanded = height > DEFAULT_H + 40;
 
   // "/" focuses the query bar from anywhere in the shell.
   useEffect(() => {
@@ -81,14 +165,29 @@ export default function QueryBar({
       latest.result.answer.length > 260);
 
   return (
-    <section
-      className={`${styles.bar} ${expanded ? styles.barExpanded : ''}`}
-      aria-label="Query the corpus"
-    >
+    <section className={styles.bar} aria-label="Query the corpus">
+      {/* Drag to resize. Sits on the top edge, full width, so it is findable
+          without being decorative. */}
+      <div
+        className={styles.handle}
+        onPointerDown={onHandleDown}
+        onKeyDown={onHandleKey}
+        onDoubleClick={() => applyHeight(expanded ? DEFAULT_H : Math.round(maxH() * 0.72))}
+        role="separator"
+        aria-orientation="horizontal"
+        aria-label="Resize the query panel"
+        aria-valuenow={height}
+        aria-valuemin={MIN_H}
+        tabIndex={0}
+        title="Drag to resize · double-click to toggle · ↑↓ when focused"
+      >
+        <span className={styles.handleGrip} aria-hidden />
+      </div>
+
       {hasBody && (
         <button
           className={`${styles.expand} mono`}
-          onClick={() => setExpanded((v) => !v)}
+          onClick={() => applyHeight(expanded ? DEFAULT_H : Math.round(maxH() * 0.72))}
           aria-expanded={expanded}
         >
           {expanded ? 'Collapse ▾' : 'Expand ▴'}
