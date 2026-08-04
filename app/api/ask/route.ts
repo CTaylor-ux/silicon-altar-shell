@@ -25,6 +25,11 @@ export const maxDuration = 120;
 const MODEL = 'claude-opus-5';
 const MAX_TOKENS = 8000;
 
+/** Rates for the triage model, used to fold its cost into the record. Keep in
+ *  step with TRIAGE_MODEL in lib/record.ts. */
+const TRIAGE_IN_PER_MTOK = 1;
+const TRIAGE_OUT_PER_MTOK = 5;
+
 /** Read once per server process. 356 KB off disk on every request would be
  *  wasteful, and the file only changes when prepare-corpus.mjs re-runs. */
 let CORPUS: string | null = null;
@@ -108,7 +113,7 @@ export async function POST(req: Request) {
     ((u.input_tokens ?? 0) * 5) / 1_000_000 +
     ((u.output_tokens ?? 0) * 25) / 1_000_000;
 
-  const usage = {
+  const usage: Record<string, number> = {
     cacheRead,
     cacheWrite,
     inputTokens: u.input_tokens ?? 0,
@@ -124,6 +129,14 @@ export async function POST(req: Request) {
    * that the capture step is working. */
   try {
     const t = await triage(client, question, parsed.answer, parsed.outside, parsed.citedIds);
+    /* Triage is a second model call and was missing from every cost figure
+       reported so far — the recorded usage covered the answering call only. */
+    const tu = t.usage ?? {};
+    const triageCost =
+      ((tu.input_tokens ?? 0) * TRIAGE_IN_PER_MTOK) / 1_000_000 +
+      ((tu.output_tokens ?? 0) * TRIAGE_OUT_PER_MTOK) / 1_000_000;
+    usage.triageCostUsd = Number(triageCost.toFixed(4));
+    usage.estimatedCostUsd = Number((usage.estimatedCostUsd + triageCost).toFixed(4));
     const rec = appendRecord({
       // No auth yet, so every exchange is the operator. When posture lands,
       // this is where surface 'A' (researcher) starts appearing.

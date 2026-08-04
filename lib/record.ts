@@ -264,10 +264,16 @@ to chase. Empty string if there is nothing.
 When installable is false, still fill kind and route with your best reading;
 they are ignored downstream.`;
 
-/** Opus 5, per the project default. Effort is low because this is extraction,
- *  not reasoning. Swapping to `claude-haiku-4-5` here is a one-line change and
- *  roughly a quarter of the cost — the operator's call, not mine. */
-const TRIAGE_MODEL = 'claude-opus-5';
+/* Haiku, not Opus, and this was the operator's call rather than mine.
+ *
+ * The project default is Opus 5 and downgrading for cost is not a decision to
+ * make quietly. The operator raised cost directly after the first seven real
+ * queries, which settles it. Triage is extraction and classification over an
+ * answer that has already been written — the reasoning happened upstream.
+ *
+ * ~$0.028/query on Opus 5 against ~$0.0055 here. Change the string back and
+ * update TRIAGE_IN/OUT_PER_MTOK in app/api/ask/route.ts to 5 and 25 to revert. */
+const TRIAGE_MODEL = 'claude-haiku-4-5';
 
 export async function triage(
   client: Anthropic,
