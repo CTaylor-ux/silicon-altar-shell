@@ -315,20 +315,70 @@
   color: var(--bright);
   transition: border-color 140ms var(--ease), box-shadow 140ms var(--ease);
 }
+/* The native placeholder is rendered invisible; the animated .ghostPrompt
+   span sits on top of it. Keeping the attribute costs nothing and preserves
+   the semantics for anything reading the DOM rather than the pixels. */
 .input::placeholder {
-  /* --txt, not --dim. This is the one label telling a reader what the panel is
-     for, and at --dim it disappeared into the chrome — the operator's report
-     was that the chat box is easy to miss entirely. Still short of --bright,
-     so it does not read as text already typed. */
-  color: var(--txt);
-  letter-spacing: 0.2px;
+  color: transparent;
 }
-.input:focus {
-  outline: none;
-  border-color: var(--dim);
-  /* A hairline lift on focus. Enough to say "you are here" without the panel
-     turning into a glowing box in a room this dark. */
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.03);
+
+.composerWrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
+/* The only thing telling a reader what this panel is for. At --dim it read as
+   chrome, so it is now the brightest text in the bar and breathes slowly —
+   enough to catch the eye in a dark room without behaving like an alert.
+
+   Slow on purpose: 3.4s, eased both ends, never fully dark. A fast or
+   high-contrast blink reads as an error state, which this is the opposite of.
+
+   Positioned to the textarea's own padding and first-line box so it sits
+   exactly where typed text will appear. pointer-events:none so the click that
+   lands on it still focuses the field underneath. */
+.ghostPrompt {
+  position: absolute;
+  left: 14px;
+  top: 11px;
+  pointer-events: none;
+  font-family: var(--font-prose);
+  font-size: 15.5px;
+  line-height: 21px;
+  letter-spacing: 0.3px;
+  color: var(--bright);
+  animation: composerBreathe 3.4s ease-in-out infinite;
+}
+
+@keyframes composerBreathe {
+  0%,
+  100% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 14px rgba(232, 237, 239, 0.3);
+  }
+}
+
+/* Once focused the invitation has done its job; a prompt still pulsing under
+   the cursor is noise. */
+.composerWrap:focus-within .ghostPrompt {
+  animation: none;
+  opacity: 0.45;
+  text-shadow: none;
+}
+
+/* Motion is decoration here, never information — it says the same thing
+   standing still. */
+@media (prefers-reduced-motion: reduce) {
+  .ghostPrompt {
+    animation: none;
+    opacity: 0.92;
+  }
 }
 
 .composerActions {

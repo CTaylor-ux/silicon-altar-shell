@@ -271,21 +271,34 @@ export default function QueryBar({
       )}
 
       <form className={styles.inputRow} onSubmit={submit}>
-        <textarea
-          ref={inputRef}
-          className={styles.input}
-          value={value}
-          rows={3}
-          onChange={(e) => {
-            setValue(e.target.value);
-            autoGrow(e.target);
-          }}
-          onKeyDown={onComposerKey}
-          placeholder="Ask the corpus…"
-          aria-label="Ask the corpus"
-          autoComplete="off"
-          spellCheck={false}
-        />
+        {/* The prompt is a real element, not the native placeholder.
+            Browsers accept keyframes on ::placeholder and then never run them
+            — the declaration computes, the animation stays frozen on its first
+            frame, and :focus::placeholder cannot switch it off either. The
+            attribute stays for semantics and is rendered transparent; this
+            span is what the reader actually sees, and it animates. */}
+        <div className={styles.composerWrap}>
+          <textarea
+            ref={inputRef}
+            className={styles.input}
+            value={value}
+            rows={3}
+            onChange={(e) => {
+              setValue(e.target.value);
+              autoGrow(e.target);
+            }}
+            onKeyDown={onComposerKey}
+            placeholder="Ask the corpus…"
+            aria-label="Ask the corpus"
+            autoComplete="off"
+            spellCheck={false}
+          />
+          {!value && (
+            <span className={styles.ghostPrompt} aria-hidden>
+              Ask the corpus…
+            </span>
+          )}
+        </div>
         <div className={styles.composerActions}>
           <button className={`${styles.submit} mono`} type="submit" disabled={!value.trim()}>
             Ask ↵
