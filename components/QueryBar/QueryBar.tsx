@@ -24,9 +24,12 @@ import styles from './QueryBar.module.css';
 /** Floor: the input row and the target rail must never be draggable out of
  *  reach. You should not be able to put this thing in a state where you cannot
  *  type into it. */
-const MIN_H = 132;
+const MIN_H = 168;
 const DEFAULT_H = 222;
 const H_KEY = 'silicon-altar-querybar-h';
+/** The composer stops growing here and scrolls instead — past this it would
+ *  eat the exchange area it exists to serve. */
+const COMPOSER_MAX_H = 132;
 const maxH = () => Math.round(window.innerHeight * 0.85);
 
 type Props = {
@@ -56,7 +59,7 @@ export default function QueryBar({
   onRetry,
 }: Props) {
   const [value, setValue] = useState('');
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   /* The bar was a fixed 222px, which was right when answers were two stub
      sentences. A real answer is prose plus an outside region plus a situating
@@ -162,12 +165,32 @@ export default function QueryBar({
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  /* Grow with the question, up to a ceiling. Reset to auto first or the
+     element can only ever get taller — scrollHeight includes the height you
+     already set. */
+  const autoGrow = (el: HTMLTextAreaElement | null) => {
+    if (!el) return;
+    el.style.height = 'auto';
+    el.style.height = `${Math.min(el.scrollHeight, COMPOSER_MAX_H)}px`;
+  };
+
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     const q = value.trim();
     if (!q) return;
     onSubmit(q);
     setValue('');
+    if (inputRef.current) inputRef.current.style.height = '';
+  };
+
+  /* Enter sends, Shift+Enter breaks the line. The chat convention, and the
+     reason a textarea is safe here: a plain textarea would otherwise swallow
+     Enter and leave no way to submit from the keyboard. */
+  const onComposerKey = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      submit(e as unknown as React.FormEvent);
+    }
   };
 
   const targets = latest?.result?.targets ?? [];
@@ -248,22 +271,29 @@ export default function QueryBar({
       )}
 
       <form className={styles.inputRow} onSubmit={submit}>
-        <span className={`${styles.prompt} mono`} aria-hidden>
-          ?
-        </span>
-        <input
+        <textarea
           ref={inputRef}
           className={styles.input}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder="Ask the corpus…  ( / to focus )"
+          rows={2}
+          onChange={(e) => {
+            setValue(e.target.value);
+            autoGrow(e.target);
+          }}
+          onKeyDown={onComposerKey}
+          placeholder="Ask the corpus…"
           aria-label="Ask the corpus"
           autoComplete="off"
           spellCheck={false}
         />
-        <button className={`${styles.submit} mono`} type="submit" disabled={!value.trim()}>
-          Ask ↵
-        </button>
+        <div className={styles.composerActions}>
+          <button className={`${styles.submit} mono`} type="submit" disabled={!value.trim()}>
+            Ask ↵
+          </button>
+          <span className={`${styles.composerHint} mono`} aria-hidden>
+            ⇧↵ newline · / to focus
+          </span>
+        </div>
       </form>
     </section>
   );

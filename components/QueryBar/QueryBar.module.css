@@ -283,29 +283,37 @@
 
 .inputRow {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 16px;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 12px 16px 14px;
   border-top: 1px solid var(--bdr);
   background: var(--panel);
 }
 
-.prompt {
-  font-size: 12px;
-  color: var(--dim);
-  flex: none;
-}
-
+/* The composer, not a footer.
+   It was a 33px single-line input pinned to the bottom edge, which read as
+   chrome rather than as the thing you are meant to type into — and questions
+   here run two or three lines, so text scrolled out of view while being
+   written. It is now a textarea that starts at two lines and grows to a
+   ceiling. Enter sends; Shift+Enter breaks the line. */
 .input {
   flex: 1;
+  /* Matches the rendered height of rows={2} exactly. Set lower and the box
+     visibly shrinks by a couple of pixels on the first keystroke, because
+     autoGrow writes the measured scrollHeight over the taller default. */
+  min-height: 66px;
+  max-height: 132px;
+  resize: none;
+  overflow-y: auto;
   background: var(--bg);
   border: 1px solid var(--bdr2);
-  border-radius: 3px;
-  padding: 8px 11px;
+  border-radius: 5px;
+  padding: 11px 13px;
   font-family: var(--font-prose);
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--bright);
-  transition: border-color 140ms var(--ease);
+  transition: border-color 140ms var(--ease), box-shadow 140ms var(--ease);
 }
 .input::placeholder {
   color: var(--dim); /* readable floor, not --faintxt */
@@ -313,6 +321,18 @@
 .input:focus {
   outline: none;
   border-color: var(--dim);
+  /* A hairline lift on focus. Enough to say "you are here" without the panel
+     turning into a glowing box in a room this dark. */
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.03);
+}
+
+.composerActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex: none;
+  padding-bottom: 2px;
 }
 
 .submit {
@@ -320,8 +340,7 @@
   color: var(--dim);
   border: 1px solid var(--bdr2);
   border-radius: 3px;
-  padding: 7px 13px;
-  flex: none;
+  padding: 8px 15px;
   transition: color 140ms var(--ease), border-color 140ms var(--ease);
 }
 .submit:hover:not(:disabled) {
@@ -331,6 +350,14 @@
 .submit:disabled {
   opacity: 0.35;
   cursor: default;
+}
+
+.composerHint {
+  font-size: 8px;
+  color: var(--dim);
+  opacity: 0.55;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 /* ===================================================== answering layer v1 */
