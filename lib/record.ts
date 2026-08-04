@@ -78,6 +78,37 @@ export type Triage = {
   note: string;
 };
 
+/* Cheap, deterministic markers computed at capture time — no model call, no
+ * cost. Each is a proxy, not a measurement: "namesThread" says the answer
+ * mentioned a thread, not that it used the graph well.
+ *
+ * Their value is drift. One answer that skips the outside region is nothing;
+ * ten in a row is a contract problem, and without this you only notice by
+ * reading everything by hand. Every fix made to the contract so far came from
+ * exactly that hand-reading, which is the argument for automating it.
+ *
+ * The obvious hazard: a marker that becomes a target gets satisfied rather
+ * than met. Tell the model to mark its inference AND count how often it says
+ * "my inference" and it will say it more without inferring better. Read these
+ * as a prompt to go and look, never as a score. */
+export type QualityMarkers = {
+  citations: number;
+  stripped: number;
+  usedOutside: boolean;
+  namesThread: boolean;
+  /** First person, not "the corpus reads" — the distinction the contract
+   *  makes, because only the first tells a reader where the model started
+   *  arguing. */
+  marksOwnInference: boolean;
+  /** Tier language, HELD-NULL, held-not-asserted: is the evidence gradient
+   *  surviving into the prose or staying invisible behind a citation? */
+  carriesGradient: boolean;
+  /** Says the framework vocabulary is the corpus's construct rather than
+   *  standard terminology. */
+  flagsFrameworkVocab: boolean;
+  outputTokens: number;
+};
+
 export type QueryRecord = {
   id: string;
   captured_at: string;
@@ -89,11 +120,49 @@ export type QueryRecord = {
   cited_entry_ids: string[];
   stripped_ids: string[];
   usage: Record<string, number> | null;
+  quality: QualityMarkers | null;
   triage: Triage | null;
   status: RecordStatus;
   operator_decision: string | null;
   operator_decision_at: string | null;
 };
+
+/* ------------------------------------------------------------------ quality */
+
+const RX = {
+  thread: /T-[A-Z][A-Z-]{3,}/,
+  ownInference:
+    /\b(I am|I'm) (putting|drawing|reading|connecting|inferring)|\bmy (own )?(inference|reading|observation|note)\b|that (connection|link|pairing) is mine|not the corpus'?s? (own )?(claim|reading|inference)/i,
+  gradient:
+    /\btier[- ][ABCDE]\b|HELD[- ]NULL|held, not asserted|interpretive (overlay|layer|reading)|the audit'?s? (own )?(reading|overlay|inference)|the corpus'?s? (own )?inference|disputed/i,
+  /* The \\w+\\s* is load-bearing. Written without it, this missed "this audit's
+   * own ANALYTICAL vocabulary" — the marker read false while the answer did
+   * exactly what it was measuring for. A proxy that only matches the phrasing
+   * you imagined is worse than no proxy, because it reports a regression that
+   * is not there. */
+  frameworkVocab:
+    /(the corpus'?s?|this audit'?s?|the framework'?s?) own (\\w+\\s+)?(vocabulary|term|construct|frame|language)|not (a )?terms? (from|used in|you will find in) the scholarship|register note|(vocabulary|terms?) (is|are) the (corpus|audit|framework)'?s?/i,
+};
+
+export function measure(
+  answer: string,
+  outside: string | null,
+  citedIds: string[],
+  strippedIds: string[],
+  outputTokens: number
+): QualityMarkers {
+  const both = `${answer}\n${outside ?? ''}`;
+  return {
+    citations: citedIds.length,
+    stripped: strippedIds.length,
+    usedOutside: !!outside && outside.trim().length > 0,
+    namesThread: RX.thread.test(both),
+    marksOwnInference: RX.ownInference.test(both),
+    carriesGradient: RX.gradient.test(both),
+    flagsFrameworkVocab: RX.frameworkVocab.test(both),
+    outputTokens,
+  };
+}
 
 /* -------------------------------------------------------------------- write */
 

@@ -17,7 +17,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { CONTRACT, parseAndValidate, situate } from '@/lib/ask';
-import { appendRecord, triage } from '@/lib/record';
+import { appendRecord, measure, triage } from '@/lib/record';
 
 export const runtime = 'nodejs';
 export const maxDuration = 120;
@@ -135,6 +135,13 @@ export async function POST(req: Request) {
       cited_entry_ids: parsed.citedIds,
       stripped_ids: parsed.strippedIds,
       usage,
+      quality: measure(
+        parsed.answer,
+        parsed.outside,
+        parsed.citedIds,
+        parsed.strippedIds,
+        usage.outputTokens
+      ),
       triage: t.triage,
       status: 'captured',
       operator_decision: null,

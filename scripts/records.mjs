@@ -166,6 +166,38 @@ if (has('--demand')) {
   process.exit(0);
 }
 
+/* -------------------------------------------------------------- --quality */
+if (has('--quality')) {
+  const withQ = recs.filter((r) => r.quality);
+  if (!withQ.length) {
+    console.log(dim('\n  No records carry quality markers yet — they start with the next query.\n'));
+    process.exit(0);
+  }
+  const pct = (f) => Math.round((withQ.filter(f).length / withQ.length) * 100);
+  const rows = [
+    ['used the outside region', pct((r) => r.quality.usedOutside)],
+    ['named a thread', pct((r) => r.quality.namesThread)],
+    ['marked its own inference', pct((r) => r.quality.marksOwnInference)],
+    ['carried the evidence gradient', pct((r) => r.quality.carriesGradient)],
+    ['flagged framework vocabulary', pct((r) => r.quality.flagsFrameworkVocab)],
+  ];
+  const cites = withQ.reduce((a, r) => a + r.quality.citations, 0);
+  const strip = withQ.reduce((a, r) => a + r.quality.stripped, 0);
+  const toks = Math.round(withQ.reduce((a, r) => a + r.quality.outputTokens, 0) / withQ.length);
+
+  console.log(`\n  ${bold('Answer markers')}   ${withQ.length} records\n`);
+  for (const [label, p] of rows) {
+    const bar = '\u2588'.repeat(Math.round(p / 5)).padEnd(20, '\u00b7');
+    console.log(`  ${String(p).padStart(3)}%  ${bar}  ${label}`);
+  }
+  console.log(`\n  ${cites} citations, ${strip} stripped as unresolvable`);
+  console.log(`  ${toks} output tokens on average\n`);
+  console.log(dim('  These are proxies, not scores. A marker names something worth going and'));
+  console.log(dim('  looking at; it does not measure whether the answer was good. Treat a'));
+  console.log(dim('  number that moves as a reason to read, never as a target to raise.\n'));
+  process.exit(0);
+}
+
 /* ---------------------------------------------------------------- --stale */
 if (has('--stale')) {
   const idx = entryIndex();
@@ -196,4 +228,4 @@ console.log(
 );
 for (const r of open) console.log(line(r));
 if (!open.length) console.log(dim('  Nothing open.\n'));
-console.log(dim(`  --show <id> for one in full  ·  --set <id> <status> [reason]  ·  --demand  ·  --stale\n`));
+console.log(dim(`  --show <id>  ·  --set <id> <status> [reason]  ·  --demand  ·  --quality  ·  --stale\n`));
