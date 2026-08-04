@@ -197,7 +197,7 @@ precede volatile content.
 1. **System block** — the contract in §3.4. Frozen. No dates, no ids, no
    interpolation.
 2. **Corpus block** — all 690 entries, compact serialization, `cache_control`
-   breakpoint here. **~67,000 tokens.**
+   breakpoint here. **149,000 tokens.**
 3. **Dossier block** — only for entries cited earlier in this conversation.
    Retrieved on demand; dossiers total ~268k tokens and cannot be sent wholesale.
 4. **Conversation history.**
@@ -223,12 +223,12 @@ qualifies comfortably.
 
 | component | tokens | multiplier | cost |
 |---|---|---|---|
-| corpus, cache read | 67,000 | 0.1× | $0.034 |
+| corpus, cache read | 149,000 | 0.1× | $0.074 |
 | turn input | ~1,000 | 1× | $0.005 |
 | output | ~800 | — | $0.020 |
 | | | **total** | **≈ $0.06** |
 
-First write is 67,000 × 1.25 × $5/1M ≈ **$0.42**, once per cache lifetime.
+First write is 149,000 × 1.25 × $5/1M ≈ **$0.98**, once per cache lifetime.
 
 **Verify caching works:** assert `usage.cache_read_input_tokens > 0` on the second
 and later requests. If it is zero across identical prefixes, something volatile
@@ -434,7 +434,7 @@ provenance leaks, `corpus_integrity_check.py` all hard checks pass.
 
 Deliberately excluded, each with the reason:
 
-- **Vector search / embeddings.** All 690 entries fit in one call at ~67k tokens.
+- **Vector search / embeddings.** All 690 entries fit in one call at ~149k tokens.
   Retrieval would add a step that can miss, in exchange for nothing.
 - **Neon / pgvector.** Earns its place in C2 staging and correlation, not in
   serving answers.
