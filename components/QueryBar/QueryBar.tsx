@@ -418,16 +418,16 @@ function AnsweredState({
         </p>
       )}
 
-      {result.usage && (
-        <p className={`${styles.usage} mono`}>
-          {result.usage.cacheWrite
-            ? `cache write ${result.usage.cacheWrite.toLocaleString()}`
-            : `cache read ${result.usage.cacheRead.toLocaleString()}`}
-          {' · '}
-          {result.usage.outputTokens.toLocaleString()} out
-          {' · '}~${result.usage.estimatedCostUsd.toFixed(3)}
-        </p>
-      )}
+      {/* Usage and cost are deliberately NOT rendered. They were a testing
+          instrument and they did their job: they are how the five-minute cache
+          window got diagnosed. But they are operator telemetry, not part of an
+          answer, and a number attached to a claim invites the reader to price
+          the evidence.
+
+          The data is still captured. It rides on QueryResult.usage, the route
+          logs it to the server console, and it belongs on the ledger record so
+          "what did this month cost" stays answerable from the data rather than
+          from the reading surface. */}
     </div>
   );
 }
