@@ -30,6 +30,12 @@ const H_KEY = 'silicon-altar-querybar-h';
 const maxH = () => Math.round(window.innerHeight * 0.85);
 
 type Props = {
+  /** Every exchange this session, oldest first. The bar used to render only
+   *  the most recent one, which was fine while each query stood alone. It
+   *  stopped being fine the moment the exchange went multi-turn: prior turns
+   *  are sent to the model as context, so the model could see the
+   *  conversation and the reader could not. */
+  history: Exchange[];
   latest: Exchange | null;
   targetIndex: number;
   onSubmit: (q: string) => void;
@@ -40,6 +46,7 @@ type Props = {
 };
 
 export default function QueryBar({
+  history,
   latest,
   targetIndex,
   onSubmit,
@@ -59,6 +66,7 @@ export default function QueryBar({
      Height drives the --querybar-h custom property rather than a local style,
      because WindowStrip is already inset by that same variable. Set it once
      and the timeline above reflows to match for free. */
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number>(DEFAULT_H);
   const dragging = useRef(false);
   /* Synchronous mirror of `height`. State alone is not enough: every call in a
@@ -132,6 +140,14 @@ export default function QueryBar({
 
   const expanded = height > DEFAULT_H + 40;
 
+  /* Pin to the newest exchange. Scrollback is only useful if arriving at it
+     puts you at the live end; landing at the top of a long history would mean
+     scrolling down to find the answer you just asked for. */
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [latest?.id, latest?.status, height]);
+
   // "/" focuses the query bar from anywhere in the shell.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -194,8 +210,15 @@ export default function QueryBar({
         </button>
       )}
 
-      <div className={styles.exchange}>
+      <div className={styles.exchange} ref={scrollRef}>
         {!latest && <IdleState onPick={(q) => onSubmit(q)} />}
+
+        {/* Earlier turns, condensed. Full rendering for every exchange would
+            turn the panel into a wall; the citations stay live so an older
+            answer is still a way into the windows. */}
+        {history.slice(0, -1).map((ex) => (
+          <PastExchange key={ex.id} exchange={ex} onGoToTarget={onGoToTarget} />
+        ))}
 
         {latest?.status === 'thinking' && <ThinkingState question={latest.question} />}
 
@@ -263,6 +286,42 @@ function IdleState({ onPick }: { onPick: (q: string) => void }) {
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+/** An earlier turn: question, answer, citations. No situating band, no usage
+ *  line, no outside region — those belong to the turn you are working on. */
+function PastExchange({
+  exchange,
+  onGoToTarget,
+}: {
+  exchange: Exchange;
+  onGoToTarget: (t: Target) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  if (exchange.status !== 'answered' || !exchange.result) return null;
+
+  const byId = new Map(exchange.result.targets.map((t) => [t.entryId, t]));
+  const full = exchange.result.answer;
+  const isLong = full.length > 320;
+  const shown = open || !isLong ? full : full.slice(0, 320).replace(/\s+\S*$/, '') + '…';
+
+  return (
+    <div className={styles.past}>
+      <QuestionLine text={exchange.question} />
+      <Prose
+        text={shown}
+        onCite={(id) => {
+          const t = byId.get(id);
+          if (t) onGoToTarget(t);
+        }}
+      />
+      {isLong && (
+        <button className={`${styles.pastMore} mono`} onClick={() => setOpen((v) => !v)}>
+          {open ? 'Show less' : 'Show full answer'}
+        </button>
+      )}
     </div>
   );
 }

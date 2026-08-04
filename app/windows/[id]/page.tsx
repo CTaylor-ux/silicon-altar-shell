@@ -273,6 +273,7 @@ export default function WindowViewPage() {
       />
 
       <QueryBar
+        history={state.history}
         latest={latest}
         targetIndex={state.targetIndex}
         onSubmit={runQuery}
