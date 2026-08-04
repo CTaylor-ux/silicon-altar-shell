@@ -81,7 +81,22 @@ export async function POST(req: Request) {
       max_tokens: MAX_TOKENS,
       system: [
         { type: 'text', text: CONTRACT },
-        { type: 'text', text: corpusText(), cache_control: { type: 'ephemeral' } },
+        {
+          type: 'text',
+          text: corpusText(),
+          /* One hour, not the five-minute default.
+           *
+           * The write costs 2x instead of 1.25x, so on paper it needs three
+           * reads to pay off. In practice it pays back on the second question,
+           * because the five-minute window assumed a rhythm no reader has: you
+           * read a 3,000-token answer, think, and type the next one, and the
+           * cache has already expired. Measured over the first seven real
+           * queries, six paid a full write and one got a read — $5.62 of $6.32
+           * spent on writes alone.
+           *
+           * One write per sitting instead of one per question. */
+          cache_control: { type: 'ephemeral', ttl: '1h' },
+        },
       ],
       messages: [...history, { role: 'user' as const, content: question }],
       // No temperature/top_p/top_k: Opus 5 rejects sampling params with a 400.
