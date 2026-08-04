@@ -24,12 +24,12 @@ import styles from './QueryBar.module.css';
 /** Floor: the input row and the target rail must never be draggable out of
  *  reach. You should not be able to put this thing in a state where you cannot
  *  type into it. */
-const MIN_H = 168;
+const MIN_H = 196;
 const DEFAULT_H = 222;
 const H_KEY = 'silicon-altar-querybar-h';
 /** The composer stops growing here and scrolls instead — past this it would
  *  eat the exchange area it exists to serve. */
-const COMPOSER_MAX_H = 132;
+const COMPOSER_MAX_H = 168;
 const maxH = () => Math.round(window.innerHeight * 0.85);
 
 type Props = {
@@ -275,7 +275,7 @@ export default function QueryBar({
           ref={inputRef}
           className={styles.input}
           value={value}
-          rows={2}
+          rows={3}
           onChange={(e) => {
             setValue(e.target.value);
             autoGrow(e.target);

@@ -298,11 +298,11 @@
    ceiling. Enter sends; Shift+Enter breaks the line. */
 .input {
   flex: 1;
-  /* Matches the rendered height of rows={2} exactly. Set lower and the box
-     visibly shrinks by a couple of pixels on the first keystroke, because
-     autoGrow writes the measured scrollHeight over the taller default. */
-  min-height: 66px;
-  max-height: 132px;
+  /* Matches the rendered height of rows={3} exactly. Set lower and the box
+     visibly shrinks on the first keystroke, because autoGrow writes the
+     measured scrollHeight over the taller default. */
+  min-height: 92px;
+  max-height: 168px;
   resize: none;
   overflow-y: auto;
   background: var(--bg);
@@ -316,7 +316,12 @@
   transition: border-color 140ms var(--ease), box-shadow 140ms var(--ease);
 }
 .input::placeholder {
-  color: var(--dim); /* readable floor, not --faintxt */
+  /* --txt, not --dim. This is the one label telling a reader what the panel is
+     for, and at --dim it disappeared into the chrome — the operator's report
+     was that the chat box is easy to miss entirely. Still short of --bright,
+     so it does not read as text already typed. */
+  color: var(--txt);
+  letter-spacing: 0.2px;
 }
 .input:focus {
   outline: none;

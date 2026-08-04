@@ -20,7 +20,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body>
+      {/* Browser extensions inject attributes into <body> before React
+          hydrates — ColorZilla adds cz-shortcut-listen, password managers and
+          grammar tools add their own — and every one of them throws a
+          hydration mismatch in dev that looks like an app bug and is not.
+          This suppresses the warning for THIS element's attributes only; a
+          genuine mismatch in the tree below still reports normally. */}
+      <body suppressHydrationWarning>
         <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
