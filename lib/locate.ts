@@ -27,6 +27,10 @@ export type CorpusEntry = {
   title: string;
   milestone: boolean;
   hasDossier: boolean;
+  /** Short hash of title + body as of the last prepare-corpus run. Locate never
+   *  reads it; the record layer pins corrections against it, so a fix written
+   *  in August is not silently applied to text that moved in October. */
+  contentHash: string;
   year: NormalizedYear;
 };
 

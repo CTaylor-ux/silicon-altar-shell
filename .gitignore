@@ -10,3 +10,8 @@ next-env.d.ts
 # Never edit by hand; never commit. Run `npm run prepare-windows`.
 public/windows/
 lib/corpus.generated.json
+
+# The query record. Operator data, not code — it holds full answer text and
+# grows with use. Committed deliberately would be defensible for backup; left
+# out here so the repo stays code. Back it up with the rest of your machine.
+records/

@@ -7,9 +7,11 @@
     "dev": "npm run prepare-windows && npm run prepare-corpus && next dev -p 3210",
     "build": "npm run prepare-windows && npm run prepare-corpus && next build",
     "start": "next start -p 3210",
-    "prepare-corpus": "node scripts/prepare-corpus.mjs"
+    "prepare-corpus": "node scripts/prepare-corpus.mjs",
+    "records": "node scripts/records.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.115.0",
     "next": "15.1.6",
     "react": "19.0.0",
     "react-dom": "19.0.0"

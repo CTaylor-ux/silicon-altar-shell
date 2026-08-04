@@ -28,6 +28,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import process from 'node:process';
 
 const REPO =
@@ -141,6 +142,20 @@ const dossierEventIds = new Set(
   dossiers.map((d) => d.event_id ?? d.eventId).filter(Boolean)
 );
 
+/* A short hash of the exact text a claim was made against.
+ *
+ * When a record proposes a correction to an entry and the operator returns to
+ * it three months later, this is what tells them whether the entry still says
+ * what the correction was arguing with. Without it a stale fix gets applied to
+ * text that has already moved on, silently. */
+function contentHash(e) {
+  return crypto
+    .createHash('sha256')
+    .update(`${e.title}\n${e.body ?? ''}`, 'utf8')
+    .digest('hex')
+    .slice(0, 16);
+}
+
 const rows = entries.map((e) => ({
   id: e.id,
   eventId: e.event_id ?? null,
@@ -150,6 +165,7 @@ const rows = entries.map((e) => ({
   title: e.title,
   milestone: !!e.milestone,
   hasDossier: dossierEventIds.has(e.event_id),
+  contentHash: contentHash(e),
   year: normalizeYear(e.year_label),
 }));
 
