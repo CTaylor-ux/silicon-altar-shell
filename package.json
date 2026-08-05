@@ -8,7 +8,8 @@
     "build": "npm run prepare-windows && npm run prepare-corpus && next build",
     "start": "next start -p 3210",
     "prepare-corpus": "node scripts/prepare-corpus.mjs",
-    "records": "node scripts/records.mjs"
+    "records": "node scripts/records.mjs",
+    "keepwarm": "node scripts/keepwarm.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.115.0",
