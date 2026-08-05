@@ -168,9 +168,20 @@ if (has('--demand')) {
 
 /* -------------------------------------------------------------- --quality */
 if (has('--quality')) {
-  const withQ = recs.filter((r) => r.quality);
+  /* --since <id> splits the set at a record boundary, so a batch run after a
+   * corpus or contract change can be read on its own rather than blended into
+   * the average of everything that came before it. Ids sort chronologically. */
+  const since = has('--since') ? valAfter('--since') : null;
+  const inScope = since ? recs.filter((r) => r.id >= since) : recs;
+  const withQ = inScope.filter((r) => r.quality);
   if (!withQ.length) {
-    console.log(dim('\n  No records carry quality markers yet — they start with the next query.\n'));
+    console.log(
+      dim(
+        since
+          ? `\n  No records at or after ${since} carry quality markers yet.\n`
+          : '\n  No records carry quality markers yet — they start with the next query.\n'
+      )
+    );
     process.exit(0);
   }
   const pct = (f) => Math.round((withQ.filter(f).length / withQ.length) * 100);
@@ -185,12 +196,30 @@ if (has('--quality')) {
   const strip = withQ.reduce((a, r) => a + r.quality.stripped, 0);
   const toks = Math.round(withQ.reduce((a, r) => a + r.quality.outputTokens, 0) / withQ.length);
 
-  console.log(`\n  ${bold('Answer markers')}   ${withQ.length} records\n`);
+  console.log(
+    `\n  ${bold('Answer markers')}   ${withQ.length} records${since ? dim(`  (from ${since})`) : ''}\n`
+  );
   for (const [label, p] of rows) {
     const bar = '\u2588'.repeat(Math.round(p / 5)).padEnd(20, '\u00b7');
     console.log(`  ${String(p).padStart(3)}%  ${bar}  ${label}`);
   }
   console.log(`\n  ${cites} citations, ${strip} stripped as unresolvable`);
+
+  /* 210 of the 690 entries carry no body; their detail lives in the dossier.
+   * Until the dossier lines shipped they reached the model as a bare title,
+   * and they took 4.5% of citations while being 30% of the corpus. This line
+   * is the least noisy read on whether that changed: it counts resolved ids
+   * rather than matching a regex against prose. */
+  const idx = entryIndex();
+  const cited = withQ.flatMap((r) => r.cited_entry_ids ?? []);
+  const bare = cited.filter((id) => idx.get(id)?.titleOnly).length;
+  if (cited.length) {
+    console.log(
+      `  ${bare} of ${cited.length} citations (${Math.round(
+        (bare / cited.length) * 100
+      )}%) reached a title-only entry — they are 30% of the corpus`
+    );
+  }
   console.log(`  ${toks} output tokens on average\n`);
   console.log(dim('  These are proxies, not scores. A marker names something worth going and'));
   console.log(dim('  looking at; it does not measure whether the answer was good. Treat a'));

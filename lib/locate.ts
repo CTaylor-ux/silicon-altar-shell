@@ -27,6 +27,11 @@ export type CorpusEntry = {
   title: string;
   milestone: boolean;
   hasDossier: boolean;
+  /** The entry states its claim in the title and carries no body, because W1,
+   *  W2 and W5 put the detail in the dossier instead. 210 of the 690. Locate
+   *  never reads it; the record layer reports what share of citations reach
+   *  them, which is how the dossier-line change gets measured. */
+  titleOnly: boolean;
   /** Short hash of title + body as of the last prepare-corpus run. Locate never
    *  reads it; the record layer pins corrections against it, so a fix written
    *  in August is not silently applied to text that moved in October. */

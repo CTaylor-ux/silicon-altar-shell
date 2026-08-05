@@ -142,6 +142,18 @@ const dossierEventIds = new Set(
   dossiers.map((d) => d.event_id ?? d.eventId).filter(Boolean)
 );
 
+/* 210 of the 690 entries carry an empty `body`. That is not missing data: W1,
+ * W2 and W5 put the detail in the dossier and let the title carry the claim,
+ * while W0, W3, W4 and W6 put it in the body. Every one of the 690 has a
+ * dossier behind its event_id.
+ *
+ * Until now this script read dossiers.json only to set the hasDossier flag, so
+ * those 210 reached the answering call as a bare title line - 30% of the
+ * corpus, and 66% of W5. This map exists to close that. */
+const dossierByEventId = new Map(
+  dossiers.map((d) => [d.event_id ?? d.eventId, d]).filter(([k]) => k)
+);
+
 /* A short hash of the exact text a claim was made against.
  *
  * When a record proposes a correction to an entry and the operator returns to
@@ -165,6 +177,7 @@ const rows = entries.map((e) => ({
   title: e.title,
   milestone: !!e.milestone,
   hasDossier: dossierEventIds.has(e.event_id),
+  titleOnly: !(e.body ?? '').trim(),
   contentHash: contentHash(e),
   year: normalizeYear(e.year_label),
 }));
@@ -216,6 +229,45 @@ fs.writeFileSync(
 // next call. Sorted by id so the output is byte-identical across runs when the
 // corpus has not changed.
 // ---------------------------------------------------------------------------
+/* Entries whose detail lives in the dossier get two lines from it in place of
+ * the body they do not have.
+ *
+ * `framework` is the reason this is worth the tokens. It names the construct
+ * the entry belongs to - "FW-017 Discovery Doctrine spine" - which is the
+ * audit's own vocabulary sitting inside a tier A entry. Answers flagged that
+ * vocabulary as the audit's construct rather than as historical fact only 16%
+ * of the time, and the instruction-based fix for it worked only on the question
+ * it was tuned against. It could not have worked: the label was never in the
+ * context to begin with.
+ *
+ * `assessment` carries the dossier's weight and warrant badges - how strong the
+ * evidence is and whether the question is settled or open.
+ *
+ * The tier badge is dropped: the head line already carries the entry's own
+ * tier, and two tier statements that could disagree is worse than one.
+ *
+ * Deliberately NOT included: hypotheses (the held/eliminated record) and the
+ * correlation layer. The hypotheses alone run ~131k tokens across all 690,
+ * close to the size of this entire prompt. They do not fit in a single call at
+ * any scope and need retrieval, not a bigger prefix. */
+function dossierLines(e) {
+  const d = dossierByEventId.get(e.event_id);
+  if (!d) return [];
+  const out = [];
+
+  const framework = d.streams?.explanation?.trim();
+  if (framework) out.push(`framework: ${framework}`);
+
+  const badges = (d.badges ?? [])
+    .filter((b) => b.class !== 'tier')
+    .map((b) => String(b.text ?? '').trim())
+    .filter(Boolean)
+    .join(' | ');
+  if (badges) out.push(`assessment: ${badges}`);
+
+  return out;
+}
+
 function serializeEntry(e) {
   const head = [
     `[${e.id}]`,
@@ -228,10 +280,24 @@ function serializeEntry(e) {
     .filter(Boolean)
     .join(' ');
 
-  const lines = [head, e.title, (e.body ?? '').trim()];
+  const body = (e.body ?? '').trim();
+  const lines = [head, e.title];
+  if (body) lines.push(body);
+  else lines.push(...dossierLines(e));
+
   if (e.thread_links?.length) lines.push(`links: ${e.thread_links.join(', ')}`);
   if (e.thread_memberships?.length) lines.push(`threads: ${e.thread_memberships.join(', ')}`);
   return lines.filter(Boolean).join('\n');
+}
+
+/* No entry may reach the model as a bare title. Before this check existed, 210
+ * of them did. */
+const titleOnly = entries.filter((e) => !(e.body ?? '').trim());
+const stillBare = titleOnly.filter((e) => dossierLines(e).length === 0);
+if (stillBare.length) {
+  console.error(`\n  ${stillBare.length} entries have no body and no dossier text:`);
+  stillBare.slice(0, 10).forEach((e) => console.error(`    ${e.id}  ${e.title}`));
+  die('A bare title is not an entry. Fix the dossier rather than shipping it.');
 }
 
 const promptBody = [...entries]
@@ -261,6 +327,22 @@ const promptText = [
   'Tier A is strongest evidence, E weakest. The links are hand-made by the',
   'operator and are not inferences.',
   '',
+  'Some entries state their claim in the title and carry no body, because their',
+  'detail lives in a dossier. Those show two dossier lines instead:',
+  '',
+  '  framework:   the audit construct this entry belongs to. THIS IS THE',
+  "               AUDIT'S OWN ANALYTICAL VOCABULARY, NOT THE HISTORICAL",
+  '               RECORD. Where an answer rests on a term named here, say',
+  "               whose term it is - it is the audit's reading of the",
+  '               evidence, not a fact the sources assert.',
+  '  assessment:  how strong the dossier holds the evidence to be, and whether',
+  '               the question is settled (Warrant: Closed) or still open',
+  '               (Warrant: Open). An open warrant is a live question, and an',
+  '               answer resting on one should say so.',
+  '',
+  'A missing body is not a gap in the record. It is where that window put the',
+  'detail. Do not report those entries as thin or unsourced.',
+  '',
   '---',
   '',
   promptBody,
@@ -281,8 +363,11 @@ console.log(`  ${(fs.statSync(OUT).size / 1024).toFixed(0)} KB -> lib/corpus.gen
 
 const promptKb = fs.statSync(PROMPT_OUT).size / 1024;
 console.log(
+  /* 2.428 bytes/token is MEASURED, not assumed: 364,946 bytes of this file
+   * reported 150,308 cache-read tokens in record sb-20260805-024. The 3.6 this
+   * replaced under-reported the prefix by a third. */
   `  ${promptKb.toFixed(0)} KB -> lib/corpus.prompt.txt  (~${Math.round(
-    promptText.length / 3.6 / 1000
+    promptText.length / 2.428 / 1000
   )}k tokens, the cached prefix)`
 );
 console.log('  Audit repo untouched (read-only).\n');
