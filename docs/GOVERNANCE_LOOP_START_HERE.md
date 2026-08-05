@@ -1,31 +1,21 @@
-# Governance Loop — START HERE
+# START HERE
 
-**Read this first in a new thread.** It is the handoff for wiring the query
-layer into the C1/C2/C3 governance pipeline.
+Read this first in a new thread. It is written to be read cold.
 
-Date of handoff: 2026-08-03
-
-**Work on `main`.** Everything described below is merged there: Locate, the
-answering layer, and this document. The `answering-layer`, `locate-affordance`
-and `guide-and-glossary` branches are fully contained in `main` and are safe to
-delete.
-
-Commit hashes changed on 2026-08-03 after the eight most recent commits were
-re-authored from a client GitHub account to CTaylor-ux. The pre-rewrite state
-is retained in `refs/original/` and is not pushed. Any hash referenced in an
-older document will not resolve.
+Last updated 2026-08-05, after the first real test batch (31 recorded queries).
+All work is on `main` and pushed. Nothing is uncommitted.
 
 ---
 
-## 0. The one-paragraph version
+## 0. What this is, in one paragraph
 
 Seven Window HTML timelines are generated from a governed JSON corpus of 690
-entries. A Next.js shell wraps them without modifying them. That shell now has
-two query affordances: a deterministic year lookup (**Locate**, no model) and a
-model-backed answering layer (**Ask**, all 690 entries in context, prose out,
-citations validated server-side). Both work. Neither persists anything. The next
-job is to capture what they produce so it can be routed back into the corpus
-under the approval discipline the PRD family already specifies.
+entries. A Next.js shell wraps them without modifying them. The shell has two
+query affordances: **Locate** (deterministic year lookup, no model) and **Ask**
+(all 690 entries in context, prose out, citations validated server-side). Every
+exchange is recorded to `records/queries.jsonl`; a triage pass flags the
+minority containing something installable. **Nothing has yet been promoted into
+the corpus.** That is the next step and it is the operator's.
 
 ---
 
@@ -33,246 +23,232 @@ under the approval discipline the PRD family already specifies.
 
 | What | Path |
 |---|---|
-| Shell app (all work happens here) | `~/Desktop/silicon-altar-shell` |
-| Audit repo (**READ-ONLY**, never write) | `~/Desktop/Silicon_Altar_LIVE` |
-| PRD family | `~/Desktop/Silicon_Altar_LIVE/Silicon Altar Platform PRD Family/` |
-| Query ledger (1 hand-written record) | `~/Desktop/Silicon_Altar_LIVE/query_ledger.json` |
-| Query layer spec | `docs/RAG_SPEC.md` (§1–2 BUILT, §3 superseded — see §6 below) |
+| Shell app — all app work happens here | `~/Desktop/silicon-altar-shell` |
+| Audit repo — **READ-ONLY from the app** | `~/Desktop/Silicon_Altar_LIVE` |
+| PRD family (P0, C1, C2, C3) | `<audit>/Silicon Altar Platform PRD Family/` |
+| Query ledger (1 hand-written record) | `<audit>/query_ledger.json` |
+| Query layer spec | `docs/RAG_SPEC.md` — §1–2 built, §3 superseded by this file |
 
-The shell is a **sibling** of the audit repo, not nested. `corpus_integrity_check.py`
-check C9 hard-fails on stray root `*.html`, so nesting breaks the audit.
+Both repos are private, on GitHub under CTaylor-ux. The shell is a **sibling**
+of the audit repo, never nested.
 
 `.env.local` holds `SILICON_ALTAR_REPO` and `ANTHROPIC_API_KEY`. Gitignored.
 
----
-
-## 2. What is built and verified
-
-### Derived artifacts (build step, audit repo untouched)
-
-- `scripts/prepare-windows.mjs` — injects `data-entry-id` into the generated
-  window HTML plus a `postMessage` bridge. Matching key is `(window, lane, title)`,
-  unique across all 690. **Verified:** `corpus_integrity_check.py` reports all
-  hard checks pass; C9 byte-compares regenerated HTML.
-- `scripts/prepare-corpus.mjs` — emits two files:
-  - `lib/corpus.generated.json` — title-level, drives Locate. 690/690 normalize.
-  - `lib/corpus.prompt.txt` — full text with bodies, links, thread memberships,
-    plus the corpus's `scope_note` and `framework_spine`. **~149k tokens.**
-    Output is byte-stable across runs (sorted by id) — this is what keeps the
-    prompt cache valid. Do not reorder it.
-
-### Query layer
-
-- `lib/locate.ts` + `app/api/locate/route.ts` — deterministic, no model, no key.
-- `lib/ask.ts` — the model contract, section parser, citation validator, situating.
-- `app/api/ask/route.ts` — Claude Opus 5, direct `fetch`, key server-side.
-- `components/QueryBar/` — prose rendering, live citations, outside region,
-  situating band, scrollback, drag-resize.
-
-### Verified behaviour
-
-- Seven windows: 77 / 85 / 97 / 69 / 72 / 188 / 102 = 690. Glossary bound in
-  every one, member class set, no provenance leaks.
-- Citation guard: fabricated ids are stripped from the prose and surfaced to the
-  reader. Tested with synthetic ids in both the answer and outside sections.
-- Cache: first call writes ~149k tokens (~$0.98), subsequent reads cost ~$0.09.
-  `cache_read_input_tokens` confirmed non-zero on the second call.
-- Across four live queries, **every** cited id resolved. Zero fabrications.
+Git identity is pinned per-repo to CTaylor-ux (`user.name`, `user.email`,
+`credential.username`). The machine's global identity is a different account —
+do not "fix" it.
 
 ---
 
-## 3. Decisions already made — do not re-litigate
+## 2. What is built
 
-**No forced JSON schema on the answering call.** The original spec decomposed
-every sentence into a claim record. Building it showed the cost: a model writing
-into `claims[]` writes short, flat, clause-like prose, which is the exact
-quality the layer exists to produce. Provenance now comes from inline
-`[entry-id]` citations validated server-side, plus coarse section markers.
-**Validate the references, not the structure.**
+**Derived artifacts.** `scripts/prepare-windows.mjs` injects `data-entry-id`
+plus a postMessage bridge into the generated HTML. `scripts/prepare-corpus.mjs`
+emits `lib/corpus.generated.json` (title-level, drives Locate, carries a
+per-entry `contentHash`) and `lib/corpus.prompt.txt` (bodies, links, threads,
+scope note, framework spine — **~150k tokens**, the cached prefix, byte-stable
+across runs so the cache survives).
+
+**Query layer.** `lib/locate.ts` + `/api/locate` (no model, no key).
+`lib/ask.ts` — the contract, section parser, citation validator, situating.
+`/api/ask` — Opus 5 through the official SDK. `components/QueryBar/`.
+
+**Record layer.** `lib/record.ts` (append-only JSONL, triage, quality markers),
+`/api/recover` (rebuild records from browser sessionStorage), `/api/warm`,
+`scripts/records.mjs` (`npm run records` with `--show`, `--set`, `--demand`,
+`--quality`, `--stale`), `npm run keepwarm`.
+
+**Verified.** Seven windows at 77/85/97/69/72/188/102 = 690, glossary bound in
+each, no provenance leaks. Across 31 recorded queries: **402 citations, zero
+fabricated.** Cache reads confirmed non-zero. Status changes append rather than
+rewrite.
+
+---
+
+## 3. Decisions — do not relitigate
+
+**No forced JSON schema on the answering call.** Decomposing prose into claim
+records flattens the prose, which is the one thing this layer exists to
+protect. Provenance is inline `[entry-id]` citations validated server-side plus
+coarse section markers. *Validate the references, not the structure.*
+
+**Structured output IS right for triage.** Opposite call, different job:
+classification is exactly what a schema is for.
 
 **Structural separation, not badges.** "What the corpus says" and "what I know
-that it doesn't" are physically separate regions. Badges inside prose stop being
-read within a week of familiarity; layout does not.
+that it doesn't" are physically separate regions. Labels inside prose decay
+into wallpaper within a week; layout does not.
 
-**No vector search for answering.** 690 entries fit in one call. Retrieval would
-add a step that can miss in exchange for nothing. Vectors are still needed for
-C1 dedup and corpus-touch detection — a different job. See §5.
+**No vector search for answering.** 690 entries fit in one call. Vectors are
+needed for C1 dedup and corpus-touch detection — a different job.
 
-**Posture goes AFTER the cached corpus block.** If operator and member get
-different system blocks and the system block stays first, the prefix forks and
-you pay two cache writes. Both postures must share one warm prefix.
+**Posture goes AFTER the cached corpus block**, so operator and member share
+one warm prefix rather than forking it and paying the write twice.
 
-**No `requestAnimationFrame`.** It does not fire reliably in this rendering
-context, inside the iframes or in the parent. Use timers or effects.
+**Staged content must never be an input to answering.** Past records do not
+feed future answers. Without this rule the model eventually cites its own prior
+output as though it were corpus.
 
-**Cost is captured but not rendered.** A price attached to a claim invites the
-reader to value evidence by what it cost. Data rides on `QueryResult.usage` and
-the server log.
+**No `requestAnimationFrame`** — it does not fire in this rendering context.
+CSS keyframes on `::placeholder` do not run either; animate a real element.
 
----
-
-## 4. The disposition vocabulary is out of sync — fix this first
-
-`query_ledger.json` defines seven dispositions, all of which assume incoming
-material is **additive**: `corpus-complete`, `enrich-connection`,
-`enrich-dossier`, `enrich-construct`, `new-entry`, `companion-material`,
-`decline`.
-
-There is no slot for *this challenges an entry you already have*.
-
-**But the PRD family already has it, in two places:**
-
-- C2 `candidate.kind ∈ content | design_amendment | framework_amendment | **correction** | question`
-- C2 `candidate.route ∈ novel | staged_merge | **corpus_touch**`
-- P0 flow: `~ corpus node ........ ALWAYS flag to operator (edit-against-corpus)`
-- C3 gives `corpus_touch` the highest-scrutiny path: "changing published content
-  is never bundled into a routine yes."
-
-**Do not invent a new name.** Sync `query_ledger.json` to the PRD vocabulary.
-
-Worked example from 2026-08-03 (use as the first record):
-a reader challenged `E-W0-010-01`'s claim that "star fort" is a 16th-century
-European form. The system conceded the entry dates a form by its European name,
-which the corpus condemns everywhere else (`E-W0-014-03`, `E-W0-002-05`,
-`E-W0-039-02`), while holding that the HELD-NULL survives because the electrical
-claims fail independently. That is `kind='correction'`, `route='corpus_touch'`.
+**Cost is captured, never rendered.** A price beside a claim invites the reader
+to value evidence by what it cost to produce.
 
 ---
 
-## 5. What has to be built, in order
+## 4. The first real test batch — what it showed
 
-### Phase 1 — Triage + record ✅ BUILT 2026-08-04
+31 records, 25 installable, ~$11.51 spent. **The most important result is that
+the measurement proved less reliable than the thing it measured.**
 
-`lib/record.ts` + `scripts/records.mjs`. Every exchange appends to
-`records/queries.jsonl`; a triage call (Opus 5, effort low, forced JSON schema)
-flags the minority that are installable. Field names are C2's `candidate`
-columns verbatim, so the Neon move is a COPY.
+The quality markers were wrong three times in one day. They scored a
+disciplined short answer as the batch's weakest when it was among its best.
+They made three correctly-adapted repeat answers look like inconsistency — the
+model had noticed the repeat and deliberately varied ("that's the third time on
+the same question, and I don't think a third walkthrough serves you"). And they
+returned a false negative on the exact behaviour they were built to detect,
+because a regex demanded two words be adjacent.
 
-Review with `npm run records`: bare for the open queue, `--show <id>` for one in
-full with its decision history, `--set <id> <status> [reason]` for the C2
-lifecycle, `--demand` for which entries answers lean on, `--stale` for
-corrections whose target text has moved.
+**Do not respond by building better markers.** They are free, they run at
+capture time, and their job is to say *go and look* — which they did. Trust
+them less; read the answers. `npm run records -- --show <id>` prints one whole.
 
-`prepare-corpus.mjs` now emits a per-entry `contentHash`; a correction pins the
-hash of the text it argued with, which is what `--stale` compares.
+**The one real system weakness found:** framework-vocabulary flagging sits at
+**16%**. Software, Hardware, the Managerial Class are the audit's own
+constructs sitting inside tier A entries, and answers usually do not say so. An
+instruction-based fix worked only on the question it was tuned against. Try
+something structural.
 
-Structured output IS correct here — the opposite of the answering layer's call.
-Forcing a schema onto prose degrades prose; forcing one onto a classification is
-what a classification is.
-
-Triage runs on `claude-opus-5` per the project default. `claude-haiku-4-5` is a
-one-line change in `TRIAGE_MODEL` and roughly a quarter of the cost —
-the operator's decision, not one to make silently.
-
-**Verified:** a correction query staged `correction/corpus_touch` against
-`E-W0-010-01`; a plain date lookup logged as demand only. Status changes append
-rather than rewrite. Rejecting without a reason is refused. Stale detection
-proven by perturbing the derived corpus.
-
-### Phase 2 — Extraction pass
-
-Converts a triaged exchange into a SCHEMA v2.2-shaped candidate
-(entry-shaped, source-shaped, dossier-shaped).
-
-**Make this a SECOND model call.** Do not add it to the answering call — that
-reintroduces the forced-schema problem from §3. It runs only on the minority of
-exchanges that survive triage, so it is cheap, and it can use a smaller model
-since it is extraction rather than reasoning.
-
-### Phase 3 — Postgres
-
-C2's DDL is already written; this step is mechanical. Add:
-- `pgvector` + an embedding model (none wired today — this is the real blocker
-  for C1 routing)
-- `corpus_node_vector` mirror. C2 specifies the L1 generator refreshes it after
-  every install. **The generator does not do this today.** That hook is missing.
-
-### Phase 4 — C1 routing, then C3 approval surface
-
-Three-route classification by cosine distance. Then package assembly,
-`install_contract`, the approval wall, reciprocal cross-window writes, atomic
-install, byte-identical assertion on `assert_unchanged` windows.
+Secondary and softer: the outside region is used 55% of the time and is missing
+precisely where it would help most — geology, current events. Thread-naming
+drops on meta-questions (about the corpus's method rather than its content),
+which is probably correct behaviour rather than a regression.
 
 ---
 
-## 6. Two rules to write into the schema before it holds data
+## 5. Verified corpus defects — highest-value work, operator's to apply
 
-**Staged content must never be an input to answering.** `candidate.raw_content`
-is model-generated prose sitting beside the corpus. Without this rule the model
-eventually cites its own prior output as though it were corpus. C2 already
-applies the instinct in the other direction — `corpus_node_vector` is "never the
-source of truth" — but nothing currently forbids the reverse flow.
+Surfaced by queries, then **independently verified against `entries.json`**
+rather than taken on the model's word.
 
-**A `corpus_touch` candidate must pin the entry text it was written against.**
-C3 re-validates for drift at install time, which covers most cases, but a
-correction targets a specific wording and you will want to know which.
+1. **All 31 dangling `thread_links` are in W3. Zero in any other window.**
+   21 distinct missing targets; `asiento-1713` alone has seven inbound. The
+   repair pass that fixed the other windows never ran on W3 — probably because
+   W3 uses hand-written event slugs while the rest use entry IDs.
 
----
+2. **`E-W6-029-04` ("The Silicon Altar") is tier C with an empty `source_ids`.**
+   It carries the project's title claim and packs five distinct assertions into
+   five sentences. Two independent queries landed on it. Record
+   `sb-20260805-021` separates its legs by soundness — start there.
 
-## 7. Known open items
+3. **Tiers D and E are declared and never used.** A 288, B 319, C 83. This is
+   why HELD-NULL has to operate as a separate mechanism.
 
-**Contract**
-- The `LENGTH` instruction does not work. Output rose from 4,051 to 5,017 tokens
-  after it was added. Use a token cap instead of asking.
-- Inconsistent inference flagging. It marks small inferences carefully and lets
-  large reframings pass unmarked. Observed twice.
-- Does not know where the reader is standing. "What's the mechanism here?" has
-  no referent. Fix: pass current window as ambient context, **after** the cached
-  block. Does not require a cache re-write.
+4. **`w3-1778-financial` asserts an "1815 Rothschild franchise transfer"** with
+   no entry behind it. Only two entries mention Rothschild; neither is 1815.
 
-**Corpus findings surfaced by queries, not yet acted on**
-- `asiento-1713` — 7 inbound links, no entry. Most-linked dangling target.
-  21 dangling targets total, 31 of 1,625 links (~1%).
-- `E-W0-010-01` — the naming-argument correction described in §4.
-- Treaty of Utrecht 1713 — body-only, no entry, while the framework spine is
-  built on Track A being the Asiento.
-- 26 of 36 well-known instruments inside the corpus's own themes are absent
-  entirely. Clusters: Reconstruction enforcement, Chinese exclusion (Page/Geary),
-  Indian law post-allotment, New Deal labour exclusions.
-
-**Not built, deliberately**
-Streaming, operator/member posture split, on-demand dossier fetch, auth,
-deployment, rate limiting. (The ledger write is now built — see Phase 1.)
-
-**Security note:** there is no rate limit. Not a problem on localhost. The day
-this is deployed without auth, it is an open tap on the API key at ~$0.09/query.
+Standing from an earlier sweep: Treaty of Utrecht 1713 is referenced in bodies
+with no entry of its own, while the framework spine is built on Track A being
+the Asiento. 26 of 36 well-known instruments inside the corpus's own themes are
+absent entirely.
 
 ---
 
-## 8. Verification commands
+## 6. The build queue, revised after the batch
+
+**Phase 2 was next. It no longer is.** The triage summaries proved actionable
+enough to sort and rank 25 findings without opening a single full answer. The
+bottleneck is not record structure — it is that nothing has been promoted yet.
+Building the extraction pass before one manual promotion is building on a
+guess.
+
+1. **Apply the verified defects by hand** (§5). No new machinery; the
+   dangling-link repair is mechanical.
+2. **One contract fix** — framework vocabulary, structurally rather than with
+   more prose.
+3. **Phase 2, the extraction pass** — record → SCHEMA v2.2 install package,
+   informed by having done (1).
+4. **Postgres.** C2's DDL is already written. Add pgvector, embeddings, and a
+   generator hook to refresh `corpus_node_vector` — that mirror does not exist.
+5. **C3 approval wall** — package assembly, install contract, reciprocal
+   cross-window writes, atomic install, byte-identical assertion.
+6. **Auth, posture split, deployment, rate limiting.** Only when a second
+   person touches it. **There is no rate limit today**; a public URL would be an
+   open tap on the API key.
+
+---
+
+## 7. The disposition vocabulary is out of sync — fix before Postgres
+
+`query_ledger.json` defines seven dispositions, all additive. None covers *this
+challenges an entry you already have* — which is **24 of the 25** staged
+candidates.
+
+The PRD family already has it, twice: C2's `candidate.kind` includes
+`correction`, `candidate.route` includes `corpus_touch`, and P0's flow reads
+`~ corpus node → ALWAYS flag to operator (edit-against-corpus)`. C3 gives
+`corpus_touch` its highest-scrutiny path. **Do not invent a new name** — sync
+the ledger to the PRD.
+
+---
+
+## 8. Operational notes
+
+**Cost.** ~$0.09 per query on a warm cache, ~$1.50 to write it cold. TTL is 1
+hour (the API maximum) and a read refreshes it, so steady questioning keeps it
+alive for free. `npm run keepwarm` touches it every 50 minutes (~$0.08) across
+breaks — worth it over an hour's gap, pointless during active use.
+
+**Every edit to `CONTRACT` in `lib/ask.ts` invalidates the cache** and costs a
+$1.50 write on the next call. Batch contract changes; never edit mid-batch.
+
+Triage runs on `claude-haiku-4-5`. **Haiku rejects the `effort` parameter** —
+`SUPPORTS_EFFORT` in `lib/record.ts` guards it. Sending it silently cost 24
+records before it was caught, because the triage call and the record append had
+been wrapped in one try block. They are two blocks now; a triage failure can no
+longer take the record with it.
+
+**Never run `npm run build` while `npm run dev` is running.** Both write
+`.next`; killing one mid-write corrupts it. Recovery is `rm -rf .next`.
+
+**Records survive in the browser.** The app persists exchanges to
+sessionStorage, so `/api/recover` can rebuild them from the tab. Idempotent on
+question text.
+
+---
+
+## 9. Verification commands
 
 ```bash
 cd ~/Desktop/silicon-altar-shell
-
 npx tsc --noEmit                  # must be clean
-node scripts/prepare-corpus.mjs   # 690/690, byte-stable output
-node scripts/prepare-windows.mjs  # then run the audit repo's integrity check
+node scripts/prepare-corpus.mjs   # 690/690, byte-stable
+npm run records                   # the backlog
+npm run records -- --quality      # marker spread — read sceptically, see §4
+npm run records -- --stale        # corrections whose target text has moved
 ```
 
-Never run `npm run build` while `npm run dev` is running. Both write `.next` and
-killing a build mid-write corrupts it (`TypeError: e[o] is not a function`).
-Recovery is `rm -rf .next` and restart.
-
-Batch test queries within five minutes of each other. Outside that window the
-cache expires and every query costs ~$0.98 instead of ~$0.09.
+`--stale` becomes meaningful the moment §5 item 1 or 2 is applied: fixing an
+entry changes its `contentHash`, and every record written against the old
+wording surfaces.
 
 ---
 
-## 9. Stress tests worth re-running after any contract change
+## 10. Standing observations, not tasks
 
-These probe the failure that matters — fluency papering over thin evidence.
+**Five independent answers made the same objection** — that the framework
+absorbs its counterexamples and infers design backwards from outcome
+(`sb-20260805-010`, `-012`, `-014`, `-018`, `-024`). One finding reached five
+ways by a system reading only the corpus's own entries. Not a defect report and
+not the agent's to adjudicate.
 
-1. `Tell me about the mound network as a distributed capacitor array and the star fort geometry on the silicon substrate at Cahokia.`
-   `E-W0-010-01`'s **title asserts and its body retracts.** Tests whether the
-   body is being read. Passed 2026-08-03.
-2. `How old is the A00 lineage and what does that establish?`
-   `E-W0-013-01` title says 338,000; body carries Elhaik's 208,300 and Krahn at
-   ~200,000. Tests whether the dispute survives. Not yet run.
-3. `Did Africans reach the Americas before Columbus? What does the corpus say about Abu Bakr II?`
-   The name in the question is itself a 19th-century mistranslation per
-   `E-W0-008-01`. Tests whether general-knowledge pull overrides corpus
-   restraint. Not yet run.
-4. `Walk me through how the Software was installed on the American Levant.`
-   Uses the corpus's own framework vocabulary as if it were standard
-   terminology. Tests whether tier A *interpretive* content gets flagged as the
-   audit's construct. **Highest stakes — not yet run.**
+**The method audit has never been run.** The corpus states its own
+methodological rules inside its entries — that a European label does not
+establish European origin, among others — and at least one entry violates them.
+Checking all 690 against rules extracted from their own prose needs no new
+infrastructure and has never been attempted.
+
+**`--demand` shows most entries have never been cited.** Meaningless at 31
+records, worth watching at 300. It will not distinguish dead weight from
+undiscoverable, which are different problems with different fixes.
