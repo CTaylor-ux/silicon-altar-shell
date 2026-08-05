@@ -136,25 +136,31 @@ export async function POST(req: Request) {
     estimatedCostUsd: Number(cost.toFixed(4)),
   };
 
-  /* Triage, then record.
+  /* Triage, then record — and these are two try blocks on purpose.
    *
-   * Wrapped so neither can cost the reader an answer they already paid for. A
-   * failure here loses a log line; a thrown exception would lose the response.
-   * The console line is deliberate: this is the operator's only live signal
-   * that the capture step is working. */
+   * They were one, and a triage failure therefore skipped the append and lost
+   * the entire record rather than just the triage block. Twenty answers were
+   * produced, paid for, and never written down before that surfaced, because
+   * the failure logged quietly and the reader saw a perfectly good answer.
+   *
+   * A record with no triage is still worth everything the record is for. Only
+   * a lost record is a loss. */
+  let triageBlock = null;
   try {
     const t = await triage(client, question, parsed.answer, parsed.outside, parsed.citedIds);
-    /* Triage is a second model call and was missing from every cost figure
-       reported so far — the recorded usage covered the answering call only. */
+    triageBlock = t.triage;
     const tu = t.usage ?? {};
     const triageCost =
       ((tu.input_tokens ?? 0) * TRIAGE_IN_PER_MTOK) / 1_000_000 +
       ((tu.output_tokens ?? 0) * TRIAGE_OUT_PER_MTOK) / 1_000_000;
     usage.triageCostUsd = Number(triageCost.toFixed(4));
     usage.estimatedCostUsd = Number((usage.estimatedCostUsd + triageCost).toFixed(4));
+  } catch (e) {
+    console.error('[record] TRIAGE failed (record still written):', (e as Error).message);
+  }
+
+  try {
     const rec = appendRecord({
-      // No auth yet, so every exchange is the operator. When posture lands,
-      // this is where surface 'A' (researcher) starts appearing.
       surface: 'B',
       surfaced_by: 'operator',
       trigger_context: question,
@@ -170,20 +176,20 @@ export async function POST(req: Request) {
         parsed.strippedIds,
         usage.outputTokens
       ),
-      triage: t.triage,
+      triage: triageBlock,
       status: 'captured',
       operator_decision: null,
       operator_decision_at: null,
     });
     console.log(
       `[record] ${rec.id} ` +
-        (t.triage
-          ? `INSTALLABLE ${t.triage.kind}/${t.triage.route}` +
-            (t.triage.target_entry ? ` -> ${t.triage.target_entry}` : '')
+        (triageBlock
+          ? `INSTALLABLE ${triageBlock.kind}/${triageBlock.route}` +
+            (triageBlock.target_entry ? ` -> ${triageBlock.target_entry}` : '')
           : 'logged, nothing installable')
     );
   } catch (e) {
-    console.error('[record] capture failed:', (e as Error).message);
+    console.error('[record] APPEND FAILED — this record is lost:', (e as Error).message);
   }
 
   console.log(

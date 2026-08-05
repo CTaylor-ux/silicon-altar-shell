@@ -275,6 +275,9 @@ they are ignored downstream.`;
  * update TRIAGE_IN/OUT_PER_MTOK in app/api/ask/route.ts to 5 and 25 to revert. */
 const TRIAGE_MODEL = 'claude-haiku-4-5';
 
+/** Haiku 4.5 returns a 400 for `effort`; the Opus and Sonnet lines accept it. */
+const SUPPORTS_EFFORT = !TRIAGE_MODEL.includes('haiku');
+
 export async function triage(
   client: Anthropic,
   question: string,
@@ -289,8 +292,11 @@ export async function triage(
     model: TRIAGE_MODEL,
     max_tokens: 2000,
     system: TRIAGE_PROMPT,
+    /* effort is NOT universally supported — Haiku 4.5 rejects it with a 400,
+       and this cost twenty records to learn. Only send it on models that take
+       it, so swapping TRIAGE_MODEL never silently breaks capture again. */
     output_config: {
-      effort: 'low',
+      ...(SUPPORTS_EFFORT ? { effort: 'low' } : {}),
       format: { type: 'json_schema', schema: TRIAGE_SCHEMA },
     },
     messages: [
