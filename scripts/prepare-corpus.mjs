@@ -343,6 +343,29 @@ function serializeEntry(e) {
   if (body) lines.push(body);
   else lines.push(...dossierLines(e));
 
+  /* What the claim rests on, and whether anyone has opened it.
+   *
+   * `live_verified` means someone doing the audit work read that source and
+   * recorded what it says. `citation_only` means it was identified and never
+   * opened: the entry's tier reflects the author's judgement of the source, not
+   * a reading of it. 443 against 138 corpus-wide, and 60 tier A entries rest
+   * entirely on the second kind.
+   *
+   * Without this line an answer can only see the entry's tier, so "how well
+   * evidenced is this?" gets answered from a letter. The url is included so an
+   * answer can point a reader at the document; the contract forbids pasting it
+   * into prose, because links belong in the dossier where they render with the
+   * source's note and tier beside them. */
+  const srcs = (e.source_ids ?? [])
+    .map((sid) => {
+      const s = sourceById.get(sid);
+      if (!s) return null;
+      const state = `${s.tier ?? '?'} ${s.link_status ?? 'unknown'}`;
+      return `[${state}] ${sid}${s.url ? ` ${s.url}` : ''}`;
+    })
+    .filter(Boolean);
+  if (srcs.length) lines.push(`sources: ${srcs.join('; ')}`);
+
   if (e.thread_links?.length) lines.push(`links: ${e.thread_links.join(', ')}`);
   if (e.thread_memberships?.length) lines.push(`threads: ${e.thread_memberships.join(', ')}`);
   return lines.filter(Boolean).join('\n');
@@ -400,6 +423,20 @@ const promptText = [
   '',
   'A missing body is not a gap in the record. It is where that window put the',
   'detail. Do not report those entries as thin or unsourced.',
+  '',
+  'Most entries also carry a sources line, in the form',
+  '[TIER STATUS] source-id url. STATUS is the one that matters:',
+  '',
+  '  live_verified   someone doing this audit OPENED that source and recorded',
+  '                  what it says.',
+  '  citation_only   the source was identified and NEVER OPENED. The entry tier',
+  '                  reflects a judgement about the source, not a reading of it.',
+  '',
+  'These are not the same evidential situation and should not be described as',
+  'though they were. An entry at tier A whose sources are all citation_only is',
+  'a confident claim resting on unread evidence, and when asked how well',
+  'something is evidenced, say so. 443 sources are opened and 138 are not.',
+  'Absence of a sources line means the entry carries no source at all.',
   '',
   '---',
   '',

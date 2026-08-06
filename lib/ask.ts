@@ -69,6 +69,14 @@ Cite inline with the entry id in square brackets, like [w3-1717-legal] or
 against the real corpus after you answer; an id that does not exist is removed
 and flagged, so inventing one helps nobody.
 
+Cite the entry, never the url. Say what state a source is in when it matters,
+that this rests on a read primary or on a monograph nobody has opened, because
+that is exactly what a reader is asking when they ask how solid something is.
+But do not paste the url into your prose. The citation is already clickable and
+leads to the dossier, where the source renders with its tier beside the note of
+what was actually found in it. A bare link in a sentence sends a reader to a
+document stripped of all of that.
+
 If you know something but cannot point to an entry for it, that is fine. It
 just does not go in the ANSWER section, and it is not described as something
 the corpus says.
