@@ -2,21 +2,22 @@
 
 Read this first in a new thread. It is written to be read cold.
 
-Last updated 2026-08-05, after the second batch (51 recorded queries) and the
-dossier-line change. All shell work is on `main`. **The audit repo has one
-commit (`88825cc`, the W3 link repair) that is committed but NOT pushed.**
+Last updated 2026-08-06, after the first corpus promotions (see §5b) and the
+dossier-line change. Both repos are on `main` and pushed as of the audit repo's
+1713 batch; nothing is uncommitted.
 
 ---
 
 ## 0. What this is, in one paragraph
 
-Seven Window HTML timelines are generated from a governed JSON corpus of 690
+Seven Window HTML timelines are generated from a governed JSON corpus of 700
 entries. A Next.js shell wraps them without modifying them. The shell has two
 query affordances: **Locate** (deterministic year lookup, no model) and **Ask**
-(all 690 entries in context, prose out, citations validated server-side). Every
+(all 700 entries in context, prose out, citations validated server-side). Every
 exchange is recorded to `records/queries.jsonl`; a triage pass flags the
-minority containing something installable. **Nothing has yet been promoted into
-the corpus.** That is the next step and it is the operator's.
+minority containing something installable. **The first promotions landed
+2026-08-06 — and none of them came from a recorded query. Read §5b before
+trusting the loop's shape.**
 
 ---
 
@@ -24,14 +25,22 @@ the corpus.** That is the next step and it is the operator's.
 
 | What | Path |
 |---|---|
-| Shell app — all app work happens here | `~/Desktop/silicon-altar-shell` |
-| Audit repo — **READ-ONLY from the app** | `~/Desktop/Silicon_Altar_LIVE` |
+| Shell app — all app work happens here | `~/dev/silicon-altar-shell` |
+| Audit repo — **READ-ONLY from the app** | `~/dev/Silicon_Altar_LIVE` |
 | PRD family (P0, C1, C2, C3) | `<audit>/Silicon Altar Platform PRD Family/` |
 | Query ledger (1 hand-written record) | `<audit>/query_ledger.json` |
 | Query layer spec | `docs/RAG_SPEC.md` — §1–2 built, §3 superseded by this file |
 
 Both repos are private, on GitHub under CTaylor-ux. The shell is a **sibling**
 of the audit repo, never nested.
+
+**Both moved off `~/Desktop` on 2026-08-06 and must not move back.** The Desktop
+is iCloud-synced, and when the disk filled, macOS silently evicted local copies
+of project files, leaving stubs it then could not re-download. `git` began
+failing intermittently with "not a git repository" on a repo whose `.git` was
+demonstrably intact seconds later, and `.env.local` — the only copy of the API
+key, not in git — became permanently unreadable. `~/dev` is not iCloud-managed.
+The Desktop copies still exist and are damaged; ignore them.
 
 `.env.local` holds `SILICON_ALTAR_REPO` and `ANTHROPIC_API_KEY`. Gitignored.
 
@@ -52,7 +61,7 @@ prefix, byte-stable across runs so the cache survives).
 
 **210 entries carry no body, and that is a convention, not a defect.** W1, W2
 and W5 put the detail in the dossier and let the title carry the claim; W0, W3,
-W4 and W6 put it in `body`. All 690 have a dossier behind their `event_id` —
+W4 and W6 put it in `body`. All 700 have a dossier behind their `event_id` —
 verified, no exceptions. Until 2026-08-05 the prompt shipped only a `hasDossier`
 boolean, so those 210 reached the model as a bare title: 30% of the corpus, 66%
 of W5. `prepare-corpus.mjs` now emits two dossier lines for them — the framework
@@ -71,7 +80,7 @@ fails the build if any entry would ship as a bare title. Never report an empty
 own rather than blended into the average of everything before it),
 `npm run keepwarm`.
 
-**Verified.** Seven windows at 77/85/97/69/72/188/102 = 690, glossary bound in
+**Verified.** Seven windows at 77/85/97/79/72/188/102 = 700, glossary bound in
 each, no provenance leaks. Across 51 recorded queries: **647 citations, zero
 fabricated.** Cache reads confirmed non-zero. Status changes append rather than
 rewrite.
@@ -92,7 +101,7 @@ classification is exactly what a schema is for.
 that it doesn't" are physically separate regions. Labels inside prose decay
 into wallpaper within a week; layout does not.
 
-**No vector search for answering.** 690 entries fit in one call. Vectors are
+**No vector search for answering.** 700 entries fit in one call. Vectors are
 needed for C1 dedup and corpus-touch detection — a different job.
 
 **Posture goes AFTER the cached corpus block**, so operator and member share
@@ -225,6 +234,42 @@ absent entirely.
 
 ---
 
+## 5b. The first promotions happened, and not through the app (2026-08-06)
+
+**Everything §6 was waiting for got done in one session, by conversation.** The
+1713 Asiento authored from the primary, Article XXXIX and Article XLII read and
+entered, two links of the pre-1713 chain built, four backlog records opened or
+closed, T-ASIENTO made continuous 1518 to 1750. Audit commits `8b743af` through
+`t25f`.
+
+**None of it came from a recorded query.** 51 records, zero promotions. One
+conversation, seven.
+
+The difference is not the interface and it is not the model. It is tools. The
+answering layer can read the corpus and say *this is missing*. It cannot open the
+source, check the claim against `entries.json`, and write the entry. Every one of
+today's promotions required leaving the corpus: fetching a 1713 contract scan,
+finding the text truncated at Article XXVII, having the operator read Article XLII
+by eye, and discovering that **both** external accounts of the crown's profit share
+were wrong.
+
+That reframes item 3 below. The extraction pass assumes records contain findings
+that need packaging. They do not. A record can only ever contain *the corpus
+noticing its own absence*, because that is all the answering layer can see. The
+resolution step — go and read something — has no representation in the loop at all.
+
+**What to do with that is genuinely open.** It might mean giving the answering
+layer retrieval tools. It might mean the record layer's job is narrower than
+assumed: surface absences well, and expect a human-plus-tools pass to resolve them.
+It might mean the query loop is a *detection* instrument and was mis-scoped as a
+*promotion* instrument. Do not resolve this by building; resolve it by watching
+which one produces corpus changes over the next month.
+
+**The measurement to keep:** promotions per session, split by whether the session
+had tools. Today: recorded queries 0, tool-session 7.
+
+---
+
 ## 6. The build queue, revised after the batch
 
 **Phase 2 was next. It no longer is.** The triage summaries proved actionable
@@ -233,17 +278,20 @@ bottleneck is not record structure — it is that nothing has been promoted yet.
 Building the extraction pass before one manual promotion is building on a
 guess.
 
-1. **Apply the verified defects by hand** (§5). The mechanical third of item 1
-   is done; what is left is authoring, and the **1713 Utrecht/Asiento entry is
-   the highest-value single item in this file** — eight dangling links and the
-   framework spine's Track A both depend on an entry that does not exist.
+1. ~~**Apply the verified defects by hand** (§5).~~ **1713 is done** (§5 item 1,
+   §5b). Authored from the primary, five lanes, dossier with four hypotheses, all
+   eight inbound links resolved. What remains of §5: `E-W6-029-04` and the
+   `w3-1778-financial` Rothschild assertion, both still untouched.
 2. ~~**One contract fix** — framework vocabulary.~~ **Withdrawn.** §4's 16%
    was a marker artifact; there is no measured weakness here to fix. If the
    behaviour is worth pursuing, the first move is a counter that measures it,
    not another contract edit. Every `CONTRACT` edit costs a cache write, so
    nothing should be spent against a number that does not hold.
-3. **Phase 2, the extraction pass** — record → SCHEMA v2.2 install package,
-   informed by having done (1).
+3. **Phase 2, the extraction pass** — record → SCHEMA v2.2 install package.
+   **Read §5b before starting this.** The premise, that records hold findings
+   needing packaging, did not survive the first real promotions. Records hold
+   *absences*. Whatever gets built here has to account for the resolution step,
+   which currently happens entirely outside the loop.
 4. **Postgres.** C2's DDL is already written. Add pgvector, embeddings, and a
    generator hook to refresh `corpus_node_vector` — that mirror does not exist.
 5. **C3 approval wall** — package assembly, install contract, reciprocal
@@ -306,7 +354,7 @@ question text.
 ```bash
 cd ~/Desktop/silicon-altar-shell
 npx tsc --noEmit                  # must be clean
-node scripts/prepare-corpus.mjs   # 690/690, byte-stable
+node scripts/prepare-corpus.mjs   # 700/700, byte-stable
 npm run records                   # the backlog
 npm run records -- --quality      # marker spread — read sceptically, see §4
 npm run records -- --quality --since sb-20260805-025   # one batch, unblended
@@ -342,7 +390,7 @@ not the agent's to adjudicate.
 **The method audit has never been run.** The corpus states its own
 methodological rules inside its entries — that a European label does not
 establish European origin, among others — and at least one entry violates them.
-Checking all 690 against rules extracted from their own prose needs no new
+Checking all 700 against rules extracted from their own prose needs no new
 infrastructure and has never been attempted.
 
 **`--demand` shows most entries have never been cited.** Meaningless at 31

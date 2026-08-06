@@ -1,6 +1,6 @@
 THE SILICON ALTAR CORPUS
 
-Entries: 690. Windows: 7.
+Entries: 700. Windows: 7.
 
 The corpus states its own scope and spine. Both are load-bearing: they are
 how you tell a genuine gap from something deliberately out of scope.
@@ -3562,6 +3562,36 @@ The RI General Assembly at Providence and Warwick passes a statute limiting serv
 links: ri-slavery-recognition-1703
 threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
 
+[w3-1662-corporate] W3 5 July 1662 corporate TB
+Asiento contracted to Genoese merchant bankers, with Dutch and English companies supplying the carriage
+The Spanish crown contracts the asiento to Domenico Grillo and Ambrogio Lomellini, Genoese merchant bankers, for 24,000 piezas de India across seven years, about 3,430 a year. The Dutch West India Company and the English Royal Adventurers assist in supplying it. English participation in Asiento carriage therefore predates the 1713 transfer by fifty years, under a Genoese licence rather than a British one.
+links: asiento-first-1518, asiento-1713
+threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
+
+[w3-1662-financial] W3 5 July 1662 financial TB
+Genoese merchant-banker capital holds the franchise; FW-016 continuity across operators
+framework: FW-016 Merchant-Banker Constant. A link in the asiento succession between the 1518 origin and the 1713 acquisition, showing the beneficiary network operating across national licence holders.
+assessment: Weight: Supported (1 sourced, tier B, read) | Warrant: Open (single reference source; no primary or monograph read)
+threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
+
+[w3-1701-corporate] W3 1701 corporate TB
+Compagnie de Guinee et de l'Assiente, founded 1684, reorganised 1701 to seat the two crowns
+framework: FW-016 Merchant-Banker Constant, and the strongest single piece of evidence in this corpus for a crown inside the revenue of the traffic rather than taxing it from outside. Directly upstream of the 1713 Additional Article's fourth part.
+assessment: Weight: Supported (1 sourced, tier B, read) | Warrant: Open (single reference source; no primary or monograph read)
+threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
+
+[w3-1701-financial] W3 1701 financial TB
+The quarter the 1713 contract carries forward when it says 'as in the Assiento'
+framework: FW-016 Merchant-Banker Constant, and the strongest single piece of evidence in this corpus for a crown inside the revenue of the traffic rather than taxing it from outside. Directly upstream of the 1713 Additional Article's fourth part.
+assessment: Weight: Supported (1 sourced, tier B, read) | Warrant: Open (single reference source; no primary or monograph read)
+threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
+
+[w3-1701-sovereign] W3 1701 sovereign TB MILESTONE
+Two crowns take quarter shareholdings in the asiento company itself, at 100,000 livres each
+Philip V grants the asiento to the French Compagnie de Guinee et de l'Assiente under Jean-Baptiste du Casse, for 48,000 piezas de India across a decade. The company, founded in 1684, is reorganised in 1701 with the Spanish and French crowns each taking a quarter shareholding at 100,000 livres apiece. Both sovereigns hold capital in the operating company rather than licensing it from outside it.
+links: asiento-grillo-lomellini-1662, asiento-1713, bourbon-spanish-crown-1704
+threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
+
 [w3-1703-legal] W3 1703 legal TA MILESTONE
 Rhode Island General Assembly formally recognizes slavery, structurally voids the 1652 Providence-Warwick statute
 RI General Assembly acts to formally recognize slavery as lawful across the colony, ending the fifty-one-year fiction of the 1652 anti-slavery statute. This is the franchise-transition moment for Track A of the three-track labor system in Rhode Island: the classification 'Negro' now has explicit colonial statutory backing rather than customary practice. Sets the stage for the 1708 monetization statute (TC-012) that puts an actual per-head duty on imports.
@@ -3595,6 +3625,37 @@ threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-WHITENING-PROJECT, T-MERCHANT-BANKER-
 [w3-1711-financial] W3 1711 financial TC
 South Sea Company chartered and government debt converted to shares
 1711. The South Sea Company was incorporated and granted the Asiento contract, with a substantial portion of British government debt converted into company stock. This entry exists because construct-insurance-actuarial-sublane names it as a member of the risk-pricing chain and the W6 dossier on the 2023 regional banking crisis references it as the pattern's origin; neither could resolve it.
+
+[w3-1713-corporate] W3 26 March 1713 corporate TA
+The franchise is held corporately, and is still corporate at its 1750 wind-up
+framework: FW-006 Three-Track Labor System, Track A installation. The instrument that the framework spine names and the corpus had never entered. Upstream of the 1717 Transportation Act, which builds Track C in this contract's image, and of the 1750 Treaty of Madrid, which winds the same franchise up.
+assessment: Weight: Proven (2 sourced, tier A; the primary read verbatim at Articles I, II, XLII and the Additional Article) | Warrant: Open (one source held at citation_only)
+threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
+
+[w3-1713-financial] W3 26 March 1713 financial TA
+Human delivery priced per head: one composite duty of 33 1/3 per pieza de India
+framework: FW-006 Three-Track Labor System, Track A installation. The instrument that the framework spine names and the corpus had never entered. Upstream of the 1717 Transportation Act, which builds Track C in this contract's image, and of the 1750 Treaty of Madrid, which winds the same franchise up.
+assessment: Weight: Proven (2 sourced, tier A; the primary read verbatim at Articles I, II, XLII and the Additional Article) | Warrant: Open (one source held at citation_only)
+threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
+
+[w3-1713-legal] W3 26 March 1713 legal TA MILESTONE
+Asiento de Negros reassigned to Britain: 144,000 piezas de India across thirty years, Track A installed
+The Asiento contract is signed by the Catholic King at Madrid on 26 March 1713, moving the monopoly on delivering enslaved Africans to Spanish America from French to British hands. Article I sets the term at thirty years, commencing 1 May 1713 and determining 1 May 1743, at 4,800 piezas de India a year and 144,000 in total. Article II fixes one composite duty of thirty three and one third per pieza covering all duties whatsoever. This is where Track A of the three-track labor system installs.
+links: bourbon-spanish-crown-1704, ssc-bonds-1711, transportation-act-1717-royal-assent, slave-trade-peak-1725, britain-relinquishes-asiento-1750
+threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
+
+[w3-1713-records] W3 26 March 1713 records TA
+Article XXXIX conveys every concession of six named predecessor asentistas, and keeps their orders re-issuable
+framework: FW-006 Three-Track Labor System, Track A installation. The instrument that the framework spine names and the corpus had never entered. Upstream of the 1717 Transportation Act, which builds Track C in this contract's image, and of the 1750 Treaty of Madrid, which winds the same franchise up.
+assessment: Weight: Proven (2 sourced, tier A; the primary read verbatim at Articles I, II, XLII and the Additional Article) | Warrant: Open (one source held at citation_only)
+links: asiento-first-1518
+threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
+
+[w3-1713-sovereign] W3 26 March 1713 sovereign TA
+The Spanish crown takes a fourth part of the gain, plus 5 per cent of England's three parts
+framework: FW-006 Three-Track Labor System, Track A installation. The instrument that the framework spine names and the corpus had never entered. Upstream of the 1717 Transportation Act, which builds Track C in this contract's image, and of the 1750 Treaty of Madrid, which winds the same franchise up.
+assessment: Weight: Proven (2 sourced, tier A; the primary read verbatim at Articles I, II, XLII and the Additional Article) | Warrant: Open (one source held at citation_only)
+threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1714-legal] W3 1714 legal TA MILESTONE
 Rhode Island passes runaway law and restricts Indian imports as classification-franchise protection (F1 prototype)
