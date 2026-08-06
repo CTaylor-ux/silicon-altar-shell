@@ -270,6 +270,88 @@ had tools. Today: recorded queries 0, tool-session 7.
 
 ---
 
+## 5c. NEXT BUILD — sources into the prompt ("B"), specced 2026-08-06
+
+**The gap.** `src-` appears **zero times** in `corpus.prompt.txt`. `serializeEntry`
+emits head, title, body-or-dossier-lines, `links:` and `threads:`, and nothing
+else. `sources.json` — 584 records carrying tier, `link_status`, url,
+`verified_date` — has never reached the answering call. The model has never known
+which sources back an entry, or that sources exist.
+
+**Why that matters more than it sounds.** `link_status` is not reader telemetry.
+It is a hand-maintained record of whether anyone on this project has OPENED a
+source: 443 `live_verified`, 138 `citation_only` (identified, text not read).
+The corpus therefore already knows things the answering layer cannot see:
+
+- **60 tier A entries have zero opened sources.** W0 40, W3 14, W1 6.
+- **15 entries carry no `source_ids` at all.**
+- W0 is at 42% of sourced entries having an opened source; W6 is at 100%.
+
+Ask "how well evidenced is this?" today and the model answers from a tier letter.
+
+### The build, three edits and one deploy
+
+1. `prepare-corpus.mjs` reads `sources.json` beside `dossiers.json` and emits one
+   line per entry:
+   `sources: [A live_verified] src-assiento-contract-1713 https://archive.org/details/cihm_28677`
+2. One line in `CONTRACT` forbidding URLs in prose. Links belong in the dossier.
+   **Must ship in the same change** or it costs a second cache write.
+3. Regenerate, deploy, one write.
+
+**Measured cost, not estimated.** 685 of 700 entries gain the line. **+41k tokens**
+(177k to 218k, against a 1M ceiling). Cold write $1.77 to $2.18. Read per query
+$0.088 to $0.109. A 20-question sitting goes $3.53 to $4.36.
+
+### Build alongside: `npm run records -- --sources`
+
+Chain `cited_entry_ids` to `source_ids` and rank by demand. Zero API cost, purely
+local. Measured across the 51 records: answers implicated **328 distinct sources**,
+**82 of them never opened**, and **281 of 933 source-citations (30%) point at
+unopened material**. Top of the queue is `src-corporate-caselaw-layer-1602-1713`,
+reached **27 times**, tier C, an internal project document. The audit citing
+itself, unverified, more than any external source.
+
+Useful with or without B, and it is what turns "which should I check?" into a
+ranked list.
+
+### How to measure B, and how not to
+
+There is **no clean counter** here, unlike 4b's title-only citation share. What
+changes is how the model reasons about evidence, not which entries it cites.
+
+**Do not build a marker.** Four have now misled, including the 16% that §4 treated
+as the system's main weakness for a whole revision.
+
+Measure by reading. Ten targeted evidence-quality questions, ~$4: how well
+evidenced is the Moroccan recognition claim (`w3-1777-certification`, tier A, both
+sources `citation_only`); where is the corpus weakest; what should I read first;
+which entries have no sources. Right now those are unanswerable, so any correct
+answer is signal.
+
+### Decided and NOT being built
+
+- **Source links rendered in answers: withdrawn.** Citations are already clickable
+  (`QueryBar.tsx:444` -> `onGoToTarget`) and lead to the window, the dossier, and
+  the sources with their tiers and notes. Raw links in the answer would compete
+  with that path, look more clickable, and land readers on a scan with no context.
+  The answer already has something better. This also avoids growing the client
+  bundle from 226 KB to 385 KB.
+- **Fetching in `/api/ask` ("C"): deferred.** Needs the `corpus_touch` route
+  (§7) built first, and a guard for source claims that does not exist. The
+  citation validator checks `[entry-id]` and nothing else. Today's Assiento OCR
+  truncated at Article XXVII of 42; the app would have read two thirds of a
+  document and sounded certain.
+- **Batch verification: later, and offline.** Not in the answering path. Only
+  **16 of the 82** demanded-unopened sources have a URL; 58 of the bibliography's
+  unopened records are academic monographs. Automation triages, it does not clear
+  the queue.
+- **Reader contributions: decided, not built.** Anything reader-supplied goes to
+  the candidate queue, never into the answering context. §3's staged-content rule
+  should be widened from "past records" to "nothing user-supplied" before someone
+  reads the narrow wording as permission.
+
+---
+
 ## 6. The build queue, revised after the batch
 
 **Phase 2 was next. It no longer is.** The triage summaries proved actionable
@@ -287,6 +369,10 @@ guess.
    behaviour is worth pursuing, the first move is a counter that measures it,
    not another contract edit. Every `CONTRACT` edit costs a cache write, so
    nothing should be spent against a number that does not hold.
+
+   **Replaced by §5c: sources into the prompt.** Fully specced, costed and
+   sequenced there, including what is deliberately not being built. Start with
+   `--sources`, which costs nothing and is useful on its own.
 3. **Phase 2, the extraction pass** — record → SCHEMA v2.2 install package.
    **Read §5b before starting this.** The premise, that records hold findings
    needing packaging, did not survive the first real promotions. Records hold
