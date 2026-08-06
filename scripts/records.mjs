@@ -6,6 +6,7 @@
  *   npm run records -- --all         every record, installable or not
  *   npm run records -- --show ID     one record in full
  *   npm run records -- --demand      which entries answers actually lean on
+ *   npm run records -- --sources     which sources they lean on, and if opened
  *   npm run records -- --stale       corrections whose target text has moved
  *   npm run records -- --set ID STATUS [reason]
  *
@@ -24,6 +25,7 @@ import path from 'node:path';
 
 const FILE = path.join(process.cwd(), 'records', 'queries.jsonl');
 const CORPUS = path.join(process.cwd(), 'lib', 'corpus.generated.json');
+const SOURCES = path.join(process.cwd(), 'lib', 'sources.generated.json');
 
 const STATUSES = [
   'captured',
@@ -65,6 +67,16 @@ function entryIndex() {
     return new Map(c.entries.map((e) => [e.id, e]));
   } catch {
     return new Map();
+  }
+}
+
+/** Written by prepare-corpus.mjs. Not bundled to the browser: this exists so the
+ *  CLI can chain a cited entry through to the state of its evidence. */
+function sourceIndex() {
+  try {
+    return JSON.parse(fs.readFileSync(SOURCES, 'utf8'));
+  } catch {
+    return null;
   }
 }
 
@@ -163,6 +175,66 @@ if (has('--demand')) {
     console.log(dim(`\n  ${never} of ${idx.size} entries have never been cited by any answer.`));
     console.log(dim('  Not necessarily dead weight — could be undiscoverable instead. Different fix.\n'));
   }
+  process.exit(0);
+}
+
+/* -------------------------------------------------------------- --sources */
+/* --demand asks which ENTRIES answers lean on. This asks the question one layer
+ * down: which SOURCES is the corpus leaning on through those entries, and has
+ * anyone opened them.
+ *
+ * `link_status` is not reader telemetry. It records whether someone doing the
+ * audit work opened that source: live_verified means read, citation_only means
+ * identified and never opened. So this is a reading list ordered by what
+ * questions actually reach, rather than by what looks interesting. */
+if (has('--sources')) {
+  const sx = sourceIndex();
+  if (!sx) {
+    console.error('\n  No lib/sources.generated.json. Run: npm run prepare-corpus\n');
+    process.exit(1);
+  }
+  const limit = Number(valAfter('--limit')) || 20;
+  const demand = new Map();
+  for (const r of recs)
+    for (const eid of r.cited_entry_ids ?? [])
+      for (const sid of sx.entrySources[eid] ?? [])
+        demand.set(sid, (demand.get(sid) ?? 0) + 1);
+
+  const rows = [...demand.entries()]
+    .map(([id, n]) => ({ id, n, ...(sx.sources[id] ?? {}) }))
+    .sort((a, b) => b.n - a.n);
+  const unopened = rows.filter((r) => r.linkStatus === 'citation_only');
+  const totalRefs = rows.reduce((a, r) => a + r.n, 0);
+  const unopenedRefs = unopened.reduce((a, r) => a + r.n, 0);
+
+  console.log(
+    `\n  ${bold('Sources answers lean on')}   ${recs.length} records, ` +
+      `${rows.length} distinct sources reached\n`
+  );
+  console.log(dim('  reach  tier  status          source'));
+  for (const r of rows.slice(0, limit)) {
+    const flag = r.linkStatus === 'citation_only' ? warn('UNOPENED  ') : dim('opened    ');
+    console.log(
+      `  ${String(r.n).padStart(4)}   ${(r.tier ?? '?').padEnd(4)} ${flag} ${r.id}`
+    );
+    console.log(`        ${dim((r.title ?? '').slice(0, 84))}`);
+  }
+
+  console.log(
+    `\n  ${bold(`${unopened.length} of ${rows.length}`)} sources reached have never been opened.`
+  );
+  console.log(
+    `  ${bold(`${unopenedRefs} of ${totalRefs}`)} source-references ` +
+      `(${Math.round((unopenedRefs / totalRefs) * 100)}%) point at unopened material.`
+  );
+  const fetchable = unopened.filter((r) => r.url).length;
+  console.log(
+    dim(
+      `\n  ${fetchable} of the ${unopened.length} unopened have a url. The rest are books:\n` +
+        '  a library or a purchase, not a fetch. Verify in batches, then regenerate\n' +
+        '  once — each regeneration costs a cache write.\n'
+    )
+  );
   process.exit(0);
 }
 

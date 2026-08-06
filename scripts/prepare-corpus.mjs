@@ -154,6 +154,27 @@ const dossierByEventId = new Map(
   dossiers.map((d) => [d.event_id ?? d.eventId, d]).filter(([k]) => k)
 );
 
+/* sources.json has never reached anything the app runs. It carries the one field
+ * that records whether a claim's evidence has actually been opened: `link_status`,
+ * hand-maintained, 443 live_verified against 138 citation_only (identified, text
+ * not read). So the corpus knows things nothing downstream can see, among them
+ * that 60 tier A entries rest entirely on sources nobody has opened.
+ *
+ * Two consumers, deliberately kept apart:
+ *   - the answering prompt gets a compact `sources:` line (see serializeEntry)
+ *   - `npm run records -- --sources` reads the sidecar written below
+ *
+ * The sidecar is NOT folded into lib/corpus.generated.json, on purpose. That file
+ * is imported by client components and ships to the browser; a source index would
+ * add roughly 130 KB there to serve a reader-facing feature that was considered
+ * and dropped, because citations already lead to the dossier and the dossier
+ * renders sources properly. A CLI can afford the weight; the browser should not
+ * pay for it. */
+const sourcesRaw = JSON.parse(fs.readFileSync(path.join(REPO, 'sources.json'), 'utf8'));
+const sourceList = Array.isArray(sourcesRaw) ? sourcesRaw : sourcesRaw.sources;
+const sourceById = new Map(sourceList.map((s) => [s.id, s]));
+const SIDECAR = path.join(process.cwd(), 'lib', 'sources.generated.json');
+
 /* A short hash of the exact text a claim was made against.
  *
  * When a record proposes a correction to an entry and the operator returns to
@@ -205,6 +226,43 @@ const displayMismatch = rows.filter(
   (r) => r.year.display !== String(byId.get(r.id).year_label ?? '')
 );
 if (displayMismatch.length) die(`${displayMismatch.length} entries had year_label altered.`);
+
+/* Every source_ids reference must resolve, or the demand report silently
+ * undercounts and the prompt line points at nothing. */
+const danglingSourceRefs = entries.flatMap((e) =>
+  (e.source_ids ?? []).filter((sid) => !sourceById.has(sid)).map((sid) => `${e.id} -> ${sid}`)
+);
+if (danglingSourceRefs.length) {
+  console.error(`\n  ${danglingSourceRefs.length} entries reference a source that does not exist:`);
+  danglingSourceRefs.slice(0, 10).forEach((s) => console.error(`    ${s}`));
+  die('Fix sources.json or the entry rather than shipping a broken reference.');
+}
+
+fs.writeFileSync(
+  SIDECAR,
+  JSON.stringify({
+    generatedFrom: 'entries.json + sources.json',
+    /* entry id -> its source ids, so the demand report can chain
+     * cited_entry_ids through to evidence without re-reading the audit repo. */
+    entrySources: Object.fromEntries(
+      entries.filter((e) => e.source_ids?.length).map((e) => [e.id, e.source_ids])
+    ),
+    sources: Object.fromEntries(
+      sourceList.map((s) => [
+        s.id,
+        {
+          tier: s.tier ?? null,
+          linkStatus: s.link_status ?? null,
+          url: s.url || null,
+          title: s.title ?? '',
+          type: s.type ?? null,
+          verifiedDate: s.verified_date ?? null,
+        },
+      ])
+    ),
+  }),
+  'utf8'
+);
 
 const windows = windowsList.map((w) => ({
   id: Number(String(w.id).replace(/\D/g, '')),

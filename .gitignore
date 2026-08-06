@@ -11,3 +11,7 @@ next-env.d.ts
 public/windows/
 lib/corpus.generated.json
 
+
+# Derived sidecar: source index for `npm run records -- --sources`.
+# Never imported by client code; never commit.
+lib/sources.generated.json
