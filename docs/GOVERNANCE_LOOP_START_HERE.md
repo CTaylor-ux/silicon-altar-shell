@@ -56,14 +56,14 @@ do not "fix" it.
 plus a postMessage bridge into the generated HTML. `scripts/prepare-corpus.mjs`
 emits `lib/corpus.generated.json` (title-level, drives Locate, carries a
 per-entry `contentHash` and `titleOnly`) and `lib/corpus.prompt.txt` (bodies,
-links, threads, scope note, framework spine — **~174k tokens**, the cached
+links, threads, scope note, framework spine, and per-entry source state — **~218k tokens**, the cached
 prefix, byte-stable across runs so the cache survives).
 
-**210 entries carry no body, and that is a convention, not a defect.** W1, W2
+**217 entries carry no body, and that is a convention, not a defect.** W1, W2
 and W5 put the detail in the dossier and let the title carry the claim; W0, W3,
 W4 and W6 put it in `body`. All 700 have a dossier behind their `event_id` —
 verified, no exceptions. Until 2026-08-05 the prompt shipped only a `hasDossier`
-boolean, so those 210 reached the model as a bare title: 30% of the corpus, 66%
+boolean, so those 217 reached the model as a bare title: 31% of the corpus, 66%
 of W5. `prepare-corpus.mjs` now emits two dossier lines for them — the framework
 element (`streams.explanation`) and the weight/warrant badges. An assertion
 fails the build if any entry would ship as a bare title. Never report an empty
@@ -76,13 +76,13 @@ fails the build if any entry would ship as a bare title. Never report an empty
 **Record layer.** `lib/record.ts` (append-only JSONL, triage, quality markers),
 `/api/recover` (rebuild records from browser sessionStorage), `/api/warm`,
 `scripts/records.mjs` (`npm run records` with `--show`, `--set`, `--demand`,
-`--quality`, `--stale`, and `--quality --since <id>` to read one batch on its
-own rather than blended into the average of everything before it),
+`--quality`, `--stale`, `--sources` for the demand-ranked reading list, and
+`--quality --since <id>` to read one batch on its own),
 `npm run keepwarm`.
 
 **Verified.** Seven windows at 77/85/97/79/72/188/102 = 700, glossary bound in
-each, no provenance leaks. Across 51 recorded queries: **647 citations, zero
-fabricated.** Cache reads confirmed non-zero. Status changes append rather than
+each, no provenance leaks. Across 61 recorded queries: **zero
+fabricated citations.** Cache reads confirmed non-zero. Status changes append rather than
 rewrite.
 
 ---
@@ -328,6 +328,41 @@ sources `citation_only`); where is the corpus weakest; what should I read first;
 which entries have no sources. Right now those are unanswerable, so any correct
 answer is signal.
 
+### RESULT (2026-08-06). Shipped as `096fa0e`, ten questions read.
+
+**It works, and the cost model was pessimistic.** $3.02 for ten questions, of which
+$1.45 was the cache write. The real 1h-TTL write rate is about **1.3x input, not
+the 2x assumed above** — every write figure in this file is therefore high.
+
+Ten of ten answers reason about source state. Zero pasted a url, so the CONTRACT
+rule held. Zero fabricated citations; the record is 61 for 61.
+
+**What it can now do.** Asked for a claim worth verifying, `sb-20260806-009` chose
+the Bubble Act at `w3-1720-financial`, on the grounds that it is tier A, argues
+against the standard historical account, and rests on "a Wikipedia page on the
+statute plus an internal timeline file at tier C, with no monograph and no primary
+text read." Verified exactly right. It picked the target BECAUSE it could see the
+sourcing was weak relative to the claim. That was structurally impossible the day
+before. `sb-20260806-007` found `w3-1711-financial` (SSC incorporation, tier C, no
+sources at all) and sorted sourceless entries into declared versus undeclared
+absence.
+
+**Where the prediction was wrong, and the answer was better.** §5c expected "which
+window is weakest" to return W0 at 42% opened sources. It returned **W5**, reading
+the dossier badges rather than a derived statistic, then went further than the
+metric could: W5's tier C sources are Chronicling America SEARCH QUERIES rather
+than documents ("what a hit-count establishes is coverage volume, not framing"),
+and four entries record their own source cutting against their claim
+(`E-W5-010-02` "IS UNTESTED HERE", `E-W5-019-04`, `E-W5-005-02`, `E-W5-038-03`
+"CONTRADICTS"). All four quotes verified verbatim. Not a wrong answer; a
+methodological critique nobody had asked for.
+
+**A FIFTH marker failure, committed while writing the section that warns about
+them.** The scan for source-state language counted 8 of 10. Reading them, it was
+10 of 10: two answers reasoned about evidence in wording the regex did not
+anticipate. Same failure as §4's 16%. The rule stands and apparently needs
+restating every time: **read the answers**.
+
 ### Decided and NOT being built
 
 - **Source links rendered in answers: withdrawn.** Citations are already clickable
@@ -404,13 +439,15 @@ the ledger to the PRD.
 
 ## 8. Operational notes
 
-**Cost.** ~$0.19 per query on a warm cache, ~$1.74 to write it cold, both up
-from $0.09/$1.50 since the prefix grew to 174k. TTL is 1 hour (the API maximum)
+**Cost.** ~$0.19 per query on a warm cache, ~$1.45 to write it cold at 218k, up
+from $0.09/$1.50 since the prefix grew. TTL is 1 hour (the API maximum)
 and a read refreshes it, so steady questioning keeps it alive for free.
 `npm run keepwarm` touches it every 50 minutes across breaks — worth it over an
 hour's gap, pointless during active use.
 
-The model is Opus 5 at **$5/$25 per Mtok**, cache read 0.1x and 1h-TTL write 2x.
+The model is Opus 5 at **$5/$25 per Mtok**, cache read 0.1x. The 1h-TTL write was
+assumed to be 2x and MEASURED at about 1.3x on 2026-08-06 ($1.45 for a 218k
+prefix), so any write figure derived from the 2x assumption is high.
 Those rates reproduce the recorded `estimatedCostUsd` to the cent; use them
 rather than re-deriving. **The context window is 1M, not 200k** — an earlier
 sizing pass assumed 200k, concluded the dossier layer could not fit in one call,
