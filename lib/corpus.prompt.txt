@@ -13,7 +13,7 @@ WINDOWS:
   Window 0: The Template (deep time to pre-contact) - 77 entries
   Window 1: Launch Codes (1452 to 1602) - 85 entries
   Window 2: The Corporate Grid (1602 to 1704) - 97 entries
-  Window 3: Colonial Consolidation (1652 to 1787) - 69 entries
+  Window 3: Colonial Consolidation (1652 to 1787) - 79 entries
   Window 4: The Transfer (1787 to 1854) - 72 entries
   Window 5: 75-Year Operation (1854 to 1929) - 188 entries
   Window 6: Digital Migration (1921 to 2029) - 102 entries
@@ -1210,16 +1210,14 @@ threads: T-DISCOVERY-DOCTRINE
 
 [E-W2-002-02] W2 1606 legal TA
 Virginia Charter - "Not possessed by any Christian Prince"
-framework: Software layer. The charter transposes the Dum Diversas non-Christian subjugation logic out of papal instrument and into English corporate law, where it operates as ordinary commercial drafting
-assessment: Weight: Proven (charter text) · Supported (nemo dat inheritance reading) | Warrant: Closed (charter language) · Open (modern chain-of-title consequence)
+Non-Christians rendered juridically invisible. Same logic as Dum Diversas: non-Christian = unoccupied = available. "Infidels and Savages" in "Darkness and miserable Ignorance." The Papal Bull logic imported into English corporate law.
 sources: [A live_verified] src-avalon-virginia-charter-1606 https://avalon.law.yale.edu/17th_century/va01.asp; [B citation_only] src-robinson-mother-earth-land-grants; [C citation_only] src-corporate-caselaw-layer-1602-1713
 links: cabot-patent-1496-english-wedge-against-1496, jamestown-established-1607, virginia-becomes-royal-colony-1624
 threads: T-DISCOVERY-DOCTRINE
 
 [E-W2-002-03] W2 1606 land TA
 American Levant coast claimed for Crown
-framework: Software layer. The charter transposes the Dum Diversas non-Christian subjugation logic out of papal instrument and into English corporate law, where it operates as ordinary commercial drafting
-assessment: Weight: Proven (charter text) · Supported (nemo dat inheritance reading) | Warrant: Closed (charter language) · Open (modern chain-of-title consequence)
+"All along the Sea Coasts, between four and thirty Degrees of Northerly Latitude." Preemptive Crown title - "either appertaining unto us" - claims the land belongs to James I before any settlement or purchase.
 sources: [A live_verified] src-avalon-virginia-charter-1606 https://avalon.law.yale.edu/17th_century/va01.asp; [B citation_only] src-robinson-mother-earth-land-grants; [C citation_only] src-corporate-caselaw-layer-1602-1713
 links: cabot-patent-1496-english-wedge-against-1496, jamestown-established-1607, virginia-becomes-royal-colony-1624
 threads: T-DISCOVERY-DOCTRINE
@@ -1254,8 +1252,7 @@ threads: T-ASIENTO, T-THREE-TRACK-LABOR
 
 [E-W2-005-02] W2 1619 information TA
 John Rolfe records the arrival
-framework: Software layer, and the mechanism by which it crosses jurisdictions. The Spanish commercial classification reaches an English colony attached to plundered cargo, decades before England has any legal category to receive it
-assessment: Weight: Proven (the interception and the asiento licence) · Supported (the bootleg-channel reading) | Warrant: Closed (the voyage and the sale) · Open (the White Lion's nationality)
+"About the latter end of August, a Dutch man of Warr… brought not anything but 20 and odd Negroes." The word "Negroes" enters the English colonial archive. First documented use in Virginia records.
 sources: [A citation_only] src-sluiter-20-odd-negroes-1997; [A live_verified] src-encyc-va-first-africans https://encyclopediavirginia.org/entries/africans-virginias-first/; [B live_verified] src-austin-1619-virginias-first-africans https://hampton.gov/DocumentCenter/View/24075/; [B live_verified] src-hampton-1619-african-arrival https://www.hampton.gov/3584/1619-African-Arrival-Exhibit
 links: asiento-first-1518, jamestown-established-1607, john-punch-case-1640
 threads: T-ASIENTO, T-THREE-TRACK-LABOR
@@ -1276,8 +1273,7 @@ threads: T-ASIENTO, T-FRANCHISE-TRANSFER
 
 [E-W2-006-02] W2 1621 legal TB
 WIC Charter = Asiento pipeline formalized
-framework: Software layer. The Amsterdam corporate machine, joint stock plus chartered monopoly, is pointed at the Atlantic and made an instrument of the classification supply chain
-assessment: Weight: Proven (charter and monopoly) · Supported (transport floors, via secondary) · Contested (share of Dutch trade) | Warrant: Closed (structure) · Open (Asiento-entrepôt link; source conflict on share)
+Monopoly over Dutch participation in Atlantic slave trade. Military, judicial, and administrative powers granted. Same charter model as VOC/EIC/Virginia Co. The extraction function now has competing corporate franchises in every zone.
 sources: [A citation_only] src-postma-dutch-atlantic-slave-trade; [A citation_only] src-den-heijer-geschiedenis-wic; [B live_verified] src-low-countries-wic-slave-trade https://www.the-low-countries.com/article/approved-by-the-bible-the-slave-trade-of-the-dutch-west-india-company/; [B live_verified] src-project-manifest-wic https://www.projectmanifest.eu/the-wic-the-dutch-west-india-company-en-fr/
 links: voc-1602, asiento-first-1518, piet-hein-captures-spanish-silver-fleet-1628
 threads: T-ASIENTO, T-FRANCHISE-TRANSFER
@@ -1340,8 +1336,7 @@ threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
 
 [E-W2-010-02] W2 1640 legal TB
 Racial sentencing differential established
-framework: Software layer. The first colonial instance of origin operating as a sentencing variable, still bounded by an underlying offence
-assessment: Weight: Proven (the differential sentence) · Supported (the crime-gate reading) | Warrant: Closed
+The precedent: same crime, different punishment based on classification. Not yet property law - still criminal law. Johnson v. Casor (1655) will convert this from criminal to civil.
 sources: [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [C citation_only] src-corporate-caselaw-layer-1602-1713
 links: first-africans-at-jamestown-1619, elizabeth-key-lawsuit-the-exit-door-1656, virginia-slave-codes-1705
 threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
@@ -1355,8 +1350,7 @@ threads: T-THREE-TRACK-LABOR
 
 [E-W2-011-01] W2 1655b violence TB
 Cromwell seizes Jamaica
-framework: Software layer. The English state takes by force the island that becomes its principal Caribbean slaving base, in the same year and colony-system that fixes Negro as a property status
-assessment: Weight: Proven (the seizure) · Supported (the synchronisation reading) | Warrant: Closed (the conquest and its date)
+Western Design. Same merchant network (Noell/Povey/Carvajal) runs both the court case and the military operation. Legal test + military seizure synchronized within two months.
 sources: [A citation_only] src-pestana-english-conquest-jamaica; [B live_verified] src-wikipedia-western-design https://en.wikipedia.org/wiki/Western_Design
 links: iberian-union-1580, maroon-communities-forming-counter-move-1655, royal-african-company-chartered-1672
 threads: T-ASIENTO, T-FRANCHISE-TRANSFER
@@ -1370,16 +1364,14 @@ threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
 
 [E-W2-011-03] W2 1655b land TB
 Jamaica becomes English territory
-framework: Software layer. The English state takes by force the island that becomes its principal Caribbean slaving base, in the same year and colony-system that fixes Negro as a property status
-assessment: Weight: Proven (the seizure) · Supported (the synchronisation reading) | Warrant: Closed (the conquest and its date)
+Seized from Spain. Will become the Caribbean hub for the English slave trade - and Port Royal becomes richest city in the Americas (until it sinks in 1692).
 sources: [A citation_only] src-pestana-english-conquest-jamaica; [B live_verified] src-wikipedia-western-design https://en.wikipedia.org/wiki/Western_Design
 links: iberian-union-1580, maroon-communities-forming-counter-move-1655, royal-african-company-chartered-1672
 threads: T-ASIENTO, T-FRANCHISE-TRANSFER
 
 [E-W2-011-04] W2 1655b financial TB
 Western Design financed as a state venture
-framework: Software layer. The English state takes by force the island that becomes its principal Caribbean slaving base, in the same year and colony-system that fixes Negro as a property status
-assessment: Weight: Proven (the seizure) · Supported (the synchronisation reading) | Warrant: Closed (the conquest and its date)
+Cromwell's Western Design, in the Anglo-Spanish War of 1654 to 1660, organised under Cromwell and John Desborough with command split between Penn and Venables. The Hispaniola attack failed in April 1655; Jamaica was taken between 19 and 27 May. Spain formally ceded the island in 1670. Of little economic value at seizure, and strategically a dagger at the Spanish empire.
 sources: [A citation_only] src-pestana-english-conquest-jamaica; [B live_verified] src-wikipedia-western-design https://en.wikipedia.org/wiki/Western_Design
 links: iberian-union-1580, maroon-communities-forming-counter-move-1655, royal-african-company-chartered-1672
 threads: T-FRANCHISE-TRANSFER, T-ASIENTO
@@ -1393,16 +1385,14 @@ threads: T-COLLAPSE-SURVIVAL-N1
 
 [E-W2-012-02] W2 ~1655 counter-move TB
 ★ Maroon treaties = sovereignty acknowledged
-framework: Counter-move. Not escape as flight but escape as the founding of a self-governing polity the colonial power is forced to treat with
-assessment: Weight: Proven (the communities and treaties) | Warrant: Closed
+When colonial governments sign TREATIES with Maroon communities, they acknowledge that these are not runaway slaves - they are treaty-capable polities. Treaty language implies sovereignty. Jamaica’s 1739 treaty grants Maroon territory, internal self-governance, and freedom from colonial law. The same treaty mechanism as the 1787 Morocco Treaty - the Managers negotiate because the military option has failed.
 sources: [A citation_only] src-campbell-maroons-jamaica; [B live_verified] src-wikipedia-jamaican-maroons https://en.wikipedia.org/wiki/Jamaican_Maroons
 links: cromwell-seizes-jamaica-1655, fort-mose-1738
 threads: T-COLLAPSE-SURVIVAL-N1
 
 [E-W2-012-03] W2 ~1655 counter-move TB
 ★ Maroon territorial sovereignty
-framework: Counter-move. Not escape as flight but escape as the founding of a self-governing polity the colonial power is forced to treat with
-assessment: Weight: Proven (the communities and treaties) | Warrant: Closed
+Blue Mountains (Jamaica), interior Suriname, Quilombo dos Palmares (Brazil). The Noun carves out physical territory the Adjective cannot reach. Some communities persist into the present day. The classification fails wherever it cannot deploy sufficient violence to enforce it.
 sources: [A citation_only] src-campbell-maroons-jamaica; [B live_verified] src-wikipedia-jamaican-maroons https://en.wikipedia.org/wiki/Jamaican_Maroons
 links: cromwell-seizes-jamaica-1655, fort-mose-1738
 threads: T-COLLAPSE-SURVIVAL-N1
@@ -1444,8 +1434,7 @@ threads: T-WHITENING-PROJECT
 
 [E-W2-016-02] W2 1662 legal TA
 Partus codified
-framework: Software layer. The classification stops depending on any act, contract or belief of the person classified and begins descending by birth
-assessment: Weight: Proven (statutory text) · Supported (Key as prompting cause) | Warrant: Closed (what the act does) · Open (what prompted it)
+Act XII of the Virginia Assembly. "All children borne in this country shalbe held bond or free only according to the condition of the mother." Overrides 600 years of English precedent. The classification is now biologically heritable.
 sources: [A live_verified] src-va-act-xii-1662-partus https://encyclopediavirginia.org/entries/negro-womens-children-to-serve-according-to-the-condition-of-the-mother-1662/; [A live_verified] src-dvb-elizabeth-key https://old.lva.virginia.gov/public/dvb/bio.asp?b=Key_Elizabeth_fl_1655-1660; [C citation_only] src-corporate-caselaw-layer-1602-1713
 links: elizabeth-key-lawsuit-the-exit-door-1656, casta-system-1560s, virginia-code-1682, virginia-slave-codes-1705
 threads: T-WHITENING-PROJECT
@@ -1459,8 +1448,7 @@ threads: T-WHITENING-PROJECT
 
 [E-W2-017-01] W2 1663 financial TB
 Company charter names "negro slaves" as commodity
-framework: Franchise layer. France builds its own colonial extraction grid alongside England's, under direct royal control
-assessment: Weight: Proven (the royal takeover) · Supported (the parallel-grid reading) | Warrant: Closed
+1663 charter explicitly lists "negro slaves" as trade goods - first time in a Crown corporate charter. Asiento inventory language in English corporate instruments.
 sources: [B live_verified] src-wikipedia-new-france https://en.wikipedia.org/wiki/New_France
 links: code-noir-1685
 threads: T-FRANCHISE-TRANSFER
@@ -1474,8 +1462,7 @@ threads: T-FRANCHISE-TRANSFER
 
 [E-W2-018-01] W2 1664 violence TB
 English seize New Amsterdam
-framework: Franchise layer. A whole colony transfers from one operator to another with its commercial machinery intact
-assessment: Weight: Proven (the seizure and the terms) | Warrant: Closed
+Renamed New York. Duke of York (RAC Governor, future James II) takes the Dutch colony. The future financial capital of the American Levant transferred from Dutch WIC to English Crown franchise - by the same man who runs the slave trade company.
 sources: [B live_verified] src-wikipedia-new-netherland https://en.wikipedia.org/wiki/New_Netherland
 links: hudson-claims-hudson-river-1609, fort-orange-established-1624, dutch-west-india-company-wic-chartered-1621
 threads: T-FRANCHISE-TRANSFER
@@ -1495,22 +1482,19 @@ links: black-death-1347-51, great-fire-of-london-1666
 
 [E-W2-019-02] W2 1665 population TB
 Mass displacement from London
-framework: Catastrophe lane. A mortality event that empties the city, the first of the two London shocks of the mid-1660s
-assessment: Weight: Proven (the mortality and displacement) | Warrant: Closed
+Entire populations flee the city. Estates abandoned. Businesses collapsed. The displaced population pool feeds the colonial pipeline - desperate people accept indenture contracts.
 sources: [B live_verified] src-wikipedia-great-plague-london https://en.wikipedia.org/wiki/Great_Plague_of_London
 links: black-death-1347-51, great-fire-of-london-1666
 
 [E-W2-020-01] W2 1666b catastrophe TB
 Great Fire of London
-framework: Records lane. A catastrophe that destroys the documentary base of title and commerce in the City, the proof of who held what
-assessment: Weight: Proven (the fire and the records lost) | Warrant: Closed
+13,200 houses, 87 churches destroyed. September 2-6. Combined with plague: total infrastructure reset for the City of London. The old medieval city - with its medieval records - is incinerated.
 sources: [B live_verified] src-wikipedia-great-fire-london https://en.wikipedia.org/wiki/Great_Fire_of_London
 links: great-plague-of-london-1665, port-royal-earthquake-1692
 
 [E-W2-020-02] W2 1666b records TB
 London records destroyed
-framework: Records lane. A catastrophe that destroys the documentary base of title and commerce in the City, the proof of who held what
-assessment: Weight: Proven (the fire and the records lost) | Warrant: Closed
+Medieval guild records, parish registers, property deeds, court records. The fire erases the documentary chain for thousands of London estates. Whoever rebuilds controls the new ledger.
 sources: [B live_verified] src-wikipedia-great-fire-london https://en.wikipedia.org/wiki/Great_Fire_of_London
 links: great-plague-of-london-1665, port-royal-earthquake-1692
 
@@ -1529,16 +1513,14 @@ threads: T-FRANCHISE-TRANSFER
 
 [E-W2-021-02] W2 1670 land TB
 Rupert’s Land - 1.5M sq miles claimed
-framework: Franchise layer. Another royal charter, another monopoly over a continental territory, completing the grid
-assessment: Weight: Proven (the charter and the grant) | Warrant: Closed
+HBC granted all lands draining into Hudson Bay. 40% of modern Canada. Largest land grant in history to a private corporation. Not purchased. Not conquered. Decreed. The land already has people.
 sources: [B live_verified] src-wikipedia-hudsons-bay-company https://en.wikipedia.org/wiki/Hudson%27s_Bay_Company
 links: east-india-company-chartered-1600, voc-1602
 threads: T-FRANCHISE-TRANSFER
 
 [E-W2-021-03] W2 1670 innovation TB
 Fur trade monopoly
-framework: Franchise layer. Another royal charter, another monopoly over a continental territory, completing the grid
-assessment: Weight: Proven (the charter and the grant) | Warrant: Closed
+HBC extracts beaver pelts, timber, minerals from indigenous territories. The extraction follows the same pattern: charter → claim → extract. The resource changes; the model doesn’t.
 sources: [B live_verified] src-wikipedia-hudsons-bay-company https://en.wikipedia.org/wiki/Hudson%27s_Bay_Company
 links: east-india-company-chartered-1600, voc-1602
 threads: T-FRANCHISE-TRANSFER
@@ -1552,8 +1534,7 @@ threads: T-WHITENING-PROJECT
 
 [E-W2-022-02] W2 1670b land TB
 Johnson estate redistributed
-framework: Software layer. The classification reaches its terminal form: not a penalty, not a term of service, but a disability of status that travels to the heirs
-assessment: Weight: Proven (the jury's stated ground) · Supported (the completed-arc reading) | Warrant: Closed
+250 acres transferred from a free Black family to a white settler. The classification converts property rights. This is the prototype for every future land seizure through racial reclassification.
 sources: [B live_verified] src-russell-free-negro-virginia-1916 https://archive.org/details/freenegro00russrich; [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [C citation_only] src-corporate-caselaw-layer-1602-1713
 links: johnson-v-casor-1655, scarborough-forgery-1657, virginia-code-1682
 threads: T-WHITENING-PROJECT
@@ -1567,16 +1548,14 @@ threads: T-ASIENTO, T-FRANCHISE-TRANSFER
 
 [E-W2-023-02] W2 1672 population TA
 RAC: industrial-scale population processing
-framework: Software layer at industrial scale. A royal monopoly with the King's brother at its head, converting people into branded, insured, accounted cargo
-assessment: Weight: Proven (charter and volumes) · Attributed (Pettigrew's superlative) | Warrant: Closed
+Factory system on West African coast. Captives held in coastal fortifications (Elmina, Cape Coast Castle). Shipped under standardized commercial contracts. The Asiento pipeline now operated by the English Crown at industrial volume.
 sources: [A citation_only] src-pettigrew-freedoms-debt; [A citation_only] src-davies-royal-african-company; [A live_verified] src-csp-colonial-awi-vol7-rac-charter https://www.british-history.ac.uk/cal-state-papers/colonial/america-west-indies/vol7/pp404-417; [B citation_only] src-smithsonian-rac-stock-certificate https://transcription.si.edu/project/29682
 links: company-of-royal-adventurers-1660, asiento-first-1518, rac-monopoly-broken-slave-trade-deregulated-1698, britain-relinquishes-asiento-1750
 threads: T-ASIENTO, T-FRANCHISE-TRANSFER
 
 [E-W2-023-03] W2 1672 innovation TA
 Gold Coast mining + slave infrastructure
-framework: Software layer at industrial scale. A royal monopoly with the King's brother at its head, converting people into branded, insured, accounted cargo
-assessment: Weight: Proven (charter and volumes) · Attributed (Pettigrew's superlative) | Warrant: Closed
+RAC simultaneously extracts gold and people from the same territory. Elmina ("The Mine") is both a gold fort and a slave holding facility. Resources and classified labor processed through the same physical infrastructure.
 sources: [A citation_only] src-pettigrew-freedoms-debt; [A citation_only] src-davies-royal-african-company; [A live_verified] src-csp-colonial-awi-vol7-rac-charter https://www.british-history.ac.uk/cal-state-papers/colonial/america-west-indies/vol7/pp404-417; [B citation_only] src-smithsonian-rac-stock-certificate https://transcription.si.edu/project/29682
 links: company-of-royal-adventurers-1660, asiento-first-1518, rac-monopoly-broken-slave-trade-deregulated-1698, britain-relinquishes-asiento-1750
 threads: T-ASIENTO, T-FRANCHISE-TRANSFER
@@ -1590,24 +1569,21 @@ threads: T-THREE-TRACK-LABOR
 
 [E-W2-024-02] W2 1675 population TB
 Indigenous captives exported
-framework: Software layer. Territorial clearing and labour conversion arrive as one operation: the alliance is broken, its land opened, and its people sold out of the colonies
-assessment: Weight: Proven (scale and enslavement) · Supported (clearing-plus-conversion reading) | Warrant: Closed (the war and its outcome)
+Hundreds of prisoners sold into Caribbean slavery. Metacom’s wife and son sold to Bermuda. Same shipping routes as Asiento labor, opposite direction.
 sources: [A citation_only] src-lepore-name-of-war; [B citation_only] src-britannica-king-philips-war https://www.britannica.com/event/King-Philips-War; [B live_verified] src-colonialwarsct-1675 https://www.colonialwarsct.org/1675.htm
 links: pequot-war-1636, bacons-rebellion-1676
 threads: T-THREE-TRACK-LABOR
 
 [E-W2-024-03] W2 1675 records TB
 Indigenous governance records destroyed
-framework: Software layer. Territorial clearing and labour conversion arrive as one operation: the alliance is broken, its land opened, and its people sold out of the colonies
-assessment: Weight: Proven (scale and enslavement) · Supported (clearing-plus-conversion reading) | Warrant: Closed (the war and its outcome)
+Wampum belts (treaty records), oral tradition practitioners killed, governance structures dismantled. The Managers aren’t just clearing territory - they’re erasing the documentary evidence of prior sovereignty. Lane 4 operating alongside Lane 2.
 sources: [A citation_only] src-lepore-name-of-war; [B citation_only] src-britannica-king-philips-war https://www.britannica.com/event/King-Philips-War; [B live_verified] src-colonialwarsct-1675 https://www.colonialwarsct.org/1675.htm
 links: pequot-war-1636, bacons-rebellion-1676
 threads: T-THREE-TRACK-LABOR
 
 [E-W2-024-04] W2 1675 land TB
 Indigenous land cleared in New England
-framework: Software layer. Territorial clearing and labour conversion arrive as one operation: the alliance is broken, its land opened, and its people sold out of the colonies
-assessment: Weight: Proven (scale and enslavement) · Supported (clearing-plus-conversion reading) | Warrant: Closed (the war and its outcome)
+War destroys autonomous indigenous power in New England. Massive land seizures follow. The territory is now available for unrestricted English settlement.
 sources: [A citation_only] src-lepore-name-of-war; [B citation_only] src-britannica-king-philips-war https://www.britannica.com/event/King-Philips-War; [B live_verified] src-colonialwarsct-1675 https://www.colonialwarsct.org/1675.htm
 links: pequot-war-1636, bacons-rebellion-1676
 threads: T-THREE-TRACK-LABOR
@@ -1621,16 +1597,14 @@ threads: T-CHESAPEAKE-CLASS-SPLIT, T-WHITENING-PROJECT
 
 [E-W2-025-02] W2 1676 records TB
 Jamestown burned
-framework: Software layer. The event the framework reads as the trigger for the Chesapeake class split: an armed alliance across the labour line that the elite answered by writing the line into law
-assessment: Weight: Proven (the rising and its composition) · Contested (the causal line to the racial codes, per Morgan) | Warrant: Closed (events) · Open (whether the codes were a designed response)
+Bacon’s rebels burn the colonial capital. Government records, property records, court archives destroyed. The fire erases parts of the documentary chain of the colony’s first 70 years.
 sources: [A citation_only] src-morgan-american-slavery-american-freedom
 links: king-philip-s-war-1675, virginia-code-1682, virginia-slave-codes-1705
 threads: T-CHESAPEAKE-CLASS-SPLIT, T-WHITENING-PROJECT
 
 [E-W2-025-03] W2 1676 information TB
 The lesson: unified labor = threat
-framework: Software layer. The event the framework reads as the trigger for the Chesapeake class split: an armed alliance across the labour line that the elite answered by writing the line into law
-assessment: Weight: Proven (the rising and its composition) · Contested (the causal line to the racial codes, per Morgan) | Warrant: Closed (events) · Open (whether the codes were a designed response)
+Bacon’s Rebellion proves that a multiracial laboring class can overthrow the planter elite. The solution: racial law that gives poor whites a stake in the classification hierarchy. Divide the Nouns into Adjectives.
 sources: [A citation_only] src-morgan-american-slavery-american-freedom
 links: king-philip-s-war-1675, virginia-code-1682, virginia-slave-codes-1705
 threads: T-CHESAPEAKE-CLASS-SPLIT, T-WHITENING-PROJECT
@@ -1644,24 +1618,21 @@ threads: T-COLLAPSE-SURVIVAL-N1
 
 [E-W2-026-02] W2 1680 records TB
 Spanish records destroyed
-framework: Counter-move. Not flight or accommodation but the outright removal of the colonial administration from the province, and the defence of that removal against return
-assessment: Weight: Proven (the expulsion and the reconquest) · Supported (proportion and the 1681 defence, via Knaut) | Warrant: Closed
+The Pueblo revolutionaries deliberately burn churches, administrative buildings, and Spanish records. This is Lane 4 deployed by the Heirs: destroy the occupier’s paper trail. The archive destruction pattern reversed. When the Spanish return (1692), they have to rebuild the documentary chain from scratch.
 sources: [A citation_only] src-knaut-pueblo-revolt-1680; [B citation_only] src-britannica-pueblo-rebellion https://www.britannica.com/event/Pueblo-Rebellion; [B live_verified] src-penn-expedition-pueblo-revolt https://www.penn.museum/sites/expedition/researching-the-pueblo-revolt-of-1680/
 links: requerimiento-1513, encomienda-1503, spanish-royal-decree-florida-sanctuary-policy-1693
 threads: T-COLLAPSE-SURVIVAL-N1
 
 [E-W2-026-03] W2 1680 counter-move TB
 ★ Spanish jurisdiction voided for 12 years
-framework: Counter-move. Not flight or accommodation but the outright removal of the colonial administration from the province, and the defence of that removal against return
-assessment: Weight: Proven (the expulsion and the reconquest) · Supported (proportion and the 1681 defence, via Knaut) | Warrant: Closed
+1680-1692: the Pueblo nations govern without any European presence. The Reconquista model reversed: indigenous population expels the occupier, destroys the occupier’s records, restores pre-contact governance. Proof that the classification is only as durable as the violence enforcing it.
 sources: [A citation_only] src-knaut-pueblo-revolt-1680; [B citation_only] src-britannica-pueblo-rebellion https://www.britannica.com/event/Pueblo-Rebellion; [B live_verified] src-penn-expedition-pueblo-revolt https://www.penn.museum/sites/expedition/researching-the-pueblo-revolt-of-1680/
 links: requerimiento-1513, encomienda-1503, spanish-royal-decree-florida-sanctuary-policy-1693
 threads: T-COLLAPSE-SURVIVAL-N1
 
 [E-W2-026-04] W2 1680 counter-move TB
 ★ Pueblo territory restored
-framework: Counter-move. Not flight or accommodation but the outright removal of the colonial administration from the province, and the defence of that removal against return
-assessment: Weight: Proven (the expulsion and the reconquest) · Supported (proportion and the 1681 defence, via Knaut) | Warrant: Closed
+All Spanish land grants voided by force. Encomienda abolished. Missions burned. The land returns to indigenous governance for over a decade. Spanish reconquest (1692) reinstalls the framework, but the Pueblo nations negotiate from a position of strength the second time.
 sources: [A citation_only] src-knaut-pueblo-revolt-1680; [B citation_only] src-britannica-pueblo-rebellion https://www.britannica.com/event/Pueblo-Rebellion; [B live_verified] src-penn-expedition-pueblo-revolt https://www.penn.museum/sites/expedition/researching-the-pueblo-revolt-of-1680/
 links: requerimiento-1513, encomienda-1503, spanish-royal-decree-florida-sanctuary-policy-1693
 threads: T-COLLAPSE-SURVIVAL-N1
@@ -1675,8 +1646,7 @@ threads: T-WHITENING-PROJECT
 
 [E-W2-027-02] W2 1682 legal TA
 Turks and Moors in amity exempted from the statute
-framework: Software layer. The statute that consolidates the category, and in its one exception shows the drafters distinguishing by political amity with the Crown
-assessment: Weight: Proven (the statute and its exemption) · Open (whether the drafters reasoned about Moorish sovereignty) | Warrant: Closed (the amity exemption) · Open (the Moorish-sovereignty reading)
+November 1682. The act merges "Negroes, Moors, Mollattoes or Indians" whose "parentage and native country are not christian at the time of their first purchase" into a single enslaveable category, with later conversion no bar. It carries one exception: "all servants except Turkes and Moores, whilest in amity with his majesty". The exemption does not turn on prior Christian status. It turns on political amity with the Crown.
 sources: [A live_verified] src-va-act-1682-repeal https://encyclopediavirginia.org/primary-documents/an-act-to-repeale-a-former-law-makeing-indians-and-others-ffree-1682/
 links: bacons-rebellion-1676, partus-sequitur-ventrem-1662, virginia-slave-codes-1705
 threads: T-WHITENING-PROJECT
@@ -1704,16 +1674,14 @@ threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W2-029-02] W2 1688 legal TB
 English Bill of Rights (1689)
-framework: Financial layer, in part. A dynastic coup by invitation that the framework also reads as the moment English finance takes on the Dutch model, the second claim still open
-assessment: Weight: Proven (the invasion) · Open (the Dutch financial-personnel transfer, appendix Q20) | Warrant: Closed (the coup) · Open (the financial-OS import)
+Parliamentary supremacy codified. But the Bill protects "Protestants" - not "subjects" generally. The classification hierarchy is built into the constitutional framework itself.
 sources: [A citation_only] src-pincus-1688-modern-revolution; [B live_verified] src-wikipedia-glorious-revolution https://en.wikipedia.org/wiki/Glorious_Revolution
 links: james-ii-becomes-king-1685, first-government-bonds-issued-1693, bank-of-england-1694
 threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W2-029-03] W2 1688 certification TB
 Coronation of William & Mary
-framework: Financial layer, in part. A dynastic coup by invitation that the framework also reads as the moment English finance takes on the Dutch model, the second claim still open
-assessment: Weight: Proven (the invasion) · Open (the Dutch financial-personnel transfer, appendix Q20) | Warrant: Closed (the coup) · Open (the financial-OS import)
+Certification of regime change. The coronation ceremony legitimizes the Dutch financial import. New management installed with full public ceremony.
 sources: [A citation_only] src-pincus-1688-modern-revolution; [B live_verified] src-wikipedia-glorious-revolution https://en.wikipedia.org/wiki/Glorious_Revolution
 links: james-ii-becomes-king-1685, first-government-bonds-issued-1693, bank-of-england-1694
 threads: T-MERCHANT-BANKER-CONSTANT
@@ -1754,15 +1722,13 @@ links: spanish-inquisition-1478
 
 [E-W2-033-02] W2 1692b catastrophe TB
 Port Royal sinks - HARDWARE RESET #3
-framework: Catastrophe lane. The physical destruction of the decentralised Caribbean commercial hub, on the eve of the centralised debt-grid that replaces it
-assessment: Weight: Proven (the earthquake) · Supported (the node-clearing reading) | Warrant: Closed
+June 7. Earthquake. Richest city in the Americas - hub of Moorish/Sephardic maritime trade - sinks into the sea. Physical infrastructure of the old decentralized trade system eliminated. 2,000+ killed. The old node is physically destroyed.
 sources: [B live_verified] src-wikipedia-1692-jamaica-earthquake https://en.wikipedia.org/wiki/1692_Jamaica_earthquake
 links: great-fire-of-london-1666, lisbon-earthquake-1755
 
 [E-W2-033-03] W2 1692 information TB
 "God’s judgment on the wicked"
-framework: Population and information lanes. A judicial purge that falls on social outsiders, amid a vacated charter and wartime displacement
-assessment: Weight: Proven (the trials) · Supported (the purge reading) | Warrant: Closed (the trials and their targets)
+Port Royal’s destruction framed as divine punishment for piracy and sin. The narrative erases the city’s function as a free-trade hub and replaces it with a morality tale. Information control over the meaning of a catastrophe.
 sources: [A citation_only] src-boyer-nissenbaum-salem-possessed; [B live_verified] src-wikipedia-salem-witch-trials https://en.wikipedia.org/wiki/Salem_witch_trials
 links: spanish-inquisition-1478
 
@@ -1782,8 +1748,7 @@ threads: T-COLLAPSE-SURVIVAL-N1
 
 [E-W2-035-02] W2 1693 counter-move TB
 ★ Competing classification systems create escape routes
-framework: Counter-move by competing jurisdiction. One empire's classification is escaped through the gap between it and a rival empire's
-assessment: Weight: Proven (the cédula and its terms) | Warrant: Closed
+The Spanish decree reveals the critical forensic point: classification is JURISDICTIONAL, not biological. Cross one border and the Adjective changes. The English system has no Las Casas firewall. The Spanish system does. The same person is property on one side of the Georgia-Florida border and free on the other. The Managers cannot coordinate their classification systems because they are competing with each other. This jurisdictional gap will persist until the US purchases Florida (Adams-Onís Treaty, 1819, W4) - eliminating the alternative classification entirely. Fort Negro (1816, W4) is destroyed specifically because the free community exists in this gap.
 sources: [A citation_only] src-landers-black-society-spanish-florida; [B live_verified] src-wikipedia-fort-mose https://en.wikipedia.org/wiki/Fort_Mose_Historic_State_Park
 links: pueblo-revolt-1680, fort-mose-1738
 threads: T-COLLAPSE-SURVIVAL-N1
@@ -1797,16 +1762,14 @@ threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W2-036-02] W2 1694 certification TB
 Bank of England inaugurated
-framework: Financial layer. The institution that turns state borrowing into a permanent funded debt held by a society of moneyed men
-assessment: Weight: Proven (the founding and its terms) · Supported (the debt-grid reading) | Warrant: Closed (the founding)
+Certification of the new financial order. The Bank is the institutional expression of the Dutch financial OS now running on English hardware. The Sephardic technology chain: expelled 1492 → Amsterdam 1602 → London 1694.
 sources: [B live_verified] src-wikipedia-bank-of-england https://en.wikipedia.org/wiki/Bank_of_England
 links: bank-of-amsterdam-wisselbank-1609, glorious-revolution-1688, first-government-bonds-issued-1693, first-bank-of-the-1791
 threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W2-036-03] W2 1694 innovation TB
 Centralized debt issuance technology
-framework: Financial layer. The institution that turns state borrowing into a permanent funded debt held by a society of moneyed men
-assessment: Weight: Proven (the founding and its terms) · Supported (the debt-grid reading) | Warrant: Closed (the founding)
+The Bank of England’s innovation: government debt as a permanent, tradable financial instrument. The technology that will eventually securitize the classified population through the South Sea Company (1711) and, later, the Federal Reserve (1913).
 sources: [B live_verified] src-wikipedia-bank-of-england https://en.wikipedia.org/wiki/Bank_of_England
 links: bank-of-amsterdam-wisselbank-1609, glorious-revolution-1688, first-government-bonds-issued-1693, first-bank-of-the-1791
 threads: T-MERCHANT-BANKER-CONSTANT
@@ -1820,8 +1783,7 @@ threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W2-037-02] W2 1696 innovation TB
 Newton’s surveillance apparatus
-framework: Financial layer. A currency crisis resolved by recoining all silver, with the long drift toward a gold standard beginning
-assessment: Weight: Proven (the recoinage) · Framework reading (silver as the people's metal) | Warrant: Closed (the recoinage)
+Newton as Warden of the Mint builds informant network across London. Over 100 imprisoned. 58+ personal interrogations. The Mint becomes a proto-intelligence agency. First domestic financial surveillance system.
 sources: [B live_verified] src-wikipedia-great-recoinage-1696 https://en.wikipedia.org/wiki/Great_Recoinage_of_1696
 links: bank-of-england-1694, bubble-act-1720
 threads: T-MERCHANT-BANKER-CONSTANT
@@ -1849,8 +1811,7 @@ threads: T-THREE-TRACK-LABOR
 
 [E-W2-040-02] W2 1701b legal TB
 Church ownership codified in colonial law
-framework: Software layer under a fourth kind of operator. The same classification run not by a state or a company but by a church, the enslaved branded with its name
-assessment: Weight: Proven (SPG ownership and the branding) | Warrant: Closed
+The SPG operates its plantations under the same Barbados Slave Code (1661) that it helped establish through ecclesiastical authority. The Church writes the spiritual justification, the Church deploys the legal framework, the Church profits from the classified labor. The Dum Diversas authority chain is not abstract - it is a SHAREHOLDER.
 sources: [A citation_only] src-glasson-mastering-christianity; [B live_verified] src-wikipedia-codrington-plantations https://en.wikipedia.org/wiki/Codrington_Plantations
 links: code-noir-1685, sc-negro-act-1740
 threads: T-THREE-TRACK-LABOR
@@ -1877,8 +1838,7 @@ threads: T-WHITENING-PROJECT
 
 [E-W2-043-02] W2 1657 land TB
 100 acres of Johnson land transferred to Scarborough
-framework: Software layer. The hinge: the same court, the same classification, now running in the opposite direction against the party it had protected
-assessment: Weight: Proven (the award) · Supported (the inversion reading) | Warrant: Closed
+Edmund Scarborough, Johnson's neighbour, allegedly forged a letter in which Johnson acknowledged a debt. Johnson was illiterate and could not have written it, and did not contest the case. The court awarded Scarborough 100 acres of Johnson's land against the alleged debt. Whether the debt was real is unknown.
 sources: [B live_verified] src-wikipedia-anthony-johnson-colonist https://en.wikipedia.org/wiki/Anthony_Johnson_(colonist); [C citation_only] src-corporate-caselaw-layer-1602-1713
 links: johnson-v-casor-1655, anthony-johnson-estate-seized-1670
 threads: T-WHITENING-PROJECT
@@ -1892,8 +1852,7 @@ threads: T-WHITENING-PROJECT, T-SOFTWARE-NEUTRALITY, T-THREE-TRACK-LABOR
 
 [E-W2-044-02] W2 1705 population TB
 Classification made permanent and heritable
-framework: Software layer. The point at which the accumulated case law and single statutes are compiled into one code, the classification no longer assembled per dispute but issued as law
-assessment: Weight: Proven (primary statute, both ruling clauses reached) | Warrant: Closed (sourced; H2 held; religion->blood terminus)
+Two ruling clauses. Religion is enumerated and then set aside: "That no negros, mulattos, or Indians, although Christians, or Jews, Moors, Mahometans, or other infidels shall at any time purchase any Christian servant". And condition is made heritable: "baptism of slaves does not exempt them from bondage; and that all children shall be bond or free, according to the condition of their mothers", legislating the partus rule of 1662.
 sources: [B live_verified] src-va-slave-codes-1705 https://encyclopediavirginia.org/primary-documents/an-act-concerning-servants-and-slaves-1705/
 links: spanish-inquisition-1478, toledo-blood-purity-1449, casta-system-1560s, partus-sequitur-ventrem-1662, virginia-code-1682, 1924-triple-lock-reclassification-chain-step-1924, fourth-lateran-council-classification-formalized-as-1215
 threads: T-WHITENING-PROJECT, T-SOFTWARE-NEUTRALITY, T-THREE-TRACK-LABOR
@@ -2372,17 +2331,15 @@ sources: [A live_verified] src-nytribune-times-launch-ad-1851 http://www.loc.gov
 links: cas-uses-press-network-1853, screening-committees-include-editors-1854, know-nothing-press-network-1855
 
 [E-W5-003-01] W5 1853 population TB
-CAS founded
-framework: Software layer. An institution that will relocate children for seventy-five years begins with narrative control as a founding asset rather than an acquired one.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Children's Aid Society visitors at work in the city's poor districts
+Brace - Orphan Train begins
 sources: [B live_verified] src-nyherald-childrens-aid-society-1854 http://www.loc.gov/resource/sn83030313/1854-11-11/ed-1/?sp=7
 links: screening-committees-include-editors-1854, american-newspaper-directory-launched-1869, dc-organic-act-republic-becomes-corporation-1871, freedman-s-bank-collapse-douglass-blamed-1874
 threads: T-THREE-TRACK-LABOR
 
 [E-W5-003-02] W5 1853 certification TB
-NY Crystal Palace
-framework: Software layer. An institution that will relocate children for seventy-five years begins with narrative control as a founding asset rather than an acquired one.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+New York's Crystal Palace opens, importing London's exhibition format to the United States
+New York City
 sources: [B live_verified] src-greeley-crystal-palace-1853 https://archive.org/details/artindustryasrep00gree
 links: fair-press-blankets-nation-1876, charlotte-astor-1-113-children-sent-1884, pan-american-commercial-conference-1889
 
@@ -2393,22 +2350,20 @@ sources: [A live_verified] src-brace-dangerous-classes-1872 https://archive.org/
 links: ny-times-founded-1851, screening-committees-include-editors-1854, know-nothing-press-network-1855
 
 [E-W5-004-01] W5 1854 violence TB
-Nativist Riot
-framework: Software layer. The placement mechanism and the narrative mechanism are the same committee, and the year's land statute lowers the price of the ground the population is being moved onto.
-assessment: Weight: Proven (1 of 4 entries sourced, tier B) · Asserted (3 unsourced) | Warrant: Open (3 of 4 entries unsourced)
+Nativist rioting against Catholic immigrants at the Williamsburg election
+Boston
 sources: [B live_verified] src-nyherald-williamsburg-election-riot-1854 http://www.loc.gov/resource/sn83030313/1854-11-23/ed-1/?sp=1
 links: know-nothing-press-network-1855, dred-scott-press-coverage-1857, draft-riot-press-coverage-1863
 
 [E-W5-004-02] W5 1854 population TB
-First Orphan Train
-framework: Software layer. The placement mechanism and the narrative mechanism are the same committee, and the year's land statute lowers the price of the ground the population is being moved onto.
-assessment: Weight: Proven (1 of 4 entries sourced, tier B) · Asserted (3 unsourced) | Warrant: Open (3 of 4 entries unsourced)
+First orphan train leaves New York, placing children westward without adoption records
+46 children → Dowagiac, MI
 sources: [A live_verified] src-brace-dangerous-classes-1872 https://archive.org/details/dangerousclasses00brac
 links: cas-uses-press-network-1853, american-newspaper-directory-launched-1869, dc-organic-act-republic-becomes-corporation-1871, freedman-s-bank-collapse-douglass-blamed-1874
 threads: T-THREE-TRACK-LABOR
 
 [E-W5-004-03] W5 1854 legal TB
-Land Price Act
+Graduation Act cuts the price of long-unsold public land
 framework: Software layer. The placement mechanism and the narrative mechanism are the same committee, and the year's land statute lowers the price of the ground the population is being moved onto.
 assessment: Weight: Proven (1 of 4 entries sourced, tier B) · Asserted (3 unsourced) | Warrant: Open (3 of 4 entries unsourced)
 sources: [B live_verified] src-graduation-act-1854 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_10.djvu/594
@@ -2422,9 +2377,8 @@ sources: [A live_verified] src-brace-dangerous-classes-1872 https://archive.org/
 links: ny-times-founded-1851, cas-uses-press-network-1853, know-nothing-press-network-1855
 
 [E-W5-005-01] W5 1855 violence TB
-Bloody Monday
-framework: Software layer. Coordinated print output preceding and accompanying coordinated violence against immigrants.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Bloody Monday: Know-Nothing mobs attack German and Irish Catholics in Louisville
+Louisville - 22 killed
 sources: [B live_verified] src-evening-star-louisville-riots-1855 http://www.loc.gov/resource/sn83045462/1855-08-09/ed-1/?sp=2
 links: screening-committees-include-editors-1854, dred-scott-press-coverage-1857, draft-riot-press-coverage-1863
 
@@ -2435,23 +2389,20 @@ sources: [B live_verified] src-daily-american-organ-louisville-riots-1855 http:/
 links: cas-uses-press-network-1853, screening-committees-include-editors-1854, dred-scott-press-coverage-1857
 
 [E-W5-006-01] W5 1857 financial TB
-Panic of 1857
-framework: Software layer. A Supreme Court holding on who can be a citizen is distributed simultaneously to the entire country by a mechanism built eleven years earlier.
-assessment: Weight: Proven (2 of 4 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 4 entries unsourced)
+Panic of 1857 forces bank suspensions and a move to legalize them
+Banks collapse
 sources: [B live_verified] src-sunbury-american-panic-1857 http://www.loc.gov/resource/sn84026403/1857-10-10/ed-1/?sp=2
 links: sine-die-adjournment-constitutional-breakpoint-1861, draft-riot-press-coverage-1863, 13th-amendment-1865
 
 [E-W5-006-02] W5 1857 violence TB
-Know-Nothing Riot
-framework: Software layer. A Supreme Court holding on who can be a citizen is distributed simultaneously to the entire country by a mechanism built eleven years earlier.
-assessment: Weight: Proven (2 of 4 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 4 entries unsourced)
+Know-Nothing rioting in Washington is put down by federal troops on election day
+Washington, DC
 sources: [B live_verified] src-national-intelligencer-election-riot-1857 http://www.loc.gov/resource/sn83026172/1857-07-29/ed-1/?sp=2
 links: screening-committees-include-editors-1854, know-nothing-press-network-1855, draft-riot-press-coverage-1863
 
 [E-W5-006-03] W5 1857 legal TA
-Dred Scott
-framework: Software layer. A Supreme Court holding on who can be a citizen is distributed simultaneously to the entire country by a mechanism built eleven years earlier.
-assessment: Weight: Proven (2 of 4 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 4 entries unsourced)
+Dred Scott holds that Black Americans are not and cannot become citizens
+Black people not citizens
 sources: [A live_verified] src-dred-scott-v-sandford-1857 https://www.law.cornell.edu/supremecourt/text/60/393
 links: 13th-amendment-1865, memphis-no-massacres-spark-national-outrage-1866, 14th-amend-press-framing-1868, clinton-1875
 threads: T-SOFTWARE-NEUTRALITY
@@ -2464,16 +2415,14 @@ links: screening-committees-include-editors-1854, know-nothing-press-network-185
 
 [E-W5-007-01] W5 1861 financial TB
 Legal Tender Act / Greenbacks
-framework: Hardware-to-software transition. The window's most consequential legal claim sits in this year alongside a currency change, a records loss, and the first formal restriction on the press.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Fiat currency created. National Banking Acts (1863-64) build prototype Federal Reserve system.
 sources: [A live_verified] src-legal-tender-act-1862 https://www.govinfo.gov/link/statute/12/345
 links: draft-riot-press-coverage-1863, 13th-amendment-1865, freedman-s-bank-collapse-douglass-blamed-1874, 400-patents-held-by-black-inventors-1900
 threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W5-007-02] W5 1861 records TB
-Charleston Fire
-framework: Hardware-to-software transition. The window's most consequential legal claim sits in this year alongside a currency change, a records loss, and the first formal restriction on the press.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Great Charleston Fire burns through the city in December 1861
+SC - 1,300 buildings
 sources: [A live_verified] src-nyherald-charleston-conflagration-1861 http://www.loc.gov/resource/sn83030313/1861-12-18/ed-1/?sp=1
 links: memphis-no-massacres-spark-national-outrage-1866, dc-organic-act-republic-becomes-corporation-1871, elijah-mccoy-automatic-lubrication-1872
 
@@ -2485,21 +2434,19 @@ links: dred-scott-press-coverage-1857, 160-acres-free-homestead-1862, 13th-amend
 
 [E-W5-007-04] W5 1861 information TB
 War censorship begins
-framework: Hardware-to-software transition. The window's most consequential legal claim sits in this year alongside a currency change, a records loss, and the first formal restriction on the press.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Lincoln suspends habeas corpus, shuts down opposition papers - precedent for info control
 sources: [B live_verified] src-wilmington-journal-press-censorship-1861 http://www.loc.gov/resource/sn84026536/1861-04-11/ed-1/?sp=2
 links: 160-acres-free-homestead-1862, draft-riot-press-coverage-1863, sand-creek-initially-reported-as-battle-1864
 
 [E-W5-008-01] W5 1862 legal TB
-Homestead Act
-framework: Extraction layer. A land statute promoted through the national press whose larger parallel transfer went to corporate grantees.
-assessment: Weight: Proven (2 of 3 entries sourced, tier B) · Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
+Homestead Act opens 160 acre claims on public land to settlers who file and improve
+270M acres
 sources: [B live_verified] src-homestead-act-1862 https://en.wikisource.org/wiki/Homestead_Act
 links: screening-committees-include-editors-1854, memphis-no-massacres-spark-national-outrage-1866, dawes-act-allotment-classification-1887, pan-american-commercial-conference-1889
 threads: T-DISCOVERY-DOCTRINE
 
 [E-W5-008-02] W5 1862 land TB
-160 acres free (Homestead)
+Homestead: 160 acres on a fee and five years of residence
 270M acres total. BUT railroad land grants: ~175M acres to railroad companies 1850-1871 - MORE than Homestead gave individuals. The Managers got more than the settlers
 sources: [B live_verified] src-homestead-act-1862 https://en.wikisource.org/wiki/Homestead_Act
 links: screening-committees-include-editors-1854, memphis-no-massacres-spark-national-outrage-1866, dawes-act-allotment-classification-1887, pan-american-commercial-conference-1889
@@ -2507,23 +2454,20 @@ threads: T-DISCOVERY-DOCTRINE
 
 [E-W5-008-03] W5 1862 information TC
 Homestead Act advertised nationally
-framework: Extraction layer. A land statute promoted through the national press whose larger parallel transfer went to corporate grantees.
-assessment: Weight: Proven (2 of 3 entries sourced, tier B) · Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
+AP distributes "free land" narrative to every paper in the country
 sources: [C live_verified] src-chronam-homestead-advertised-1862 https://www.loc.gov/collections/chronicling-america/?q=%22homestead+law%22&dates=1862/1864&fo=json
 links: sine-die-adjournment-constitutional-breakpoint-1861, draft-riot-press-coverage-1863, sand-creek-initially-reported-as-battle-1864
 
 [E-W5-009-01] W5 1863 financial TA
 National Banking Act
-framework: Software layer. Violence with a recorded economic motive is narrated as ethnic disorder, and a banking statute reorganizes the currency in the same year.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+National currency
 sources: [A live_verified] src-national-currency-act-1863 https://www.govinfo.gov/link/statute/12/665
 links: sine-die-adjournment-constitutional-breakpoint-1861, 13th-amendment-1865, freedman-s-bank-collapse-douglass-blamed-1874, 400-patents-held-by-black-inventors-1900
 threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W5-009-02] W5 1863 violence TB
-NYC Draft Riots
-framework: Software layer. Violence with a recorded economic motive is narrated as ethnic disorder, and a banking statute reorganizes the currency in the same year.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+New York draft riots turn conscription protest into days of attacks on Black residents
+120+ killed
 sources: [A live_verified] src-democrat-sentinel-draft-riots-1863 http://www.loc.gov/resource/sn86071378/1863-07-22/ed-1/?sp=1
 links: sand-creek-initially-reported-as-battle-1864, memphis-no-massacres-spark-national-outrage-1866, 14th-amend-press-framing-1868
 
@@ -2534,22 +2478,20 @@ sources: [A live_verified] src-nytribune-irish-mob-draft-riots-1863 http://www.l
 links: sine-die-adjournment-constitutional-breakpoint-1861, 160-acres-free-homestead-1862, sand-creek-initially-reported-as-battle-1864
 
 [E-W5-010-01] W5 1864 violence TA
-Fort Pillow
-framework: Software layer. The first clear instance in this window of an initial press account later contradicted by a federal investigation.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Fort Pillow: surrendering Black Union troops killed
+TN
 sources: [A live_verified] src-fort-pillow-massacre-report-1864 https://archive.org/details/fortpillowmassac00unit
 links: draft-riot-press-coverage-1863, memphis-no-massacres-spark-national-outrage-1866, 14th-amend-press-framing-1868
 
 [E-W5-010-02] W5 1864 information TC
-Sand Creek initially reported as "battle"
+Sand Creek framing claim untested; sourced pages report an atrocity
 Congressional investigation later challenged the military-victory framing. THE DENVER CLAIM IS UNTESTED HERE: the sourced paper reported Sand Creek AS AN ATROCITY, which runs against the framing claim rather than supporting it, and the corpus appears to hold no Denver papers for the period, so a claim specifically about the Denver press cannot be checked from what is held.
 sources: [A live_verified] src-worcester-spy-sand-creek-1865 http://www.loc.gov/resource/sn83021205/1865-11-29/ed-1/?sp=1
 links: 160-acres-free-homestead-1862, draft-riot-press-coverage-1863, 13th-amendment-1865
 
 [E-W5-011-01] W5 1865 financial TA
-Freedman's Bank est.
-framework: Hardware-to-software transition. The amendment ends chattel slavery and preserves it as criminal punishment, and the same year opens a bank and a documentation apparatus for the newly unclassified population.
-assessment: Weight: Proven (1 of 3 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
+Freedman's Savings and Trust Company incorporated, its board named in the statute
+Chap. XCII, 13 Stat. 510, approved 3 March 1865. The bank chartered to hold the deposits of freedpeople was incorporated by a board of white New York financiers and philanthropists named on the face of the instrument, among them Peter Cooper, William C. Bryant, Gerritt Smith and John Jay. Distinct from the Freedmen's Bureau at 13 Stat. 507, a different instrument passed the same day.
 sources: [A live_verified] src-freedmans-savings-trust-act-1865 https://www.govinfo.gov/link/statute/13/510
 links: sine-die-adjournment-constitutional-breakpoint-1861, draft-riot-press-coverage-1863, freedman-s-bank-collapse-douglass-blamed-1874, 400-patents-held-by-black-inventors-1900
 threads: T-MERCHANT-BANKER-CONSTANT
@@ -2563,27 +2505,24 @@ threads: T-SOFTWARE-NEUTRALITY
 
 [E-W5-011-03] W5 1865 information TB
 "40 acres and a mule" rumor spreads
-framework: Hardware-to-software transition. The amendment ends chattel slavery and preserves it as criminal punishment, and the same year opens a bank and a documentation apparatus for the newly unclassified population.
-assessment: Weight: Proven (1 of 3 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
+Sherman's Field Order 15 covered briefly then suppressed after Johnson reverses it
 sources: [B live_verified] src-norfolk-day-book-forty-acres-1869 http://www.loc.gov/resource/sn85025691/1869-07-01/ed-1/?sp=2
 links: draft-riot-press-coverage-1863, sand-creek-initially-reported-as-battle-1864, memphis-no-massacres-spark-national-outrage-1866
 
 [E-W5-012-01] W5 1866 violence TC
-Memphis Massacre
-framework: Software layer. A year in which federal law expands and organized violence expands with it, and the press converts the violence into riots.
-assessment: Weight: Proven (4 of 5 sourced, tier A) plus Asserted (1 unsourced) | Warrant: Open (1 of 5 entries unsourced)
+Memphis massacre of 1 to 3 May draws 1,615 pages, the covered regime and not the buried one
+TN - 46 killed
 sources: [C live_verified] src-chronam-memphis-coverage-1866 https://www.loc.gov/collections/chronicling-america/?q=Memphis+riot+negroes+killed&dates=1866/1866&fo=json
 links: draft-riot-press-coverage-1863, sand-creek-initially-reported-as-battle-1864, 14th-amend-press-framing-1868
 
 [E-W5-012-02] W5 1866 records TB
 Great Portland Fire
-framework: Software layer. A year in which federal law expands and organized violence expands with it, and the press converts the violence into riots.
-assessment: Weight: Proven (4 of 5 sourced, tier A) plus Asserted (1 unsourced) | Warrant: Open (1 of 5 entries unsourced)
+ME - 1,500 buildings
 sources: [A live_verified] src-nyherald-portland-calamity-1866 http://www.loc.gov/resource/sn83030313/1866-07-07/ed-1/?sp=8
 links: sine-die-adjournment-constitutional-breakpoint-1861, dc-organic-act-republic-becomes-corporation-1871, elijah-mccoy-automatic-lubrication-1872
 
 [E-W5-012-03] W5 1866 legal TB
-Civil Rights Act
+Civil Rights Act of 1866 declares citizenship by birth, excluding Indians not taxed, over a presidential veto
 framework: Software layer. A year in which federal law expands and organized violence expands with it, and the press converts the violence into riots.
 assessment: Weight: Proven (4 of 5 sourced, tier A) plus Asserted (1 unsourced) | Warrant: Open (1 of 5 entries unsourced)
 sources: [B live_verified] src-civil-rights-act-1866 https://en.wikisource.org/wiki/Civil_Rights_Act_of_1866; [A live_verified] src-usc-42-1981-civil-rights-1866 https://www.law.cornell.edu/uscode/text/42/1981
@@ -2591,9 +2530,8 @@ links: dred-scott-press-coverage-1857, 13th-amendment-1865, 14th-amend-press-fra
 threads: T-SOFTWARE-NEUTRALITY
 
 [E-W5-012-04] W5 1866 land TB
-Southern Homestead
-framework: Software layer. A year in which federal law expands and organized violence expands with it, and the press converts the violence into riots.
-assessment: Weight: Proven (4 of 5 sourced, tier A) plus Asserted (1 unsourced) | Warrant: Open (1 of 5 entries unsourced)
+Southern Homestead Act opens public land in Alabama, Mississippi, Louisiana, Arkansas and Florida
+46M acres - 5 states
 sources: [B live_verified] src-southern-homestead-act-1866 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_14.djvu/96
 links: screening-committees-include-editors-1854, 160-acres-free-homestead-1862, dawes-act-allotment-classification-1887, pan-american-commercial-conference-1889
 threads: T-DISCOVERY-DOCTRINE
@@ -2605,16 +2543,14 @@ sources: [C live_verified] src-chronam-memphis-coverage-1866 https://www.loc.gov
 links: sand-creek-initially-reported-as-battle-1864, 13th-amendment-1865, 14th-amend-press-framing-1868
 
 [E-W5-013-01] W5 1868 violence TB
-Opelousas
-framework: Software layer. A constitutional instrument whose public framing and operative text address different things.
-assessment: Weight: Proven (1 of 3 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
+Opelousas: Louisiana killings in the weeks before the presidential election
+LA - 150-300 killed
 sources: [A live_verified] src-alexandria-gazette-opelousas-1868 http://www.loc.gov/resource/sn85025007/1868-10-08/ed-1/?sp=2
 links: memphis-no-massacres-spark-national-outrage-1866, ap-serves-700-papers-1870, dc-organic-act-republic-becomes-corporation-1871
 
 [E-W5-013-02] W5 1868 legal TA
-14th Amendment
-framework: Software layer. A constitutional instrument whose public framing and operative text address different things.
-assessment: Weight: Proven (1 of 3 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
+Fourteenth Amendment ratified, carrying equal protection and its jurisdiction clause together
+"Artificial person"
 sources: [A live_verified] src-14th-amendment-1868 https://www.archives.gov/founding-docs/amendments-11-27
 links: 13th-amendment-1865, memphis-no-massacres-spark-national-outrage-1866, clinton-1875, fair-press-blankets-nation-1876
 threads: T-SOFTWARE-NEUTRALITY
@@ -2626,9 +2562,8 @@ sources: [C live_verified] src-chronam-fourteenth-amendment-framing-1868 https:/
 links: memphis-no-massacres-spark-national-outrage-1866, american-newspaper-directory-launched-1869, ap-serves-700-papers-1870
 
 [E-W5-014-01] W5 1869 population TB
-NY Foundling Hospital
-framework: Infrastructure layer. The press becomes a mapped and measurable industry in the same year a second major child-placement institution opens in New York.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+New York Foundling Hospital operating on Twelfth Street, a Catholic channel to child placement
+"Mercy Trains" begin
 sources: [B live_verified] src-petroleum-centre-foundling-asylum-1870 http://www.loc.gov/resource/sn84026005/1870-01-27/ed-1/?sp=2
 links: dc-organic-act-republic-becomes-corporation-1871, freedman-s-bank-collapse-douglass-blamed-1874, before-after-photos-as-propaganda-1879, convict-leasing-peaks-1882
 threads: T-THREE-TRACK-LABOR
@@ -2641,13 +2576,12 @@ links: 14th-amend-press-framing-1868, ap-serves-700-papers-1870, dc-organic-act-
 
 [E-W5-015-01] W5 1870 violence TA
 Eutaw
-framework: Software layer. A statute defining who may become a citizen, distributed through a network that now reaches most of the country's papers.
-assessment: Weight: Proven (1 of 3 entries sourced, tier B) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
+AL
 sources: [A live_verified] src-kkk-report-alabama-testimony-1872 https://archive.org/details/testimony0000unse_y9v7
 links: 14th-amend-press-framing-1868, dc-organic-act-republic-becomes-corporation-1871, colfax-covered-as-riot-not-massacre-1873
 
 [E-W5-015-02] W5 1870 legal TB
-Naturalization Act
+Naturalization laws extended to aliens of African nativity and persons of African descent
 framework: Software layer. A statute defining who may become a citizen, distributed through a network that now reaches most of the country's papers.
 assessment: Weight: Proven (1 of 3 entries sourced, tier B) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
 sources: [B live_verified] src-naturalization-act-1870 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_16.djvu/288
@@ -2661,29 +2595,26 @@ sources: [B live_verified] src-evening-telegraph-ap-contract-1870 http://www.loc
 links: american-newspaper-directory-launched-1869, dc-organic-act-republic-becomes-corporation-1871, elijah-mccoy-automatic-lubrication-1872
 
 [E-W5-016-01] W5 1871 violence TA
-Meridian
-framework: Hardware-to-software transition. The window's second structural legal claim, in a year whose dominant news story was a fire.
-assessment: Weight: Proven (1 of 5 entries sourced, tier B) · Asserted (4 unsourced) | Warrant: Open (4 of 5 entries unsourced)
+Meridian, Mississippi: a courtroom shooting followed by killings across the county
+MS - 30 killed
 sources: [A live_verified] src-kkk-report-mississippi-testimony-1872 https://archive.org/details/insurrectionstate11goverich
 links: ap-serves-700-papers-1870, colfax-covered-as-riot-not-massacre-1873, freedman-s-bank-collapse-douglass-blamed-1874
 
 [E-W5-016-02] W5 1871 population TB
-Riverside Indian School
-framework: Hardware-to-software transition. The window's second structural legal claim, in a year whose dominant news story was a fire.
-assessment: Weight: Proven (1 of 5 entries sourced, tier B) · Asserted (4 unsourced) | Warrant: Open (4 of 5 entries unsourced)
+Riverside runs as an early federal boarding school, recorded in the Commissioner's later returns
+Oldest federal boarding school
 sources: [A live_verified] src-arcia-1891 https://archive.org/details/annualreportcom00affagoog
 links: american-newspaper-directory-launched-1869, freedman-s-bank-collapse-douglass-blamed-1874, before-after-photos-as-propaganda-1879, convict-leasing-peaks-1882
 threads: T-THREE-TRACK-LABOR
 
 [E-W5-016-03] W5 1871 records TB
-Great Chicago Fire
-framework: Hardware-to-software transition. The window's second structural legal claim, in a year whose dominant news story was a fire.
-assessment: Weight: Proven (1 of 5 entries sourced, tier B) · Asserted (4 unsourced) | Warrant: Open (4 of 5 entries unsourced)
+Great Chicago Fire destroys the city center
+17,450 buildings - records
 sources: [B live_verified] src-colbert-chicago-conflagration-1871 https://archive.org/details/chicagoandgreat00unkngoog
 links: sine-die-adjournment-constitutional-breakpoint-1861, memphis-no-massacres-spark-national-outrage-1866, elijah-mccoy-automatic-lubrication-1872
 
 [E-W5-016-04] W5 1871 legal TB
-DC Organic Act - Republic becomes Corporation
+DC Organic Act: the District constituted a body corporate
 41st Congress, Session III, Chapter 62, p. 419. Constitutes the District 'a body corporate for municipal purposes' (16 Stat. 419). The word 'private' is not in the statute; reading this incorporation as the Republic becoming a Corporation is the corpus's inference. Sine Die (1861) dissolved the de jure Republic; the Organic Act (1871) installs the Corporation. Ten years between death of one entity and birth of another. “Constitution OF” replaces “Constitution FOR.” The 14th Amendment “citizens” (1868) are now subjects of a corporation, not a republic.
 sources: [B live_verified] src-dc-organic-act-1871 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_16.djvu/453
 links: 400-patents-held-by-black-inventors-1900, oklahoma-statehood-1907, garrett-morgan-traffic-signal-patent-1923
@@ -2691,29 +2622,25 @@ threads: T-FRANCHISE-TRANSFER
 
 [E-W5-016-05] W5 1871 information TB
 Chicago fire dominates press
-framework: Hardware-to-software transition. The window's second structural legal claim, in a year whose dominant news story was a fire.
-assessment: Weight: Proven (1 of 5 entries sourced, tier B) · Asserted (4 unsourced) | Warrant: Open (4 of 5 entries unsourced)
+"Mrs. O'Leary's cow" narrative created - covers cause with mythology. Record destruction not investigated as story
 sources: [A live_verified] src-nytribune-burned-chicago-1871 http://www.loc.gov/resource/sn83030214/1871-10-14/ed-1/?sp=1
 links: american-newspaper-directory-launched-1869, ap-serves-700-papers-1870, elijah-mccoy-automatic-lubrication-1872
 
 [E-W5-017-01] W5 1872 records TB
-Great Boston Fire
-framework: Extraction layer. A protective agency ends, a justificatory text appears, and an invention enters industry, all in one year.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Great Boston Fire burns seventy acres of the commercial district
+776 buildings
 sources: [A live_verified] src-the-sun-boston-fire-1872 http://www.loc.gov/resource/sn83030272/1872-11-12/ed-1/?sp=1
 links: sine-die-adjournment-constitutional-breakpoint-1861, memphis-no-massacres-spark-national-outrage-1866, dc-organic-act-republic-becomes-corporation-1871
 
 [E-W5-017-02] W5 1872 legal TA
-Bureau abolished
-framework: Extraction layer. A protective agency ends, a justificatory text appears, and an invention enters industry, all in one year.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Freedmen's Bureau discontinued by a proviso inside an appropriations act
+17 Stat. 366. The Bureau was not ended by a dedicated statute. It was discontinued by a proviso inside "An Act making Appropriations for sundry civil Expenses of the Government": "Provided, That the Bureau of Refugees, Freedmen, and Abandoned Lands shall be discontinued from and after June thirtieth, eighteen hundred and seventy-two". The clause sits under a line item for the bounty and prize-money claims of colored soldiers and sailors.
 sources: [A live_verified] src-freedmens-bureau-discontinued-1872 https://www.govinfo.gov/link/statute/17/366
 links: ap-serves-700-papers-1870, dc-organic-act-republic-becomes-corporation-1871, clinton-1875
 
 [E-W5-017-03] W5 1872 information TA
 Brace: "Dangerous Classes of NY"
-framework: Extraction layer. A protective agency ends, a justificatory text appears, and an invention enters industry, all in one year.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+CAS founder publishes manifesto - "street Arab" term popularized. Intellectual justification for Orphan Trains
 sources: [A live_verified] src-brace-dangerous-classes-1872 https://archive.org/details/dangerousclasses00brac
 links: convict-leasing-peaks-1882
 threads: T-VAGRANCY-CHAIN
@@ -2725,16 +2652,14 @@ sources: [A live_verified] src-patent-mccoy-lubricator-1872 https://patents.goog
 links: clinton-1875, fair-press-blankets-nation-1876, before-after-photos-as-propaganda-1879
 
 [E-W5-018-01] W5 1873 financial TA
-Panic of 1873
-framework: Software layer. A massacre is narrated as a political dispute, and the narration precedes the legal holding that makes the federal remedy unavailable.
-assessment: Weight: Proven (2 of 3 sourced, tier B) plus Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
+Panic of 1873 culminates in a small Black Friday on the Exchange
+6-year depression
 sources: [A live_verified] src-nytribune-panic-1873 http://www.loc.gov/resource/sn83030214/1873-09-20/ed-1/?sp=1
 links: draft-riot-press-coverage-1863, 13th-amendment-1865, freedman-s-bank-collapse-douglass-blamed-1874
 
 [E-W5-018-02] W5 1873 violence TB
-Colfax Massacre
-framework: Software layer. A massacre is narrated as a political dispute, and the narration precedes the legal holding that makes the federal remedy unavailable.
-assessment: Weight: Proven (2 of 3 sourced, tier B) plus Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
+Colfax: Black defenders burned out of the Louisiana courthouse and killed
+LA - 62-153 killed
 sources: [B live_verified] src-clarke-courier-riot-in-louisiana-1873 http://www.loc.gov/resource/sn85025371/1873-04-24/ed-1/?sp=2
 links: dc-organic-act-republic-becomes-corporation-1871, freedman-s-bank-collapse-douglass-blamed-1874, clinton-1875
 
@@ -2745,24 +2670,21 @@ sources: [C live_verified] src-chronam-colfax-framing-1873 https://www.loc.gov/c
 links: dc-organic-act-republic-becomes-corporation-1871, elijah-mccoy-automatic-lubrication-1872, freedman-s-bank-collapse-douglass-blamed-1874
 
 [E-W5-019-01] W5 1874 financial TB
-Freedman's Bank collapses
-framework: Extraction layer. An institutional failure with a documented reassignment of public responsibility.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Trustees close the insolvent Freedman's Savings Bank
+61,000 depositors wiped out
 sources: [B live_verified] src-caucasian-freedmans-bank-closing-1874 http://www.loc.gov/resource/sn86053765/1874-07-25/ed-1/?sp=1
 links: sine-die-adjournment-constitutional-breakpoint-1861, draft-riot-press-coverage-1863, 13th-amendment-1865, 400-patents-held-by-black-inventors-1900
 threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W5-019-02] W5 1874 violence TB
-Coushatta
-framework: Extraction layer. An institutional failure with a documented reassignment of public responsibility.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Coushatta: six prisoners taken from custody and killed in Louisiana
+LA
 sources: [A live_verified] src-bellows-falls-times-coushatta-1874 http://www.loc.gov/resource/sn84022549/1874-09-18/ed-1/?sp=2
 links: colfax-covered-as-riot-not-massacre-1873, clinton-1875, fair-press-blankets-nation-1876
 
 [E-W5-019-03] W5 1874 population TB
-Fort Hall School
-framework: Extraction layer. An institutional failure with a documented reassignment of public responsibility.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Fort Hall boarding school operating in Idaho, recorded in the Commissioner's later returns
+Idaho
 sources: [A live_verified] src-arcia-1891 https://archive.org/details/annualreportcom00affagoog
 links: american-newspaper-directory-launched-1869, dc-organic-act-republic-becomes-corporation-1871, before-after-photos-as-propaganda-1879, convict-leasing-peaks-1882
 threads: T-THREE-TRACK-LABOR
@@ -2774,14 +2696,13 @@ sources: [A live_verified] src-nyherald-douglass-freedmans-bank-1874 http://www.
 links: elijah-mccoy-automatic-lubrication-1872, colfax-covered-as-riot-not-massacre-1873, fair-press-blankets-nation-1876
 
 [E-W5-020-01] W5 1875 violence TA
-Clinton
-framework: Hardware-to-software transition. Federal public-accommodations law and a communications patent arrive in the same year as continued organized violence in Mississippi.
-assessment: Weight: Proven (1 of 3 entries sourced, tier B) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
+Clinton, Mississippi: at least thirty killed in the riot of 4 September 1875
+MS - ~50 killed
 sources: [A live_verified] src-mississippi-1875-boutwell-report https://archive.org/details/mississippiin18701unit
 links: colfax-covered-as-riot-not-massacre-1873, freedman-s-bank-collapse-douglass-blamed-1874, fair-press-blankets-nation-1876
 
 [E-W5-020-02] W5 1875 legal TB
-Civil Rights Act 1875
+Civil Rights Act of 1875 bars discrimination in public accommodations
 framework: Hardware-to-software transition. Federal public-accommodations law and a communications patent arrive in the same year as continued organized violence in Mississippi.
 assessment: Weight: Proven (1 of 3 entries sourced, tier B) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
 sources: [B live_verified] src-civil-rights-act-1875 https://en.wikisource.org/wiki/Civil_Rights_Act_of_1875
@@ -2789,31 +2710,28 @@ links: memphis-no-massacres-spark-national-outrage-1866, 14th-amend-press-framin
 threads: T-SOFTWARE-NEUTRALITY
 
 [E-W5-020-03] W5 1875 innovation TB
-Bell telephone patent
+Bell files the telephone patent, and the wire network acquires a second use
 framework: Hardware-to-software transition. Federal public-accommodations law and a communications patent arrive in the same year as continued organized violence in Mississippi.
 assessment: Weight: Proven (1 of 3 entries sourced, tier B) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
 sources: [A live_verified] src-bell-telephone-patent-1876 https://patents.google.com/patent/US174465A/en
 links: elijah-mccoy-automatic-lubrication-1872, fair-press-blankets-nation-1876, before-after-photos-as-propaganda-1879
 
 [E-W5-021-01] W5 1876 violence TC
-Hamburg
-framework: Software layer. The window's sharpest single-year coverage differential, with a Supreme Court holding running underneath it.
-assessment: Weight: Proven (4 of 5 sourced, tier A) plus Asserted (1 unsourced) | Warrant: Open (1 of 5 entries unsourced)
+Hamburg massacre draws 966 pages against the Centennial's 25,038 in the same year's press
+SC
 sources: [C live_verified] src-chronam-1876-centennial-hamburg-differential https://www.loc.gov/collections/chronicling-america/?q=Centennial+Exhibition&dates=1876/1876&fo=json
 links: colfax-covered-as-riot-not-massacre-1873, freedman-s-bank-collapse-douglass-blamed-1874, clinton-1875
 
 [E-W5-021-02] W5 1876 legal TA
-US v. Cruikshank
-framework: Software layer. The window's sharpest single-year coverage differential, with a Supreme Court holding running underneath it.
-assessment: Weight: Proven (4 of 5 sourced, tier A) plus Asserted (1 unsourced) | Warrant: Open (1 of 5 entries unsourced)
+Cruikshank holds the Fourteenth Amendment binds states and not private actors
+Guts enforcement
 sources: [A live_verified] src-us-v-cruikshank-1876 https://www.law.cornell.edu/supremecourt/text/92/542
 links: memphis-no-massacres-spark-national-outrage-1866, 14th-amend-press-framing-1868, clinton-1875, pulitzer-buys-ny-world-1883
 threads: T-SOFTWARE-NEUTRALITY
 
 [E-W5-021-03] W5 1876 certification TC
-Centennial Exposition
-framework: Software layer. The window's sharpest single-year coverage differential, with a Supreme Court holding running underneath it.
-assessment: Weight: Proven (4 of 5 sourced, tier A) plus Asserted (1 unsourced) | Warrant: Open (1 of 5 entries unsourced)
+Centennial Exhibition takes 25,038 pages of the 1876 press, twenty six times Hamburg's share
+Philadelphia - 9M visitors
 sources: [C live_verified] src-chronam-1876-centennial-hamburg-differential https://www.loc.gov/collections/chronicling-america/?q=Centennial+Exhibition&dates=1876/1876&fo=json
 links: charlotte-astor-1-113-children-sent-1884, pan-american-commercial-conference-1889, tesla-ac-motor-at-fair-1893
 
@@ -2824,9 +2742,8 @@ sources: [C live_verified] src-chronam-1876-centennial-hamburg-differential http
 links: colfax-covered-as-riot-not-massacre-1873, freedman-s-bank-collapse-douglass-blamed-1874, before-after-photos-as-propaganda-1879
 
 [E-W5-021-05] W5 1876 innovation TB
-Bell telephone exhibited
-framework: Software layer. The window's sharpest single-year coverage differential, with a Supreme Court holding running underneath it.
-assessment: Weight: Proven (4 of 5 sourced, tier A) plus Asserted (1 unsourced) | Warrant: Open (1 of 5 entries unsourced)
+Bell's telephone carries audible speech two miles
+Bell at Philadelphia fair. Latimer drafts Bell's telephone patent drawings - Black inventor behind the curtain
 sources: [B live_verified] src-tiffin-tribune-telephony-1876 http://www.loc.gov/resource/sn87076794/1876-11-02/ed-1/?sp=4
 links: elijah-mccoy-automatic-lubrication-1872, clinton-1875, before-after-photos-as-propaganda-1879
 
@@ -2837,9 +2754,8 @@ sources: [B live_verified] src-electoral-commission-act-1877 https://en.wikisour
 links: clinton-1875, fair-press-blankets-nation-1876, convict-leasing-peaks-1882
 
 [E-W5-023-01] W5 1879 population TA
-Carlisle Indian School
-framework: Software layer. A boarding school produces documentary evidence of its own success and distributes it, in the year the window's innovation lane reaches incandescent light.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Carlisle opens as an off-reservation boarding school for Native children
+"Kill the Indian, save the man" - model for 400+ schools
 sources: [A live_verified] src-carlisle-eighteenth-annual-report-1897 https://archive.org/details/DKC0243; [A live_verified] src-red-man-tenth-anniversary-1889 http://www.loc.gov/resource/2025200871/1889-09-01/ed-1/?sp=5
 links: freedman-s-bank-collapse-douglass-blamed-1874, convict-leasing-peaks-1882, charlotte-astor-1-113-children-sent-1884, dawes-act-allotment-classification-1887
 threads: T-THREE-TRACK-LABOR
@@ -2851,7 +2767,7 @@ sources: [B live_verified] src-choate-glass-plate-negatives-carlisle https://car
 links: fair-press-blankets-nation-1876, convict-leasing-peaks-1882, pulitzer-buys-ny-world-1883
 
 [E-W5-023-03] W5 1879 innovation TA
-Edison lightbulb
+Edison files the incandescent lamp patent on a carbonized filament
 framework: Software layer. A boarding school produces documentary evidence of its own success and distributes it, in the year the window's innovation lane reaches incandescent light.
 assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
 sources: [A live_verified] src-edison-electric-lamp-patent-1879 https://patents.google.com/patent/US223898A/en
@@ -2865,7 +2781,7 @@ links: freedman-s-bank-collapse-douglass-blamed-1874, before-after-photos-as-pro
 threads: T-THREE-TRACK-LABOR, T-VAGRANCY-CHAIN
 
 [E-W5-024-02] W5 1882 legal TB
-Chinese Exclusion Act
+Chinese Exclusion Act suspends the entry of Chinese laborers and bars all Chinese from naturalization
 framework: Extraction layer. The punishment clause operating at industrial scale, alongside the first federal statute excluding a nationality by name.
 assessment: Weight: Proven (2 of 4 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 4 entries unsourced)
 sources: [B live_verified] src-chinese-exclusion-act-1882 https://en.wikisource.org/wiki/Chinese_Exclusion_Act
@@ -2873,30 +2789,26 @@ links: ap-serves-700-papers-1870, tulsa-covered-then-erased-1921, 1924-triple-lo
 threads: T-WHITENING-PROJECT
 
 [E-W5-024-03] W5 1882 information TB
-Anti-Chinese press campaign
-framework: Extraction layer. The punishment clause operating at industrial scale, alongside the first federal statute excluding a nationality by name.
-assessment: Weight: Proven (2 of 4 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 4 entries unsourced)
+Anti-Chinese convention and league organize on the West Coast
+West Coast papers drive exclusion narrative - "Yellow Peril" framing precedes legislation
 sources: [A live_verified] src-eureka-sentinel-anti-chinese-1882 http://www.loc.gov/resource/sn84022044/1882-05-03/ed-1/?sp=2
 links: before-after-photos-as-propaganda-1879, pulitzer-buys-ny-world-1883, charlotte-astor-1-113-children-sent-1884
 
 [E-W5-024-04] W5 1882 innovation TB
-Edison Pearl St. Station
-framework: Extraction layer. The punishment clause operating at industrial scale, alongside the first federal statute excluding a nationality by name.
-assessment: Weight: Proven (2 of 4 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 4 entries unsourced)
+Pearl Street Station lights a district from Spruce Street to Wall Street
+First commercial power grid
 sources: [B live_verified] src-nytribune-edison-pearl-st-station-1883 http://www.loc.gov/resource/sn83030214/1883-10-24/ed-1/?sp=8
 links: before-after-photos-as-propaganda-1879, charlotte-astor-1-113-children-sent-1884, dawes-act-allotment-classification-1887
 
 [E-W5-025-01] W5 1883 violence TB
-Danville Riot
-framework: Software layer. Federal public-accommodations law is voided in the same year the modern high-circulation daily is invented.
-assessment: Weight: Proven (1 of 3 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
+Danville, Virginia: shooting on the eve of the election, federal troops asked for
+VA
 sources: [A live_verified] src-memphis-appeal-danville-riot-1883 http://www.loc.gov/resource/sn83045160/1883-11-06/ed-1/?sp=1
 links: dawes-act-allotment-classification-1887, pan-american-commercial-conference-1889, riis-how-the-other-half-lives-1890
 
 [E-W5-025-02] W5 1883 legal TA
-Civil Rights Cases
-framework: Software layer. Federal public-accommodations law is voided in the same year the modern high-circulation daily is invented.
-assessment: Weight: Proven (1 of 3 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
+Civil Rights Cases strike down the 1875 Act, returning accommodations to the states
+1875 Act struck down
 sources: [A live_verified] src-civil-rights-cases-1883 https://www.law.cornell.edu/supremecourt/text/109/3
 links: 14th-amend-press-framing-1868, clinton-1875, fair-press-blankets-nation-1876, plessy-barely-covered-1896
 threads: T-SOFTWARE-NEUTRALITY
@@ -2909,8 +2821,7 @@ links: before-after-photos-as-propaganda-1879, convict-leasing-peaks-1882, charl
 
 [E-W5-026-01] W5 1884 certification TA
 Cotton Centennial
-framework: Software layer. Population transfer at documented individual scale, narrated as charity.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+New Orleans
 sources: [A live_verified] src-cotton-centennial-guide-1884 https://archive.org/details/visitorsguidetow00lill_0
 links: fair-press-blankets-nation-1876, pan-american-commercial-conference-1889, tesla-ac-motor-at-fair-1893
 
@@ -2922,21 +2833,19 @@ links: before-after-photos-as-propaganda-1879, convict-leasing-peaks-1882, dawes
 threads: T-THREE-TRACK-LABOR
 
 [E-W5-026-03] W5 1884 innovation TB
-L. Latimer patent
-framework: Software layer. Population transfer at documented individual scale, narrated as charity.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Lewis Latimer patents a process for carbonizing incandescent lamp filaments
+Carbon filament (lightbulb)
 sources: [A live_verified] src-latimer-carbons-patent-1882 https://patents.google.com/patent/US252386A/en
 links: before-after-photos-as-propaganda-1879, convict-leasing-peaks-1882, dawes-act-allotment-classification-1887
 
 [E-W5-027-01] W5 1887 violence TC
-Thibodaux
-framework: Extraction layer. The window's densest year: a land statute that is also an identity-assignment apparatus, a labor massacre kept local, and an invention in the communications layer.
-assessment: Weight: Proven (4 of 6 sourced, tier B) plus Asserted (2 unsourced) | Warrant: Open (2 of 6 entries unsourced)
+Thibodaux draws 46 pages corpus-wide, and the coverage that exists leads with a Black-owned paper
+LA - 35-300 killed
 sources: [C live_verified] src-chronam-thibodaux-coverage-1887 https://www.loc.gov/collections/chronicling-america/?q=Thibodaux+Louisiana+negroes+killed&dates=1887/1887&fo=json
 links: pulitzer-buys-ny-world-1883, pan-american-commercial-conference-1889, riis-how-the-other-half-lives-1890
 
 [E-W5-027-02] W5 1887 population TB
-25+ fed. boarding schools
+Federal Indian school enrollment counted at 15,784 by the schools' own newspaper
 framework: Extraction layer. The window's densest year: a land statute that is also an identity-assignment apparatus, a labor massacre kept local, and an invention in the communications layer.
 assessment: Weight: Proven (4 of 6 sourced, tier B) plus Asserted (2 unsourced) | Warrant: Open (2 of 6 entries unsourced)
 sources: [A live_verified] src-red-man-enrollment-1890 http://www.loc.gov/resource/2025200871/1890-04-01/ed-1/?sp=1
@@ -2951,7 +2860,7 @@ links: pan-american-commercial-conference-1889, riis-how-the-other-half-lives-18
 threads: T-DISCOVERY-DOCTRINE, T-NOUN-TO-ADJECTIVE
 
 [E-W5-027-04] W5 1887 land TB
-"Surplus" land opened
+Land declared surplus after allotment is opened to purchase by non-Native buyers
 framework: Extraction layer. The window's densest year: a land statute that is also an identity-assignment apparatus, a labor massacre kept local, and an invention in the communications layer.
 assessment: Weight: Proven (4 of 6 sourced, tier B) plus Asserted (2 unsourced) | Warrant: Open (2 of 6 entries unsourced)
 sources: [B live_verified] src-dawes-act-1887 https://en.wikisource.org/wiki/Dawes_Act
@@ -2960,43 +2869,37 @@ threads: T-DISCOVERY-DOCTRINE
 
 [E-W5-027-05] W5 1887 information TC
 Thibodaux covered locally only
-framework: Extraction layer. The window's densest year: a land statute that is also an identity-assignment apparatus, a labor massacre kept local, and an invention in the communications layer.
-assessment: Weight: Proven (4 of 6 sourced, tier B) plus Asserted (2 unsourced) | Warrant: Open (2 of 6 entries unsourced)
+One of deadliest labor massacres in US history - national press ignores it. AP doesn't wire the story
 sources: [C live_verified] src-chronam-thibodaux-coverage-1887 https://www.loc.gov/collections/chronicling-america/?q=Thibodaux+Louisiana+negroes+killed&dates=1887/1887&fo=json
 links: charlotte-astor-1-113-children-sent-1884, pan-american-commercial-conference-1889, riis-how-the-other-half-lives-1890
 
 [E-W5-027-06] W5 1887 innovation TB
 Granville Woods: multiplex telegraph
-framework: Extraction layer. The window's densest year: a land statute that is also an identity-assignment apparatus, a labor massacre kept local, and an invention in the communications layer.
-assessment: Weight: Proven (4 of 6 sourced, tier B) plus Asserted (2 unsourced) | Warrant: Open (2 of 6 entries unsourced)
+15+ railroad patents. Edison sued Woods twice and lost both times. 1883: Matzeliger shoe lasting machine (150-700 pairs/day). 1885: Sarah Goode - first Black woman US patent. 1887: Alexander Miles elevator safety door
 sources: [A live_verified] src-woods-induction-telegraph-patent-1887 https://patents.google.com/patent/US373915A/en
 links: convict-leasing-peaks-1882, charlotte-astor-1-113-children-sent-1884, tesla-ac-motor-at-fair-1893
 
 [E-W5-028-01] W5 1884 financial TB
-1884 Banking Panic (NYC)
-framework: Software layer. Population transfer at documented individual scale, narrated as charity.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+New York banking panic contained by Clearing House action
+Baring Brothers near-failure 1890 - same family as 1803 Louisiana Purchase
 sources: [B live_verified] src-nytribune-1884-failures http://www.loc.gov/resource/sn83030214/1884-05-15/ed-1/?sp=5
 links: freedman-s-bank-collapse-douglass-blamed-1874, tesla-ac-motor-at-fair-1893, 400-patents-held-by-black-inventors-1900
 
 [E-W5-028-02] W5 1889 violence TB
-Johnstown Flood
-framework: Extraction layer. Six entries in five lanes with a land transfer at the centre and no causal thread among the rest.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Johnstown Flood: a dam gives way and thousands of lives are lost
+Dam owned by Carnegie/Frick/Mellon club. Deadliest single-day civilian disaster. Records destroyed by floodwater
 sources: [B live_verified] src-caledonian-johnstown-flood-1889 http://www.loc.gov/resource/sn84023253/1889-06-06/ed-1/?sp=4
 links: dawes-act-allotment-classification-1887, riis-how-the-other-half-lives-1890, italian-lynching-sparks-international-incident-1891
 
 [E-W5-028-03] W5 1889 records TB
-Seattle Fire
-framework: Extraction layer. Six entries in five lanes with a land transfer at the centre and no causal thread among the rest.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Great Seattle Fire burns thirty one business blocks
+550 buildings
 sources: [A live_verified] src-nytribune-seattle-ruin-1889 http://www.loc.gov/resource/sn83030214/1889-06-08/ed-1/?sp=1
 links: record-destruction-not-investigated-1897, spanish-american-war-dominates-press-1898, mckinley-assassination-dominates-1901
 
 [E-W5-028-04] W5 1889 land TB
-Oklahoma Land Rush #1
-framework: Extraction layer. Six entries in five lanes with a land transfer at the centre and no causal thread among the rest.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Boomers mass on the Oklahoma line as Interior issues its land decisions
+1.9M acres. Followed by 1891 (1.28M), 1892 (4.3M), 1893 Cherokee Strip (6.3M acres - 100,000+ settlers - same year as Panic + Columbian Expo), 1895, 1901, 1906
 sources: [B live_verified] src-nytribune-oklahoma-boomers-1889 http://www.loc.gov/resource/sn83030214/1889-04-20/ed-1/?sp=2
 links: dawes-act-allotment-classification-1887, riis-how-the-other-half-lives-1890, spanish-american-war-dominates-press-1898, algeciras-conference-1906
 threads: T-DISCOVERY-DOCTRINE
@@ -3009,20 +2912,18 @@ links: charlotte-astor-1-113-children-sent-1884, tesla-ac-motor-at-fair-1893, bo
 
 [E-W5-028-06] W5 1889 information TB
 Land Rush covered as adventure
-framework: Extraction layer. Six entries in five lanes with a land transfer at the centre and no causal thread among the rest.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Press frames Oklahoma opening as frontier excitement - not as seizure of Indian Territory
 sources: [B live_verified] src-nytribune-white-topped-wagons-1889 http://www.loc.gov/resource/sn83030214/1889-04-18/ed-1/?sp=1
 links: dawes-act-allotment-classification-1887, riis-how-the-other-half-lives-1890, italian-lynching-sparks-international-incident-1891
 
 [E-W5-029-01] W5 1890 violence TA
 Wounded Knee
-framework: Software layer. Two photographic and narrative operations in one year, with a claims statute running beneath them.
-assessment: Weight: Proven (1 of 3 entries sourced, tier B) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
+SD - 250-300 Lakota
 sources: [A live_verified] src-arcia-1891 https://archive.org/details/annualreportcom00affagoog
 links: dawes-act-allotment-classification-1887, pan-american-commercial-conference-1889, italian-lynching-sparks-international-incident-1891
 
 [E-W5-029-02] W5 1890 legal TB
-Indian Depredations Act
+Indian Depredations Act opens the Court of Claims to suits against tribes for property loss
 framework: Software layer. Two photographic and narrative operations in one year, with a claims statute running beneath them.
 assessment: Weight: Proven (1 of 3 entries sourced, tier B) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
 sources: [B live_verified] src-indian-depredations-act-1891 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_26.djvu/904
@@ -3037,15 +2938,13 @@ links: pan-american-commercial-conference-1889, italian-lynching-sparks-internat
 
 [E-W5-030-01] W5 1891 violence TB
 Hennessy Affair
-framework: Software layer. A lynching that produced an international consequence, framed domestically as a Mafia matter.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+New Orleans - 11 Italians lynched
 sources: [A live_verified] src-fisherman-farmer-italians-lynched-1891 http://www.loc.gov/resource/sn91068084/1891-04-03/ed-1/?sp=6
 links: dawes-act-allotment-classification-1887, pan-american-commercial-conference-1889, riis-how-the-other-half-lives-1890
 
 [E-W5-030-02] W5 1891 population TB
-Boarding school compulsory
-framework: Software layer. A lynching that produced an international consequence, framed domestically as a Mafia matter.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Boarding school attendance made compulsory under the act of 3 March 1891
+Federal law
 sources: [A live_verified] src-red-man-compulsory-education-1892 http://www.loc.gov/resource/2025200871/1892-02-01/ed-1/?sp=3
 links: before-after-photos-as-propaganda-1879, convict-leasing-peaks-1882, charlotte-astor-1-113-children-sent-1884, dawes-act-allotment-classification-1887
 threads: T-THREE-TRACK-LABOR
@@ -3063,14 +2962,13 @@ sources: [B live_verified] src-willimantic-journal-ellis-island-1892 http://www.
 links: riis-how-the-other-half-lives-1890, italian-lynching-sparks-international-incident-1891, booker-t-atlanta-compromise-1895
 
 [E-W5-032-01] W5 1893 financial TB
-Panic of 1893
-framework: Software layer. The window's one sourced counter-narrative primary, published against the fair it stands beside in the same bucket.
-assessment: Weight: Proven (3 of 5 sourced, tier A) plus Asserted (2 unsourced) | Warrant: Open (2 of 5 entries unsourced)
+Panic of 1893 brings national bank failures and trouble in Western railroads
+500+ banks fail
 sources: [B live_verified] src-nytribune-bank-failures-1893 http://www.loc.gov/resource/sn83030214/1893-08-05/ed-1/?sp=2
 links: pan-american-commercial-conference-1889, 400-patents-held-by-black-inventors-1900, oklahoma-statehood-1907
 
 [E-W5-032-02] W5 1893 population TB
-Dawes Commission
+Three commissioners appointed to negotiate extinguishment of tribal title with the Five Tribes
 framework: Software layer. The window's one sourced counter-narrative primary, published against the fair it stands beside in the same bucket.
 assessment: Weight: Proven (3 of 5 sourced, tier A) plus Asserted (2 unsourced) | Warrant: Open (2 of 5 entries unsourced)
 sources: [B live_verified] src-dawes-commission-act-1893 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_27.djvu/671
@@ -3078,16 +2976,14 @@ links: dawes-act-allotment-classification-1887, noble-drew-ali-begins-organizing
 threads: T-NOUN-TO-ADJECTIVE
 
 [E-W5-032-03] W5 1893 certification TA
-Columbian Exposition
-framework: Software layer. The window's one sourced counter-narrative primary, published against the fair it stands beside in the same bucket.
-assessment: Weight: Proven (3 of 5 sourced, tier A) plus Asserted (2 unsourced) | Warrant: Open (2 of 5 entries unsourced)
+World's Columbian Exposition opens at Jackson Park, Chicago
+Chicago
 sources: [A live_verified] src-reason-why-columbian-exposition-1893 https://digital.library.upenn.edu/women/wells/exposition/exposition.html
 links: pan-american-commercial-conference-1889, booker-t-atlanta-compromise-1895, record-destruction-not-investigated-1897
 
 [E-W5-032-04] W5 1893 counter-move TA
 Douglass: "Reason Why the Colored American Is Not in the Exposition"
-framework: Software layer. The window's one sourced counter-narrative primary, published against the fair it stands beside in the same bucket.
-assessment: Weight: Proven (3 of 5 sourced, tier A) plus Asserted (2 unsourced) | Warrant: Open (2 of 5 entries unsourced)
+Protest pamphlet - only counter-narrative at the fair. Mainstream press ignores it
 sources: [A live_verified] src-reason-why-columbian-exposition-1893 https://digital.library.upenn.edu/women/wells/exposition/exposition.html
 links: robert-abbott-founds-chicago-defender-1905, noble-drew-ali-begins-organizing-the-1913, marcus-garvey-arrives-in-us-1916, chicago-defender-covers-red-summer-1919
 threads: T-COLLAPSE-SURVIVAL-N1
@@ -3099,9 +2995,8 @@ sources: [A live_verified] src-barrett-electricity-columbian-1894 https://archiv
 links: dawes-act-allotment-classification-1887, 400-patents-held-by-black-inventors-1900, mckinley-assassination-dominates-1901
 
 [E-W5-033-01] W5 1895 certification TA
-Cotton States Expo
-framework: Software layer. The certification apparatus supplies the venue and the press supplies the reach for an endorsement of the arrangement.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Cotton States Exposition in Atlanta supplies the platform from which the address is given
+Atlanta - Bureau zone
 sources: [A live_verified] src-cotton-states-official-guide-1895 https://archive.org/details/officialguideco00cott
 links: tesla-ac-motor-at-fair-1893, record-destruction-not-investigated-1897, spanish-american-war-dominates-press-1898
 
@@ -3112,9 +3007,8 @@ sources: [A live_verified] src-washington-up-from-slavery-1901 https://archive.o
 links: ellis-island-opens-1892, plessy-barely-covered-1896, record-destruction-not-investigated-1897
 
 [E-W5-034-01] W5 1896 legal TA
-Plessy v. Ferguson
-framework: Software layer. The window's sharpest inversion: maximal legal consequence, minimal contemporary coverage.
-assessment: Weight: Proven (all 2 entries sourced, tier A) | Warrant: Closed
+Plessy establishes separate but equal as constitutional doctrine
+"Separate but equal"
 sources: [A live_verified] src-plessy-v-ferguson-1896 https://www.law.cornell.edu/supremecourt/text/163/537
 links: clinton-1875, fair-press-blankets-nation-1876, pulitzer-buys-ny-world-1883, 400-patents-held-by-black-inventors-1900
 threads: T-SOFTWARE-NEUTRALITY
@@ -3127,15 +3021,13 @@ links: booker-t-atlanta-compromise-1895, record-destruction-not-investigated-189
 
 [E-W5-035-01] W5 1897 records TA
 Ellis Island fire
-framework: Infrastructure layer. A records destruction reported as a property event.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Federal and State immigration records dating back to 1855 destroyed, along with the pine buildings holding them; Customs Lists survive
 sources: [A live_verified] src-immigration-annual-report-1898 https://archive.org/download/annual-report-of-the-commissioner-general-of-immigration/Annual%20report%20of%20the%20Commissioner-General%20of%20Immigration%201898.pdf; [B live_verified] src-ellis-island-foundation-1897-fire https://www.statueofliberty.org/ellis-island/overview-history/
 links: spanish-american-war-dominates-press-1898, mckinley-assassination-dominates-1901, fair-called-university-of-the-future-1904
 
 [E-W5-035-02] W5 1897 certification TA
-TN Centennial
-framework: Infrastructure layer. A records destruction reported as a property event.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Tennessee Centennial Exposition opens at Nashville two years after the panic
+Nashville - Bureau zone
 sources: [A live_verified] src-tennessee-centennial-guide-1897 https://archive.org/details/officialguidete00tenn
 links: tesla-ac-motor-at-fair-1893, booker-t-atlanta-compromise-1895, spanish-american-war-dominates-press-1898
 
@@ -3146,21 +3038,19 @@ sources: [A live_verified] src-san-antonio-light-ellis-island-fire-1897 http://w
 links: booker-t-atlanta-compromise-1895, plessy-barely-covered-1896, spanish-american-war-dominates-press-1898
 
 [E-W5-036-01] W5 1898 violence TC
-Wilmington Massacre
-framework: Software layer. The window's largest coverage displacement: a domestic coup against an elected government, unreported, beside a foreign war being manufactured.
-assessment: Weight: Proven (3 of 5 sourced, tier B) plus Asserted (2 unsourced) | Warrant: Open (2 of 5 entries unsourced)
+Wilmington's overthrow draws 4,208 pages against 116,162 for the Cuban war the same year
+NC - only US coup
 sources: [C live_verified] src-chronam-1898-wilmington-displacement https://www.loc.gov/collections/chronicling-america/?q=Cuba+Spanish+war&dates=1898/1898&fo=json
 links: riis-how-the-other-half-lives-1890, italian-lynching-sparks-international-incident-1891, algeciras-conference-1906
 
 [E-W5-036-02] W5 1898 records TB
 Bismarck Fire
-framework: Software layer. The window's largest coverage displacement: a domestic coup against an elected government, unreported, beside a foreign war being manufactured.
-assessment: Weight: Proven (3 of 5 sourced, tier B) plus Asserted (2 unsourced) | Warrant: Open (2 of 5 entries unsourced)
+ND
 sources: [B live_verified] src-eagle-river-review-bismarck-1898 http://www.loc.gov/resource/sn85040614/1898-08-18/ed-1/?sp=2
 links: record-destruction-not-investigated-1897, mckinley-assassination-dominates-1901, fair-called-university-of-the-future-1904
 
 [E-W5-036-03] W5 1898 legal TB
-Curtis Act
+Curtis Act abolishes tribal courts and completes allotment in Indian Territory
 framework: Software layer. The window's largest coverage displacement: a domestic coup against an elected government, unreported, beside a foreign war being manufactured.
 assessment: Weight: Proven (3 of 5 sourced, tier B) plus Asserted (2 unsourced) | Warrant: Open (2 of 5 entries unsourced)
 sources: [B live_verified] src-curtis-act-1898 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_30.djvu/534
@@ -3168,9 +3058,8 @@ links: pan-american-commercial-conference-1889, riis-how-the-other-half-lives-18
 threads: T-DISCOVERY-DOCTRINE
 
 [E-W5-036-04] W5 1898 certification TA
-Trans-Mississippi
-framework: Software layer. The window's largest coverage displacement: a domestic coup against an elected government, unreported, beside a foreign war being manufactured.
-assessment: Weight: Proven (3 of 5 sourced, tier B) plus Asserted (2 unsourced) | Warrant: Open (2 of 5 entries unsourced)
+Trans-Mississippi Exposition funds an Indian Congress in its own accounts
+Omaha - crescent
 sources: [A live_verified] src-trans-mississippi-report-1898 https://archive.org/details/reportofgenerals00tranrich
 links: booker-t-atlanta-compromise-1895, record-destruction-not-investigated-1897, mckinley-assassination-dominates-1901
 
@@ -3181,17 +3070,15 @@ sources: [C live_verified] src-chronam-1898-wilmington-displacement https://www.
 links: plessy-barely-covered-1896, record-destruction-not-investigated-1897, mckinley-assassination-dominates-1901
 
 [E-W5-037-01] W5 1900 financial TB
-Gold Standard Act
-framework: Hardware-to-software transition. A jurisdictional category created for territory, a monetary standard fixed by statute, and a documented body of invention whose ownership is the open question.
-assessment: Weight: Proven (2 of 3 entries sourced, tier A) · Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
+Gold Standard Act defines and fixes the standard of value
+Completes the Crime of '73. US officially on gold only. Silver fully demonetized. The people's metal eliminated; the Managers' metal elevated
 sources: [A citation_only] src-gold-standard-act-1900 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_31.djvu/4
 links: jekyll-island-meeting-secret-1910, noble-drew-ali-begins-organizing-the-1913, nyse-closed-4-months-1914, wall-street-bombing-1920
 threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W5-037-02] W5 1900 legal TA
-Insular Cases (1901)
-framework: Hardware-to-software transition. A jurisdictional category created for territory, a monetary standard fixed by statute, and a documented body of invention whose ownership is the open question.
-assessment: Weight: Proven (2 of 3 entries sourced, tier A) · Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
+Insular Cases, decided from 1901, invent the unincorporated territory where the Constitution applies in part
+Constitution doesn't fully follow the flag to territories. Philippines, Puerto Rico, Guam = US possessions without constitutional protections. Classification logic exported to new colonies
 sources: [A live_verified] src-downes-v-bidwell-1901 https://www.law.cornell.edu/supremecourt/text/182/244
 links: clinton-1875, fair-press-blankets-nation-1876, pulitzer-buys-ny-world-1883, plessy-barely-covered-1896
 threads: T-SOFTWARE-NEUTRALITY
@@ -3204,48 +3091,43 @@ links: dc-organic-act-republic-becomes-corporation-1871, oklahoma-statehood-1907
 threads: T-FRANCHISE-TRANSFER
 
 [E-W5-038-01] W5 1901 records TB
-Jacksonville Fire
-framework: Software layer. Total attention capture by a single event, with a succession that the entry ties to the window's institutional network.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Great Jacksonville Fire destroys the city center and the county records in it
+FL - 1,700 buildings
 sources: [B live_verified] src-acres-of-ashes-jacksonville-1901 https://archive.org/details/acresofashesstor00harr
 links: record-destruction-not-investigated-1897, spanish-american-war-dominates-press-1898, fair-called-university-of-the-future-1904
 
 [E-W5-038-02] W5 1901 certification TB
-Pan-American Expo
-framework: Software layer. Total attention capture by a single event, with a succession that the entry ties to the window's institutional network.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Pan-American Exposition opens at Buffalo, May to November 1901
+Buffalo
 sources: [B live_verified] src-pan-american-exposition-1901 https://archive.org/details/panamericanexpos01pana
 links: record-destruction-not-investigated-1897, spanish-american-war-dominates-press-1898, fair-called-university-of-the-future-1904
 
 [E-W5-038-03] W5 1901 information TC
-McKinley assassination dominates
+McKinley assassination heavily covered; cotton outran it two to one
 President killed at Buffalo fair - press coverage was heavy, though the measurement taken to test this CONTRADICTS the covers-nothing-else claim as written. TR becomes president - Roosevelt family now controls both political narrative and CAS funding
 sources: [C live_verified] src-chronam-mckinley-dominance-1901 https://www.loc.gov/collections/chronicling-america/?q=McKinley&dates=1901/1902&fo=json
 links: record-destruction-not-investigated-1897, spanish-american-war-dominates-press-1898, fair-called-university-of-the-future-1904
 
 [E-W5-038-04] W5 1901 innovation TB
-X-ray at Buffalo fair
-framework: Software layer. Total attention capture by a single event, with a succession that the entry ties to the window's institutional network.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Edison's X-ray machine reaches Buffalo, ready, and is never used on the President
+Three pages across ten days. 8 September, New-York Tribune: "EDISON HURRIES HIS BEST MACHINE WITH A PARTY OF EXPERTS", the apparatus requested by Secretary Cortelyou by long distance telephone. 9 September: the batteries were charged and the machine "is ready for instant use", Edison's operator on hand. 16 September, after the President's death, Dr. Mann: "THE X RAY INSTRUMENT WAS NOT USED, AS THE APPLIANCES WERE NOT HANDY."
 sources: [B live_verified] src-nytribune-xray-mckinley-1901 https://www.loc.gov/resource/sn83030214/1901-09-08/ed-1/?sp=1
 links: tesla-ac-motor-at-fair-1893, 400-patents-held-by-black-inventors-1900, algeciras-conference-1906
 
 [E-W5-039-01] W5 1904 records TA
-Baltimore Fire
-framework: Software layer. A land transfer commemorated as education, with the people from the transferred territory exhibited on the grounds.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Great Baltimore Fire destroys the business district
+2,300 buildings
 sources: [A live_verified] src-baltimore-fire-relief-report-1904 https://archive.org/details/reportofcitizens00balt
 links: spanish-american-war-dominates-press-1898, mckinley-assassination-dominates-1901, algeciras-conference-1906
 
 [E-W5-039-02] W5 1904 certification TA
 Louisiana Purchase Expo
-framework: Software layer. A land transfer commemorated as education, with the people from the transferred territory exhibited on the grounds.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+St. Louis - most expensive fair
 sources: [A live_verified] src-louisiana-purchase-expo-catalogue-1904 https://archive.org/details/officialcatalogu01stlo
 links: spanish-american-war-dominates-press-1898, mckinley-assassination-dominates-1901, oklahoma-statehood-1907
 
 [E-W5-039-03] W5 1904 information TC
-Fair called "University of the Future"
+St. Louis fair heavily covered; the "University of the Future" phrase is rare
 Press covers St. Louis as educational triumph - fair explicitly celebrates the 1803 land transfer (Louisiana Purchase). Indigenous "villages" displayed as living exhibits
 sources: [C live_verified] src-chronam-university-of-the-future-1904 https://www.loc.gov/collections/chronicling-america/?q=%22University+of+the+Future%22&dates=1904/1904&fo=json
 links: mckinley-assassination-dominates-1901, algeciras-conference-1906, oklahoma-statehood-1907
@@ -3259,22 +3141,19 @@ threads: T-COLLAPSE-SURVIVAL-N1
 
 [E-W5-041-01] W5 1906 violence TB
 Atlanta Riot
-framework: Extraction layer. Six entries across six lanes, including the window's international sovereignty claim and its most direct press-to-violence assertion.
-assessment: Weight: Proven (1 of 6 entries sourced, tier B) · Asserted (5 unsourced) | Warrant: Open (5 of 6 entries unsourced)
+GA - 25+ killed
 sources: [A live_verified] src-colorado-statesman-atlanta-1906 http://www.loc.gov/resource/sn83025514/1906-11-24/ed-1/?sp=1
 links: springfield-riot-in-lincoln-s-hometown-1908, jekyll-island-meeting-secret-1910, forsyth-county-land-seized-1912
 
 [E-W5-041-02] W5 1906 records TA
-San Francisco Fire
-framework: Extraction layer. Six entries across six lanes, including the window's international sovereignty claim and its most direct press-to-violence assertion.
-assessment: Weight: Proven (1 of 6 entries sourced, tier B) · Asserted (5 unsourced) | Warrant: Open (5 of 6 entries unsourced)
+Earthquake fire burns San Francisco
+28,150 buildings
 sources: [A live_verified] src-california-earthquake-commission-1908 https://archive.org/details/californiaearth08reidgoog
 links: mckinley-assassination-dominates-1901, fair-called-university-of-the-future-1904, jekyll-island-meeting-secret-1910
 
 [E-W5-041-03] W5 1906 legal TB
-Burke Act
-framework: Extraction layer. Six entries across six lanes, including the window's international sovereignty claim and its most direct press-to-violence assertion.
-assessment: Weight: Proven (1 of 6 entries sourced, tier B) · Asserted (5 unsourced) | Warrant: Open (5 of 6 entries unsourced)
+Burke Act lets the Interior Secretary issue fee patents early, moving allotments to taxable sale
+Secretary of Interior can declare Natives "competent" - removing trust protection, accelerating land loss
 sources: [B live_verified] src-burke-act-1906 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_34_Part_1.djvu/212
 links: riis-how-the-other-half-lives-1890, spanish-american-war-dominates-press-1898, oklahoma-statehood-1907, forsyth-county-land-seized-1912
 threads: T-DISCOVERY-DOCTRINE
@@ -3287,22 +3166,19 @@ links: pan-american-commercial-conference-1889, noble-drew-ali-begins-organizing
 
 [E-W5-041-05] W5 1906 information TB
 Atlanta riot triggered by press
-framework: Extraction layer. Six entries across six lanes, including the window's international sovereignty claim and its most direct press-to-violence assertion.
-assessment: Weight: Proven (1 of 6 entries sourced, tier B) · Asserted (5 unsourced) | Warrant: Open (5 of 6 entries unsourced)
+White newspapers publish fabricated stories - press directly incites the massacre. Information as weapon, not record
 sources: [A live_verified] src-richmond-palladium-atlanta-mobs-1906 http://www.loc.gov/resource/sn82015675/1906-09-23/ed-1/?sp=1
 links: fair-called-university-of-the-future-1904, oklahoma-statehood-1907, springfield-riot-in-lincoln-s-hometown-1908
 
 [E-W5-041-06] W5 1906 innovation TB
 Madam C.J. Walker launches hair care
-framework: Extraction layer. Six entries across six lanes, including the window's international sovereignty claim and its most direct press-to-violence assertion.
-assessment: Weight: Proven (1 of 6 entries sourced, tier B) · Asserted (5 unsourced) | Warrant: Open (5 of 6 entries unsourced)
+Becomes first female self-made millionaire by 1914. Funds anti-lynching campaigns. Innovation generating independent economic power for the classified population
 sources: [B live_verified] src-freeman-walker-manufacturing-1916 http://www.loc.gov/resource/sn82016211/1916-12-23/ed-1/?sp=2
 links: 400-patents-held-by-black-inventors-1900, mckinley-assassination-dominates-1901, nyse-closed-4-months-1914
 
 [E-W5-042-01] W5 1907 financial TA
-Panic of 1907
-framework: Extraction layer. The endpoint of the land sequence begun in 1889, formalized as statehood.
-assessment: Weight: Proven (2 of 5 entries sourced, tier B) · Asserted (3 unsourced) | Warrant: Open (3 of 5 entries unsourced)
+Panic of 1907: runs on the trust companies, and no banks fail
+Push for central bank
 sources: [A live_verified] src-nytribune-panic-1907 http://www.loc.gov/resource/sn83030214/1907-10-31/ed-1/?sp=2
 links: jekyll-island-meeting-secret-1910, noble-drew-ali-begins-organizing-the-1913, nyse-closed-4-months-1914
 
@@ -3314,31 +3190,27 @@ links: spanish-american-war-dominates-press-1898, 400-patents-held-by-black-inve
 threads: T-DISCOVERY-DOCTRINE, T-FRANCHISE-TRANSFER
 
 [E-W5-042-03] W5 1907 land TB
-Indian Territory → Oklahoma
-framework: Extraction layer. The endpoint of the land sequence begun in 1889, formalized as statehood.
-assessment: Weight: Proven (2 of 5 entries sourced, tier B) · Asserted (3 unsourced) | Warrant: Open (3 of 5 entries unsourced)
+Indian Territory and Oklahoma Territory united into the State of Oklahoma
+90M+ acres. The "Indian Territory" that was the destination of the Trail of Tears (1838) is now absorbed into the Corporation
 sources: [B live_verified] src-oklahoma-enabling-act-1906 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_34_Part_1.djvu/297
 links: riis-how-the-other-half-lives-1890, spanish-american-war-dominates-press-1898, algeciras-conference-1906, forsyth-county-land-seized-1912
 threads: T-DISCOVERY-DOCTRINE
 
 [E-W5-042-04] W5 1907 certification TB
-Jamestown Expo
-framework: Extraction layer. The endpoint of the land sequence begun in 1889, formalized as statehood.
-assessment: Weight: Proven (2 of 5 entries sourced, tier B) · Asserted (3 unsourced) | Warrant: Open (3 of 5 entries unsourced)
+Jamestown Exposition marks three hundred years of English settlement in Virginia
+Norfolk - Bureau zone
 sources: [B live_verified] src-jamestown-exposition-1907 https://archive.org/details/jamestownexposit00jame_0
 links: mckinley-assassination-dominates-1901, fair-called-university-of-the-future-1904, birth-of-a-nation-premieres-1915
 
 [E-W5-042-05] W5 1907 information TA
 Peak Ellis Island - 1M immigrants
-framework: Extraction layer. The endpoint of the land sequence begun in 1889, formalized as statehood.
-assessment: Weight: Proven (2 of 5 entries sourced, tier B) · Asserted (3 unsourced) | Warrant: Open (3 of 5 entries unsourced)
+Covered as "nation of immigrants" success story. Panic creates demand for "stability" → Jekyll Island 3 years later
 sources: [A live_verified] src-immigration-annual-report-1907 https://archive.org/download/annual-report-of-the-commissioner-general-of-immigration/Annual%20report%20of%20the%20Commissioner-General%20of%20Immigration%201907.pdf
 links: algeciras-conference-1906, springfield-riot-in-lincoln-s-hometown-1908, jekyll-island-meeting-secret-1910
 
 [E-W5-043-01] W5 1908 violence TC
-Springfield Riot
-framework: Software layer. Coverage that generated the organizational response it subsequently reported on.
-assessment: Weight: Proven (all 2 sourced, tier C) | Warrant: Open (partial support, see source scope note)
+Springfield reaches an Oregon paper within a day and 1,356 pages in all, the reach the NAACP needed
+IL - crescent
 sources: [C live_verified] src-chronam-springfield-coverage-1908 https://www.loc.gov/collections/chronicling-america/?q=Springfield+Illinois+riot+negroes&dates=1908/1908&fo=json
 links: algeciras-conference-1906, jekyll-island-meeting-secret-1910, forsyth-county-land-seized-1912
 
@@ -3349,24 +3221,21 @@ sources: [C live_verified] src-chronam-springfield-coverage-1908 https://www.loc
 links: algeciras-conference-1906, oklahoma-statehood-1907, jekyll-island-meeting-secret-1910
 
 [E-W5-044-01] W5 1910 financial TB
-Jekyll Island meeting
-framework: Extraction layer. A designed absence of coverage, achieved by the participants rather than by the press.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Bankers and a senator confer under a pledge of secrecy a participant would not break in 1930
+Secret - designs Fed Reserve
 sources: [A live_verified] src-warburg-federal-reserve-1930 https://archive.org/details/federalreservesy0001paul
 links: 400-patents-held-by-black-inventors-1900, noble-drew-ali-begins-organizing-the-1913, nyse-closed-4-months-1914, wall-street-bombing-1920
 threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W5-044-02] W5 1910 violence TB
-Slocum Massacre, TX
-framework: Extraction layer. A designed absence of coverage, achieved by the participants rather than by the press.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Slocum, Texas: at least twenty seven Black people killed and others driven into a gully
+Est. 200-300 killed. Properties seized. Erased from record for decades. One of the deadliest racial massacres - virtually unknown
 sources: [A live_verified] src-nytribune-slocum-texas-1910 http://www.loc.gov/resource/sn83030214/1910-07-31/ed-1/?sp=1
 links: algeciras-conference-1906, springfield-riot-in-lincoln-s-hometown-1908, forsyth-county-land-seized-1912
 
 [E-W5-044-03] W5 1910 records TB
-Great Fire of 1910
-framework: Extraction layer. A designed absence of coverage, achieved by the participants rather than by the press.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Fire runs through nearly all the Idaho panhandle, with Montana calling out troops
+ID/MT/WA - 3M acres
 sources: [A live_verified] src-nytribune-idaho-panhandle-ablaze-1910 http://www.loc.gov/resource/sn83030214/1910-08-24/ed-1/?sp=3
 links: fair-called-university-of-the-future-1904, algeciras-conference-1906, espionage-act-criminalizes-dissent-1917
 
@@ -3379,8 +3248,7 @@ threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W5-045-01] W5 1912 violence TB
 Forsyth County, GA expulsion
-framework: Extraction layer. The window's template stated in its most compact form: violence, land transfer, permanent demographic change.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+98% of Black population driven out. Property seized. PERMANENT - still in effect a century later. Entire county racially "cleansed" and land redistributed
 sources: [A live_verified] src-new-haven-union-forsyth-1912 http://www.loc.gov/resource/sn92051126/1912-12-27/ed-1/?sp=3
 links: springfield-riot-in-lincoln-s-hometown-1908, jekyll-island-meeting-secret-1910, espionage-act-criminalizes-dissent-1917
 
@@ -3392,7 +3260,7 @@ links: riis-how-the-other-half-lives-1890, spanish-american-war-dominates-press-
 threads: T-DISCOVERY-DOCTRINE
 
 [E-W5-046-01] W5 1913 financial TB
-Federal Reserve Act
+Federal Reserve Act creates the Federal Reserve Board and the reserve banks
 framework: Hardware-to-software transition. Two sourced instruments restructuring money and the Senate, alongside the window's central counter-move.
 assessment: Weight: Proven (2 of 3 entries sourced, tier A) · Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
 sources: [B live_verified] src-federal-reserve-act-1913 https://en.wikisource.org/wiki/Federal_Reserve_Act; [A live_verified] src-usc-12-221-federal-reserve-1913 https://www.law.cornell.edu/uscode/text/12/221
@@ -3400,7 +3268,7 @@ links: 400-patents-held-by-black-inventors-1900, jekyll-island-meeting-secret-19
 threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W5-046-02] W5 1913 legal TA
-17th Amendment
+Seventeenth Amendment moves Senate election from the legislatures to the voters
 framework: Hardware-to-software transition. Two sourced instruments restructuring money and the Senate, alongside the window's central counter-move.
 assessment: Weight: Proven (2 of 3 entries sourced, tier A) · Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
 sources: [A live_verified] src-17th-amendment-1913 https://www.archives.gov/founding-docs/amendments-11-27
@@ -3427,9 +3295,8 @@ sources: [B live_verified] src-freeman-walker-negro-woman-in-business-1913 http:
 links: mckinley-assassination-dominates-1901, algeciras-conference-1906, garrett-morgan-traffic-signal-patent-1923
 
 [E-W5-048-01] W5 1915 certification TA
-Panama-Pacific
-framework: Software layer. The window's single most consequential act of narrative production, given presidential endorsement by venue.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Panama-Pacific Exposition opens in San Francisco
+San Francisco
 sources: [A live_verified] src-panama-pacific-official-history-1915 https://archive.org/details/storyofexpositio03todd
 links: fair-called-university-of-the-future-1904, oklahoma-statehood-1907, sesquicentennial-1926
 
@@ -3447,23 +3314,20 @@ links: robert-abbott-founds-chicago-defender-1905, noble-drew-ali-begins-organiz
 threads: T-COLLAPSE-SURVIVAL-N1
 
 [E-W5-050-01] W5 1917 violence TB
-East St. Louis
-framework: Software layer. The state acquires direct legal authority over what may be published, seventy-one years after the wire was built.
-assessment: Weight: Proven (2 of 4 entries sourced, tier B) · Asserted (2 unsourced) | Warrant: Open (2 of 4 entries unsourced)
+East St. Louis: labor conflict turns into the killing and burning out of Black residents
+IL - 39-150 killed
 sources: [A live_verified] src-washington-times-east-st-louis-1917 http://www.loc.gov/resource/sn84026749/1917-07-03/ed-1/?sp=2
 links: chicago-defender-covers-red-summer-1919, wall-street-bombing-1920, tulsa-covered-then-erased-1921
 
 [E-W5-050-02] W5 1917 records TB
-Great Atlanta Fire
-framework: Software layer. The state acquires direct legal authority over what may be published, seventy-one years after the wire was built.
-assessment: Weight: Proven (2 of 4 entries sourced, tier B) · Asserted (2 unsourced) | Warrant: Open (2 of 4 entries unsourced)
+Great Atlanta Fire lays waste much of the city
+73 blocks
 sources: [A live_verified] src-evening-star-atlanta-fire-1917 http://www.loc.gov/resource/sn83045462/1917-05-22/ed-1/?sp=1
 links: fair-called-university-of-the-future-1904, algeciras-conference-1906, jekyll-island-meeting-secret-1910
 
 [E-W5-050-03] W5 1917 legal TA
-Trading w/ Enemy Act
-framework: Software layer. The state acquires direct legal authority over what may be published, seventy-one years after the wire was built.
-assessment: Weight: Proven (2 of 4 entries sourced, tier B) · Asserted (2 unsourced) | Warrant: Open (2 of 4 entries unsourced)
+Trading with the Enemy Act, whose press provisions did not survive into the code
+Act of 6 October 1917, ch. 106, 40 Stat. 411. Section 19 of the original Act reached foreign language publications. That section is not what is codified at 50 U.S.C. 4305, which carries section 5 and remains in force. Subsection 4305(b)(4) now runs the other way, denying the President authority to regulate the import or export of "any information or informational materials". The Act survives; the censorship reach does not.
 sources: [B citation_only] src-trading-with-enemy-act-1917 https://en.wikisource.org/wiki/Trading_with_the_Enemy_Act; [A live_verified] src-usc-50-4305-trading-with-enemy https://www.law.cornell.edu/uscode/text/50/4305
 links: noble-drew-ali-begins-organizing-the-1913, chicago-defender-covers-red-summer-1919, tulsa-covered-then-erased-1921
 
@@ -3474,9 +3338,8 @@ sources: [B live_verified] src-espionage-act-1917 https://en.wikisource.org/wiki
 links: birth-of-a-nation-premieres-1915, sedition-act-1918, wall-street-bombing-1920
 
 [E-W5-051-01] W5 1918 population TB
-Carlisle closes
-framework: Software layer. The 1917 statute amended to reach opinion, in the year the window's first boarding school shuts.
-assessment: Weight: Proven (1 of 2 entries sourced, tier B) · Asserted (1 unsourced) | Warrant: Open (1 of 2 entries unsourced)
+Carlisle closes after thirty nine years and its buildings return to the Army
+→ WWI hospital
 sources: [A live_verified] src-marshalltown-carlisle-war-department-1918 http://www.loc.gov/resource/sn85049554/1918-07-22/ed-1/?sp=3
 links: charlotte-astor-1-113-children-sent-1884, dawes-act-allotment-classification-1887, italian-lynching-sparks-international-incident-1891, crash-dominates-all-press-1929
 threads: T-THREE-TRACK-LABOR
@@ -3488,14 +3351,13 @@ sources: [B live_verified] src-sedition-act-1918 https://en.wikisource.org/wiki/
 links: espionage-act-criminalizes-dissent-1917, wall-street-bombing-1920, tulsa-covered-then-erased-1921
 
 [E-W5-052-01] W5 1919 violence TA
-Chicago
-framework: Software layer. Two press systems covering the same events differently, with the differential now visible because both exist.
-assessment: Weight: Proven (1 of 3 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
+Chicago: a drowning at a bathing beach opens three days of mob violence
+38 killed - crescent
 sources: [A live_verified] src-negro-in-chicago-1922 https://archive.org/details/negroinchicagost00chic
 links: espionage-act-criminalizes-dissent-1917, wall-street-bombing-1920, tulsa-covered-then-erased-1921
 
 [E-W5-052-02] W5 1919 legal TA
-18th Amend.
+Eighteenth Amendment ratified, giving Congress and the states concurrent power to enforce
 framework: Software layer. Two press systems covering the same events differently, with the differential now visible because both exist.
 assessment: Weight: Proven (1 of 3 entries sourced, tier A) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
 sources: [A live_verified] src-18th-amendment-1919 https://www.archives.gov/founding-docs/amendments-11-27
@@ -3516,28 +3378,25 @@ links: jekyll-island-meeting-secret-1910, noble-drew-ali-begins-organizing-the-1
 threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W5-053-02] W5 1920 violence TC
-Ocoee Massacre
-framework: Extraction layer. The largest domestic attack to that date, at the financial centre, unsolved, alongside a massacre kept local.
-assessment: Weight: Proven (2 of 3 sourced, tier C) plus Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
+Ocoee draws 63 pages, first carried six weeks late on page sixteen of an Alabama paper
+FL - 50+ killed for voting
 sources: [C live_verified] src-chronam-ocoee-coverage-1920 https://www.loc.gov/collections/chronicling-america/?q=Ocoee+Florida+election+negroes&dates=1920/1920&fo=json
 links: chicago-defender-covers-red-summer-1919, tulsa-covered-then-erased-1921, garrett-morgan-traffic-signal-patent-1923
 
 [E-W5-053-03] W5 1920 information TC
 Ocoee covered locally, buried nationally
-framework: Extraction layer. The largest domestic attack to that date, at the financial centre, unsolved, alongside a massacre kept local.
-assessment: Weight: Proven (2 of 3 sourced, tier C) plus Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
+50+ people killed on Election Day - AP does not wire it as major national story
 sources: [C live_verified] src-chronam-ocoee-coverage-1920 https://www.loc.gov/collections/chronicling-america/?q=Ocoee+Florida+election+negroes&dates=1920/1920&fo=json
 links: sedition-act-1918, tulsa-covered-then-erased-1921, garrett-morgan-traffic-signal-patent-1923
 
 [E-W5-054-01] W5 1921 violence TB
 Tulsa Massacre
-framework: Software layer. The window's terminal case: not a failure to cover, but the retroactive destruction of coverage that existed.
-assessment: Weight: Proven (all 3 sourced, tier B) | Warrant: Open (partial support, see source scope note)
+100-300 killed, 35 blocks
 sources: [A citation_only] src-oklahoma-commission-tulsa-2001 https://tulsareparations.z19.web.core.windows.net/TRR.htm
 links: chicago-defender-covers-red-summer-1919, wall-street-bombing-1920, garrett-morgan-traffic-signal-patent-1923
 
 [E-W5-054-02] W5 1921 legal TB
-Emergency Quota Act
+Emergency Quota Act caps each nationality at three per cent of its 1910 census presence
 framework: Software layer. The window's terminal case: not a failure to cover, but the retroactive destruction of coverage that existed.
 assessment: Weight: Proven (all 3 sourced, tier B) | Warrant: Open (partial support, see source scope note)
 sources: [B live_verified] src-emergency-quota-act-1921 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_42_Part_1.djvu/33
@@ -3551,16 +3410,14 @@ sources: [C live_verified] src-chronam-tulsa-coverage-1921 https://www.loc.gov/c
 links: wall-street-bombing-1920, garrett-morgan-traffic-signal-patent-1923, 1924-triple-lock-reclassification-chain-step-1924
 
 [E-W5-055-01] W5 1923 violence TC
-Rosewood Massacre
-framework: Extraction layer. A town removed from the record and an invention transferred out of its inventor's hands, in the same year.
-assessment: Weight: Proven (all 3 sourced, tier A) | Warrant: Open (partial support, see source scope note)
+Rosewood draws 98 pages, carried as far as Wisconsin while it happened, and then dropped
+FL - town destroyed
 sources: [C live_verified] src-chronam-rosewood-coverage-1923 https://www.loc.gov/collections/chronicling-america/?q=Rosewood+Florida+negroes&dates=1923/1923&fo=json
 links: chicago-defender-covers-red-summer-1919, wall-street-bombing-1920, tulsa-covered-then-erased-1921
 
 [E-W5-055-02] W5 1923 information TC
-Rosewood erased from record
-framework: Extraction layer. A town removed from the record and an invention transferred out of its inventor's hands, in the same year.
-assessment: Weight: Proven (all 3 sourced, tier A) | Warrant: Open (partial support, see source scope note)
+Rosewood's erasure runs after the fact: the contemporaneous coverage existed, then left the record
+Survivors flee - no press investigation for 60 years. Story not told until 1982 (St. Petersburg Times). Information suppression lasts three generations
 sources: [C live_verified] src-chronam-rosewood-coverage-1923 https://www.loc.gov/collections/chronicling-america/?q=Rosewood+Florida+negroes&dates=1923/1923&fo=json
 links: wall-street-bombing-1920, tulsa-covered-then-erased-1921, 1924-triple-lock-reclassification-chain-step-1924
 
@@ -3579,17 +3436,15 @@ links: tesla-ac-motor-at-fair-1893, noble-drew-ali-begins-organizing-the-1913, t
 threads: T-NOUN-TO-ADJECTIVE, T-WHITENING-PROJECT
 
 [E-W5-056-02] W5 1924 legal TB
-Immigration Act
-framework: Hardware-to-software transition. A federal immigration quota and a state racial registry enacted in the same year, sourced separately and kept separate.
-assessment: Weight: Proven (2 of 3 entries sourced, tier B) · Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
+Immigration Act of 1924 sets national origin quotas and excludes aliens ineligible to citizenship
+Closes Ellis Island. National Origins quotas installed. Controls WHO ENTERS. Racial Integrity Act: Controls WHO’S ALREADY HERE. Indian Citizenship Act: Enrolls remaining indigenous people as 14th Amendment citizens (Guest Account). THREE LAWS, SAME YEAR: one closes the border, one overwrites the interior classification, one enrolls the remaining Nouns. The classification system is SEALED from all directions simultaneously.
 sources: [B live_verified] src-immigration-act-1924 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_43_Part_1.djvu/190
 links: ap-serves-700-papers-1870, convict-leasing-peaks-1882, tulsa-covered-then-erased-1921
 threads: T-WHITENING-PROJECT
 
 [E-W5-056-03] W5 1924 information TC
 Three laws, no unified coverage
-framework: Hardware-to-software transition. A federal immigration quota and a state racial registry enacted in the same year, sourced separately and kept separate.
-assessment: Weight: Proven (2 of 3 entries sourced, tier B) · Asserted (1 unsourced) | Warrant: Open (1 of 3 entries unsourced)
+Immigration Act covered as border policy. Racial Integrity Act covered only in VA. Indian Citizenship Act covered as “honor.” No paper connects all three as closing of a single classification system. The Dawes Rolls (1887/1893) and Plecker’s certificates are the SAME MACHINE aimed at different populations - one processes indigenous land claims, the other processes indigenous identity claims. Both convert Nouns into administrative categories that void prior standing.
 sources: [C live_verified] src-chronam-1924-three-laws https://www.loc.gov/collections/chronicling-america/?q=%22indian+citizenship%22&dates=1924/1924&fo=json
 links: ap-serves-700-papers-1870, convict-leasing-peaks-1882, tulsa-covered-then-erased-1921
 threads: T-WHITENING-PROJECT
@@ -3602,16 +3457,14 @@ links: marcus-garvey-arrives-in-us-1916, chicago-defender-covers-red-summer-1919
 threads: T-COLLAPSE-SURVIVAL-N1
 
 [E-W5-058-01] W5 1926 certification TB
-Sesquicentennial
-framework: Software layer. The certification lane closes with a national anniversary exposition and nothing else recorded.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Sesquicentennial Exposition at Philadelphia, in the city of Independence Hall
+Philadelphia
 sources: [B live_verified] src-sesquicentennial-record-1926 https://archive.org/details/sesquicentennial00aust
 links: fair-called-university-of-the-future-1904, oklahoma-statehood-1907, birth-of-a-nation-premieres-1915
 
 [E-W5-059-01] W5 1927 violence TC
 Prentiss
-framework: Software layer. The counter-press's largest movement removed by federal action two years before the window's population program ends.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+MS
 links: wall-street-bombing-1920, tulsa-covered-then-erased-1921, garrett-morgan-traffic-signal-patent-1923
 
 [E-W5-059-02] W5 1927 information TB
@@ -3630,29 +3483,26 @@ threads: T-COLLAPSE-SURVIVAL-N1, T-NOUN-TO-ADJECTIVE
 
 [E-W5-060-02] W5 1928 information TC
 Havana invisible to US press
-framework: Software layer. The window's sovereignty thread reaches an international venue, and the domestic press does not record it.
-assessment: Weight: Proven (1 of 2 entries sourced, tier B) · Asserted (1 unsourced) | Warrant: Open (1 of 2 entries unsourced)
+No mainstream coverage of Moorish presence at the Conference. FBI File 62-25889 documents 3,117 pages of MSTA surveillance - the state sees it; the press doesn’t report it. The most important counter-move event in the series has the LEAST documentary detail. Lane 8 succeeds: the synchronization is invisible.
 sources: [C live_verified] src-chronam-havana-1928-visibility https://www.loc.gov/collections/chronicling-america/?q=%22Pan+American%22+Havana+conference&dates=1928/1928&fo=json
 links: 1924-triple-lock-reclassification-chain-step-1924, garvey-deported-1927, crash-dominates-all-press-1929
 
 [E-W5-061-01] W5 1929 financial TB
 Stock market crash
-framework: Software layer. The window closes on total attention capture, and a seventy-five-year population program ends without a single retrospective.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+Depression begins
 sources: [B live_verified] src-evening-star-crash-1929 http://www.loc.gov/resource/sn83045462/1929-10-27/ed-1/?sp=79
 links: jekyll-island-meeting-secret-1910, noble-drew-ali-begins-organizing-the-1913, nyse-closed-4-months-1914, wall-street-bombing-1920
 threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W5-061-02] W5 1929 population TC
-Last Orphan Train
-framework: Software layer. The window closes on total attention capture, and a seventy-five-year population program ends without a single retrospective.
-assessment: Weight: Asserted (window content, unsourced) | Warrant: Open (bucket unsourced)
+The phrase orphan train returns four pages in eight years because the period called it placing out
+→ Sulphur Springs, TX
 sources: [C live_verified] src-chronam-orphan-train-term-absent https://www.loc.gov/collections/chronicling-america/?q=%22orphan+train%22&dates=1925/1932&fo=json
 links: charlotte-astor-1-113-children-sent-1884, dawes-act-allotment-classification-1887, italian-lynching-sparks-international-incident-1891, sedition-act-1918
 threads: T-THREE-TRACK-LABOR
 
 [E-W5-061-03] W5 1929 information TC
-Crash dominates all press
+Crash heavily covered; football outran it three to one that year
 Every other story disappears. Last Orphan Train departs without coverage. 75-year program ends in silence - no retrospective, no investigation, no accountability
 sources: [C live_verified] src-chronam-crash-dominance-1929 https://www.loc.gov/collections/chronicling-america/?q=stock+market+crash&dates=1929/1929&fo=json
 links: 1924-triple-lock-reclassification-chain-step-1924, garvey-deported-1927, drew-ali-at-the-pan-american-1928
@@ -3755,7 +3605,7 @@ sources: [A live_verified] src-stat-62-1231-evacuation-claims-1948 https://www.g
 [E-W6-006-05] W6 1942 military TC
 ◆ SYNC: DOMESTIC CONFINEMENT YEAR
 EO 9066 (Japanese internment) • Operation Torch (invades MOROCCO) • Manhattan Project • POW infrastructure built. If 1787 Treaty = Supreme Law, what happens when you invade your treaty partner?
-sources: [A live_verified] src-eo-9066-1942 https://www.archives.gov/milestone-documents/executive-order-9066; [A live_verified] src-cmh-northwest-africa-torch-1957 https://archive.org/details/NorthwestAfrica-nsia
+sources: [A live_verified] src-eo-9066-1942 https://www.archives.gov/milestone-documents/executive-order-9066; [A live_verified] src-cmh-northwest-africa-torch-1957 https://archive.org/details/NorthwestAfrica-nsia; [A live_verified] src-pmg-pow-utilization-1955 https://archive.org/download/DTIC_ADA438000/DTIC_ADA438000_djvu.txt
 
 [E-W6-006-06] W6 1942 military TB
 Operation Torch - U.S. invades Morocco
@@ -3827,7 +3677,7 @@ sources: [A live_verified] src-unga-res-273-israel-1949 https://unispal.un.org/p
 [E-W6-009-03] W6 1948 military TC
 1948 Convergence Year
 Israel established (May 14) + EO 9981 military desegregation (Jul 26) + French decree restricting U.S. treaty rights in Morocco (Dec 30). Three simultaneous administrative moves across three domains in one year. Morocco’s treaty rights further restricted the same year the new Levant jurisdiction is created and the U.S. military classification structure is reformed. Crystal City TX still holding German/Italian/Japanese internees - including Latin Americans KIDNAPPED by State Department arrangement.
-sources: [A live_verified] src-eo-9981-1948 https://www.archives.gov/milestone-documents/executive-order-9981
+sources: [A live_verified] src-eo-9981-1948 https://www.archives.gov/milestone-documents/executive-order-9981; [A live_verified] src-icj-morocco-1952 https://www.icj-cij.org/case/11
 
 [E-W6-010-01] W6 1952 legal TA
 ICJ rules on 1787 Treaty
@@ -3963,7 +3813,7 @@ sources: [A live_verified] src-usc-18-3559-three-strikes-1994 https://www.law.co
 [E-W6-021-02] W6 1994 legal TC
 ◆ SYNC: 1994
 Crime Bill + NAFTA + Haiti intervention - same year.
-sources: [A live_verified] src-stat-108-1796-crime-act-1994 https://www.govinfo.gov/link/statute/108/1796
+sources: [A live_verified] src-stat-108-1796-crime-act-1994 https://www.govinfo.gov/link/statute/108/1796; [A live_verified] src-unsc-res-940-haiti-1994 https://documents.un.org/doc/undoc/gen/n94/312/22/pdf/n9431222.pdf
 
 [E-W6-021-03] W6 1994 military TC
 Desert Storm (1991) + Uphold Democracy (1994)
