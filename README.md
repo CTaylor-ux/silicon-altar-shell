@@ -1,16 +1,28 @@
 # The Silicon Altar — MVP shell
 
-A clickable visual mockup of the front-end shell that wraps the seven Window
-timelines. **No backend, no model calls, no keys.** Retrieval is a stub behind a
-final interface.
+The front-end shell that wraps the seven Window timelines, plus a live query
+layer over the whole corpus.
+
+**This paragraph described a stub until 2026-08-09 and was wrong for weeks.** It
+read "No backend, no model calls, no keys. Retrieval is a stub behind a final
+interface." All three clauses are false. `/api/ask` calls Opus 5 with the full
+700-entry corpus as a cached prefix, `/api/locate` is a deterministic year lookup
+with no model, and `.env.local` holds a real key. 61 exchanges have been recorded
+to `records/queries.jsonl`.
+
+**The authoritative status document is `docs/GOVERNANCE_LOOP_START_HERE.md`, not
+this file.** Read that first. `docs/RAG_SPEC.md` §1 and §2 are built; §3 onward
+is superseded by the governance doc.
 
 ## Run
 
 ```bash
 npm install
-cp .env.local.example .env.local   # point SILICON_ALTAR_REPO at the audit repo
+cp .env.local.example .env.local   # SILICON_ALTAR_REPO + ANTHROPIC_API_KEY
 npm run dev                        # http://localhost:3210
 ```
+
+Without a key, `/api/ask` returns 503 with an explanation and Locate still works.
 
 `npm run dev` runs `prepare-windows` first, so the windows are always rebuilt
 from the current state of the audit repo.
@@ -20,11 +32,18 @@ from the current state of the audit repo.
 1. **Intro** (`app/page.tsx`) — the door. Figures read from the corpus, not typed.
 2. **Selector** (`app/windows/page.tsx`) — seven windows, chronological, on a spine.
 3. **Window view** (`app/windows/[id]/page.tsx`) — prev/next, keyboard, position indicator.
-4. **Query bar** (`components/QueryBar/`) — fixed-height panel, five states, stub-backed.
+4. **Query bar** (`components/QueryBar/`) — resizable panel, five states, live.
+5. **Query layer** — `/api/locate` (deterministic, no model), `/api/ask` (Opus 5
+   over the full corpus), `/api/recover`, `/api/warm`.
+6. **Record layer** — every exchange appended to `records/queries.jsonl` with
+   cost, quality markers and a triage classification. `npm run records`.
 
 Deliberately **not** built (each marked `// FUTURE:` at the relevant seam):
-authentication, the gated contribution model, editorial approval, source
-submission, and any live RAG or model wiring.
+authentication, rate limiting, the gated contribution model, editorial approval,
+source submission, and deployment.
+
+**There is no rate limit.** A public URL would be an open tap on the API key.
+That is the first thing to build before this is exposed to anyone.
 
 ## The audit repo is read-only
 

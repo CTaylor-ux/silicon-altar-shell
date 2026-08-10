@@ -78,7 +78,12 @@ export default function IntroPage() {
       </div>
 
       <footer className={styles.foot}>
-        <span className="mono">Mockup, retrieval is stubbed</span>
+        {/* Was "Mockup, retrieval is stubbed" until 2026-08-09. That went stale
+            when /api/ask went live and would have told a beta reader to discount
+            every answer the app gives them. Retrieval is real: the whole corpus
+            is in context and every [entry-id] is validated server-side before
+            the answer is returned. */}
+        <span className="mono">Live retrieval, citations validated</span>
         {/* FUTURE: member / researcher / author tiers (PRD §4) gate from here. */}
         <span className="mono">No account required</span>
       </footer>
