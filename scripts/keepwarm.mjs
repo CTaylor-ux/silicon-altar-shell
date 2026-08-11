@@ -20,22 +20,80 @@
  * for touches you cannot see. This one you started and can watch.
  */
 
+import fs from 'node:fs';
+import path from 'node:path';
+
 const EVERY_MIN = 50; // under the 1h TTL, with room for a slow request
 const URL = process.env.SA_URL || 'http://localhost:3210';
+
+/* /api/warm is behind the access gate now, and is operator-only, so this script
+   holds a session like anyone else. It signs in with the operator's own invite
+   code rather than a second bypass mechanism: one door, one identity, and
+   nothing that keeps working after the invite is revoked. */
+function readEnvLocal(key) {
+  try {
+    const raw = fs.readFileSync(path.join(process.cwd(), '.env.local'), 'utf8');
+    const hit = raw.split('\n').find((l) => l.trim().startsWith(`${key}=`));
+    return hit ? hit.slice(hit.indexOf('=') + 1).trim() : null;
+  } catch {
+    return null;
+  }
+}
+
+const TOKEN = process.env.SA_INVITE_TOKEN || readEnvLocal('SA_INVITE_TOKEN');
+let cookie = null;
+
+async function signIn() {
+  if (!TOKEN) {
+    console.error('  No SA_INVITE_TOKEN in the environment or .env.local.');
+    console.error('  Mint one with:  npm run invite -- --operator --name "Your Name"');
+    return false;
+  }
+  try {
+    const res = await fetch(`${URL}/api/session`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token: TOKEN }),
+    });
+    if (!res.ok) {
+      const d = await res.json().catch(() => ({}));
+      console.error(`  sign-in failed: ${d.error ?? res.status}`);
+      return false;
+    }
+    const set = res.headers.get('set-cookie');
+    cookie = set ? set.split(';')[0] : null;
+    return !!cookie;
+  } catch (e) {
+    console.error(`  sign-in unreachable: ${e.message}`);
+    return false;
+  }
+}
 
 let touches = 0;
 let spent = 0;
 
-async function touch() {
+async function touch(retrying = false) {
   const t0 = Date.now();
   const now = new Date().toTimeString().slice(0, 5);
   try {
-    const res = await fetch(`${URL}/api/warm`, { method: 'POST' });
+    if (!cookie && !(await signIn())) return;
+
+    const res = await fetch(`${URL}/api/warm`, {
+      method: 'POST',
+      headers: { Cookie: cookie },
+    });
     const d = await res.json();
 
     if (!res.ok) {
+      /* The cookie outlives this process by 30 days, but the server may have
+         restarted with a different secret. One silent re-auth, then report. */
+      if (res.status === 401 && !retrying) {
+        cookie = null;
+        return touch(true);
+      }
       console.error(`  ${now}  failed: ${d.error ?? res.status}`);
       if (res.status === 503) console.error('    no API key — check .env.local');
+      if (res.status === 403) console.error('    that invite is not the operator');
       return;
     }
 

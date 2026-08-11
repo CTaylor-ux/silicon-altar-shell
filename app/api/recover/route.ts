@@ -20,6 +20,7 @@
 import { NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
 import { appendRecord, measure, readRecords, triage } from '@/lib/record';
+import { personFromHeaders } from '@/lib/identity';
 
 export const runtime = 'nodejs';
 export const maxDuration = 300;
@@ -37,6 +38,18 @@ type Incoming = {
 };
 
 export async function POST(req: Request) {
+  /* Recovery rebuilds records from a browser tab, so it must write them under
+     the person whose tab it is. Without this the whole point of recovery —
+     that a lost record is the only real loss — would be met by writing someone
+     else's question under the operator's name. */
+  const person = personFromHeaders(req.headers);
+  if (!person) {
+    return NextResponse.json(
+      { error: 'Not signed in. Redeem your invite at /enter.' },
+      { status: 401 }
+    );
+  }
+
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) return NextResponse.json({ error: 'No ANTHROPIC_API_KEY.' }, { status: 503 });
 
@@ -81,7 +94,7 @@ export async function POST(req: Request) {
     try {
       const rec = appendRecord({
         surface: 'B',
-        surfaced_by: 'operator',
+        surfaced_by: person.id,
         trigger_context: e.question,
         raw_content: e.answer,
         outside: e.outside ?? null,

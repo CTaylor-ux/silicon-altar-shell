@@ -18,6 +18,8 @@ import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { CONTRACT, parseAndValidate, situate } from '@/lib/ask';
 import { appendRecord, measure, triage } from '@/lib/record';
+import { personFromHeaders } from '@/lib/identity';
+import { checkQuota } from '@/lib/quota';
 
 export const runtime = 'nodejs';
 export const maxDuration = 120;
@@ -43,6 +45,33 @@ function corpusText(): string {
 type Turn = { role: 'user' | 'assistant'; content: string };
 
 export async function POST(req: Request) {
+  /* Identity comes from middleware, which sets these headers from the verified
+     session cookie and strips any the client tried to send. Checking again here
+     is not redundant: it means a middleware matcher that stopped covering this
+     route fails closed rather than silently reopening the tap. */
+  const person = personFromHeaders(req.headers);
+  if (!person) {
+    return NextResponse.json(
+      { error: 'Not signed in. Redeem your invite at /enter.' },
+      { status: 401 }
+    );
+  }
+
+  /* Before the key check, because a rate-limited request should cost nothing
+     and say the same thing whether or not the server is configured. */
+  const quota = checkQuota(person.id);
+  if (!quota.ok) {
+    return NextResponse.json(
+      { error: quota.error },
+      {
+        status: quota.status,
+        headers: quota.retryAfterSeconds
+          ? { 'Retry-After': String(quota.retryAfterSeconds) }
+          : undefined,
+      }
+    );
+  }
+
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) {
     return NextResponse.json(
@@ -162,7 +191,11 @@ export async function POST(req: Request) {
   try {
     const rec = appendRecord({
       surface: 'B',
-      surfaced_by: 'operator',
+      /* Was the literal 'operator' for all 64 prior records. This is the field
+         the contribution view filters on, and attribution cannot be added to a
+         record after it is written, which is why identity had to land before
+         the first invited researcher asked anything. */
+      surfaced_by: person.id,
       trigger_context: question,
       raw_content: parsed.answer,
       outside: parsed.outside,

@@ -1,0 +1,30 @@
+{
+  "_comment": [
+    "The shape of invites.json, which is gitignored because it holds bearer tokens.",
+    "Do not hand-write the real file: `npm run invite -- --name \"Their Name\"` mints a",
+    "32-byte token and appends it. `--list` shows who is invited, `--revoke <id>` removes one.",
+    "",
+    "`id` is permanent. It is written into `surfaced_by` on every record that person creates,",
+    "and records are append-only, so reusing an id for a different human silently reassigns",
+    "their contribution history. `expires` is optional; omit it for no expiry.",
+    "",
+    "Field names match C2's person columns so the eventual move to Postgres is a copy."
+  ],
+  "invites": [
+    {
+      "id": "colin-taylor",
+      "name": "Colin Taylor",
+      "role": "operator",
+      "token": "<64 hex characters, minted by npm run invite>",
+      "note": "operator; SA_INVITE_TOKEN in .env.local points at this one so keepwarm can sign in"
+    },
+    {
+      "id": "jane-rowan",
+      "name": "Jane Rowan",
+      "role": "researcher",
+      "token": "<64 hex characters, minted by npm run invite>",
+      "note": "invited 2026-08-11; maritime insurance, W3-W4",
+      "expires": "2026-12-31"
+    }
+  ]
+}

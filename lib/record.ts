@@ -39,7 +39,11 @@ import Anthropic from '@anthropic-ai/sdk';
 import corpus from './corpus.generated.json';
 import type { CorpusEntry } from './locate';
 
-const RECORDS_DIR = path.join(process.cwd(), 'records');
+/* Overridable so the deployed container can point this at a mounted volume.
+   In the image, cwd is /app and a redeploy replaces it — writing records there
+   would discard every record on each deploy, which is the one failure this
+   layer is built to prevent. Locally, unset, it is just ./records. */
+const RECORDS_DIR = process.env.RECORDS_DIR || path.join(process.cwd(), 'records');
 const RECORDS_FILE = path.join(RECORDS_DIR, 'queries.jsonl');
 
 const BY_ID = new Map((corpus.entries as CorpusEntry[]).map((e) => [e.id, e]));

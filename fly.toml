@@ -1,0 +1,57 @@
+# Fly.io. Chosen for one reason: a persistent volume.
+#
+# The shell writes records/queries.jsonl at runtime and that file is the only
+# thing the beta exists to produce. A serverless target — Vercel included —
+# gives every invocation a fresh filesystem, so every record would be written
+# and then discarded. See docs/DEPLOY.md.
+#
+# Any host with a disk works. Railway, Render, a VPS with docker compose. This
+# file is a worked example, not a requirement.
+
+app = "silicon-altar"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "3210"
+  # Invite list and record store both live on the volume, so a redeploy does
+  # not take the beta's identities or its records with it.
+  INVITES_FILE = "/data/invites.json"
+  RECORDS_DIR = "/data/records"
+
+[[mounts]]
+  source = "silicon_altar_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 3210
+  force_https = true
+  auto_stop_machines = "suspend"
+  auto_start_machines = true
+  # One machine. Two would each keep their own in-process burst counter and
+  # their own view of the record file, and the daily cap is derived from that
+  # file — so a second machine would quietly double the effective limit.
+  min_machines_running = 1
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "1gb"
+
+# Secrets are NOT in this file. Set them once:
+#
+#   fly secrets set ANTHROPIC_API_KEY=...
+#   fly secrets set SESSION_SECRET=$(openssl rand -hex 32)
+#
+# Then put the invite list on the volume (it is never in the image):
+#
+#   fly ssh console -C "mkdir -p /data/records"
+#   fly ssh sftp shell
+#     put invites.json /data/invites.json
+#
+# And to bring the beta's records back down for the operator CLI and for git:
+#
+#   fly ssh sftp get /data/records/queries.jsonl records/queries.jsonl
+#
+# See docs/DEPLOY.md — that sync step is a real decision, not a chore.
