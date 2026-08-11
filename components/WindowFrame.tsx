@@ -121,6 +121,35 @@ export default function WindowFrame({
     return () => window.removeEventListener('message', onMessage);
   }, [windowId, initialScroll, onScroll, onNav, onTargetMiss, onGlossary, post]);
 
+  /* Place the frame when it BECOMES the open window, not only when it loads.
+   *
+   * The SA_READY branch above fires once per mount. But the strip keeps
+   * current +/- 1 mounted, so a neighbour has usually already loaded and fired
+   * SA_READY while the reader was still on the previous window. Stepping into
+   * that neighbour ran no placement at all, and it kept whatever position the
+   * browser had left it in.
+   *
+   * That is exactly why windows 0 and 6 behaved and the middle five did not.
+   * The two ends are each a neighbour on one side only, so they were far more
+   * often freshly mounted at the moment they were opened, and the SA_READY
+   * branch caught them. Windows 1 to 5 are neighbours on both sides and were
+   * nearly always already mounted by the time they were entered.
+   *
+   * Resets when the window stops being current, so every entry starts at the
+   * top. A saved position still wins when one exists. */
+  const wasActive = useRef(false);
+  useEffect(() => {
+    if (!active) {
+      wasActive.current = false;
+      return;
+    }
+    if (wasActive.current) return;
+    wasActive.current = true;
+    // Not yet loaded: SA_READY has not fired, and its branch will do this.
+    if (!ready.current) return;
+    post({ type: 'SA_RESTORE_SCROLL', ...(initialScroll ?? { x: 0, y: 0 }) });
+  }, [active, initialScroll, post]);
+
   // Legend visibility is a root class inside the frame, so the shell owns the
   // control without injecting one into the generated document. Retried briefly
   // because the frame may still be parsing when the state first arrives.
