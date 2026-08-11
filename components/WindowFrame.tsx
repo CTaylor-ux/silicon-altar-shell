@@ -74,6 +74,36 @@ export default function WindowFrame({
     ref.current?.contentWindow?.postMessage({ source: 'sa-shell', ...msg }, '*');
   }, []);
 
+  /** Timers for the re-assert below, cleared on unmount and on re-entry. */
+  const placeTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
+
+  /**
+   * Put the frame at its starting position, and mean it.
+   *
+   * One message is not enough. The strip translates frames in and out, so a
+   * frame can still be zero-width when the first message lands, and the
+   * document's final layout can arrive after that -- at which point the browser
+   * is free to put the scroll somewhere of its own choosing. Measured mid
+   * transition, the frame really does report a width of 0.
+   *
+   * So this asserts the position, then re-asserts twice as layout settles.
+   * Plain timeouts, not requestAnimationFrame: rAF does not fire in this
+   * rendering context, which is recorded in the governance notes and cost
+   * somebody a debugging session already.
+   *
+   * The window is entered at the top, so a re-assert inside half a second can
+   * only ever put the reader back where entering was supposed to leave them.
+   */
+  const placeAtStart = useCallback(() => {
+    const target = initialScroll ?? { x: 0, y: 0 };
+    const send = () => post({ type: 'SA_RESTORE_SCROLL', ...target });
+    placeTimers.current.forEach(clearTimeout);
+    send();
+    placeTimers.current = [setTimeout(send, 150), setTimeout(send, 500)];
+  }, [initialScroll, post]);
+
+  useEffect(() => () => placeTimers.current.forEach(clearTimeout), []);
+
   useEffect(() => {
     function onMessage(ev: MessageEvent) {
       const d = ev.data as (FrameMessage & { source?: string; windowId?: number }) | undefined;
@@ -96,7 +126,7 @@ export default function WindowFrame({
              *
              * A saved position still wins when there is one, so this only adds
              * a defined starting point where there was none. */
-            post({ type: 'SA_RESTORE_SCROLL', ...(initialScroll ?? { x: 0, y: 0 }) });
+            placeAtStart();
           }
           break;
         case 'SA_SCROLL':
@@ -119,7 +149,7 @@ export default function WindowFrame({
     }
     window.addEventListener('message', onMessage);
     return () => window.removeEventListener('message', onMessage);
-  }, [windowId, initialScroll, onScroll, onNav, onTargetMiss, onGlossary, post]);
+  }, [windowId, initialScroll, onScroll, onNav, onTargetMiss, onGlossary, post, placeAtStart]);
 
   /* Place the frame when it BECOMES the open window, not only when it loads.
    *
@@ -147,8 +177,8 @@ export default function WindowFrame({
     wasActive.current = true;
     // Not yet loaded: SA_READY has not fired, and its branch will do this.
     if (!ready.current) return;
-    post({ type: 'SA_RESTORE_SCROLL', ...(initialScroll ?? { x: 0, y: 0 }) });
-  }, [active, initialScroll, post]);
+    placeAtStart();
+  }, [active, placeAtStart]);
 
   // Legend visibility is a root class inside the frame, so the shell owns the
   // control without injecting one into the generated document. Retried briefly
