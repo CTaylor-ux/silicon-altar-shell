@@ -65,7 +65,22 @@ export async function POST(req: Request) {
 
   // Don't duplicate what survived. Match on question text — the answers are
   // identical re-runs of the same prompt, so the question is the stable key.
-  const already = new Set(readRecords().map((r) => r.trigger_context.trim()));
+  /* Scoped to this person's own records, for two reasons.
+   *
+   * PRIVACY: unscoped, `alreadyPresent` below reports whether a question text
+   * exists anywhere in the store, across every researcher. Submit a guess, read
+   * the count, and you have an oracle over other people's sessions. Sessions are
+   * their own.
+   *
+   * CORRECTNESS: two researchers legitimately arriving at the same question
+   * should each end up with a record. Deduping across people would silently
+   * drop the second one, and a dropped record is the one failure this route
+   * exists to prevent. */
+  const already = new Set(
+    readRecords()
+      .filter((r) => r.surfaced_by === person.id)
+      .map((r) => r.trigger_context.trim())
+  );
   const todo = incoming.filter((e) => !already.has(e.question.trim()));
 
   const client = new Anthropic({ apiKey: key });

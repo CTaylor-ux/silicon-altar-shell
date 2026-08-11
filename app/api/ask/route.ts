@@ -238,6 +238,17 @@ export async function POST(req: Request) {
     citedIds: parsed.citedIds,
     strippedIds: parsed.strippedIds,
     nearby,
-    usage,
+    /* OPERATOR ONLY, and this is an access boundary rather than a UI choice.
+     *
+     * No component renders `usage` — governance section 3 keeps money off the
+     * page — but it was still being sent, so it sat in the network tab and in
+     * the client's session state. That was harmless while the operator was the
+     * only user. It is not harmless now: every invited researcher would be able
+     * to read what each of their questions cost the operator, and to watch that
+     * figure move. Token counts are the same disclosure by another name.
+     *
+     * The record still captures all of it server-side either way, so nothing is
+     * lost to the audit. */
+    usage: person.role === 'operator' ? usage : undefined,
   });
 }
