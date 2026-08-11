@@ -70,10 +70,14 @@ lever to pull if a token leaks and you cannot wait for `--revoke` to matter.
 
 ---
 
-## 4. THE OPEN DECISION: where records live once there are two copies
+## 4. Where records live once there are two copies
 
-**This is not a chore. It bears directly on item 1b and it needs an operator
-ruling before the contribution view is built.**
+**DECIDED 2026-08-11 (Thread 30): option A below.** Production is the only
+writer; the operator pulls the file down, commits it, runs the CLI locally, and
+pushes it back. Git stays the durable store. The sync belongs in the thread-close
+habit, next to `npm run records -- --set <id> installed`.
+
+The reasoning is kept below because the alternatives are live if the beta grows.
 
 Today there is one record store and it is tracked in git. `npm run records --set`
 edits the local file; git is the durable store, exactly as the governance doc
@@ -86,7 +90,7 @@ copies breaks that premise by a route the handoff did not anticipate.
 
 Three ways out:
 
-**A. Pull down and commit (recommended, and what fly.toml documents).**
+**A. Pull down and commit — CHOSEN.**
 Production is the only writer. Periodically:
 
 ```bash

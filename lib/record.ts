@@ -80,6 +80,18 @@ export type Triage = {
   target_text_hash: string;
   summary: string;
   note: string;
+  /* SOURCES ARRIVE INSIDE THE QUESTION, by taught convention: an invited
+   * researcher is told to paste the url and the passage into what they ask.
+   * That text was already captured verbatim in `trigger_context`, so nothing
+   * was being lost, but it was unstructured and therefore unsearchable and
+   * un-rankable. These two fields are the structure.
+   *
+   * Empty string when the reader brought nothing, which is most of the time.
+   * Reader-supplied material is UNVERIFIED and never becomes corpus; the
+   * CONTRACT says so to the answering layer, and these fields exist so the
+   * operator can find the ones worth opening. */
+  reader_source_url: string;
+  reader_source_passage: string;
 };
 
 /* Cheap, deterministic markers computed at capture time — no model call, no
@@ -221,8 +233,19 @@ const TRIAGE_SCHEMA = {
     target_entry: { type: 'string' },
     summary: { type: 'string' },
     note: { type: 'string' },
+    reader_source_url: { type: 'string' },
+    reader_source_passage: { type: 'string' },
   },
-  required: ['installable', 'kind', 'route', 'target_entry', 'summary', 'note'],
+  required: [
+    'installable',
+    'kind',
+    'route',
+    'target_entry',
+    'summary',
+    'note',
+    'reader_source_url',
+    'reader_source_passage',
+  ],
   additionalProperties: false,
 } as const;
 
@@ -264,6 +287,22 @@ exists.
 
 note: anything else worth keeping — a diagnosis of how a problem arose, a lead
 to chase. Empty string if there is nothing.
+
+reader_source_url: if the QUESTION contains a url the reader pasted, put it
+here exactly as they wrote it. Empty string otherwise. Do not invent one, do
+not resolve a citation into a url, and do not copy a url out of the answer —
+only a url the reader themselves supplied.
+
+reader_source_passage: if the QUESTION contains a quoted passage or an extract
+the reader pasted, put it here verbatim. Empty string otherwise. Verbatim
+matters: this is the text the operator will check against the real document, so
+a paraphrase makes it useless. If they pasted a long extract, keep the part
+carrying the claim.
+
+A reader who brings a source is doing the thing this tool exists for, so mark
+these carefully. Note that what they bring is UNVERIFIED: nobody has opened it.
+Capturing it is not endorsing it, and installable should still be judged on
+whether there is something to act on.
 
 When installable is false, still fill kind and route with your best reading;
 they are ignored downstream.`;
@@ -330,7 +369,19 @@ export async function triage(
     return { triage: null, usage };
   }
 
-  if (!parsed.installable) return { triage: null, usage };
+  /* Ordinarily a non-installable exchange keeps no triage block, which is right:
+     most exchanges report what the corpus already says and staging them all
+     would make the backlog unreadable inside a week.
+
+     BUT NOT WHEN THE READER BROUGHT A SOURCE. A researcher who pastes a url and
+     a passage has done the thing this tool exists for, and the answer being
+     "the corpus already carries this" is a judgement about the corpus, not
+     about their contribution. Dropping the block there would lose the structured
+     capture and leave them looking at a contribution view that never mentions
+     what they brought. The verbatim text would survive in trigger_context, which
+     is exactly the unsearchable state this schema change exists to fix. */
+  const broughtSomething = !!(parsed.reader_source_url || parsed.reader_source_passage);
+  if (!parsed.installable && !broughtSomething) return { triage: null, usage };
 
   // Pin the target's text only if the target actually resolves. An id the
   // model invented gets cleared rather than stored as a dangling pointer.
