@@ -82,9 +82,21 @@ export default function WindowFrame({
       switch (d.type) {
         case 'SA_READY':
           ready.current = true;
-          if (initialScroll && !restored.current) {
+          if (!restored.current) {
             restored.current = true;
-            post({ type: 'SA_RESTORE_SCROLL', ...initialScroll });
+            /* ALWAYS place the frame explicitly on entry.
+             *
+             * Previously, when there was no saved position, nothing was posted
+             * at all and the document was left wherever the browser happened to
+             * leave it. That is not reliably the top: a freshly parsed iframe
+             * that re-lays-out, or has focus restored into it, can settle
+             * part-way down. The reader then arrives mid-document with the
+             * masthead, the window number and the audit-window explanation all
+             * above them, and nothing on screen saying those exist.
+             *
+             * A saved position still wins when there is one, so this only adds
+             * a defined starting point where there was none. */
+            post({ type: 'SA_RESTORE_SCROLL', ...(initialScroll ?? { x: 0, y: 0 }) });
           }
           break;
         case 'SA_SCROLL':
