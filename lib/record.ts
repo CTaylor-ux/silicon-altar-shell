@@ -151,13 +151,24 @@ const RX = {
     /\b(I am|I'm) (putting|drawing|reading|connecting|inferring)|\bmy (own )?(inference|reading|observation|note)\b|that (connection|link|pairing) is mine|not the corpus'?s? (own )?(claim|reading|inference)/i,
   gradient:
     /\btier[- ][ABCDE]\b|HELD[- ]NULL|held, not asserted|interpretive (overlay|layer|reading)|the audit'?s? (own )?(reading|overlay|inference)|the corpus'?s? (own )?inference|disputed/i,
-  /* The \\w+\\s* is load-bearing. Written without it, this missed "this audit's
-   * own ANALYTICAL vocabulary" — the marker read false while the answer did
-   * exactly what it was measuring for. A proxy that only matches the phrasing
-   * you imagined is worse than no proxy, because it reports a regression that
-   * is not there. */
+  /* The optional adjective group is load-bearing. Without it this missed "this
+   * audit's own ANALYTICAL vocabulary" — the marker read false while the answer
+   * did exactly what it was measuring for.
+   *
+   * IT WAS WRITTEN \\w+\\s+ AND WAS THEREFORE INERT FROM THE DAY IT WAS ADDED.
+   * Inside a regex LITERAL, \\w matches a literal backslash followed by "w",
+   * not a word character, so the group could never match an adjective and the
+   * exact case this comment describes kept failing. Corrected to \w+\s+
+   * 2026-08-12 (Thread 30), found on the live record sb-20260812-001, whose
+   * answer said "is this audit's own analytical frame" and was scored false.
+   *
+   * MEASURED, SO NOBODY OVERSTATES IT: the repair moves 10 of 65 records to 12.
+   * It does NOT explain the standing gap between this marker (~15%) and reading
+   * the answers by hand (~65-80%). That gap is the one governance sections 4 and
+   * 5c describe, and it is not a bug — the regex only ever matches phrasings
+   * somebody imagined. Read the answers. */
   frameworkVocab:
-    /(the corpus'?s?|this audit'?s?|the framework'?s?) own (\\w+\\s+)?(vocabulary|term|construct|frame|language)|not (a )?terms? (from|used in|you will find in) the scholarship|register note|(vocabulary|terms?) (is|are) the (corpus|audit|framework)'?s?/i,
+    /(the corpus'?s?|this audit'?s?|the framework'?s?) own (\w+\s+)?(vocabulary|term|construct|frame|language)|not (a )?terms? (from|used in|you will find in) the scholarship|register note|(vocabulary|terms?) (is|are) the (corpus|audit|framework)'?s?/i,
 };
 
 export function measure(
