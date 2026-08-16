@@ -475,7 +475,7 @@ question text.
 ## 9. Verification commands
 
 ```bash
-cd ~/Desktop/silicon-altar-shell
+cd ~/dev/silicon-altar-shell      # NOT ~/Desktop: see section 1, those are abandoned
 npx tsc --noEmit                  # must be clean
 node scripts/prepare-corpus.mjs   # 700/700, byte-stable
 npm run records                   # the backlog

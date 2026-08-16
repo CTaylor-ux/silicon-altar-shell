@@ -31,10 +31,15 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import process from 'node:process';
 
+/* NO DEFAULT, DELIBERATELY. This used to fall back to a hardcoded
+ * ~/Desktop/Silicon_Altar_LIVE. That path still exists on the author's machine
+ * and holds an abandoned 778-entry copy, so a missing .env.local line did not
+ * fail — it built the wrong corpus and served it as canonical. A wrong-but-
+ * plausible default is worse than no default, because no default fails loudly
+ * on every machine. See docket/DESKTOP_DETOUR_2026-08-16.md in the audit repo. */
 const REPO =
   process.env.SILICON_ALTAR_REPO ||
-  readEnvLocal('SILICON_ALTAR_REPO') ||
-  '/Users/taylorcolin/Desktop/Silicon_Altar_LIVE';
+  readEnvLocal('SILICON_ALTAR_REPO');
 
 const OUT = path.join(process.cwd(), 'lib', 'corpus.generated.json');
 
@@ -66,6 +71,15 @@ function readEnvLocal(key) {
 function die(msg) {
   console.error(`\n  prepare-corpus FAILED\n  ${msg}\n`);
   process.exit(1);
+}
+
+if (!REPO) {
+  die(
+    'SILICON_ALTAR_REPO is not set, and there is no default.\n' +
+      '  Add it to .env.local:\n' +
+      '    SILICON_ALTAR_REPO=/Users/taylorcolin/dev/Silicon_Altar_LIVE\n' +
+      '  NOT a ~/Desktop copy: those are abandoned and stale.'
+  );
 }
 
 if (!fs.existsSync(REPO)) {
