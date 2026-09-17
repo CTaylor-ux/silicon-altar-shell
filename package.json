@@ -5,12 +5,14 @@
   "scripts": {
     "prepare-windows": "node scripts/prepare-windows.mjs",
     "dev": "npm run prepare-windows && npm run prepare-corpus && next dev -p 3210",
-    "build": "npm run prepare-windows && npm run prepare-corpus && next build",
+    "build": "npm run guard-dev-port && npm run prepare-windows && npm run prepare-corpus && next build",
     "start": "next start -p 3210",
     "prepare-corpus": "node scripts/prepare-corpus.mjs",
     "records": "node scripts/records.mjs",
     "keepwarm": "node scripts/keepwarm.mjs",
-    "invite": "node scripts/invite.mjs"
+    "invite": "node scripts/invite.mjs",
+    "guard-dev-port": "node scripts/guard-dev-port.mjs",
+    "build:check": "SA_DIST_DIR=.next-verify npm run prepare-windows && SA_DIST_DIR=.next-verify npm run prepare-corpus && SA_DIST_DIR=.next-verify next build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.115.0",

@@ -11,6 +11,13 @@ const nextConfig = {
   // records/queries.jsonl is written at runtime and losing it would lose the
   // only thing the beta exists to collect.
   output: 'standalone',
+
+  // Default '.next'. SA_DIST_DIR lets a VERIFICATION build write somewhere else so
+  // it cannot clobber what a running dev server is serving out of '.next' - see
+  // scripts/guard-dev-port.mjs for the failure that motivated it. Nothing sets this
+  // in Docker or in deploy, so the standalone output stays at .next/standalone and
+  // the Dockerfile's COPY paths are unchanged.
+  distDir: process.env.SA_DIST_DIR || '.next',
 };
 
 export default nextConfig;

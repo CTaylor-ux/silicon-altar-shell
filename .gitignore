@@ -19,3 +19,6 @@ lib/sources.generated.json
 # The invite list. Bearer tokens: anyone holding one IS that person.
 # Minted by `npm run invite`. invites.example.json shows the shape.
 invites.json
+
+# Verification-only build output (npm run build:check). Never deployed.
+.next-verify/
