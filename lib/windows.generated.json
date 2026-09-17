@@ -98,9 +98,9 @@
       "id": 1,
       "name": "Launch Codes",
       "yearRange": "1452 to 1602",
-      "entries": 85,
-      "dossiers": 34,
-      "rows": 85
+      "entries": 90,
+      "dossiers": 36,
+      "rows": 90
     },
     {
       "id": 2,
@@ -122,17 +122,17 @@
       "id": 4,
       "name": "The Transfer",
       "yearRange": "1787 to 1854",
-      "entries": 72,
-      "dossiers": 51,
-      "rows": 72
+      "entries": 87,
+      "dossiers": 63,
+      "rows": 87
     },
     {
       "id": 5,
       "name": "75-Year Operation",
       "yearRange": "1854 to 1929",
-      "entries": 188,
-      "dossiers": 64,
-      "rows": 188
+      "entries": 260,
+      "dossiers": 128,
+      "rows": 260
     },
     {
       "id": 6,
