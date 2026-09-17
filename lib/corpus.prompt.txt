@@ -1,6 +1,6 @@
 THE SILICON ALTAR CORPUS
 
-Entries: 700. Windows: 7.
+Entries: 792. Windows: 7.
 
 The corpus states its own scope and spine. Both are load-bearing: they are
 how you tell a genuine gap from something deliberately out of scope.
@@ -11,11 +11,11 @@ FRAMEWORK SPINE: Three-Track Labor System (FW-006). W3 is where all three tracks
 
 WINDOWS:
   Window 0: The Template (deep time to pre-contact) - 77 entries
-  Window 1: Launch Codes (1452 to 1602) - 85 entries
+  Window 1: Launch Codes (1452 to 1602) - 90 entries
   Window 2: The Corporate Grid (1602 to 1704) - 97 entries
   Window 3: Colonial Consolidation (1652 to 1787) - 79 entries
-  Window 4: The Transfer (1787 to 1854) - 72 entries
-  Window 5: 75-Year Operation (1854 to 1929) - 188 entries
+  Window 4: The Transfer (1787 to 1854) - 87 entries
+  Window 5: 75-Year Operation (1854 to 1929) - 260 entries
   Window 6: Digital Migration (1921 to 2029) - 102 entries
 
 Each entry below: [id] window year lane tier [MILESTONE], then title, then
@@ -1188,6 +1188,41 @@ sources: [A citation_only] src-vitoria-de-indis
 links: 1924-triple-lock-reclassification-chain-step-1924
 threads: T-SOFTWARE-NEUTRALITY
 
+[E-W1-035-01] W1 1564 military TA
+Hawkins 1564: the Crown commits a warship and the interloping escalates
+Sparke sailed on the second voyage and wrote its narrative. Hakluyt's title names Hawkins captain of the Jesus of Lubeck, "one of Her Majesty's ships", so the Crown's stake is now a naval vessel rather than a private share as in 1562. Sparke records the company "pretending to have taken negroes there perforce", and one landing cost "seven of our best men" with "27 of our men hurt".
+sources: [A live_verified] src-sparke-hawkins-1564 https://archive.org/details/voyagesofhawkins00hakluoft
+links: asiento-first-1518, drake-circumnavigation-1577-80, company-of-royal-adventurers-1660, royal-african-company-chartered-1672, asiento-1713
+threads: T-ASIENTO
+
+[E-W1-035-02] W1 1564 financial TA
+The Crown's stake is a warship: the Jesus of Lubeck, named in Hakluyt as one of Her Majesty's ships
+framework: The state-privateer joint venture, thirteen years before Drake. Here the Crown's contribution is not capital but a named Royal Navy vessel, which makes 1564 the earlier run of the template the corpus already holds at 1577-80
+assessment: Weight: Proven (the Crown ship from the narrative title, and the taking by force and the armed defence, all read verbatim in Sparke) | Warrant: Open (the third voyage unread; the 1562 voyage now carried separately at hawkins-first-voyage-1562)
+sources: [A live_verified] src-sparke-hawkins-1564 https://archive.org/details/voyagesofhawkins00hakluoft
+threads: T-ASIENTO
+
+[E-W1-035-03] W1 1564 counter-move TA
+Armed defense recorded: 200 shooting at the boats, seven English dead including the Solomon's captain
+framework: The state-privateer joint venture, thirteen years before Drake. Here the Crown's contribution is not capital but a named Royal Navy vessel, which makes 1564 the earlier run of the template the corpus already holds at 1577-80
+assessment: Weight: Proven (the Crown ship from the narrative title, and the taking by force and the armed defence, all read verbatim in Sparke) | Warrant: Open (the third voyage unread; the 1562 voyage now carried separately at hawkins-first-voyage-1562)
+sources: [A live_verified] src-sparke-hawkins-1564 https://archive.org/details/voyagesofhawkins00hakluoft
+threads: T-ASIENTO
+
+[E-W1-036-01] W1 1562 military TA
+Hawkins 1562: England's entry into the slave trade, privately financed and taken by the sword
+Hakluyt's first-voyage narrative records three privately provided ships and a London syndicate who "became liberal contributors and adventurers in the action", among them Benjamin Gonson, Treasurer of the Navy and Hawkins's father-in-law. At Tagarin he got people into his possession "partly by the sword and partly by other means, to the number of 300 Negros at the least", and sold across three ports of Hispaniola.
+sources: [A live_verified] src-hakluyt-hawkins-1562 https://archive.org/details/voyagesofhawkins00hakluoft
+links: asiento-first-1518, hawkins-guinea-1564, drake-circumnavigation-1577-80
+threads: T-ASIENTO
+
+[E-W1-036-02] W1 1562 financial TA
+Navy officers as private adventurers: Gonson, Treasurer of the Navy, and Winter among the contributors
+framework: The state-privateer joint venture in its earliest English form, and the one where the state is present as private persons rather than as a vessel: the Treasurer and the Surveyor of the Navy are adventurers in a slaving voyage two years before the Crown lends a warship
+assessment: Weight: Proven (the syndicate, the acquisition and the three-port sale, all read verbatim in the first-voyage narrative) | Warrant: Closed (the narrative was read end to end)
+sources: [A live_verified] src-hakluyt-hawkins-1562 https://archive.org/details/voyagesofhawkins00hakluoft
+threads: T-ASIENTO
+
 [E-W2-001-01] W2 1600 financial TB
 East India Company chartered
 English EIC: Crown-licensed monopoly on Asian trade, chartered by Elizabeth I on 31 December 1600. Thomas Smythe is already governor of the Muscovy and Levant companies when he becomes the EIC's first governor, a post he holds to 1621 apart from a break in 1605-07. He obtains the Virginia Company charter in 1609 and serves as its treasurer until 1618. For two decades the EIC's general assemblies meet in his own house at Philpot Lane.
@@ -1729,7 +1764,7 @@ links: great-fire-of-london-1666, lisbon-earthquake-1755
 [E-W2-033-03] W2 1692 information TB
 "God’s judgment on the wicked"
 Port Royal’s destruction framed as divine punishment for piracy and sin. The narrative erases the city’s function as a free-trade hub and replaces it with a morality tale. Information control over the meaning of a catastrophe.
-sources: [A citation_only] src-boyer-nissenbaum-salem-possessed; [B live_verified] src-wikipedia-salem-witch-trials https://en.wikipedia.org/wiki/Salem_witch_trials
+sources: [A citation_only] src-boyer-nissenbaum-salem-possessed; [B live_verified] src-wikipedia-salem-witch-trials https://en.wikipedia.org/wiki/Salem_witch_trials; [B live_verified] src-wikipedia-1692-jamaica-earthquake https://en.wikipedia.org/wiki/1692_Jamaica_earthquake
 links: spanish-inquisition-1478
 
 [E-W2-034-01] W2 1693 financial TB
@@ -1830,8 +1865,8 @@ links: elizabeth-key-lawsuit-the-exit-door-1656, partus-sequitur-ventrem-1662, v
 threads: T-WHITENING-PROJECT
 
 [E-W2-043-01] W2 1657 legal TB
-Scarborough forges debt letter - Johnson land seized
-Northampton County. Edmund Scarborough, a white planter and local power broker, produces a debt letter in Anthony Johnson’s name. Johnson was illiterate and could not have written it. The court nonetheless awards Scarborough 100 acres of Johnson’s land. The same court that had enforced Johnson’s property claim over Casor two years earlier now uses the “Negro” classification to strip Johnson of his own estate.
+Alleged forgery - Johnson land seized
+Northampton County. Edmund Scarborough, a white planter and local power broker, allegedly forged a letter in which Anthony Johnson acknowledged a debt; whether the debt was real is unknown. Johnson was illiterate and could not have written it, and did not contest the case. The court nonetheless awards Scarborough 100 acres of Johnson’s land against the alleged debt. The same court that had enforced Johnson’s property claim over Casor two years earlier now uses the “Negro” classification to strip Johnson of his own estate.
 sources: [B live_verified] src-wikipedia-anthony-johnson-colonist https://en.wikipedia.org/wiki/Anthony_Johnson_(colonist); [C citation_only] src-corporate-caselaw-layer-1602-1713
 links: johnson-v-casor-1655, anthony-johnson-estate-seized-1670
 threads: T-WHITENING-PROJECT
@@ -2318,6 +2353,87 @@ Vagrancy Act 1824 - idleness as an offence
 1824. The Vagrancy Act of 5 Geo. 4 c. 83 consolidated English law on rogues, vagabonds and idle and disorderly persons, making presence without visible means of subsistence a punishable status rather than an act. This entry exists because the W0 dossier on the Statute of Labourers and the W3 dossier on transport contracts both reference it by event_id as the continuation of status-based labour compulsion and could not resolve it.
 sources: [A live_verified] src-vagrancy-act-1824 https://www.legislation.gov.uk/ukpga/Geo4/5/83/section/4
 
+[E-W4-052-01] W4 1851 land TA
+California Land Act - burden of proof relocated onto the grant holder
+3 March 1851, 9 Stat. 631. Establishes a commission. Every person claiming under a Mexican grant must present the claim. Burden of presentation and of proof on the holder. The act does not confiscate. It relocates the obligation, and the cost and delay of discharging it fall on the claimant. NOT LOCATED in the text: any clause deeming unpresented claims public domain. That assertion must not be carried.
+sources: [A live_verified] src-us-9-631-california-land-1851 https://www.govinfo.gov/link/statute/9/631
+
+[E-W4-053-01] W4 1846 financial TA
+Importation Act 1846 - the Corn Laws repealed
+26 June 1846, 9 and 10 Vict. c. 22. Repeals the protective duties on imported corn. Duty schedules are present in the text. THEY HAVE NOT BEEN ANALYSED. The register reached the statute and confirmed citation and title only. Carried here as a placed but unanalysed node, in the same season Parliament is told the Irish crop failure will continue.
+sources: [A live_verified] src-uk-9-10-vict-c22-corn-1846 https://www.legislation.gov.uk/ukpga/Vict/9-10/22/pdfs/ukpga_18460022_en.pdf
+
+[E-W4-054-01] W4 1847 legal TA MILESTONE
+Irish Poor Law Extension - a class defined out of destitute
+8 June 1847, 10 and 11 Vict. c. 31. Occupiers of more than a quarter of an acre are put outside the class the relieving body may assist. DEFINITIONAL EXCLUSION. The statute never says a person shall starve. It defines who counts as destitute and forbids the relieving officer to act outside that definition. The relief is not refused. The applicant is defined out of the category that receives it.
+sources: [A live_verified] src-uk-10-11-vict-c31-irish-poor-1847 https://www.legislation.gov.uk/ukpga/Vict/10-11/31/pdfs/ukpga_18470031_en.pdf
+
+[E-W4-055-01] W4 1846 information TA
+February 1846 - the second season's failure stated in Parliament
+HC Deb, 20 February 1846. The continuation of the potato failure into the coming season is stated in the House. EIGHT MONTHS BEFORE the second failure lands. The foreknowledge is on the record, in the chamber, in February. What follows cannot be described as unforeseen by the body that legislated the relief regime the following year.
+sources: [A live_verified] src-hansard-hc-1846-02-20-potato-disease https://api.parliament.uk/historic-hansard/commons/1846/feb/20/the-potato-disease
+
+[E-W4-056-01] W4 1849 sovereign TA
+A guardianship over a minor sovereign converts into annexation
+HC Deb, 24 April 1849. A protectorate entered by treaty AT THE LOCAL NOBILITY'S REQUEST, over a sovereign who is a minor, converts into annexation. The instrument that begins as custody ends as title. The request supplies the legitimacy at the front end and is not required again at the back end.
+sources: [A live_verified] src-hansard-hc-1849-04-24-punjab https://api.parliament.uk/historic-hansard/commons/1849/apr/24/military-operations-in-the-punjab-vote
+
+[E-W4-057-01] W4 1848 population TA
+The post-abolition indenture pipeline, described as funded state policy
+HC Deb, 19 June 1848. The movement of indentured labour into the sugar colonies is described in Parliament as FUNDED STATE POLICY, by a complainant arguing it should be funded further. Ten years after abolition the replacement supply is not a private trade the state tolerates. It is a programme the state pays for, and the objection on the floor is that it pays too little.
+sources: [A live_verified] src-hansard-hc-1848-06-19-sugar-duties https://api.parliament.uk/historic-hansard/commons/1848/jun/19/sugar-duties; [A live_verified] src-us-12-340-coolie-trade-1862 https://www.govinfo.gov/link/statute/12/340
+
+[E-W4-057-02] W4 1848 financial TA
+The post-abolition indenture pipeline, described as funded state policy
+HC Deb, 19 June 1848. The movement of indentured labour into the sugar colonies is described in Parliament as FUNDED STATE POLICY, by a complainant arguing it should be funded further. Ten years after abolition the replacement supply is not a private trade the state tolerates. It is a programme the state pays for, and the objection on the floor is that it pays too little.
+sources: [A live_verified] src-hansard-hc-1848-06-19-sugar-duties https://api.parliament.uk/historic-hansard/commons/1848/jun/19/sugar-duties; [A live_verified] src-us-12-340-coolie-trade-1862 https://www.govinfo.gov/link/statute/12/340
+
+[E-W4-058-01] W4 1845 corporate TA
+A colony conducted as a negotiation with a chartered company
+HC Deb, 4 August 1845. The colony's affairs are conducted as a NEGOTIATION BETWEEN THE COLONIAL OFFICE AND A CHARTERED COMPANY, in the year the war begins. The settler legislature that will pass the Settlements Act eighteen years later does not yet exist. What exists is a company and a department dividing the question between them.
+sources: [A live_verified] src-hansard-hc-1845-08-04-new-zealand https://api.parliament.uk/historic-hansard/commons/1845/aug/04/new-zealand; [A live_verified] src-nz-settlements-act-1863 https://waikatotainui.com/wp-content/uploads/2020/12/New-Zealand-Settlement-Act.pdf
+
+[E-W4-059-01] W4 1848 information TA
+Marker 9 is not a conflict, and the contested number is audited in public
+HL Deb 10 April and HC Deb 13 April 1848. The responsible minister describes the Kennington Common demonstration ON THE DAY, and it is not a conflict. Three days later the disputed signature count is audited in public with method, duration and result stated, and the claimant concedes in part. A dispute over a number, settled by showing the working.
+sources: [A live_verified] src-hansard-hl-1848-04-10-kennington https://api.parliament.uk/historic-hansard/lords/1848/apr/10/the-meeting-at-kennington-common; [A live_verified] src-hansard-hc-1848-04-13-petition-count https://api.parliament.uk/historic-hansard/commons/1848/apr/13/the-chartist-petition-messrs-oconnor-and
+
+[E-W4-060-01] W4 1849 sovereign TA
+Kingdom or province, and the House's laughter records which reading won
+HC Deb, 21 July 1849. Whether Hungary is a kingdom or a province is argued in the Commons while one great power's army is in the field on the other side of the question. THE LAUGHTER IS IN THE RECORD, and it registers which reading the House found serious. Standing is contested in vocabulary while it is being settled by force elsewhere.
+sources: [A live_verified] src-hansard-hc-1849-07-21-hungary https://api.parliament.uk/historic-hansard/commons/1849/jul/21/russian-invasion-of-hungary
+
+[E-W4-061-01] W4 1850 innovation TA
+A design-piracy question generated a year before the doors open
+HC Deb, 7 May 1850. Voluntary funding for the Exhibition, and a DESIGN-PIRACY QUESTION RAISED A YEAR BEFORE IT OPENED. The problem of who owns a displayed design is anticipated before there is a display. The intellectual-property question arrives ahead of the exhibit that would create it.
+sources: [A live_verified] src-hansard-hc-1850-05-07-exhibition https://api.parliament.uk/historic-hansard/commons/1850/may/07/exhibition-of-works-of-industry-1851
+
+[E-W4-062-01] W4 1853 information TA
+A dynastic rupture treated in the House as forty years of continuity
+HC Deb, 18 February 1853. The dynastic change of December 1852 is treated, two months later, as CONTINUITY OF A FORTY-YEAR PEACE. The absence of a recorded rupture is the finding. What the corpus can show here is not what happened in Paris but how quickly it was absorbed into an unbroken story in London.
+sources: [A live_verified] src-hansard-hc-1853-02-18-france https://api.parliament.uk/historic-hansard/commons/1853/feb/18/relations-with-france
+
+[E-W4-063-01] W4 1836 legal TA MILESTONE
+Treaty of Peace and Friendship, United States and Morocco, 16 September 1836: the instrument the ICJ actually construed
+Signed 16 September 1836, 8 Stat. 484, twenty five articles. Article 25 verbatim: the treaty runs fifty years, after which it "shall continue to be binding on both parties, until the one shall give twelve months notice to the other of an intention to abandon it". No notice was ever given, so it was still operative law in 1952. NOT ONE of the twenty five articles references the treaty of 1787.
+sources: [A live_verified] src-treaty-morocco-1836 https://www.govinfo.gov/content/pkg/STATUTE-8/pdf/STATUTE-8-Pg484.pdf
+links: heir-firewall-1787-1790, w3-1787-legal, icj-rules-on-1787-treaty-1952
+threads: T-SOFTWARE-NEUTRALITY
+
+[E-W4-063-02] W4 1836 records TA
+The official printing cross-references the two instruments: a footnote at 8 Stat. 484 points to the treaty of January 1787 at 8 Stat. 100
+framework: The sovereignty instrument that survives the protectorate. Article 25's indefinite-force clause is why a United States treaty with Morocco was still operative law in 1952, which is the twentieth-century hinge the corpus had been attributing to the 1787 treaty
+assessment: Weight: Proven (the instrument read in full from the Statutes at Large, Article 25 and the cross-reference footnote verbatim) | Warrant: Closed (the treaty text) · Open (whether the two W6 titles are amended, which is a separate frozen-field ruling)
+sources: [A live_verified] src-treaty-morocco-1836 https://www.govinfo.gov/content/pkg/STATUTE-8/pdf/STATUTE-8-Pg484.pdf
+threads: T-SOFTWARE-NEUTRALITY
+
+[E-W4-063-03] W4 1836 sovereign TA
+Binding on the United States in 1952 while Morocco was under French protectorate, by Article 25 and not by inference
+framework: The sovereignty instrument that survives the protectorate. Article 25's indefinite-force clause is why a United States treaty with Morocco was still operative law in 1952, which is the twentieth-century hinge the corpus had been attributing to the 1787 treaty
+assessment: Weight: Proven (the instrument read in full from the Statutes at Large, Article 25 and the cross-reference footnote verbatim) | Warrant: Closed (the treaty text) · Open (whether the two W6 titles are amended, which is a separate frozen-field ruling)
+sources: [A live_verified] src-treaty-morocco-1836 https://www.govinfo.gov/content/pkg/STATUTE-8/pdf/STATUTE-8-Pg484.pdf
+threads: T-SOFTWARE-NEUTRALITY
+
 [E-W5-001-01] W5 1846 information TB
 Associated Press founded
 6 NY papers form wire cooperative - single editorial chokepoint for all US news by 1860s
@@ -2584,7 +2700,7 @@ links: 14th-amend-press-framing-1868, dc-organic-act-republic-becomes-corporatio
 Naturalization laws extended to aliens of African nativity and persons of African descent
 framework: Software layer. A statute defining who may become a citizen, distributed through a network that now reaches most of the country's papers.
 assessment: Weight: Proven (1 of 3 entries sourced, tier B) · Asserted (2 unsourced) | Warrant: Open (2 of 3 entries unsourced)
-sources: [B live_verified] src-naturalization-act-1870 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_16.djvu/288
+sources: [B live_verified] src-naturalization-act-1870 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_16.djvu/288; [A live_verified] src-us-stat-16-254-naturalization-1870 https://www.govinfo.gov/link/statute/16/254
 links: convict-leasing-peaks-1882, tulsa-covered-then-erased-1921, 1924-triple-lock-reclassification-chain-step-1924
 threads: T-WHITENING-PROJECT
 
@@ -3521,6 +3637,366 @@ sources: [A live_verified] src-us-v-thind-1923 https://www.law.cornell.edu/supre
 American Civil War begins
 April 1861. Armed conflict began between the United States and the seceding states. This entry exists because two W4 dossiers, on the strengthened Fugitive Slave Act and the Kansas-Nebraska Act, both reference the war by event_id as the downstream terminus of the sectional-partition chain and could not resolve it. W5 separately carries the Sine Die adjournment of March 1861 and wartime censorship, but the war itself had no entry.
 sources: [A live_verified] src-lincoln-proclamation-80-1861 https://www.govinfo.gov/link/statute/12/1258
+
+[E-W5-065-01] W5 1873 financial TA MILESTONE
+Coinage Act: the standard silver dollar omitted from the statutory list
+12 February 1873. Section 15 enumerates the silver coins of the United States as a trade-dollar, a half-dollar, a quarter-dollar and a dime, and makes those coins legal tender only for amounts not exceeding five dollars in any one payment. The standard silver dollar does not appear in the enumeration. Section 17 then provides that no coins of gold, silver or minor coinage shall thereafter be issued from the mint other than those of the denominations, standards and weights set forth in the Act. The two sections together end the free coinage of the standard silver dollar by omission and closure rather than by express repeal, which is why the effect was contested afterward and why the statute acquired the name it carries. The mechanism is definitional: the operative act is what the enumeration leaves out.
+sources: [A live_verified] src-us-stat-17-424-coinage-act-1873 https://www.govinfo.gov/link/statute/17/424
+
+[E-W5-066-01] W5 1858 corporate TA MILESTONE
+The Company's trusteeship terminated, not its sovereignty transferred
+2 August 1858. The Act's preamble records that under the legislation of 1853 the territories in the possession and under the government of the East India Company had been continued under that government in trust for Her Majesty, and that the property and rights concerned were held by the Company in trust for Her Majesty for the purposes of that government. Section 1 provides that the government of those territories, and all powers in relation to government vested in or exercised by the Company in trust for Her Majesty, shall cease to be vested in or exercised by the Company. The operative act is therefore the termination of a trusteeship over territory the Crown already held beneficially, and not the transfer of sovereignty from a corporation to a state. The trust language is in the statute.
+sources: [A live_verified] src-uk-21-22-vict-c106-government-of-india-1858 https://www.legislation.gov.uk/ukpga/Vict/21-22/106/pdfs/ukpga_18580106_en.pdf
+
+[E-W5-066-02] W5 1858 legal TA MILESTONE
+Direct rule substituted for chartered administration
+The powers that had been exercised by a chartered joint stock company are vested in the Crown and exercised in its name. The corporate form that Windows 1 and 2 build from the Muscovy and Levant companies through the East India Company of 1600 reaches its terminal node here, in the dissolution of the founding instance's governing function.
+sources: [A live_verified] src-uk-21-22-vict-c106-government-of-india-1858 https://www.legislation.gov.uk/ukpga/Vict/21-22/106/pdfs/ukpga_18580106_en.pdf
+
+[E-W5-067-01] W5 1871 legal TA MILESTONE
+Indian Appropriations proviso: the treaty category closed, existing treaties expressly preserved
+3 March 1871. The proviso attached to the Indian Appropriations Act states that hereafter no Indian nation or tribe within the territory of the United States shall be acknowledged or recognized as an independent nation, tribe or power with whom the United States may contract by treaty. The category is closed going forward. The same proviso then continues that nothing contained in it shall be construed to invalidate or impair the obligation of any treaty heretofore lawfully made and ratified with any such Indian nation or tribe. Both halves are in one sentence. The instrument is therefore prospective closure with express preservation, not abrogation, and the distinction is the whole of its legal effect. Reading only the first half overstates what the statute did; reading both gives the ruling exactly. The firewall established in 1787 survives 1871 because the drafters of 1871 said so in the act that closed the door behind it.
+sources: [A live_verified] src-us-stat-16-566-indian-approps-1871 https://www.govinfo.gov/link/statute/16/566
+
+[E-W5-069-01] W5 1866 military TA
+Army Reorganization Act: six regiments of coloured men established by statute
+28 July 1866. The act increasing and fixing the military peace establishment provides for two regiments of cavalry and four regiments of infantry to be composed of coloured men. Two plus four is six, which confirms the count carried in the source register against the statutory text rather than against secondary description. The provision sits inside a general reorganisation of the peacetime army, which means the same instrument that sets the establishment for the post-war period also creates a permanent segregated formation within it. Those regiments are the force subsequently deployed in the western campaigns. The statute itself states no such purpose, and the corpus records the sequence without asserting the intent: the establishment is created here, the deployment follows, and the connection between them is not supplied by this document.
+sources: [A live_verified] src-us-stat-14-332-army-reorg-1866 https://www.govinfo.gov/link/statute/14/332
+
+[E-W5-070-01] W5 1858 corporate TA MILESTONE
+The East India Company petitions the Lords and calls itself an instrument of governing an empire
+11 February 1858. The East India Company petitions the House of Lords against the transfer of the government of India to the Crown, and in the course of resisting its own abolition states its constitutional character in its own words: an instrument of governing an empire. The description is formal, made on the record, and made against interest. A body has least reason to overstate its public character at the moment that character is the thing being taken from it, which is why the statement is treated here as evidence of function rather than as corporate advocacy. Six months later the Government of India Act terminates the arrangement. What that act ends is a trusteeship over territory the Crown already held beneficially, not a sovereignty passing from a company to a state, and the Company's own petition is the clearest contemporaneous description of what the withdrawn instrument had been doing.
+sources: [A live_verified] src-hansard-hl-1858-02-11-eic-petition https://hansard.parliament.uk/Lords/1858-02-11
+
+[E-W5-071-01] W5 1862 legal TA MILESTONE
+Coolie Trade Act - sec. 4 invents the consular certificate
+19 February 1862, 12 Stat. 340. Prohibits American vessels carrying subjects of China to be held to service. Then sec. 4 builds the exception: a consular certificate that the emigration is voluntary. THE HINGE OF THE INDENTURE CHAIN. Thirteen years later the Page Act reaches back for that same certificate and changes only the test the consul applies. Prohibition and pre-clearance cut from one part.
+sources: [A live_verified] src-us-12-340-coolie-trade-1862 https://www.govinfo.gov/link/statute/12/340; [B live_verified] src-page-act-1875 https://loveman.sdsu.edu/docs/1875Immigration%20Act.pdf; [A live_verified] src-frus-1865p2-d551-burlingame-consular https://history.state.gov/historicaldocuments/frus1865p2/d551
+
+[E-W5-072-01] W5 1868 legal TA MILESTONE
+Burlingame Treaty - residence granted, naturalization withheld, same article
+28 July 1868, 16 Stat. 739. Reciprocal rights of residence and travel granted. Naturalization withheld by express words IN THE SAME ARTICLE. Signed nineteen days after the Fourteenth Amendment is ratified. Two years later the Naturalization Act extends the privilege to aliens of African nativity and descent and says nothing of Asians. What 1868 reserved in words, 1870 accomplished by silence.
+sources: [A live_verified] src-us-16-739-burlingame-1868 https://www.govinfo.gov/link/statute/16/739; [A live_verified] src-us-stat-16-254-naturalization-1870 https://www.govinfo.gov/link/statute/16/254
+
+[E-W5-073-01] W5 1863 legal TA
+Dakota treaties abrogated - the instrument, one year after the trigger
+16 February 1863, 12 Stat. 652. Treaties with the Sisseton, Wahpeton, Medawakanton and Wahpakoota bands declared abrogated and annulled. Lands and annuities forfeited. The fighting of 1862 is the trigger. THIS STATUTE IS THE INSTRUMENT. Separate events. The land transfer and the extinguishment of standing happen here, in text, a year after the shooting stopped.
+sources: [A live_verified] src-us-12-652-dakota-abrogation-1863 https://www.govinfo.gov/link/statute/12/652
+
+[E-W5-074-01] W5 1862 land TA MILESTONE
+Morrill Act - public land capitalised into permanent endowment
+2 July 1862, 12 Stat. 503. Thirty thousand acres per senator and representative, granted to the states. Proceeds invested, income applied to colleges. Not sale for revenue. CAPITALISATION. The land stops being territory and becomes a financial instrument attached to a corporate body that does not die.
+sources: [A live_verified] src-us-12-503-morrill-1862 https://www.govinfo.gov/link/statute/12/503
+
+[E-W5-075-01] W5 1862 land TA
+Pacific Railway Act - land, credit and military logistics fused in one statute
+1 July 1862, 12 Stat. 489. Charters a company. Grants alternate sections of public land along the route. Issues bonds against the work. Requires line and telegraph to carry government traffic, troops and munitions included. FOUR FUNCTIONS IN ONE INSTRUMENT: land transfer, corporate creation, public credit, military logistics. The Indian telegraph franchise debated in the Commons five years earlier runs the same structure abroad, a state guaranteeing the return on a private spine it does not build.
+sources: [A live_verified] src-us-12-489-pacific-railway-1862 https://www.govinfo.gov/link/statute/12/489; [A live_verified] src-hansard-hc-1857-03-21-telegraph-india https://api.parliament.uk/historic-hansard/commons/1857/mar/21/question-2
+
+[E-W5-076-01] W5 1865 legal TA
+Freedmen's Bureau Act - the sunset is in the founding section
+3 March 1865, 13 Stat. 507. The bureau is established in the War Department, to continue during the present war of rebellion and for one year thereafter. THE LIMIT IS IN THE FOUNDING SECTION. Not imposed later. This corrects an implication the corpus carries elsewhere, that the bureau was killed in 1872 by a hostile act. The terminal date was written at the creation.
+sources: [A live_verified] src-us-13-507-freedmens-bureau-1865 https://www.govinfo.gov/link/statute/13/507
+
+[E-W5-077-01] W5 1867 legal TA MILESTONE
+Alaska cession Article III - a classification clause inside the transferring instrument
+30 March 1867, 15 Stat. 539. Article III admits the inhabitants to the rights of citizens, EXCEPTING uncivilized native tribes, who are to be subject to such laws as the United States may from time to time adopt. The instrument that transfers the territory divides the people on it into two standings. One enumerated. One left to future administration. Not a later administrative gloss. It is in the cession itself.
+sources: [A live_verified] src-us-15-539-alaska-1867 https://www.govinfo.gov/link/statute/15/539
+
+[E-W5-077-02] W5 1867 population TA MILESTONE
+Alaska cession Article III - a classification clause inside the transferring instrument
+30 March 1867, 15 Stat. 539. Article III admits the inhabitants to the rights of citizens, EXCEPTING uncivilized native tribes, who are to be subject to such laws as the United States may from time to time adopt. The instrument that transfers the territory divides the people on it into two standings. One enumerated. One left to future administration. Not a later administrative gloss. It is in the cession itself.
+sources: [A live_verified] src-us-15-539-alaska-1867 https://www.govinfo.gov/link/statute/15/539
+
+[E-W5-078-01] W5 1867 sovereign TA MILESTONE
+British North America Act - franchise transferred, sovereignty retained
+29 March 1867, 30 and 31 Vict. c. 3. Federates the provinces into one Dominion under the Crown. NOT AN INDEPENDENCE INSTRUMENT. It is a franchise transfer: internal self-government devolved, the amending power and external sovereignty retained at Westminster. The Dominion is created by an act of the imperial Parliament, which is itself the proof of where the constituent power sits.
+sources: [A live_verified] src-uk-30-31-vict-c3-bna-1867 https://www.legislation.gov.uk/ukpga/Vict/30-31/3/pdfs/ukpga_18670003_en.pdf
+
+[E-W5-079-01] W5 1871 financial TB
+German Coinage Act sec. 10 - demonetisation by express prohibition
+RGBl. 1871 p. 404. Section 10 prohibits the coinage of coarse silver. EXPRESS PROHIBITION, stated in words. Fourteen months later the United States reaches the same result by omission and closure and repeals nothing. Two jurisdictions, one movement, two drafting techniques. The American Commission of 1878 narrates them as a single chain.
+sources: [B live_verified] src-rgbl-1871-404-goldmuenzen https://de.wikisource.org/wiki/Gesetz,_betreffend_die_Ausprägung_von_Reichsgoldmünzen; [A live_verified] src-us-stat-17-424-coinage-act-1873 https://www.govinfo.gov/link/statute/17/424; [B live_verified] src-imc-1878-american-commission https://archive.org/download/internationalmo00statgoog/internationalmo00statgoog_djvu.txt
+
+[E-W5-080-01] W5 1856 land TA
+Ley Lerdo Art. 3 - every perpetual corporation disentailed
+25 June 1856. Article 3 reaches beyond the Church. It names ayuntamientos and EVERY FOUNDATION OF PERPETUAL OR INDEFINITE DURATION. Municipal common lands and village corporate holdings fall inside the same definition as ecclesiastical estates. The statute is read as anticlerical; its breadth is corporate. Land held by any body that does not die is converted into land held by persons who do.
+sources: [A live_verified] src-unam-ley-lerdo-1856 https://archivos.juridicas.unam.mx/www/bjv/libros/12/5625/17.pdf
+
+[E-W5-081-01] W5 1863 land TA
+New Zealand Settlements Act sec. 6 - confiscation conditioned on submission
+3 December 1863. Districts may be declared and land taken where a tribe is judged to have been in rebellion. Section 6 is the punitive hinge: submission is the condition on which the taking turns. THE INSTRUMENT IS THE OPERATIVE ACT, NOT THE FIGHTING. The war supplies the predicate. The statute performs the transfer, and it does so by the legislature of the settler colony.
+sources: [A live_verified] src-nz-settlements-act-1863 https://waikatotainui.com/wp-content/uploads/2020/12/New-Zealand-Settlement-Act.pdf
+
+[E-W5-082-01] W5 1860 legal TB
+Convention of Peking Article V - the traffic acquires treaty backing
+24 October 1860. Article V provides for Chinese subjects to contract for service abroad and for carriage in British vessels. IMPERIAL DECREE BACKING IN TREATY TEXT. What the 1862 US act would call a traffic to be prohibited, the 1860 convention makes lawful carriage two years earlier. By 1871 the Commons is calling the same trade four names in one afternoon.
+sources: [B live_verified] src-peking-1860-art-v https://worldjpn.net/documents/texts/pw/18601024.T1E.html; [A live_verified] src-us-12-340-coolie-trade-1862 https://www.govinfo.gov/link/statute/12/340; [A live_verified] src-hansard-hc-1871-06-19-macao-coolie https://api.parliament.uk/historic-hansard/commons/1871/jun/19/question-1
+
+[E-W5-083-01] W5 1875 legal TB
+Page Act - the 1862 certificate reused, only the test changed
+3 March 1875. A consular pre-clearance regime for emigration from China, Japan and any Oriental country. THE INSTRUMENT IS THE 1862 CERTIFICATE. What changes is the test the consul applies, from whether the emigration is voluntary to whether the emigrant is of a class to be barred. Thirteen years separate the two statutes. The machinery is continuous.
+sources: [B live_verified] src-page-act-1875 https://loveman.sdsu.edu/docs/1875Immigration%20Act.pdf; [A live_verified] src-us-12-340-coolie-trade-1862 https://www.govinfo.gov/link/statute/12/340
+
+[E-W5-084-01] W5 1859 military TA
+The Reform War, and British claims lodged against its outcome
+HC Deb, 8 July 1859. The Mexican civil war described in the Commons, with British-subject grievances registered while it is still running. The claims are on the record BEFORE the intervention that will later be justified by them. Sequence matters here. The grievance is contemporaneous; the use made of it is not.
+sources: [A live_verified] src-hansard-hc-1859-07-08-mexico https://api.parliament.uk/historic-hansard/commons/1859/jul/08/treatment-of-british-subjects-in-mexico
+
+[E-W5-085-01] W5 1861 financial TA MILESTONE
+London Convention - three powers against one sovereign debtor
+31 October 1861. Britain, France and Spain concert a combined operation against Mexico over suspended debt service. THE TREATY IS CONCLUDED IN A FOURTH CAPITAL. Not one of the three is the forum. Debt is the stated predicate and force is the instrument, and the arrangement is made where none of the parties to the dispute sits.
+sources: [A live_verified] src-frus-1862-d586-london-intervention https://history.state.gov/historicaldocuments/frus1862/d586; [A live_verified] src-hansard-hc-1859-07-08-mexico https://api.parliament.uk/historic-hansard/commons/1859/jul/08/treatment-of-british-subjects-in-mexico
+
+[E-W5-085-02] W5 1861 military TA MILESTONE
+London Convention - three powers against one sovereign debtor
+31 October 1861. Britain, France and Spain concert a combined operation against Mexico over suspended debt service. THE TREATY IS CONCLUDED IN A FOURTH CAPITAL. Not one of the three is the forum. Debt is the stated predicate and force is the instrument, and the arrangement is made where none of the parties to the dispute sits.
+sources: [A live_verified] src-frus-1862-d586-london-intervention https://history.state.gov/historicaldocuments/frus1862/d586; [A live_verified] src-hansard-hc-1859-07-08-mexico https://api.parliament.uk/historic-hansard/commons/1859/jul/08/treatment-of-british-subjects-in-mexico
+
+[E-W5-086-01] W5 1862 financial TA
+Forced loans, named and called a euphemism in the same breath
+HC Deb, 10 March 1862. The claims behind the intervention debt are described as forced loans, and the word loan is marked in the House as a euphemism as it is spoken. SIX WEEKS BEFORE the allied powers separate at Orizaba. The mechanism generating the debt is named on the record by the legislature of one of the intervening powers.
+sources: [A live_verified] src-hansard-hc-1862-03-10-mexico-forced-loans https://api.parliament.uk/historic-hansard/commons/1862/mar/10/affairs-in-mexico-question
+
+[E-W5-087-01] W5 1862 financial TA
+The Jecker bonds - a debt instrument converted into an occupation
+The Jecker claim, admitted on the record of the intervening power's own legislature. A bond issue bought at a fraction of face is presented at face as a ground for war. THE MECHANISM IS ADMITTED, NOT ALLEGED. Debt instrument to occupation, stated in the French chamber. The corpus has the pattern elsewhere; here it has the confession.
+sources: [A live_verified] src-frus-1867p2-d408-jecker https://history.state.gov/historicaldocuments/frus1867p2/d408; [A live_verified] src-frus-1862-d586-london-intervention https://history.state.gov/historicaldocuments/frus1862/d586
+
+[E-W5-088-01] W5 1867 population TA MILESTONE
+Nationality stripped by administrative operation, enforced name by name
+Reported to the Department, 1867. Nationality is removed from a defined class by administrative act, and enforcement runs off a name-by-name roll. NOT A COURT. NOT A STATUTE. An operation conducted on a list. The population affected is European, which is what makes this the clearest instance in the band of the mechanism working independently of the classification it is usually attached to.
+sources: [A live_verified] src-frus-1867p2-d241-bazaine https://history.state.gov/historicaldocuments/frus1867p2/d241; [A live_verified] src-frus-1867p2-d246-evacuation https://history.state.gov/historicaldocuments/frus1867p2/d246
+
+[E-W5-088-02] W5 1867 records TA MILESTONE
+Nationality stripped by administrative operation, enforced name by name
+Reported to the Department, 1867. Nationality is removed from a defined class by administrative act, and enforcement runs off a name-by-name roll. NOT A COURT. NOT A STATUTE. An operation conducted on a list. The population affected is European, which is what makes this the clearest instance in the band of the mechanism working independently of the classification it is usually attached to.
+sources: [A live_verified] src-frus-1867p2-d241-bazaine https://history.state.gov/historicaldocuments/frus1867p2/d241; [A live_verified] src-frus-1867p2-d246-evacuation https://history.state.gov/historicaldocuments/frus1867p2/d246
+
+[E-W5-089-01] W5 1867 records TA
+The count of those who elected to forfeit, twelve days later
+Twelve days after the decree, the same consul reports the number of men who elected to forfeit nationality rather than comply. THE MECHANISM IS AUDITED BY ITS OWN OPERATOR. One document creates the instrument, the next counts what it did, and both sit in the same published volume under the same signature.
+sources: [A live_verified] src-frus-1867p2-d246-evacuation https://history.state.gov/historicaldocuments/frus1867p2/d246; [A live_verified] src-frus-1867p2-d241-bazaine https://history.state.gov/historicaldocuments/frus1867p2/d241
+
+[E-W5-090-01] W5 1867 sovereign TA
+Queretaro - a terminal negotiation conducted for other people's standing
+1867. A displaced sovereign negotiates at the end, and the negotiation is conducted PRIMARILY TO SECURE STANDING FOR THOSE COMPROMISED BY SERVICE TO HIM. Not terms for himself. The instrument being bargained for is the future standing of the people who served the regime. What is at stake is classification after the fall, not survival of the throne.
+sources: [A live_verified] src-frus-1867p2-d247-queretaro https://history.state.gov/historicaldocuments/frus1867p2/d247
+
+[E-W5-091-01] W5 1871 sovereign TA MILESTONE
+The constitutive act was 1 January 1871, not 18 January
+Bancroft to the Department, 1871. THE CONSTITUTIVE ACT WAS 1 JANUARY. Versailles on 18 January was the ceremony. The empire comes into being by an instrument taking effect at the turn of the year, and the proclamation in the hall of mirrors is the announcement of something already done. A constitutive act made procedurally, then dressed.
+sources: [A live_verified] src-frus-1871-d172-bancroft https://history.state.gov/historicaldocuments/frus1871/d172
+
+[E-W5-092-01] W5 1871 land TA
+Secret bargaining over a third party's land, printed in a US public document
+1871. A draft treaty in which two powers bargain over territory belonging to neither, REPRODUCED IN FULL in a free United States government publication. The secrecy fails at the point of publication. Third parties' land is the consideration, and the document survives because a fourth state printed it.
+sources: [A live_verified] src-frus-1871-d166-benedetti https://history.state.gov/historicaldocuments/frus1871/d166
+
+[E-W5-093-01] W5 1857 military TA
+The Commons defeats its own government on the war it is prosecuting
+HC Deb, 26 February and 3 March 1857. The opening of the Second Opium War is censured by motion, and on the division THE GOVERNMENT IS DEFEATED BY ITS OWN LEGISLATURE IN THE WAR'S OPENING MONTHS. Not a post hoc inquiry. A vote against the conduct of a war while that war is being fought, recorded in the chamber that funds it.
+sources: [A live_verified] src-hansard-hc-1857-02-26-china-resolutions https://api.parliament.uk/historic-hansard/commons/1857/feb/26/resolutions-moved-debate-adjourned; [A live_verified] src-hansard-hc-1857-03-03-china-division https://api.parliament.uk/historic-hansard/commons/1857/mar/03/resolution-moved-resumed-debate-fourth
+
+[E-W5-094-01] W5 1861 records TA
+The Summer Palace burning, admitted and defended with a status distinction
+HC Deb, 14 February 1861. The destruction of a sovereign state's imperial collections is admitted, named and defended on a vote of thanks. A STATUS DISTINCTION IS OFFERED IN JUSTIFICATION. The archive of a state is destroyed and the destruction is entered on the record of the destroying power, with a reason given about whose property it was.
+sources: [A live_verified] src-hansard-hc-1861-02-14-china-vote-of-thanks https://api.parliament.uk/historic-hansard/commons/1861/feb/14/resolutions
+
+[E-W5-094-02] W5 1861 violence TA
+The Summer Palace burning, admitted and defended with a status distinction
+HC Deb, 14 February 1861. The destruction of a sovereign state's imperial collections is admitted, named and defended on a vote of thanks. A STATUS DISTINCTION IS OFFERED IN JUSTIFICATION. The archive of a state is destroyed and the destruction is entered on the record of the destroying power, with a reason given about whose property it was.
+sources: [A live_verified] src-hansard-hc-1861-02-14-china-vote-of-thanks https://api.parliament.uk/historic-hansard/commons/1861/feb/14/resolutions
+
+[E-W5-095-01] W5 1861 information TA
+A competing account of who began, withdrawn within twenty-four hours
+HC Deb, 15 February 1861. A rival account of who began the affair is offered, then withdrawn INSIDE ONE DAY. The correction is on the record next to the claim. What the corpus gains is not the true version but the speed of the retraction, which is itself the evidence of how the account was managed.
+sources: [A live_verified] src-hansard-hc-1861-02-15-summer-palace-explanation https://api.parliament.uk/historic-hansard/commons/1861/feb/15/explanation
+
+[E-W5-096-01] W5 1861 information TA
+The naming of the Taiping contested in a third power's legislature
+HC Deb 12 March and HL Deb 19 February 1861. What to call the Taiping is argued in Parliament, with the ruling dynasty described by a member in terms that unsettle which side is the incumbent. In the Lords, opening communication with the Taiping is treated as a LIVE POLICY OPTION. Recognition is under negotiation in the vocabulary before it is under negotiation in fact.
+sources: [A live_verified] src-hansard-hc-1861-03-12-relations-with-china https://api.parliament.uk/historic-hansard/commons/1861/mar/12/relations-with-china; [A live_verified] src-hansard-hl-1861-02-19-china-address https://api.parliament.uk/historic-hansard/lords/1861/feb/19/china-address-for-papers
+
+[E-W5-097-01] W5 1863 sovereign TA MILESTONE
+The coordination mechanism, stated by a participant
+Burlingame to the Department, 1863. The co-operative policy is described by one of the powers operating it: the treaty powers acting in concert in China rather than separately. THE MECHANISM IS STATED, NOT INFERRED. This is the entry that lets the corpus say events in this theatre shared a mechanism, because a participant wrote the mechanism down while participating in it.
+sources: [A live_verified] src-frus-1863p2-d262-cooperative-policy https://history.state.gov/historicaldocuments/frus1863p2/d262
+
+[E-W5-098-01] W5 1865 military TA
+An officer crossing between franchises, documented
+Dispatch of 1865. A commander moves between services on opposite sides of a Chinese conflict, and the movement is recorded in the diplomatic correspondence of a third state. CROSS-FRANCHISE MILITARY PERSONNEL TRANSFER, on the record. Men, not just instruments, move between the contracting parties of this theatre.
+sources: [A live_verified] src-frus-1865p2-d569-burgevine https://history.state.gov/historicaldocuments/frus1865p2/d569
+
+[E-W5-099-01] W5 1871 legal TA
+A British court calls the traffic slavery, and the executive re-arrests the man it freed
+HC Deb, 19 June 1871. The coolie traffic is ADJUDICATED AS SLAVERY BY A BRITISH COURT. The man the court releases is then re-arrested by the executive. Judicial finding and administrative action point opposite ways on the same facts, in the same jurisdiction, in the same year, and both are in the record.
+sources: [A live_verified] src-hansard-hc-1871-06-19-kwok-a-sing https://api.parliament.uk/historic-hansard/commons/1871/jun/19/question; [A live_verified] src-us-12-340-coolie-trade-1862 https://www.govinfo.gov/link/statute/12/340; [B live_verified] src-peking-1860-art-v https://worldjpn.net/documents/texts/pw/18601024.T1E.html
+
+[E-W5-100-01] W5 1871 information TA
+Four names for one traffic in a single afternoon
+HC Deb, 19 June 1871. In one sitting the same trade is called the Coolie Immigration Service, irregular practices, a code of regulations, and slavery. FOUR NAMES, ONE AFTERNOON. The naming variance is not confusion. It is the range of positions available to speakers who all know what is being described.
+sources: [A live_verified] src-hansard-hc-1871-06-19-macao-coolie https://api.parliament.uk/historic-hansard/commons/1871/jun/19/question-1; [A live_verified] src-hansard-hc-1864-05-19-circassian https://api.parliament.uk/historic-hansard/commons/1864/may/19/russia-emigration-of-the-circassians
+
+[E-W5-101-01] W5 1857 corporate TA
+The empire's communications spine let as a private franchise
+HC Deb, 21 March 1857. The state guarantees the return on the Indian telegraph and DISCLAIMS BOTH CONSTRUCTION AND SECURITY. The spine on which the empire is governed is a private franchise carrying a public guarantee. Five years later the Pacific Railway Act fuses the same arrangement into a single American statute.
+sources: [A live_verified] src-hansard-hc-1857-03-21-telegraph-india https://api.parliament.uk/historic-hansard/commons/1857/mar/21/question-2; [A live_verified] src-us-12-489-pacific-railway-1862 https://www.govinfo.gov/link/statute/12/489
+
+[E-W5-101-02] W5 1857 innovation TA
+The empire's communications spine let as a private franchise
+HC Deb, 21 March 1857. The state guarantees the return on the Indian telegraph and DISCLAIMS BOTH CONSTRUCTION AND SECURITY. The spine on which the empire is governed is a private franchise carrying a public guarantee. Five years later the Pacific Railway Act fuses the same arrangement into a single American statute.
+sources: [A live_verified] src-hansard-hc-1857-03-21-telegraph-india https://api.parliament.uk/historic-hansard/commons/1857/mar/21/question-2; [A live_verified] src-us-12-489-pacific-railway-1862 https://www.govinfo.gov/link/statute/12/489
+
+[E-W5-102-01] W5 1857 military TA
+Two theatres supplied from one pool, diverted at a waypoint
+HC Deb, 10 July 1857. Troops sailing for China are diverted to India at a waypoint BY A COLONIAL OFFICIAL ON HIS OWN AUTHORITY. Two theatres drawing on a single pool of men, and the allocation decided in transit by someone outside the chain that dispatched them. The China war and the Indian rising are not separate operations at the level of supply.
+sources: [A live_verified] src-hansard-hc-1857-07-10-reinforcements https://api.parliament.uk/historic-hansard/commons/1857/jul/10/reinforcements-for-india-and-china; [A live_verified] src-hansard-hc-1857-02-26-china-resolutions https://api.parliament.uk/historic-hansard/commons/1857/feb/26/resolutions-moved-debate-adjourned
+
+[E-W5-103-01] W5 1857 information TA
+Governing an emergency on relayed telegraph fragments, and saying so
+HC Deb, 13 and 14 July 1857. Two months after the rising begins, the government tells the House it is acting on RELAYED TELEGRAPH FRAGMENTS and admits the state of its own knowledge. The next day the complaint is that an inference was allowed to stand uncorrected, made by the leader of the opposing party. The information gap is on the record from both benches.
+sources: [A live_verified] src-hansard-hc-1857-07-13-indian-mutiny https://api.parliament.uk/historic-hansard/commons/1857/jul/13/the-indian-mutiny-question; [A live_verified] src-hansard-hc-1857-07-14-indian-mutiny https://api.parliament.uk/historic-hansard/commons/1857/jul/14/the-indian-mutiny-question
+
+[E-W5-104-01] W5 1857 legal TA
+Standing granted, revoked, and preserved for those who relied on it
+HC Deb, 16 July 1857. An amnesty is granted by administrative order, then revoked, and standing is PRESERVED FOR A DEFINED WINDOW for those who had already acted in reliance on it. Three operations on the same instrument: creation, withdrawal, and a saving for reliance. All by order, none by statute.
+sources: [A live_verified] src-hansard-hc-1857-07-16-india-amnesty https://api.parliament.uk/historic-hansard/commons/1857/jul/16/india-amnesty-question
+
+[E-W5-105-01] W5 1856 sovereign TA
+Sovereignty offered into the market by its holders, and refused
+HL Deb, 19 May 1856. Central American states offer themselves to a great power and are declined. THE INITIATIVE SITS WITH THE STATES OFFERING, NOT THE POWER RECEIVING. The corpus carries many instances of sovereignty taken. This is one where it is tendered and refused, which is the case that tests whether acquisition was the object.
+sources: [A live_verified] src-hansard-hl-1856-05-19-central-america https://api.parliament.uk/historic-hansard/lords/1856/may/19/central-america
+
+[E-W5-106-01] W5 1862 sovereign TA
+Recognition withheld prospectively by standing order
+Dispatch of 1862. Recognition is treated as an instrument and withheld BY STANDING ORDER, prospectively, against a named contingency, and the order stands for nearly two years. Not a decision taken when the question arises. A rule set in advance about a case that has not yet occurred, which is what makes recognition legible here as a lever rather than an acknowledgement.
+sources: [A live_verified] src-frus-1862-d587-recognition-suspended https://history.state.gov/historicaldocuments/frus1862/d587
+
+[E-W5-107-01] W5 1863 financial TA
+The Erlanger loan - a belligerent's debt secured on the commodity its buyers consume
+1863. The Confederacy's debt is underwritten by the industry that consumes its product, secured on that product AT A FIXED PRICE. The lender's security and the lender's raw material are the same bales. A war is financed by the buyers of the thing the war exists to keep producing, and the arrangement is reported in United States diplomatic correspondence.
+sources: [A live_verified] src-frus-1863p2-d22-erlanger https://history.state.gov/historicaldocuments/frus1863p2/d22
+
+[E-W5-108-01] W5 1866 sovereign TA MILESTONE
+Representative government ends by the representative body's own assent
+HC Deb, 15 February and 14 June 1866. The Jamaica Assembly votes itself out of existence and Crown Colony government follows. NOT IMPOSED. Surrendered. Four months later the institutions are spoken of in the Commons in the past tense and the business before the House is severance. The mechanism of H-RW-4 is assent, and the corpus must not carry it as imposition.
+sources: [A live_verified] src-hansard-hc-1866-02-15-jamaica-bill https://api.parliament.uk/historic-hansard/commons/1866/feb/15/leave-first-reading; [A live_verified] src-hansard-hc-1866-06-14-jamaica-late-assemblies https://api.parliament.uk/historic-hansard/commons/1866/jun/14/jamaica-legislative-assembly-question
+
+[E-W5-108-02] W5 1866 legal TA MILESTONE
+Representative government ends by the representative body's own assent
+HC Deb, 15 February and 14 June 1866. The Jamaica Assembly votes itself out of existence and Crown Colony government follows. NOT IMPOSED. Surrendered. Four months later the institutions are spoken of in the Commons in the past tense and the business before the House is severance. The mechanism of H-RW-4 is assent, and the corpus must not carry it as imposition.
+sources: [A live_verified] src-hansard-hc-1866-02-15-jamaica-bill https://api.parliament.uk/historic-hansard/commons/1866/feb/15/leave-first-reading; [A live_verified] src-hansard-hc-1866-06-14-jamaica-late-assemblies https://api.parliament.uk/historic-hansard/commons/1866/jun/14/jamaica-legislative-assembly-question
+
+[E-W5-109-01] W5 1866 legal TA
+The legislative posture accompanying the Fenian raids
+1866. The neutrality position taken while armed parties cross a land border from United States territory. The record establishes THE POSTURE, NOT THE PURPOSE. What the state said and what it enforced are both here; whether the gap was designed is not, and the corpus should not close it from this document.
+sources: [A live_verified] src-frus-1866p1-d144-neutrality https://history.state.gov/historicaldocuments/frus1866p1/d144
+
+[E-W5-110-01] W5 1867 population TA
+The removal pipeline live at Cabinet level, two years after the Thirteenth Amendment
+Dispatch of 1867. Removal to Liberia is live and entertained at Cabinet level TWO YEARS AFTER the Thirteenth Amendment. Emancipation and removal are not sequential policies where one replaces the other. They run concurrently, and the later one is still being discussed at the top of government when the earlier is settled law.
+sources: [A live_verified] src-frus-1867p2-d213-liberia https://history.state.gov/historicaldocuments/frus1867p2/d213
+
+[E-W5-111-01] W5 1870 sovereign TA
+Concert proposed, authorised, and never solicited
+HC Deb, 9 May and 25 July 1870. A war of no quarter in Cuba, and concerted action declined as inopportune. Concert is proposed in May, authorised by a legislature in June, and BY LATE JULY HAS NOT BEEN SOLICITED. The coordination the corpus documents in China is here proposed, empowered, and left unused. Established by the negative.
+sources: [A live_verified] src-hansard-hc-1870-05-09-cuba https://api.parliament.uk/historic-hansard/commons/1870/may/09/war-in-cuba-question; [A live_verified] src-hansard-hc-1870-07-25-cuba-resolution https://api.parliament.uk/historic-hansard/commons/1870/jul/25/question-5
+
+[E-W5-112-01] W5 1875 population TA MILESTONE
+The Cuban end of the indenture chain
+1875. The receiving end of the traffic documented in United States diplomatic correspondence. With Article V of the Peking Convention at the departure end and the Macao debates in the middle, THE CHAIN IS DOCUMENTED ACROSS FOUR JURISDICTIONS AND EIGHT NODES. Not inferred from a pattern. Followed document to document from authorisation to arrival.
+sources: [A live_verified] src-frus-1875v01-d155-cuba-emigration https://history.state.gov/historicaldocuments/frus1875v01/d155; [A live_verified] src-hansard-hc-1871-06-19-macao-coolie https://api.parliament.uk/historic-hansard/commons/1871/jun/19/question-1; [B live_verified] src-peking-1860-art-v https://worldjpn.net/documents/texts/pw/18601024.T1E.html
+
+[E-W5-113-01] W5 1867 legal TA MILESTONE
+One Crown, one body of law, and an instrument whose reach depends on the subject
+HC Deb, 2 July 1867. ONE CROWN. ONE BODY OF LAW. And an instrument whose reach is determined by the classification of the subject it is applied to. Stated as doctrine, in the chamber, not reconstructed afterwards. The same law extends different distances depending on who stands under it, and that is said aloud.
+sources: [A live_verified] src-hansard-hc-1867-07-02-martial-law https://api.parliament.uk/historic-hansard/commons/1867/jul/02/martial-law-charge-of-the-lord-chief; [A live_verified] src-hansard-hc-1866-02-15-jamaica-bill https://api.parliament.uk/historic-hansard/commons/1866/feb/15/leave-first-reading
+
+[E-W5-114-01] W5 1854 legal TA
+Treaty of Kanagawa
+31 March 1854, 11 Stat. 597. Citation, parties and date confirmed against the Statutes at Large. THE ARTICLES HAVE NOT BEEN ANALYSED. Carried as a placed node at the opening of the window, with the substantive reading still owed. Fourteen years later a foreign power will be reclassifying which Japanese authority is sovereign.
+sources: [A live_verified] src-us-11-597-kanagawa-1854 https://www.govinfo.gov/link/statute/11/597; [B live_verified] src-frus-1868p1-d309-d311-japan https://history.state.gov/historicaldocuments/frus1868p1/d311
+
+[E-W5-115-01] W5 1854 financial TA
+A Chancellor describes a conversion that enlarges the principal
+HC Deb, 8 May 1854. The Chancellor sets out a conversion mechanism that STRUCTURALLY ENLARGES THE PRINCIPAL, and which is entered into when credit is tight. The instrument reduces the visible service cost and increases the sum owed. It is described from the Treasury bench, as policy, not exposed afterwards.
+sources: [A live_verified] src-hansard-hc-1854-05-08-financial-statement https://api.parliament.uk/historic-hansard/commons/1854/may/08/the-financial-statement-ways-and-means
+
+[E-W5-116-01] W5 1859 catastrophe TA
+The Carrington event, in the contemporaneous scientific record
+Monthly Notices of the Royal Astronomical Society, 1859. Carrington's own observation of the solar flare, published at the time. THE CONTEMPORANEOUS PRIMARY RECORD EXISTS and is freely available, which disposes of the claim that the event cannot be verified from period sources. Exogenous, and therefore catastrophe by the locked definition.
+sources: [A live_verified] src-carrington-mnras-1859 https://www.astro.sunysb.edu/fwalter/HON301/1859MNRAS__20___13C.pdf
+
+[E-W5-117-01] W5 1859 information TC
+The subtitle vocabulary, and what it does not establish
+1859. The subtitle carries the vocabulary of favoured races and struggle for life. That vocabulary is present in 1859 and the corpus can record it. IT DOES NOT ESTABLISH TRANSMISSION to the later classification apparatus. The word appearing in one place and reappearing in another is not a chain, and this record refuses to supply one.
+sources: [A live_verified] src-darwin-origin-1859 http://darwin-online.org.uk/converted/published/1859_Origin_F373/1859_Origin_F373.html
+
+[E-W5-118-01] W5 1860 records TA
+The dead identified by their function under a displaced regime
+HC Deb, 6 July 1860. The dead are identified in the record BY THEIR FUNCTION UNDER THE DISPLACED REGIME, and that regime is named misgovernment by the Foreign Secretary in the same breath. Classification of the killed follows the office they held. Who they were is recorded as what they did for the government that fell.
+sources: [A live_verified] src-hansard-hc-1860-07-06-sicily https://api.parliament.uk/historic-hansard/commons/1860/jul/06/atrocities-in-sicily-question
+
+[E-W5-119-01] W5 1860 legal TA
+One three-part legality test travelling London to Vienna and back
+HC Deb, 16 August 1860. Cross-border recruitment is treated as a question of law, and THE SAME THREE-PART TEST TRAVELS London to Vienna and back. Two chancelleries applying identical criteria to the same facts. Six years later the Fenian raids raise the question again on a different border, with the posture stated and the enforcement gap visible.
+sources: [A live_verified] src-hansard-hc-1860-08-16-garibaldi-recruits https://api.parliament.uk/historic-hansard/commons/1860/aug/16/question; [A live_verified] src-frus-1866p1-d144-neutrality https://history.state.gov/historicaldocuments/frus1866p1/d144
+
+[E-W5-120-01] W5 1861 sovereign TA
+Sovereignty divided rather than extinguished, spiritual retained and temporal transferred
+HL Deb, 19 April 1861. A sovereignty is DIVIDED RATHER THAN EXTINGUISHED. Spiritual authority retained, temporal authority transferred, over the same ground. The division is the operative act. A holder can be stripped of one half of what he holds while remaining the holder of the other, and the record treats that as coherent.
+sources: [A live_verified] src-hansard-hl-1861-04-19-italy https://api.parliament.uk/historic-hansard/lords/1861/apr/19/the-pope-and-the-kingdom-of-italy
+
+[E-W5-121-01] W5 1863 population TA
+An arrangement about a subject population that a third power cannot obtain
+HC Deb, 23 February 1863. Two powers conclude an arrangement concerning a subject population, and a third great power CANNOT OBTAIN THE TEXT. The counterpart to the China co-operative policy: there the mechanism is stated by a participant, here it is withheld from a non-participant. Both are evidence about how coordination was conducted.
+sources: [A live_verified] src-hansard-hc-1863-02-23-russo-prussian https://api.parliament.uk/historic-hansard/commons/1863/feb/23/poland-the-russian-and-prussian; [A live_verified] src-frus-1871-d166-benedetti https://history.state.gov/historicaldocuments/frus1871/d166
+
+[E-W5-122-01] W5 1864 population TA
+Four names for one removal in fifteen days
+HC Deb 19 May and HL Deb 2 June 1864. The removal, its cause, destination and mortality are on a third power's record. In fifteen days it is called emigration, forced emigration, so far forced, and voluntary exile. FOUR NAMES, ONE EVENT, FIFTEEN DAYS. The facts are not in dispute between the speakers. Only the word is.
+sources: [A live_verified] src-hansard-hc-1864-05-19-circassian https://api.parliament.uk/historic-hansard/commons/1864/may/19/russia-emigration-of-the-circassians; [A live_verified] src-hansard-hl-1864-06-02-circassians https://api.parliament.uk/historic-hansard/lords/1864/jun/02/the-circassians-question
+
+[E-W5-122-02] W5 1864 information TA
+Four names for one removal in fifteen days
+HC Deb 19 May and HL Deb 2 June 1864. The removal, its cause, destination and mortality are on a third power's record. In fifteen days it is called emigration, forced emigration, so far forced, and voluntary exile. FOUR NAMES, ONE EVENT, FIFTEEN DAYS. The facts are not in dispute between the speakers. Only the word is.
+sources: [A live_verified] src-hansard-hc-1864-05-19-circassian https://api.parliament.uk/historic-hansard/commons/1864/may/19/russia-emigration-of-the-circassians; [A live_verified] src-hansard-hl-1864-06-02-circassians https://api.parliament.uk/historic-hansard/lords/1864/jun/02/the-circassians-question
+
+[E-W5-123-01] W5 1864 legal TA
+A guarantee whose consent condition was never performed, standing fourteen years
+HC Deb, 19 April 1864. A nationality-rights guarantee rests on a consent condition THAT WAS NEVER PERFORMED, and the instrument stands for fourteen years regardless. The obligation is treated as live while its precondition is treated as unnecessary. The debate also records obfuscation about which is which.
+sources: [A live_verified] src-hansard-hc-1864-04-19-treaty-of-london https://api.parliament.uk/historic-hansard/commons/1864/apr/19/denmark-and-germany-treaty-of-london
+
+[E-W5-124-01] W5 1866 financial TA
+Overend Gurney, and the Bank Act suspended
+HC Deb, 11 May 1866. The panic, and the SUSPENSION OF THE BANK ACT to meet it. The rule constraining note issue is set aside by the authority that made it, at the moment the constraint would bite. A second debate on 31 July supplies the independent confirmation for the node.
+sources: [A live_verified] src-hansard-hc-1866-05-11-bank-charter https://api.parliament.uk/historic-hansard/commons/1866/may/11/suspension-of-the-bank-charter-act; [A live_verified] src-hansard-hc-1866-07-31-royal-commission https://api.parliament.uk/historic-hansard/commons/1866/jul/31/motion-for-a-royal-commission
+
+[E-W5-125-01] W5 1866 information TA
+Intention and interest disclaimed, nine days before
+HC Deb, 17 July 1866. The power with the closest dynastic connection to Hanover publicly disclaims BOTH INTENTION AND INTEREST, nine days before the position is confirmed the other way. The disclaimer is on the record and so is its date. What follows makes the interval the evidence.
+sources: [A live_verified] src-hansard-hc-1866-07-17-hanover https://api.parliament.uk/historic-hansard/commons/1866/jul/17/hanover-and-prussia-question
+
+[E-W5-126-01] W5 1866 financial TA
+A free city assessed at two and a half million pounds by its occupier
+HC Deb, 26 July 1866. A self-governing city is ASSESSED AT TWO AND A HALF MILLION POUNDS by an occupying power, with the third state it reportedly looked to for protection named in the same debate. Sovereignty ends in a sum. The instrument of extinction is a bill presented to the city by the force holding it.
+sources: [A live_verified] src-hansard-hc-1866-07-26-frankfort https://api.parliament.uk/historic-hansard/commons/1866/jul/26/prussian-requisitions-on-frankfort
+
+[E-W5-127-01] W5 1866 innovation TA
+The Atlantic cable becomes operative, fixed to a date and a physical object
+HC Deb, 27 July 1866. The link becomes operative, fixed to a date, a chamber and a physical object. An 1858 debate records the earlier cable's physical footprint and who bore its nuisance. With the Indian telegraph franchise of 1857, the communications spine of the period is documented as PRIVATE INFRASTRUCTURE CARRYING PUBLIC GUARANTEES.
+sources: [A live_verified] src-hansard-hc-1866-07-27-atlantic-cable https://api.parliament.uk/historic-hansard/commons/1866/jul/27/motion-for-adjournment; [A live_verified] src-hansard-hc-1858-06-08-submarine-telegraph https://api.parliament.uk/historic-hansard/commons/1858/jun/08/question-1; [A live_verified] src-hansard-hc-1857-03-21-telegraph-india https://api.parliament.uk/historic-hansard/commons/1857/mar/21/question-2
+
+[E-W5-128-01] W5 1867 information TA
+Wartime information control, observed from inside the besieged state
+Dispatch of 1867. Information control inside the besieged state, described by an observer who is inside it. The account is first hand and the vantage is unusual. THE LOAN SIDE REMAINS UNSOURCED AND ARCHIVE BOUND. What is documented is the control of information, not the financing of the war around it.
+sources: [A live_verified] src-frus-1867p2-d455-paraguay https://history.state.gov/historicaldocuments/frus1867p2/d455
+
+[E-W5-129-01] W5 1868 sovereign TB
+A foreign power reclassifies which Japanese authority is sovereign, mid-war
+Dispatches of 1868. A foreign power determines WHICH JAPANESE AUTHORITY IT WILL TREAT AS SOVEREIGN, while the internal conflict is still running. Recognition is exercised as a choice between contenders rather than an acknowledgement of an outcome. Fourteen years after Kanagawa, the treaty counterparty is reassigned from outside.
+sources: [B live_verified] src-frus-1868p1-d309-d311-japan https://history.state.gov/historicaldocuments/frus1868p1/d311; [A live_verified] src-us-11-597-kanagawa-1854 https://www.govinfo.gov/link/statute/11/597
 
 [E-W6-001-01] W6 1921 financial TB
 Sheppard-Towner Maternity Act - BIRTH REGISTRATION AS FINANCIAL INSTRUMENT

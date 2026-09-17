@@ -1,0 +1,23 @@
+# NOTE: public/windows and lib/corpus.generated.json are gitignored but MUST be
+# in the build context — they are the derived artifacts the operator generates
+# locally from the audit repo, and the Dockerfile fails without them.
+
+node_modules
+.next
+.git
+.gitignore
+
+# Secrets never enter the image. SESSION_SECRET, ANTHROPIC_API_KEY and the
+# invite list are supplied by the host at runtime.
+.env.local
+.env*.local
+invites.json
+
+# The record store is a mounted volume, not image content. Baking it in would
+# ship one snapshot and then diverge from it silently.
+records
+
+docs
+*.md
+!README.md
+.DS_Store

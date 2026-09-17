@@ -1,0 +1,234 @@
+/* contributions.module.css
+ *
+ * Neutral ramp only. Status is distinguished by border treatment and type
+ * weight rather than by hue, because the fourteen lane colours are SEMANTIC —
+ * they encode the timeline's lanes — and chrome that borrows one steals
+ * meaning from the timeline. --sig is reserved for answer -> evidence pointing.
+ *
+ * That constraint is real and it is why "installed" is a solid left border and
+ * brighter type rather than a green chip.
+ */
+
+.wrap {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 6rem;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--bdr);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: var(--bright);
+}
+
+.sub {
+  margin: 0.35rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--dim);
+}
+
+.back {
+  flex: none;
+  font-size: 0.8125rem;
+  color: var(--dim);
+  text-decoration: none;
+  border-bottom: 1px solid var(--bdr2);
+  padding-bottom: 1px;
+}
+
+.back:hover {
+  color: var(--bright);
+}
+
+.muted {
+  color: var(--dim);
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.error {
+  color: var(--bright);
+  font-size: 0.875rem;
+}
+
+/* --------------------------------------------------- since you were last here */
+
+.changed {
+  margin-bottom: 2.5rem;
+  padding: 1.15rem 1.25rem;
+  background: var(--panel);
+  border: 1px solid var(--bdr2);
+  border-radius: 3px;
+}
+
+.changedTitle {
+  margin: 0 0 0.6rem;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.changedList {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--txt);
+}
+
+.changedList strong {
+  color: var(--bright);
+  font-weight: 500;
+}
+
+/* ------------------------------------------------------------------- the list */
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  padding: 1.25rem 0 1.5rem 1.15rem;
+  border-left: 2px solid var(--bdr);
+  margin-bottom: 0.5rem;
+}
+
+/* Status by border and weight, never by hue. */
+.s_installed {
+  border-left-color: var(--bright);
+}
+.s_declined {
+  border-left-style: dashed;
+  border-left-color: var(--bdr2);
+}
+.s_deferred {
+  border-left-style: dotted;
+  border-left-color: var(--bdr2);
+}
+.s_inreview {
+  border-left-color: var(--dim);
+}
+.s_received {
+  border-left-color: var(--bdr);
+}
+
+.itemHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.status {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bright);
+}
+
+.s_received .status,
+.s_inreview .status {
+  color: var(--dim);
+}
+
+.date {
+  font-size: 0.75rem;
+  color: var(--faintxt);
+}
+
+.question {
+  margin: 0 0 0.4rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--txt);
+}
+
+.means {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--dim);
+}
+
+/* The decline reason is the most useful thing on this page. For a hand-picked
+   group each decline is how the standard gets taught without writing a manual,
+   so it is set as a quotation rather than a footnote. */
+.reason {
+  margin: 0.9rem 0 0;
+  padding: 0.75rem 0.9rem;
+  background: var(--panel2);
+  border-left: 2px solid var(--dim);
+  border-radius: 0 3px 3px 0;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--txt);
+}
+
+.note {
+  margin: 0.6rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--dim);
+}
+
+/* ------------------------------------------------------------ what they brought */
+
+.brought {
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--bdr-faint);
+}
+
+.broughtLabel {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--faintxt);
+}
+
+.broughtUrl {
+  margin: 0.35rem 0 0;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--dim);
+  word-break: break-all;
+}
+
+.passage {
+  margin: 0.5rem 0 0;
+  padding-left: 0.8rem;
+  border-left: 1px solid var(--bdr2);
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--dim);
+}
+
+.bears {
+  margin: 0.7rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--dim);
+}
+
+.code {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--txt);
+}

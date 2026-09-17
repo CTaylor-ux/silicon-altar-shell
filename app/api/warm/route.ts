@@ -20,6 +20,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { CONTRACT } from '@/lib/ask';
+import { personFromHeaders } from '@/lib/identity';
 
 export const runtime = 'nodejs';
 export const maxDuration = 120;
@@ -34,7 +35,21 @@ function corpusText(): string {
   return CORPUS;
 }
 
-export async function POST() {
+export async function POST(req: Request) {
+  /* OPERATOR ONLY. Warming spends money — about $0.08 a touch, or a full
+     ~$1.45 write if the prefix moved — and returns nothing a reader can use.
+     It is an operating cost decision, so it belongs to the person paying. */
+  const person = personFromHeaders(req.headers);
+  if (!person) {
+    return NextResponse.json({ error: 'Not signed in.' }, { status: 401 });
+  }
+  if (person.role !== 'operator') {
+    return NextResponse.json(
+      { error: 'Warming the cache is an operator action.' },
+      { status: 403 }
+    );
+  }
+
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) return NextResponse.json({ error: 'No ANTHROPIC_API_KEY.' }, { status: 503 });
 

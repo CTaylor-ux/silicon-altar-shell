@@ -84,8 +84,13 @@ export default function IntroPage() {
             is in context and every [entry-id] is validated server-side before
             the answer is returned. */}
         <span className="mono">Live retrieval, citations validated</span>
-        {/* FUTURE: member / researcher / author tiers (PRD §4) gate from here. */}
-        <span className="mono">No account required</span>
+        {/* Was "No account required" until 2026-08-11, and the access gate made
+            that false the moment it landed: nobody reaches this page without
+            redeeming a personal invite. Same class of stale reader-facing claim
+            as the "Mockup, retrieval is stubbed" line above, and left unfixed it
+            would have been the first thing an invited researcher read after
+            signing in. */}
+        <span className="mono">Invitation only</span>
       </footer>
     </main>
   );

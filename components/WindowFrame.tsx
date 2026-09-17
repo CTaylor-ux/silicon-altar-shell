@@ -74,6 +74,36 @@ export default function WindowFrame({
     ref.current?.contentWindow?.postMessage({ source: 'sa-shell', ...msg }, '*');
   }, []);
 
+  /** Timers for the re-assert below, cleared on unmount and on re-entry. */
+  const placeTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
+
+  /**
+   * Put the frame at its starting position, and mean it.
+   *
+   * One message is not enough. The strip translates frames in and out, so a
+   * frame can still be zero-width when the first message lands, and the
+   * document's final layout can arrive after that -- at which point the browser
+   * is free to put the scroll somewhere of its own choosing. Measured mid
+   * transition, the frame really does report a width of 0.
+   *
+   * So this asserts the position, then re-asserts twice as layout settles.
+   * Plain timeouts, not requestAnimationFrame: rAF does not fire in this
+   * rendering context, which is recorded in the governance notes and cost
+   * somebody a debugging session already.
+   *
+   * The window is entered at the top, so a re-assert inside half a second can
+   * only ever put the reader back where entering was supposed to leave them.
+   */
+  const placeAtStart = useCallback(() => {
+    const target = initialScroll ?? { x: 0, y: 0 };
+    const send = () => post({ type: 'SA_RESTORE_SCROLL', ...target });
+    placeTimers.current.forEach(clearTimeout);
+    send();
+    placeTimers.current = [setTimeout(send, 150), setTimeout(send, 500)];
+  }, [initialScroll, post]);
+
+  useEffect(() => () => placeTimers.current.forEach(clearTimeout), []);
+
   useEffect(() => {
     function onMessage(ev: MessageEvent) {
       const d = ev.data as (FrameMessage & { source?: string; windowId?: number }) | undefined;
@@ -82,9 +112,21 @@ export default function WindowFrame({
       switch (d.type) {
         case 'SA_READY':
           ready.current = true;
-          if (initialScroll && !restored.current) {
+          if (!restored.current) {
             restored.current = true;
-            post({ type: 'SA_RESTORE_SCROLL', ...initialScroll });
+            /* ALWAYS place the frame explicitly on entry.
+             *
+             * Previously, when there was no saved position, nothing was posted
+             * at all and the document was left wherever the browser happened to
+             * leave it. That is not reliably the top: a freshly parsed iframe
+             * that re-lays-out, or has focus restored into it, can settle
+             * part-way down. The reader then arrives mid-document with the
+             * masthead, the window number and the audit-window explanation all
+             * above them, and nothing on screen saying those exist.
+             *
+             * A saved position still wins when there is one, so this only adds
+             * a defined starting point where there was none. */
+            placeAtStart();
           }
           break;
         case 'SA_SCROLL':
@@ -107,7 +149,36 @@ export default function WindowFrame({
     }
     window.addEventListener('message', onMessage);
     return () => window.removeEventListener('message', onMessage);
-  }, [windowId, initialScroll, onScroll, onNav, onTargetMiss, onGlossary, post]);
+  }, [windowId, initialScroll, onScroll, onNav, onTargetMiss, onGlossary, post, placeAtStart]);
+
+  /* Place the frame when it BECOMES the open window, not only when it loads.
+   *
+   * The SA_READY branch above fires once per mount. But the strip keeps
+   * current +/- 1 mounted, so a neighbour has usually already loaded and fired
+   * SA_READY while the reader was still on the previous window. Stepping into
+   * that neighbour ran no placement at all, and it kept whatever position the
+   * browser had left it in.
+   *
+   * That is exactly why windows 0 and 6 behaved and the middle five did not.
+   * The two ends are each a neighbour on one side only, so they were far more
+   * often freshly mounted at the moment they were opened, and the SA_READY
+   * branch caught them. Windows 1 to 5 are neighbours on both sides and were
+   * nearly always already mounted by the time they were entered.
+   *
+   * Resets when the window stops being current, so every entry starts at the
+   * top. A saved position still wins when one exists. */
+  const wasActive = useRef(false);
+  useEffect(() => {
+    if (!active) {
+      wasActive.current = false;
+      return;
+    }
+    if (wasActive.current) return;
+    wasActive.current = true;
+    // Not yet loaded: SA_READY has not fired, and its branch will do this.
+    if (!ready.current) return;
+    placeAtStart();
+  }, [active, placeAtStart]);
 
   // Legend visibility is a root class inside the frame, so the shell owns the
   // control without injecting one into the generated document. Retried briefly

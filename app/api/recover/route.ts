@@ -20,6 +20,7 @@
 import { NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
 import { appendRecord, measure, readRecords, triage } from '@/lib/record';
+import { personFromHeaders } from '@/lib/identity';
 
 export const runtime = 'nodejs';
 export const maxDuration = 300;
@@ -37,6 +38,18 @@ type Incoming = {
 };
 
 export async function POST(req: Request) {
+  /* Recovery rebuilds records from a browser tab, so it must write them under
+     the person whose tab it is. Without this the whole point of recovery —
+     that a lost record is the only real loss — would be met by writing someone
+     else's question under the operator's name. */
+  const person = personFromHeaders(req.headers);
+  if (!person) {
+    return NextResponse.json(
+      { error: 'Not signed in. Redeem your invite at /enter.' },
+      { status: 401 }
+    );
+  }
+
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) return NextResponse.json({ error: 'No ANTHROPIC_API_KEY.' }, { status: 503 });
 
@@ -52,7 +65,22 @@ export async function POST(req: Request) {
 
   // Don't duplicate what survived. Match on question text — the answers are
   // identical re-runs of the same prompt, so the question is the stable key.
-  const already = new Set(readRecords().map((r) => r.trigger_context.trim()));
+  /* Scoped to this person's own records, for two reasons.
+   *
+   * PRIVACY: unscoped, `alreadyPresent` below reports whether a question text
+   * exists anywhere in the store, across every researcher. Submit a guess, read
+   * the count, and you have an oracle over other people's sessions. Sessions are
+   * their own.
+   *
+   * CORRECTNESS: two researchers legitimately arriving at the same question
+   * should each end up with a record. Deduping across people would silently
+   * drop the second one, and a dropped record is the one failure this route
+   * exists to prevent. */
+  const already = new Set(
+    readRecords()
+      .filter((r) => r.surfaced_by === person.id)
+      .map((r) => r.trigger_context.trim())
+  );
   const todo = incoming.filter((e) => !already.has(e.question.trim()));
 
   const client = new Anthropic({ apiKey: key });
@@ -81,7 +109,7 @@ export async function POST(req: Request) {
     try {
       const rec = appendRecord({
         surface: 'B',
-        surfaced_by: 'operator',
+        surfaced_by: person.id,
         trigger_context: e.question,
         raw_content: e.answer,
         outside: e.outside ?? null,
