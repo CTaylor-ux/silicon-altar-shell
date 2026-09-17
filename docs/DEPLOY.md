@@ -48,6 +48,39 @@ This is a property worth keeping: the deployed corpus is byte-for-byte the corpu
 the operator just ran `verify_regeneration.py` against, not whatever the audit
 repo happened to contain when a build server pulled it.
 
+### 2a. Never build while a server is running. `npm run build` now refuses.
+
+`next dev` and `next build` write the SAME output directory. On 2026-09-17 a build
+run to verify a merge overwrote `.next` under a live dev server and every route
+began returning
+
+```
+Error: Cannot find module './638.js'
+  at .next/server/webpack-runtime.js
+```
+
+Recovery is `rm -rf .next` and restart. The failure is INTERMITTENT, which is why
+it survived this long unnoticed: the same mistake sometimes does nothing at all,
+depending on which chunks the running server still has cached.
+
+```bash
+npm run build          # refuses if anything is listening on 3210
+npm run build:check    # verifies the build into .next-verify, never touches .next
+```
+
+`scripts/guard-dev-port.mjs` CONNECTS to the port rather than binding it. The first
+version bound `127.0.0.1` and passed while a server was live, because `next dev`
+holds the wildcard on IPv6 and an IPv4 loopback bind does not collide with it on
+macOS. A guard that reports clear while the hazard is present is worse than none.
+
+It fails OPEN: any error other than a live connection allows the build. And it does
+NOT run in Docker, because the Dockerfile calls `npx next build` directly, so the
+deploy path is untouched. `SA_ALLOW_BUILD_WITH_DEV=1` overrides.
+
+`distDir` is `process.env.SA_DIST_DIR || '.next'`, so nothing changes unless
+`build:check` sets it. Next rewrites `tsconfig.json` once to register the extra
+types directory; that churn is one-time and stable across both build modes.
+
 ---
 
 ## 3. Secrets
