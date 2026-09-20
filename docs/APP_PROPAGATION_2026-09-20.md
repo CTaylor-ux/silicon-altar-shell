@@ -92,7 +92,11 @@ bare-title assertion in `prepare-corpus.mjs` did not fire.
 
 ## State of the repo when this was written
 
-- Branch `thread33-app-propagation`, one commit, off `main` at `3397632`.
+- Branch `thread33-app-propagation`, **two commits ahead of `main`**, not one. I branched from wherever HEAD was,
+  which was `thread33-a00-record-correction`, so this branch carries that repo's other pending commit (`9028a40`,
+  the correction note appended to `sb-20260804-001`) underneath the propagation commit. That was not a decision, it
+  was where the checkout happened to be. Merging this branch merges both. If they should go separately, rebase this
+  branch onto `main` first.
 - Tracked and changed: `lib/corpus.prompt.txt`, `lib/windows.generated.json`.
 - `public/windows/` and `lib/corpus.generated.json` are **gitignored by design** (`.gitignore:11,12`) and are rebuilt
   by the prepare steps on the host before any container build. They changed on disk and are correct; they are not
@@ -108,6 +112,6 @@ bare-title assertion in `prepare-corpus.mjs` did not fire.
   this thread made the correction the finding asked for. Example: `sb-20260812-002` says E-W4-011-01 misstates the
   direction of the $20 million at Mortefontaine, and the W4 claim check corrected exactly that. **Each needs
   re-reading against the current wording before it is installed or dismissed.** Nothing here should be swept.
-- Branch `thread33-a00-record-correction` (commit `9028a40`, the correction note appended to `sb-20260804-001`) is
-  still unmerged.
+- Branch `thread33-a00-record-correction` (commit `9028a40`) is still unmerged on its own branch, though the same
+  commit is now also carried under this one. See the note above.
 - The 88 first-pass HOLDS rows in the audit corpus are single-checked, not re-verified. Recorded in the audit repo.
