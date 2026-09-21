@@ -10,6 +10,14 @@
 > corrections (commits 4555f65 and 68373db touch no backlog file). That thread left the write-back design to the
 > operator. No status has been set here for that reason. Note also that the two numbering schemes collide:
 > `sb-20260805-001` is a DC Organic Act finding in this repo and an unrelated 1713 Asiento item in the audit backlog.
+>
+> **OUTCOME, later the same day, on the operator's instruction to build the write-back.** `npm run records -- --set`
+> now takes `--repin` and `--backlog SB-ID`; the audit check C14q reads the latest line per finding and reports open and
+> decided separately. The three findings in section A were closed with it: sb-20260812-002 (backlog sb-20260917-064),
+> sb-20260805-037 (backlog sb-20260917-048) and sb-20260921-002 (never routed), each `installed` and re-pinned, and the two
+> backlog items marked installed in the audit repo. Stale open findings: 22 -> 19, and the shell and the audit check now
+> agree. Sections B and C are unchanged and still yours. Six bucket A installs remain unrecorded in the audit backlog
+> (sb-20260917-003, -007, -062, -070, -071, -077), for a separate approval.
 
 2026-09-21. `npm run records -- --stale` lists every saved finding whose target entry's wording has changed since the
 finding was written (its `target_text_hash` no longer matches). On this date there were 22: the 21 reported earlier,
