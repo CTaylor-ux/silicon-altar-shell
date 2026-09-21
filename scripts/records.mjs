@@ -8,11 +8,30 @@
  *   npm run records -- --demand      which entries answers actually lean on
  *   npm run records -- --sources     which sources they lean on, and if opened
  *   npm run records -- --stale       corrections whose target text has moved
- *   npm run records -- --set ID STATUS [reason]
+ *   npm run records -- --set ID STATUS [reason] [--repin] [--backlog SB-ID]
  *
  * STATUS is C2's lifecycle: captured, analyzed, proposed, approved, installed,
  * rejected, deferred. Setting one appends a new line rather than rewriting the
  * old one — the file stays append-only, and the decision history survives.
+ *
+ * The write-back (sb-20260917-081). Findings are routed into the audit repo's
+ * backlog.json and acted on there, and nothing came back: a finding whose
+ * correction was installed kept its old status AND its old text hash, so it
+ * went on looking both open and stale, and the stale count rose exactly as the
+ * loop started working. Two flags close it from this side:
+ *
+ *   --repin           re-pin the finding to its target entry's CURRENT wording
+ *                     (triage.target_text_hash from lib/corpus.generated.json),
+ *                     after reading the finding against that wording. The
+ *                     earlier line keeps the old hash. Run prepare-corpus first
+ *                     so the index reflects the corpus you read.
+ *   --backlog SB-ID   record which audit backlog item this finding became
+ *                     (`backlog_id`). The two repos number independently and the
+ *                     ids collide: sb-20260805-001 is one thing here and another
+ *                     there, so the link has to be stated, never inferred.
+ *
+ * The audit side of the same decision (the backlog item's own status) is set in
+ * the audit repo; this script never writes there.
  *
  * This reads and writes records/queries.jsonl only. It never touches the audit
  * repo. Acting on a record still means making the change there by hand, the
@@ -104,9 +123,19 @@ if (recs.length === 0) {
 /* ------------------------------------------------------------------ --set */
 if (has('--set')) {
   const i = args.indexOf('--set');
-  const [id, status, ...reason] = args.slice(i + 1);
+  const [id, status, ...rest] = args.slice(i + 1);
+  // --repin and --backlog may appear anywhere after the status; everything else
+  // is the reason. The backlog id is consumed with its flag.
+  const repin = rest.includes('--repin');
+  const bi = rest.indexOf('--backlog');
+  const backlogId = bi >= 0 ? rest[bi + 1] : undefined;
+  const reason = rest.filter((w, k) => w !== '--repin' && (bi < 0 || (k !== bi && k !== bi + 1)));
   if (!id || !STATUSES.includes(status)) {
-    console.error(`\n  usage: --set <id> <${STATUSES.join('|')}> [reason]\n`);
+    console.error(`\n  usage: --set <id> <${STATUSES.join('|')}> [reason] [--repin] [--backlog SB-ID]\n`);
+    process.exit(1);
+  }
+  if (bi >= 0 && !/^sb-\d{8}-\d{3}$/.test(backlogId ?? '')) {
+    console.error(`\n  --backlog needs an audit backlog id like sb-20260917-048, got ${backlogId ?? 'nothing'}\n`);
     process.exit(1);
   }
   const rec = recs.find((r) => r.id === id);
@@ -126,8 +155,23 @@ if (has('--set')) {
     operator_decision: reason.join(' ') || null,
     operator_decision_at: new Date().toISOString(),
   };
+  if (backlogId) next.backlog_id = backlogId;
+  let repinNote = '';
+  if (repin) {
+    const target = rec.triage?.target_entry;
+    const now = target ? entryIndex().get(target)?.contentHash : undefined;
+    if (!target || !now) {
+      console.error(`\n  --repin: ${id} has no target entry, or ${target ?? '(none)'} is not in lib/corpus.generated.json. Nothing written.\n`);
+      process.exit(1);
+    }
+    const was = rec.triage.target_text_hash ?? '(unpinned)';
+    next.triage = { ...rec.triage, target_text_hash: now };
+    repinNote = was === now ? `  already pinned to ${now}` : `  re-pinned ${was} -> ${now}`;
+  }
   fs.appendFileSync(FILE, JSON.stringify(next) + '\n', 'utf8');
-  console.log(`\n  ${id} -> ${status}${reason.length ? `  (${reason.join(' ')})` : ''}\n`);
+  console.log(`\n  ${id} -> ${status}${backlogId ? `  [backlog ${backlogId}]` : ''}${reason.length ? `  (${reason.join(' ')})` : ''}`);
+  if (repinNote) console.log(repinNote);
+  console.log('');
   process.exit(0);
 }
 
@@ -304,12 +348,26 @@ if (has('--stale')) {
   const idx = entryIndex();
   const pinned = recs.filter((r) => r.triage?.target_text_hash);
   const stale = pinned.filter((r) => idx.get(r.triage.target_entry)?.contentHash !== r.triage.target_text_hash);
-  console.log(`\n  ${bold('Corrections whose target has changed')}   ${stale.length} of ${pinned.length} pinned\n`);
+  /* Two numbers, not one (sb-20260917-081). A finding the operator has decided
+   * but not re-pinned is not the same as one nobody has read. The corpus check
+   * C14q splits them the same way. */
+  const DECIDED = new Set(['installed', 'rejected', 'deferred']);
+  const staleOpen = stale.filter((r) => !DECIDED.has(r.status));
+  const staleDecided = stale.filter((r) => DECIDED.has(r.status));
+  console.log(
+    `\n  ${bold('Corrections whose target has changed')}   ${staleOpen.length} open` +
+      `${staleDecided.length ? `, ${staleDecided.length} decided but not re-pinned` : ''}   (of ${pinned.length} pinned)\n`
+  );
   if (!stale.length) console.log(dim('  None. Every pinned target still reads as it did when the record was written.\n'));
-  for (const r of stale) {
-    console.log(warn(`  ${r.id}  ${r.triage.target_entry}`));
+  for (const r of staleOpen) {
+    console.log(warn(`  ${r.id}  ${r.triage.target_entry}${r.backlog_id ? `  [backlog ${r.backlog_id}]` : ''}`));
     console.log(`    written against ${r.triage.target_text_hash}, now ${idx.get(r.triage.target_entry)?.contentHash ?? '(entry gone)'}`);
     console.log(dim(`    ${r.triage.summary}\n`));
+  }
+  if (staleDecided.length) {
+    console.log(bold('  Decided, not re-pinned') + dim('   read against the current wording, then --set ID STATUS --repin'));
+    for (const r of staleDecided) console.log(dim(`    ${r.id}  ${r.triage.target_entry}  ${r.status}`));
+    console.log('');
   }
   process.exit(0);
 }

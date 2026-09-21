@@ -4708,7 +4708,7 @@ links: transportation-act-1717-royal-assent, forward-contract-1718, eagle-galley
 threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
 
 [w3-1718-sovereign] W3 March 1718 sovereign TA MILESTONE
-Coweta Resolution: Emperor Brim locks Britain, France, and Spain into 45-year Creek neutrality
+Coweta Resolution: Emperor Brim and the Creek leaders adopt neutrality among Britain, France, and Spain
 Emperor Brim of the Coweta town of the Muskogee Creek Confederacy with representatives of Britain, France, and Spain present at Coweta, joins other Creek leaders in crafting the Coweta Resolution, a Creek policy of neutrality among the three powers. The doctrine holds for 45 years until the 1763 Treaty of Paris redraws imperial claims. This is the largest single sovereign counter-move documented in W3: the Muskogee Confederacy uses tri-imperial rivalry to preserve autochthonous jurisdiction against all three colonial systems at once.
 sources: [A live_verified] src-encyc-alabama-brim https://encyclopediaofalabama.org/article/emperor-brim/; [B live_verified] src-w3cc-new-georgia-encyclopedia-brims-d-1733-68bd https://www.georgiaencyclopedia.org/articles/history-archaeology/brims-d-1733/
 links: yamasee-war-1715, fort-king-george-1721, bladen-report-1721, georgia-charter-1732, treaty-of-paris-1763
@@ -4729,7 +4729,7 @@ links: transportation-act-1717-royal-assent, bubble-act-1720
 threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1720-corporate] W3 June 1720 corporate TA
-Bubble Act cements SSC as sole joint-stock franchise for Track A, foreclosing competitor Track A operators
+Bubble Act bars new unchartered joint-stock companies; the SSC's charter and Asiento stand
 Same event as w3-1720-financial. Corporate-lane consequence: the Bubble Act bars new unchartered joint-stock companies, leaving existing chartered companies and trade in partnership untouched. The SSC holds the Asiento, the monopoly on supplying slaves to Spanish America; the British colonies' own slave trade has been open since 1698 to the Royal African Company and separate traders. This is direct parallel to Jonathan Forward's monopoly contract for Track C (1718). Both tracks are now controlled by single Tier 5 operators with statutory-guaranteed monopoly access to state-guaranteed revenue streams.
 sources: [A live_verified] src-bubble-act-1720 https://en.wikipedia.org/wiki/Bubble_Act; [A live_verified] src-w3cc-statutes-at-large-vol-xiv-6-geo-i-c-18-and-c-23-6ce5 https://archive.org/download/statutesatlarge39britgoog/statutesatlarge39britgoog_djvu.txt; [B live_verified] src-w3cc-south-sea-company-wikipedia-5cc4 https://en.wikipedia.org/wiki/South_Sea_Company; [A live_verified] src-w3cc-helen-julia-paul-the-south-sea-company-s-slaving-8735 https://www.southampton.ac.uk/assets/imported/transforms/content-block/UsefulDownloads_Download/326F907A8F434B05B2199578407AA4B6/0924.pdf; [B live_verified] src-w3cc-royal-african-company-f10a https://en.wikipedia.org/wiki/Royal_African_Company; [B live_verified] src-ri-records-bartlett-v4 https://archive.org/details/recordsofcolonyo04rhod; [B live_verified] src-w3cc-encyclopedia-virginia-virginia-humanities-convic-2bcf https://encyclopediavirginia.org/entries/convict-labor-during-the-colonial-period/
 links: asiento-1713, forward-contract-1718
