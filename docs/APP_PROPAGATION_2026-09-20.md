@@ -1,6 +1,9 @@
 # Propagating the Thread 33 claim-check corrections into the app
 
-2026-09-20. Branch `thread33-app-propagation`. **Nothing merged, nothing pushed, nothing deployed.**
+2026-09-20. Branch `thread33-app-propagation`, **merged to `main` and pushed on 2026-09-20 at `f45e37a`**, on the
+author's instruction. Not deployed: there is no Fly deployment (`silicon-altar.fly.dev` does not resolve) and
+neither `flyctl` nor `docker` is installed on this machine. The local dev server serves it. The "State of the repo"
+section below describes the branch as it stood before the merge.
 
 ## Why this was needed
 

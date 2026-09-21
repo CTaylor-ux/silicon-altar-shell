@@ -170,9 +170,14 @@ const dossierByEventId = new Map(
 
 /* sources.json has never reached anything the app runs. It carries the one field
  * that records whether a claim's evidence has actually been opened: `link_status`,
- * hand-maintained, 443 live_verified against 138 citation_only (identified, text
- * not read). So the corpus knows things nothing downstream can see, among them
- * that 60 tier A entries rest entirely on sources nobody has opened.
+ * hand-maintained, live_verified against citation_only (identified, text not
+ * read). So the corpus knows things nothing downstream can see, among them that
+ * some tier A entries rest entirely on sources nobody has opened.
+ *
+ * The two counts are computed below, not written here. They were hardcoded as
+ * 443 and 138 and the prompt kept telling the model so after the Thread 33 claim
+ * checks had taken the real figures to 851 and 139: half the verified evidence
+ * the corpus holds, understated to the one reader that answers from it.
  *
  * Two consumers, deliberately kept apart:
  *   - the answering prompt gets a compact `sources:` line (see serializeEntry)
@@ -187,6 +192,8 @@ const dossierByEventId = new Map(
 const sourcesRaw = JSON.parse(fs.readFileSync(path.join(REPO, 'sources.json'), 'utf8'));
 const sourceList = Array.isArray(sourcesRaw) ? sourcesRaw : sourcesRaw.sources;
 const sourceById = new Map(sourceList.map((s) => [s.id, s]));
+const sourcesOpened = sourceList.filter((s) => s.link_status === 'live_verified').length;
+const sourcesUnopened = sourceList.filter((s) => s.link_status === 'citation_only').length;
 const SIDECAR = path.join(process.cwd(), 'lib', 'sources.generated.json');
 
 /* A short hash of the exact text a claim was made against.
@@ -362,8 +369,7 @@ function serializeEntry(e) {
    * `live_verified` means someone doing the audit work read that source and
    * recorded what it says. `citation_only` means it was identified and never
    * opened: the entry's tier reflects the author's judgement of the source, not
-   * a reading of it. 443 against 138 corpus-wide, and 60 tier A entries rest
-   * entirely on the second kind.
+   * a reading of it. Counted at build time (sourcesOpened, sourcesUnopened).
    *
    * Without this line an answer can only see the entry's tier, so "how well
    * evidenced is this?" gets answered from a letter. The url is included so an
@@ -379,6 +385,30 @@ function serializeEntry(e) {
     })
     .filter(Boolean);
   if (srcs.length) lines.push(`sources: ${srcs.join('; ')}`);
+
+  /* An entry with no source at all has exactly one evidence trail: the audit's
+   * own record of trying to source it.
+   *
+   * Without this line the model saw such an entry as unsourced and nothing more,
+   * and could not tell "nobody has looked" from "somebody looked and it is not
+   * where the entry says". E-W6-016-01 is the case that exposed it: the entry
+   * says a 1967 Utah legislative memorial sits in the Congressional Record, and
+   * its gap note records that the whole 1967 Record index was read and it is not
+   * there. Four recorded answers repeated the claim without the search.
+   *
+   * Gated on the STRUCTURE (no source_ids), never on the note's wording. On
+   * entries that do carry sources a gap note is often the record of an earlier
+   * batch that failed before a later one succeeded, so it can contradict the
+   * entry's current state; and a wording match over those notes flags tier A
+   * entries whose note merely mentions a different entry. With no source there is
+   * no later success for the note to be stale against. */
+  if (!(e.source_ids ?? []).length) {
+    const trail = String(e.source_gap_note ?? '')
+      .replace(/\s+/g, ' ')
+      .replace(/^\s*\|\s*/, '')
+      .trim();
+    if (trail) lines.push(`audit trail: ${trail}`);
+  }
 
   if (e.thread_links?.length) lines.push(`links: ${e.thread_links.join(', ')}`);
   if (e.thread_memberships?.length) lines.push(`threads: ${e.thread_memberships.join(', ')}`);
@@ -449,8 +479,17 @@ const promptText = [
   'These are not the same evidential situation and should not be described as',
   'though they were. An entry at tier A whose sources are all citation_only is',
   'a confident claim resting on unread evidence, and when asked how well',
-  'something is evidenced, say so. 443 sources are opened and 138 are not.',
+  `something is evidenced, say so. ${sourcesOpened} sources are opened and ${sourcesUnopened} are not.`,
   'Absence of a sources line means the entry carries no source at all.',
+  '',
+  'A few entries with no source carry an audit trail line instead. It is the',
+  "audit's own record of trying to source the entry: where it looked, what it",
+  'found there, and what would settle the question. It can record that the',
+  'document the entry describes was searched for and NOT FOUND where the entry',
+  'places it. That is a finding about the claim, not a gap in the record. When',
+  'an entry carries an audit trail, say what the trail found before repeating',
+  "the entry's claim, and do not present the claim more confidently than the",
+  'trail allows.',
   '',
   '---',
   '',
@@ -468,6 +507,10 @@ const ranges = rows.filter((r) => r.year.end !== null).length;
 
 console.log(`  ${rows.length}/${rows.length} entries normalized  (${ce} CE, ${deep} deep time)`);
 console.log(`  ${approx} approximate, ${ranges} ranges, 0 W0/W1 ordinal collisions`);
+const trails = entries.filter(
+  (e) => !(e.source_ids ?? []).length && String(e.source_gap_note ?? '').trim()
+);
+console.log(`  ${sourcesOpened} sources opened, ${sourcesUnopened} citation_only; ${trails.length} unsourced entries carry an audit trail`);
 console.log(`  ${(fs.statSync(OUT).size / 1024).toFixed(0)} KB -> lib/corpus.generated.json`);
 
 const promptKb = fs.statSync(PROMPT_OUT).size / 1024;
