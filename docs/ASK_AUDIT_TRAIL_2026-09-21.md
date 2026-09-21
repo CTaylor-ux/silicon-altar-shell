@@ -1,6 +1,7 @@
 # The Ask layer now sees the audit's failed searches
 
-2026-09-21. Branch `thread33-ask-audit-flags`. Not merged, not pushed.
+2026-09-21. Branch `thread33-ask-audit-flags`, merged to `main` and pushed on the author's instruction after they
+reviewed how it works. Not deployed (there is no public deployment); the local dev server serves it.
 
 ## The problem, in one case
 
