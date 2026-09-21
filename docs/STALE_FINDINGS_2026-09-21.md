@@ -1,5 +1,16 @@
 # The 22 stale saved findings, read and sorted
 
+> **CORRECTION, added the same day, before any status was set.** This reading was done without knowing that 21 of these
+> 22 findings had already been imported into the audit repo's `backlog.json` (as `sb-20260917-014` to `-064`) and sorted
+> on 2026-09-17 in `docket/backlog_triage_thread33/BACKLOG_TRIAGE.md` (buckets A to E). This document therefore
+> duplicates that triage rather than being the first sort, and its statement below that sorting is not built in was
+> wrong: it is built, on the audit side. Mapping to the 17 September buckets: A = 014, 017, 048, 062, 064; B = 025, 058,
+> 060; C = the rest. The gap that makes these findings look open is also already recorded, at `sb-20260917-081`: nothing
+> writes a decision back to this repo's records, and even the audit backlog was not updated when bucket A installed its
+> corrections (commits 4555f65 and 68373db touch no backlog file). That thread left the write-back design to the
+> operator. No status has been set here for that reason. Note also that the two numbering schemes collide:
+> `sb-20260805-001` is a DC Organic Act finding in this repo and an unrelated 1713 Asiento item in the audit backlog.
+
 2026-09-21. `npm run records -- --stale` lists every saved finding whose target entry's wording has changed since the
 finding was written (its `target_text_hash` no longer matches). On this date there were 22: the 21 reported earlier,
 plus `sb-20260921-002`, the operator's own follow-up on the Utah entry, which went stale the same day it was corrected.
