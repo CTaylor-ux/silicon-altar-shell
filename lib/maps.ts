@@ -143,22 +143,26 @@ export function closestPeriodMaps(year: number, windowId: number | null, placeId
     .map((x) => x.m);
 }
 
-/** How the place was drawn over time, oldest first: regional maps of it (not city
- *  plans of somewhere else, not the whole basin unless nothing regional exists).
- *  With a year, a short series around it: the earliest, the last before, the first
- *  after and the latest, leaving out maps already shown as closest. Without a year
- *  (the place page), the whole series. */
+/** How the place was drawn over time, oldest first. The long view uses regional
+ *  maps of the place (not city plans of somewhere else, not the whole basin unless
+ *  nothing regional exists). With a year (the row page), a short series around it:
+ *  the earliest and latest regional maps, and the nearest maps before and after the
+ *  year of any scope, so a basin-wide map a decade off is not dropped for one a
+ *  century off. Maps already shown as closest are left out. Without a year (the
+ *  place page), the whole regional series. */
 export function periodMapSeries(placeIds: string[], operator = false, around?: { year: number; exclude: string[] }): PeriodMap[] {
+  const byDate = (a: PeriodMap, b: PeriodMap) => a.date - b.date || a.id.localeCompare(b.id);
   const all = mapsFor(placeIds, operator).filter((x) => !x.local);
   const regional = all.filter((x) => x.regional);
-  const pool = (regional.length ? regional : all).map((x) => x.m).sort((a, b) => a.date - b.date || a.id.localeCompare(b.id));
+  const pool = (regional.length ? regional : all).map((x) => x.m).sort(byDate);
   if (!around) return pool;
-  const rest = pool.filter((m) => !around.exclude.includes(m.id));
-  if (!rest.length) return [];
-  const before = rest.filter((m) => m.date < around.year);
-  const after = rest.filter((m) => m.date >= around.year);
-  const pick = [before[0], before[before.length - 1], after[0], after[after.length - 1]].filter(Boolean) as PeriodMap[];
-  return [...new Map(pick.map((m) => [m.id, m])).values()].sort((a, b) => a.date - b.date);
+  const keep = (m: PeriodMap) => !around.exclude.includes(m.id);
+  const longView = pool.filter(keep);
+  const anyScope = all.map((x) => x.m).filter(keep).sort(byDate);
+  const before = anyScope.filter((m) => m.date < around.year);
+  const after = anyScope.filter((m) => m.date >= around.year);
+  const pick = [longView[0], before[before.length - 1], after[0], longView[longView.length - 1]].filter(Boolean) as PeriodMap[];
+  return [...new Map(pick.map((m) => [m.id, m])).values()].sort(byDate);
 }
 
 // ---------------------------------------------------------------------------
