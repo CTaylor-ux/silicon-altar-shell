@@ -171,6 +171,7 @@
   color: var(--bright); vertical-align: 1px;
 }
 .stopOff { opacity: 0.62; }
+.stopOff.stopCur { opacity: 1; } /* a current stop is full strength even with no map */
 .stopYr { font: 600 11px var(--font-mono); color: var(--dim); }
 .stopW { font: 500 9.5px var(--font-mono); color: var(--faintxt); padding-top: 1px; }
 .why { color: var(--dim); font-style: normal; font-size: 11px; }
