@@ -7,6 +7,8 @@
  * reads the flags, gaps and candidates. Helpers here only select and order.
  */
 import raw from './maps.generated.json';
+import corpus from './corpus.generated.json';
+import type { Target } from './retrieval';
 
 export type Region =
   | 'atlantic' | 'iberia-islands' | 'west-africa' | 'caribbean' | 'gulf-newspain'
@@ -110,3 +112,73 @@ export function nearestPeriodMaps(year: number, placeIds: string[], operator = f
     .slice(0, limit)
     .map((x) => x.m);
 }
+
+// ---------------------------------------------------------------------------
+// Connecting the map layer to the app's rows (Thread 35)
+// ---------------------------------------------------------------------------
+
+type CorpusRow = {
+  id: string; eventId: string | null; window: number; lane: string; tier: string; title: string;
+  year: { start: number | null; display: string };
+};
+const rows = (corpus as unknown as { entries: CorpusRow[] }).entries;
+const rowById = new Map(rows.map((r) => [r.id, r]));
+const firstRowOfEvent = new Map<string, CorpusRow>();
+for (const r of rows) if (r.eventId && !firstRowOfEvent.has(r.eventId)) firstRowOfEvent.set(r.eventId, r);
+
+export function eventOfEntry(entryId: string): string | null {
+  return rowById.get(entryId)?.eventId ?? null;
+}
+
+/** One entry id per row that has map data a viewer may see, for the MAP marks. */
+export function mapEntryIdsForWindow(windowId: number, operator = false): string[] {
+  const out: string[] = [];
+  for (const [ev, idx] of Object.entries(data.byEvent ?? {})) {
+    if (idx.window !== windowId) continue;
+    const layer = eventLayer(ev, operator);
+    if (!layer || (!layer.links.length && !layer.flows.length)) continue;
+    const r = firstRowOfEvent.get(ev);
+    if (r) out.push(r.id);
+  }
+  return out;
+}
+
+/** A jump target for any row, in the shape Locate and Ask already use. */
+export function targetForEntry(entryId: string): Target | null {
+  const r = rowById.get(entryId);
+  if (!r) return null;
+  return { entryId: r.id, windowId: r.window, year: r.year.display, lane: r.lane,
+           tier: r.tier as Target['tier'], title: r.title };
+}
+export function targetForEvent(eventId: string): Target | null {
+  const r = firstRowOfEvent.get(eventId);
+  return r ? targetForEntry(r.id) : null;
+}
+export function eventTitle(eventId: string): string {
+  return firstRowOfEvent.get(eventId)?.title ?? eventId;
+}
+export function eventYear(eventId: string): { start: number | null; display: string } {
+  return firstRowOfEvent.get(eventId)?.year ?? { start: null, display: '' };
+}
+export function entryRow(entryId: string) {
+  return rowById.get(entryId) ?? null;
+}
+
+/** Threads this event belongs to, with its position in each. */
+export function threadsForEvent(eventId: string): { token: string; index: number; total: number }[] {
+  return Object.entries(data.threads ?? {})
+    .map(([token, stops]) => ({ token, index: stops.findIndex((s) => s.event_id === eventId), total: stops.length }))
+    .filter((t) => t.index >= 0);
+}
+
+/** A place has a record worth opening when more than one row names it or its parts. */
+export function placeHasRecord(placeId: string): boolean {
+  const rec = placeRecord(placeId, true);
+  return !!rec && rec.at.length + rec.mentions.length > 1;
+}
+export function topLevelPlace(placeId: string): string {
+  let p = placeById.get(placeId);
+  while (p?.within && placeById.get(p.within)) p = placeById.get(p.within);
+  return p?.id ?? placeId;
+}
+export const allMaps = (): PeriodMap[] => data.maps ?? [];

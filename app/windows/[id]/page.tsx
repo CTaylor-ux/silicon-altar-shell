@@ -19,6 +19,8 @@ import CompanionGuide from '@/components/CompanionGuide/CompanionGuide';
 import AudioCue from '@/components/AudioCue/AudioCue';
 import GlossaryPopover, { type Anchor } from '@/components/GlossaryPopover/GlossaryPopover';
 import LocatePanel from '@/components/LocatePanel/LocatePanel';
+import MapPanel, { type MapView } from '@/components/MapPanel/MapPanel';
+import { eventOfEntry, mapEntryIdsForWindow, mapLayerAvailable, targetForEvent } from '@/lib/maps';
 import type { LocateHit } from '@/lib/locate';
 import { useSession } from '@/lib/session';
 import { query, RetrievalError, type Target } from '@/lib/retrieval';
@@ -52,6 +54,20 @@ export default function WindowViewPage() {
   const [gloss, setGloss] = useState<{ token: string; anchor: Anchor } | null>(null);
 
   const [locateOpen, setLocateOpen] = useState(false);
+
+  /* Map layer (Thread 35). The trail of views the map panel has shown; empty
+   * when closed. The panel is reached from a row's MAP mark and stays open
+   * while a thread or place moves the reader between windows. */
+  const [mapTrail, setMapTrail] = useState<MapView[]>([]);
+  const mapOpen = mapTrail.length > 0;
+  const [panelWidth, setPanelWidth] = useState(0);
+  useEffect(() => {
+    const measure = () =>
+      setPanelWidth(mapOpen && window.innerWidth > 720 ? Math.min(560, window.innerWidth * 0.46) : 0);
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, [mapOpen]);
 
   /** Operator view (?operator=1) reveals build-provenance chrome inside the
    *  window that members must never see. Read from location rather than
@@ -203,6 +219,20 @@ export default function WindowViewPage() {
     [dispatch]
   );
 
+  const onMap = useCallback((entryId: string) => {
+    const eventId = eventOfEntry(entryId);
+    if (!eventId) return;
+    setMapTrail([{ kind: 'row', eventId, entryId }]);
+  }, []);
+  const mapEntryIds = useCallback(
+    (windowId: number) => (mapLayerAvailable ? mapEntryIdsForWindow(windowId, operator) : []),
+    [operator]
+  );
+  const mapActiveEntryId = (() => {
+    const v = mapTrail[mapTrail.length - 1];
+    return v && v.kind === 'row' ? v.entryId : null;
+  })();
+
   const onNav = useCallback(
     (key: 'ArrowLeft' | 'ArrowRight') => go(current + (key === 'ArrowRight' ? 1 : -1)),
     [go, current]
@@ -217,6 +247,12 @@ export default function WindowViewPage() {
       // refactor cannot accidentally let Esc skip past it to the selector.
       if (guideOpen || locateOpen) return;
       const el = e.target as HTMLElement | null;
+      // The map panel owns Escape while open, and keys pressed inside it stay there.
+      if (mapOpen && e.key === 'Escape') {
+        setMapTrail([]);
+        return;
+      }
+      if (el && el.closest && el.closest('[data-map-panel]')) return;
       if (el && /^(INPUT|TEXTAREA)$/.test(el.tagName)) {
         if (e.key === 'Escape') (el as HTMLInputElement).blur();
         return;
@@ -227,7 +263,7 @@ export default function WindowViewPage() {
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [go, current, backToSelector, guideOpen, locateOpen]);
+  }, [go, current, backToSelector, guideOpen, locateOpen, mapOpen]);
 
   if (!state.hydrated) return <div className={styles.boot} />;
 
@@ -261,6 +297,10 @@ export default function WindowViewPage() {
         operator={operator}
         legendOpen={legendOpen}
         onGlossary={onGlossary}
+        mapEntryIds={mapEntryIds}
+        mapActiveEntryId={mapActiveEntryId}
+        panelWidth={panelWidth}
+        onMap={onMap}
       />
 
       {/* Frame's top edge = position rail + audio strip. The frame reports
@@ -271,6 +311,20 @@ export default function WindowViewPage() {
         frameOffsetTop={TOPBAR_H + AUDIOBAR_H}
         onClose={() => setGloss(null)}
       />
+
+      {mapOpen && (
+        <MapPanel
+          trail={mapTrail}
+          operator={operator}
+          onPush={(v) => setMapTrail((t) => [...t, v])}
+          onReplace={(v) => setMapTrail((t) => [...t.slice(0, -1), v])}
+          onTrailTo={(i) => setMapTrail((t) => t.slice(0, i + 1))}
+          onBack={() => setMapTrail((t) => (t.length > 1 ? t.slice(0, -1) : t))}
+          onClose={() => setMapTrail([])}
+          onJump={goToTarget}
+          targetForEvent={targetForEvent}
+        />
+      )}
 
       <QueryBar
         history={state.history}

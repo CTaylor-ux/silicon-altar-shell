@@ -24,7 +24,8 @@ export type FrameMessage =
   | { type: 'SA_TARGET_HIT'; entryId: string }
   | { type: 'SA_TARGET_MISS'; entryId: string }
   | { type: 'SA_NAV'; key: 'ArrowLeft' | 'ArrowRight' }
-  | { type: 'SA_GLOSSARY'; token: string; rect: FrameRect };
+  | { type: 'SA_GLOSSARY'; token: string; rect: FrameRect }
+  | { type: 'SA_MAP'; entryId: string };
 
 export type FrameRect = { top: number; left: number; width: number; height: number };
 
@@ -46,6 +47,14 @@ type Props = {
   legendOpen?: boolean;
   /** A definitional token was activated inside the frame. */
   onGlossary?: (token: string, rect: FrameRect) => void;
+  /** Rows with map data: one representative entry id per row (Thread 35). */
+  mapEntryIds?: string[];
+  /** The row whose map is open, so its MAP mark reads as pressed. */
+  mapActiveEntryId?: string | null;
+  /** Width of the map panel over this frame, so targets centre in the visible part. */
+  panelWidth?: number;
+  /** A row's MAP mark was pressed inside the frame. */
+  onMap?: (entryId: string) => void;
 };
 
 export default function WindowFrame({
@@ -61,6 +70,10 @@ export default function WindowFrame({
   operator = false,
   legendOpen = false,
   onGlossary,
+  mapEntryIds,
+  mapActiveEntryId = null,
+  panelWidth = 0,
+  onMap,
 }: Props) {
   const ref = useRef<HTMLIFrameElement>(null);
   const ready = useRef(false);
@@ -145,11 +158,14 @@ export default function WindowFrame({
         case 'SA_GLOSSARY':
           onGlossary?.(d.token, d.rect);
           break;
+        case 'SA_MAP':
+          onMap?.(d.entryId);
+          break;
       }
     }
     window.addEventListener('message', onMessage);
     return () => window.removeEventListener('message', onMessage);
-  }, [windowId, initialScroll, onScroll, onNav, onTargetMiss, onGlossary, post, placeAtStart]);
+  }, [windowId, initialScroll, onScroll, onNav, onTargetMiss, onGlossary, onMap, post, placeAtStart]);
 
   /* Place the frame when it BECOMES the open window, not only when it loads.
    *
@@ -193,6 +209,25 @@ export default function WindowFrame({
     send();
     return () => clearTimeout(timer);
   }, [legendOpen, post]);
+
+  // Map layer (Thread 35): which rows carry a MAP mark, which one is open, and
+  // how wide the panel is. Retried like the legend, because the frame may still
+  // be parsing when the list first arrives; re-sent whenever it changes.
+  const mapKey = (mapEntryIds ?? []).join('|');
+  useEffect(() => {
+    let tries = 0;
+    let timer: ReturnType<typeof setTimeout>;
+    const send = () => {
+      post({ type: 'SA_MAP_ROWS', entryIds: mapEntryIds ?? [] });
+      post({ type: 'SA_MAP_ACTIVE', entryId: mapActiveEntryId });
+      post({ type: 'SA_PANEL', width: panelWidth });
+      if (tries++ < 25 && !ready.current) timer = setTimeout(send, 120);
+    };
+    send();
+    return () => clearTimeout(timer);
+    // mapKey stands in for the array's contents.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mapKey, mapActiveEntryId, panelWidth, post]);
 
   // Fire the target, retrying until the frame acknowledges it. Gating on a
   // SA_READY flag alone is racy: a neighbour frame that finished parsing before

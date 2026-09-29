@@ -27,6 +27,11 @@ type Props = {
   operator?: boolean;
   legendOpen?: boolean;
   onGlossary?: (token: string, rect: { top: number; left: number; width: number; height: number }) => void;
+  /** Map layer (Thread 35): rows with map data, per window. */
+  mapEntryIds?: (windowId: number) => string[];
+  mapActiveEntryId?: string | null;
+  panelWidth?: number;
+  onMap?: (entryId: string) => void;
 };
 
 export default function WindowStrip({
@@ -40,6 +45,10 @@ export default function WindowStrip({
   operator,
   legendOpen,
   onGlossary,
+  mapEntryIds,
+  mapActiveEntryId,
+  panelWidth,
+  onMap,
 }: Props) {
   const mounted = [current - 1, current, current + 1].filter(
     (i) => i >= 0 && i < WINDOW_COUNT
@@ -62,6 +71,10 @@ export default function WindowStrip({
           operator={operator}
           legendOpen={legendOpen}
           onGlossary={id === current ? onGlossary : undefined}
+          mapEntryIds={mapEntryIds?.(id)}
+          mapActiveEntryId={id === current ? mapActiveEntryId : null}
+          panelWidth={id === current ? panelWidth : 0}
+          onMap={id === current ? onMap : undefined}
         />
       ))}
     </div>

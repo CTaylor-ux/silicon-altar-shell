@@ -161,9 +161,19 @@ const out = {
 };
 fs.writeFileSync(OUT, JSON.stringify(out, null, 0) + '\n');
 
+/* Coastlines for the panel: Natural Earth 1:50m land (public domain), from the
+ * world-atlas package pinned in package.json. Copied into public/maps/, which is
+ * gitignored like public/windows/ and served behind the same invite gate. */
+const LAND_SRC = path.join(process.cwd(), 'node_modules', 'world-atlas', 'land-50m.json');
+const LAND_DIR = path.join(process.cwd(), 'public', 'maps');
+if (!fs.existsSync(LAND_SRC)) die(`Coastline data missing at ${LAND_SRC}. Run npm install.`);
+fs.mkdirSync(LAND_DIR, { recursive: true });
+fs.copyFileSync(LAND_SRC, path.join(LAND_DIR, 'land-50m.json'));
+
 const shown = maps.filter((m) => m.memberVisible).length;
 console.log(`  ${maps.length} period maps (${shown} member-visible, commercial=${commercial})`);
 console.log(`  ${P.places.length} places, ${links.length} links, ${flows.length} flows, ${Object.keys(byEvent).length} events with map data`);
 console.log(`  ${Object.keys(threads).length} threads indexed`);
 console.log(`  ${(fs.statSync(OUT).size / 1024).toFixed(0)} KB -> lib/maps.generated.json`);
+console.log(`  ${(fs.statSync(path.join(LAND_DIR, 'land-50m.json')).size / 1024).toFixed(0)} KB -> public/maps/land-50m.json (Natural Earth, public domain)`);
 console.log('  Audit repo untouched (read-only).\n');

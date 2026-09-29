@@ -168,6 +168,22 @@ html:not(.sa-legend-open) .legend,
 html:not(.sa-legend-open) .note,
 html:not(.sa-legend-open) .tlegend { display: none; }
 
+/* MAP LAYER (Thread 35). A small mark in the year cell of rows that have map
+   data. The shell sends the list (SA_MAP_ROWS) from lib/maps.generated.json, so
+   the generated document is untouched and the list lives in one place. */
+.sa-map-mark {
+  display: flex; align-items: center; gap: 4px; width: max-content;
+  margin-top: 7px; padding: 1px 6px;
+  border: 1px solid var(--bdr2); border-radius: 2px; background: transparent;
+  color: var(--txt); font: 500 8.5px 'IBM Plex Mono', monospace; letter-spacing: 1.2px;
+  cursor: pointer;
+}
+.sa-map-mark:hover, .sa-map-mark[aria-pressed="true"] {
+  color: var(--bright); border-color: var(--dim); background: var(--panel2);
+}
+.sa-map-mark:focus-visible { outline: 1px solid var(--sig); outline-offset: 1px; }
+.sa-map-mark svg { width: 10px; height: 10px; }
+
 @keyframes sa-pulse {
   0%   { box-shadow: 0 0 0 0 rgba(224,93,58,.55); background: rgba(224,93,58,.14); }
   70%  { box-shadow: 0 0 0 14px rgba(224,93,58,0); background: rgba(224,93,58,.05); }
@@ -183,6 +199,7 @@ html:not(.sa-legend-open) .tlegend { display: none; }
 (function () {
   var WINDOW_ID = __WINDOW_ID__;
   var animToken = 0;
+  var PANEL_W = 0; // width of the shell's map panel over this frame, 0 when closed
 
   // Member vs operator view. Operator is opt-in via ?operator=1 on the frame
   // URL, which the shell appends when its own URL carries the same flag.
@@ -330,9 +347,11 @@ html:not(.sa-legend-open) .tlegend { display: none; }
       }
       function destX() {
         var rr = el.getBoundingClientRect();
+        // Centre in the part of the frame the map panel leaves visible.
+        var seenW = Math.max(200, (usesInner ? hs.clientWidth : window.innerWidth) - PANEL_W);
         var raw = usesInner
-          ? hs.scrollLeft + (rr.left - hs.getBoundingClientRect().left) - hs.clientWidth / 2 + rr.width / 2
-          : window.scrollX + rr.left - window.innerWidth / 2 + rr.width / 2;
+          ? hs.scrollLeft + (rr.left - hs.getBoundingClientRect().left) - seenW / 2 + rr.width / 2
+          : window.scrollX + rr.left - seenW / 2 + rr.width / 2;
         var max = usesInner
           ? hs.scrollWidth - hs.clientWidth
           : document.documentElement.scrollWidth - window.innerWidth;
@@ -528,6 +547,69 @@ html:not(.sa-legend-open) .tlegend { display: none; }
     }
   });
   document.documentElement.classList.remove('sa-legend-open');
+
+  // -------------------------------------------------------------------------
+  // MAP LAYER (Thread 35). The shell names the rows that have map data; each
+  // gets a MAP mark in its year cell, and a click reports the row upward. The
+  // mark is the only thing added to the document, and only on those rows.
+  // -------------------------------------------------------------------------
+  var MAP_ICON = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 3l3-1.5 4 1.5 3-1.5v8l-3 1.5-4-1.5-3 1.5z" fill="none" stroke="currentColor"/></svg>';
+  function markMapRows(ids) {
+    var old = document.querySelectorAll('.sa-map-mark');
+    for (var i = 0; i < old.length; i++) old[i].parentNode.removeChild(old[i]);
+    for (var j = 0; j < (ids || []).length; j++) {
+      var id = ids[j];
+      var ev = document.querySelector('[data-entry-id="' + (window.CSS && CSS.escape ? CSS.escape(id) : id) + '"]');
+      var tr = ev && ev.closest ? ev.closest('tr') : null;
+      var yr = tr ? tr.querySelector('td.yr') : null;
+      if (!yr || yr.querySelector('.sa-map-mark')) continue;
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'sa-map-mark';
+      b.setAttribute('data-sa-map', id);
+      b.setAttribute('aria-label', 'Open the map for this row');
+      b.innerHTML = MAP_ICON + 'MAP';
+      yr.appendChild(b);
+    }
+  }
+  document.addEventListener('click', function (e) {
+    var m = e.target && e.target.closest && e.target.closest('.sa-map-mark');
+    if (!m) return;
+    e.preventDefault();
+    e.stopPropagation();
+    post({ type: 'SA_MAP', entryId: m.getAttribute('data-sa-map') });
+  }, true);
+  window.addEventListener('message', function (ev) {
+    var d = ev.data;
+    if (!d || d.source !== 'sa-shell') return;
+    if (d.type === 'SA_MAP_ROWS') markMapRows(d.entryIds);
+    else if (d.type === 'SA_PANEL') {
+      PANEL_W = Math.max(0, Number(d.width) || 0);
+      // Room on the right while the panel is open, so the last lane columns
+      // can scroll clear of it. The document itself is the horizontal
+      // scroller, and a margin does not count toward its scroll width, so an
+      // invisible absolutely positioned marker past the table's edge does.
+      var tbl = document.querySelector('table.tbl');
+      var sp = document.getElementById('sa-panel-spacer');
+      if (sp) sp.parentNode.removeChild(sp);
+      if (tbl && PANEL_W) {
+        var r = tbl.getBoundingClientRect();
+        sp = document.createElement('div');
+        sp.id = 'sa-panel-spacer';
+        sp.setAttribute('aria-hidden', 'true');
+        sp.style.cssText = 'position:absolute;top:0;width:1px;height:1px;pointer-events:none;visibility:hidden;left:' +
+          Math.round(r.right + window.scrollX + PANEL_W) + 'px';
+        document.body.appendChild(sp);
+      }
+    }
+    else if (d.type === 'SA_MAP_ACTIVE') {
+      var ms = document.querySelectorAll('.sa-map-mark');
+      for (var k = 0; k < ms.length; k++) {
+        if (ms[k].getAttribute('data-sa-map') === d.entryId) ms[k].setAttribute('aria-pressed', 'true');
+        else ms[k].removeAttribute('aria-pressed');
+      }
+    }
+  });
 
   post({
     type: 'SA_READY',
