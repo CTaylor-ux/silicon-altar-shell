@@ -153,6 +153,41 @@ export default function MapCanvas({
     return { x: p1[0], y: p1[1], deg: (Math.atan2(p2[1] - p1[1], p2[0] - p1[0]) * 180) / Math.PI };
   };
 
+  /* Label placement with a simple collision check. Current places are placed
+   * first, then larger places before the towns and forts inside them; each
+   * label tries the right of its dot, then the left, and is left off if both
+   * would overprint one already placed (its dot keeps a hover title). */
+  const labels = useMemo(() => {
+    const out = new Map<string, { x: number; y: number; anchor: 'start' | 'end' | 'middle' } | null>();
+    const boxes: [number, number, number, number][] = [];
+    const hit = (b: [number, number, number, number]) =>
+      boxes.some((o) => b[0] < o[2] && b[2] > o[0] && b[1] < o[3] && b[3] > o[1]);
+    const rank = (pt: CanvasPoint) =>
+      (pt.dim ? 10 : 0) + (pt.place.within ? 2 : 0) + (pt.place.precision === 'region-label' ? 1 : 0);
+    const order = points.map((pt, i) => ({ pt, i })).sort((a, b) => rank(a.pt) - rank(b.pt) || a.i - b.i);
+    for (const { pt } of order) {
+      const q = proj(ll(pt.place));
+      if (!q || pt.dim) { out.set(pt.place.id, null); continue; }
+      const w = pt.place.name.length * 6.4 + 4, h = 13;
+      if (pt.place.precision === 'region-label') {
+        const b: [number, number, number, number] = [q[0] - w / 2, q[1] - 9, q[0] + w / 2, q[1] + 4];
+        if (!hit(b)) { boxes.push(b); out.set(pt.place.id, { x: q[0], y: q[1] + 3.5, anchor: 'middle' }); }
+        else out.set(pt.place.id, null);
+        continue;
+      }
+      const right: [number, number, number, number] = [q[0] + 6, q[1] - 9, q[0] + 6 + w, q[1] - 9 + h];
+      const left: [number, number, number, number] = [q[0] - 6 - w, q[1] - 9, q[0] - 6, q[1] - 9 + h];
+      const preferLeft = q[0] > W - 150;
+      const tries = preferLeft ? [left, right] : [right, left];
+      const ok = tries.find((b) => !hit(b));
+      if (ok) {
+        boxes.push(ok);
+        out.set(pt.place.id, ok === right ? { x: q[0] + 7, y: q[1] + 3.5, anchor: 'start' } : { x: q[0] - 7, y: q[1] + 3.5, anchor: 'end' });
+      } else out.set(pt.place.id, null);
+    }
+    return out;
+  }, [points, proj, W]);
+
   const dash = (k: CanvasLine['kind']) =>
     k === 'schematic' ? '2 5' : k === 'intended' ? '7 5' : k === 'mentioned' ? '1 4' : undefined;
 
@@ -200,7 +235,7 @@ export default function MapCanvas({
           if (!q) return null;
           const region = pt.place.precision === 'region-label';
           const hollow = pt.hollow || pt.place.precision !== 'point';
-          const right = q[0] > W - 150;
+          const lab = labels.get(pt.place.id);
           return (
             <g key={`${pt.place.id}-${pi}`} opacity={pt.dim ? 0.35 : 1}>
               <title>{pt.place.precision === 'point' ? pt.place.name : `${pt.place.name} (${pt.place.precision})`}</title>
@@ -208,9 +243,8 @@ export default function MapCanvas({
                 <circle cx={q[0]} cy={q[1]} r={3.8} fill={hollow ? 'var(--map-sea)' : 'var(--bright)'}
                   stroke="var(--bright)" strokeWidth={hollow ? 1.4 : 0} />
               )}
-              {!pt.dim && (
-                <text x={region ? q[0] : right ? q[0] - 7 : q[0] + 7} y={q[1] + 3.5}
-                  textAnchor={region ? 'middle' : right ? 'end' : 'start'} className={region ? styles.regionLabel : styles.placeLabel}>
+              {lab && (
+                <text x={lab.x} y={lab.y} textAnchor={lab.anchor} className={region ? styles.regionLabel : styles.placeLabel}>
                   {pt.place.name}
                 </text>
               )}

@@ -20,6 +20,18 @@
   box-shadow: -18px 0 30px rgba(0, 0, 0, 0.35);
   animation: slideIn 180ms var(--ease);
 }
+/* Left-edge resize handle (desktop only; the page passes no width on phones). */
+.resize {
+  position: absolute; top: 0; bottom: 0; left: -5px; width: 10px;
+  cursor: ew-resize; z-index: 3; display: grid; place-items: center; touch-action: none;
+}
+.resizeGrip {
+  width: 3px; height: 46px; border-radius: 2px; background: var(--bdr2);
+  transition: background 140ms var(--ease), height 140ms var(--ease);
+}
+.resize:hover .resizeGrip, .resize:focus-visible .resizeGrip { background: var(--dim); height: 84px; }
+.resize:focus-visible { outline: none; }
+
 @keyframes slideIn {
   from { transform: translateX(24px); opacity: 0; }
   to { transform: none; opacity: 1; }
@@ -110,7 +122,7 @@
 .placeLabel { font: 400 10.5px var(--font-mono); fill: var(--txt); paint-order: stroke; stroke: var(--map-sea); stroke-width: 3px; }
 .regionLabel { font: italic 400 11px var(--font-mono); fill: var(--dim); paint-order: stroke; stroke: var(--map-sea); stroke-width: 3px; }
 .stopNum { font: 600 9.5px var(--font-mono); }
-.zoom { position: absolute; left: 10px; top: 10px; display: flex; flex-direction: column; gap: 3px; }
+.zoom { position: absolute; right: 10px; top: 10px; display: flex; flex-direction: column; gap: 3px; }
 .zoom button {
   width: 30px; height: 26px;
   background: var(--panel); border: 1px solid var(--bdr2); border-radius: 2px;

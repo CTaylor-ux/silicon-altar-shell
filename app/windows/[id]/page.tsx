@@ -60,14 +60,35 @@ export default function WindowViewPage() {
    * while a thread or place moves the reader between windows. */
   const [mapTrail, setMapTrail] = useState<MapView[]>([]);
   const mapOpen = mapTrail.length > 0;
-  const [panelWidth, setPanelWidth] = useState(0);
+  /* Panel width is the reader's to choose (drag the panel's left edge), within
+   * limits that always leave the window a usable strip: the sticky year
+   * column and at least one lane. Remembered for the session, like the query
+   * bar's height. 0 while closed or on phones, where the panel is a sheet. */
+  const PANEL_MIN = 380;
+  const PANEL_KEY = 'silicon-altar-mappanel-w';
+  const [viewportW, setViewportW] = useState(0);
+  const [chosenW, setChosenW] = useState(560);
   useEffect(() => {
-    const measure = () =>
-      setPanelWidth(mapOpen && window.innerWidth > 720 ? Math.min(560, window.innerWidth * 0.46) : 0);
+    const measure = () => setViewportW(window.innerWidth);
     measure();
+    try {
+      const saved = Number(sessionStorage.getItem(PANEL_KEY));
+      if (saved >= PANEL_MIN) setChosenW(saved);
+    } catch {}
     window.addEventListener('resize', measure);
     return () => window.removeEventListener('resize', measure);
-  }, [mapOpen]);
+  }, []);
+  const panelMax = Math.max(PANEL_MIN, Math.min(Math.round(viewportW * 0.66), viewportW - 360));
+  const desktop = viewportW > 720;
+  const panelW = Math.max(PANEL_MIN, Math.min(chosenW, panelMax));
+  const panelWidth = mapOpen && desktop ? panelW : 0;
+  const resizePanel = useCallback((px: number) => {
+    const w = Math.round(Math.max(PANEL_MIN, Math.min(px, panelMax)));
+    setChosenW(w);
+    try {
+      sessionStorage.setItem(PANEL_KEY, String(w));
+    } catch {}
+  }, [panelMax]);
 
   /** Operator view (?operator=1) reveals build-provenance chrome inside the
    *  window that members must never see. Read from location rather than
@@ -323,6 +344,10 @@ export default function WindowViewPage() {
           onClose={() => setMapTrail([])}
           onJump={goToTarget}
           targetForEvent={targetForEvent}
+          width={desktop ? panelW : undefined}
+          minWidth={PANEL_MIN}
+          maxWidth={panelMax}
+          onResize={resizePanel}
         />
       )}
 

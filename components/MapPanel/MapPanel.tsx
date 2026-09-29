@@ -57,10 +57,17 @@ type Props = {
   onClose: () => void;
   onJump: (t: Target) => void;
   targetForEvent: (eventId: string) => Target | null;
+  /** Desktop width in px, owned by the page; undefined on phones (bottom sheet). */
+  width?: number;
+  minWidth?: number;
+  maxWidth?: number;
+  /** The reader dragged or nudged the left edge. */
+  onResize?: (px: number) => void;
 };
 
 export default function MapPanel(props: Props) {
-  const { trail, operator, onBack, onClose, onTrailTo } = props;
+  const { trail, operator, onBack, onClose, onTrailTo, width, minWidth = 380, maxWidth = 900, onResize } = props;
+  const drag = useRef<{ x: number; w: number } | null>(null);
   const view = trail[trail.length - 1];
   /* Whenever the view changes (a new stop, place or row), bring the map back
    * into sight: a stop chosen from the bottom of the list otherwise changes a
@@ -76,7 +83,40 @@ export default function MapPanel(props: Props) {
   if (!view) return null;
 
   return (
-    <aside className={styles.panel} aria-label="Map panel" data-map-panel="">
+    <aside className={styles.panel} aria-label="Map panel" data-map-panel="" style={width ? { width } : undefined}>
+      {width !== undefined && onResize && (
+        /* Left-edge handle, the query bar's pattern turned on its side: drag to
+           widen or narrow, arrow keys when focused, double-click to toggle. The
+           page clamps, so the window behind always keeps a usable strip. */
+        <div
+          className={styles.resize}
+          role="separator"
+          aria-orientation="vertical"
+          aria-label="Resize the map panel"
+          aria-valuenow={Math.round(width)}
+          aria-valuemin={minWidth}
+          aria-valuemax={Math.round(maxWidth)}
+          tabIndex={0}
+          title="Drag to resize · double-click to toggle · ← → when focused"
+          onPointerDown={(e) => {
+            (e.currentTarget as Element).setPointerCapture(e.pointerId);
+            drag.current = { x: e.clientX, w: width };
+          }}
+          onPointerMove={(e) => {
+            if (drag.current) onResize(drag.current.w + (drag.current.x - e.clientX));
+          }}
+          onPointerUp={() => (drag.current = null)}
+          onPointerCancel={() => (drag.current = null)}
+          onDoubleClick={() => onResize(width >= maxWidth - 4 ? 560 : maxWidth)}
+          onKeyDown={(e) => {
+            const step = e.shiftKey ? 80 : 24;
+            if (e.key === 'ArrowLeft') { e.preventDefault(); onResize(width + step); }
+            else if (e.key === 'ArrowRight') { e.preventDefault(); onResize(width - step); }
+          }}
+        >
+          <span className={styles.resizeGrip} aria-hidden />
+        </div>
+      )}
       <header className={styles.head}>
         <nav className={styles.trail} aria-label="Map trail">
           {trail.map((v, i) =>
