@@ -26,7 +26,10 @@ export type CanvasLine = {
   dim?: boolean;
   title: string;
 };
-export type CanvasPoint = { place: Place; color: string; dim?: boolean; hollow?: boolean; number?: number; current?: boolean };
+/** One point per place. `numbers` holds every thread stop at this place, so
+ * stops that share a place (Madrid is stops 13, 20 and 23) sit side by side
+ * rather than stacked, and `current` marks the one being read. */
+export type CanvasPoint = { place: Place; color: string; dim?: boolean; hollow?: boolean; numbers?: number[]; current?: number };
 
 /* The canvas is drawn at the panel's real width (measured), so labels and
  * strokes keep their intended pixel size instead of shrinking with a fixed
@@ -192,14 +195,14 @@ export default function MapCanvas({
             </g>
           );
         })}
-        {points.map((pt) => {
+        {points.map((pt, pi) => {
           const q = proj(ll(pt.place));
           if (!q) return null;
           const region = pt.place.precision === 'region-label';
           const hollow = pt.hollow || pt.place.precision !== 'point';
           const right = q[0] > W - 150;
           return (
-            <g key={pt.place.id} opacity={pt.dim ? 0.35 : 1}>
+            <g key={`${pt.place.id}-${pi}`} opacity={pt.dim ? 0.35 : 1}>
               <title>{pt.place.precision === 'point' ? pt.place.name : `${pt.place.name} (${pt.place.precision})`}</title>
               {!region && (
                 <circle cx={q[0]} cy={q[1]} r={3.8} fill={hollow ? 'var(--map-sea)' : 'var(--bright)'}
@@ -211,14 +214,18 @@ export default function MapCanvas({
                   {pt.place.name}
                 </text>
               )}
-              {pt.number !== undefined && (
-                <g>
-                  <circle cx={q[0] + 11} cy={q[1] - 11} r={8} fill={pt.current ? 'var(--bright)' : 'var(--panel2)'} stroke={pt.current ? 'var(--bright)' : 'var(--bdr2)'} />
-                  <text x={q[0] + 11} y={q[1] - 7.5} textAnchor="middle" className={styles.stopNum} fill={pt.current ? 'var(--bg)' : 'var(--dim)'}>
-                    {pt.number}
-                  </text>
-                </g>
-              )}
+              {(pt.numbers ?? []).map((n, j) => {
+                const on = n === pt.current;
+                const cx = q[0] + 11 + j * 18;
+                return (
+                  <g key={n} opacity={on || !pt.dim ? 1 : 0.9}>
+                    <circle cx={cx} cy={q[1] - 11} r={8} fill={on ? 'var(--bright)' : 'var(--panel2)'} stroke={on ? 'var(--bright)' : 'var(--bdr2)'} />
+                    <text x={cx} y={q[1] - 7.5} textAnchor="middle" className={styles.stopNum} fill={on ? 'var(--bg)' : 'var(--dim)'}>
+                      {n}
+                    </text>
+                  </g>
+                );
+              })}
             </g>
           );
         })}

@@ -235,21 +235,24 @@ function ThreadView({ view, operator, onReplace, onPush, onJump, targetForEvent 
     if (t) onJump(t);
   };
   const drawing = useMemo(() => {
-    const points: CanvasPoint[] = [];
+    // One point per place across the whole thread. A place carries the numbers
+    // of every stop anchored there, and is drawn at full strength if the
+    // current stop touches it.
+    const byPlace = new Map<string, CanvasPoint>();
     const lines: CanvasLine[] = [];
-    const seen = new Set<string>();
     stops.forEach((s, i) => {
       if (!s.hasPlaces) return;
-      const d = layerDrawing(s.event_id, operator, i !== view.index);
+      const cur = i === view.index;
+      const d = layerDrawing(s.event_id, operator, !cur);
       d.lines.forEach((l) => lines.push({ ...l, id: `${i}-${l.id}` }));
       d.points.forEach((p, j) => {
-        const key = p.place.id;
-        const numbered = j === 0 ? { number: i + 1, current: i === view.index } : {};
-        if (seen.has(key) && !numbered.number) return;
-        seen.add(key);
-        points.push({ ...p, ...numbered, dim: i !== view.index });
+        const have = byPlace.get(p.place.id) ?? { ...p, numbers: [], dim: true };
+        if (j === 0) have.numbers!.push(i + 1);
+        if (cur) { have.dim = false; have.color = p.color; }
+        byPlace.set(p.place.id, have);
       });
     });
+    const points = [...byPlace.values()].map((p) => ({ ...p, current: view.index + 1 }));
     return { points, lines };
   }, [stops, view.index, operator]);
   const fitTo = stop?.hasPlaces ? eventLayer(stop.event_id, operator)?.places : undefined;
@@ -312,7 +315,7 @@ function PlaceView({ view, operator, onPush, onJump, targetForEvent }: Props & {
       const from = origin ? place(origin.place_id) : undefined;
       const to = place(m.place_id);
       if (from && to) {
-        points.push({ place: from, color: 'var(--dim)', hollow: true });
+        if (!points.some((p) => p.place.id === from.id)) points.push({ place: from, color: 'var(--dim)', hollow: true });
         lines.push({ id: `m${i}`, from, to, kind: 'mentioned', color: 'var(--dim)', title: `${m.entry_id}: "${m.quote}"` });
       }
     });
