@@ -1,6 +1,6 @@
 THE SILICON ALTAR CORPUS
 
-Entries: 793. Windows: 7.
+Entries: 819. Windows: 7.
 
 The corpus states its own scope and spine. Both are load-bearing: they are
 how you tell a genuine gap from something deliberately out of scope.
@@ -11,8 +11,8 @@ FRAMEWORK SPINE: Three-Track Labor System (FW-006). W3 is where all three tracks
 
 WINDOWS:
   Window 0: The Template (deep time to pre-contact) - 77 entries
-  Window 1: Launch Codes (1452 to 1602) - 90 entries
-  Window 2: The Corporate Grid (1602 to 1704) - 97 entries
+  Window 1: Launch Codes (1452 to 1602) - 101 entries
+  Window 2: The Corporate Grid (1602 to 1704) - 112 entries
   Window 3: Colonial Consolidation (1652 to 1787) - 79 entries
   Window 4: The Transfer (1787 to 1854) - 87 entries
   Window 5: 75-Year Operation (1854 to 1929) - 261 entries
@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 853 sources are opened and 139 are not.
+something is evidenced, say so. 866 sources are opened and 139 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -1233,6 +1233,82 @@ assessment: Weight: Proven (the syndicate, the acquisition and the three-port sa
 sources: [A live_verified] src-hakluyt-hawkins-1562 https://archive.org/details/voyagesofhawkins00hakluoft
 threads: T-ASIENTO
 
+[E-W1-037-01] W1 1524 records TB MILESTONE
+Verrazzano's report to Francis I: the first European description of the Atlantic coast peoples
+8 July 1524. Giovanni da Verrazzano reports to Francis I a voyage north from a landfall near 34 degrees. The first people are 'of dark color not much unlike the Ethiopians'; further north a man 'of olive color', then a people 'of bronze color, some inclining more to whiteness, others to tawny color'. Comparisons of appearance, varying along the coast, not statements of origin. The text survives fullest in the Cellere codex, found in 1909.
+sources: [B live_verified] src-verrazzano-hall-1916-selections https://archive.org/download/verrazanosvoyage00verr/verrazanosvoyage00verr.pdf
+links: cabot-patent-1496-english-wedge-against-1496, treaty-of-tordesillas-1494, valladolid-moor-native-seam-1550
+threads: T-DISCOVERY-DOCTRINE, T-NOUN-TO-ADJECTIVE
+
+[E-W1-037-02] W1 1524 sovereign TB
+A French survey steered 'in order not to meet with the Spaniards'
+framework: Doctrinal layer, proposed: a French royal survey of a coast the papal division of 1493 and the treaty of 1494 had assigned to other crowns, steered to avoid Spain
+assessment: Weight: Proven (the descriptions, the date and the seized boy, Hall's translation of the Cellere text) | Warrant: Closed (what he recorded) · Open (the Italian wording; the full 1910 translation)
+sources: [B live_verified] src-verrazzano-hall-1916-selections https://archive.org/download/verrazanosvoyage00verr/verrazanosvoyage00verr.pdf
+threads: T-DISCOVERY-DOCTRINE, T-NOUN-TO-ADJECTIVE
+
+[E-W1-037-03] W1 1524 violence TB
+A boy of about eight taken from an old woman, 'to carry to France'
+framework: Doctrinal layer, proposed: a French royal survey of a coast the papal division of 1493 and the treaty of 1494 had assigned to other crowns, steered to avoid Spain
+assessment: Weight: Proven (the descriptions, the date and the seized boy, Hall's translation of the Cellere text) | Warrant: Closed (what he recorded) · Open (the Italian wording; the full 1910 translation)
+sources: [B live_verified] src-verrazzano-hall-1916-selections https://archive.org/download/verrazanosvoyage00verr/verrazanosvoyage00verr.pdf
+threads: T-DISCOVERY-DOCTRINE, T-NOUN-TO-ADJECTIVE
+
+[E-W1-038-01] W1 1565 violence TA MILESTONE
+Matanzas: Menendez puts the surrendered French to the knife 'because they were Lutherans'
+15 October 1565. Pedro Menendez de Aviles reports to Philip II that he has taken the French fort and put to the knife the shipwrecked Frenchmen who surrendered at his mercy, Jean Ribault among them, for settling 'without the leave of Your Majesty' and 'because they were Lutherans'. He looked for Catholics among them and 'found none'. He spared men he could use: Breton seamen, carpenters, two youths and three musicians.
+sources: [A live_verified] src-mhs-proceedings-1894-menendez-letters https://archive.org/details/sim_massachusetts-historical-society-proceedings_1892-1894_8
+links: albigensian-crusade-1209, council-of-trent-1545-1563, requerimiento-1513
+threads: T-SOFTWARE-NEUTRALITY, T-DISCOVERY-DOCTRINE
+
+[E-W1-038-02] W1 1565 sovereign TA
+Spain enforces its claim: a fort built 'without the leave of Your Majesty'
+framework: Doctrinal layer: a crown enforcing its claim with confession as a stated ground for killing, in the letter's own words
+assessment: Weight: Proven (the stated grounds, the search for Catholics and who was spared, Menendez's own letter) | Warrant: Closed (why he says he killed them, and whom he spared) · Open (the French account; the Spanish original)
+sources: [A live_verified] src-mhs-proceedings-1894-menendez-letters https://archive.org/details/sim_massachusetts-historical-society-proceedings_1892-1894_8
+threads: T-SOFTWARE-NEUTRALITY, T-DISCOVERY-DOCTRINE
+
+[E-W1-038-03] W1 1565 population TA
+Confession the stated ground for death; usefulness the ground for sparing
+framework: Doctrinal layer: a crown enforcing its claim with confession as a stated ground for killing, in the letter's own words
+assessment: Weight: Proven (the stated grounds, the search for Catholics and who was spared, Menendez's own letter) | Warrant: Closed (why he says he killed them, and whom he spared) · Open (the French account; the Spanish original)
+sources: [A live_verified] src-mhs-proceedings-1894-menendez-letters https://archive.org/details/sim_massachusetts-historical-society-proceedings_1892-1894_8
+threads: T-SOFTWARE-NEUTRALITY, T-DISCOVERY-DOCTRINE
+
+[E-W1-039-01] W1 1593 population TB MILESTONE
+Bastiaen Pietersz of 'Maniconge in Afryken' marries in Amsterdam's Oude Kerk
+January 1593. Bastiaen Pietersz, recorded as from 'Maniconge in Afryken', the kingdom of Kongo, marries the Amsterdam widow Trijn Pieters in the Oude Kerk. A dyer's journeyman in the cloth trade, called 'moriaan' in other records, he was almost certainly free on the archivist Mark Ponte's reading. His daughter Madelen is baptised in the Nieuwe Kerk in 1594. African residence in Amsterdam before the city's first slaving voyage of 1596.
+sources: [B live_verified] src-ponte-eerste-zwarte-amsterdammers-2020 https://voetnoot.org/2020/11/14/de-eerste-zwarte-amsterdammers/; [B live_verified] src-ponte-tussen-slavernij-en-vrijheid-2020 https://voetnoot.org/2020/12/24/tussen-slavernij-en-vrijheid-in-amsterdam/
+links: dutch-revolt-1568, voc-1602
+threads: T-NOUN-TO-ADJECTIVE, T-SOFTWARE-NEUTRALITY
+
+[E-W1-039-02] W1 1593 records TB
+Named 'moriaan' in other Amsterdam records
+assessment: Weight: Supported (marriage, origin, trade, daughter's baptism, via Ponte) · Supported (free status, Ponte's judgement) | Warrant: Closed (resident in Amsterdam 1593 to 1602) · Open (how he came; the registers themselves)
+sources: [B live_verified] src-ponte-eerste-zwarte-amsterdammers-2020 https://voetnoot.org/2020/11/14/de-eerste-zwarte-amsterdammers/; [B live_verified] src-ponte-tussen-slavernij-en-vrijheid-2020 https://voetnoot.org/2020/12/24/tussen-slavernij-en-vrijheid-in-amsterdam/
+threads: T-NOUN-TO-ADJECTIVE, T-SOFTWARE-NEUTRALITY
+
+[E-W1-040-01] W1 1596 legal TB MILESTONE
+Middelburg 1596: 'Mooren' claimed free as baptised Christians, then left to their owner
+15 November 1596. The States of Zeeland hear Middelburg's burgomaster Adriaen ten Haefft protest the sale of about a hundred 'Mooren', men, women and children from Guinea on a ship taken from the Portuguese, all of them 'gedoopte Christenen'. Their release is proclaimed from the pulpits, into service and Christian upbringing. On the owner Pieter van der Haegen's second petition he may do with them as he sees fit. Their fate is unknown.
+sources: [B live_verified] src-zeeuwse-ankers-moren-in-middelburg https://www.zeeuwseankers.nl/verhaal/moren-in-middelburg
+links: dutch-revolt-1568, virginia-baptism-not-freedom-1667
+threads: T-SOFTWARE-NEUTRALITY, T-NOUN-TO-ADJECTIVE
+
+[E-W1-040-02] W1 1596 population TB
+Freedom argued from baptism, not from origin or colour
+framework: Doctrinal layer, proposed: a religious status, baptism, is argued as the ground of legal freedom, the Christian-exit principle Dum Diversas left open
+assessment: Weight: Proven (the protest's words and the release terms, minutes quoted verbatim) · Supported (the appeal and its outcome, via Zeeuwse Ankers) | Warrant: Closed (baptism was the ground argued) · Open (which body decided the second petition; what became of them)
+sources: [B live_verified] src-zeeuwse-ankers-moren-in-middelburg https://www.zeeuwseankers.nl/verhaal/moren-in-middelburg
+threads: T-SOFTWARE-NEUTRALITY, T-NOUN-TO-ADJECTIVE
+
+[E-W1-040-03] W1 1596 records TB
+The States' minutes name them 'Mooren' brought from Guinea
+framework: Doctrinal layer, proposed: a religious status, baptism, is argued as the ground of legal freedom, the Christian-exit principle Dum Diversas left open
+assessment: Weight: Proven (the protest's words and the release terms, minutes quoted verbatim) · Supported (the appeal and its outcome, via Zeeuwse Ankers) | Warrant: Closed (baptism was the ground argued) · Open (which body decided the second petition; what became of them)
+sources: [B live_verified] src-zeeuwse-ankers-moren-in-middelburg https://www.zeeuwseankers.nl/verhaal/moren-in-middelburg
+threads: T-SOFTWARE-NEUTRALITY, T-NOUN-TO-ADJECTIVE
+
 [E-W2-001-01] W2 1600 financial TB
 East India Company chartered
 English EIC: Crown-licensed monopoly on Asian trade, chartered by Elizabeth I on 31 December 1600. Thomas Smythe is already governor of the Muscovy and Levant companies when he becomes the EIC's first governor, a post he holds to 1621 apart from a break in 1605-07. He obtains the Virginia Company charter in 1609 and serves as its treasurer until 1619. For two decades the EIC's general assemblies meet in his own house at Philpot Lane.
@@ -1515,7 +1591,7 @@ threads: T-FRANCHISE-TRANSFER
 [E-W2-018-02] W2 1664 land TB
 New Netherland → New York
 27 August 1664. Four English frigates take New Amsterdam; the whole Dutch seaboard colony, Manhattan, the Hudson Valley, the future Wall Street, becomes New York. The Articles of Capitulation preserve Dutch property and trade, so the commercial machinery carries on under English management. Confirmed at the Treaty of Breda in 1667.
-sources: [B live_verified] src-wikipedia-new-netherland https://en.wikipedia.org/wiki/New_Netherland
+sources: [B live_verified] src-wikipedia-new-netherland https://en.wikipedia.org/wiki/New_Netherland; [A live_verified] src-ocallaghan-docs-colonial-ny-vol2 https://archive.org/details/documentsrelativ02newyuoft
 links: hudson-claims-hudson-river-1609, fort-orange-established-1624, dutch-west-india-company-wic-chartered-1621
 threads: T-FRANCHISE-TRANSFER
 
@@ -1901,6 +1977,111 @@ Two ruling clauses. Religion is enumerated and then set aside: "That no negros, 
 sources: [B live_verified] src-va-slave-codes-1705 https://encyclopediavirginia.org/primary-documents/an-act-concerning-servants-and-slaves-1705/
 links: spanish-inquisition-1478, toledo-blood-purity-1449, casta-system-1560s, partus-sequitur-ventrem-1662, virginia-code-1682, 1924-triple-lock-reclassification-chain-step-1924, fourth-lateran-council-classification-formalized-as-1215
 threads: T-WHITENING-PROJECT, T-SOFTWARE-NEUTRALITY, T-THREE-TRACK-LABOR
+
+[E-W2-045-01] W2 1644 legal TA MILESTONE
+New Amsterdam: eleven Company slaves freed on condition, their children kept enslaved
+25 February 1644, Fort Amsterdam. Director Willem Kieft and council free eleven Black men who had served the West India Company 18 or 19 years, and their wives, for life, on land granted to them. Each man owes the Company thirty skepels of grain and a fat hog a year, or forfeits his freedom. Their children, born or yet to be born, remain the Company's slaves: a heritable status set eighteen years before Virginia's partus act of 1662.
+sources: [A live_verified] src-ocallaghan-laws-ordinances-nn-1868 https://archive.org/download/cu31924080779402/cu31924080779402.pdf
+links: dutch-west-india-company-wic-chartered-1621, john-punch-case-1640, partus-sequitur-ventrem-1662, virginia-baptism-not-freedom-1667
+threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
+
+[E-W2-045-02] W2 1644 population TA
+Freedom for life, withheld from the children born or yet to be born
+framework: Software layer: a chartered company's council writes a status rule that frees a person and keeps the line, the same layer as the WIC charter itself
+assessment: Weight: Proven (the act's terms, O'Callaghan, Laws and Ordinances of New Netherland (1868)) · Supported (the line to Virginia 1662, the corpus's comparison) | Warrant: Closed (what the act did) · Open (whether the children clause was enforced, and whether it survived 1664)
+sources: [A live_verified] src-ocallaghan-laws-ordinances-nn-1868 https://archive.org/download/cu31924080779402/cu31924080779402.pdf
+threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
+
+[E-W2-045-03] W2 1644 land TA
+Land shown and granted to the freed men to farm
+framework: Software layer: a chartered company's council writes a status rule that frees a person and keeps the line, the same layer as the WIC charter itself
+assessment: Weight: Proven (the act's terms, O'Callaghan, Laws and Ordinances of New Netherland (1868)) · Supported (the line to Virginia 1662, the corpus's comparison) | Warrant: Closed (what the act did) · Open (whether the children clause was enforced, and whether it survived 1664)
+sources: [A live_verified] src-ocallaghan-laws-ordinances-nn-1868 https://archive.org/download/cu31924080779402/cu31924080779402.pdf
+threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
+
+[E-W2-046-01] W2 1677 corporate TB
+WIC directors sell their Curacao stock to the Consulado of Seville for Spanish America
+1677, before the Amsterdam notary Stephanus Pelgrom. Manuel de Belmonte, agent general of the King of Spain, on orders of the Consulado of Seville, contracts with four directors of the West India Company's Amsterdam chamber for a stock of sixteen or eighteen hundred enslaved people held on Curacao, capped at 1,800 piezas de India at 125 pieces of eight each, for the Spanish Caribbean. The stock came under an earlier WIC contract with Antonio Garcia's agents.
+sources: [B live_verified] src-stadsarchief-asiento-1677-transcriptie https://www.amsterdam.nl/publish/pages/948344/transcriptie_asiento_de_negro_1.pdf
+links: dutch-west-india-company-wic-chartered-1621, asiento-first-1518
+threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
+
+[E-W2-046-02] W2 1677 population TB
+Children counted as fractions of a pieza: three for two, two for one
+framework: Capitalization layer: Amsterdam company capital sells into the Spanish crown's licence through a Seville merchant guild, priced per unit of labour
+assessment: Weight: Proven (parties, stock, price and specification: Stadsarchief Amsterdam transcription of the 1677 deed) | Warrant: Closed (the WIC supplied Spanish licence holders by contract) · Open (the day and month; the unread articles; the Garcia contract)
+sources: [B live_verified] src-stadsarchief-asiento-1677-transcriptie https://www.amsterdam.nl/publish/pages/948344/transcriptie_asiento_de_negro_1.pdf
+threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
+
+[E-W2-046-03] W2 1677 financial TB
+125 pieces of eight a pieza on Curacao, 107.5 for new arrivals
+framework: Capitalization layer: Amsterdam company capital sells into the Spanish crown's licence through a Seville merchant guild, priced per unit of labour
+assessment: Weight: Proven (parties, stock, price and specification: Stadsarchief Amsterdam transcription of the 1677 deed) | Warrant: Closed (the WIC supplied Spanish licence holders by contract) · Open (the day and month; the unread articles; the Garcia contract)
+sources: [B live_verified] src-stadsarchief-asiento-1677-transcriptie https://www.amsterdam.nl/publish/pages/948344/transcriptie_asiento_de_negro_1.pdf
+threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
+
+[E-W2-047-01] W2 1685 corporate TB
+The Asiento passes to Coymans of Amsterdam: his nation waived, his religion managed
+February 1685. Balthasar Coymans, an Amsterdam merchant at Cadiz, takes over the Spanish Asiento from the failed Porcio administration. Being neither Spaniard nor Catholic, he has his foreign birth waived for this once and agrees to keep ten Capuchin missionaries in his African factories. The Council for Inquisition protests against admitting heretics; the Council for Indies overrides it. A junta recommends annulment in March 1687.
+sources: [B live_verified] src-wright-coymans-asiento-1924 https://www.delpher.nl/nl/tijdschriften/view?coll=dts&identifier=MMKB07:000826001:00035; [A live_verified] src-van-belle-pertinent-verhaal-1689 https://archive.org/details/pertinentenwaara00unkn; [B live_verified] src-antunes-negron-2022 https://scholarlypublications.universiteitleiden.nl/access/item:3455659/view; [A live_verified] src-scelle-traite-negriere-1906 https://archive.org/details/latraitengri01sceluoft
+links: wic-asiento-supply-contract-1677, dutch-west-india-company-wic-chartered-1621, asiento-first-1518
+threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT, T-SOFTWARE-NEUTRALITY
+
+[E-W2-047-02] W2 1685 financial TB
+The licence bought by taking on the previous holders' debts
+framework: Capitalization layer: the crown's need for sound money buys a waiver of both the nationality and the confessional bars
+assessment: Weight: Supported (the waiver, the missionaries, the protests and the annulment, via Wright from the Archivo de Indias; Van Belle's printed account) · Contested (why it ended: Wright argues English ascendancy) | Warrant: Closed (nation and religion both named, both waived) · Open (the Spanish originals; the theologians' committee; the grant date)
+sources: [B live_verified] src-wright-coymans-asiento-1924 https://www.delpher.nl/nl/tijdschriften/view?coll=dts&identifier=MMKB07:000826001:00035; [A live_verified] src-van-belle-pertinent-verhaal-1689 https://archive.org/details/pertinentenwaara00unkn; [B live_verified] src-antunes-negron-2022 https://scholarlypublications.universiteitleiden.nl/access/item:3455659/view; [A live_verified] src-scelle-traite-negriere-1906 https://archive.org/details/latraitengri01sceluoft
+threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT, T-SOFTWARE-NEUTRALITY
+
+[E-W2-047-03] W2 1685 population TB
+12,000 contracted with the WIC for Curacao, April 1685
+framework: Capitalization layer: the crown's need for sound money buys a waiver of both the nationality and the confessional bars
+assessment: Weight: Supported (the waiver, the missionaries, the protests and the annulment, via Wright from the Archivo de Indias; Van Belle's printed account) · Contested (why it ended: Wright argues English ascendancy) | Warrant: Closed (nation and religion both named, both waived) · Open (the Spanish originals; the theologians' committee; the grant date)
+sources: [B live_verified] src-wright-coymans-asiento-1924 https://www.delpher.nl/nl/tijdschriften/view?coll=dts&identifier=MMKB07:000826001:00035; [A live_verified] src-van-belle-pertinent-verhaal-1689 https://archive.org/details/pertinentenwaara00unkn; [B live_verified] src-antunes-negron-2022 https://scholarlypublications.universiteitleiden.nl/access/item:3455659/view; [A live_verified] src-scelle-traite-negriere-1906 https://archive.org/details/latraitengri01sceluoft
+threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT, T-SOFTWARE-NEUTRALITY
+
+[E-W2-048-01] W2 1673-74 sovereign TB
+New York changes hands twice: Dutch recapture in 1673, returned to England in 1674
+August 1673. A Dutch force retakes New York, governed by Anthony Colve as New Orange. The Treaty of Westminster, 19 February 1674, restores every place taken in the war to its former lord 'in exactly the same condition' (art. 6) and renews Breda. The 1664 articles had kept residents in their 'lands, houses, goods'. None of these texts names enslaved people; what either transfer did to people held as property is unresearched.
+sources: [A live_verified] src-davenport-european-treaties-v2-1929 https://archive.org/details/europeantreaties0002fran_l1a0; [A live_verified] src-ocallaghan-docs-colonial-ny-vol2 https://archive.org/details/documentsrelativ02newyuoft
+links: new-netherland-new-york-1664, louisiana-purchase-1803
+threads: T-FRANCHISE-TRANSFER
+
+[E-W2-048-02] W2 1673-74 land TB
+Manhattan and the Hudson colony restored under article 6
+framework: Software layer, proposed: a colony's property regime carried across changes of sovereign by capitulation and treaty
+assessment: Weight: Proven (treaty art. 6 and 7; the 1664 articles' property clauses) | Warrant: Closed (property of residents protected in 1664; places restored as they stood in 1674) · Open (whether enslaved people passed as property; Andros's restoration)
+sources: [A live_verified] src-davenport-european-treaties-v2-1929 https://archive.org/details/europeantreaties0002fran_l1a0; [A live_verified] src-ocallaghan-docs-colonial-ny-vol2 https://archive.org/details/documentsrelativ02newyuoft
+threads: T-FRANCHISE-TRANSFER
+
+[E-W2-048-03] W2 1673-74 legal TB
+1664 articles: 'free denizens' keep 'lands, houses, goods, shipps'
+framework: Software layer, proposed: a colony's property regime carried across changes of sovereign by capitulation and treaty
+assessment: Weight: Proven (treaty art. 6 and 7; the 1664 articles' property clauses) | Warrant: Closed (property of residents protected in 1664; places restored as they stood in 1674) · Open (whether enslaved people passed as property; Andros's restoration)
+sources: [A live_verified] src-davenport-european-treaties-v2-1929 https://archive.org/details/europeantreaties0002fran_l1a0; [A live_verified] src-ocallaghan-docs-colonial-ny-vol2 https://archive.org/details/documentsrelativ02newyuoft
+threads: T-FRANCHISE-TRANSFER
+
+[E-W2-049-01] W2 1685b legal TA MILESTONE
+The Council of the Indies answers the king: the trade in Black people is licit
+21 August 1685, Madrid. Answering the king's decree of 5 July, which asked whether juntas of theologians and jurists had examined whether it is licit to buy Black people as slaves and contract for them, the Council of the Indies replies that it is: the Indies cannot be kept without them, the Crown would lose the revenue, the authors allow it, the religious orders hold slaves, and the just title of those bought in Guinea cannot in practice be verified.
+sources: [A live_verified] src-scelle-traite-negriere-1906 https://archive.org/details/latraitengri01sceluoft
+links: valladolid-debate-1550, asiento-first-1518, coymans-asiento-1685, spanish-royal-decree-florida-sanctuary-policy-1693
+threads: T-ASIENTO, T-SOFTWARE-NEUTRALITY
+
+[E-W2-049-02] W2 1685b population TA
+The accepted titles of servitude listed: just war, a father's sale in need, self-sale, capture for sale, penal condemnation
+framework: Doctrinal layer: the question is put as one of licitness, and the answer is assembled from authors, custom and papal tolerance
+assessment: Weight: Proven (the king's question and the council's answer, the consulta read in Spanish) | Warrant: Closed (what was asked and what was answered) · Open (what the king then did; the AGI original)
+sources: [A live_verified] src-scelle-traite-negriere-1906 https://archive.org/details/latraitengri01sceluoft
+threads: T-ASIENTO, T-SOFTWARE-NEUTRALITY
+
+[E-W2-049-03] W2 1685b counter-move TA
+Two Capuchins shipped home from Havana for preaching the enslavement of Black people unlawful, and barred from returning
+framework: Doctrinal layer: the question is put as one of licitness, and the answer is assembled from authors, custom and papal tolerance
+assessment: Weight: Proven (the king's question and the council's answer, the consulta read in Spanish) | Warrant: Closed (what was asked and what was answered) · Open (what the king then did; the AGI original)
+sources: [A live_verified] src-scelle-traite-negriere-1906 https://archive.org/details/latraitengri01sceluoft
+threads: T-ASIENTO, T-SOFTWARE-NEUTRALITY
 
 [E-W4-001-01] W4 1789 military TA MILESTONE
 French Revolution begins
