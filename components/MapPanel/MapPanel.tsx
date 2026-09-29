@@ -133,7 +133,8 @@ function PeriodMaps({ year, placeIds, operator }: { year: number | null; placeId
     <ul className={styles.maps}>
       {maps.map((m: PeriodMap) => {
         const d = m.date - (year ?? m.date);
-        const rel = d === 0 ? 'same year' : d > 0 ? `${d} years after` : `${-d} years before`;
+        const n = Math.abs(d), yrs = n === 1 ? 'year' : 'years';
+        const rel = d === 0 ? 'same year' : d > 0 ? `${n} ${yrs} after` : `${n} ${yrs} before`;
         return (
           <li key={m.id} className={styles.mapCard}>
             <span className={styles.mapTitle}>{m.title}, {m.date}</span>
@@ -208,7 +209,7 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
             ))}
             {records.map((p) => (
               <button key={p} type="button" className={styles.goBtn} onClick={() => onPush({ kind: 'place', placeId: p })}>
-                Everything at {place(p)?.name} →
+                Everything {place(p)?.kind === 'region' || place(p)?.kind === 'colony' ? 'in' : 'at'} {place(p)?.name} →
               </button>
             ))}
           </div>

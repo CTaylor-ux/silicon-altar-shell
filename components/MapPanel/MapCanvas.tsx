@@ -28,8 +28,10 @@ export type CanvasLine = {
 };
 export type CanvasPoint = { place: Place; color: string; dim?: boolean; hollow?: boolean; number?: number; current?: boolean };
 
-const W = 900;
-const H = 560;
+/* The canvas is drawn at the panel's real width (measured), so labels and
+ * strokes keep their intended pixel size instead of shrinking with a fixed
+ * viewBox. Height follows at a fixed ratio. */
+const RATIO = 0.62;
 
 let landPromise: Promise<unknown> | null = null;
 function loadLand() {
@@ -57,6 +59,18 @@ export default function MapCanvas({
   const [landError, setLandError] = useState(false);
   const [t, setT] = useState({ k: 1, x: 0, y: 0 });
   const svgRef = useRef<SVGSVGElement>(null);
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [W, setW] = useState(520);
+  const H = Math.round(W * RATIO);
+  useEffect(() => {
+    const el = boxRef.current;
+    if (!el) return;
+    const measure = () => setW(Math.max(300, Math.round(el.clientWidth)));
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   const drag = useRef<{ x: number; y: number; tx: number; ty: number } | null>(null);
 
   useEffect(() => {
@@ -82,14 +96,14 @@ export default function MapCanvas({
       const minW = 22, minH = 14;
       if (e - w < minW) { const c = (e + w) / 2; w = c - minW / 2; e = c + minW / 2; }
       if (n - s < minH) { const c = (n + s) / 2; s = c - minH / 2; n = c + minH / 2; }
-      proj.fitExtent([[40, 30], [W - 40, H - 30]], { type: 'MultiPoint', coordinates: [[w, s], [e, s], [w, n], [e, n]] });
+      proj.fitExtent([[36, 28], [W - 36, H - 28]], { type: 'MultiPoint', coordinates: [[w, s], [e, s], [w, n], [e, n]] });
     }
     return { s: proj.scale(), tr: proj.translate() };
     // fitKey stands in for the places' identity.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fitKey]);
+  }, [fitKey, W, H]);
 
-  useEffect(() => setT({ k: 1, x: 0, y: 0 }), [fitKey]);
+  useEffect(() => setT({ k: 1, x: 0, y: 0 }), [fitKey, W]);
 
   const proj = useMemo(
     () => geoNaturalEarth1().rotate([40, 0]).scale(base.s * t.k).translate([base.tr[0] * t.k + t.x, base.tr[1] * t.k + t.y]),
@@ -99,13 +113,14 @@ export default function MapCanvas({
   const grat = useMemo(() => path(geoGraticule().step([10, 10])()), [path]);
   const landD = useMemo(() => (land ? path(land) : null), [path, land]);
 
-  const zoomAt = useCallback((factor: number, cx = W / 2, cy = H / 2) => {
+  const zoomAt = useCallback((factor: number, cx?: number, cy?: number) => {
+    const zx = cx ?? W / 2, zy = cy ?? H / 2;
     setT((o) => {
       const k = Math.max(0.6, Math.min(12, o.k * factor));
       const r = k / o.k;
-      return { k, x: cx - (cx - o.x) * r, y: cy - (cy - o.y) * r };
+      return { k, x: zx - (zx - o.x) * r, y: zy - (zy - o.y) * r };
     });
-  }, []);
+  }, [W, H]);
 
   const toSvg = (e: { clientX: number; clientY: number }) => {
     const b = svgRef.current!.getBoundingClientRect();
@@ -123,7 +138,7 @@ export default function MapCanvas({
     };
     el.addEventListener('wheel', onWheel, { passive: false });
     return () => el.removeEventListener('wheel', onWheel);
-  }, [zoomAt]);
+  }, [zoomAt, W, H]);
 
   const arrow = (a: Place, b: Place) => {
     const it = geoInterpolate(ll(a), ll(b));
@@ -139,7 +154,7 @@ export default function MapCanvas({
     k === 'schematic' ? '2 5' : k === 'intended' ? '7 5' : k === 'mentioned' ? '1 4' : undefined;
 
   return (
-    <div className={styles.canvas}>
+    <div className={styles.canvas} ref={boxRef}>
       <svg
         ref={svgRef}
         viewBox={`0 0 ${W} ${H}`}
@@ -182,7 +197,7 @@ export default function MapCanvas({
           if (!q) return null;
           const region = pt.place.precision === 'region-label';
           const hollow = pt.hollow || pt.place.precision !== 'point';
-          const right = q[0] > W - 170;
+          const right = q[0] > W - 150;
           return (
             <g key={pt.place.id} opacity={pt.dim ? 0.35 : 1}>
               <title>{pt.place.precision === 'point' ? pt.place.name : `${pt.place.name} (${pt.place.precision})`}</title>

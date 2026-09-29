@@ -101,14 +101,22 @@ export function regionsOf(p: Place): Region[] {
   return r;
 }
 
+/* A city, fort or harbour plan shows one place, not a region, so it ranks after
+ * regional and basin-wide maps. Judged from the catalogued title until the
+ * catalogue carries a scale field of its own. */
+const LOCAL = /\b(plan|planta|plano|plattegrond|perspectiva|afbeelding|castrum|kasteel|fort|civitas|stadt|ciudad|town|harbour|rade|baai|ba[ií]a|barra|ichnography|fortifica)/i;
+export function isLocalPlan(m: PeriodMap): boolean {
+  return LOCAL.test(m.title);
+}
+
 /** Nearest period maps for a year and a set of places: regional first, then basin-wide, nearest date first. */
 export function nearestPeriodMaps(year: number, placeIds: string[], operator = false, limit = 3): PeriodMap[] {
   const want = new Set(placeIds.flatMap((id) => (placeById.get(id) ? regionsOf(placeById.get(id)!) : [])));
   if (!want.size) return [];
   return (data.maps ?? [])
     .filter((m) => (operator || m.memberVisible) && m.covers.some((c) => want.has(c)))
-    .map((m) => ({ m, regional: m.covers.some((c) => c !== 'atlantic' && want.has(c)), d: Math.abs(m.date - year) }))
-    .sort((a, b) => Number(b.regional) - Number(a.regional) || a.d - b.d)
+    .map((m) => ({ m, local: isLocalPlan(m), regional: m.covers.some((c) => c !== 'atlantic' && want.has(c)), d: Math.abs(m.date - year) }))
+    .sort((a, b) => Number(a.local) - Number(b.local) || Number(b.regional) - Number(a.regional) || a.d - b.d)
     .slice(0, limit)
     .map((x) => x.m);
 }
