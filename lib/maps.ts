@@ -104,7 +104,7 @@ export function regionsOf(p: Place): Region[] {
 /* A city, fort or harbour plan shows one place, not a region, so it ranks after
  * regional and basin-wide maps. Judged from the catalogued title until the
  * catalogue carries a scale field of its own. */
-const LOCAL = /\b(plan|planta|plano|plattegrond|perspectiva|afbeelding|castrum|kasteel|fort|civitas|stadt|ciudad|town|harbour|rade|baai|ba[ií]a|barra|ichnography|fortifica)/i;
+const LOCAL = /\b(plan|planta|plano|plattegrond|perspectiva|afbeelding|castrum|kasteel|fort|civitas|stadt|ciudad|town|harbour|rade|baai|ba[ií]a|barra|ichnography)\b|fortifica/i;
 export function isLocalPlan(m: PeriodMap): boolean {
   return LOCAL.test(m.title);
 }
