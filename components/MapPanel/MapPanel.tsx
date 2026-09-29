@@ -17,10 +17,11 @@
  * Operator view adds what members must not see: unsourced or flagged links,
  * candidate maps, gaps.
  */
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import MapCanvas, { type CanvasLine, type CanvasPoint } from './MapCanvas';
+import MapViewer from './MapViewer';
 import {
-  CLOSE_YEARS, closestPeriodMaps, entryRow, eventLayer, eventTitle, eventWindow, eventYear, periodMapSeries, place, placeHasRecord, placeRecord,
+  CLOSE_YEARS, closestPeriodMaps, entryRow, eventLayer, eventTitle, eventWindow, eventYear, hasShownImage, imageUrl, periodMapSeries, place, placeHasRecord, placeRecord,
   threadStops, threadsForEvent, topLevelPlace, type Place, type PlaceLink, type PeriodMap,
 } from '@/lib/maps';
 import { laneVar } from '@/lib/windows';
@@ -31,6 +32,9 @@ export type MapView =
   | { kind: 'row'; eventId: string; entryId: string }
   | { kind: 'thread'; token: string; index: number }
   | { kind: 'place'; placeId: string };
+
+/** Opens one period map large, over the panel body. */
+const OpenMap = createContext<(m: PeriodMap) => void>(() => {});
 
 const THREAD_NAMES: Record<string, string> = { 'T-ASIENTO': 'The Asiento' };
 const ROLE: Record<string, string> = {
@@ -74,6 +78,8 @@ export default function MapPanel(props: Props) {
    * map the reader has scrolled past. */
   const bodyRef = useRef<HTMLDivElement>(null);
   const viewKey = view ? JSON.stringify(view) : '';
+  const [viewing, setViewing] = useState<PeriodMap | null>(null);
+  useEffect(() => setViewing(null), [viewKey]);
   useEffect(() => {
     // Where the map is pinned (see .mapSticky) it is already in view, and
     // jumping the list back to the top would lose the reader's place in it.
@@ -135,12 +141,15 @@ export default function MapPanel(props: Props) {
           <button type="button" className={styles.btn} onClick={onClose}>Close</button>
         </div>
       </header>
-      <div className={styles.body} ref={bodyRef}>
-        {view.kind === 'row' && <RowView {...props} view={view} />}
-        {view.kind === 'thread' && <ThreadView {...props} view={view} />}
-        {view.kind === 'place' && <PlaceView {...props} view={view} />}
-        {operator && <p className={styles.opNote}>Operator view: flagged links, candidate maps and gaps are shown.</p>}
-      </div>
+      <OpenMap.Provider value={setViewing}>
+        <div className={styles.body} ref={bodyRef}>
+          {view.kind === 'row' && <RowView {...props} view={view} />}
+          {view.kind === 'thread' && <ThreadView {...props} view={view} />}
+          {view.kind === 'place' && <PlaceView {...props} view={view} />}
+          {operator && <p className={styles.opNote}>Operator view: flagged links, candidate maps and gaps are shown.</p>}
+        </div>
+      </OpenMap.Provider>
+      {viewing && <MapViewer key={viewing.id} m={viewing} onClose={() => setViewing(null)} />}
     </aside>
   );
 }
@@ -190,13 +199,25 @@ function MapCard({ m, year }: { m: PeriodMap; year: number | null }) {
     rel = d === 0 ? 'drawn the same year' : d > 0 ? `drawn ${n} ${yrs} later` : `drawn ${n} ${yrs} earlier`;
   }
   const meta = [rel, m.date_note].filter(Boolean).join(' · ');
+  const open = useContext(OpenMap);
+  const [thumbFailed, setThumbFailed] = useState(false);
+  const showImg = hasShownImage(m) && !thumbFailed;
   return (
     <li className={styles.mapCard}>
+      {showImg && (
+        <button type="button" className={styles.thumbBtn} onClick={() => open(m)} aria-label={`View ${m.title} large`}>
+          {/* eslint-disable-next-line @next/next/no-img-element -- served by the holder's IIIF server, not ours */}
+          <img src={imageUrl(m, 480)} alt="" loading="lazy" referrerPolicy="no-referrer" draggable={false}
+            className={styles.thumb} onError={() => setThumbFailed(true)} />
+          <span className={styles.thumbHint}>View larger</span>
+        </button>
+      )}
       <span className={styles.mapTitle}>{m.title}, {m.date}</span>
       <span className={styles.mapMeta}>{m.maker ?? 'Maker not recorded'} · {m.holder}{m.shelfmark ? ` · ${m.shelfmark}` : ''}</span>
       {meta && <span className={styles.mapMeta}>{meta}</span>}
       {m.status === 'candidate' && <span className={styles.flag}>candidate: not verified at the holder</span>}
       {!m.memberVisible && m.status === 'verified' && <span className={styles.mapMeta}>Rights allow a link only.</span>}
+      {m.memberVisible && !m.image && <span className={styles.mapMeta}>Image not yet recorded; see it at the holder.</span>}
       {m.catalog_url && (
         <a className={styles.linkBtn} href={m.catalog_url} target="_blank" rel="noopener noreferrer">
           Open at {m.holder.split(',')[0]} ↗

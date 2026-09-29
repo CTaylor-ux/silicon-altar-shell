@@ -19,6 +19,11 @@ export interface PeriodMap {
   holder: string; shelfmark: string | null; catalog_url: string | null; iiif_manifest: string | null;
   covers: Region[]; rights: string | null; display: string; status: 'verified' | 'candidate';
   notes: string; memberVisible: boolean; memberLinkable: boolean;
+  /** The map's own sheet from the holder's IIIF image service; null until one is recorded. */
+  image?: {
+    iiif_image: string; sheet: number; sheets: number; sheet_label: string | null;
+    width: number | null; height: number | null; why_this_sheet: string | null; checked: string;
+  } | null;
 }
 export interface Place {
   id: string; name: string; kind: string; lat: number; lon: number;
@@ -235,5 +240,14 @@ export function topLevelPlace(placeId: string): string {
   let p = placeById.get(placeId);
   while (p?.within && placeById.get(p.within)) p = placeById.get(p.within);
   return p?.id ?? placeId;
+}
+/** A map's image is shown only where its rights allow display (memberVisible);
+ *  a link-only map keeps its link even in the operator view. */
+export function hasShownImage(m: PeriodMap): boolean {
+  return Boolean(m.image && m.memberVisible);
+}
+/** IIIF Image API: the whole sheet, fitted inside px by px, from the holder. */
+export function imageUrl(m: PeriodMap, px: number): string {
+  return `${m.image!.iiif_image}/full/!${px},${px}/0/default.jpg`;
 }
 export const allMaps = (): PeriodMap[] => data.maps ?? [];

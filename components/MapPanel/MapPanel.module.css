@@ -202,3 +202,45 @@
 .mapMeta { font: 400 10px var(--font-mono); color: var(--dim); }
 
 .opNote { margin: 0; padding: 10px 12px; font: 400 10px var(--font-mono); color: var(--sig); }
+
+/* Period-map images (Thread 35). Served from the holder's IIIF server; the card
+   shows the whole sheet, and the viewer opens it large over the panel body. */
+.thumbBtn {
+  position: relative; display: block; width: 100%; margin: -2px 0 4px;
+  background: var(--map-sea); border: 1px solid var(--bdr); border-radius: 2px;
+  overflow: hidden; cursor: zoom-in;
+}
+.thumb { display: block; width: 100%; height: 170px; object-fit: contain; }
+.thumbHint {
+  position: absolute; right: 6px; bottom: 6px; padding: 2px 6px;
+  background: var(--panel); border: 1px solid var(--bdr2); border-radius: 2px;
+  font: 500 9px var(--font-mono); letter-spacing: 1.2px; text-transform: uppercase; color: var(--dim);
+}
+.thumbBtn:hover .thumbHint, .thumbBtn:focus-visible .thumbHint { color: var(--bright); border-color: var(--dim); }
+.thumbBtn:focus-visible { outline: 1px solid var(--bright); outline-offset: 2px; }
+
+.viewer {
+  position: absolute; inset: 0; z-index: 4;
+  display: flex; flex-direction: column; background: var(--panel);
+}
+.viewerHead {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;
+  padding: 10px 12px; border-bottom: 1px solid var(--bdr);
+}
+.viewerTitle { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.viewerStage {
+  position: relative; flex: 1; min-height: 0; overflow: hidden;
+  background: var(--map-sea); touch-action: none; user-select: none;
+  display: grid; place-items: center;
+}
+.viewerImg {
+  /* Fills the stage box so the box's origin is the stage's: zooming about a point
+     then needs no offset, and object-fit keeps the whole sheet in view at 1x. */
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;
+  transform-origin: 0 0; transition: opacity 160ms var(--ease);
+}
+.viewerLoading { grid-area: 1 / 1; font: 400 10.5px var(--font-mono); color: var(--dim); }
+.viewerFoot {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px;
+  padding: 8px 12px; border-top: 1px solid var(--bdr);
+}
