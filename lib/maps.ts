@@ -75,11 +75,15 @@ export function placeRecord(placeId: string, operator = false) {
   const inside = new Set([placeId, ...(data.places ?? []).filter((x) => x.within === placeId).map((x) => x.id)]);
   const links = [...inside].flatMap((id) => (data.byPlace?.[id] ?? []).map((i) => data.links[i]))
     .filter((l) => operator || l.memberVisible);
+  const at = links.filter((l) => l.role !== 'mentioned' && l.role !== 'intended-destination');
+  // A row that happens here is listed once, under "at", even if another of its
+  // entries also mentions the place.
+  const atEvents = new Set(at.map((l) => l.event_id));
   return {
     place: p,
     parts: [...inside].filter((id) => id !== placeId).map((id) => placeById.get(id)!),
-    at: links.filter((l) => l.role !== 'mentioned' && l.role !== 'intended-destination'),
-    mentions: links.filter((l) => l.role === 'mentioned' || l.role === 'intended-destination'),
+    at,
+    mentions: links.filter((l) => (l.role === 'mentioned' || l.role === 'intended-destination') && !atEvents.has(l.event_id)),
     gaps: operator ? data.gaps.filter((g) => inside.has(g.place_id)) : [],
   };
 }
