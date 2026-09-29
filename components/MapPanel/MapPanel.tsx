@@ -17,7 +17,7 @@
  * Operator view adds what members must not see: unsourced or flagged links,
  * candidate maps, gaps.
  */
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import MapCanvas, { type CanvasLine, type CanvasPoint } from './MapCanvas';
 import {
   entryRow, eventLayer, eventTitle, eventYear, nearestPeriodMaps, place, placeHasRecord, placeRecord,
@@ -62,6 +62,14 @@ type Props = {
 export default function MapPanel(props: Props) {
   const { trail, operator, onBack, onClose, onTrailTo } = props;
   const view = trail[trail.length - 1];
+  /* Whenever the view changes (a new stop, place or row), bring the map back
+   * into sight: a stop chosen from the bottom of the list otherwise changes a
+   * map the reader has scrolled past. */
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const viewKey = view ? JSON.stringify(view) : '';
+  useEffect(() => {
+    bodyRef.current?.scrollTo({ top: 0 });
+  }, [viewKey]);
   if (!view) return null;
 
   return (
@@ -84,7 +92,7 @@ export default function MapPanel(props: Props) {
           <button type="button" className={styles.btn} onClick={onClose}>Close</button>
         </div>
       </header>
-      <div className={styles.body}>
+      <div className={styles.body} ref={bodyRef}>
         {view.kind === 'row' && <RowView {...props} view={view} />}
         {view.kind === 'thread' && <ThreadView {...props} view={view} />}
         {view.kind === 'place' && <PlaceView {...props} view={view} />}
