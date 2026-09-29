@@ -300,10 +300,15 @@ function ThreadView({ view, operator, onReplace, onPush, onJump, targetForEvent 
         <ol className={styles.stops}>
           {stops.map((s, i) => (
             <li key={s.event_id}>
-              <button type="button" className={`${styles.stopBtn} ${i === view.index ? styles.stopCur : ''} ${s.hasPlaces ? '' : styles.stopOff}`} onClick={() => go(i)}>
+              <button type="button" className={`${styles.stopBtn} ${s.hasPlaces ? '' : styles.stopOff} ${i === view.index ? styles.stopCur : ''}`}
+                aria-current={i === view.index ? 'step' : undefined} onClick={() => go(i)}>
                 <span className={styles.stopYr}>{s.year_label}</span>
                 <span className={styles.stopW}>W{s.window}</span>
-                <span>{eventTitle(s.event_id)}{!s.hasPlaces && s.noPlaceReason ? <em className={styles.why}> · {s.noPlaceReason}</em> : null}</span>
+                <span>
+                  {eventTitle(s.event_id)}
+                  {!s.hasPlaces && s.noPlaceReason ? <em className={styles.why}> · {s.noPlaceReason}</em> : null}
+                  {i === view.index && <span className={styles.nowTag}>current</span>}
+                </span>
               </button>
             </li>
           ))}

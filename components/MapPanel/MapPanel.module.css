@@ -155,7 +155,21 @@
   font-size: 12.5px; line-height: 1.35; color: var(--txt);
 }
 .stopBtn:hover { background: var(--panel2); }
-.stopCur { background: var(--panel2); box-shadow: inset 2px 0 0 var(--bright); }
+/* The stop being read must be unmistakable at a glance, and different from
+   hover: a thicker bright bar, a stronger ground, bright text, full strength
+   even for a stop with no map, and a "current" tag. Neutral ramp only. */
+.stopCur,
+.stopCur:hover { background: rgba(232, 237, 239, 0.1); box-shadow: inset 3px 0 0 var(--bright); opacity: 1; }
+.stopCur .stopYr,
+.stopCur .stopW,
+.stopCur > span:last-child { color: var(--bright); }
+.stopCur .stopYr { font-weight: 700; }
+.nowTag {
+  display: inline-block; margin-left: 8px; padding: 0 5px;
+  border: 1px solid var(--bright); border-radius: 2px;
+  font: 600 8.5px var(--font-mono); letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--bright); vertical-align: 1px;
+}
 .stopOff { opacity: 0.62; }
 .stopYr { font: 600 11px var(--font-mono); color: var(--dim); }
 .stopW { font: 500 9.5px var(--font-mono); color: var(--faintxt); padding-top: 1px; }
