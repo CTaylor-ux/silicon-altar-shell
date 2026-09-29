@@ -17,10 +17,10 @@
  * Operator view adds what members must not see: unsourced or flagged links,
  * candidate maps, gaps.
  */
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import MapCanvas, { type CanvasLine, type CanvasPoint } from './MapCanvas';
 import {
-  entryRow, eventLayer, eventTitle, eventYear, nearestPeriodMaps, place, placeHasRecord, placeRecord,
+  CLOSE_YEARS, closestPeriodMaps, entryRow, eventLayer, eventTitle, eventWindow, eventYear, periodMapSeries, place, placeHasRecord, placeRecord,
   threadStops, threadsForEvent, topLevelPlace, type Place, type PlaceLink, type PeriodMap,
 } from '@/lib/maps';
 import { laneVar } from '@/lib/windows';
@@ -177,31 +177,63 @@ function Quote({ l, onJump, targetForEvent }: { l: PlaceLink } & Pick<Props, 'on
   );
 }
 
-function PeriodMaps({ year, placeIds, operator }: { year: number | null; placeIds: string[]; operator: boolean }) {
-  const maps = year === null ? [] : nearestPeriodMaps(year, placeIds, operator, 3);
-  if (!maps.length) return <p className={styles.fine}>No verified period map for this place and time yet.</p>;
+/* Period maps come in two groups (author ruling, Thread 35): the maps closest to
+ * the row's moment, within the window's cutoff; and how the place was drawn over
+ * time, earlier and later, each with its distance from the row stated. An old map
+ * is still context, and the contrast shows the lines being redrawn. Every card
+ * names its maker: a map is its maker's view, not the ground truth. */
+function MapCard({ m, year }: { m: PeriodMap; year: number | null }) {
+  let rel = '';
+  if (year !== null) {
+    const d = Math.round(m.date - year);
+    const n = Math.abs(d), yrs = n === 1 ? 'year' : 'years';
+    rel = d === 0 ? 'drawn the same year' : d > 0 ? `drawn ${n} ${yrs} later` : `drawn ${n} ${yrs} earlier`;
+  }
+  const meta = [rel, m.date_note].filter(Boolean).join(' · ');
   return (
-    <ul className={styles.maps}>
-      {maps.map((m: PeriodMap) => {
-        const d = m.date - (year ?? m.date);
-        const n = Math.abs(d), yrs = n === 1 ? 'year' : 'years';
-        const rel = d === 0 ? 'same year' : d > 0 ? `${n} ${yrs} after` : `${n} ${yrs} before`;
-        return (
-          <li key={m.id} className={styles.mapCard}>
-            <span className={styles.mapTitle}>{m.title}, {m.date}</span>
-            <span className={styles.mapMeta}>{m.maker ?? 'Maker not recorded'} · {m.holder}{m.shelfmark ? ` · ${m.shelfmark}` : ''}</span>
-            <span className={styles.mapMeta}>{rel}{m.date_note ? ` · ${m.date_note}` : ''}</span>
-            {m.status === 'candidate' && <span className={styles.flag}>candidate: not verified at the holder</span>}
-            {!m.memberVisible && m.status === 'verified' && <span className={styles.mapMeta}>Rights allow a link only.</span>}
-            {m.catalog_url && (
-              <a className={styles.linkBtn} href={m.catalog_url} target="_blank" rel="noopener noreferrer">
-                Open at {m.holder.split(',')[0]} ↗
-              </a>
-            )}
-          </li>
-        );
-      })}
-    </ul>
+    <li className={styles.mapCard}>
+      <span className={styles.mapTitle}>{m.title}, {m.date}</span>
+      <span className={styles.mapMeta}>{m.maker ?? 'Maker not recorded'} · {m.holder}{m.shelfmark ? ` · ${m.shelfmark}` : ''}</span>
+      {meta && <span className={styles.mapMeta}>{meta}</span>}
+      {m.status === 'candidate' && <span className={styles.flag}>candidate: not verified at the holder</span>}
+      {!m.memberVisible && m.status === 'verified' && <span className={styles.mapMeta}>Rights allow a link only.</span>}
+      {m.catalog_url && (
+        <a className={styles.linkBtn} href={m.catalog_url} target="_blank" rel="noopener noreferrer">
+          Open at {m.holder.split(',')[0]} ↗
+        </a>
+      )}
+    </li>
+  );
+}
+
+function ClosestMaps({ year, windowId, placeIds, operator }: { year: number | null; windowId: number | null; placeIds: string[]; operator: boolean }) {
+  const maps = year === null ? [] : closestPeriodMaps(year, windowId, placeIds, operator, 3);
+  const cut = CLOSE_YEARS[windowId ?? 1] ?? 5;
+  return (
+    <section className={styles.sec}>
+      <h3>Closest to this moment</h3>
+      {maps.length ? (
+        <ul className={styles.maps}>{maps.map((m) => <MapCard key={m.id} m={m} year={year} />)}</ul>
+      ) : (
+        <p className={styles.fine}>No verified period map within {cut} years of this date yet.</p>
+      )}
+    </section>
+  );
+}
+
+function MapSeries({ maps, year, heading, note, initial = 6 }: { maps: PeriodMap[]; year: number | null; heading: string; note: string; initial?: number }) {
+  const [all, setAll] = useState(false);
+  if (!maps.length) return null;
+  const shown = all ? maps : maps.slice(0, initial);
+  return (
+    <section className={styles.sec}>
+      <h3>{heading} · {maps.length}</h3>
+      <p className={styles.fine}>{note}</p>
+      <ul className={styles.maps}>{shown.map((m) => <MapCard key={m.id} m={m} year={year} />)}</ul>
+      {maps.length > shown.length && (
+        <button type="button" className={styles.goBtn} onClick={() => setAll(true)}>Show all {maps.length} →</button>
+      )}
+    </section>
   );
 }
 
@@ -232,6 +264,10 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
   const yr = eventYear(view.eventId);
   const threads = threadsForEvent(view.eventId);
   const records = [...new Set((layer?.links ?? []).map((l) => topLevelPlace(l.place_id)))].filter(placeHasRecord);
+  const win = entryRow(view.entryId)?.window ?? eventWindow(view.eventId);
+  const placeIds = drawing.places.map((p) => p.id);
+  const closest = yr.start === null ? [] : closestPeriodMaps(yr.start, win, placeIds, operator, 3);
+  const series = yr.start === null ? [] : periodMapSeries(placeIds, operator, { year: yr.start, exclude: closest.map((m) => m.id) });
   return (
     <>
       <div className={styles.titleBlock}>
@@ -268,10 +304,9 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
           </div>
         </section>
       )}
-      <section className={styles.sec}>
-        <h3>Nearest period maps</h3>
-        <PeriodMaps year={yr.start} placeIds={drawing.places.map((p) => p.id)} operator={operator} />
-      </section>
+      <ClosestMaps year={yr.start} windowId={win} placeIds={placeIds} operator={operator} />
+      <MapSeries key={view.eventId} maps={series} year={yr.start} heading="Drawn over time"
+        note="Earlier and later maps of these places, each as its maker drew it. Set against this row's date, they show the lines being drawn and redrawn." />
     </>
   );
 }
@@ -309,6 +344,9 @@ function ThreadView({ view, operator, onReplace, onPush, onJump, targetForEvent 
     return { points, lines };
   }, [stops, view.index, operator]);
   const fitTo = stop?.hasPlaces ? eventLayer(stop.event_id, operator)?.places : undefined;
+  const stopRecords = stop?.hasPlaces
+    ? [...new Set((eventLayer(stop.event_id, operator)?.links ?? []).map((l) => topLevelPlace(l.place_id)))].filter(placeHasRecord)
+    : [];
   if (!stop) return <p className={styles.fine}>This thread has no stops.</p>;
   return (
     <>
@@ -329,6 +367,22 @@ function ThreadView({ view, operator, onReplace, onPush, onJump, targetForEvent 
           label={`Map for ${THREAD_NAMES[view.token] ?? view.token}, stop ${view.index + 1}`} />
         <Legend />
       </div>
+      {stop.hasPlaces && (
+        <ClosestMaps year={eventYear(stop.event_id).start} windowId={stop.window}
+          placeIds={(fitTo ?? []).map((p) => p.id)} operator={operator} />
+      )}
+      {stopRecords.length > 0 && (
+        <section className={styles.sec}>
+          <h3>Drawn over time</h3>
+          <div className={styles.go}>
+            {stopRecords.map((p) => (
+              <button key={p} type="button" className={styles.goBtn} onClick={() => onPush({ kind: 'place', placeId: p })}>
+                How {place(p)?.name} was drawn over time →
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
       {!stop.hasPlaces && (
         <section className={styles.sec}>
           <h3>No map at this stop</h3>
@@ -434,10 +488,8 @@ function PlaceView({ view, operator, onPush, onJump, targetForEvent }: Props & {
           <ul className={styles.quotes}>{rec.gaps.map((g, i) => <li key={i} className={styles.fine}>{g.entry_id ? `${g.entry_id}: ` : ''}{g.note}</li>)}</ul>
         </section>
       )}
-      <section className={styles.sec}>
-        <h3>Nearest period maps</h3>
-        <PeriodMaps year={eventYear(group(rec.at)[0]?.event_id ?? '').start} placeIds={[rec.place.id]} operator={operator} />
-      </section>
+      <MapSeries key={rec.place.id} maps={periodMapSeries([rec.place.id], operator)} year={null} heading="How this place was drawn over time" initial={8}
+        note="Every catalogued map of this place, oldest first, each as its maker drew it. Read beside the names above: the lines and the names were redrawn together." />
     </>
   );
 }

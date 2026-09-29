@@ -113,16 +113,52 @@ export function isLocalPlan(m: PeriodMap): boolean {
   return LOCAL.test(m.title);
 }
 
-/** Nearest period maps for a year and a set of places: regional first, then basin-wide, nearest date first. */
-export function nearestPeriodMaps(year: number, placeIds: string[], operator = false, limit = 3): PeriodMap[] {
+/* How close in time a map must be to count as "closest to this moment". Tighter as
+ * the windows get denser: a map 40 years off can show a different country after
+ * 1650. A map outside the cutoff is not hidden; it goes into the "drawn over time"
+ * series with its distance stated. Author ruling, Thread 35 (2026-09-29): the
+ * earlier map is still context, and the contrast shows the lines being redrawn.
+ * Starting values, to be tuned once W3 to W6 are catalogued. */
+export const CLOSE_YEARS: Record<number, number> = { 0: 25, 1: 25, 2: 15, 3: 10, 4: 5, 5: 5, 6: 5 };
+const closeYears = (windowId: number | null) => CLOSE_YEARS[windowId ?? 1] ?? 5;
+
+function mapsFor(placeIds: string[], operator: boolean) {
   const want = new Set(placeIds.flatMap((id) => (placeById.get(id) ? regionsOf(placeById.get(id)!) : [])));
   if (!want.size) return [];
   return (data.maps ?? [])
     .filter((m) => (operator || m.memberVisible) && m.covers.some((c) => want.has(c)))
-    .map((m) => ({ m, local: isLocalPlan(m), regional: m.covers.some((c) => c !== 'atlantic' && want.has(c)), d: Math.abs(m.date - year) }))
-    .sort((a, b) => Number(a.local) - Number(b.local) || Number(b.regional) - Number(a.regional) || a.d - b.d)
+    .map((m) => ({ m, local: isLocalPlan(m), regional: m.covers.some((c) => c !== 'atlantic' && want.has(c)) }));
+}
+
+/** Maps within the window's cutoff of the year, nearest in time first. A regional
+ *  map beats a basin-wide one only when they are about equally close (5 years);
+ *  a city or fort plan ranks after both at the same distance. */
+export function closestPeriodMaps(year: number, windowId: number | null, placeIds: string[], operator = false, limit = 3): PeriodMap[] {
+  const cut = closeYears(windowId);
+  return mapsFor(placeIds, operator)
+    .map((x) => ({ ...x, d: Math.abs(x.m.date - year) }))
+    .filter((x) => x.d <= cut)
+    .sort((a, b) => (a.d + (a.regional ? 0 : 5) + (a.local ? 8 : 0)) - (b.d + (b.regional ? 0 : 5) + (b.local ? 8 : 0)) || a.m.date - b.m.date)
     .slice(0, limit)
     .map((x) => x.m);
+}
+
+/** How the place was drawn over time, oldest first: regional maps of it (not city
+ *  plans of somewhere else, not the whole basin unless nothing regional exists).
+ *  With a year, a short series around it: the earliest, the last before, the first
+ *  after and the latest, leaving out maps already shown as closest. Without a year
+ *  (the place page), the whole series. */
+export function periodMapSeries(placeIds: string[], operator = false, around?: { year: number; exclude: string[] }): PeriodMap[] {
+  const all = mapsFor(placeIds, operator).filter((x) => !x.local);
+  const regional = all.filter((x) => x.regional);
+  const pool = (regional.length ? regional : all).map((x) => x.m).sort((a, b) => a.date - b.date || a.id.localeCompare(b.id));
+  if (!around) return pool;
+  const rest = pool.filter((m) => !around.exclude.includes(m.id));
+  if (!rest.length) return [];
+  const before = rest.filter((m) => m.date < around.year);
+  const after = rest.filter((m) => m.date >= around.year);
+  const pick = [before[0], before[before.length - 1], after[0], after[after.length - 1]].filter(Boolean) as PeriodMap[];
+  return [...new Map(pick.map((m) => [m.id, m])).values()].sort((a, b) => a.date - b.date);
 }
 
 // ---------------------------------------------------------------------------
@@ -168,6 +204,9 @@ export function targetForEvent(eventId: string): Target | null {
 }
 export function eventTitle(eventId: string): string {
   return firstRowOfEvent.get(eventId)?.title ?? eventId;
+}
+export function eventWindow(eventId: string): number | null {
+  return firstRowOfEvent.get(eventId)?.window ?? null;
 }
 export function eventYear(eventId: string): { start: number | null; display: string } {
   return firstRowOfEvent.get(eventId)?.year ?? { start: null, display: '' };
