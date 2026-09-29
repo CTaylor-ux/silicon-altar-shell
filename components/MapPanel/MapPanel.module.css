@@ -98,6 +98,13 @@
 .fine { margin: 0; font: 400 10.5px/1.5 var(--font-mono); color: var(--dim); }
 
 .canvas { position: relative; background: var(--map-sea); border-bottom: 1px solid var(--bdr); }
+/* The map and its legend stay pinned while the lists below scroll, so a stop
+   or row can be chosen with the map in view. Only where the panel is tall
+   enough to leave room for the list; on short screens everything scrolls. */
+.mapSticky { background: var(--panel); }
+@media (min-height: 760px) {
+  .mapSticky { position: sticky; top: 0; z-index: 2; box-shadow: 0 6px 12px -8px rgba(0, 0, 0, 0.6); }
+}
 .svg { display: block; width: 100%; height: auto; touch-action: none; cursor: grab; user-select: none; }
 .svg:active { cursor: grabbing; }
 .placeLabel { font: 400 10.5px var(--font-mono); fill: var(--txt); paint-order: stroke; stroke: var(--map-sea); stroke-width: 3px; }

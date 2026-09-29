@@ -68,6 +68,9 @@ export default function MapPanel(props: Props) {
   const bodyRef = useRef<HTMLDivElement>(null);
   const viewKey = view ? JSON.stringify(view) : '';
   useEffect(() => {
+    // Where the map is pinned (see .mapSticky) it is already in view, and
+    // jumping the list back to the top would lose the reader's place in it.
+    if (window.matchMedia('(min-height: 760px)').matches) return;
     bodyRef.current?.scrollTo({ top: 0 });
   }, [viewKey]);
   if (!view) return null;
@@ -196,8 +199,10 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
         <h2 className={styles.h2}>{eventTitle(view.eventId)}</h2>
         <span className={styles.fine}>{yr.display}. The row stays highlighted; Close returns you to it.</span>
       </div>
-      <MapCanvas points={drawing.points} lines={drawing.lines} label={`Map for ${eventTitle(view.eventId)}`} />
-      <Legend />
+      <div className={styles.mapSticky}>
+        <MapCanvas points={drawing.points} lines={drawing.lines} label={`Map for ${eventTitle(view.eventId)}`} />
+        <Legend />
+      </div>
       <section className={styles.sec}>
         <h3>In the row&rsquo;s own words</h3>
         <ul className={styles.quotes}>
@@ -279,9 +284,11 @@ function ThreadView({ view, operator, onReplace, onPush, onJump, targetForEvent 
           )}
         </div>
       </div>
-      <MapCanvas points={drawing.points} lines={drawing.lines} fitTo={fitTo && fitTo.length ? fitTo : undefined}
-        label={`Map for ${THREAD_NAMES[view.token] ?? view.token}, stop ${view.index + 1}`} />
-      <Legend />
+      <div className={styles.mapSticky}>
+        <MapCanvas points={drawing.points} lines={drawing.lines} fitTo={fitTo && fitTo.length ? fitTo : undefined}
+          label={`Map for ${THREAD_NAMES[view.token] ?? view.token}, stop ${view.index + 1}`} />
+        <Legend />
+      </div>
       {!stop.hasPlaces && (
         <section className={styles.sec}>
           <h3>No map at this stop</h3>
@@ -352,8 +359,10 @@ function PlaceView({ view, operator, onPush, onJump, targetForEvent }: Props & {
         <h2 className={styles.h2}>{rec.place.name}</h2>
         <span className={styles.fine}>Every row that names this place, across windows. Choosing one moves the window there.</span>
       </div>
-      <MapCanvas points={drawing.points} lines={drawing.lines} fitTo={drawing.fit} label={`Map of ${rec.place.name}`} />
-      <Legend />
+      <div className={styles.mapSticky}>
+        <MapCanvas points={drawing.points} lines={drawing.lines} fitTo={drawing.fit} label={`Map of ${rec.place.name}`} />
+        <Legend />
+      </div>
       {rec.place.names.length > 0 && (
         <section className={styles.sec}>
           <h3>Names by period</h3>

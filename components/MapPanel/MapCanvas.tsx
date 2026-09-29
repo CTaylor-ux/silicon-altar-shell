@@ -34,7 +34,7 @@ export type CanvasPoint = { place: Place; color: string; dim?: boolean; hollow?:
 /* The canvas is drawn at the panel's real width (measured), so labels and
  * strokes keep their intended pixel size instead of shrinking with a fixed
  * viewBox. Height follows at a fixed ratio. */
-const RATIO = 0.62;
+const RATIO = 0.52;
 
 let landPromise: Promise<unknown> | null = null;
 function loadLand() {
