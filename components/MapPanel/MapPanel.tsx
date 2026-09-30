@@ -22,7 +22,7 @@ import MapCanvas, { type CanvasLine, type CanvasPoint } from './MapCanvas';
 import MapViewer from './MapViewer';
 import {
   CLOSE_YEARS, closestPeriodMaps, entryRow, eventLayer, eventTitle, eventWindow, eventYear, hasShownImage, imageUrl, periodMapSeries, place, placeHasRecord, placeRecord,
-  threadStops, threadsForEvent, topLevelPlace, type Place, type PlaceLink, type PeriodMap,
+  threadInfo, threadStops, threadTitle, threadsForEvent, topLevelPlace, type Place, type PlaceLink, type PeriodMap,
 } from '@/lib/maps';
 import { laneVar } from '@/lib/windows';
 import type { Target } from '@/lib/retrieval';
@@ -36,7 +36,6 @@ export type MapView =
 /** Opens one period map large, over the panel body. */
 const OpenMap = createContext<(m: PeriodMap) => void>(() => {});
 
-const THREAD_NAMES: Record<string, string> = { 'T-ASIENTO': 'The Asiento' };
 const ROLE: Record<string, string> = {
   'taken-from': 'taken from', 'sold-at': 'sold at', 'financed-from': 'financed from', departed: 'departed',
   'intended-destination': 'bound for', 'captors-home-port': "captors' home port", 'captured-off': 'captured off',
@@ -47,7 +46,7 @@ const ROLE: Record<string, string> = {
 
 export function viewLabel(v: MapView): string {
   if (v.kind === 'row') return `${eventYear(v.eventId).display} row`;
-  if (v.kind === 'thread') return `${THREAD_NAMES[v.token] ?? v.token}, stop ${v.index + 1}`;
+  if (v.kind === 'thread') return `${threadTitle(v.token)}, stop ${v.index + 1}`;
   return place(v.placeId)?.name ?? v.placeId;
 }
 
@@ -315,7 +314,7 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
             {threads.map((t) => (
               <button key={t.token} type="button" className={styles.goBtn}
                 onClick={() => onPush({ kind: 'thread', token: t.token, index: t.index })}>
-                Follow {THREAD_NAMES[t.token] ?? t.token}, stop {t.index + 1} of {t.total} →
+                Follow {threadTitle(t.token)}, stop {t.index + 1} of {t.total} →
               </button>
             ))}
             {records.map((p) => (
@@ -339,6 +338,7 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
 function ThreadView({ view, operator, onReplace, onPush, onJump, targetForEvent }: Props & { view: Extract<MapView, { kind: 'thread' }> }) {
   const stops = threadStops(view.token);
   const stop = stops[view.index];
+  const info = threadInfo(view.token);
   const go = (i: number) => {
     onReplace({ kind: 'thread', token: view.token, index: i });
     const t = targetForEvent(stops[i].event_id);
@@ -373,7 +373,14 @@ function ThreadView({ view, operator, onReplace, onPush, onJump, targetForEvent 
   return (
     <>
       <div className={styles.titleBlock}>
-        <span className={styles.kind}>Thread · {THREAD_NAMES[view.token] ?? view.token} · stop {view.index + 1} of {stops.length}</span>
+        <span className={styles.kind}>Thread · {threadTitle(view.token)} · stop {view.index + 1} of {stops.length}</span>
+        {info?.description && (
+          <p className={styles.threadAbout}>
+            {info.description}
+            {info.from && info.to && <span className={styles.threadSpan}> {info.from} → {info.to} · {info.stops} stops</span>}
+            {operator && <span className={styles.threadSpan}> · {view.token}{info.status ? ` · ${info.status}` : ''}</span>}
+          </p>
+        )}
         <h2 className={styles.h2}>{eventTitle(stop.event_id)}</h2>
         <span className={styles.fine}>W{stop.window} · {stop.year_label}. The window behind moves to each stop. Numbers mark order, not a route.</span>
         <div className={styles.go}>
@@ -386,7 +393,7 @@ function ThreadView({ view, operator, onReplace, onPush, onJump, targetForEvent 
       </div>
       <div className={styles.mapSticky}>
         <MapCanvas points={drawing.points} lines={drawing.lines} fitTo={fitTo && fitTo.length ? fitTo : undefined}
-          label={`Map for ${THREAD_NAMES[view.token] ?? view.token}, stop ${view.index + 1}`} />
+          label={`Map for ${threadTitle(view.token)}, stop ${view.index + 1}`} />
         <Legend />
       </div>
       {stop.hasPlaces && (

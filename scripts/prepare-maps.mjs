@@ -9,6 +9,7 @@
  *   places.json            places named by rows, each link carrying the row's own wording
  *   flows.json             directed movements named by rows
  *   entries.json           to place every event in its window, and to build thread order
+ *   threads.json           reader-facing title and description per thread (optional; codes shown if absent)
  *
  * WHY THIS EXISTS (Thread 35, 2026-09-29)
  * ---------------------------------------
@@ -143,6 +144,20 @@ for (const e of [...E].sort((a, b) => a.window - b.window || a.year_sort - b.yea
   }
 }
 
+/* Thread titles (threads.json, Thread 35). Optional so an older corpus still builds; the
+ * panel falls back to the code. The span is computed here from the stops, so it cannot
+ * drift from the memberships the way a typed range can. */
+const threadInfo = {};
+const TH = have('threads.json') ? read('threads.json').threads : [];
+for (const t of TH) threadInfo[t.token] = { title: t.title, description: t.description, status: t.status };
+for (const [tok, stops] of Object.entries(threads)) {
+  const i = (threadInfo[tok] ??= { title: null, description: null, status: null });
+  i.from = stops[0]?.year_label ?? null;
+  i.to = stops[stops.length - 1]?.year_label ?? null;
+  i.stops = stops.length;
+}
+const untitled = Object.keys(threads).filter((t) => !threadInfo[t].title);
+
 const out = {
   available: true,
   generatedFrom: 'historical_maps.json + places.json + flows.json + entries.json',
@@ -158,6 +173,7 @@ const out = {
   byEvent,
   byPlace,
   threads,
+  threadInfo,
 };
 fs.writeFileSync(OUT, JSON.stringify(out, null, 0) + '\n');
 
@@ -173,7 +189,7 @@ fs.copyFileSync(LAND_SRC, path.join(LAND_DIR, 'land-50m.json'));
 const shown = maps.filter((m) => m.memberVisible).length;
 console.log(`  ${maps.length} period maps (${shown} member-visible, commercial=${commercial})`);
 console.log(`  ${P.places.length} places, ${links.length} links, ${flows.length} flows, ${Object.keys(byEvent).length} events with map data`);
-console.log(`  ${Object.keys(threads).length} threads indexed`);
+console.log(`  ${Object.keys(threads).length} threads indexed, ${Object.keys(threads).length - untitled.length} titled${untitled.length ? ` (untitled: ${untitled.join(', ')})` : ''}`);
 console.log(`  ${(fs.statSync(OUT).size / 1024).toFixed(0)} KB -> lib/maps.generated.json`);
 console.log(`  ${(fs.statSync(path.join(LAND_DIR, 'land-50m.json')).size / 1024).toFixed(0)} KB -> public/maps/land-50m.json (Natural Earth, public domain)`);
 console.log('  Audit repo untouched (read-only).\n');

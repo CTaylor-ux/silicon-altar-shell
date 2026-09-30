@@ -55,6 +55,11 @@ interface MapData {
   byEvent: Record<string, { window: number; links: number[]; flows: number[] }>;
   byPlace: Record<string, number[]>;
   threads: Record<string, ThreadStop[]>;
+  threadInfo?: Record<string, ThreadInfo>;
+}
+export interface ThreadInfo {
+  title: string | null; description: string | null; status: 'draft' | 'approved' | null;
+  from: string | null; to: string | null; stops: number;
 }
 
 const data = raw as unknown as MapData;
@@ -94,6 +99,14 @@ export function placeRecord(placeId: string, operator = false) {
     mentions: links.filter((l) => (l.role === 'mentioned' || l.role === 'intended-destination') && !atEvents.has(l.event_id)),
     gaps: operator ? data.gaps.filter((g) => inside.has(g.place_id)) : [],
   };
+}
+
+/** A thread's reader-facing title (threads.json), or its code where none is recorded. */
+export function threadTitle(token: string): string {
+  return data.threadInfo?.[token]?.title ?? token;
+}
+export function threadInfo(token: string): ThreadInfo | null {
+  return data.threadInfo?.[token] ?? null;
 }
 
 export function threadStops(token: string): ThreadStop[] {

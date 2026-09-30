@@ -244,3 +244,7 @@
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px;
   padding: 8px 12px; border-top: 1px solid var(--bdr);
 }
+
+/* What a thread tracks (threads.json) and its real span, computed from its stops. */
+.threadAbout { margin: 2px 0 4px; font-size: 12.5px; line-height: 1.45; color: var(--txt); max-width: 70ch; }
+.threadSpan { font: 400 10.5px var(--font-mono); color: var(--dim); white-space: nowrap; }
