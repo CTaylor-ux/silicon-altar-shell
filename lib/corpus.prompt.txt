@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 866 sources are opened and 139 are not.
+something is evidenced, say so. 867 sources are opened and 138 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -270,7 +270,6 @@ Crusader States established: European franchises on Levantine territory
 Kingdom of Jerusalem (1099), County of Tripoli, Principality of Antioch, County of Edessa. European legal frameworks are installed on captured Levantine land, ruled by resident Frankish princes and lords rather than from Europe. This is the first documented instance of the 'franchise' pattern that reappears in the Templar preceptories, VOC factories, English North American colonies, and modern US military bases.
 sources: [A citation_only] src-riley-smith-first-crusade
 links: omne-datum-optimum-1139, encomienda-1503
-threads: T-FRANCHISE-TRANSFER
 
 [E-W0-016-04] W0 1095 innovation TA
 Levantine conquest: the corpus's extraction reading, and the crusaders' own gains
@@ -1139,7 +1138,6 @@ links: roanoke-1585, dutch-revolt-1568
 Nine Years War 1594-1603: Iberian classification template redeployed on Ireland
 Hugh O'Neill (Earl of Tyrone) and Hugh Roe O'Donnell lead the Nine Years' War (1594-1603), primarily in Ulster, against the Elizabethan conquest of Ireland. Spanish aid lands at Kinsale in 1601 but the war is decided for the English there; defeat leads to the Flight of the Earls (1607), the confiscation of the earls' lands (1608), and the Plantation of Ulster. The tier-calibrated framework note: this runs the conquest-confiscation-settler-plantation template on a European Christian (Irish Catholic) population - the Software-Neutrality principle (the code runs on Europeans) - but the mechanism is Anglo-plantation, distinct from the Iberian blood-classification line. The war is the trigger; the taggable classification node is the Plantation of Ulster (1609), not yet built.
 sources: [B live_verified] src-wikipedia-nine-years-war-ireland https://en.wikipedia.org/wiki/Nine_Years%27_War_(Ireland)
-threads: T-WHITENING-PROJECT
 
 [E-W1-031-02] W1 1594 population TB
 Flight of the Earls 1607 eliminates Gaelic Irish sovereign leadership
@@ -1314,7 +1312,6 @@ East India Company chartered
 English EIC: Crown-licensed monopoly on Asian trade, chartered by Elizabeth I on 31 December 1600. Thomas Smythe is already governor of the Muscovy and Levant companies when he becomes the EIC's first governor, a post he holds to 1621 apart from a break in 1605-07. He obtains the Virginia Company charter in 1609 and serves as its treasurer until 1619. For two decades the EIC's general assemblies meet in his own house at Philpot Lane.
 sources: [B live_verified] src-encyc-va-smythe https://encyclopediavirginia.org/entries/smythe-sir-thomas-ca-1558-1625/; [B citation_only] src-britannica-smythe https://www.britannica.com/money/Thomas-Smythe; [B citation_only] src-hop-smythe-1558-1625 https://www.historyofparliamentonline.org/volume/1604-1629/member/smythe-sir-thomas-1558-1625
 links: east-india-company-1600, levant-company-1581-joint-stock-corporate-1581, voc-1602
-threads: T-FRANCHISE-TRANSFER
 
 [E-W2-001-02] W2 1600b catastrophe TB
 Huaynaputina eruption → global famine
@@ -1390,14 +1387,14 @@ Dutch West India Company (WIC) chartered
 Chartered 3 June 1621; founder Joannes de Laet; five chambers (Amsterdam, Hoorn, Rotterdam, Groningen, Middelburg) under the Heeren XIX. Held the Atlantic monopoly on trade and warfare 1624-1674, reinstated 1674-1738, the entity surviving to 1791. Shipped at least 85,000 enslaved people before 1674 and at least 180,000 after, both floors, so at least 265,000 in total, about a quarter of all Dutch slave trade. Supplied Spanish colonies via Curaçao as entrepôt, an indirect stake in the Asiento.
 sources: [A citation_only] src-postma-dutch-atlantic-slave-trade; [A citation_only] src-den-heijer-geschiedenis-wic; [B live_verified] src-low-countries-wic-slave-trade https://www.the-low-countries.com/article/approved-by-the-bible-the-slave-trade-of-the-dutch-west-india-company/; [B live_verified] src-project-manifest-wic https://www.projectmanifest.eu/the-wic-the-dutch-west-india-company-en-fr/
 links: voc-1602, asiento-first-1518, piet-hein-captures-spanish-silver-fleet-1628
-threads: T-ASIENTO, T-FRANCHISE-TRANSFER
+threads: T-ASIENTO
 
 [E-W2-006-02] W2 1621 legal TB
 WIC Charter = Asiento pipeline formalized
 Monopoly over Dutch participation in Atlantic slave trade. Military, judicial, and administrative powers granted. Same charter model as VOC/EIC/Virginia Co. The extraction function now has competing corporate franchises in every zone.
 sources: [A citation_only] src-postma-dutch-atlantic-slave-trade; [A citation_only] src-den-heijer-geschiedenis-wic; [B live_verified] src-low-countries-wic-slave-trade https://www.the-low-countries.com/article/approved-by-the-bible-the-slave-trade-of-the-dutch-west-india-company/; [B live_verified] src-project-manifest-wic https://www.projectmanifest.eu/the-wic-the-dutch-west-india-company-en-fr/
 links: voc-1602, asiento-first-1518, piet-hein-captures-spanish-silver-fleet-1628
-threads: T-ASIENTO, T-FRANCHISE-TRANSFER
+threads: T-ASIENTO
 
 [E-W2-007-01] W2 1624 legal TB
 Virginia becomes Royal Colony
@@ -1411,7 +1408,6 @@ Dutch establish Fort Orange (Albany)
 In 1624 the Dutch West India Company builds Fort Orange on the Hudson at present-day Albany - the first permanent Dutch settlement in New Netherland, replacing the abandoned Fort Nassau. It is built on Mahican land without consent (unlike later purchase-based settlement) and operates as a fur-trade post at the Iroquois/Algonquian crossroads: the WIC's land-claim-and-extraction node in North America.
 sources: [B live_verified] src-fort-orange-1624 https://en.wikipedia.org/wiki/Fort_Orange_(New_Netherland)
 links: dutch-west-india-company-wic-chartered-1621, new-netherland-new-york-1664, piet-hein-captures-spanish-silver-fleet-1628
-threads: T-FRANCHISE-TRANSFER
 
 [E-W2-008-01] W2 1628 financial TB
 Piet Hein captures Spanish Silver Fleet
@@ -1502,21 +1498,21 @@ threads: T-FRANCHISE-TRANSFER, T-ASIENTO
 Across the Caribbean and the American interior, people who escape the classification form independent, self-governing communities. In Jamaica, when the Spanish flee the English conquest of 1655, the people they held take their own freedom and coalesce in the interior as the Maroons (from the Spanish cimarrón, wild, untamed). They hold their ground by force until the treaties of 1739 and 1740 acknowledge their autonomy and land, in exchange for military service and the return of later runaways.
 sources: [A citation_only] src-campbell-maroons-jamaica; [B live_verified] src-wikipedia-jamaican-maroons https://en.wikipedia.org/wiki/Jamaican_Maroons
 links: cromwell-seizes-jamaica-1655, fort-mose-1738
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W2-012-02] W2 ~1655 counter-move TB
 ★ Maroon treaties = sovereignty acknowledged
 When colonial governments sign TREATIES with Maroon communities, they acknowledge that these are not runaway slaves - they are treaty-capable polities. Treaty language implies sovereignty. Jamaica’s 1739 treaty grants Maroon territory, internal self-governance, and freedom from colonial law. The same treaty mechanism as the 1787 Morocco Treaty - the Managers negotiate because the military option has failed.
 sources: [A citation_only] src-campbell-maroons-jamaica; [B live_verified] src-wikipedia-jamaican-maroons https://en.wikipedia.org/wiki/Jamaican_Maroons
 links: cromwell-seizes-jamaica-1655, fort-mose-1738
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W2-012-03] W2 ~1655 counter-move TB
 ★ Maroon territorial sovereignty
 Blue Mountains (Jamaica), interior Suriname, Quilombo dos Palmares (Brazil). The Noun carves out physical territory the Adjective cannot reach. Some communities persist into the present day. The classification fails wherever it cannot deploy sufficient violence to enforce it.
 sources: [A citation_only] src-campbell-maroons-jamaica; [B live_verified] src-wikipedia-jamaican-maroons https://en.wikipedia.org/wiki/Jamaican_Maroons
 links: cromwell-seizes-jamaica-1655, fort-mose-1738
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W2-013-01] W2 1656 legal TA
 Elizabeth Key lawsuit - THE EXIT DOOR THAT TRIGGERS PARTUS
@@ -1572,7 +1568,6 @@ Company charter names "negro slaves" as commodity
 1663 charter explicitly lists "negro slaves" as trade goods - first time in a Crown corporate charter. Asiento inventory language in English corporate instruments.
 sources: [B live_verified] src-wikipedia-new-france https://en.wikipedia.org/wiki/New_France
 links: code-noir-1685
-threads: T-FRANCHISE-TRANSFER
 
 [E-W2-017-02] W2 1663 legal TB
 New France becomes royal colony
@@ -1630,21 +1625,18 @@ Hudson’s Bay Company chartered
 2 May 1670. Charles II charters the Governor and Company of Adventurers of England trading into Hudson's Bay, with Prince Rupert as first governor. It receives Rupert's Land, the whole Hudson Bay watershed, roughly 1.5 million square miles, over a third of modern Canada, and a monopoly on its fur trade. The charter model, Levant to EIC to Virginia to RAC, now closes the grid's northern quarter.
 sources: [B live_verified] src-wikipedia-hudsons-bay-company https://en.wikipedia.org/wiki/Hudson%27s_Bay_Company
 links: east-india-company-chartered-1600, voc-1602
-threads: T-FRANCHISE-TRANSFER
 
 [E-W2-021-02] W2 1670 land TB
 Rupert’s Land - 1.5M sq miles claimed
 HBC granted all lands draining into Hudson Bay. 40% of modern Canada. Largest land grant in history to a private corporation. Not purchased. Not conquered. Decreed. The land already has people.
 sources: [B live_verified] src-wikipedia-hudsons-bay-company https://en.wikipedia.org/wiki/Hudson%27s_Bay_Company
 links: east-india-company-chartered-1600, voc-1602
-threads: T-FRANCHISE-TRANSFER
 
 [E-W2-021-03] W2 1670 innovation TB
 Fur trade monopoly
 HBC extracts beaver pelts, timber, minerals from indigenous territories. The extraction follows the same pattern: charter → claim → extract. The resource changes; the model doesn’t.
 sources: [B live_verified] src-wikipedia-hudsons-bay-company https://en.wikipedia.org/wiki/Hudson%27s_Bay_Company
 links: east-india-company-chartered-1600, voc-1602
-threads: T-FRANCHISE-TRANSFER
 
 [E-W2-022-01] W2 1670b legal TB
 Anthony Johnson estate seized
@@ -1714,49 +1706,49 @@ Bacon’s Rebellion
 Multiracial uprising of indentured servants and enslaved people against Virginia elite. White and Black laborers unite against the planter class. The Managers’ response: DIVIDE the labor pool by RACE. The 1682 and 1705 racial codes are the direct legislative response to this moment.
 sources: [A citation_only] src-morgan-american-slavery-american-freedom
 links: king-philip-s-war-1675, virginia-code-1682, virginia-slave-codes-1705
-threads: T-CHESAPEAKE-CLASS-SPLIT, T-WHITENING-PROJECT
+threads: T-WHITENING-PROJECT
 
 [E-W2-025-02] W2 1676 records TB
 Jamestown burned
 Bacon’s rebels burn the colonial capital. Government records, property records, court archives destroyed. The fire erases parts of the documentary chain of the colony’s first 70 years.
 sources: [A citation_only] src-morgan-american-slavery-american-freedom
 links: king-philip-s-war-1675, virginia-code-1682, virginia-slave-codes-1705
-threads: T-CHESAPEAKE-CLASS-SPLIT, T-WHITENING-PROJECT
+threads: T-WHITENING-PROJECT
 
 [E-W2-025-03] W2 1676 information TB
 The lesson: unified labor = threat
 Bacon’s Rebellion proves that a multiracial laboring class can overthrow the planter elite. The solution: racial law that gives poor whites a stake in the classification hierarchy. Divide the Nouns into Adjectives.
 sources: [A citation_only] src-morgan-american-slavery-american-freedom
 links: king-philip-s-war-1675, virginia-code-1682, virginia-slave-codes-1705
-threads: T-CHESAPEAKE-CLASS-SPLIT, T-WHITENING-PROJECT
+threads: T-WHITENING-PROJECT
 
 [E-W2-026-01] W2 1680 counter-move TB MILESTONE
 ★ Pueblo Revolt - Most successful indigenous counter-move
 August 10, 1680. Popé of San Juan, a Tewa medicine man, leads an almost universal Pueblo uprising. Governor Otermín and the Spanish flee Santa Fe by 21 August. 401 settlers and 21 friars die, the friars 21 of the province's 33; the dead are roughly a quarter of New Mexico's Spanish population. Some 2,000 survivors retreat to El Paso. A Spanish force of 300 is repelled in 1681: the twelve years are defended, not merely uncontested, until Vargas reconquers in 1692.
 sources: [A citation_only] src-knaut-pueblo-revolt-1680; [B citation_only] src-britannica-pueblo-rebellion https://www.britannica.com/event/Pueblo-Rebellion; [B live_verified] src-penn-expedition-pueblo-revolt https://www.penn.museum/sites/expedition/researching-the-pueblo-revolt-of-1680/
 links: requerimiento-1513, encomienda-1503, spanish-royal-decree-florida-sanctuary-policy-1693
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W2-026-02] W2 1680 records TB
 Spanish records destroyed
 The Pueblo revolutionaries deliberately burn churches, administrative buildings, and Spanish records. This is Lane 4 deployed by the Heirs: destroy the occupier’s paper trail. The archive destruction pattern reversed. When the Spanish return (1692), they have to rebuild the documentary chain from scratch.
 sources: [A citation_only] src-knaut-pueblo-revolt-1680; [B citation_only] src-britannica-pueblo-rebellion https://www.britannica.com/event/Pueblo-Rebellion; [B live_verified] src-penn-expedition-pueblo-revolt https://www.penn.museum/sites/expedition/researching-the-pueblo-revolt-of-1680/
 links: requerimiento-1513, encomienda-1503, spanish-royal-decree-florida-sanctuary-policy-1693
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W2-026-03] W2 1680 counter-move TB
 ★ Spanish jurisdiction voided for 12 years
 1680-1692: the Pueblo nations govern without any European presence. The Reconquista model reversed: indigenous population expels the occupier, destroys the occupier’s records, restores pre-contact governance. Proof that the classification is only as durable as the violence enforcing it.
 sources: [A citation_only] src-knaut-pueblo-revolt-1680; [B citation_only] src-britannica-pueblo-rebellion https://www.britannica.com/event/Pueblo-Rebellion; [B live_verified] src-penn-expedition-pueblo-revolt https://www.penn.museum/sites/expedition/researching-the-pueblo-revolt-of-1680/
 links: requerimiento-1513, encomienda-1503, spanish-royal-decree-florida-sanctuary-policy-1693
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W2-026-04] W2 1680 counter-move TB
 ★ Pueblo territory restored
 All Spanish land grants voided by force. Encomienda abolished. Missions burned. The land returns to indigenous governance for over a decade. Spanish reconquest (1692) reinstalls the framework, but the Pueblo nations negotiate from a position of strength the second time.
 sources: [A citation_only] src-knaut-pueblo-revolt-1680; [B citation_only] src-britannica-pueblo-rebellion https://www.britannica.com/event/Pueblo-Rebellion; [B live_verified] src-penn-expedition-pueblo-revolt https://www.penn.museum/sites/expedition/researching-the-pueblo-revolt-of-1680/
 links: requerimiento-1513, encomienda-1503, spanish-royal-decree-florida-sanctuary-policy-1693
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W2-027-01] W2 1682 population TA
 "Negroes, Moors, Mollattoes" merged
@@ -1819,7 +1811,7 @@ Germantown Quaker Petition
 18 February 1688. Four Quakers at Germantown, Pennsylvania, led by Francis Daniel Pastorius, sign the first public document in the English colonies to protest slavery. On the Golden Rule they ask how Christians can hold others in a bondage they would refuse for themselves. The meeting neither adopts nor rejects it, and it disappears into the archives for 150 years.
 sources: [B live_verified] src-wikipedia-germantown-petition https://en.wikipedia.org/wiki/1688_Germantown_Quaker_Petition_Against_Slavery
 links: first-africans-at-jamestown-1619, somerset-v-stewart-1772
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W2-031-01] W2 1688b financial TB
 Lloyd’s Coffee House - slave voyage insurance
@@ -1865,21 +1857,20 @@ threads: T-MERCHANT-BANKER-CONSTANT
 Cédula Real of Charles II of Spain: freedom for any enslaved person from English colonies who reaches Spanish Florida and converts to Catholicism. This is a JURISDICTIONAL INSTRUMENT - a competing Managerial system with different classification rules. Spain creates a legal alternative to the English compression (1682): the same person classified as “Negro” property under English law becomes FREE under Spanish law by crossing a territorial boundary.
 sources: [A citation_only] src-landers-black-society-spanish-florida; [B live_verified] src-wikipedia-fort-mose https://en.wikipedia.org/wiki/Fort_Mose_Historic_State_Park
 links: pueblo-revolt-1680, fort-mose-1738
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W2-035-02] W2 1693 counter-move TB
 ★ Competing classification systems create escape routes
 The Spanish decree reveals the critical forensic point: classification is JURISDICTIONAL, not biological. Cross one border and the Adjective changes. The English system has no Las Casas firewall. The Spanish system does. The same person is property on one side of the Georgia-Florida border and free on the other. The Managers cannot coordinate their classification systems because they are competing with each other. This jurisdictional gap will persist until the US purchases Florida (Adams-Onís Treaty, 1819, W4) - eliminating the alternative classification entirely. Fort Negro (1816, W4) is destroyed specifically because the free community exists in this gap.
 sources: [A citation_only] src-landers-black-society-spanish-florida; [B live_verified] src-wikipedia-fort-mose https://en.wikipedia.org/wiki/Fort_Mose_Historic_State_Park
 links: pueblo-revolt-1680, fort-mose-1738
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W2-036-01] W2 1694 financial TB
 Bank of England chartered
 July 27. Centralizes debt issuance for the first time. Funded by 1,268 shareholders raising £1.2 million. Physical destruction of Caribbean node (Port Royal 1692) + purge of knowledge networks (Salem 1692) clears path for centralized debt-grid to replace decentralized Moorish/Sephardic trade system. Old system: decentralized trade via Port Royal, Amsterdam, Levant Company. New system: centralized debt via Bank of England.
 sources: [B live_verified] src-wikipedia-bank-of-england https://en.wikipedia.org/wiki/Bank_of_England
 links: bank-of-amsterdam-wisselbank-1609, glorious-revolution-1688, first-government-bonds-issued-1693, first-bank-of-the-1791
-threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W2-036-02] W2 1694 certification TB
 Bank of England inaugurated
@@ -2951,7 +2942,6 @@ Brace: "Dangerous Classes of NY"
 CAS founder publishes his account of the street children he calls "Arabs of the streets"; the corpus reads it as the intellectual justification for the Orphan Trains
 sources: [A live_verified] src-brace-dangerous-classes-1872 https://archive.org/details/dangerousclasses00brac; [A live_verified] src-w5cc-horatio-alger-jr-tattered-tom-or-the-story-of-9a21 https://www.gutenberg.org/cache/epub/54006/pg54006.txt
 links: convict-leasing-peaks-1882
-threads: T-VAGRANCY-CHAIN
 
 [E-W5-017-04] W5 1872 innovation TA
 Elijah McCoy: automatic lubrication
@@ -3086,7 +3076,7 @@ Convict leasing peaks
 Clients: US Steel (AL), Parchman Farm (MS), Angola (LA), Phelps Dodge (AZ). 13th Amendment exception: slavery legal as criminal punishment. The classification renamed as criminal justice
 sources: [A live_verified] src-13th-amendment-1865 https://www.archives.gov/founding-docs/amendments-11-27
 links: freedman-s-bank-collapse-douglass-blamed-1874, before-after-photos-as-propaganda-1879, charlotte-astor-1-113-children-sent-1884, dawes-act-allotment-classification-1887
-threads: T-THREE-TRACK-LABOR, T-VAGRANCY-CHAIN
+threads: T-THREE-TRACK-LABOR
 
 [E-W5-024-02] W5 1882 legal TB
 Chinese Exclusion Act suspends the entry of Chinese laborers and bars all Chinese from naturalization
@@ -3301,7 +3291,7 @@ Wells, Douglass, Penn and Barnett: "The Reason Why the Colored American Is Not i
 Protest pamphlet - the most substantial of several Black protests against the fair. The white press did not acknowledge it; Wells aimed it at foreign visitors and gave out ten thousand copies from the Haitian Pavilion
 sources: [A live_verified] src-reason-why-columbian-exposition-1893 https://digital.library.upenn.edu/women/wells/exposition/exposition.html; [B live_verified] src-w5cc-ida-b-wells-international-appeal-the-1893-worl-9746 https://tennesseehistory.org/ida-b-wells-international-appeal-the-1893-worlds-columbian-exposition/
 links: robert-abbott-founds-chicago-defender-1905, noble-drew-ali-begins-organizing-the-1913, marcus-garvey-arrives-in-us-1916, chicago-defender-covers-red-summer-1919
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W5-032-05] W5 1893 innovation TA
 Tesla AC motor at fair
@@ -3403,7 +3393,6 @@ threads: T-SOFTWARE-NEUTRALITY
 Henry E. Baker at Patent Office compiles comprehensive list. 1899: G.F. Grant golf tee patent. FORENSIC QUESTION: how many patents were ASSIGNED to corporate buyers vs. RETAINED by the inventor? Granville Woods won against Edison twice in patent interference cases - but Woods died in 1910, impoverished, having sold most of his patents to corporate buyers (GE, Westinghouse, AT&T) for fractions of their commercial value.
 sources: [A live_verified] src-patent-mccoy-lubricator-1872 https://patents.google.com/patent/US129843A/en
 links: dc-organic-act-republic-becomes-corporation-1871, oklahoma-statehood-1907, garrett-morgan-traffic-signal-patent-1923
-threads: T-FRANCHISE-TRANSFER
 
 [E-W5-038-01] W5 1901 records TB
 Great Jacksonville Fire destroys the city center and the county records in it
@@ -3452,7 +3441,7 @@ Robert Abbott founds Chicago Defender
 Most influential Black newspaper - published in crescent city. Actively encourages Great Migration northward into crescent. Counter-narrative organ with national reach
 sources: [B live_verified] src-freeman-abbott-defender-1912 http://www.loc.gov/resource/sn82016211/1912-12-14/ed-1/?sp=1
 links: tesla-ac-motor-at-fair-1893, noble-drew-ali-begins-organizing-the-1913, marcus-garvey-arrives-in-us-1916, chicago-defender-covers-red-summer-1919
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W5-041-01] W5 1906 violence TB
 Atlanta Riot
@@ -3594,7 +3583,7 @@ links: oklahoma-statehood-1907, espionage-act-criminalizes-dissent-1917, chicago
 Moorish Science Temple of America. Asserts “Moor” (Noun) against “Negro” (Adjective). Falls completely outside press framework. SAME YEAR as the Collection Engine (Federal Reserve + IRS). Organizational structure: temples in Newark (1913), Chicago, Detroit, Philadelphia, Pittsburgh, Harlem - 30+ cities by 1929. Membership estimates: 20,000-100,000. Key documents: the Circle Seven Koran, nationality cards (“Moorish American”), and the 1790 Sundry Free Moors petition itself.
 sources: [A live_verified] src-richmond-planet-msta-charter-1928 http://www.loc.gov/resource/sn84025841/1928-05-26/ed-1/?sp=1
 links: robert-abbott-founds-chicago-defender-1905, marcus-garvey-arrives-in-us-1916, chicago-defender-covers-red-summer-1919, 1924-triple-lock-reclassification-chain-step-1924
-threads: T-COLLAPSE-SURVIVAL-N1, T-NOUN-TO-ADJECTIVE
+threads: T-RESISTANCE-COUNTER-NARRATIVE, T-NOUN-TO-ADJECTIVE
 
 [E-W5-047-01] W5 1914 financial TB
 NYSE closed 4 months
@@ -3626,7 +3615,7 @@ Marcus Garvey arrives in US
 UNIA and The Negro World become largest Black mass movement. Garvey's newspaper reaches 200,000 circulation - largest Black press organ in history to that point
 sources: [C live_verified] src-chronam-garvey-visibility-1916-1924 https://www.loc.gov/collections/chronicling-america/?q=Marcus+Garvey&dates=1916/1916&fo=json
 links: robert-abbott-founds-chicago-defender-1905, noble-drew-ali-begins-organizing-the-1913, chicago-defender-covers-red-summer-1919, a-philip-randolph-founds-the-messenger-1925
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W5-050-01] W5 1917 violence TB
 East St. Louis: labor conflict turns into the killing and burning out of Black residents
@@ -3683,7 +3672,7 @@ Chicago Defender covers Red Summer
 Black press documents massacres that white press minimizes or ignores. Defender circulation surges - becomes primary information source for Black Americans
 sources: [A live_verified] src-jones-county-news-defender-circulation-1917 http://www.loc.gov/resource/sn87065069/1917-06-07/ed-1/?sp=4
 links: noble-drew-ali-begins-organizing-the-1913, marcus-garvey-arrives-in-us-1916, a-philip-randolph-founds-the-messenger-1925, garvey-deported-1927
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W5-053-01] W5 1920 financial TB
 Wall Street bombing
@@ -3741,7 +3730,6 @@ Garrett Morgan: traffic signal patent
 Three-position traffic signal. Patent sold to General Electric. Morgan also invented the gas mask (1914), used by Cleveland police and later WWI soldiers. Innovation captured by corporate buyers
 sources: [A live_verified] src-patent-morgan-traffic-signal-1923 https://patents.google.com/patent/US1475024A/en
 links: dc-organic-act-republic-becomes-corporation-1871, 400-patents-held-by-black-inventors-1900, oklahoma-statehood-1907
-threads: T-FRANCHISE-TRANSFER
 
 [E-W5-056-01] W5 1924 population TB
 1924 Triple Lock - RECLASSIFICATION CHAIN STEP 7: AUTOMATED
@@ -3769,7 +3757,7 @@ A. Philip Randolph founds The Messenger
 Black socialist magazine - challenges both white press and Booker T. accommodationism. FBI surveils it under Espionage/Sedition Acts
 sources: [B live_verified] src-milwaukee-leader-messenger-owen-randolph-1920 http://www.loc.gov/resource/sn83045293/1920-05-13/ed-1/?sp=1
 links: marcus-garvey-arrives-in-us-1916, chicago-defender-covers-red-summer-1919, garvey-deported-1927, drew-ali-at-the-pan-american-1928
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W5-058-01] W5 1926 certification TB
 Sesquicentennial Exposition at Philadelphia, in the city of Independence Hall
@@ -3788,14 +3776,14 @@ Garvey deported
 Marcus Garvey deported to Jamaica - largest Black mass movement decapitated. FBI (Hoover) uses press leaks and informants to destroy UNIA. Counter-narrative removed 2 years before OT program ends
 sources: [A live_verified] src-seattle-enterprise-garvey-deported-1927 http://www.loc.gov/resource/sn87093375/1927-12-09/ed-1/?sp=1
 links: marcus-garvey-arrives-in-us-1916, chicago-defender-covers-red-summer-1919, a-philip-randolph-founds-the-messenger-1925, drew-ali-at-the-pan-american-1928
-threads: T-COLLAPSE-SURVIVAL-N1
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W5-060-01] W5 1928 counter-move TB MILESTONE
 ★ Drew Ali at the Pan-American Conference, Havana
 Sixth International Conference of American States, Jan 16-Feb 20. 21 nations. Coolidge opens. Hughes leads U.S. delegation. Drew Ali’s physical presence VERIFIED: Brill academic handbook + S.S. Northland shipping record (Jan 25, 1928). C. Kirkman Bey serves as interpreter (Spanish/Arabic). The Noun confronts the Managers on an INTERNATIONAL stage - using the same treaty mechanism Morocco deployed (1721-1787).
 sources: [A citation_only] src-brill-handbook-msta https://brill.com/display/book/9789004435544/BP000043.xml
 links: chicago-defender-covers-red-summer-1919, 1924-triple-lock-reclassification-chain-step-1924, a-philip-randolph-founds-the-messenger-1925, garvey-deported-1927
-threads: T-COLLAPSE-SURVIVAL-N1, T-NOUN-TO-ADJECTIVE
+threads: T-RESISTANCE-COUNTER-NARRATIVE, T-NOUN-TO-ADJECTIVE
 
 [E-W5-060-02] W5 1928 information TC
 Havana invisible to US press
@@ -4705,7 +4693,7 @@ Baptist and Quaker moral opposition documented as motivation for the 1652 Provid
 The Providence and Warwick towns had significant Baptist and Quaker populations whose religious teaching opposed slavery. Passage of the 1652 statute proves the political will existed at the town-assembly level. Non-enforcement proves the merchant-banker network (Tier 1 via Newport trade) prevailed over Tier 4 colonial elite dissent. This is the Chesapeake Class Split pattern (FW-011) executing on RI's colonial hierarchy thirty years before the 1682 Virginia race code that begins the Whitening Project timeline.
 sources: [A live_verified] src-clark-pujara-time-2022 https://time.com/6202919/rhode-island-slavery-clark-pujara/; [C citation_only] src-forensic-audit-timeline-w3 internal://Chronological_Ground_Truth_Forensic_Audit + Master_Siphon_Timeline_1100_1929.html
 links: ri-slavery-recognition-1703
-threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
+threads: T-THREE-TRACK-LABOR, T-CHESAPEAKE-CLASS-SPLIT
 
 [w3-1652-legal] W3 1652 legal TA
 Rhode Island Providence-Warwick anti-slavery statute passed by Assembly, structurally never enforced
@@ -4775,7 +4763,7 @@ Rhode Island L3 duty becomes recurring revenue stream funding colonial administr
 At the governor's 1708 estimate of 'betwixt twenty and thirty' imports a year, the three-pound duty yields some sixty to ninety pounds a year; by July 1715 the naval officer held 289 pounds 17 shillings in slave-import duties. Same event as w3-1708-legal but the financial-lane consequence: the classification is now generating tax revenue for the Tier 4 colonial government. The money stays in the colony: in 1715 it is granted to pave Newport's streets and build a bridge. The corpus reads the classification as a cash-generating asset for the colonial tier.
 sources: [B live_verified] src-ri-records-bartlett-v4 https://archive.org/details/recordsofcolonyo04rhod; [C citation_only] src-forensic-audit-timeline-w3 internal://Chronological_Ground_Truth_Forensic_Audit + Master_Siphon_Timeline_1100_1929.html
 links: ri-slavery-recognition-1703
-threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-WHITENING-PROJECT, T-MERCHANT-BANKER-CONSTANT
+threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
 
 [w3-1708-legal] W3 1708 legal TA
 Rhode Island General Assembly imposes L3 per-head duty on imported blacks
@@ -4837,14 +4825,14 @@ Transportation Act financial architecture: Treasury per-head subsidy authorizes 
 Same event as w3-1717-legal. Financial-lane consequence: the Transportation Act lets courts hand convicts to bonded contractors; the Treasury fixes a per-head payment administratively (the Treasury Lords 'agree to 3l. a head' on 5 August 1718), and the Robbery Act of 1719 then authorizes state payments, creating a Government-Guaranteed contractor market. This is the financial architecture that will underwrite the Jonathan Forward contract of 8 August 1718 (TC-017). The Treasury per-head payment is the direct analog of SSC per-head Asiento payment: same financial mechanism, different classification input.
 sources: [A live_verified] src-piracy-act-1717 https://en.wikipedia.org/wiki/Piracy_Act_1717; [A live_verified] src-ekirch-bound-for-america-1987 https://global.oup.com/academic/product/bound-for-america-9780198229735; [A live_verified] src-robbery-act-1719 https://en.wikipedia.org/wiki/Piracy_Act_1717; [A live_verified] src-w3cc-calendar-of-treasury-books-vol-32-1718-treasury-9a12 https://www.british-history.ac.uk/cal-treasury-books/vol32/pp89-99; [A live_verified] src-w3cc-statutes-at-large-vol-xiv-6-geo-i-c-18-and-c-23-6ce5 https://archive.org/download/statutesatlarge39britgoog/statutesatlarge39britgoog_djvu.txt; [A live_verified] src-w3cc-calendar-of-treasury-books-vol-32-1718-treasury-d743 https://www.british-history.ac.uk/cal-treasury-books/vol32/pp577-596
 links: asiento-1713, forward-contract-1718
-threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-WHITENING-PROJECT, T-MERCHANT-BANKER-CONSTANT
+threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1717-legal] W3 March 1718 (Royal Assent) legal TA MILESTONE
 Transportation Act 4 Geo 1 c 11 receives Royal Assent, installing Track C domestic Asiento for English poor
 The Transportation Act (Piracy Act) receives Royal Assent, installing the third rail of the three-track labor system. Track C converts English poor labeled 'felon' into 7 or 14 year property-transfer contracts. The statute uses the English benefit-of-clergy distinction (clergyable versus non-clergyable felonies) as the trigger mechanism for classification. This is the moment domestic Asiento becomes law: the English poor become tradeable property under identical logic to Track A (Asiento African trade) and Track B (Yamasee reclassification). Proves the classification code runs on race-neutral logic; only a legal category and a statute are required.
 sources: [A live_verified] src-piracy-act-1717 https://en.wikipedia.org/wiki/Piracy_Act_1717; [A live_verified] src-ekirch-bound-for-america-1987 https://global.oup.com/academic/product/bound-for-america-9780198229735; [A live_verified] src-robbery-act-1719 https://en.wikipedia.org/wiki/Piracy_Act_1717; [A live_verified] src-butler-ahr-1896 https://www.jstor.org/stable/1833611; [A live_verified] src-w3cc-a-roger-ekirch-bound-for-america-a-profile-of-br-299e https://archive.org/download/bound-for-america-a-profile-of-british-convicts/Bound%20for%20America%2C%20A%20Profile%20of%20British%20Convicts%20Transported%20to%20the%20Colonies%2C%201718-1775_djvu.txt; [A live_verified] src-w3cc-statutes-at-large-4-geo-i-c-11-ocr-text-long-s-r-202b https://archive.org/download/statutesatlarge54britgoog/statutesatlarge54britgoog_djvu.txt; [B live_verified] src-w3cc-benefit-of-clergy-6721 https://en.wikipedia.org/wiki/Benefit_of_clergy
 links: asiento-1713, vagabonds-act-1597, settlement-act-1662, first-old-bailey-1718, forward-contract-1718
-threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-WHITENING-PROJECT, T-MERCHANT-BANKER-CONSTANT
+threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1718-counter-move] W3 March 1718 counter-move TC MILESTONE
 Coweta Resolution as counter-move to post-Yamasee reclassification, executed exactly when Track C is installing
@@ -4858,28 +4846,28 @@ Eagle Galley voyage as first Treasury payout to Forward: L321 total (107 convict
 Same event as w3-1718-eagle-legal. Financial-lane consequence: the Eagle Galley voyage generates the first documented Treasury payout to Jonathan Forward under the contract, totaling L321 for 107 convicts at L3 per head (Treasury money warrant, 9 October 1718). This is the moment the domestic Asiento's financial architecture is verified operational. From this point forward Treasury per-head subsidies to successive contractors continue until 1772.
 sources: [A live_verified] src-butler-ahr-1896 https://www.jstor.org/stable/1833611; [A live_verified] src-w3cc-calendar-of-treasury-books-vol-32-1718-treasury-d743 https://www.british-history.ac.uk/cal-treasury-books/vol32/pp577-596; [A live_verified] src-w3cc-a-roger-ekirch-bound-for-america-a-profile-of-br-299e https://archive.org/download/bound-for-america-a-profile-of-british-convicts/Bound%20for%20America%2C%20A%20Profile%20of%20British%20Convicts%20Transported%20to%20the%20Colonies%2C%201718-1775_djvu.txt; [A live_verified] src-robbery-act-1719 https://en.wikipedia.org/wiki/Piracy_Act_1717; [A live_verified] src-w3cc-calendar-of-treasury-books-and-papers-vol-4-apri-663f https://www.british-history.ac.uk/cal-treasury-books-papers/vol4/pp17-21
 links: forward-contract-1718
-threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
+threads: T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1718-eagle-legal] W3 August 23 1718 legal TA MILESTONE
 Eagle Galley departs Blackwall with 106 convicts bound for Virginia and Maryland, proof-of-concept for Track C
 On August 23 1718 about 106 convicts are taken by lighter from Blackwall, London, to the Eagle Galley at Long Reach, bound under the 1717 Transportation Act for Virginia and Maryland; the master certifies 107 received on 28 August. Butler quotes a newspaper notice of the voyage; the names of the 107 are in the master's certificate (Calendar of Treasury Books, vol. 32). This is the operational proof-of-concept voyage for Track C: the Managerial Class demonstrates that the domestic Asiento can move human cargo at scale (100+ persons per voyage) using the identical logistics as the Middle Passage. The classification 'felon' has been fully operationalized as a property-transfer category.
 sources: [A live_verified] src-butler-ahr-1896 https://www.jstor.org/stable/1833611; [A live_verified] src-w3cc-calendar-of-treasury-books-vol-32-1718-treasury-d743 https://www.british-history.ac.uk/cal-treasury-books/vol32/pp577-596
 links: first-old-bailey-1718, forward-contract-1718
-threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
+threads: T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1718-forward-corporate] W3 August 1718 corporate TA
 Jonathan Forward operation: Tier 5 operational contractor of Track C, domestic mirror of SSC Tier 5 role in Track A
 Same event as w3-1718-forward-financial. Corporate-lane consequence: the Forward operation is the first sole-proprietor Tier 5 contractor in the three-track labor system. Unlike the SSC (Track A, joint-stock corporation) and the SC colonial government (Track B, sovereign body), Forward is a London merchant holding the Treasury contract in his own name, the sole Treasury contractor until 1739. This is the archetype of the modern private-contractor model: individual operator with monopoly access to a state-guaranteed revenue stream from a classified population. The Trustee Hierarchy Five-Tier Refinement (FW-012) is empirically demonstrated: Forward is Tier 5 executing on Track C for Tier 1 merchant-banker benefit.
 sources: [A live_verified] src-butler-ahr-1896 https://www.jstor.org/stable/1833611; [A live_verified] src-ekirch-bound-for-america-1987 https://global.oup.com/academic/product/bound-for-america-9780198229735; [A live_verified] src-w3cc-calendar-of-treasury-books-vol-32-1718-treasury-d743 https://www.british-history.ac.uk/cal-treasury-books/vol32/pp577-596; [B live_verified] src-w3cc-encyclopedia-virginia-virginia-humanities-convic-2bcf https://encyclopediavirginia.org/entries/convict-labor-during-the-colonial-period/; [B live_verified] src-w3cc-jonathan-forward-c8d0 https://en.wikipedia.org/wiki/Jonathan_Forward; [A live_verified] src-w3cc-calendar-of-treasury-books-and-papers-vol-4-apri-663f https://www.british-history.ac.uk/cal-treasury-books-papers/vol4/pp17-21
 links: asiento-1713, forward-reid-succession-1739
-threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
+threads: T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1718-forward-financial] W3 August 1718 financial TA MILESTONE
 Jonathan Forward Treasury contract: L3 per-head subsidy plus monopoly on Track C transport
 The British Treasury awards Jonathan Forward the first Treasury contract for transporting convicts (articles of agreement, 8 August 1718) under the 1717 Transportation Act. Terms: L3 per head paid by Treasury for felons from Newgate and the Home Counties gaols, one contractor at a time. Forward becomes the Tier 5 operational contractor of Track C in exact parallel to the South Sea Company as Tier 5 operational contractor of Track A. The financial mechanism is identical: state-guaranteed per-head payment to a private contractor for delivering classified persons to a colonial market. Domestic Asiento is now operational.
 sources: [A live_verified] src-butler-ahr-1896 https://www.jstor.org/stable/1833611; [A live_verified] src-ekirch-bound-for-america-1987 https://global.oup.com/academic/product/bound-for-america-9780198229735; [B live_verified] src-w3cc-encyclopedia-virginia-virginia-humanities-convic-2bcf https://encyclopediavirginia.org/entries/convict-labor-during-the-colonial-period/; [A live_verified] src-w3cc-calendar-of-treasury-books-vol-32-1718-treasury-02d6 https://www.british-history.ac.uk/cal-treasury-books/vol32/pp72-88; [A live_verified] src-w3cc-calendar-of-treasury-books-vol-32-1718-treasury-d743 https://www.british-history.ac.uk/cal-treasury-books/vol32/pp577-596; [A live_verified] src-w3cc-calendar-of-treasury-books-vol-32-1718-treasury-9a12 https://www.british-history.ac.uk/cal-treasury-books/vol32/pp89-99; [A live_verified] src-robbery-act-1719 https://en.wikipedia.org/wiki/Piracy_Act_1717; [B live_verified] src-w3cc-jonathan-forward-c8d0 https://en.wikipedia.org/wiki/Jonathan_Forward; [A live_verified] src-w3cc-calendar-of-treasury-books-and-papers-vol-4-apri-663f https://www.british-history.ac.uk/cal-treasury-books-papers/vol4/pp17-21; [A live_verified] src-w3cc-a-roger-ekirch-bound-for-america-a-profile-of-br-299e https://archive.org/download/bound-for-america-a-profile-of-british-convicts/Bound%20for%20America%2C%20A%20Profile%20of%20British%20Convicts%20Transported%20to%20the%20Colonies%2C%201718-1775_djvu.txt
 links: transportation-act-1717-royal-assent, asiento-1713, eagle-galley-1718, forward-reid-succession-1739
-threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
+threads: T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1718-legal-april] W3 April 26 1718 legal TA MILESTONE
 First Old Bailey transportation sentences under 4 Geo 1 c 11: 27 to 29 malefactors sentenced to transportation
@@ -4900,18 +4888,18 @@ Robbery Act increases Forward operation revenue by expanding qualifying convict 
 Same event as w3-1719-legal. Financial-lane consequence: expanding the input population expands Forward's per-head revenue capture. This is the moment the Treasury per-head subsidy becomes a scalable revenue mechanism, no longer limited to the narrow 1717 categories.
 sources: [A live_verified] src-robbery-act-1719 https://en.wikipedia.org/wiki/Piracy_Act_1717
 links: forward-contract-1718, bubble-act-1720
-threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
+threads: T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1719-legal] W3 1719 legal TA
 Robbery Act 6 Geo 1 c 23 expands input funnel to Track C by adding transportable offenses
 The 1719 Robbery Act extends the Transportation Act 1717 by adding new statutory categories of transportable offenses, widening the input funnel to Track C. This is Phase 4 Integration of the Administrative Patch Cycle: the initial statute (1717) is now being expanded into the broader legal framework so that additional populations qualify for classification-into-transportable-status. Standard patch-cycle expansion pattern: install the mechanism first, then broaden its inputs on subsequent legislative sessions.
 sources: [A live_verified] src-robbery-act-1719 https://en.wikipedia.org/wiki/Piracy_Act_1717
 links: transportation-act-1717-royal-assent, bubble-act-1720
-threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
+threads: T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1720-corporate] W3 June 1720 corporate TA
 Bubble Act bars new unchartered joint-stock companies; the SSC's charter and Asiento stand
-Same event as w3-1720-financial. Corporate-lane consequence: the Bubble Act bars new unchartered joint-stock companies, leaving existing chartered companies and trade in partnership untouched. The SSC holds the Asiento, the monopoly on supplying slaves to Spanish America; the British colonies' own slave trade has been open since 1698 to the Royal African Company and separate traders. This is direct parallel to Jonathan Forward's monopoly contract for Track C (1718). Both tracks are now controlled by single Tier 5 operators with statutory-guaranteed monopoly access to state-guaranteed revenue streams.
+Same event as w3-1720-financial. Corporate-lane consequence: the Bubble Act bars new unchartered joint-stock companies, leaving existing chartered companies and trade in partnership untouched. The SSC holds the Asiento, the monopoly on supplying slaves to Spanish America; the British colonies' own slave trade has been open since 1698 to the Royal African Company and separate traders. This is direct parallel to Jonathan Forward's monopoly contract for Track C (1718). Both tracks are now controlled by single Tier 5 operators with statutory-guaranteed monopoly access to state-guaranteed revenue streams. The same statute is, by its own title, an act 'for better securing certain powers and privileges intended to be granted by his Majesty by two charters for assurance of ships and merchandizes at sea': it sets up two corporations to insure ships and goods, whose policies merchants on 'remote or hazardous voyages' would think safer than those of private insurers.
 sources: [A live_verified] src-bubble-act-1720 https://en.wikipedia.org/wiki/Bubble_Act; [A live_verified] src-w3cc-statutes-at-large-vol-xiv-6-geo-i-c-18-and-c-23-6ce5 https://archive.org/download/statutesatlarge39britgoog/statutesatlarge39britgoog_djvu.txt; [B live_verified] src-w3cc-south-sea-company-wikipedia-5cc4 https://en.wikipedia.org/wiki/South_Sea_Company; [A live_verified] src-w3cc-helen-julia-paul-the-south-sea-company-s-slaving-8735 https://www.southampton.ac.uk/assets/imported/transforms/content-block/UsefulDownloads_Download/326F907A8F434B05B2199578407AA4B6/0924.pdf; [B live_verified] src-w3cc-royal-african-company-f10a https://en.wikipedia.org/wiki/Royal_African_Company; [B live_verified] src-ri-records-bartlett-v4 https://archive.org/details/recordsofcolonyo04rhod; [B live_verified] src-w3cc-encyclopedia-virginia-virginia-humanities-convic-2bcf https://encyclopediavirginia.org/entries/convict-labor-during-the-colonial-period/
 links: asiento-1713, forward-contract-1718
 threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT, T-INSURANCE-ACTUARIAL
@@ -4921,7 +4909,7 @@ Bubble Act 6 Geo 1 c 18 legally monopolizes joint-stock form for SSC, three mont
 The Bubble Act receives Royal Assent in June 1720, three months before the September to December 1720 SSC crash. The Act criminalizes new unchartered joint-stock formations, shielding the SSC from competition for investors. It passed in June 1720, before the crash, and scholars read it as protecting the South Sea Company from competing schemes. This is the N1 Collapse-Survival Pattern operating as preemptive legal armor: the state installs statutory protection for the classification-backed instrument BEFORE the instrument crashes, ensuring that when the bond fails the underlying Track A classification is preserved intact. The Company's slave trade continues after the crash, and 'some of their greatest cargoes occurred after the Bubble burst'. The bond fails; the classification does not.
 sources: [A live_verified] src-bubble-act-1720 https://en.wikipedia.org/wiki/Bubble_Act; [C citation_only] src-forensic-audit-timeline-w3 internal://Chronological_Ground_Truth_Forensic_Audit + Master_Siphon_Timeline_1100_1929.html; [B live_verified] src-w3cc-south-sea-company-wikipedia-5cc4 https://en.wikipedia.org/wiki/South_Sea_Company; [A live_verified] src-w3cc-statutes-at-large-vol-xiv-6-geo-i-c-18-and-c-23-6ce5 https://archive.org/download/statutesatlarge39britgoog/statutesatlarge39britgoog_djvu.txt; [A live_verified] src-w3cc-helen-julia-paul-the-south-sea-company-s-slaving-8735 https://www.southampton.ac.uk/assets/imported/transforms/content-block/UsefulDownloads_Download/326F907A8F434B05B2199578407AA4B6/0924.pdf
 links: asiento-1713, south-sea-bubble-crash-1720, civil-war-bond-collapse-1865, financial-crisis-largest-black-wealth-destruction-2008
-threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT, T-INSURANCE-ACTUARIAL
+threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1721-military] W3 1721 military TA
 British construct Fort King George on Altamaha River
@@ -4942,7 +4930,7 @@ Asiento-classified slave carriage peaks: N1 pattern proof
 The South Sea Bubble crash of 1720 does not end the South Sea Company's slave carrying: it keeps trading under the Asiento, and 'some of their greatest cargoes occurred after the Bubble burst'. The classification code (Asiento standing under 1713 Treaty of Utrecht) has integrated into imperial statute and no longer requires SSC as executing corporation. Sub-contracting private carriers under SSC nominal license carry the majority of voyages (not yet sourced). This is the empirical foundation of Collapse-Survival Pattern N1: the corporate wrapper is replaceable, the classification franchise is not. The Company's carriage peaks in the mid-1720s, until 'When Britain clashed again with Spain in 1726, the company's trade apparently came to a halt' (Paul, from the Voyages Database).
 sources: [A live_verified] src-eltis-voyages-database https://www.slavevoyages.org/voyage/database; [A citation_only] src-sperling-south-sea; [A live_verified] src-w3cc-helen-julia-paul-the-south-sea-company-s-slaving-8735 https://www.southampton.ac.uk/assets/imported/transforms/content-block/UsefulDownloads_Download/326F907A8F434B05B2199578407AA4B6/0924.pdf; [B live_verified] src-w3cc-south-sea-company-wikipedia-5cc4 https://en.wikipedia.org/wiki/South_Sea_Company; [B live_verified] src-asiento-de-negros-reference https://en.wikipedia.org/wiki/Asiento_de_Negros
 links: w3-1711-financial, w3-1720-financial
-threads: T-ASIENTO, T-INSURANCE-ACTUARIAL, T-COLLAPSE-SURVIVAL-N1
+threads: T-ASIENTO, T-COLLAPSE-SURVIVAL-N1
 
 [w3-1725-population] W3 1725 population TA
 Peak trafficked volumes under decentralized Asiento operation
@@ -4963,7 +4951,7 @@ Georgia Charter granted; Musgrove positioned as Creek-English broker
 George II grants the Georgia Charter to James Oglethorpe and trustees on June 9, 1732. The charter authorizes settlement between the Savannah and Altamaha Rivers, land under Muscogee sovereignty per Coweta Doctrine. The colonial project sidesteps the doctrinal problem by using Mary Musgrove (Coosaponakeesa), a Creek-English woman with sovereign-family standing on the Muscogee side and English trader connections, who from February 1733 serves as Oglethorpe's principal interpreter with the Yamacraw chief Tomochichi at Yamacraw Bluff; the corpus reads her as the diplomatic broker. Musgrove's dual standing enables land-use negotiations that direct English negotiators could not conduct under the Coweta framework.
 sources: [A live_verified] src-georgia-charter-1732 https://avalon.law.yale.edu/18th_century/ga01.asp; [A citation_only] src-frey-wood-shouting-zion; [A citation_only] src-sweet-negotiating-empire; [B live_verified] src-w3cc-andrew-k-frank-mary-musgrove-new-georgia-encyclo-120b https://www.georgiaencyclopedia.org/articles/history-archaeology/mary-musgrove-ca-1700-ca-1763/; [B live_verified] src-w3cc-julie-anne-sweet-tomochichi-new-georgia-encyclop-05ee https://www.georgiaencyclopedia.org/articles/history-archaeology/tomochichi-ca-1644-1739/; [B live_verified] src-w3cc-yamacraw-bluff-wikipedia-b2ec https://en.wikipedia.org/wiki/Yamacraw_Bluff; [B live_verified] src-w3cc-mary-musgrove-wikipedia-fb29 https://en.wikipedia.org/wiki/Mary_Musgrove
 links: w3-1721-records, w3-1738-legal
-threads: T-COWETA-DOCTRINE, T-CHESAPEAKE-CLASS-SPLIT
+threads: T-COWETA-DOCTRINE
 
 [w3-1738-counter-move] W3 1738 counter-move TA
 Jurisdictional-alternative counter-strategy: exploit imperial rivalry to void chattel classification
@@ -4977,7 +4965,6 @@ Physical settlement established two miles north of St Augustine
 Fort Mose is constructed as a fortified free-Black settlement two miles north of St Augustine, Florida. Approximately 100 residents initially, until Oglethorpe's 1740 invasion overran it; it was not resettled until 1752. Physically instantiates the sanctuary policy on Spanish-controlled land close to the English colonies (Georgia, founded 1733, lay between Florida and South Carolina). The physical proximity to English territory is the operational choice: its militia guarded St. Augustine's northern approach, and the freedom policy drew enslaved people away from the English colonies; the corpus reads the provocation of English retaliation as intended.
 sources: [A citation_only] src-landers-black-society-florida; [B live_verified] src-fort-mose-nps https://www.floridastateparks.org/parks-and-trails/fort-mose-historic-state-park; [C live_verified] src-w3cc-jane-landers-gracia-real-de-santa-teresa-de-mose-ea60 https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/gracia-real-de-santa-teresa-de-mose; [B live_verified] src-w3cc-freedom-fort-archaeology-magazine-archaeological-656b https://archaeology.org/issues/march-april-2024/features/freedom-fort/; [B live_verified] src-w3cc-history-of-fort-mose-florida-state-parks-wayback-2cb6 https://www.floridastateparks.org/learn/history-fort-mose
 links: w3-1738-legal
-threads: T-COWETA-DOCTRINE
 
 [w3-1738-legal] W3 1738 legal TA MILESTONE
 Spanish royal cedula grants sanctuary status to escaped enslaved persons
@@ -4991,14 +4978,14 @@ Jonathan Forward monopoly ends; Andrew Reid succeeds as Track C Tier 5 contracto
 The Transportation Act 1717/18 convict-shipping monopoly held by Jonathan Forward ends in 1739. Andrew Reid succeeds as government-contracted convict shipper. The transition demonstrates FW-014 Collapse-Survival Pattern N1 operating on Track C of the Three-Track Labor System: the corporate wrapper (Forward's firm) is replaced by successor (Reid's firm), but the classification franchise (Transportation Act legal category of 'transportable felon' under 7 or 14 year terms) persists unchanged. The Track C operation continues without interruption; the operator changes.
 sources: [A citation_only] src-ekirch-bound-for-america
 links: w3-1718-forward-corporate, w3-1725-financial
-threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR, T-COLLAPSE-SURVIVAL-N1
+threads: T-THREE-TRACK-LABOR, T-COLLAPSE-SURVIVAL-N1
 
 [w3-1739-legal] W3 1739 legal TA
 Classification franchise persists across operator succession
 The 1717/18 Transportation Act statutory framework is unchanged by the Forward-Reid succession. The 'transportable felon' legal category, the 7 and 14 year term structure, and the sovereign-monopoly contracting arrangement all persist. The succession is an operational-manager change at Tier 5, not a legal-framework change at Tier 1. Empirical proof, at the smallest scale, of the Collapse-Survival Pattern N1 template that later executes at systemic scale in the SC 1740 Negro Act, 1865 Thirteenth Amendment convict-lease exception, and 1924 Immigration Act.
 sources: [A citation_only] src-ekirch-bound-for-america
 links: w3-1739-financial
-threads: T-VAGRANCY-CHAIN, T-THREE-TRACK-LABOR
+threads: T-THREE-TRACK-LABOR
 
 [w3-1740-legal] W3 1740 legal TA MILESTONE
 SC Negro Act codifies 58-section comprehensive slave code
@@ -5019,14 +5006,14 @@ Sovereign admission against interest: the 73-year documentary firewall
 Britain's acceptance of the Sultan's style as ruler of 'all the West of Africa', which the corpus reads as an acknowledgment of Moroccan sovereignty over West African territory, operates as counter-move to the Discovery-Doctrine architecture that Britain and successor US jurisdictions rely on for land-title claims. The counter-move mechanism: no future US Discovery-Doctrine claim can be sustained without addressing that Britain (the sovereign source from which US inherits Discovery-Doctrine authority via colonial charter chain) formally acknowledged the exact opposite in the 1750 treaty. The counter-move is documentary and jurisdictional, not military.
 sources: [B live_verified] src-anglo-moroccan-treaty-1750 https://archive.org/download/bim_eighteenth-century_a-collection-of-all-the-_1785_3/bim_eighteenth-century_a-collection-of-all-the-_1785_3_djvu.txt; [A live_verified] src-treaty-morocco-1786-1787 https://avalon.law.yale.edu/18th_century/bar1786t.asp
 links: w3-1750-legal, w3-1738-counter-move
-threads: T-DISCOVERY-DOCTRINE, T-COWETA-DOCTRINE
+threads: T-DISCOVERY-DOCTRINE
 
 [w3-1750-financial] W3 1750 financial TA
 Treaty of Madrid: Britain relinquishes Asiento to Spain
 The Treaty of Madrid (October 5, 1750) between Britain and Spain ends Britain's Asiento, inherited from the 1713 Treaty of Utrecht, Britain giving up the four remaining years granted at Aix-la-Chapelle (1748). Spain agrees to pay 100,000 pounds sterling to the Royal Assiento Company. Read under FW-014 Collapse-Survival Pattern N1: the corporate wrapper (Asiento license) is relinquished, but the classification franchise (chattel-standing under 'Negro' classification) survives and consolidates into private-carrier arrangements outside SSC's formal license structure. The British Asiento ends; Spain later grants a new asiento to a Spanish company (1765 to 1779). The corpus reads the classification as surviving the wrapper.
 sources: [A citation_only] src-palmer-human-cargoes; [A live_verified] src-treaty-of-madrid-1750 https://archive.org/stream/cihm_20150/cihm_20150_djvu.txt; [B live_verified] src-asiento-de-negros-reference https://en.wikipedia.org/wiki/Asiento_de_Negros; [A live_verified] src-w3cc-helen-julia-paul-the-south-sea-company-s-slaving-8735 https://www.southampton.ac.uk/assets/imported/transforms/content-block/UsefulDownloads_Download/326F907A8F434B05B2199578407AA4B6/0924.pdf
 links: w3-1725-financial, w3-1750-legal
-threads: T-ASIENTO, T-COLLAPSE-SURVIVAL-N1, T-INSURANCE-ACTUARIAL
+threads: T-ASIENTO, T-COLLAPSE-SURVIVAL-N1
 
 [w3-1750-legal] W3 1750 legal TA MILESTONE
 Britain formally recognizes Moroccan sovereignty over West African littoral
@@ -5040,7 +5027,7 @@ Anglo-Moroccan consular relations reinforced: two sovereign admissions in 13 mon
 Following the 1750 Anglo-Moroccan Treaty, Britain, which already had a consul at Tetuan (recorded in 1729) and negotiated the treaty through its Consul General William Petticrew, keeps consular representation in 1751, operationalizing the treaty's sovereign-recognition premise. The consular framework requires ongoing British acknowledgment of Moroccan sovereign authority as a functioning imperial power, not merely a treaty counterparty. Combined with the 1750 treaty, the treaty (15 January 1750 Old Style, January 1751 in modern dating) and its additional articles, concluded at Fez days apart and ratified together on 31 July 1751, produce two documented British sovereign admissions in the same year, both surviving into the archival record as counter-authority available for Software-Attack modality invocation against Discovery-Doctrine sovereignty claims.
 sources: [B live_verified] src-anglo-moroccan-treaty-1750 https://archive.org/download/bim_eighteenth-century_a-collection-of-all-the-_1785_3/bim_eighteenth-century_a-collection-of-all-the-_1785_3_djvu.txt; [A citation_only] src-brown-anglo-moroccan; [B live_verified] src-w3cc-the-national-archives-uk-discovery-record-russel-a440 https://discovery.nationalarchives.gov.uk/details/c/F69923; [B live_verified] src-w3cc-old-style-and-new-style-dates-wikipedia-a8b0 https://en.wikipedia.org/wiki/Old_Style_and_New_Style_dates; [B live_verified] src-w3cc-1751-wikipedia-0152 https://en.wikipedia.org/wiki/1751
 links: w3-1750-legal, w3-1750-counter-move
-threads: T-DISCOVERY-DOCTRINE, T-COWETA-DOCTRINE
+threads: T-DISCOVERY-DOCTRINE
 
 [w3-1751-information] W3 1751 information TA
 Publication as instrument of demographic-policy legitimation
@@ -5065,8 +5052,8 @@ threads: T-WHITENING-PROJECT
 
 [w3-1755-records] W3 1755 records TA
 Lisbon Earthquake: Lisbon archives and libraries lost, the Torre do Tombo rescued
-The Lisbon Earthquake and subsequent fire and tsunami on November 1, 1755, destroy the Casa da India and the Casa dos Contos. Kendrick records the Braganza archive burnt and great private libraries lost, and the archives of the damaged Torre do Tombo rescued: the recovery of royal and official archives 'was given a high priority'. Records-destruction effect, as the corpus reads it: documentation held in Lisbon on the Portuguese Atlantic was reduced, so later accounts lean more on what survived elsewhere. The Overseas Council's own archive survived: the fire made some of its books disappear, some later reconstituted by copy, and the archive was reportedly moved after the earthquake (Martins 2018). The cited sources do not establish which other Atlantic series were lost.
-sources: [A citation_only] src-kendrick-lisbon-earthquake; [A citation_only] src-chase-1755-lisbon; [A live_verified] src-martins-conselho-ultramarino-2018 https://www.redalyc.org/journal/263/26358185003/html/
+The Lisbon Earthquake and subsequent fire and tsunami on November 1, 1755, cause immense destruction in the royal palace on the Terreiro do Paço, where the Secretaries of State and the Overseas Council sat, beside the Casa da Índia (Martins 2018). Kendrick records the Braganza archive burnt and great private libraries lost, and the archives of the damaged Torre do Tombo rescued: the recovery of royal and official archives 'was given a high priority'. Among the private losses Kendrick lists is the Marquês de Louriçal's "great collection of maps and charts relating to the Portuguese voyages of discovery and colonization in the East and in the New World." Records-destruction effect, as the corpus reads it: documentation held in Lisbon on the Portuguese Atlantic was reduced, so later accounts lean more on what survived elsewhere. The Overseas Council's own archive survived: the fire made some of its books disappear, some later reconstituted by copy, and the archive was reportedly moved after the earthquake (Martins 2018). The cited sources do not establish which other Atlantic series were lost.
+sources: [A live_verified] src-kendrick-lisbon-earthquake https://archive.org/details/lisbonearthquake010555mbp; [A citation_only] src-chase-1755-lisbon; [A live_verified] src-martins-conselho-ultramarino-2018 https://www.redalyc.org/journal/263/26358185003/html/
 links: w3-1769-military
 threads: T-DISCOVERY-DOCTRINE
 
@@ -5096,7 +5083,7 @@ Treaty of Paris ends Seven Years War; France cedes North American holdings east 
 The 1763 Treaty of Paris terminates the Seven Years War (1756-1763). France cedes Canada and all its territory east of the Mississippi River, except New Orleans, to Britain; Spain cedes Florida to Britain in exchange for Havana. The treaty eliminates France as an imperial counterweight to British power in North America. This is the Phase-0 Trigger event for Window 3's endgame: it terminates the multi-European-power context that made Coweta-Doctrine active neutrality operationally coherent, and it forces autochthonous polities across the eastern woodlands into a bilateral rather than multilateral diplomatic posture. Immediate downstream: 1763 Royal Proclamation, Pontiac's War 1763-1766, the political conditions for 1776 breakaway.
 sources: [A live_verified] src-treaty-of-paris-1763 https://avalon.law.yale.edu/18th_century/paris763.asp; [A citation_only] src-anderson-crucible; [B live_verified] src-w3cc-seven-years-war-19fe https://en.wikipedia.org/wiki/Seven_Years%27_War; [B live_verified] src-w3cc-pontiac-s-war-9b35 https://en.wikipedia.org/wiki/Pontiac%27s_War
 links: coweta-resolution-1718, w3-1738-legal, w3-1776-legal
-threads: T-COWETA-DOCTRINE, T-DISCOVERY-DOCTRINE, T-CHESAPEAKE-CLASS-SPLIT
+threads: T-COWETA-DOCTRINE, T-DISCOVERY-DOCTRINE
 
 [w3-1765-counter-move] W3 1765 counter-move TB
 Military validation of the 1750 sovereign-admission-against-interest
@@ -5138,7 +5125,7 @@ Somerset v Stewart: Mansfield ruling voids chattel classification on English soi
 Court of King's Bench, Lord Mansfield presiding, rules that James Somerset cannot be forcibly removed from England to be sold in Jamaica. Mansfield's ruling: no positive law of England authorizes slavery; therefore Somerset cannot be held as chattel while in English jurisdiction. The ruling does not abolish English colonial slavery, but it produces a jurisdictional-alternative counter-authority: the same person classified as chattel in Virginia is a free person in England. This is jurisdictional-alternative counter-strategy operating within a single imperial system, not through inter-imperial rivalry (Fort Mose 1738 precedent) but through metropole-vs-colony legal division.
 sources: [A live_verified] src-somerset-lofft https://www.commonlii.org/uk/cases/EngR/1772/57.pdf; [A citation_only] src-wise-though-heavens; [A citation_only] src-van-cleve-slaveholders; [B live_verified] src-w3cc-somerset-v-stewart-047c https://en.wikipedia.org/wiki/Somerset_v_Stewart
 links: w3-1738-legal, w3-1738-counter-move, w4-1807-legal
-threads: T-DISCOVERY-DOCTRINE, T-WHITENING-PROJECT, T-COLLAPSE-SURVIVAL-N1
+threads: T-DISCOVERY-DOCTRINE, T-WHITENING-PROJECT, T-RESISTANCE-COUNTER-NARRATIVE
 
 [w3-1776-legal] W3 1776 legal TA
 Break-charter operation: colonial charters voided; new sovereign entity claimed
@@ -5173,7 +5160,7 @@ Treaty of Alliance installs Bourbon Mortgage: France as Tier 2 Senior Lienholder
 The Franco-American Treaty of Alliance (February 6, 1778) and its companion Treaty of Amity and Commerce commit France to military support of US independence if war breaks out between France and Britain; French money comes separately, in loans and gifts set out in the Franklin-Vergennes contracts of 1782 and 1783. Read as debt instrument under V2.1 §III.1, this is the installation moment of the Bourbon Mortgage: France (Bourbon dynasty) becomes the Tier 2 Senior Lienholder of the American Levant. Those contracts come to about 43 million livres (18 million lent, a 10 million Dutch loan under French guarantee, 6 million more in 1783, and 9 million given), repayable in specie in fixed instalments under the general guaranty of the thirteen states. The loans are settled in 1795 and the alliance set aside by the Convention of 1800; the corpus reads the position as passing on through later franchise reassignments, including a 1815 Rothschild transfer (not yet sourced).
 sources: [A live_verified] src-treaty-of-alliance-1778 https://avalon.law.yale.edu/18th_century/fr1788-1.asp; [A citation_only] src-bemis-diplomacy-revolution; [A citation_only] src-dull-french-navy; [A live_verified] src-treaty-alliance-1778-text https://avalon.law.yale.edu/18th_century/fr1788-2.asp; [A live_verified] src-w3cc-contract-between-the-king-and-the-thirteen-unite-dc88 https://avalon.law.yale.edu/18th_century/fr-1782.asp; [A live_verified] src-w3cc-contract-between-the-king-and-the-thirteen-unite-c774 https://avalon.law.yale.edu/18th_century/fr-1783.asp; [B live_verified] src-w3cc-office-of-the-historian-u-s-debt-and-foreign-loa-7f8f https://history.state.gov/milestones/1784-1800/loans
 links: w3-1776-sovereign, w3-1787-legal
-threads: T-FRANCHISE-TRANSFER, T-MERCHANT-BANKER-CONSTANT, T-TRUSTEE-HIERARCHY-FIVE-TIER
+threads: T-FRANCHISE-TRANSFER, T-TRUSTEE-HIERARCHY-FIVE-TIER
 
 [w3-1778-legal] W3 1778 legal TA
 Treaty commits future US revenue streams as debt collateral
