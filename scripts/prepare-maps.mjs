@@ -163,6 +163,9 @@ const out = {
   generatedFrom: 'historical_maps.json + places.json + flows.json + entries.json',
   generatedAt: new Date().toISOString(),
   appUse: H.app_use ?? null,
+  /* Region boxes from the corpus (region fix, Thread 35); null on an older corpus, and
+   * lib/maps.ts then falls back to its own copy of the original nine. */
+  regionBoxes: H.region_boxes ?? null,
   roles: P.roles,
   maps,
   places: P.places,

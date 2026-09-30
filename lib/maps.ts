@@ -10,9 +10,8 @@ import raw from './maps.generated.json';
 import corpus from './corpus.generated.json';
 import type { Target } from './retrieval';
 
-export type Region =
-  | 'atlantic' | 'iberia-islands' | 'west-africa' | 'caribbean' | 'gulf-newspain'
-  | 'na-coast' | 'brazil' | 'low-countries' | 'england';
+/** A catalogue region id; the list and the boxes come from historical_maps.json. */
+export type Region = string;
 
 export interface PeriodMap {
   id: string; title: string; maker: string | null; date: number; date_note: string;
@@ -49,6 +48,7 @@ export interface ThreadStop {
 }
 interface MapData {
   available: boolean; appUse: { commercial: boolean } | null;
+  regionBoxes?: Record<string, [number, number, number, number]> | null;
   maps: PeriodMap[]; places: Place[]; links: PlaceLink[]; flows: Flow[];
   gaps: { entry_id: string | null; place_id: string; note: string }[];
   noPlace: Record<string, string>;
@@ -113,17 +113,18 @@ export function threadStops(token: string): ThreadStop[] {
   return data.threads?.[token] ?? [];
 }
 
-/* Coarse boxes that tie a place to the catalogue's regions. They decide which period
- * maps are candidates for a row; they are not boundaries and are never drawn. */
-const BOXES: [Region, number, number, number, number][] = [
-  ['caribbean', 9, 27, -90, -59], ['gulf-newspain', 15, 31, -98, -80], ['na-coast', 25, 50, -82, -60],
-  ['west-africa', -20, 20, -20, 16], ['iberia-islands', 13, 44, -32, 0], ['brazil', -35, 5, -55, -34],
-  ['low-countries', 50.5, 54, 2.5, 7.5], ['england', 49.8, 56, -6, 2],
-];
+/* Coarse boxes that tie a place to the catalogue's regions, [south, north, west, east].
+ * They decide which period maps are candidates for a row; they are not boundaries and
+ * are never drawn. Read from historical_maps.json (region_boxes); the copy below is the
+ * original nine, used only if an older corpus has none. */
+const FALLBACK_BOXES: Record<string, [number, number, number, number]> = {
+  caribbean: [9, 27, -90, -59], 'gulf-newspain': [15, 31, -98, -80], 'na-coast': [25, 50, -82, -60],
+  'west-africa': [-20, 20, -20, 16], 'iberia-islands': [13, 44, -32, 0], brazil: [-35, 5, -55, -34],
+  'low-countries': [50.5, 54, 2.5, 7.5], england: [49.8, 56, -6, 2], atlantic: [-40, 65, -100, 20],
+};
+const BOXES = Object.entries(data.regionBoxes ?? FALLBACK_BOXES);
 export function regionsOf(p: Place): Region[] {
-  const r = BOXES.filter(([, s, n, w, e]) => p.lat >= s && p.lat <= n && p.lon >= w && p.lon <= e).map(([k]) => k);
-  if (p.lon >= -100 && p.lon <= 20 && p.lat >= -40 && p.lat <= 65) r.push('atlantic');
-  return r;
+  return BOXES.filter(([, [s, n, w, e]]) => p.lat >= s && p.lat <= n && p.lon >= w && p.lon <= e).map(([k]) => k);
 }
 
 /* A city, fort or harbour plan shows one place, not a region, so it ranks after
