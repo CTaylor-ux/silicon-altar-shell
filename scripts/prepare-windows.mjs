@@ -703,6 +703,22 @@ for (const file of files) {
 const windowsRaw = JSON.parse(fs.readFileSync(path.join(REPO, 'windows.json'), 'utf8'));
 const windowsList = Array.isArray(windowsRaw) ? windowsRaw : windowsRaw.windows;
 
+/* Where a window opens before the previous one ends (W3 from 1652 inside W2's 1602 to 1704;
+ * W6 from 1921 inside W5's 1854 to 1929), say so in the header: the windows are storylines,
+ * not slices of time, and each row sits in exactly one. The first phase is named when it lies
+ * wholly inside the overlap, since it is the reason the window reaches back. Computed from
+ * windows.json, so it follows the ranges if they change. (Author request, Thread 35.) */
+const byId = new Map(windowsList.map((w) => [Number(String(w.id).replace(/\D/g, '')), w]));
+const overlapNote = (id) => {
+  const w = byId.get(id), prev = byId.get(id - 1);
+  if (!w || !prev || !(w.year_sort_start < prev.year_sort_end)) return null;
+  const from = w.year_sort_start, to = prev.year_sort_end;
+  const p = (w.phase_dividers ?? [])[0];
+  const m = /^(\d{3,4})\s*-\s*(\d{3,4})$/.exec(p?.year_range ?? '');
+  const inside = m && Number(m[1]) === from && Number(m[2]) <= to;
+  return `overlaps W${id - 1}, ${from} to ${to}${inside ? `: ${p.label}` : ''}`;
+};
+
 const metaOut = windowsList.map((w) => {
   const id = Number(String(w.id).replace(/\D/g, ''));
   const found = meta.find((m) => m.windowId === id);
@@ -710,6 +726,7 @@ const metaOut = windowsList.map((w) => {
     id,
     name: w.name,
     yearRange: w.year_range,
+    overlap: overlapNote(id),
     entries: w.entries_count,
     dossiers: w.dossiers_count,
     rows: found ? found.rows : 0,

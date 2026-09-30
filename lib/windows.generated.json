@@ -90,6 +90,7 @@
       "id": 0,
       "name": "The Template",
       "yearRange": "deep time to pre-contact",
+      "overlap": null,
       "entries": 77,
       "dossiers": 43,
       "rows": 77
@@ -98,6 +99,7 @@
       "id": 1,
       "name": "Launch Codes",
       "yearRange": "1452 to 1602",
+      "overlap": null,
       "entries": 101,
       "dossiers": 40,
       "rows": 101
@@ -106,6 +108,7 @@
       "id": 2,
       "name": "The Corporate Grid",
       "yearRange": "1602 to 1704",
+      "overlap": null,
       "entries": 112,
       "dossiers": 62,
       "rows": 112
@@ -114,6 +117,7 @@
       "id": 3,
       "name": "Colonial Consolidation",
       "yearRange": "1652 to 1787",
+      "overlap": "overlaps W2, 1652 to 1704: Rhode Island Franchise Transition",
       "entries": 79,
       "dossiers": 40,
       "rows": 79
@@ -122,6 +126,7 @@
       "id": 4,
       "name": "The Transfer",
       "yearRange": "1787 to 1854",
+      "overlap": null,
       "entries": 87,
       "dossiers": 63,
       "rows": 87
@@ -130,6 +135,7 @@
       "id": 5,
       "name": "75-Year Operation",
       "yearRange": "1854 to 1929",
+      "overlap": null,
       "entries": 261,
       "dossiers": 128,
       "rows": 261
@@ -138,6 +144,7 @@
       "id": 6,
       "name": "Digital Migration",
       "yearRange": "1921 to 2029",
+      "overlap": "overlaps W5, 1921 to 1929",
       "entries": 102,
       "dossiers": 41,
       "rows": 102

@@ -105,6 +105,11 @@ export default function PositionIndicator({
           </span>
           <span className={styles.name}>{w?.name}</span>
           <span className={`${styles.range} mono`}>{w?.yearRange}</span>
+          {w?.overlap && (
+            <span className={`${styles.overlap} mono`} title="Windows are storylines, not slices of time; each row sits in one window only.">
+              {w.overlap}
+            </span>
+          )}
         </div>
 
         <button

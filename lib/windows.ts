@@ -4,6 +4,8 @@ export type WindowMeta = {
   id: number;
   name: string;
   yearRange: string;
+  /** Where this window opens inside the previous one's years, and why; null otherwise. */
+  overlap?: string | null;
   entries: number;
   dossiers: number;
   rows: number;

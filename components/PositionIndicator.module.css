@@ -125,3 +125,13 @@
   color: var(--bright);
   border-color: var(--dim);
 }
+
+/* Overlap note beside the year range (W3 opens in W2's years; W6 in W5's). */
+.overlap {
+  font-size: 9.5px;
+  color: var(--dim);
+  opacity: 0.8;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+@media (max-width: 900px) { .overlap { display: none; } }
