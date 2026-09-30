@@ -35,6 +35,8 @@ export type CanvasPoint = { place: Place; color: string; dim?: boolean; hollow?:
  * strokes keep their intended pixel size instead of shrinking with a fixed
  * viewBox. Height follows at a fixed ratio. */
 const RATIO = 0.52;
+const MAP_H_KEY = 'sa-map-height';
+const MIN_H = 140;
 
 let landPromise: Promise<unknown> | null = null;
 function loadLand() {
@@ -64,7 +66,20 @@ export default function MapCanvas({
   const svgRef = useRef<SVGSVGElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const [W, setW] = useState(520);
-  const H = Math.round(W * RATIO);
+  /* Height: automatic (width x RATIO) unless the reader has dragged the bottom edge. The
+   * chosen height is kept per browser (a convenience only; the map works without it) and
+   * shared by every view, so it holds as the reader moves between rows and thread stops. */
+  const [userH, setUserH] = useState<number | null>(null);
+  useEffect(() => {
+    try { const v = Number(localStorage.getItem(MAP_H_KEY)); if (v > 0) setUserH(v); } catch { /* storage unavailable */ }
+  }, []);
+  const autoH = Math.round(W * RATIO);
+  const H = userH == null ? autoH : Math.max(MIN_H, Math.min(Math.round(autoH * 1.6), Math.round(userH)));
+  const setHeight = useCallback((h: number | null) => {
+    setUserH(h);
+    try { h == null ? localStorage.removeItem(MAP_H_KEY) : localStorage.setItem(MAP_H_KEY, String(Math.round(h))); } catch { /* storage unavailable */ }
+  }, []);
+  const hDrag = useRef<{ y: number; h: number; scale: number } | null>(null);
   useEffect(() => {
     const el = boxRef.current;
     if (!el) return;
@@ -106,7 +121,7 @@ export default function MapCanvas({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fitKey, W, H]);
 
-  useEffect(() => setT({ k: 1, x: 0, y: 0 }), [fitKey, W]);
+  useEffect(() => setT({ k: 1, x: 0, y: 0 }), [fitKey, W, H]);
 
   const proj = useMemo(
     () => geoNaturalEarth1().rotate([40, 0]).scale(base.s * t.k).translate([base.tr[0] * t.k + t.x, base.tr[1] * t.k + t.y]),
@@ -271,6 +286,36 @@ export default function MapCanvas({
       </div>
       <div className={styles.hint}>
         {landError ? 'Coastlines did not load.' : 'Drag to move · pinch or Ctrl/⌘-scroll to zoom'}
+      </div>
+      <div
+        className={styles.hResize}
+        role="separator"
+        aria-orientation="horizontal"
+        aria-label="Resize the map's height"
+        aria-valuenow={H}
+        aria-valuemin={MIN_H}
+        aria-valuemax={Math.round(autoH * 1.6)}
+        tabIndex={0}
+        title="Drag to make the map shorter or taller · double-click for automatic · ↑ ↓ when focused"
+        onPointerDown={(e) => {
+          (e.currentTarget as Element).setPointerCapture(e.pointerId);
+          const b = svgRef.current?.getBoundingClientRect();
+          hDrag.current = { y: e.clientY, h: H, scale: b && b.height ? H / b.height : 1 };
+        }}
+        onPointerMove={(e) => {
+          const d = hDrag.current;
+          if (d) setHeight(d.h + (e.clientY - d.y) * d.scale);
+        }}
+        onPointerUp={() => (hDrag.current = null)}
+        onPointerCancel={() => (hDrag.current = null)}
+        onDoubleClick={() => setHeight(null)}
+        onKeyDown={(e) => {
+          const step = e.shiftKey ? 60 : 20;
+          if (e.key === 'ArrowUp') { e.preventDefault(); setHeight(H - step); }
+          else if (e.key === 'ArrowDown') { e.preventDefault(); setHeight(H + step); }
+        }}
+      >
+        <span className={styles.hResizeGrip} aria-hidden />
       </div>
     </div>
   );
