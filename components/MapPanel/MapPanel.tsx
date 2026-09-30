@@ -21,7 +21,7 @@ import { createContext, useContext, useEffect, useMemo, useRef, useState } from 
 import MapCanvas, { type CanvasLine, type CanvasPoint } from './MapCanvas';
 import MapViewer from './MapViewer';
 import {
-  CLOSE_YEARS, closestPeriodMaps, entryRow, eventLayer, eventTitle, eventWindow, eventYear, hasShownImage, imageUrl, periodMapSeries, place, placeHasRecord, placeRecord,
+  CLOSE_YEARS, closestPeriodMaps, shownYear, entryRow, eventLayer, eventTitle, eventWindow, eventYear, hasShownImage, imageUrl, periodMapSeries, place, placeHasRecord, placeRecord,
   threadInfo, threadStops, threadTitle, threadsForEvent, topLevelPlace, type Place, type PlaceLink, type PeriodMap,
 } from '@/lib/maps';
 import { laneVar } from '@/lib/windows';
@@ -193,7 +193,7 @@ function Quote({ l, onJump, targetForEvent }: { l: PlaceLink } & Pick<Props, 'on
 function MapCard({ m, year }: { m: PeriodMap; year: number | null }) {
   let rel = '';
   if (year !== null) {
-    const d = Math.round(m.date - year);
+    const d = Math.round(shownYear(m) - year);
     const n = Math.abs(d), yrs = n === 1 ? 'year' : 'years';
     rel = d === 0 ? 'drawn the same year' : d > 0 ? `drawn ${n} ${yrs} later` : `drawn ${n} ${yrs} earlier`;
   }
@@ -212,6 +212,9 @@ function MapCard({ m, year }: { m: PeriodMap; year: number | null }) {
         </button>
       )}
       <span className={styles.mapTitle}>{m.title}, {m.date}</span>
+      {m.depicts_date && m.depicts_date !== m.date && (
+        <span className={styles.mapMeta}>A {m.date} copy of a work of {m.depicts_date}</span>
+      )}
       <span className={styles.mapMeta}>{m.maker ?? 'Maker not recorded'} · {m.holder}{m.shelfmark ? ` · ${m.shelfmark}` : ''}</span>
       {m.indigenous_made && <span className={styles.madeBy}>Made by an Indigenous artist, as the holder records it: {m.indigenous_made_basis}</span>}
       {meta && <span className={styles.mapMeta}>{meta}</span>}

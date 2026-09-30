@@ -24,6 +24,8 @@ export interface PeriodMap {
   indigenous_made?: boolean; indigenous_made_basis?: string;
   /** 'local' (a town, an estate) ranks after 'regional'; absent on older records, where the title decides. */
   scale?: 'regional' | 'local';
+  /** For a later copy: the year of the geography it reproduces (al-Idrisi's 1154 map in a 1553 copy). */
+  depicts_date?: number;
   /** The map's own sheet, from the holder: a IIIF image service, or (holders with no
    *  IIIF) a full-size image at its public address. null until one is recorded. */
   image?: {
@@ -148,6 +150,9 @@ export function isLocalPlan(m: PeriodMap): boolean {
  * Starting values, to be tuned once W3 to W6 are catalogued. */
 export const CLOSE_YEARS: Record<number, number> = { 0: 25, 1: 25, 2: 15, 3: 10, 4: 5, 5: 5, 6: 5 };
 const closeYears = (windowId: number | null) => CLOSE_YEARS[windowId ?? 1] ?? 5;
+/** The year a map shows: for a later copy, the year of the work it copies. Closeness and
+ *  order are measured by it, so a 1553 copy of a 1154 map sits with the 12th century. */
+export const shownYear = (m: PeriodMap): number => m.depicts_date ?? m.date;
 
 function mapsFor(placeIds: string[], operator: boolean) {
   const want = new Set(placeIds.flatMap((id) => (placeById.get(id) ? regionsOf(placeById.get(id)!) : [])));
@@ -163,9 +168,9 @@ function mapsFor(placeIds: string[], operator: boolean) {
 export function closestPeriodMaps(year: number, windowId: number | null, placeIds: string[], operator = false, limit = 3): PeriodMap[] {
   const cut = closeYears(windowId);
   return mapsFor(placeIds, operator)
-    .map((x) => ({ ...x, d: Math.abs(x.m.date - year) }))
+    .map((x) => ({ ...x, d: Math.abs(shownYear(x.m) - year) }))
     .filter((x) => x.d <= cut)
-    .sort((a, b) => (a.d + (a.regional ? 0 : 5) + (a.local ? 8 : 0)) - (b.d + (b.regional ? 0 : 5) + (b.local ? 8 : 0)) || a.m.date - b.m.date)
+    .sort((a, b) => (a.d + (a.regional ? 0 : 5) + (a.local ? 8 : 0)) - (b.d + (b.regional ? 0 : 5) + (b.local ? 8 : 0)) || shownYear(a.m) - shownYear(b.m))
     .slice(0, limit)
     .map((x) => x.m);
 }
@@ -178,7 +183,7 @@ export function closestPeriodMaps(year: number, windowId: number | null, placeId
  *  century off. Maps already shown as closest are left out. Without a year (the
  *  place page), the whole regional series. */
 export function periodMapSeries(placeIds: string[], operator = false, around?: { year: number; exclude: string[] }): PeriodMap[] {
-  const byDate = (a: PeriodMap, b: PeriodMap) => a.date - b.date || a.id.localeCompare(b.id);
+  const byDate = (a: PeriodMap, b: PeriodMap) => shownYear(a) - shownYear(b) || a.id.localeCompare(b.id);
   const all = mapsFor(placeIds, operator).filter((x) => !x.local);
   const regional = all.filter((x) => x.regional);
   const pool = (regional.length ? regional : all).map((x) => x.m).sort(byDate);
@@ -186,8 +191,8 @@ export function periodMapSeries(placeIds: string[], operator = false, around?: {
   const keep = (m: PeriodMap) => !around.exclude.includes(m.id);
   const longView = pool.filter(keep);
   const anyScope = all.map((x) => x.m).filter(keep).sort(byDate);
-  const before = anyScope.filter((m) => m.date < around.year);
-  const after = anyScope.filter((m) => m.date >= around.year);
+  const before = anyScope.filter((m) => shownYear(m) < around.year);
+  const after = anyScope.filter((m) => shownYear(m) >= around.year);
   const pick = [longView[0], before[before.length - 1], after[0], longView[longView.length - 1]].filter(Boolean) as PeriodMap[];
   return [...new Map(pick.map((m) => [m.id, m])).values()].sort(byDate);
 }
