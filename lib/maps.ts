@@ -19,9 +19,10 @@ export interface PeriodMap {
   holder: string; shelfmark: string | null; catalog_url: string | null; iiif_manifest: string | null;
   covers: Region[]; rights: string | null; display: string; status: 'verified' | 'candidate';
   notes: string; memberVisible: boolean; memberLinkable: boolean;
-  /** The map's own sheet from the holder's IIIF image service; null until one is recorded. */
+  /** The map's own sheet, from the holder: a IIIF image service, or (holders with no
+   *  IIIF) a full-size image at its public address. null until one is recorded. */
   image?: {
-    iiif_image: string; sheet: number; sheets: number; sheet_label: string | null;
+    iiif_image?: string; static_url?: string; sheet: number; sheets: number; sheet_label: string | null;
     width: number | null; height: number | null; why_this_sheet: string | null; checked: string;
   } | null;
 }
@@ -246,8 +247,10 @@ export function topLevelPlace(placeId: string): string {
 export function hasShownImage(m: PeriodMap): boolean {
   return Boolean(m.image && m.memberVisible);
 }
-/** IIIF Image API: the whole sheet, fitted inside px by px, from the holder. */
+/** The whole sheet from the holder: through the IIIF Image API fitted inside px by
+ *  px, or the holder's own full-size image where it has no IIIF (the browser scales it). */
 export function imageUrl(m: PeriodMap, px: number): string {
-  return `${m.image!.iiif_image}/full/!${px},${px}/0/default.jpg`;
+  const img = m.image!;
+  return img.iiif_image ? `${img.iiif_image}/full/!${px},${px}/0/default.jpg` : img.static_url!;
 }
 export const allMaps = (): PeriodMap[] => data.maps ?? [];
