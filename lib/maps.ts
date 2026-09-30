@@ -20,6 +20,10 @@ export interface PeriodMap {
   notes: string; memberVisible: boolean; memberLinkable: boolean;
   /** The attribution the holder's terms require, shown with the image; absent where none is required. */
   credit?: string;
+  /** Set only where the holder itself says the map was made by an Indigenous artist; basis quotes it. */
+  indigenous_made?: boolean; indigenous_made_basis?: string;
+  /** 'local' (a town, an estate) ranks after 'regional'; absent on older records, where the title decides. */
+  scale?: 'regional' | 'local';
   /** The map's own sheet, from the holder: a IIIF image service, or (holders with no
    *  IIIF) a full-size image at its public address. null until one is recorded. */
   image?: {
@@ -128,10 +132,11 @@ export function regionsOf(p: Place): Region[] {
 }
 
 /* A city, fort or harbour plan shows one place, not a region, so it ranks after
- * regional and basin-wide maps. Judged from the catalogued title until the
- * catalogue carries a scale field of its own. */
+ * regional and basin-wide maps. The catalogue's scale field decides where a record
+ * has one (batch 3 onward); older records are judged from the catalogued title. */
 const LOCAL = /\b(plan|planta|plano|plattegrond|perspectiva|afbeelding|castrum|kasteel|fort|civitas|stadt|ciudad|town|harbour|rade|baai|ba[ií]a|barra|ichnography)\b|fortifica/i;
 export function isLocalPlan(m: PeriodMap): boolean {
+  if (m.scale) return m.scale === 'local';
   return LOCAL.test(m.title);
 }
 

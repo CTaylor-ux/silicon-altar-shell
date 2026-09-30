@@ -213,6 +213,7 @@ function MapCard({ m, year }: { m: PeriodMap; year: number | null }) {
       )}
       <span className={styles.mapTitle}>{m.title}, {m.date}</span>
       <span className={styles.mapMeta}>{m.maker ?? 'Maker not recorded'} · {m.holder}{m.shelfmark ? ` · ${m.shelfmark}` : ''}</span>
+      {m.indigenous_made && <span className={styles.madeBy}>Made by an Indigenous artist, as the holder records it: {m.indigenous_made_basis}</span>}
       {meta && <span className={styles.mapMeta}>{meta}</span>}
       {showImg && m.credit && <span className={styles.mapMeta}>Image: {m.credit}</span>}
       {m.status === 'candidate' && <span className={styles.flag}>candidate: not verified at the holder</span>}

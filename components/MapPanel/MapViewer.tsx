@@ -65,6 +65,7 @@ export default function MapViewer({ m, onClose }: { m: PeriodMap; onClose: () =>
             {m.maker ?? 'Maker not recorded'} · {m.holder}{m.shelfmark ? ` · ${m.shelfmark}` : ''}
             {img.sheets > 1 ? ` · sheet ${img.sheet} of ${img.sheets}` : ''}
           </span>
+          {m.indigenous_made && <span className={styles.madeBy}>Made by an Indigenous artist, as the holder records it: {m.indigenous_made_basis}</span>}
           {m.credit && <span className={styles.mapMeta}>Image: {m.credit}</span>}
         </div>
         <button ref={closeBtn} type="button" className={styles.btn} onClick={onClose}>Close map</button>

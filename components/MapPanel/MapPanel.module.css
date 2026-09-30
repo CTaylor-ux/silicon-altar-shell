@@ -248,3 +248,6 @@
 /* What a thread tracks (threads.json) and its real span, computed from its stops. */
 .threadAbout { margin: 2px 0 4px; font-size: 12.5px; line-height: 1.45; color: var(--txt); max-width: 70ch; }
 .threadSpan { font: 400 10.5px var(--font-mono); color: var(--dim); white-space: nowrap; }
+
+/* Indigenous authorship, in the holder's words (catalogue field indigenous_made). */
+.madeBy { font: 400 10.5px/1.45 var(--font-mono); color: var(--txt); }
