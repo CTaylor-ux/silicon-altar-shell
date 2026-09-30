@@ -148,7 +148,9 @@ export function isLocalPlan(m: PeriodMap): boolean {
  * series with its distance stated. Author ruling, Thread 35 (2026-09-29): the
  * earlier map is still context, and the contrast shows the lines being redrawn.
  * Starting values, to be tuned once W3 to W6 are catalogued. */
-export const CLOSE_YEARS: Record<number, number> = { 0: 25, 1: 25, 2: 15, 3: 10, 4: 5, 5: 5, 6: 5 };
+/* W0 is 100 (author, 2026-09-30): medieval maps are rare, and a map within a century is as
+ * close as the record allows for the 1100s to 1400s; every card states its distance. */
+export const CLOSE_YEARS: Record<number, number> = { 0: 100, 1: 25, 2: 15, 3: 10, 4: 5, 5: 5, 6: 5 };
 const closeYears = (windowId: number | null) => CLOSE_YEARS[windowId ?? 1] ?? 5;
 /** The year a map shows: for a later copy, the year of the work it copies. Closeness and
  *  order are measured by it, so a 1553 copy of a 1154 map sits with the 12th century. */
