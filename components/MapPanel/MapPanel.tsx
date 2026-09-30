@@ -215,6 +215,7 @@ function MapCard({ m, year }: { m: PeriodMap; year: number | null }) {
       <span className={styles.mapTitle}>{m.title}, {m.date}</span>
       <span className={styles.mapMeta}>{m.maker ?? 'Maker not recorded'} · {m.holder}{m.shelfmark ? ` · ${m.shelfmark}` : ''}</span>
       {meta && <span className={styles.mapMeta}>{meta}</span>}
+      {showImg && m.credit && <span className={styles.mapMeta}>Image: {m.credit}</span>}
       {m.status === 'candidate' && <span className={styles.flag}>candidate: not verified at the holder</span>}
       {!m.memberVisible && m.status === 'verified' && <span className={styles.mapMeta}>Rights allow a link only.</span>}
       {m.memberVisible && !m.image && <span className={styles.mapMeta}>Image not yet recorded; see it at the holder.</span>}

@@ -19,6 +19,8 @@ export interface PeriodMap {
   holder: string; shelfmark: string | null; catalog_url: string | null; iiif_manifest: string | null;
   covers: Region[]; rights: string | null; display: string; status: 'verified' | 'candidate';
   notes: string; memberVisible: boolean; memberLinkable: boolean;
+  /** The attribution the holder's terms require, shown with the image; absent where none is required. */
+  credit?: string;
   /** The map's own sheet, from the holder: a IIIF image service, or (holders with no
    *  IIIF) a full-size image at its public address. null until one is recorded. */
   image?: {
