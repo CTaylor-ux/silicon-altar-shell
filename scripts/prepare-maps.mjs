@@ -154,9 +154,8 @@ for (const e of [...E].sort((a, b) => a.window - b.window || a.year_sort - b.yea
       title: e.title,
       hasPlaces: Boolean(byEvent[e.event_id]),
       noPlaceReason: (P.no_place ?? {})[e.event_id] ?? null,
-      support: sup?.support ?? null,
-      quote: sup?.quote ?? null,
-      note: sup?.note ?? null,
+      // No thread_support.json: no support fields at all, so the panel shows no label.
+      ...(SUP.size ? { support: sup?.support ?? null, quote: sup?.quote ?? null, note: sup?.note ?? null } : {}),
     };
     stopAt.set(key, { stop, sup });
     (threads[t] ??= []).push(stop);
