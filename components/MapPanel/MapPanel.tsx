@@ -22,7 +22,7 @@ import MapCanvas, { type CanvasLine, type CanvasPoint } from './MapCanvas';
 import MapViewer from './MapViewer';
 import {
   CLOSE_YEARS, closestPeriodMaps, shownYear, entryRow, eventLayer, eventTitle, eventWindow, eventYear, hasShownImage, imageUrl, periodMapSeries, place, placeHasRecord, placeRecord,
-  threadInfo, threadStops, threadTitle, threadsForEvent, topLevelPlace, type Place, type PlaceLink, type PeriodMap,
+  threadInfo, threadStops, threadTitle, threadsForEvent, type ThreadStop, topLevelPlace, type Place, type PlaceLink, type PeriodMap,
 } from '@/lib/maps';
 import { laneVar } from '@/lib/windows';
 import type { Target } from '@/lib/retrieval';
@@ -316,10 +316,13 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
           <h3>Go further</h3>
           <div className={styles.go}>
             {threads.map((t) => (
-              <button key={t.token} type="button" className={styles.goBtn}
-                onClick={() => onPush({ kind: 'thread', token: t.token, index: t.index })}>
-                Follow {threadTitle(t.token)}, stop {t.index + 1} of {t.total} →
-              </button>
+              <div key={t.token} className={styles.follow}>
+                <button type="button" className={styles.goBtn}
+                  onClick={() => onPush({ kind: 'thread', token: t.token, index: t.index })}>
+                  Follow {threadTitle(t.token)}, stop {t.index + 1} of {t.total} →
+                </button>
+                <ThreadSupport stop={t.stop} />
+              </div>
             ))}
             {records.map((p) => (
               <button key={p} type="button" className={styles.goBtn} onClick={() => onPush({ kind: 'place', placeId: p })}>
@@ -333,6 +336,19 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
       <MapSeries key={view.eventId} maps={series} year={yr.start} heading="Drawn over time"
         note="Earlier and later maps of these places, each as its maker drew it. Set against this row's date, they show the lines being drawn and redrawn." />
     </>
+  );
+}
+
+/* Why this row is on the thread, in its own words (thread_support.json), or a plain statement
+ * that the membership is the corpus's reading. Author ruling, Thread 35: label, do not hide. */
+function ThreadSupport({ stop }: { stop?: ThreadStop }) {
+  if (!stop || stop.support === undefined) return null;
+  if (!stop.support) return <p className={styles.support}>The corpus&rsquo;s reading; not yet stated in this row.</p>;
+  return (
+    <p className={styles.support}>
+      {stop.support === 'stated' ? 'In the row\u2019s own words: ' : 'The row says: '}&ldquo;{stop.quote}&rdquo;
+      {stop.support === 'implied' && stop.note ? <span className={styles.why}> {stop.note}</span> : null}
+    </p>
   );
 }
 
@@ -385,8 +401,9 @@ function ThreadView({ view, operator, onReplace, onPush, onJump, targetForEvent 
             {operator && <span className={styles.threadSpan}> · {view.token}{info.status ? ` · ${info.status}` : ''}</span>}
           </p>
         )}
-        <h2 className={styles.h2}>{eventTitle(stop.event_id)}</h2>
+        <h2 className={styles.h2}>{stop.title ?? eventTitle(stop.event_id)}</h2>
         <span className={styles.fine}>W{stop.window} · {stop.year_label}. The window behind moves to each stop. Numbers mark order, not a route.</span>
+        <ThreadSupport stop={stop} />
         <div className={styles.go}>
           <button type="button" className={styles.btn} disabled={view.index === 0} onClick={() => go(view.index - 1)}>← Prev stop</button>
           <button type="button" className={styles.btn} disabled={view.index === stops.length - 1} onClick={() => go(view.index + 1)}>Next stop →</button>
@@ -432,7 +449,8 @@ function ThreadView({ view, operator, onReplace, onPush, onJump, targetForEvent 
                 <span className={styles.stopYr}>{s.year_label}</span>
                 <span className={styles.stopW}>W{s.window}</span>
                 <span>
-                  {eventTitle(s.event_id)}
+                  {s.title ?? eventTitle(s.event_id)}
+                  {s.support === null && <em className={styles.why}> · the corpus&rsquo;s reading</em>}
                   {!s.hasPlaces && s.noPlaceReason ? <em className={styles.why}> · {s.noPlaceReason}</em> : null}
                   {i === view.index && <span className={styles.nowTag}>current</span>}
                 </span>

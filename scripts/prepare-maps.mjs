@@ -125,22 +125,41 @@ links.forEach((l, i) => (byPlace[l.place_id] ??= []).push(i));
 
 /* Thread order, from the corpus's own memberships. A stop is one event; its year is
  * the entry's year_label as the window shows it, and order follows the window then
- * year_sort, which is how the reader moves through the strip. */
+ * year_sort, which is how the reader moves through the strip.
+ *
+ * Support (thread_support.json, Thread 35 thread-tag audit): where one of the event's rows
+ * supports the membership in its own words, the stop carries those words and that row
+ * (stated before implied); otherwise support is null and the panel says the membership is
+ * the corpus's reading. The stop's title is its own row's, not the event's: in W5 an event
+ * is a whole year's row, named after one of its lanes. Optional, so an older corpus builds. */
+const SUP = new Map();
+if (have('thread_support.json')) for (const r of read('thread_support.json').supports) SUP.set(`${r.entry_id}|${r.token}`, r);
+const rank = (r) => (r?.support === 'stated' ? 2 : r?.support === 'implied' ? 1 : 0);
 const threads = {};
-const seenEvent = new Set();
+const stopAt = new Map();
 for (const e of [...E].sort((a, b) => a.window - b.window || a.year_sort - b.year_sort)) {
   for (const t of e.thread_memberships ?? []) {
     const key = `${t}|${e.event_id}`;
-    if (seenEvent.has(key)) continue;
-    seenEvent.add(key);
-    (threads[t] ??= []).push({
+    const sup = SUP.get(`${e.id}|${t}`) ?? null;
+    const have_ = stopAt.get(key);
+    if (have_) {
+      if (rank(sup) > rank(have_.sup)) Object.assign(have_.stop, { entry_id: e.id, title: e.title, support: sup.support, quote: sup.quote, note: sup.note ?? null }), (have_.sup = sup);
+      continue;
+    }
+    const stop = {
       event_id: e.event_id,
       window: e.window,
       year_label: e.year_label ?? String(e.year_sort),
       entry_id: e.id,
+      title: e.title,
       hasPlaces: Boolean(byEvent[e.event_id]),
       noPlaceReason: (P.no_place ?? {})[e.event_id] ?? null,
-    });
+      support: sup?.support ?? null,
+      quote: sup?.quote ?? null,
+      note: sup?.note ?? null,
+    };
+    stopAt.set(key, { stop, sup });
+    (threads[t] ??= []).push(stop);
   }
 }
 
@@ -192,6 +211,8 @@ fs.copyFileSync(LAND_SRC, path.join(LAND_DIR, 'land-50m.json'));
 const shown = maps.filter((m) => m.memberVisible).length;
 console.log(`  ${maps.length} period maps (${shown} member-visible, commercial=${commercial})`);
 console.log(`  ${P.places.length} places, ${links.length} links, ${flows.length} flows, ${Object.keys(byEvent).length} events with map data`);
+const allStops = Object.values(threads).flat();
+console.log(`  ${allStops.length} thread stops, ${allStops.filter((x) => x.support).length} supported in the row's own words (thread_support.json${SUP.size ? '' : ' absent'})`);
 console.log(`  ${Object.keys(threads).length} threads indexed, ${Object.keys(threads).length - untitled.length} titled${untitled.length ? ` (untitled: ${untitled.join(', ')})` : ''}`);
 console.log(`  ${(fs.statSync(OUT).size / 1024).toFixed(0)} KB -> lib/maps.generated.json`);
 console.log(`  ${(fs.statSync(path.join(LAND_DIR, 'land-50m.json')).size / 1024).toFixed(0)} KB -> public/maps/land-50m.json (Natural Earth, public domain)`);

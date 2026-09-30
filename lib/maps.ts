@@ -51,6 +51,11 @@ export interface Flow {
 export interface ThreadStop {
   event_id: string; window: number; year_label: string; entry_id: string;
   hasPlaces: boolean; noPlaceReason: string | null;
+  /** The stop's own row (the supporting one where there is one); in W5 an event is a whole year. */
+  title?: string;
+  /** thread_support.json: the row's own words for this membership, or null where it is the
+   *  corpus's reading, not yet stated in the row. Optional so an older build still reads. */
+  support?: 'stated' | 'implied' | null; quote?: string | null; note?: string | null;
 }
 interface MapData {
   available: boolean; appUse: { commercial: boolean } | null;
@@ -254,9 +259,12 @@ export function entryRow(entryId: string) {
 }
 
 /** Threads this event belongs to, with its position in each. */
-export function threadsForEvent(eventId: string): { token: string; index: number; total: number }[] {
+export function threadsForEvent(eventId: string): { token: string; index: number; total: number; stop: ThreadStop }[] {
   return Object.entries(data.threads ?? {})
-    .map(([token, stops]) => ({ token, index: stops.findIndex((s) => s.event_id === eventId), total: stops.length }))
+    .map(([token, stops]) => {
+      const index = stops.findIndex((s) => s.event_id === eventId);
+      return { token, index, total: stops.length, stop: stops[index] };
+    })
     .filter((t) => t.index >= 0);
 }
 

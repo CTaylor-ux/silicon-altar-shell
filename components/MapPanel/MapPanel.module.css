@@ -251,3 +251,7 @@
 
 /* Indigenous authorship, in the holder's words (catalogue field indigenous_made). */
 .madeBy { font: 400 10.5px/1.45 var(--font-mono); color: var(--txt); }
+
+/* Thread support line under a Follow button and a stop title (Thread 35, thread-tag audit). */
+.follow { display: flex; flex-direction: column; gap: 3px; }
+.support { margin: 0; font: 400 11px/1.5 var(--font-sans, inherit); color: var(--dim); max-width: 62ch; }
