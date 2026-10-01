@@ -231,8 +231,15 @@ function MapCard({ m, year }: { m: PeriodMap; year: number | null }) {
   );
 }
 
-function ClosestMaps({ year, windowId, placeIds, atIds, operator }: { year: number | null; windowId: number | null; placeIds: string[]; atIds: string[]; operator: boolean }) {
-  const maps = year === null ? [] : closestPeriodMaps(year, windowId, placeIds, operator, 3, atIds);
+/* The three closest maps, leaving out any the row already names (shown above, under its own
+ * sentence): the Waldseemuller map is not listed twice on the 1507 row. */
+function closestFor(year: number | null, windowId: number | null, placeIds: string[], atIds: string[], operator: boolean, exclude: string[] = []): PeriodMap[] {
+  if (year === null) return [];
+  return closestPeriodMaps(year, windowId, placeIds, operator, 3 + exclude.length, atIds).filter((m) => !exclude.includes(m.id)).slice(0, 3);
+}
+
+function ClosestMaps({ year, windowId, placeIds, atIds, operator, exclude = [], named = false }: { year: number | null; windowId: number | null; placeIds: string[]; atIds: string[]; operator: boolean; exclude?: string[]; named?: boolean }) {
+  const maps = closestFor(year, windowId, placeIds, atIds, operator, exclude);
   const cut = CLOSE_YEARS[windowId ?? 1] ?? 5;
   return (
     <section className={styles.sec}>
@@ -240,7 +247,7 @@ function ClosestMaps({ year, windowId, placeIds, atIds, operator }: { year: numb
       {maps.length ? (
         <ul className={styles.maps}>{maps.map((m) => <MapCard key={m.id} m={m} year={year} />)}</ul>
       ) : (
-        <p className={styles.fine}>No verified period map within {cut} years of this date yet.</p>
+        <p className={styles.fine}>{named ? `No other verified period map within ${cut} years of this date yet.` : `No verified period map within ${cut} years of this date yet.`}</p>
       )}
     </section>
   );
@@ -322,8 +329,8 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
   const win = entryRow(view.entryId)?.window ?? eventWindow(view.eventId);
   const placeIds = drawing.places.map((p) => p.id);
   const atIds = atPlaceIds(view.eventId, operator);
-  const closest = yr.start === null ? [] : closestPeriodMaps(yr.start, win, placeIds, operator, 3, atIds);
   const named = namedMapsForEvent(view.eventId, operator).map((n) => n.m.id);
+  const closest = closestFor(yr.start, win, placeIds, atIds, operator, named);
   const series = yr.start === null ? [] : periodMapSeries(placeIds, operator, { year: yr.start, exclude: [...closest.map((m) => m.id), ...named] });
   const hasPlaces = placeIds.length > 0;
   const why = noPlaceReason(view.eventId);
@@ -376,7 +383,7 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
           </div>
         </section>
       )}
-      {hasPlaces && <ClosestMaps year={yr.start} windowId={win} placeIds={placeIds} atIds={atIds} operator={operator} />}
+      {hasPlaces && <ClosestMaps year={yr.start} windowId={win} placeIds={placeIds} atIds={atIds} operator={operator} exclude={named} named={named.length > 0} />}
       <MapSeries key={view.eventId} maps={series} year={yr.start} heading="Drawn over time"
         note="Earlier and later maps of these places, each as its maker drew it. Set against this row's date, they show the lines being drawn and redrawn." />
     </>
