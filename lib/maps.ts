@@ -26,6 +26,8 @@ export interface PeriodMap {
   scale?: 'regional' | 'local';
   /** For a later copy: the year of the geography it reproduces (al-Idrisi's 1154 map in a 1553 copy). */
   depicts_date?: number;
+  /** Rows whose own words name this map (Thread 36): shown on those rows whatever its date. */
+  named_in?: { entry_id: string; quote: string }[];
   /** The map's own sheet, from the holder: a IIIF image service, or (holders with no
    *  IIIF) a full-size image at its public address. null until one is recorded. */
   image?: {
@@ -67,6 +69,8 @@ interface MapData {
   byPlace: Record<string, number[]>;
   threads: Record<string, ThreadStop[]>;
   threadInfo?: Record<string, ThreadInfo>;
+  /** By event: the maps a row of the event names, with the row and its words. Optional, so an older build still reads. */
+  namedMaps?: Record<string, { map: string; entry_id: string; quote: string }[]>;
 }
 export interface ThreadInfo {
   title: string | null; description: string | null; status: 'draft' | 'approved' | null;
@@ -76,6 +80,7 @@ export interface ThreadInfo {
 const data = raw as unknown as MapData;
 export const mapLayerAvailable = Boolean(data.available);
 const placeById = new Map((data.places ?? []).map((p) => [p.id, p]));
+const mapById = new Map((data.maps ?? []).map((m) => [m.id, m]));
 
 export function place(id: string): Place | undefined {
   return placeById.get(id);
@@ -161,6 +166,22 @@ const closeYears = (windowId: number | null) => CLOSE_YEARS[windowId ?? 1] ?? 5;
  *  order are measured by it, so a 1553 copy of a 1154 map sits with the 12th century. */
 export const shownYear = (m: PeriodMap): number => m.depicts_date ?? m.date;
 
+/* A plan of one city, tagged with city regions only (Thread 35's city regions), can match no
+ * place but that city. Thread 36 (author, 2026-10-01): where the row is AT that city, the plan
+ * stands level with a regional map; where the row only mentions the city, it ranks after them
+ * as before. Measured first: without this, 43 catalogued plans were shown by no row and no place. */
+const ownPlan = (m: PeriodMap) => m.covers.length > 0 && m.covers.every((c) => c.startsWith('city-'));
+
+/** The places a row is at or moves between: its links other than mentions, and its flows' ends. */
+export function atPlaceIds(eventId: string, operator = false): string[] {
+  const layer = eventLayer(eventId, operator);
+  if (!layer) return [];
+  return [...new Set([
+    ...layer.links.filter((l) => l.role !== 'mentioned' && l.role !== 'intended-destination').map((l) => l.place_id),
+    ...layer.flows.flatMap((f) => [f.from, f.to]),
+  ])];
+}
+
 function mapsFor(placeIds: string[], operator: boolean) {
   const want = new Set(placeIds.flatMap((id) => (placeById.get(id) ? regionsOf(placeById.get(id)!) : [])));
   if (!want.size) return [];
@@ -171,13 +192,16 @@ function mapsFor(placeIds: string[], operator: boolean) {
 
 /** Maps within the window's cutoff of the year, nearest in time first. A regional
  *  map beats a basin-wide one only when they are about equally close (5 years);
- *  a city or fort plan ranks after both at the same distance. */
-export function closestPeriodMaps(year: number, windowId: number | null, placeIds: string[], operator = false, limit = 3): PeriodMap[] {
+ *  a city or fort plan ranks after both at the same distance, unless it is a plan of
+ *  a city the row is at (atIds), which stands level with a regional map. */
+export function closestPeriodMaps(year: number, windowId: number | null, placeIds: string[], operator = false, limit = 3, atIds: string[] = []): PeriodMap[] {
   const cut = closeYears(windowId);
+  const atRegions = new Set(atIds.flatMap((id) => (placeById.get(id) ? regionsOf(placeById.get(id)!) : [])));
+  const late = (x: { m: PeriodMap; local: boolean }) => (x.local && !(ownPlan(x.m) && x.m.covers.some((c) => atRegions.has(c))) ? 8 : 0);
   return mapsFor(placeIds, operator)
     .map((x) => ({ ...x, d: Math.abs(shownYear(x.m) - year) }))
     .filter((x) => x.d <= cut)
-    .sort((a, b) => (a.d + (a.regional ? 0 : 5) + (a.local ? 8 : 0)) - (b.d + (b.regional ? 0 : 5) + (b.local ? 8 : 0)) || shownYear(a.m) - shownYear(b.m))
+    .sort((a, b) => (a.d + (a.regional ? 0 : 5) + late(a)) - (b.d + (b.regional ? 0 : 5) + late(b)) || shownYear(a.m) - shownYear(b.m))
     .slice(0, limit)
     .map((x) => x.m);
 }
@@ -188,10 +212,11 @@ export function closestPeriodMaps(year: number, windowId: number | null, placeId
  *  the earliest and latest regional maps, and the nearest maps before and after the
  *  year of any scope, so a basin-wide map a decade off is not dropped for one a
  *  century off. Maps already shown as closest are left out. Without a year (the
- *  place page), the whole regional series. */
+ *  place page), the whole regional series, and with it the plans of that very city
+ *  (Thread 36): on a place's own page a plan of the place is not 'somewhere else'. */
 export function periodMapSeries(placeIds: string[], operator = false, around?: { year: number; exclude: string[] }): PeriodMap[] {
   const byDate = (a: PeriodMap, b: PeriodMap) => shownYear(a) - shownYear(b) || a.id.localeCompare(b.id);
-  const all = mapsFor(placeIds, operator).filter((x) => !x.local);
+  const all = mapsFor(placeIds, operator).filter((x) => !x.local || (!around && ownPlan(x.m)));
   const regional = all.filter((x) => x.regional);
   const pool = (regional.length ? regional : all).map((x) => x.m).sort(byDate);
   if (!around) return pool;
@@ -221,15 +246,31 @@ export function eventOfEntry(entryId: string): string | null {
   return rowById.get(entryId)?.eventId ?? null;
 }
 
-/** One entry id per row that has map data a viewer may see, for the MAP marks. */
+/** The maps a row of this event names in its own words (named_in), each with that row and
+ *  its sentence. Shown on the row whatever the map's date: the row is about the map. */
+export function namedMapsForEvent(eventId: string, operator = false): { m: PeriodMap; says: { entry_id: string; quote: string }[] }[] {
+  const byMap = new Map<string, { entry_id: string; quote: string }[]>();
+  for (const n of data.namedMaps?.[eventId] ?? []) byMap.set(n.map, [...(byMap.get(n.map) ?? []), { entry_id: n.entry_id, quote: n.quote }]);
+  return [...byMap].map(([id, says]) => ({ m: mapById.get(id)!, says }))
+    .filter((x) => x.m && (operator || x.m.memberVisible))
+    .sort((a, b) => shownYear(a.m) - shownYear(b.m) || a.m.id.localeCompare(b.m.id));
+}
+/** Why an event has no place on the map, in the corpus's words (places.json no_place). */
+export function noPlaceReason(eventId: string): string | null {
+  return data.noPlace?.[eventId] ?? null;
+}
+
+/** One entry id per row that has map data a viewer may see, for the MAP marks: rows with
+ *  places or movements, and rows that name a catalogued map. */
 export function mapEntryIdsForWindow(windowId: number, operator = false): string[] {
   const out: string[] = [];
-  for (const [ev, idx] of Object.entries(data.byEvent ?? {})) {
-    if (idx.window !== windowId) continue;
-    const layer = eventLayer(ev, operator);
-    if (!layer || (!layer.links.length && !layer.flows.length)) continue;
+  const events = new Set([...Object.keys(data.byEvent ?? {}), ...Object.keys(data.namedMaps ?? {})]);
+  for (const ev of events) {
     const r = firstRowOfEvent.get(ev);
-    if (r) out.push(r.id);
+    if (!r || r.window !== windowId) continue;
+    const layer = eventLayer(ev, operator);
+    if (!(layer && (layer.links.length || layer.flows.length)) && !namedMapsForEvent(ev, operator).length) continue;
+    out.push(r.id);
   }
   return out;
 }

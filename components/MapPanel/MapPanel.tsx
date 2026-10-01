@@ -21,7 +21,7 @@ import { createContext, useContext, useEffect, useMemo, useRef, useState } from 
 import MapCanvas, { type CanvasLine, type CanvasPoint } from './MapCanvas';
 import MapViewer from './MapViewer';
 import {
-  CLOSE_YEARS, closestPeriodMaps, shownYear, entryRow, eventLayer, eventTitle, eventWindow, eventYear, hasShownImage, imageUrl, periodMapSeries, place, placeHasRecord, placeRecord,
+  CLOSE_YEARS, atPlaceIds, closestPeriodMaps, namedMapsForEvent, noPlaceReason, shownYear, entryRow, eventLayer, eventTitle, eventWindow, eventYear, hasShownImage, imageUrl, periodMapSeries, place, placeHasRecord, placeRecord,
   threadInfo, threadStops, threadTitle, threadsForEvent, type ThreadStop, topLevelPlace, type Place, type PlaceLink, type PeriodMap,
 } from '@/lib/maps';
 import { laneVar } from '@/lib/windows';
@@ -231,8 +231,8 @@ function MapCard({ m, year }: { m: PeriodMap; year: number | null }) {
   );
 }
 
-function ClosestMaps({ year, windowId, placeIds, operator }: { year: number | null; windowId: number | null; placeIds: string[]; operator: boolean }) {
-  const maps = year === null ? [] : closestPeriodMaps(year, windowId, placeIds, operator, 3);
+function ClosestMaps({ year, windowId, placeIds, atIds, operator }: { year: number | null; windowId: number | null; placeIds: string[]; atIds: string[]; operator: boolean }) {
+  const maps = year === null ? [] : closestPeriodMaps(year, windowId, placeIds, operator, 3, atIds);
   const cut = CLOSE_YEARS[windowId ?? 1] ?? 5;
   return (
     <section className={styles.sec}>
@@ -242,6 +242,36 @@ function ClosestMaps({ year, windowId, placeIds, operator }: { year: number | nu
       ) : (
         <p className={styles.fine}>No verified period map within {cut} years of this date yet.</p>
       )}
+    </section>
+  );
+}
+
+/* Maps a row names in its own words (named_in, Thread 36; author, 2026-10-01). Closeness in
+ * time cannot say that a row is about a map: the 2008 row is about maps drawn seventy years
+ * before it. So the row's own sentence decides, as it does for a place, and is shown. */
+function NamedMaps({ eventId, year, operator, onJump }: { eventId: string; year: number | null; operator: boolean } & Pick<Props, 'onJump'>) {
+  const named = namedMapsForEvent(eventId, operator);
+  if (!named.length) return null;
+  const says = [...new Map(named.flatMap((n) => n.says).map((x) => [x.entry_id, x])).values()];
+  return (
+    <section className={styles.sec}>
+      <h3>Maps this row names · {named.length}</h3>
+      <p className={styles.fine}>Shown because the row speaks of them, whatever their date. Each is one sheet of its kind, as its maker drew it.</p>
+      <ul className={styles.quotes}>
+        {says.map((x) => {
+          const row = entryRow(x.entry_id);
+          return (
+            <li key={x.entry_id} className={styles.quoteRow}>
+              <q className={styles.q}>{x.quote}</q>
+              <button type="button" className={styles.linkBtn}
+                onClick={() => { if (row) onJump({ entryId: row.id, windowId: row.window, year: row.year.display, lane: row.lane, tier: row.tier as Target['tier'], title: row.title }); }}>
+                {x.entry_id}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      <ul className={styles.maps}>{named.map((n) => <MapCard key={n.m.id} m={n.m} year={year} />)}</ul>
     </section>
   );
 }
@@ -291,8 +321,12 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
   const records = [...new Set((layer?.links ?? []).map((l) => topLevelPlace(l.place_id)))].filter(placeHasRecord);
   const win = entryRow(view.entryId)?.window ?? eventWindow(view.eventId);
   const placeIds = drawing.places.map((p) => p.id);
-  const closest = yr.start === null ? [] : closestPeriodMaps(yr.start, win, placeIds, operator, 3);
-  const series = yr.start === null ? [] : periodMapSeries(placeIds, operator, { year: yr.start, exclude: closest.map((m) => m.id) });
+  const atIds = atPlaceIds(view.eventId, operator);
+  const closest = yr.start === null ? [] : closestPeriodMaps(yr.start, win, placeIds, operator, 3, atIds);
+  const named = namedMapsForEvent(view.eventId, operator).map((n) => n.m.id);
+  const series = yr.start === null ? [] : periodMapSeries(placeIds, operator, { year: yr.start, exclude: [...closest.map((m) => m.id), ...named] });
+  const hasPlaces = placeIds.length > 0;
+  const why = noPlaceReason(view.eventId);
   return (
     <>
       <div className={styles.titleBlock}>
@@ -300,17 +334,27 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
         <h2 className={styles.h2}>{eventTitle(view.eventId)}</h2>
         <span className={styles.fine}>{yr.display}. The row stays highlighted; Close returns you to it.</span>
       </div>
-      <div className={styles.mapSticky}>
-        <MapCanvas points={drawing.points} lines={drawing.lines} label={`Map for ${eventTitle(view.eventId)}`} />
-        <Legend />
-      </div>
-      <section className={styles.sec}>
-        <h3>In the row&rsquo;s own words</h3>
-        <ul className={styles.quotes}>
-          {(layer?.links ?? []).map((l, i) => <Quote key={i} l={l} onJump={onJump} targetForEvent={targetForEvent} />)}
-        </ul>
-        {(layer?.flows ?? []).map((f) => f.note && <p key={f.id} className={styles.fine}>{f.kind}: {f.note}</p>)}
-      </section>
+      {hasPlaces ? (
+        <>
+          <div className={styles.mapSticky}>
+            <MapCanvas points={drawing.points} lines={drawing.lines} label={`Map for ${eventTitle(view.eventId)}`} />
+            <Legend />
+          </div>
+          <section className={styles.sec}>
+            <h3>In the row&rsquo;s own words</h3>
+            <ul className={styles.quotes}>
+              {(layer?.links ?? []).map((l, i) => <Quote key={i} l={l} onJump={onJump} targetForEvent={targetForEvent} />)}
+            </ul>
+            {(layer?.flows ?? []).map((f) => f.note && <p key={f.id} className={styles.fine}>{f.kind}: {f.note}</p>)}
+          </section>
+        </>
+      ) : (
+        <section className={styles.sec}>
+          <h3>No place on the map</h3>
+          <p className={styles.fine}>{why ? `The row: ${why}.` : 'No place is recorded for this row yet.'}</p>
+        </section>
+      )}
+      <NamedMaps eventId={view.eventId} year={yr.start} operator={operator} onJump={onJump} />
       {(threads.length > 0 || records.length > 0) && (
         <section className={styles.sec}>
           <h3>Go further</h3>
@@ -332,7 +376,7 @@ function RowView({ view, operator, onPush, onJump, targetForEvent }: Props & { v
           </div>
         </section>
       )}
-      <ClosestMaps year={yr.start} windowId={win} placeIds={placeIds} operator={operator} />
+      {hasPlaces && <ClosestMaps year={yr.start} windowId={win} placeIds={placeIds} atIds={atIds} operator={operator} />}
       <MapSeries key={view.eventId} maps={series} year={yr.start} heading="Drawn over time"
         note="Earlier and later maps of these places, each as its maker drew it. Set against this row's date, they show the lines being drawn and redrawn." />
     </>
@@ -419,7 +463,7 @@ function ThreadView({ view, operator, onReplace, onPush, onJump, targetForEvent 
       </div>
       {stop.hasPlaces && (
         <ClosestMaps year={eventYear(stop.event_id).start} windowId={stop.window}
-          placeIds={(fitTo ?? []).map((p) => p.id)} operator={operator} />
+          placeIds={(fitTo ?? []).map((p) => p.id)} atIds={atPlaceIds(stop.event_id, operator)} operator={operator} />
       )}
       {stopRecords.length > 0 && (
         <section className={styles.sec}>

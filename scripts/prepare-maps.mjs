@@ -120,6 +120,16 @@ const touch = (ev, win) => (byEvent[ev] ??= { window: win, links: [], flows: [] 
 links.forEach((l, i) => touch(l.event_id, l.window).links.push(i));
 flows.forEach((f, i) => touch(f.event_id, f.window).flows.push(i));
 
+/* Maps a row names in its own words (historical_maps.json named_in, Thread 36), by event.
+ * Kept apart from byEvent: an event here may have no place at all (the 1934 redlining rows),
+ * and byEvent is what says a thread stop has places. */
+const namedMaps = {};
+for (const m of H.maps) for (const n of m.named_in ?? []) {
+  const e = entryById.get(n.entry_id);
+  if (!e) die(`Map ${m.id} is named in ${n.entry_id}, which the corpus does not have.`);
+  (namedMaps[e.event_id] ??= []).push({ map: m.id, entry_id: n.entry_id, quote: n.quote });
+}
+
 const byPlace = {};
 links.forEach((l, i) => (byPlace[l.place_id] ??= []).push(i));
 
@@ -195,6 +205,7 @@ const out = {
   byPlace,
   threads,
   threadInfo,
+  namedMaps,
 };
 fs.writeFileSync(OUT, JSON.stringify(out, null, 0) + '\n');
 
@@ -209,6 +220,7 @@ fs.copyFileSync(LAND_SRC, path.join(LAND_DIR, 'land-50m.json'));
 
 const shown = maps.filter((m) => m.memberVisible).length;
 console.log(`  ${maps.length} period maps (${shown} member-visible, commercial=${commercial})`);
+console.log(`  ${Object.keys(namedMaps).length} events name a catalogued map in a row's own words`);
 console.log(`  ${P.places.length} places, ${links.length} links, ${flows.length} flows, ${Object.keys(byEvent).length} events with map data`);
 const allStops = Object.values(threads).flat();
 console.log(`  ${allStops.length} thread stops, ${allStops.filter((x) => x.support).length} supported in the row's own words (thread_support.json${SUP.size ? '' : ' absent'})`);
