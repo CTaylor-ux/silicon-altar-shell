@@ -2650,7 +2650,8 @@ links: ny-times-founded-1851, screening-committees-include-editors-1854, know-no
 
 [E-W5-004-01] W5 1854 violence TB
 Nativist rioting against Catholic immigrants at the Williamsburg election
-Boston
+framework: Software layer. The placement mechanism and the narrative mechanism are the same committee, and the year's land statute lowers the price of the ground the population is being moved onto.
+assessment: Weight: Sourced (4 of 4 entries) | Warrant: Open (every entry now Sourced; not yet re-read against the hypotheses)
 sources: [B live_verified] src-nyherald-williamsburg-election-riot-1854 http://www.loc.gov/resource/sn83030313/1854-11-23/ed-1/?sp=1
 links: know-nothing-press-network-1855, dred-scott-press-coverage-1857, draft-riot-press-coverage-1863
 
