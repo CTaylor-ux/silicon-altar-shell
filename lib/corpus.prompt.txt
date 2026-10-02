@@ -418,7 +418,7 @@ threads: T-MERCHANT-BANKER-CONSTANT, T-SOFTWARE-NEUTRALITY
 
 [E-W0-029-01] W0 1290b records TC MILESTONE
 Lombard bankers replace Jews on Lombard Street: Staffing Agency model demonstrated
-Italian banking families (Bardi, Peruzzi, Ricciardi) arrive on Lombard Street, London, following the Jewish expulsion. Same building, same function, different personnel. This is the canonical Staffing Agency demonstration: the extraction requires an intermediary; when one is exhausted, another is installed. Lombards to Medici to Fugger to Sephardic exiles in Amsterdam to Rothschild network to BlackRock/Vanguard/State Street: the technology persists through every personnel change (FW-016 Merchant-Banker Constant).
+Italian banking families (Bardi, Peruzzi, Ricciardi) arrive on Lombard Street, London, following the Jewish expulsion. Same building, same function, different personnel. This is the canonical Staffing Agency demonstration: the extraction requires an intermediary; when one is exhausted, another is installed. Lombards to Medici to Fugger to the Amsterdam Wisselbank and exchange to Rothschild network to BlackRock/Vanguard/State Street: the technology persists through every personnel change (FW-016 Merchant-Banker Constant).
 sources: [A citation_only] src-bowsky-lombards-europe
 links: edict-of-expulsion-1290, templar-banking-formation-1100, hans-fugger-arrives-in-augsburg-banking-1367, medici-bank-founded-1397
 threads: T-MERCHANT-BANKER-CONSTANT, T-COLLAPSE-SURVIVAL-N1, T-FRANCHISE-TRANSFER
@@ -1349,7 +1349,7 @@ threads: T-DISCOVERY-DOCTRINE
 
 [E-W2-004-01] W2 1609 financial TB
 Bank of Amsterdam (Wisselbank)
-First public bank in Northern Europe. Standardizes currency exchange. Eliminates debasement. Amsterdam becomes global settlement hub. The Sephardic financial template institutionalized. Isaac Le Maire conducts world’s first short sale on VOC stock.
+First public bank in Northern Europe. Standardizes currency exchange. Eliminates debasement. Amsterdam becomes global settlement hub. The Amsterdam financial template institutionalized. Isaac Le Maire conducts world’s first short sale on VOC stock.
 sources: [B live_verified] src-bank-of-amsterdam-1609 https://en.wikipedia.org/wiki/Bank_of_Amsterdam
 links: voc-1602, bank-of-england-1694
 threads: T-MERCHANT-BANKER-CONSTANT
@@ -1780,7 +1780,7 @@ threads: T-WHITENING-PROJECT, T-SOFTWARE-NEUTRALITY
 
 [E-W2-029-01] W2 1688 financial TB
 Glorious Revolution - Dutch Financial OS imported
-William of Orange invades with 15,000 Dutch soldiers. "An aristocratic coup d’état." English merchant class invites foreign military to install DUTCH FINANCIAL TECHNOLOGY. Amsterdam (built by Sephardic conversos after 1492) provides the template: bills of exchange, joint-stock corporations, government bonds, stock market. ENTIRE FINANCIAL OS IMPORTED TO LONDON. Parliament now controls borrowing.
+William of Orange invades with 15,000 Dutch soldiers. "An aristocratic coup d’état." English merchant class invites foreign military to install DUTCH FINANCIAL TECHNOLOGY. Amsterdam provides the template: bills of exchange, joint-stock corporations, government bonds, stock market. ENTIRE FINANCIAL OS IMPORTED TO LONDON. Parliament now controls borrowing.
 sources: [A citation_only] src-pincus-1688-modern-revolution; [B live_verified] src-wikipedia-glorious-revolution https://en.wikipedia.org/wiki/Glorious_Revolution
 links: james-ii-becomes-king-1685, first-government-bonds-issued-1693, bank-of-england-1694
 threads: T-MERCHANT-BANKER-CONSTANT
@@ -1801,7 +1801,7 @@ threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W2-029-04] W2 1688d information TB
 De la Vega: Confusión de confusiones
-Joseph (Penso) de la Vega, a Sephardic Jew of Amsterdam, publishes Confusion de confusiones in 1688 - the first study written about a stock exchange, the Amsterdam exchange (whose principal stock was the VOC), describing options (puts and calls), futures, margin buying and bull-and-bear conspiracies. Printed at a clandestine press to evade Sephardic rabbinical censorship, it sits at the intersection of the Sephardic-Amsterdam finance middleware and the information/censorship lane.
+Joseph (Penso) de la Vega, a Sephardic Jew of Amsterdam, publishes Confusion de confusiones in 1688 - the first study written about a stock exchange, the Amsterdam exchange (whose principal stock was the VOC), describing options (puts and calls), futures, margin buying and bull-and-bear conspiracies. Printed at a clandestine press to evade Sephardic rabbinical censorship, it sits at the intersection of the Amsterdam exchange's finance middleware and the information/censorship lane.
 sources: [B live_verified] src-de-la-vega-1688 https://en.wikipedia.org/wiki/Joseph_de_la_Vega
 links: bank-of-amsterdam-wisselbank-1609, voc-1602, council-of-trent-1545-1563, first-daily-newspaper-daily-courant-1702
 threads: T-MERCHANT-BANKER-CONSTANT
@@ -1868,13 +1868,13 @@ threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W2-036-01] W2 1694 financial TB
 Bank of England chartered
-July 27. Centralizes debt issuance for the first time. Funded by 1,268 shareholders raising £1.2 million. Physical destruction of Caribbean node (Port Royal 1692) + purge of knowledge networks (Salem 1692) clears path for centralized debt-grid to replace decentralized Moorish/Sephardic trade system. Old system: decentralized trade via Port Royal, Amsterdam, Levant Company. New system: centralized debt via Bank of England.
+July 27. Centralizes debt issuance for the first time. Funded by 1,268 shareholders raising £1.2 million. Physical destruction of Caribbean node (Port Royal 1692) + purge of knowledge networks (Salem 1692) clears path for centralized debt-grid to replace the decentralized trade system. Old system: decentralized trade via Port Royal, Amsterdam, Levant Company. New system: centralized debt via Bank of England.
 sources: [B live_verified] src-wikipedia-bank-of-england https://en.wikipedia.org/wiki/Bank_of_England
 links: bank-of-amsterdam-wisselbank-1609, glorious-revolution-1688, first-government-bonds-issued-1693, first-bank-of-the-1791
 
 [E-W2-036-02] W2 1694 certification TB
 Bank of England inaugurated
-Certification of the new financial order. The Bank is the institutional expression of the Dutch financial OS now running on English hardware. The Sephardic technology chain: expelled 1492 → Amsterdam 1602 → London 1694.
+Certification of the new financial order. The Bank is the institutional expression of the Dutch financial OS now running on English hardware. The technology chain: Amsterdam 1602 → London 1694.
 sources: [B live_verified] src-wikipedia-bank-of-england https://en.wikipedia.org/wiki/Bank_of_England
 links: bank-of-amsterdam-wisselbank-1609, glorious-revolution-1688, first-government-bonds-issued-1693, first-bank-of-the-1791
 threads: T-MERCHANT-BANKER-CONSTANT
@@ -4201,6 +4201,7 @@ sources: [A live_verified] src-census-birth-registration-area-1929 https://archi
 Birth certificate as certification event
 Each birth certificate is a certification: the living being is registered as a “person” within the 14th Amendment framework. The Noun (living heir) is converted to the Adjective (classified citizen) at the moment of registration. The birth certificate is the point of entry into the Corporate ledger.
 sources: [A live_verified] src-census-birth-registration-area-1929 https://archive.org/details/birthstatisticsf1519unit
+threads: T-NOUN-TO-ADJECTIVE
 
 [E-W6-002-01] W6 1933 financial TA
 BANKRUPTCY #3 - HJR 192, Gold Seizure & McFadden Charges
@@ -4236,6 +4237,7 @@ sources: [A live_verified] src-tuskegee-panel-report-charge-i-1973 https://biote
 National Housing Act / FHA - Geographic Classification
 Creates the Federal Housing Administration. Home Owner’s Loan Corporation (HOLC) draws REDLINING MAPS (its city surveys run 1935 to 1940): every neighborhood in America color-coded by “risk.” Red = “hazardous” = Black. The classification migrates from PEOPLE to GEOGRAPHY. The Adjective is mapped onto the physical landscape. FHA refuses to insure mortgages in red zones. Banks refuse to lend. The result: the largest wealth-building mechanism in American history (homeownership) is systematically denied to the classified population. This is the New Deal’s classification infrastructure: Social Security numbers (1936), FHA maps (1934), WPA employment records. The federal government rebuilds the classification system with NEW DATABASES after the old paper trail (courthouses, Freedmen’s Bureau) has been damaged or destroyed. chain: Lloyd’s policy (W2) → SSC bond (W3) → Zong insurance claim (W3) → HERE (geographic classification) → subprime MBS (2008) → 23andMe genetic risk (2007). Classification → risk pricing → geographic exclusion → wealth extraction.
 sources: [A live_verified] src-usc-12-1701-national-housing-1934 https://www.law.cornell.edu/uscode/text/12/1701
+threads: T-INSURANCE-ACTUARIAL
 
 [E-W6-004-02] W6 1934 land TC
 Redlining as land classification
@@ -4251,6 +4253,7 @@ sources: [A live_verified] src-usc-42-301-social-security-1935 https://www.law.c
 Executive Order 9066 - Japanese internment
 February 19. In the next six months about 122,000 people of Japanese descent were forcibly removed; most lost homes and property (NARA). Relocated to camps. THE EDWARD I TEMPLATE FROM WINDOW 0 executed in the 20th century on American soil: Permit (citizenship) → Restrict (curfews, travel bans) → Confiscate (homes and property lost) → Expel (10 internment camps) → Replace. The template is NOT race-specific - it is ADMINISTRATIVE. The same machine that processed “Negro” in 1924 processes “Japanese” in 1942. The extraction cycle can be aimed at ANY population the Managers designate. That is the strongest proof that the nine lanes aren’t about anti-Black racism specifically - they are about a management technology.
 sources: [A live_verified] src-eo-9066-1942 https://www.archives.gov/milestone-documents/executive-order-9066
+threads: T-SOFTWARE-NEUTRALITY
 
 [E-W6-006-02] W6 1942 population TB
 120,000 reclassified overnight
@@ -4261,6 +4264,7 @@ sources: [A live_verified] src-eo-9066-1942 https://www.archives.gov/milestone-d
 EO 9066 - executive authority over classification
 The order came first; Congress followed on March 21, 1942 with Public Law 503, which made violation of Executive Order 9066 a misdemeanor punishable by up to one year in prison (NARA). The order's language named no ethnic group; the military commander applied it to people of Japanese descent. The same executive authority that issued EO 6102 (gold seizure, 1933). The Corporation’s CEO can reclassify any population by signature.
 sources: [A live_verified] src-eo-9066-1942 https://www.archives.gov/milestone-documents/executive-order-9066
+threads: T-SOFTWARE-NEUTRALITY
 
 [E-W6-006-04] W6 1942 land TB
 Japanese American property seized
@@ -4295,6 +4299,7 @@ Ottoman Empire (WWI), European empires (WWII) liquidated. Last independent sover
 GI Bill - UNIVERSAL PROGRAM, CLASSIFIED ADMINISTRATION
 Servicemen’s Readjustment Act, June 22. Benefits administered through STATES - Southern states deny Black veterans access to VA mortgages, college admissions, vocational training. Of 67,000 VA-backed mortgages in Mississippi (1947): ZERO to Black veterans. Same New Deal pattern: Social Security excluded domestic workers (1935); FHA denied mortgages in red zones (1934); GI Bill benefits denied through state administration. The PROGRAM is universal; the CLASSIFICATION operates through the implementation layer. 16M+ veterans eligible; classified veterans systematically excluded from the largest wealth-building program in American history. The gap between Black and white household wealth in 2024 traces directly to these three instruments (FHA + SS + GI Bill). Technology 2 (Jurisdictional) + Technology 4 (Financial).
 sources: [A live_verified] src-stat-58-284-gi-bill-1944 https://www.govinfo.gov/link/statute/58/284
+threads: T-SOFTWARE-NEUTRALITY
 
 [E-W6-007-04] W6 1944 certification TB
 UN charter drafted (1945)
@@ -4378,6 +4383,7 @@ sources: [C live_verified] src-chronam-reece-coverage-1954 https://www.loc.gov/c
 Brown v. Board / "Integration"
 Desegregation framed as liberation. Forensic reading: "integration" completes the 14th Amendment enrollment. The classified population is moved from separate facilities INTO the Corporate system - not restored to Allodial standing. The Adjective framework is MAINTAINED; its expression changes from separation to inclusion. Noun (Moor) never restored.
 sources: [A live_verified] src-brown-v-board-1954 https://www.archives.gov/education/lessons/brown-v-board
+threads: T-NOUN-TO-ADJECTIVE
 
 [E-W6-013-02] W6 1954 legal TA
 Brown v. Board of Education
@@ -4398,11 +4404,13 @@ sources: [A live_verified] src-fico-10k-2025 https://www.sec.gov/Archives/edgar/
 Civil Rights Act - THE REBRAND
 Prohibits discrimination based on race. Operates ENTIRELY within the Adjective framework: “Black” is still the classification. The law addresses how the classification is TREATED, not whether the classification is LEGITIMATE. What is not in Title II's public-accommodations section (42 USC 2000a), the part of the Act read here: (1) No reference to the 1787 Treaty. (2) No reference to “Moor” or any Noun. (3) No Allodial standing restoration. (4) No land restitution. (5) No reparations. (6) No treaty recognition. (7) No acknowledgment of prior sovereignty. (8) No mention of the Sundry Free Moors petition (1790). The corpus reads the Act as leaving out every element of the Heir’s claim. “Equality” means equal treatment within the Guest Account (14th Amendment citizen) - NOT restoration to Root Access (treaty-protected sovereign). The Adjective framework survives the “liberation” intact. PROOF: the Tuskegee Syphilis Study continues for EIGHT MORE YEARS after this Act passes. If the Rebrand changed the operational logic, Tuskegee would have been stopped in 1964. It wasn’t.
 sources: [A live_verified] src-usc-42-2000a-civil-rights-1964 https://www.law.cornell.edu/uscode/text/42/2000a
+threads: T-NOUN-TO-ADJECTIVE
 
 [E-W6-015-02] W6 1964 information TC
 "Civil Rights" narrative dominance
 Press covers the movement within the Adjective framework exclusively. Moorish standing, treaty rights, Allodial claims - invisible. The counter-narrative is channeled into "equality within the system" rather than "recognition of prior standing."
 audit trail: DETACHED 2026-07-27 (Thread 19 W6 sourcing batch 1, self-corrected before commit). src-usc-42-2000a-civil-rights-1964 was attached to this entry by a wire applied to the whole EVENT rather than judged per entry, which is the over-attribution defect recorded at sb-20260726-093. It does not support this entry: this is a PRESS RECEPTION claim, that coverage operated within the Adjective framework. A statute cannot be evidence of its own reception, the same limit recorded across W5's information lane.
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W6-016-01] W6 1968 legal TA
 Dyett v. Turner - a Utah justice attacks the 14th Amendment's ratification, and disclaims asking to void it
@@ -4467,6 +4475,7 @@ sources: [A live_verified] src-kerry-subcommittee-report-1988 https://archive.or
 Internet transforms information architecture
 Decentralized information for the first time since 1492. The Waldseemüller overwrite can now be challenged by anyone with a connection. The Erdapfel is visible. The 1787 Treaty is searchable. The counter-narrative has infrastructure for the first time.
 sources: [A live_verified] src-telecom-act-1996-110-stat-56 https://www.govinfo.gov/link/statute/110/56
+threads: T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W6-020-02] W6 1996 innovation TB
 Silicon Valley built on Spruce Pine quartz
@@ -4506,6 +4515,7 @@ Consumer genetics framed as personal discovery, not classification system. Same 
 Financial crisis - largest Black wealth destruction in history
 Subprime mortgage targeting: Black and Latino borrowers steered into subprime loans at 2-3x the rate of white borrowers WITH THE SAME CREDIT PROFILES. Wells Fargo loan officers internally called them “ghetto loans” and “mud people loans” (court documents). Foreclosure rates in Black communities 2-3x higher. Estimated $200B in Black household wealth destroyed. The HOLC redlining maps (1935 to 1940) CREATE the disinvestment; the subprime crisis EXPLOITS it some 70 years later. FHA denies capital to classified neighborhoods for decades → private lenders flood those same neighborhoods with predatory instruments → the bubble pops → the wealth is destroyed. The Financial lane and the Land lane operating simultaneously through the classification. The insurance lane (Lloyd’s, Window 2) is the ancestor of the credit-default swaps that securitize the subprime mortgages. Same actuarial logic, different instruments.
 sources: [A live_verified] src-fcic-final-report-2011 https://www.govinfo.gov/content/pkg/GPO-FCIC/pdf/GPO-FCIC.pdf
+threads: T-INSURANCE-ACTUARIAL
 
 [E-W6-024-02] W6 2008 population TC
 Disproportionate wealth destruction
@@ -4551,6 +4561,7 @@ sources: [A live_verified] src-tsmc-20f-2025 https://www.sec.gov/Archives/edgar/
 ★ Vatican repudiates Doctrine of Discovery
 March 30. Dicasteries for Culture/Education and Promoting Integral Human Development. The ISSUER OF THE ORIGINAL INSTRUMENT acknowledges the defect. The statement repudiates 'those concepts that fail to recognize the inherent human rights of indigenous peoples, including ... the "doctrine of discovery"'. Of Dum Diversas (1452), Romanus Pontifex (1455) and Inter Caetera (1493) it says they 'have never been considered expressions of the Catholic faith', 'did not adequately reflect the equal dignity and rights of indigenous peoples', and were 'manipulated for political purposes by competing colonial powers'. It does not revoke the bulls themselves. The repudiation is the record; that present-day title chains descend from these bulls is the corpus's inference. The two overlap and are not identical, and the statement makes no claim about any present-day government.
 sources: [A live_verified] src-vatican-doctrine-of-discovery-2023 https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2023/03/30/230330b.html
+threads: T-DISCOVERY-DOCTRINE
 
 [E-W6-028-01] W6 2024 financial TC
 BRICS expansion / de-dollarization
@@ -4633,26 +4644,31 @@ sources: [A live_verified] src-usc-8-1152-immigration-1965 https://www.law.corne
 The quota system ends, the classification does not
 Repeal of national origins removed the explicit country-of-birth ranking. It did not remove the administrative categories through which admission is recorded, and the corpus tracks those categories rather than the quotas as such. This entry exists because construct-whitening-project and construct-admin-patch-cycle both name this Act as a member and neither could resolve it.
 sources: [A live_verified] src-usc-8-1152-immigration-1965 https://www.law.cornell.edu/uscode/text/8/1152
+threads: T-WHITENING-PROJECT
 
 [E-W6-033-01] W6 1983 population TB
 Corrections Corporation of America founded - custody as a contract
 1983. CCA, later CoreCivic, was incorporated in Nashville and is generally identified as the first modern private prison corporation in the United States. GEO Group, founded the following year as Wackenhut Corrections, became the second. Custody of prisoners returned to a per-head contractual footing for the first time since the convict-leasing systems W5 records at 1882.
 sources: [A live_verified] src-corecivic-10k-2025 https://www.sec.gov/Archives/edgar/data/1070985/000119312526060669/cxw-20251231.htm
+threads: T-THREE-TRACK-LABOR
 
 [E-W6-033-02] W6 1983 financial TA
 Per-head payment returns
 The corpus points at this event from dossier-tc-017-forward, the 1718 Jonathan Forward Treasury contract, which it treats as the archetype of the sole-proprietor transport contractor paid per head under state authorisation. The forensic claim being tracked is the RETURN of that payment structure, not a continuity of institutions.
 sources: [A live_verified] src-corecivic-10k-2025 https://www.sec.gov/Archives/edgar/data/1070985/000119312526060669/cxw-20251231.htm
+threads: T-THREE-TRACK-LABOR
 
 [E-W6-034-01] W6 2010s population TB
 Track C in the present - contracted custody and labour
 The corpus's three-track labour model assigns Track C to convict transport and contracted penal labour, running from the Transportation Act of 1718 through the convict-leasing period. This entry is the model's modern terminus: prison labour under the Thirteenth Amendment's punishment exception, which W5 records as unrepealed, operated substantially through contracted facilities. Referenced by dossier-tc-015-transport.
 sources: [A live_verified] src-corecivic-10k-2025 https://www.sec.gov/Archives/edgar/data/1070985/000119312526060669/cxw-20251231.htm
+threads: T-THREE-TRACK-LABOR
 
 [E-W6-035-01] W6 2010s population TB
 Platform contracting - work without employment status
 Through the 2010s, platform-mediated work expanded a category of labour classified as independent contracting rather than employment, which excludes it from minimum wage, overtime, unemployment insurance and collective bargaining protections. construct-three-track-labor names this as a member; the construct's interest is the CLASSIFICATION boundary rather than the technology.
 sources: [A live_verified] src-dol-independent-contractor-rule-2024 https://www.govinfo.gov/content/pkg/FR-2024-01-10/pdf/2024-00067.pdf
+threads: T-THREE-TRACK-LABOR
 
 [E-W6-036-01] W6 1980s financial TC
 IMF structural adjustment - conditionality as debt instrument
@@ -4663,21 +4679,25 @@ sources: [A live_verified] src-imf-2018-review-conditionality https://www.imf.or
 The ratings oligopoly - issuer-pays takes hold
 During the early 1970s the major credit rating agencies shifted from a subscriber-pays model to an issuer-pays model, under which the entity being rated compensates the rater. The SEC's designation of Nationally Recognized Statistical Rating Organizations in 1975 entrenched the position of Moody's, Standard and Poor's and Fitch. construct-insurance-actuarial-sublane names this event; the corpus tracks the pricing of risk as a continuous instrument from Lloyd's forward.
 sources: [A live_verified] src-credit-rating-agency-reform-act-2006 https://www.govinfo.gov/link/statute/120/1327
+threads: T-INSURANCE-ACTUARIAL
 
 [E-W6-038-01] W6 2001 financial TA
 Credit default swaps: risk transfer without an ownership interest
 Credit default swaps, developed through the 1990s and expanding sharply after 2000, transfer credit risk for a fee without requiring the buyer to hold the underlying obligation. The Commodity Futures Modernization Act of 2000 names the credit default swap in its definition of a swap agreement, and excludes such swaps, when negotiated privately between eligible contract participants, from the Commodity Exchange Act. Calling them insurance is the corpus's analogy, not the statute's. construct-insurance-actuarial-sublane names this event as a member of the actuarial chain.
 sources: [A live_verified] src-cfma-2000-114-stat-2763 https://www.govinfo.gov/link/statute/114/2763
+threads: T-INSURANCE-ACTUARIAL
 
 [E-W6-039-01] W6 2010s financial TB
 Algorithmic risk scoring at population scale
 The FICO score, whose origin W6 records at 1956, became through the 2010s one input among many in automated scoring systems reaching credit, insurance pricing, tenancy screening and employment checks. construct-insurance-actuarial-sublane names this as the chain's present terminus. The corpus's interest is that a risk score assigns a category to a person by formula, which is the actuarial operation it tracks from Lloyd's forward.
 sources: [A live_verified] src-frb-credit-scoring-report-2007 https://www.federalreserve.gov/boarddocs/rptcongress/creditscore/creditscore.pdf
+threads: T-INSURANCE-ACTUARIAL
 
 [E-W6-040-01] W6 2010s population TC
 Consumer genetic testing at scale - ancestry as a product
 Direct-to-consumer genetic testing expanded through the 2010s to tens of millions of participants. Ancestry results are reported against REFERENCE POPULATIONS assembled by each company, so the categories returned to a customer are the company's classification scheme rather than a fact about the genome. construct-whitening-project and construct-classification-franchise-protection both name this event; W6 separately records 23andMe at 2007, its retail launch year, and the A00 haplogroup at 2013; the company's own 10-K states that its accounting predecessor 'was incorporated in Delaware in 2006', so incorporation and launch are different years and the corpus means the launch.
 sources: [A live_verified] src-23andme-10k-2024 https://www.sec.gov/Archives/edgar/data/1804591/000180459124000038/me-20240331.htm
+threads: T-WHITENING-PROJECT
 
 [E-W6-040-02] W6 2010s information TB
 The reference population is the classification
@@ -4690,8 +4710,8 @@ March 2023. Silicon Valley Bank failed following a deposit run, the second large
 sources: [A live_verified] src-frb-svb-review-2023 https://www.federalreserve.gov/publications/files/svb-review-20230428.pdf
 
 [w3-1652-counter-move] W3 1652 counter-move TC
-Baptist and Quaker moral opposition documented as motivation for the 1652 Providence-Warwick statute (interpretive)
-The Providence and Warwick towns had significant Baptist and Quaker populations whose religious teaching opposed slavery. Passage of the 1652 statute proves the political will existed at the town-assembly level. Non-enforcement proves the merchant-banker network (Tier 1 via Newport trade) prevailed over Tier 4 colonial elite dissent. This is the Chesapeake Class Split pattern (FW-011) executing on RI's colonial hierarchy thirty years before the 1682 Virginia race code that begins the Whitening Project timeline.
+Congregations' moral opposition offered as motivation for the 1652 Providence-Warwick statute (interpretive)
+Baptist and Quaker congregations in Providence and Warwick taught against slavery (not yet sourced). Passage of the 1652 statute proves the political will existed at the town-assembly level. Non-enforcement proves the merchant-banker network (Tier 1 via Newport trade) prevailed over Tier 4 colonial elite dissent. This is the Chesapeake Class Split pattern (FW-011) executing on RI's colonial hierarchy thirty years before the 1682 Virginia race code that begins the Whitening Project timeline.
 sources: [A live_verified] src-clark-pujara-time-2022 https://time.com/6202919/rhode-island-slavery-clark-pujara/; [C citation_only] src-forensic-audit-timeline-w3 internal://Chronological_Ground_Truth_Forensic_Audit + Master_Siphon_Timeline_1100_1929.html
 links: ri-slavery-recognition-1703
 threads: T-THREE-TRACK-LABOR, T-CHESAPEAKE-CLASS-SPLIT
@@ -5181,11 +5201,13 @@ threads: T-TRUSTEE-HIERARCHY-FIVE-TIER
 Zong: an insurance claim on people thrown overboard
 November 1781. Approximately 132 enslaved people were thrown from the ship Zong, and the owners subsequently claimed on the insurance policy covering them as cargo. The resulting litigation, Gregson v. Gilbert, turned on whether the loss was recoverable under the policy. This entry exists because construct-insurance-actuarial-sublane names it as a member and the W6 dossier on credit default swaps references it as the origin of pricing risk on lives the insurer does not hold; neither could resolve it.
 sources: [B live_verified] src-insurance-museum-zong-1781 https://insurance.museum/history-article-the-zong-massacre-1781-an-insurers-perspective
+threads: T-INSURANCE-ACTUARIAL
 
 [w3-1781-records] W3 1781 records TB
 The case record survives as an insurance dispute
 What survives in the law reports is a commercial argument about recoverability under a marine policy. The people are present in the record as insured cargo, which is the documentary form the corpus tracks: the classification is not asserted in the case, it is presupposed by the pleadings.
 sources: [B live_verified] src-insurance-museum-zong-1781 https://insurance.museum/history-article-the-zong-massacre-1781-an-insurers-perspective
+threads: T-INSURANCE-ACTUARIAL
 
 [w3-1783-land] W3 1783 land TA
 Territorial transfer without autochthonous representation
