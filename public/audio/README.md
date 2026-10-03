@@ -61,3 +61,15 @@ control for a window entirely, set that track to `null`.
 
 Unlike `public/windows/`, this directory is **not** gitignored: these are source
 assets, not derived files.
+
+## How the current files were made (2026-10-02)
+
+All 14 files were recorded with the free Kokoro voice model (voice `af_alloy`,
+speed 0.92, the author's choice) by `scripts/narrate.py`, which reads the
+window intros and `lib/guides.json`, adjusts the words only for speaking (years
+said aloud, 'c.' as 'around'), and writes straight into this folder. The model
+and its Python live outside the repo in `~/dev/silicon-altar-tts`; run the script
+there with `.venv/bin/python narrate.py`. A re-run records only the windows whose
+text changed. The intro files read the window's title and intro paragraph; the
+guide files read the title, 'Why this matters', 'Watch for this' and the full
+guide.
