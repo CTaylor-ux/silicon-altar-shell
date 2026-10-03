@@ -127,6 +127,24 @@ html.sa-member .sa-provenance { display: none; }
 html.sa-operator .v25-note,
 html.sa-operator .sa-provenance { outline: 1px dashed rgba(93,150,196,.5); outline-offset: -1px; }
 
+/* THREAD 37 — the rest of the build text, hidden for members the same way
+   (operator view still shows all of it). Record of what was there:
+   ~/dev/Silicon_Altar_LIVE/docket/internal_text_thread37/INVENTORY.md.
+     .ft      the generator's footer block in every window: a title line with
+              its own version ("— V5", "- V2.8"), changelog lines ("v6 — Military
+              Lane (10th Column) + ...", "v7.0 — Thread 5 Integration"), "Prepared
+              April 2026", and Previous/Next links the shell's rail replaces.
+     .pfoot   "Generated <date> · L1 v1 · V2.8"; the motto beside it stays.
+     dossier pop-up: the Revision History block (in all 417 dossiers, most of
+              it thread numbers, batch names and backlog ids) and the bracketed
+              workflow notes on correlation rows ("W4 entry pending").
+   The version in the "Correlation Layer (V2.7)" heading is removed in the
+   bridge script below, since CSS cannot edit text. */
+html.sa-member .ft { display: none; }
+html.sa-member .pfoot > span:not(.motto) { display: none; }
+html.sa-member .d-block:has(> .d-rev) { display: none; }
+html.sa-member .d-corr .placeholder { display: none; }
+
 /* ITEM D — glossary affordances.
    Tokens keep their own look; they gain a pointer and a faint underline on
    hover so they read as askable without new icons in the grid. */
@@ -209,6 +227,19 @@ html:not(.sa-legend-open) .tlegend { display: none; }
   // of backslashes rather than double-escaping — it is easier to get right.
   var IS_OPERATOR = /[?&]operator=1/.test(location.search);
   document.documentElement.classList.add(IS_OPERATOR ? 'sa-operator' : 'sa-member');
+
+  // Thread 37: the dossier pop-up's "Correlation Layer (V2.7)" heading carries a
+  // protocol version. The generator builds the pop-up on each click, so for
+  // members the heading is cleaned after it is built. The row handlers call
+  // openDossier by its global name, so replacing the global reaches them.
+  if (!IS_OPERATOR && typeof window.openDossier === 'function') {
+    var genOpenDossier = window.openDossier;
+    window.openDossier = function (id) {
+      genOpenDossier(id);
+      var t = document.querySelector('.d-corr-title');
+      if (t) t.innerHTML = t.innerHTML.replace(/[ ]*[(]V[0-9.]+[)]/, '');
+    };
+  }
 
   // The .v25-note banner is one of FIVE places the generator prints build
   // provenance. The other four are text fragments inside elements that also
