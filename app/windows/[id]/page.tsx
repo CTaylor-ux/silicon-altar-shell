@@ -16,7 +16,6 @@ import WindowStrip from '@/components/WindowStrip';
 import PositionIndicator from '@/components/PositionIndicator';
 import QueryBar from '@/components/QueryBar/QueryBar';
 import CompanionGuide from '@/components/CompanionGuide/CompanionGuide';
-import AudioCue from '@/components/AudioCue/AudioCue';
 import GlossaryPopover, { type Anchor } from '@/components/GlossaryPopover/GlossaryPopover';
 import LocatePanel from '@/components/LocatePanel/LocatePanel';
 import MapPanel, { type MapView } from '@/components/MapPanel/MapPanel';
@@ -30,7 +29,7 @@ import styles from './window.module.css';
 
 /** Must track --topbar-h / --audiobar-h in styles/tokens.css. */
 const TOPBAR_H = 44;
-const AUDIOBAR_H = 34;
+const AUDIOBAR_H = 0; // the strip moved into the window (Thread 37)
 
 export default function WindowViewPage() {
   const params = useParams<{ id: string }>();
@@ -300,13 +299,8 @@ export default function WindowViewPage() {
         onOpenLocate={() => setLocateOpen(true)}
       />
 
-      {/* Sits directly beneath the top rail, so it is adjacent to the window's
-          own intro prose on open without the shell touching the document. */}
-      <AudioCue
-        audio={content?.introAudio ?? null}
-        windowId={current}
-        purpose="window intro narration"
-      />
+      {/* The intro narration now sits inside the window, above its title
+          (Thread 37); scripts/prepare-windows.mjs builds it from lib/guides.json. */}
 
       <WindowStrip
         current={current}

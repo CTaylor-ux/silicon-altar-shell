@@ -21,8 +21,9 @@ type Props = {
   windowId: number;
   /** Distinguishes this control from the guide narration for screen readers. */
   purpose: string;
-  /** 'docked' pins it under the top rail; 'inline' flows in normal layout. */
-  variant?: 'docked' | 'inline';
+  /** 'docked' pins it under the top rail; 'inline' flows in normal layout;
+   *  'feature' is the large, prominent form used at the top of the guide. */
+  variant?: 'docked' | 'inline' | 'feature';
 };
 
 const fmt = (s: number) => {
@@ -76,7 +77,7 @@ export default function AudioCue({
   const pct = dur > 0 ? (pos / dur) * 100 : 0;
 
   return (
-    <div className={`${styles.bar} ${variant === 'inline' ? styles.inline : ''}`}>
+    <div className={`${styles.bar} ${variant === 'inline' ? styles.inline : ''} ${variant === 'feature' ? styles.feature : ''}`}>
       <button
         className={styles.play}
         onClick={toggle}

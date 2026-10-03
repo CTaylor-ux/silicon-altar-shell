@@ -100,3 +100,60 @@
   color: var(--dim);
   flex: 1;
 }
+
+/* The prominent form (Thread 37): a large accent play button, a readable label,
+   a visible progress line. Used at the top of the companion guide. */
+.feature {
+  position: static;
+  height: auto;
+  gap: 16px;
+  padding: 12px 16px;
+  border: 1px solid var(--bdr2);
+  border-radius: 4px;
+  background: var(--panel2);
+  z-index: auto;
+}
+.feature .play {
+  width: 46px;
+  height: 46px;
+  border: none;
+  background: var(--sig);
+  transition: transform 120ms var(--ease), background 120ms var(--ease);
+}
+.feature .play:hover:not(:disabled) {
+  transform: scale(1.06);
+  background: #ff7a52;
+}
+.feature .play:disabled {
+  background: var(--bdr2);
+}
+.feature .playGlyph,
+.feature .play:hover .playGlyph {
+  border-left: 14px solid #0a0d10;
+  border-top: 8.5px solid transparent;
+  border-bottom: 8.5px solid transparent;
+  margin-left: 4px;
+}
+.feature .pauseGlyph {
+  width: 13px;
+  height: 15px;
+  border-left: 4.5px solid #0a0d10;
+  border-right: 4.5px solid #0a0d10;
+}
+.feature .cue {
+  font-size: 12px;
+  color: var(--bright);
+}
+.feature .track {
+  height: 3px;
+  border-radius: 2px;
+  max-width: none;
+}
+.feature .fill {
+  background: var(--sig);
+  border-radius: 2px;
+}
+.feature .time,
+.feature .unavailable {
+  font-size: 11px;
+}

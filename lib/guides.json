@@ -44,11 +44,11 @@
     "audio": {
       "intro": {
         "src": "/audio/intro-narration-w0.mp3",
-        "cue": "Listen first · why this window matters"
+        "cue": "Listen to this window's introduction"
       },
       "guide": {
         "src": "/audio/guide-narration-w0.mp3",
-        "cue": "Narrate this guide"
+        "cue": "Listen to this guide"
       }
     }
   },
@@ -61,11 +61,11 @@
     "audio": {
       "intro": {
         "src": "/audio/intro-narration-w1.mp3",
-        "cue": "Listen first · why this window matters"
+        "cue": "Listen to this window's introduction"
       },
       "guide": {
         "src": "/audio/guide-narration-w1.mp3",
-        "cue": "Narrate this guide"
+        "cue": "Listen to this guide"
       }
     }
   },
@@ -78,11 +78,11 @@
     "audio": {
       "intro": {
         "src": "/audio/intro-narration-w2.mp3",
-        "cue": "Listen first · why this window matters"
+        "cue": "Listen to this window's introduction"
       },
       "guide": {
         "src": "/audio/guide-narration-w2.mp3",
-        "cue": "Narrate this guide"
+        "cue": "Listen to this guide"
       }
     }
   },
@@ -95,11 +95,11 @@
     "audio": {
       "intro": {
         "src": "/audio/intro-narration-w3.mp3",
-        "cue": "Listen first · why this window matters"
+        "cue": "Listen to this window's introduction"
       },
       "guide": {
         "src": "/audio/guide-narration-w3.mp3",
-        "cue": "Narrate this guide"
+        "cue": "Listen to this guide"
       }
     }
   },
@@ -112,11 +112,11 @@
     "audio": {
       "intro": {
         "src": "/audio/intro-narration-w4.mp3",
-        "cue": "Listen first · why this window matters"
+        "cue": "Listen to this window's introduction"
       },
       "guide": {
         "src": "/audio/guide-narration-w4.mp3",
-        "cue": "Narrate this guide"
+        "cue": "Listen to this guide"
       }
     }
   },
@@ -129,11 +129,11 @@
     "audio": {
       "intro": {
         "src": "/audio/intro-narration-w5.mp3",
-        "cue": "Listen first · why this window matters"
+        "cue": "Listen to this window's introduction"
       },
       "guide": {
         "src": "/audio/guide-narration-w5.mp3",
-        "cue": "Narrate this guide"
+        "cue": "Listen to this guide"
       }
     }
   },
@@ -146,11 +146,11 @@
     "audio": {
       "intro": {
         "src": "/audio/intro-narration-w6.mp3",
-        "cue": "Listen first · why this window matters"
+        "cue": "Listen to this window's introduction"
       },
       "guide": {
         "src": "/audio/guide-narration-w6.mp3",
-        "cue": "Narrate this guide"
+        "cue": "Listen to this guide"
       }
     }
   }

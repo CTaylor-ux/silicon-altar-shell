@@ -117,6 +117,12 @@ export default function WindowFrame({
 
   useEffect(() => () => placeTimers.current.forEach(clearTimeout), []);
 
+  /** The window's own intro narration pauses when this frame stops being the
+   *  open one; neighbours stay mounted, so they would otherwise keep playing. */
+  useEffect(() => {
+    post({ type: 'SA_ACTIVE', active });
+  }, [active, post]);
+
   useEffect(() => {
     function onMessage(ev: MessageEvent) {
       const d = ev.data as (FrameMessage & { source?: string; windowId?: number }) | undefined;

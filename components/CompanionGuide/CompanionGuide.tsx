@@ -125,6 +125,19 @@ export default function CompanionGuide({
 
         <div className={styles.rule} />
 
+        {/* Narration of the guide, first thing under the title and set large
+            (author, Thread 37), so a reader can listen instead of read. */}
+        {guideAudio && (
+          <div className={styles.audioSlot}>
+            <AudioCue
+              audio={guideAudio}
+              windowId={windowId}
+              purpose="companion guide narration"
+              variant="feature"
+            />
+          </div>
+        )}
+
         <section className={styles.section}>
           <h3 className={`${styles.label} mono`}>Why this matters</h3>
           <p className={styles.body}>{guide.whyThisMatters}</p>
@@ -135,18 +148,6 @@ export default function CompanionGuide({
           <p className={styles.watch}>{guide.watchForThis}</p>
         </section>
 
-        {/* Narration of the GUIDE copy. Purpose-labelled so it is never
-            confused with the intro-block narration in the top strip. */}
-        {guideAudio && (
-          <div className={styles.audioSlot}>
-            <AudioCue
-              audio={guideAudio}
-              windowId={windowId}
-              purpose="companion guide narration"
-              variant="inline"
-            />
-          </div>
-        )}
 
         {/* The full guide is opt-in: the short orientation is what the modal
             is for, and the depth is there for whoever wants it. */}

@@ -99,6 +99,14 @@ const lanes = parseLanes();
 const labelToKey = new Map(lanes.map((l) => [l.label, l.key]));
 
 const entriesRaw = JSON.parse(fs.readFileSync(path.join(REPO, 'entries.json'), 'utf8'));
+
+// The intro narration shown above each window's title (Thread 37) is defined in
+// the app's own lib/guides.json, beside the guide narration.
+const guidesForAudio = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'lib', 'guides.json'), 'utf8'));
+const introAudioFor = (id) => {
+  const a = guidesForAudio[String(id)]?.audio?.intro;
+  return a && a.src ? { src: a.src, cue: a.cue || 'Listen to the introduction' } : null;
+};
 const entries = Array.isArray(entriesRaw) ? entriesRaw : entriesRaw.entries;
 
 const index = new Map();
@@ -144,6 +152,26 @@ html.sa-member .ft { display: none; }
 html.sa-member .pfoot > span:not(.motto) { display: none; }
 html.sa-member .d-block:has(> .d-rev) { display: none; }
 html.sa-member .d-corr .placeholder { display: none; }
+
+/* THREAD 37 — the window's intro narration, set above the title and made
+   prominent (author). It replaces the slim strip the shell used to pin under
+   its top rail. Source and label come from lib/guides.json (audio.intro). */
+.sa-listen { display: flex; align-items: center; gap: 14px; max-width: 72ch; margin: 2px 0 20px;
+  padding: 12px 16px; border: 1px solid var(--bdr2); border-radius: 4px; background: var(--panel2); }
+.sa-listen-play { width: 46px; height: 46px; flex: none; border-radius: 50%; border: none; cursor: pointer;
+  background: var(--sig); display: grid; place-items: center; transition: transform 120ms ease, background 120ms ease; }
+.sa-listen-play:hover:not(:disabled) { transform: scale(1.06); background: #ff7a52; }
+.sa-listen-play:focus-visible { outline: 2px solid var(--bright); outline-offset: 2px; }
+.sa-listen-play:disabled { background: var(--bdr2); cursor: default; }
+.sa-listen-play .g-play { width: 0; height: 0; margin-left: 4px; border-left: 14px solid #0a0d10;
+  border-top: 8.5px solid transparent; border-bottom: 8.5px solid transparent; }
+.sa-listen-play .g-pause { width: 13px; height: 15px; border-left: 4.5px solid #0a0d10; border-right: 4.5px solid #0a0d10; }
+.sa-listen-body { flex: 1; min-width: 0; }
+.sa-listen-label { display: block; font: 500 15px/1.3 'Space Grotesk', sans-serif; color: var(--bright); }
+.sa-listen-row { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+.sa-listen-track { flex: 1; height: 3px; border-radius: 2px; background: var(--bdr2); position: relative; cursor: pointer; }
+.sa-listen-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 2px; background: var(--sig); width: 0; }
+.sa-listen-time { font: 500 11px 'IBM Plex Mono', monospace; color: var(--dim); letter-spacing: 1px; font-variant-numeric: tabular-nums; }
 
 /* ITEM D — glossary affordances.
    Tokens keep their own look; they gain a pointer and a faint underline on
@@ -227,6 +255,53 @@ html:not(.sa-legend-open) .tlegend { display: none; }
   // of backslashes rather than double-escaping — it is easier to get right.
   var IS_OPERATOR = /[?&]operator=1/.test(location.search);
   document.documentElement.classList.add(IS_OPERATOR ? 'sa-operator' : 'sa-member');
+
+  // Thread 37: the window's intro narration, above the title. One <audio> per
+  // window document; it pauses when the shell says this window is no longer the
+  // open one (neighbours stay mounted). A missing file shows an unavailable
+  // state rather than a dead button.
+  var INTRO_AUDIO = __INTRO_AUDIO_JSON__;
+  var listenAudio = null;
+  (function buildListen() {
+    var kicker = document.querySelector('.hdr .k');
+    if (!INTRO_AUDIO || !kicker) return;
+    var box = document.createElement('div');
+    box.className = 'sa-listen';
+    box.innerHTML = '<button class="sa-listen-play" type="button" aria-label="Play the introduction"><span class="g-play"></span></button>' +
+      '<div class="sa-listen-body"><span class="sa-listen-label"></span>' +
+      '<div class="sa-listen-row"><div class="sa-listen-track"><span class="sa-listen-fill"></span></div>' +
+      '<span class="sa-listen-time">--:--</span></div></div>';
+    box.querySelector('.sa-listen-label').textContent = INTRO_AUDIO.cue;
+    var a = document.createElement('audio');
+    a.preload = 'metadata'; a.src = INTRO_AUDIO.src;
+    box.appendChild(a);
+    kicker.parentNode.insertBefore(box, kicker);
+    listenAudio = a;
+    var btn = box.querySelector('.sa-listen-play'), glyph = btn.firstChild,
+        fill = box.querySelector('.sa-listen-fill'), time = box.querySelector('.sa-listen-time'),
+        track = box.querySelector('.sa-listen-track');
+    function fmt(t) { if (!isFinite(t) || t < 0) return '--:--'; var m = Math.floor(t / 60), r = Math.floor(t % 60); return m + ':' + (r < 10 ? '0' : '') + r; }
+    function show() {
+      var playing = !a.paused;
+      glyph.className = playing ? 'g-pause' : 'g-play';
+      btn.setAttribute('aria-label', (playing ? 'Pause' : 'Play') + ' the introduction');
+      fill.style.width = (a.duration > 0 ? (a.currentTime / a.duration) * 100 : 0) + '%';
+      time.textContent = a.duration > 0 ? fmt(a.currentTime) + ' / ' + fmt(a.duration) : '--:--';
+    }
+    btn.addEventListener('click', function () { if (a.paused) { var p = a.play(); if (p && p.catch) p.catch(function () {}); } else a.pause(); });
+    track.addEventListener('click', function (e) {
+      if (!(a.duration > 0)) return;
+      var r = track.getBoundingClientRect();
+      a.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * a.duration; show();
+    });
+    ['loadedmetadata', 'timeupdate', 'play', 'pause', 'ended'].forEach(function (ev) { a.addEventListener(ev, show); });
+    a.addEventListener('error', function () { btn.disabled = true; time.textContent = 'Audio not yet available'; fill.style.width = '0'; });
+  })();
+  window.addEventListener('message', function (ev) {
+    var d = ev.data;
+    if (!d || d.source !== 'sa-shell' || d.type !== 'SA_ACTIVE') return;
+    if (!d.active && listenAudio && !listenAudio.paused) listenAudio.pause();
+  });
 
   // Thread 37: the dossier pop-up's "Correlation Layer (V2.7)" heading carries a
   // protocol version. The generator builds the pop-up on each click, so for
@@ -720,7 +795,7 @@ for (const file of files) {
     BRIDGE.replace('__WINDOW_ID__', String(windowId)).replace(
       '__LANE_MAP_JSON__',
       JSON.stringify(laneMap)
-    ) + '</body>'
+    ).replace('__INTRO_AUDIO_JSON__', JSON.stringify(introAudioFor(windowId))) + '</body>'
   );
 
   fs.writeFileSync(path.join(OUT, `window-${windowId}.html`), html, 'utf8');
