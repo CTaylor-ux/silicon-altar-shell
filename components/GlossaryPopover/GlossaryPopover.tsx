@@ -50,7 +50,12 @@ export default function GlossaryPopover({ token, anchor, frameOffsetTop, onClose
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
 
-  const entry = token ? lookup(token) : null;
+  /* A dossier badge can carry several terms at once ("Weight: Proven · Contested").
+     The frame sends them joined by '|': the first is the heading, the rest are the
+     values that badge shows, each with its own one-line definition. */
+  const keys = token ? token.split('|') : [];
+  const entry = keys.length ? lookup(keys[0]) : null;
+  const values = keys.slice(1).map(lookup).filter((e): e is GlossaryEntry => !!e);
 
   useLayoutEffect(() => {
     if (!anchor || !entry) return setPos(null);
@@ -70,7 +75,7 @@ export default function GlossaryPopover({ token, anchor, frameOffsetTop, onClose
     left = Math.max(10, Math.min(left, window.innerWidth - W - 10));
 
     setPos({ top, left });
-  }, [anchor, entry, frameOffsetTop]);
+  }, [anchor, entry, frameOffsetTop, token]);
 
   useEffect(() => {
     if (!entry) return;
@@ -118,6 +123,12 @@ export default function GlossaryPopover({ token, anchor, frameOffsetTop, onClose
       ) : (
         <p className={styles.def}>{entry.definition}</p>
       )}
+
+      {values.map((v) => (
+        <p key={v.label} className={styles.value}>
+          <strong>{v.label}</strong> {v.definition}
+        </p>
+      ))}
 
       {entry.note && <p className={styles.note}>{entry.note}</p>}
     </div>

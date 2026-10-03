@@ -194,6 +194,28 @@ html.sa-member .statusbar > span:nth-child(2) { display: none; }
 }
 .lane-tag[data-sa-glossary]:hover { color: var(--bright); }
 
+/* Thread 37 — the terms inside an open dossier explain themselves too. Each
+   askable term carries a small "?" so a reader can see it is askable. */
+#dBody .d-badge, #dBody .d-bt, #dBody .sl, #dBody .st, #dBody .hl, #dBody .cl,
+#dBody .d-corr-title, #dBody .ss, #dBody .d-hypo strong { cursor: help; }
+#dBody .d-badge:hover, #dBody .st:hover, #dBody .hl:hover, #dBody .cl:hover,
+#dBody .d-hypo strong:hover { box-shadow: inset 0 -1px 0 0 currentColor; }
+#dBody .d-badge::after, #dBody .d-bt::after, #dBody .sl::after, #dBody .d-corr-title::after {
+  content: '?';
+  display: inline-block;
+  width: 13px; height: 13px;
+  margin-left: 7px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  font: 600 9px/12px 'IBM Plex Mono', monospace;
+  letter-spacing: 0;
+  text-align: center;
+  opacity: 0.65;
+  vertical-align: 1px;
+}
+#dBody .d-badge:hover::after, #dBody .d-bt:hover::after, #dBody .sl:hover::after,
+#dBody .d-corr-title:hover::after { opacity: 1; }
+
 /* The DOSSIER badge's click already opens the dossier, so its definition is
    reached through a hover "?" rather than by hijacking the button. */
 [data-sa-glossary-via="hint"] { position: relative; }
@@ -650,6 +672,75 @@ html:not(.sa-legend-open) .tlegend { display: none; }
       e.stopPropagation();
       var host = hint.parentElement;
       if (host) sendGlossary(host, host.getAttribute('data-sa-glossary'));
+    },
+    true
+  );
+
+  // Thread 37 — glossary inside an open dossier. The dossier body is built on
+  // every open, so nothing is bound to its nodes; one listener reads the click.
+  // A badge reports its heading and the values it shows, joined by '|'.
+  var WEIGHTS = ['proven', 'supported', 'sourced', 'cited', 'contested', 'asserted', 'unsourced'];
+  function badgeKey(text) {
+    var t = (text || '').trim().toLowerCase();
+    var colon = t.indexOf(':');
+    var parts = (colon < 0 ? '' : t.slice(colon + 1)).split('·');
+    var keys = [];
+    function add(k) { if (keys.indexOf(k) < 0) keys.push(k); }
+    if (t.indexOf('finding tier') === 0) {
+      keys.push('dossier:tier');
+      var letter = (parts[0] || '').trim().charAt(0).toUpperCase();
+      if ('ABCDE'.indexOf(letter) >= 0 && letter) add('tier:' + letter);
+      return keys.join('|');
+    }
+    var head = t.indexOf('weight') === 0 ? 'weight' : t.indexOf('warrant') === 0 ? 'warrant' : null;
+    if (!head) return null;
+    keys.push('dossier:' + head);
+    var known = head === 'weight' ? WEIGHTS : ['closed', 'open'];
+    for (var i = 0; i < parts.length; i++) {
+      var part = parts[i].trim();
+      for (var j = 0; j < known.length; j++) {
+        if (part.indexOf(known[j]) === 0) add(head + ':' + known[j]);
+      }
+    }
+    if (parts.length > 1) add('dossier:split');
+    return keys.join('|');
+  }
+  function dossierKeyFor(el) {
+    var cl = el.classList;
+    if (cl.contains('ss')) return tokenKeyFor(el);
+    if (cl.contains('d-badge')) return badgeKey(el.textContent);
+    if (cl.contains('st')) return 'dossier:srctier';
+    if (cl.contains('sl')) return 'dossier:streams';
+    if (cl.contains('d-corr-title')) return 'dossier:corr';
+    var t = (el.textContent || '').trim().toLowerCase();
+    if (cl.contains('d-bt')) {
+      if (t === 'sources') return 'dossier:sources';
+      if (t.indexOf('competing') === 0) return 'dossier:ach';
+      return null;
+    }
+    if (cl.contains('cl')) {
+      if (t === 'upstream' || t === 'downstream' || t === 'cross-ref') return 'corr:' + t;
+      return 'dossier:corr';
+    }
+    var hyp = el.closest('.d-hypo');
+    if (hyp) {
+      return hyp.classList.contains('held') ? 'verdict:held'
+        : hyp.classList.contains('hold') ? 'verdict:holding' : 'verdict:eliminated';
+    }
+    return null;
+  }
+  document.addEventListener(
+    'click',
+    function (e) {
+      var body = document.getElementById('dBody');
+      if (!body || !e.target || !e.target.closest || !body.contains(e.target)) return;
+      var el = e.target.closest('.ss, .d-badge, .d-bt, .st, .sl, .hl, .cl, .d-corr-title, .d-hypo strong');
+      if (!el) return;
+      var key = dossierKeyFor(el);
+      if (!key) return;
+      e.preventDefault();
+      e.stopPropagation();
+      sendGlossary(el, key);
     },
     true
   );
