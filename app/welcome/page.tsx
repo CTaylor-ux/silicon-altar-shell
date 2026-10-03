@@ -67,8 +67,10 @@ export default function Landing() {
             <ul className={styles.tags}>
               {orderBook && (
                 <li style={{ animationDelay: '500ms' }}>
-                  <span className={styles.tagKey}>The original order book</span>
-                  <span className={`${styles.srcStatus} ${styles.cited}`}>Cited, not yet opened</span>
+                  <span className={styles.tagKey}>The county&rsquo;s order book</span>
+                  <span className={`${styles.srcStatus} ${(STATUS[orderBook.status ?? ''] ?? STATUS.citation_only).tone}`}>
+                    {orderBook.status === 'live_verified' ? 'Read, in transcription' : (STATUS[orderBook.status ?? ''] ?? STATUS.citation_only).label}
+                  </span>
                 </li>
               )}
               {routine && (
