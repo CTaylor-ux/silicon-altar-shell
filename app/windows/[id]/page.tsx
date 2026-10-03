@@ -28,7 +28,7 @@ import { getWindowContent } from '@/lib/window-content';
 import styles from './window.module.css';
 
 /** Must track --topbar-h / --audiobar-h in styles/tokens.css. */
-const TOPBAR_H = 44;
+const TOPBAR_H = 54;
 const AUDIOBAR_H = 0; // the strip moved into the window (Thread 37)
 
 export default function WindowViewPage() {

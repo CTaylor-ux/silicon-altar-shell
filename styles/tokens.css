@@ -69,7 +69,7 @@
      it is what separates a sourced fact from the corpus's own reading.
      Longer exchanges still scroll inside the reserved area. */
   --querybar-h: 222px;
-  --topbar-h: 44px;
+  --topbar-h: 54px; /* taller and easier to read, Thread 37 */
   --audiobar-h: 0px; /* the intro strip moved into the window, Thread 37 */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }

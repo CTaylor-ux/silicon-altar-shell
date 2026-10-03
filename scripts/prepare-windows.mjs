@@ -153,6 +153,14 @@ html.sa-member .pfoot > span:not(.motto) { display: none; }
 html.sa-member .d-block:has(> .d-rev) { display: none; }
 html.sa-member .d-corr .placeholder { display: none; }
 
+/* THREAD 37 — one navigation bar. The window's own masthead carries five links
+   (Windows, Docket, Dispatches, Sessions, Member) with no destination; they do
+   nothing, and they look like the main menu, so the app hides them for every
+   view. The 'LOADED: W0, THE TEMPLATE ...' line repeats what the app's top bar
+   says, so members do not see it. The brand line and the issue line stay. */
+.chrome .nav { display: none; }
+html.sa-member .statusbar > span:nth-child(2) { display: none; }
+
 /* THREAD 37 — the window's intro narration, set under the opening paragraph
    and made prominent (author). It replaces the slim strip the shell used to pin under
    its top rail. Source and label come from lib/guides.json (audio.intro). */
