@@ -24,9 +24,16 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { SESSION_COOKIE, verifySession, H_ID, H_NAME, H_ROLE } from '@/lib/identity';
 
 /** Reachable without a session, because they are how you get one. */
-const OPEN_PATHS = ['/enter', '/api/session'];
+const OPEN_PATHS = ['/enter', '/api/session', '/api/request'];
+
+/** The public landing page (Thread 37): /welcome, exactly, and its own assets under
+ *  /landing. Kept off '/' so the operator's own home is never the public page. The
+ *  windows, the corpus and every API stay behind the gate. */
+const PUBLIC_EXACT = ['/welcome'];
+const PUBLIC_PREFIX = ['/landing/'];
 
 function isOpen(pathname: string): boolean {
+  if (PUBLIC_EXACT.includes(pathname) || PUBLIC_PREFIX.some((p) => pathname.startsWith(p))) return true;
   return OPEN_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));
 }
 
@@ -40,6 +47,18 @@ export async function middleware(req: NextRequest) {
   headers.delete(H_ID);
   headers.delete(H_NAME);
   headers.delete(H_ROLE);
+
+  /* Already signed in? /enter has nothing to ask, so go where the link was headed. */
+  if (pathname === '/enter' && process.env.SESSION_SECRET) {
+    const signedIn = await verifySession(req.cookies.get(SESSION_COOKIE)?.value, process.env.SESSION_SECRET);
+    if (signedIn) {
+      const from = req.nextUrl.searchParams.get('from');
+      const url = req.nextUrl.clone();
+      url.pathname = from && from.startsWith('/') && !from.startsWith('//') ? from : '/';
+      url.search = '';
+      return NextResponse.redirect(url);
+    }
+  }
 
   if (isOpen(pathname)) {
     return NextResponse.next({ request: { headers } });

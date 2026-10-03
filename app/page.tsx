@@ -4,13 +4,14 @@ import CountUp from '@/components/CountUp';
 import styles from './page.module.css';
 
 /**
- * Intro — the entry point. The door, not the house.
+ * Home — the signed-in welcome. (Thread 37: the public landing page lives at
+ * /welcome, separate from this, so the operator is never sent through it.)
  *
  * Figures are read from the corpus (windows.json via the prepare step) rather
  * than typed, so this page cannot drift from the data the way the May 2026
  * companion guides did.
  */
-export default function IntroPage() {
+export default function HomePage() {
   const totalEntries = WINDOWS.reduce((n, w) => n + w.entries, 0);
   const totalDossiers = WINDOWS.reduce((n, w) => n + w.dossiers, 0);
 
