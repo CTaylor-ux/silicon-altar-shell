@@ -153,10 +153,10 @@ html.sa-member .pfoot > span:not(.motto) { display: none; }
 html.sa-member .d-block:has(> .d-rev) { display: none; }
 html.sa-member .d-corr .placeholder { display: none; }
 
-/* THREAD 37 — the window's intro narration, set above the title and made
-   prominent (author). It replaces the slim strip the shell used to pin under
+/* THREAD 37 — the window's intro narration, set under the opening paragraph
+   and made prominent (author). It replaces the slim strip the shell used to pin under
    its top rail. Source and label come from lib/guides.json (audio.intro). */
-.sa-listen { display: flex; align-items: center; gap: 14px; max-width: 72ch; margin: 2px 0 20px;
+.sa-listen { display: flex; align-items: center; gap: 14px; max-width: 72ch; margin: 4px 0 14px;
   padding: 12px 16px; border: 1px solid var(--bdr2); border-radius: 4px; background: var(--panel2); }
 .sa-listen-play { width: 46px; height: 46px; flex: none; border-radius: 50%; border: none; cursor: pointer;
   background: var(--sig); display: grid; place-items: center; transition: transform 120ms ease, background 120ms ease; }
@@ -256,15 +256,19 @@ html:not(.sa-legend-open) .tlegend { display: none; }
   var IS_OPERATOR = /[?&]operator=1/.test(location.search);
   document.documentElement.classList.add(IS_OPERATOR ? 'sa-operator' : 'sa-member');
 
-  // Thread 37: the window's intro narration, above the title. One <audio> per
+  // Thread 37: the window's intro narration, under the opening paragraph. One <audio> per
   // window document; it pauses when the shell says this window is no longer the
   // open one (neighbours stay mounted). A missing file shows an unavailable
   // state rather than a dead button.
   var INTRO_AUDIO = __INTRO_AUDIO_JSON__;
   var listenAudio = null;
   (function buildListen() {
+    // Placed after the opening paragraph, beside 'Read the rest of the
+    // introduction' (author, Thread 37: title first, then the choice of
+    // listening or reading on). Falls back to above the kicker.
+    var lead = document.querySelector('.hdr .intro .sub-lead') || document.querySelector('.hdr p.sub');
     var kicker = document.querySelector('.hdr .k');
-    if (!INTRO_AUDIO || !kicker) return;
+    if (!INTRO_AUDIO || (!lead && !kicker)) return;
     var box = document.createElement('div');
     box.className = 'sa-listen';
     box.innerHTML = '<button class="sa-listen-play" type="button" aria-label="Play the introduction"><span class="g-play"></span></button>' +
@@ -275,7 +279,8 @@ html:not(.sa-legend-open) .tlegend { display: none; }
     var a = document.createElement('audio');
     a.preload = 'metadata'; a.src = INTRO_AUDIO.src;
     box.appendChild(a);
-    kicker.parentNode.insertBefore(box, kicker);
+    if (lead) lead.parentNode.insertBefore(box, lead.nextSibling);
+    else kicker.parentNode.insertBefore(box, kicker);
     listenAudio = a;
     var btn = box.querySelector('.sa-listen-play'), glyph = btn.firstChild,
         fill = box.querySelector('.sa-listen-fill'), time = box.querySelector('.sa-listen-time'),
