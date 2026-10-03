@@ -197,7 +197,7 @@ html.sa-member .statusbar > span:nth-child(2) { display: none; }
 /* Thread 37 — the terms inside an open dossier explain themselves too. Each
    askable term carries a small "?" so a reader can see it is askable. */
 #dBody .d-badge, #dBody .d-bt, #dBody .sl, #dBody .st, #dBody .hl, #dBody .cl,
-#dBody .d-corr-title, #dBody .ss, #dBody .d-hypo strong { cursor: help; }
+#dBody .d-corr-title, #dBody .ss, #dBody .d-hypo strong, #dBody .hv { cursor: help; }
 #dBody .d-badge:hover, #dBody .st:hover, #dBody .hl:hover, #dBody .cl:hover,
 #dBody .d-hypo strong:hover { box-shadow: inset 0 -1px 0 0 currentColor; }
 #dBody .d-badge::after, #dBody .d-bt::after, #dBody .sl::after, #dBody .d-corr-title::after {
@@ -734,7 +734,7 @@ html:not(.sa-legend-open) .tlegend { display: none; }
     function (e) {
       var body = document.getElementById('dBody');
       if (!body || !e.target || !e.target.closest || !body.contains(e.target)) return;
-      var el = e.target.closest('.ss, .d-badge, .d-bt, .st, .sl, .hl, .cl, .d-corr-title, .d-hypo strong');
+      var el = e.target.closest('.ss, .d-badge, .d-bt, .st, .sl, .hl, .hv, .cl, .d-corr-title, .d-hypo strong');
       if (!el) return;
       var key = dossierKeyFor(el);
       if (!key) return;
