@@ -24,3 +24,7 @@ invites.json
 
 # Verification-only build output (npm run build:check). Never deployed.
 .next-verify/
+
+# Landing page data (scripts/prepare-landing.mjs) and the local copy of the film
+lib/landing.generated.json
+public/landing/film.mp4

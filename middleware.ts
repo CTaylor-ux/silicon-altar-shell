@@ -26,7 +26,14 @@ import { SESSION_COOKIE, verifySession, H_ID, H_NAME, H_ROLE } from '@/lib/ident
 /** Reachable without a session, because they are how you get one. */
 const OPEN_PATHS = ['/enter', '/api/session'];
 
+/** The public landing page (Thread 37): the home page itself, exactly, and its own
+ *  assets under /landing. Matched exactly so '/' does not open every path. The
+ *  windows, the corpus and every API stay behind the gate. */
+const PUBLIC_EXACT = ['/'];
+const PUBLIC_PREFIX = ['/landing/'];
+
 function isOpen(pathname: string): boolean {
+  if (PUBLIC_EXACT.includes(pathname) || PUBLIC_PREFIX.some((p) => pathname.startsWith(p))) return true;
   return OPEN_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));
 }
 

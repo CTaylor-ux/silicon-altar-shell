@@ -19,7 +19,7 @@ export default function EnterPage() {
   const [code, setCode] = useState('');
   const [state, setState] = useState<'idle' | 'working' | 'error'>('idle');
   const [error, setError] = useState('');
-  const [from, setFrom] = useState('/');
+  const [from, setFrom] = useState('/windows'); // '/' is now the public landing page
 
   useEffect(() => {
     const p = new URLSearchParams(window.location.search).get('from');
