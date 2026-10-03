@@ -8,8 +8,8 @@
 Voice: af_alloy at speed 0.92 (the author's choice, 2026-10-02).
 
 What each file reads, from the app's own copies of the text:
-  intro-narration-wN.mp3   the window's title and its intro paragraph
-                           (public/windows/window-N.html, <p class="sub">)
+  intro-narration-wN.mp3   the window's title and its intro (windows.json
+                           runtime_state_summary in the corpus, layout removed)
   guide-narration-wN.mp3   the companion guide: title, 'Why this matters',
                            'Watch for this', then the full guide (lib/guides.json)
 
@@ -63,6 +63,9 @@ def speakable(t):
     t = re.sub(r'\s+', ' ', t).strip()
     return t
 
+CORPUS = os.environ.get('SILICON_ALTAR_REPO', os.path.expanduser('~/dev/Silicon_Altar_LIVE'))
+CORPUS_W = {w['id'].lstrip('W'): w for w in json.load(open(os.path.join(CORPUS, 'windows.json'), encoding='utf-8'))['windows']}
+
 def texts():
     g = json.load(open(os.path.join(APP, 'lib', 'guides.json'), encoding='utf-8'))
     out = {}
@@ -70,7 +73,9 @@ def texts():
         page = open(os.path.join(APP, 'public', 'windows', f'window-{n}.html'), encoding='utf-8').read()
         title = html.unescape(re.sub(r'<[^>]+>', '', re.search(r'<title>([^<]*)</title>', page).group(1)))
         name = title.split(':', 1)[1].split('·')[0].strip() if ':' in title else title
-        intro = re.sub(r'<[^>]+>', ' ', re.search(r'<p class="sub">([\s\S]*?)</p>', page).group(1))
+        # The intro now carries paragraph breaks and '- ' list lines (Thread 37); read it
+        # from the corpus data with that layout removed, so the spoken words stay the same.
+        intro = re.sub(r'^- ', '', CORPUS_W[str(n)]['runtime_state_summary'], flags=re.M)
         out[f'intro-narration-w{n}'] = speakable(f'{name}. {intro}')
         r = g[str(n)]
         full = r.get('fullGuide') or ''
