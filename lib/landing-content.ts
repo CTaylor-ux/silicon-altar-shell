@@ -46,7 +46,7 @@ export const JOHNSON = [
   { year: '1655', text: 'A Virginia court sends John Casor back into the service of Anthony Johnson, a free Black landholder, who claimed him for life.' },
   { year: '1657', text: "A neighbour takes a hundred acres of Johnson's land over a debt letter that was allegedly forged." },
   { year: '1670', text: 'After his death, the county takes land his family held. The finding says he', quote: 'was a negro and by consequence an alien' },
-  { year: 'After', text: 'His sons John and Richard flee to Delaware and rent land they once would have inherited.' },
+  { year: '1704', text: 'The family had left for Maryland in 1665 and leased land there. His son John ended his life in Delaware, kept by the county as', quote: 'Poor and Past his Labour' },
 ];
 
 export const AUDIENCES = [
