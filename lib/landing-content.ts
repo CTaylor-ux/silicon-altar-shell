@@ -12,11 +12,12 @@ export const HERO = {
 };
 
 /** The record in the opening, and the honest note under it. The quotation is the
- *  dossier's; the order book it comes from is cited in the corpus, not yet opened. */
+ *  dossier's, confirmed on 2026-10-03 against Encyclopedia Virginia's transcription of
+ *  the order book (via Billings 1975). The manuscript itself is unopened. */
 export const OPENING_RECORD = {
   quote: 'He had him for his life',
   who: 'Anthony Johnson, claiming John Casor before the Northampton County court, Virginia, 1655',
-  note: "Even this line comes with a warning. The archive quotes it, but has not yet opened the county's original order book. It says so, here and everywhere.",
+  note: "The archive checked this line against a published transcription of the county's order book. It has not opened the manuscript itself, and it says so.",
 };
 
 /** How the dossier is read: three plain points beside the live example. */
