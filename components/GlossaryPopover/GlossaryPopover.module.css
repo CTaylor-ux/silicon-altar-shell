@@ -68,3 +68,14 @@
   line-height: 1.5;
   color: var(--dim);
 }
+
+/* One value a dossier badge shows (Proven, Open, a tier letter), under the heading's own definition. */
+.value {
+  margin: 8px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--bdr);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--txt);
+}
+.value strong { color: var(--bright); font-weight: 600; margin-right: 4px; }

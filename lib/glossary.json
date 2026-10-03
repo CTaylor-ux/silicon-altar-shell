@@ -229,5 +229,129 @@
     "label": "◆ Milestone",
     "kind": "Marker",
     "definition": "Marks an event the corpus treats as a turning point in the sequence, not merely an entry within it."
+  },
+  "dossier:tier": {
+    "label": "Finding Tier",
+    "kind": "Dossier",
+    "definition": "How the claim stands, A to E. A is documented directly in a primary source; C is a reasoned inference with the step named; E is a working hypothesis.",
+    "note": "The tier rates the claim, not the document behind it. A strong document can still leave a reading of it at C."
+  },
+  "dossier:weight": {
+    "label": "Weight",
+    "kind": "Dossier",
+    "definition": "What the evidence actually carries. The word says how far the sources go for this claim, and the words in brackets say which part of the claim it covers."
+  },
+  "weight:proven": {
+    "label": "Proven",
+    "kind": "Weight",
+    "definition": "A document is quoted in its own words for this point."
+  },
+  "weight:supported": {
+    "label": "Supported",
+    "kind": "Weight",
+    "definition": "The point follows from a named document, though the document does not say it outright."
+  },
+  "weight:sourced": {
+    "label": "Sourced",
+    "kind": "Weight",
+    "definition": "A source is attached that you can open and check yourself."
+  },
+  "weight:cited": {
+    "label": "Cited",
+    "kind": "Weight",
+    "definition": "A real source is named, but you cannot open it from here: usually a printed book. This says nothing about how good the source is."
+  },
+  "weight:contested": {
+    "label": "Contested",
+    "kind": "Weight",
+    "definition": "There is more than one serious reading. The archive says which it holds and why."
+  },
+  "weight:asserted": {
+    "label": "Asserted",
+    "kind": "Weight",
+    "definition": "No document. This is the archive's own statement, and it is labelled as that."
+  },
+  "weight:unsourced": {
+    "label": "Unsourced",
+    "kind": "Weight",
+    "definition": "Nothing is attached yet."
+  },
+  "dossier:warrant": {
+    "label": "Warrant",
+    "kind": "Dossier",
+    "definition": "Whether the question is settled."
+  },
+  "warrant:closed": {
+    "label": "Closed",
+    "kind": "Warrant",
+    "definition": "Every explanation weighed here has been settled by a document."
+  },
+  "warrant:open": {
+    "label": "Open",
+    "kind": "Warrant",
+    "definition": "Something is still unsettled. The words in brackets say what would settle it."
+  },
+  "dossier:split": {
+    "label": "Two values",
+    "kind": "Split verdict",
+    "definition": "One part of the claim is settled and another is not. The badge gives each part its own word."
+  },
+  "dossier:sources": {
+    "label": "Sources",
+    "kind": "Dossier",
+    "definition": "What this claim rests on. Each line is one source. A title in a link opens the document."
+  },
+  "dossier:srctier": {
+    "label": "Source letter",
+    "kind": "Dossier",
+    "definition": "The kind of source. A is a primary document or peer-reviewed scholarship. B is a reference work or a secondary account. C is the archive's own measurement or working paper.",
+    "note": "This is a different scale from the Finding Tier. That one rates the claim; this one rates the source."
+  },
+  "dossier:streams": {
+    "label": "Streams",
+    "kind": "Dossier",
+    "definition": "Which line of standing this bears on. S1 to S4 are four separate lines the archive tracks, and it keeps them apart on purpose. Tap a code to see which is which."
+  },
+  "dossier:ach": {
+    "label": "Competing Hypotheses",
+    "kind": "Dossier",
+    "definition": "The explanations the archive weighed. ACH stands for Analysis of Competing Hypotheses: list every explanation that could fit, then test each against the evidence. They all stay on the page, including the ones that failed."
+  },
+  "verdict:eliminated": {
+    "label": "Eliminated",
+    "kind": "Verdict",
+    "definition": "Ruled out. The evidence that rules it out is given beside it."
+  },
+  "verdict:holding": {
+    "label": "Holding",
+    "kind": "Verdict",
+    "definition": "Still standing, but not established. The evidence for and against is given, and nothing yet decides it.",
+    "note": "Holding means \"not yet ruled out\". Held means \"the evidence carries it\"."
+  },
+  "verdict:held": {
+    "label": "Held",
+    "kind": "Verdict",
+    "definition": "Established on the evidence given.",
+    "note": "Holding means \"not yet ruled out\". Held means \"the evidence carries it\"."
+  },
+  "dossier:corr": {
+    "label": "Correlation Layer",
+    "kind": "Dossier",
+    "definition": "How this event connects to others. Each line points to another event in the archive."
+  },
+  "corr:upstream": {
+    "label": "Upstream",
+    "kind": "Connection",
+    "definition": "Something earlier that this event depends on or grows out of."
+  },
+  "corr:downstream": {
+    "label": "Downstream",
+    "kind": "Connection",
+    "definition": "Something later that follows from this event."
+  },
+  "corr:cross-ref": {
+    "label": "Cross-ref",
+    "kind": "Connection",
+    "definition": "A related event that is neither a cause nor a result."
   }
 }
