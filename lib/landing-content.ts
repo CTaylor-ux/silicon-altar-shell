@@ -50,7 +50,7 @@ export const JOHNSON = [
 ];
 
 export const AUDIENCES = [
-  { title: 'Heirs', text: 'People with proven blood-right claims to the Americas, tracing what was done to their families and how it was recorded. The archive shows the record, and how sure anyone can be of it.' },
+  { title: 'Heirs', text: 'People with proven blood-right claims to the Americas under jus sanguinis, the right of blood, where standing comes from lineage, treaty and DNA. The archive shows them what was done to their families, how it was recorded, and how sure anyone can be of it.' },
   { title: 'Researchers', text: 'Bring your sources and your method. Challenge a row against its document. What you bring is credited to you, and you see what became of it.' },
   { title: 'Educators', text: 'Every claim is a lesson in how to read a record: who wrote it, what it says, what is inferred, and what is still argued.' },
 ];
