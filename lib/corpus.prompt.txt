@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 872 sources are opened and 137 are not.
+something is evidenced, say so. 877 sources are opened and 136 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -1447,14 +1447,14 @@ threads: T-THREE-TRACK-LABOR
 [E-W2-010-01] W2 1640 population TB
 John Punch case
 Virginia. Three servants escape: two European, one African. Europeans receive extended indentures. The African (John Punch) receives lifetime servitude. First documented case of racial differential sentencing in English colonies. The classification tested as criminal punishment.
-sources: [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [C citation_only] src-corporate-caselaw-layer-1602-1713
+sources: [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [C citation_only] src-corporate-caselaw-layer-1602-1713; [A live_verified] src-t37-general-court-punch-1640 https://encyclopediavirginia.org/primary-documents/general-court-responds-to-runaway-servants-and-slaves-1640/
 links: first-africans-at-jamestown-1619, elizabeth-key-lawsuit-the-exit-door-1656, virginia-slave-codes-1705
 threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
 
 [E-W2-010-02] W2 1640 legal TB
 Racial sentencing differential established
 The precedent: same crime, different punishment based on classification. Not yet property law - still criminal law. Johnson v. Casor (1655) will convert this from criminal to civil.
-sources: [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [C citation_only] src-corporate-caselaw-layer-1602-1713
+sources: [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [C citation_only] src-corporate-caselaw-layer-1602-1713; [A live_verified] src-t37-general-court-punch-1640 https://encyclopediavirginia.org/primary-documents/general-court-responds-to-runaway-servants-and-slaves-1640/
 links: first-africans-at-jamestown-1619, elizabeth-key-lawsuit-the-exit-door-1656, virginia-slave-codes-1705
 threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
 
@@ -1475,7 +1475,7 @@ threads: T-ASIENTO, T-FRANCHISE-TRANSFER
 [E-W2-011-02] W2 1655 legal TA
 Johnson v. Casor - “Negro” = Property
 Northampton County Court. First civil case declaring a person property WITHOUT A CRIME. Anthony Johnson (free Black landholder) uses the "Negro" classification to claim Casor as property. The Asiento’s inventory classification now functional in English courts. The Noun (Free Landholder) deploys the Adjective (Negro) - and the Adjective will later consume the Noun.
-sources: [A citation_only] src-northampton-order-book-1655; [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [B live_verified] src-russell-free-negro-virginia-1916 https://archive.org/details/freenegro00russrich; [B citation_only] src-schermerhorn-anthony-johnson-2019; [C citation_only] src-corporate-caselaw-layer-1602-1713
+sources: [A live_verified] src-northampton-order-book-1655 https://encyclopediavirginia.org/primary-documents/court-ruling-on-anthony-johnson-and-his-servant-1655/; [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [B live_verified] src-russell-free-negro-virginia-1916 https://archive.org/details/freenegro00russrich; [B citation_only] src-schermerhorn-anthony-johnson-2019; [C citation_only] src-corporate-caselaw-layer-1602-1713
 links: john-punch-case-1640, scarborough-forgery-1657, anthony-johnson-estate-seized-1670
 threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
 
@@ -1517,7 +1517,7 @@ threads: T-RESISTANCE-COUNTER-NARRATIVE
 [E-W2-013-01] W2 1656 legal TA
 Elizabeth Key lawsuit - THE EXIT DOOR THAT TRIGGERS PARTUS
 Daughter of English planter Thomas Key and an enslaved African woman. When John Mottrom's estate is settled in 1655 she is inventoried as “Elizabeth the Negro woman & her sonne”. She sues on three grounds: paternal status at common law, Christian baptism, and an expired nine-year indenture. A Northumberland jury frees her 20 January 1656; the Council reverses 12 March; the Assembly finds “the Child of a Woman slave begott by a free-man ought to bee free”. She wins 21 July 1656.
-sources: [A live_verified] src-dvb-elizabeth-key https://www.lva.virginia.gov/public/dvb/bio.asp?b=Key_Elizabeth_fl_1655-1660; [B citation_only] src-blackpast-elizabeth-key https://blackpast.org/african-american-history/grinstead-elizabeth-key-1630/; [B citation_only] src-nyhs-wams-elizabeth-key https://wams.nyhistory.org/life-story/elizabeth-key-grinstead/
+sources: [A live_verified] src-dvb-elizabeth-key https://www.lva.virginia.gov/public/dvb/bio.asp?b=Key_Elizabeth_fl_1655-1660; [B citation_only] src-blackpast-elizabeth-key https://blackpast.org/african-american-history/grinstead-elizabeth-key-1630/; [B citation_only] src-nyhs-wams-elizabeth-key https://wams.nyhistory.org/life-story/elizabeth-key-grinstead/; [A live_verified] src-t37-assembly-report-key-1656 https://encyclopediavirginia.org/entries/a-report-of-a-comittee-from-an-assembly-concerning-the-freedome-of-elizabeth-key-1656/
 links: john-punch-case-1640, partus-sequitur-ventrem-1662, virginia-baptism-not-freedom-1667
 threads: T-WHITENING-PROJECT
 
@@ -1640,15 +1640,15 @@ links: east-india-company-chartered-1600, voc-1602
 
 [E-W2-022-01] W2 1670b legal TB
 Anthony Johnson estate seized
-August 1670 escheat inquisition, John Stringer escheator for Northampton and Accomack: FIFTY ACRES IN ACCOMACK COUNTY, already in the possession of Johnson's son Richard, escheated on the finding that Anthony Johnson, lately deceased, 'was a negro and by consequence an alien and for that cause the said land doth escheat'. The parcel passed to a white neighbour, George Parker. (Anthony's earlier 250-acre Northampton headright is a separate holding and is not what this inquisition took.) THE ADJECTIVE CONSUMES ITS CREATOR. Johnson used “Negro” to win Casor in 1655; now the same classification destroys his family. His sons John and Richard flee to Delaware and RENT land they once would have inherited. Complete arc: Antonio the Moor arrives as Noun → wins as Noun → deploys the Adjective → Adjective consumes the Noun → descendants reduced from landowners to tenants.
-sources: [B live_verified] src-russell-free-negro-virginia-1916 https://archive.org/details/freenegro00russrich; [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [C citation_only] src-corporate-caselaw-layer-1602-1713
+August 1670 escheat inquisition, John Stringer escheator for Northampton and Accomack: FIFTY ACRES IN ACCOMACK COUNTY, already in the possession of Johnson's son Richard, escheated on the finding that Anthony Johnson, lately deceased, 'was a negro and by consequence an alien and for that cause the said land doth escheat'. The parcel passed to a white neighbour, George Parker. (Anthony's earlier 250-acre Northampton headright is a separate holding and is not what this inquisition took.) THE ADJECTIVE CONSUMES ITS CREATOR. Johnson used “Negro” to win Casor in 1655; in 1670 the same classification is the stated ground for taking land from his son. The family had left Virginia five years earlier: in 1665 Anthony, Mary and their son John moved to Somerset County, Maryland, where Anthony leased 300 acres. Their son Richard stayed in Accomack on the fifty acres his father gave him, the land the 1670 inquisition took, and bought 590 acres there in 1675. John moved on to Sussex County, Delaware, patented 400 acres in 1677, and in 1704 was maintained by the county as 'Poor and Past his Labour' (Heinegg). Complete arc: Antonio the Moor (not yet sourced) arrives as Noun → wins as Noun → deploys the Adjective → Adjective consumes the Noun.
+sources: [B live_verified] src-russell-free-negro-virginia-1916 https://archive.org/details/freenegro00russrich; [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [C citation_only] src-corporate-caselaw-layer-1602-1713; [B live_verified] src-t37-heinegg-johnson-family https://www.freeafricanamericans.com/Jeffery-Johnson.htm; [B live_verified] src-t37-pbs-anthony-johnson https://www.pbs.org/wgbh/aia/part1/1p265.html
 links: johnson-v-casor-1655, scarborough-forgery-1657, virginia-code-1682
 threads: T-WHITENING-PROJECT
 
 [E-W2-022-02] W2 1670b land TB
 Johnson estate redistributed
 Fifty acres in Accomack County transferred from a free Black family to a white settler, George Parker. (The 250-acre Northampton headright is a separate holding and is not what the 1670 inquisition took.) The classification converts property rights. This is the prototype for every future land seizure through racial reclassification.
-sources: [B live_verified] src-russell-free-negro-virginia-1916 https://archive.org/details/freenegro00russrich; [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [C citation_only] src-corporate-caselaw-layer-1602-1713
+sources: [B live_verified] src-russell-free-negro-virginia-1916 https://archive.org/details/freenegro00russrich; [A needs_verification] src-encyc-va-servants-slaves https://encyclopediavirginia.org/entries/servants-and-slaves-in-colonial-virginia/; [C citation_only] src-corporate-caselaw-layer-1602-1713; [B live_verified] src-t37-heinegg-johnson-family https://www.freeafricanamericans.com/Jeffery-Johnson.htm; [B live_verified] src-t37-pbs-anthony-johnson https://www.pbs.org/wgbh/aia/part1/1p265.html
 links: johnson-v-casor-1655, scarborough-forgery-1657, virginia-code-1682
 threads: T-WHITENING-PROJECT
 
