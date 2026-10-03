@@ -197,7 +197,7 @@ html.sa-member .statusbar > span:nth-child(2) { display: none; }
 /* Thread 37 — the terms inside an open dossier explain themselves too. Each
    askable term carries a small "?" so a reader can see it is askable. */
 #dBody .d-badge, #dBody .d-bt, #dBody .sl, #dBody .st, #dBody .hl, #dBody .cl,
-#dBody .d-corr-title, #dBody .ss, #dBody .d-hypo strong, #dBody .hv { cursor: help; }
+#dBody .d-corr-title, #dBody .ss, #dBody .d-hypo strong, #dBody .hv, #dBody .s-status { cursor: help; }
 #dBody .d-badge:hover, #dBody .st:hover, #dBody .hl:hover, #dBody .cl:hover,
 #dBody .d-hypo strong:hover { box-shadow: inset 0 -1px 0 0 currentColor; }
 #dBody .d-badge::after, #dBody .d-bt::after, #dBody .sl::after, #dBody .d-corr-title::after {
@@ -710,6 +710,9 @@ html:not(.sa-legend-open) .tlegend { display: none; }
     if (cl.contains('ss')) return tokenKeyFor(el);
     if (cl.contains('d-badge')) return badgeKey(el.textContent);
     if (cl.contains('st')) return 'dossier:srctier';
+    if (cl.contains('s-status')) {
+      return cl.contains('s-read') ? 'status:read' : cl.contains('s-cited') ? 'status:cited' : 'status:unchecked';
+    }
     if (cl.contains('sl')) return 'dossier:streams';
     if (cl.contains('d-corr-title')) return 'dossier:corr';
     var t = (el.textContent || '').trim().toLowerCase();
@@ -734,7 +737,7 @@ html:not(.sa-legend-open) .tlegend { display: none; }
     function (e) {
       var body = document.getElementById('dBody');
       if (!body || !e.target || !e.target.closest || !body.contains(e.target)) return;
-      var el = e.target.closest('.ss, .d-badge, .d-bt, .st, .sl, .hl, .hv, .cl, .d-corr-title, .d-hypo strong');
+      var el = e.target.closest('.ss, .d-badge, .d-bt, .st, .sl, .hl, .hv, .cl, .d-corr-title, .d-hypo strong, .s-status');
       if (!el) return;
       var key = dossierKeyFor(el);
       if (!key) return;

@@ -353,5 +353,21 @@
     "label": "Cross-ref",
     "kind": "Connection",
     "definition": "A related event that is neither a cause nor a result."
+  },
+  "status:read": {
+    "label": "Read",
+    "kind": "Source",
+    "definition": "Someone has opened this document itself and checked the claim against it."
+  },
+  "status:cited": {
+    "label": "Cited, not yet opened",
+    "kind": "Source",
+    "definition": "The source is named, but no one has opened it yet for this archive. Often it is a printed book or an archive record that isn't online.",
+    "note": "This says nothing about how good the source is."
+  },
+  "status:unchecked": {
+    "label": "Not yet checked",
+    "kind": "Source",
+    "definition": "A source is attached, but it hasn't been verified yet."
   }
 }
