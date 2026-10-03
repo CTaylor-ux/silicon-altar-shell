@@ -14,7 +14,7 @@ export const HERO = {
 /** The record in the opening, and the honest note under it. The quotation is the
  *  dossier's; the order book it comes from is cited in the corpus, not yet opened. */
 export const OPENING_RECORD = {
-  quote: 'hee had him for his life',
+  quote: 'He had him for his life',
   who: 'Anthony Johnson, claiming John Casor before the Northampton County court, Virginia, 1655',
   note: "Even this line comes with a warning. The archive quotes it, but has not yet opened the county's original order book. It says so, here and everywhere.",
 };
