@@ -77,7 +77,7 @@ const out = {
       const r = sourceById.get(s.source_id) || {};
       return { tier: s.tier, title: r.title, status: r.link_status };
     }),
-    hypotheses: casor.hypotheses.map((h) => ({ label: h.label, verdict: h.verdict })),
+    hypotheses: casor.hypotheses.map((h) => ({ label: h.label, text: h.text ?? '', verdict: h.verdict, why: h.eliminated_by || h.held_because || '' })),
   },
   johnsonRows: ['E-W2-011-02', 'E-W2-043-01', 'E-W2-022-01'].map((id) => {
     const e = row(id);

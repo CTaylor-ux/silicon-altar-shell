@@ -7,16 +7,23 @@
  */
 
 export const HERO = {
-  kicker: 'A forensic audit of the American Levant',
-  title: 'The Silicon Altar',
-  line: 'Seven windows of records, from the eleventh century to now. Every claim shows its evidence: what was read, what was not, and what is still argued.',
+  title: 'See what the records say, and how sure anyone can be.',
+  line: 'The Silicon Altar is a private archive of how law, land and money turned people into property, from the deep past to today. Every claim shows its sources, which of them were actually read, and which explanations still stand.',
 };
 
-export const STEPS = [
-  { n: '01', title: 'Read the claim', text: 'Every row is a claim, set in its year and its lane: the law, the land, the money, the people.' },
-  { n: '02', title: 'See how sure it is', text: 'Open the dossier. The verdict is split where it should be: what is proven, and what is only a reading.' },
-  { n: '03', title: 'Check the sources', text: 'Each source says whether anyone has opened it, or only cited it. Gaps are shown, not hidden.' },
-  { n: '04', title: 'Weigh the alternatives', text: 'The explanations the corpus considered stay on the page, each with its verdict: eliminated, holding or held.' },
+/** The record in the opening, and the honest note under it. The quotation is the
+ *  dossier's; the order book it comes from is cited in the corpus, not yet opened. */
+export const OPENING_RECORD = {
+  quote: 'hee had him for his life',
+  who: 'Anthony Johnson, claiming John Casor before the Northampton County court, Virginia, 1655',
+  note: "Even this line comes with a warning. The archive quotes it, but has not yet opened the county's original order book. It says so, here and everywhere.",
+};
+
+/** How the dossier is read: three plain points beside the live example. */
+export const HOW = [
+  { title: 'The verdict is split where it should be.', text: 'What the court decided is proven. The idea that it was planned is only a reading, and it is labelled as one.' },
+  { title: 'Every source says whether anyone opened it.', text: 'Read means someone has opened the document itself. Cited means it is named but not yet checked. The gaps stay visible.' },
+  { title: 'The other explanations stay on the page.', text: 'Each one carries its verdict and the reason for it. Open one to see the argument.' },
 ];
 
 /** Corrections the corpus made to itself, publicly recorded. */
@@ -38,7 +45,8 @@ export const CORRECTIONS = [
 export const JOHNSON = [
   { year: '1655', text: 'A Virginia court sends John Casor back into the service of Anthony Johnson, a free Black landholder, who claimed him for life.' },
   { year: '1657', text: "A neighbour takes a hundred acres of Johnson's land over a debt letter that was allegedly forged." },
-  { year: '1670', text: "After his death, the county takes land his family held, finding that he 'was a negro and by consequence an alien.'" },
+  { year: '1670', text: 'After his death, the county takes land his family held. The finding says he', quote: 'was a negro and by consequence an alien' },
+  { year: 'After', text: 'His sons John and Richard flee to Delaware and rent land they once would have inherited.' },
 ];
 
 export const AUDIENCES = [
@@ -54,3 +62,11 @@ export const TRUST = [
 ];
 
 export const MOTTO = 'The estate remains. The management contract has expired.';
+
+/** What happens after someone asks for an invitation. Kept true to the route:
+ *  the request is saved beside the app and read by the author. */
+export const AFTER_REQUEST = [
+  'The author reads every request personally.',
+  'If it is a fit, you receive a personal code by email.',
+  'Your code opens all seven windows, the dossiers, the maps and the question box.',
+];

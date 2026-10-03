@@ -24,7 +24,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { SESSION_COOKIE, verifySession, H_ID, H_NAME, H_ROLE } from '@/lib/identity';
 
 /** Reachable without a session, because they are how you get one. */
-const OPEN_PATHS = ['/enter', '/api/session'];
+const OPEN_PATHS = ['/enter', '/api/session', '/api/request'];
 
 /** The public landing page (Thread 37): /welcome, exactly, and its own assets under
  *  /landing. Kept off '/' so the operator's own home is never the public page. The

@@ -28,3 +28,6 @@ invites.json
 # Landing page data (scripts/prepare-landing.mjs) and the local copy of the film
 lib/landing.generated.json
 public/landing/film.mp4
+
+# Invitation requests from the public landing page: names and email addresses. Never commit.
+records/invite-requests.jsonl
