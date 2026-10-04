@@ -1,6 +1,6 @@
 THE SILICON ALTAR CORPUS
 
-Entries: 828. Windows: 7.
+Entries: 876. Windows: 7.
 
 The corpus states its own scope and spine. Both are load-bearing: they are
 how you tell a genuine gap from something deliberately out of scope.
@@ -16,7 +16,7 @@ WINDOWS:
   Window 3: Colonial Consolidation (1652 to 1787) - 79 entries
   Window 4: The Transfer (1787 to 1854) - 87 entries
   Window 5: 75-Year Operation (1854 to 1929) - 267 entries
-  Window 6: Digital Migration (1921 to 2029) - 105 entries
+  Window 6: Digital Migration (1921 to 2029) - 153 entries
 
 Each entry below: [id] window year lane tier [MILESTONE], then title, then
 body, then its curated links to other entries and its thread memberships.
@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 881 sources are opened and 136 are not.
+something is evidenced, say so. 930 sources are opened and 136 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -4247,8 +4247,8 @@ Congressman Louis T. McFadden, CHAIRMAN of the House Banking and Currency Commit
 sources: [A live_verified] src-cong-record-mcfadden-1932 https://archive.org/details/sim_congressional-record-proceedings-and-debates_june-01-11-1932_75
 
 [E-W6-002-03] W6 1933 legal TB
-HJR 192 suspends common law
-Under HJR 192, no one can pay a debt - only DISCHARGE obligations with Federal Reserve Notes. The distinction between payment (substance) and discharge (credit) is the legal shift that converts every American from a sovereign economic actor into a debtor within the Corporation’s ledger. The birth certificates (1921 Act) are the REGISTRATION. The 14th Amendment (1868) is the AUTHORITY. HJR 192 (1933) is the ACTIVATION. The citizen-class registered through the 1921 Act becomes the operating collateral of the bankrupt estate.
+HJR 192: the corpus reads it as suspending common law
+The corpus's reading, not the holding of any court (not yet sourced): Under HJR 192, no one can pay a debt - only DISCHARGE obligations with Federal Reserve Notes. The distinction between payment (substance) and discharge (credit) is the legal shift that converts every American from a sovereign economic actor into a debtor within the Corporation’s ledger. The birth certificates (1921 Act) are the REGISTRATION. The 14th Amendment (1868) is the AUTHORITY. HJR 192 (1933) is the ACTIVATION. The citizen-class registered through the 1921 Act becomes the operating collateral of the bankrupt estate. What the courts said: the Gold Clause Cases of 1935 do not use the phrase 'common law' (see E-W6-044-01), and Erie Railroad v. Tompkins (1938) directs federal courts to apply each state's common law.
 sources: [A live_verified] src-usc-31-5118-gold-clauses https://www.law.cornell.edu/uscode/text/31/5118
 
 [E-W6-002-04] W6 1933 military TB
@@ -4341,7 +4341,7 @@ sources: [A live_verified] src-un-charter-59-stat-1031 https://www.govinfo.gov/l
 
 [E-W6-007-05] W6 1944 innovation TC
 Froth flotation - Spruce Pine quartz purified
-1944-1949. NC State Minerals Research Lab (Raleigh) develops froth flotation process to separate feldspar from quartz in Spruce Pine deposits. THE SILICON CHAIN: Edison creates demand for mica (1878, W5) → HERE: froth flotation purifies quartz to semiconductor grade (1944-49) → Fairchild Semiconductor (1957) → Intel (1968) → TSMC Arizona (2020). The mineral technology that makes the digital economy possible is developed at a state university 250 miles from the deposit. The Hardware timeline runs through a lab in Raleigh, North Carolina. Technology 4 (Financial Reclassification) - mineral-to-value pipeline stage 2.
+1944-1949. NC State Minerals Research Lab (Raleigh) develops froth flotation process to separate feldspar from quartz in Spruce Pine deposits. THE SILICON CHAIN: Edison creates demand for mica (1878, W5) → HERE: froth flotation purifies quartz to semiconductor grade (1944-49) (not yet sourced: the 1944 Minerals Yearbook records the Spruce Pine flotation plant as a feldspar plant, with quartz and mica as byproducts) → Fairchild Semiconductor (1957) → Intel (1968) → TSMC Arizona (2020). The mineral technology that makes the digital economy possible is developed at a state university 250 miles from the deposit. The Hardware timeline runs through a lab in Raleigh, North Carolina. Technology 4 (Financial Reclassification) - mineral-to-value pipeline stage 2.
 sources: [A live_verified] src-usgs-mcs-2025-high-purity-quartz https://pubs.usgs.gov/periodicals/mcs2025/mcs2025.pdf
 
 [E-W6-007-06] W6 1944 military TC
@@ -4354,7 +4354,7 @@ Operation Magic Carpet (1945-46)
 
 [E-W6-008-01] W6 1947 population TA
 Operation Paperclip
-Over 1,500 German and other foreign scientists, technicians and engineers were brought to the United States under Project Paperclip and similar programs (NARA). The corpus reads Paperclip as the return leg of a eugenics round-trip: American eugenics (Carnegie/Rockefeller/Cold Spring Harbor) exported to Germany → Germany industrializes → Paperclip returns the technology; and as importing three skills: Classification (IBM punch cards → databases), PsyOps (MK-Ultra → Hollywood), Suppression (Gehlen → CIA/FBI → COINTELPRO).
+Over 1,500 German and other foreign scientists, technicians and engineers were brought to the United States under Project Paperclip and similar programs (NARA). The corpus reads Paperclip as the return leg of a eugenics round-trip: American race statutes studied and cited in Germany (the party's 1935 handbook of law; see E-W6-046-01) and American eugenics (Carnegie/Cold Spring Harbor) honoured there → Germany industrializes → Paperclip returns the technology; and as importing three skills: Classification (IBM punch cards → databases), PsyOps (MK-Ultra → Hollywood), Suppression (Gehlen → CIA/FBI → COINTELPRO).
 sources: [A live_verified] src-nara-rg330-paperclip https://www.archives.gov/iwg/declassified-records/rg-330-defense-secretary
 
 [E-W6-008-02] W6 1947 legal TB
@@ -4757,6 +4757,263 @@ sources: [A live_verified] src-smithsonian-human-remains-release-2023 http://web
 The task force would bar future research using 'racial identification based on physical features'
 assessment: Weight: Proven (the apology and the task force's findings, quoted from the Institution's own documents) | Warrant: Closed (the Institution apologized and said why the remains were collected) · Open (the Secretary's August 2023 statement and the Washington Post investigation, unread; whether the recommendations became policy)
 sources: [A live_verified] src-smithsonian-human-remains-release-2023 http://web.archive.org/web/20230923200423/https://www.si.edu/newsdesk/releases/smithsonian-forms-task-force-develop-guidelines-human-remains-collection; [A live_verified] src-smithsonian-human-remains-task-force-report-2024 https://www.si.edu/sites/default/files/about/human-remains-task-force-report.pdf
+
+[E-W6-043-01] W6 1934 land TA
+Two executive orders withdraw the public domain in 24 states; new homestead entries collapse
+26 November 1934 and 5 February 1935. Executive Orders 6910 and 6964 leave the vacant public land of 24 states 'temporarily withdrawn from settlement, location, sale or entry, and reserved for classification'. The General Land Office reports original entries falling from 1,759,078 acres to 425,834 and then 124,530: 'Conservation rather than disposals is the dominant note in the administration of the public lands'.
+sources: [A live_verified] src-executive-orders-6910-6964 https://www.presidency.ucsb.edu/documents/executive-order-6910-withdrawal-public-lands-for-conservation; [A live_verified] src-taylor-grazing-act-1934 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/48/STATUTE-48-Pg1269.pdf; [A live_verified] src-interior-annual-reports-1935-1937 https://archive.org/details/annualreportofse00unit_7; [A live_verified] src-indian-reorganization-act-1934 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/48/STATUTE-48-Pg984.pdf
+links: 160-acres-free-homestead-1862, dawes-act-allotment-classification-1887, national-housing-act-fha-geographic-classification-1934
+
+[E-W6-043-02] W6 1934 legal TA
+Taylor Grazing Act, section 7: no homesteads 'until after same have been classified and opened to entry'
+assessment: Weight: Proven (the orders, the Act, the Land Office's figures) | Warrant: Closed (entry collapsed and became discretionary) · Open (who had been entering in the last years, by race or tribe: not in what was read)
+sources: [A live_verified] src-executive-orders-6910-6964 https://www.presidency.ucsb.edu/documents/executive-order-6910-withdrawal-public-lands-for-conservation; [A live_verified] src-taylor-grazing-act-1934 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/48/STATUTE-48-Pg1269.pdf; [A live_verified] src-interior-annual-reports-1935-1937 https://archive.org/details/annualreportofse00unit_7; [A live_verified] src-indian-reorganization-act-1934 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/48/STATUTE-48-Pg984.pdf
+
+[E-W6-043-03] W6 1934 sovereign TA
+The Indian Reorganization Act ends allotment; Interior counts 'the loss of two-thirds of the 139,000,000 acres owned by Indian tribes in 1887'
+assessment: Weight: Proven (the orders, the Act, the Land Office's figures) | Warrant: Closed (entry collapsed and became discretionary) · Open (who had been entering in the last years, by race or tribe: not in what was read)
+sources: [A live_verified] src-executive-orders-6910-6964 https://www.presidency.ucsb.edu/documents/executive-order-6910-withdrawal-public-lands-for-conservation; [A live_verified] src-taylor-grazing-act-1934 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/48/STATUTE-48-Pg1269.pdf; [A live_verified] src-interior-annual-reports-1935-1937 https://archive.org/details/annualreportofse00unit_7; [A live_verified] src-indian-reorganization-act-1934 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/48/STATUTE-48-Pg984.pdf
+
+[E-W6-044-01] W6 1935 legal TA
+The Supreme Court rules the 1933 gold resolution valid for private contracts and unlawful for the government's own bonds, and awards nothing
+18 February 1935. In Perry v. United States the Court holds that the Joint Resolution of 5 June 1933, as applied to a government bond, 'went beyond the congressional power', then denies the bondholder any recovery: 'it does not follow that the claim advanced by the plaintiff should be sustained'. Private gold clauses are held void the same day. Four justices dissent, foreseeing 'confiscation of property rights and repudiation of national obligations'.
+sources: [A live_verified] src-perry-v-united-states-1935 https://www.law.cornell.edu/supremecourt/text/294/330; [A live_verified] src-norman-v-baltimore-and-ohio-1935 https://www.law.cornell.edu/supremecourt/text/294/240; [A live_verified] src-nortz-v-united-states-1935 https://www.law.cornell.edu/supremecourt/text/294/317
+links: bankruptcy-3-hjr-192-gold-seizure-1933, bretton-woods-1944, nixon-shock-dollar-decoupled-from-gold-1971
+
+[E-W6-044-02] W6 1935 financial TA
+Gold certificates are held to be currency: 'They called for dollars, not bullion'
+assessment: Weight: Proven (the holdings and the dissent, from the reported opinions) | Warrant: Closed (what the Court held) · Open (nothing: the corpus's reading of 1933 is a separate question, below)
+sources: [A live_verified] src-perry-v-united-states-1935 https://www.law.cornell.edu/supremecourt/text/294/330; [A live_verified] src-norman-v-baltimore-and-ohio-1935 https://www.law.cornell.edu/supremecourt/text/294/240; [A live_verified] src-nortz-v-united-states-1935 https://www.law.cornell.edu/supremecourt/text/294/317
+
+[E-W6-044-03] W6 1935 sovereign TA
+The Court cites the Fourteenth Amendment on the public debt and still gives the holder no remedy
+assessment: Weight: Proven (the holdings and the dissent, from the reported opinions) | Warrant: Closed (what the Court held) · Open (nothing: the corpus's reading of 1933 is a separate question, below)
+sources: [A live_verified] src-perry-v-united-states-1935 https://www.law.cornell.edu/supremecourt/text/294/330; [A live_verified] src-norman-v-baltimore-and-ohio-1935 https://www.law.cornell.edu/supremecourt/text/294/240; [A live_verified] src-nortz-v-united-states-1935 https://www.law.cornell.edu/supremecourt/text/294/317
+
+[E-W6-045-01] W6 1935 legal TA
+Arkansas tenants sue under the federal cotton contract to stop their eviction; the court rules they cannot enforce it
+25 March 1935. In West v. Norcross, tenants and sharecroppers on a Poinsett County plantation 'have instituted this action to enjoin the latter from evicting them from this farm'. The Supreme Court of Arkansas holds that 'no cause of action exists under the Agricultural Adjustment Act' in their favor. The 1934 Tuskegee conference: 'The most widespread reason, however, for the dislocation of tenants is attributed to the acreage reduction program'.
+sources: [A live_verified] src-west-v-norcross-1935 https://static.case.law/ark/190/cases/0667-01.json; [B live_verified] src-negro-year-book-1937-38 https://archive.org/details/per_tuskegee-institute-news-clippings-file_negro-year-book_1937-1938; [A live_verified] src-woofter-landlord-and-tenant-1936 https://archive.org/details/landlordtenanton00woof; [A live_verified] src-census-negroes-in-the-united-states-1920-32 https://archive.org/details/negroesinuniteds00unit; [A live_verified] src-census-of-agriculture-1940-vol-3 https://www2.census.gov/library/publications/decennial/1940/agriculture/1940-census-agriculture-vol-3-chapter-03.pdf
+links: national-housing-act-fha-geographic-classification-1934, social-security-act-new-classification-database-1935, 160-acres-free-homestead-1862
+
+[E-W6-045-02] W6 1935 land TA
+Census: Negro farm owners' 'loss of 2,749,619 acres was equivalent to 4,296 square miles', 1920 to 1930
+assessment: Weight: Proven (the ruling; the census figures) · Contested (how much of the displacement the cotton programme caused) | Warrant: Closed (tenants pleaded the contract and lost) · Open (the agency's own 1935 displacement survey, whose results were not found)
+sources: [A live_verified] src-west-v-norcross-1935 https://static.case.law/ark/190/cases/0667-01.json; [B live_verified] src-negro-year-book-1937-38 https://archive.org/details/per_tuskegee-institute-news-clippings-file_negro-year-book_1937-1938; [A live_verified] src-woofter-landlord-and-tenant-1936 https://archive.org/details/landlordtenanton00woof; [A live_verified] src-census-negroes-in-the-united-states-1920-32 https://archive.org/details/negroesinuniteds00unit; [A live_verified] src-census-of-agriculture-1940-vol-3 https://www2.census.gov/library/publications/decennial/1940/agriculture/1940-census-agriculture-vol-3-chapter-03.pdf
+
+[E-W6-045-03] W6 1935 population TA
+Census 1940: the fall in nonwhite farm operators 'resulted almost entirely from the loss of Negro tenants, particularly croppers'
+assessment: Weight: Proven (the ruling; the census figures) · Contested (how much of the displacement the cotton programme caused) | Warrant: Closed (tenants pleaded the contract and lost) · Open (the agency's own 1935 displacement survey, whose results were not found)
+sources: [A live_verified] src-west-v-norcross-1935 https://static.case.law/ark/190/cases/0667-01.json; [B live_verified] src-negro-year-book-1937-38 https://archive.org/details/per_tuskegee-institute-news-clippings-file_negro-year-book_1937-1938; [A live_verified] src-woofter-landlord-and-tenant-1936 https://archive.org/details/landlordtenanton00woof; [A live_verified] src-census-negroes-in-the-united-states-1920-32 https://archive.org/details/negroesinuniteds00unit; [A live_verified] src-census-of-agriculture-1940-vol-3 https://www2.census.gov/library/publications/decennial/1940/agriculture/1940-census-agriculture-vol-3-chapter-03.pdf
+
+[E-W6-046-01] W6 1935 information TA
+The German party handbook of law prints thirty American state marriage-ban statutes in the year of the Nuremberg Laws
+1935. The German party's handbook of law, edited by Hans Frank, lists American state laws against mixed marriage, beginning with Alabama, and concludes: 'Die hier aufgezählten 30 Staaten haben also alle Mischeheverbote'. On 15 September the Reich Citizenship Law declares: 'A citizen of the Reich is only that subject, who is of German- or kindred blood'. In May 1936 the American eugenicist Harry Laughlin accepts a Heidelberg degree: 'I stand ready to accept this very high honor'.
+sources: [A live_verified] src-ns-handbuch-recht-gesetzgebung-1935 https://archive.org/details/hans-frank-nationalsozialistisches-handbuch-fur-recht-und-gesetzgebung-1935-2-ed; [B live_verified] src-reich-citizenship-law-1935 https://avalon.law.yale.edu/imt/1416-ps.asp; [B live_verified] src-laughlin-to-schneider-1936 https://dnalc.cshl.edu/view/11198-H-Laughlin-letter-to-C-Schneider-acknowledging-honorary-degree-from-the-University-of-Heidelberg.html; [A live_verified] src-carnegie-year-book-38-1939 https://archive.org/details/yearbookcarne38193839carn
+links: operation-paperclip-1947, 1924-triple-lock-reclassification-chain-step-1924, dixon-racial-history-of-man-1923, thind-1923
+
+[E-W6-046-02] W6 1935 legal TA
+Nuremberg, 15 September 1935: the Reich Citizenship Law and the marriage law
+assessment: Weight: Proven (the handbook's table and conclusion, read in the original) · Supported (the 1934 commission meeting, known only through a later scholar) | Warrant: Closed (that the handbook cites the American statutes) · Open (the 1934 transcript; Krieger's studies)
+sources: [A live_verified] src-ns-handbuch-recht-gesetzgebung-1935 https://archive.org/details/hans-frank-nationalsozialistisches-handbuch-fur-recht-und-gesetzgebung-1935-2-ed; [B live_verified] src-reich-citizenship-law-1935 https://avalon.law.yale.edu/imt/1416-ps.asp; [B live_verified] src-laughlin-to-schneider-1936 https://dnalc.cshl.edu/view/11198-H-Laughlin-letter-to-C-Schneider-acknowledging-honorary-degree-from-the-University-of-Heidelberg.html; [A live_verified] src-carnegie-year-book-38-1939 https://archive.org/details/yearbookcarne38193839carn
+
+[E-W6-046-03] W6 1935 certification TA
+Carnegie renames the Eugenics Record Office in July 1939 and retires Laughlin on 1 January 1940
+assessment: Weight: Proven (the handbook's table and conclusion, read in the original) · Supported (the 1934 commission meeting, known only through a later scholar) | Warrant: Closed (that the handbook cites the American statutes) · Open (the 1934 transcript; Krieger's studies)
+sources: [A live_verified] src-ns-handbuch-recht-gesetzgebung-1935 https://archive.org/details/hans-frank-nationalsozialistisches-handbuch-fur-recht-und-gesetzgebung-1935-2-ed; [B live_verified] src-reich-citizenship-law-1935 https://avalon.law.yale.edu/imt/1416-ps.asp; [B live_verified] src-laughlin-to-schneider-1936 https://dnalc.cshl.edu/view/11198-H-Laughlin-letter-to-C-Schneider-acknowledging-honorary-degree-from-the-University-of-Heidelberg.html; [A live_verified] src-carnegie-year-book-38-1939 https://archive.org/details/yearbookcarne38193839carn
+
+[E-W6-047-01] W6 1936 to 1938 information TB
+Federal Writers' Project workers record more than two thousand former slaves; about 150 name an Indian forebear unasked
+1936 to 1938. Interviewers for the Federal Writers' Project take down some 2,400 narratives in seventeen states. The one ancestry question in their instructions of 22 April 1937 is 'Where did they come from?'. About 150 speakers name an Indian parent or grandparent; about 90 name Africa; about 65 say their people were free before 1865. Della Harris of Virginia, of her mother: 'she surely was an Indian'.
+sources: [B live_verified] src-fwp-slave-narratives-1936-1938 https://www.gutenberg.org/ebooks/13847
+links: census-instructions-indian-negro-returned-as-negro-1940, virginia-registrar-indians-jailed-over-draft-race-1943, dawes-act-allotment-classification-1887
+
+[E-W6-047-02] W6 1936 to 1938 population TB
+About 23 speakers tell of an Indian forebear stolen, sold or held as a slave
+assessment: Weight: Supported (counts from a keyword sweep and reading of 589 narratives; every quotation checked) · Proven (the wording of each quoted narrative as transcribed) | Warrant: Closed (that these speakers said these things to an interviewer) · Open (narratives with none of the search words; the typescript images; how many would have answered a direct question)
+sources: [B live_verified] src-fwp-slave-narratives-1936-1938 https://www.gutenberg.org/ebooks/13847
+
+[E-W6-047-03] W6 1936 to 1938 records TB
+Moble Hopson of Virginia, of being placed with the colored people: "'Twas the war done that"
+assessment: Weight: Supported (counts from a keyword sweep and reading of 589 narratives; every quotation checked) · Proven (the wording of each quoted narrative as transcribed) | Warrant: Closed (that these speakers said these things to an interviewer) · Open (narratives with none of the search words; the typescript images; how many would have answered a direct question)
+sources: [B live_verified] src-fwp-slave-narratives-1936-1938 https://www.gutenberg.org/ebooks/13847
+
+[E-W6-048-01] W6 1935 sovereign TB
+Italy invades Ethiopia; the League finds against Italy, then lifts its sanctions nine months later
+October 1935. On 7 October the Council of the League of Nations 'adopted the Report of the Committee of Six', which found Italy at war in breach of the Covenant. On 30 June 1936 the Emperor Haile Selassie tells the Assembly: 'God and history will remember your judgment'. Days later the members' committee decides that 'the application of sanctions should cease on July 15th'. In the United States the NAACP's convention had resolved: 'We unequivocally condemn Italian aggression in Ethiopia'.
+sources: [B needs_verification] src-bulletin-of-international-news-1935-1936 https://archive.org/search?query=bulletin+of+international+news+1935; [B live_verified] src-haile-selassie-league-address-1936 https://en.wikisource.org/wiki/Appeal_to_the_League_of_Nations; [B needs_verification] src-the-crisis-1935-08-naacp-resolutions https://archive.org/search?query=sim_crisis_1935-08
+links: bretton-woods-1944, garvey-deported-1927, chicago-sedition-and-draft-arrests-1942
+
+[E-W6-048-02] W6 1935 certification TB
+The sanctions were proposals each government applied for itself; the League Assembly took no vote
+assessment: Weight: Supported (the League's acts, from a contemporaneous chronicle) · Proven (the NAACP resolution as printed) | Warrant: Closed (finding, sanctions, lifting) · Open (the League's own record; the response of Black organisations beyond the NAACP)
+sources: [B needs_verification] src-bulletin-of-international-news-1935-1936 https://archive.org/search?query=bulletin+of+international+news+1935; [B live_verified] src-haile-selassie-league-address-1936 https://en.wikisource.org/wiki/Appeal_to_the_League_of_Nations; [B needs_verification] src-the-crisis-1935-08-naacp-resolutions https://archive.org/search?query=sim_crisis_1935-08
+
+[E-W6-048-03] W6 1935 counter-move TB
+The NAACP's St. Louis convention condemns the aggression weeks before the invasion
+assessment: Weight: Supported (the League's acts, from a contemporaneous chronicle) · Proven (the NAACP resolution as printed) | Warrant: Closed (finding, sanctions, lifting) · Open (the League's own record; the response of Black organisations beyond the NAACP)
+sources: [B needs_verification] src-bulletin-of-international-news-1935-1936 https://archive.org/search?query=bulletin+of+international+news+1935; [B live_verified] src-haile-selassie-league-address-1936 https://en.wikisource.org/wiki/Appeal_to_the_League_of_Nations; [B needs_verification] src-the-crisis-1935-08-naacp-resolutions https://archive.org/search?query=sim_crisis_1935-08
+
+[E-W6-049-01] W6 1940 population TA
+The 1940 census tells its enumerators to return a person of mixed Indian and Negro blood as Negro
+1940. The census instructions to enumerators: 'A person of mixed Indian and Negro blood should be returned as a Negro, unless the Indian blood very definitely predominates and he is universally accepted in the community as an Indian'. And: 'Mixtures of nonwhite races should be reported according to the race of the father, except that Negro-Indian should be reported as Negro'. Reversing 1930: 'Mexicans are to be regarded as white unless definitely of Indian or other nonwhite race'.
+sources: [A live_verified] src-census-1940-instructions-to-enumerators https://www.census.gov/content/dam/Census/programs-surveys/decennial/technical-documentation/questionnaires/1940instructions.pdf; [A live_verified] src-census-1930-instructions-to-enumerators https://www.census.gov/content/dam/Census/programs-surveys/decennial/technical-documentation/questionnaires/1930instructions.pdf
+links: 1924-triple-lock-reclassification-chain-step-1924, thind-1923, sheppard-towner-maternity-act-birth-registration-1921, dawes-act-allotment-classification-1887
+threads: T-NOUN-TO-ADJECTIVE
+
+[E-W6-049-02] W6 1940 records TA
+The 1930 instructions end the 'Mulatto' count: black and mulatto 'returned as Negroes, without distinction'
+assessment: Weight: Proven (the wording of the 1930 and 1940 instructions) | Warrant: Closed (the instructions say this) · Open (how many people the rule moved: no count exists in what was read)
+sources: [A live_verified] src-census-1940-instructions-to-enumerators https://www.census.gov/content/dam/Census/programs-surveys/decennial/technical-documentation/questionnaires/1940instructions.pdf; [A live_verified] src-census-1930-instructions-to-enumerators https://www.census.gov/content/dam/Census/programs-surveys/decennial/technical-documentation/questionnaires/1930instructions.pdf
+
+[E-W6-049-03] W6 1940 legal TA
+1940 adds a threshold for 'Indian': an agency roll, one-fourth blood, or community regard
+assessment: Weight: Proven (the wording of the 1930 and 1940 instructions) | Warrant: Closed (the instructions say this) · Open (how many people the rule moved: no count exists in what was read)
+sources: [A live_verified] src-census-1940-instructions-to-enumerators https://www.census.gov/content/dam/Census/programs-surveys/decennial/technical-documentation/questionnaires/1940instructions.pdf; [A live_verified] src-census-1930-instructions-to-enumerators https://www.census.gov/content/dam/Census/programs-surveys/decennial/technical-documentation/questionnaires/1930instructions.pdf
+
+[E-W6-050-01] W6 1940 military TA
+The War Department fixes separate units; volunteers are refused by race and registrants are passed over
+9 October 1940. The White House releases the War Department's policy: 'The policy of the War Department is not to intermingle colored and white enlisted personnel in the same regimental organizations'. The draft law had said 'there shall be no discrimination against any person on account of race or color'. The Army's own history: by early 1943 'approximately 300,000 Negroes had been passed over to fill white calls'. A draft official: boards called by number 'but skipping the Negroes'.
+sources: [B live_verified] src-lee-employment-of-negro-troops-1966 https://web.archive.org/web/2020/https://history.army.mil/books/wwii/11-4/chapter3.htm; [A live_verified] src-selective-training-and-service-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg885a.pdf; [A live_verified] src-lynn-v-downer-1944 https://static.case.law/f2d/140/cases/0397-01.json; [A live_verified] src-indianapolis-recorder-1941-12-20 https://newspapers.library.in.gov/?a=d&d=INR19411220-01.1.13; [A live_verified] src-indianapolis-recorder-1940-09-21 https://newspapers.library.in.gov/?a=d&d=INR19400921-01.1.2; [B live_verified] src-negro-digest-1943-04-lynn https://archive.org/details/sim_nation_1943-02-20_156_8; [B live_verified] src-pittsburgh-courier-thompson-1942 https://perspectives.ushmm.org/item/should-i-sacrifice-to-live-half-american
+links: executive-order-9066-japanese-internment-1942, bretton-woods-1944, tuskegee-syphilis-study-begins-rebrand-disproof-1932
+
+[E-W6-050-02] W6 1940 population TA
+Named volunteers refused at recruiting desks: Philadelphia 1940, Indianapolis and Chicago 1941, Fort Benning 1942
+assessment: Weight: Proven (the statute; the policy text as the Army's history prints it; the official's testimony) · Supported (the named refusals, from the Black press) | Warrant: Closed (that men were refused and passed over) · Open (the number: 27,986 official, 50,000 by the Courier's estimate, 300,000 by a 1943 government estimate)
+sources: [B live_verified] src-lee-employment-of-negro-troops-1966 https://web.archive.org/web/2020/https://history.army.mil/books/wwii/11-4/chapter3.htm; [A live_verified] src-selective-training-and-service-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg885a.pdf; [A live_verified] src-lynn-v-downer-1944 https://static.case.law/f2d/140/cases/0397-01.json; [A live_verified] src-indianapolis-recorder-1941-12-20 https://newspapers.library.in.gov/?a=d&d=INR19411220-01.1.13; [A live_verified] src-indianapolis-recorder-1940-09-21 https://newspapers.library.in.gov/?a=d&d=INR19400921-01.1.2; [B live_verified] src-negro-digest-1943-04-lynn https://archive.org/details/sim_nation_1943-02-20_156_8; [B live_verified] src-pittsburgh-courier-thompson-1942 https://perspectives.ushmm.org/item/should-i-sacrifice-to-live-half-american
+
+[E-W6-050-03] W6 1940 counter-move TA
+Winfred Lynn refuses induction under a racial quota, 1942; the 'Double V' letter, January 1942
+assessment: Weight: Proven (the statute; the policy text as the Army's history prints it; the official's testimony) · Supported (the named refusals, from the Black press) | Warrant: Closed (that men were refused and passed over) · Open (the number: 27,986 official, 50,000 by the Courier's estimate, 300,000 by a 1943 government estimate)
+sources: [B live_verified] src-lee-employment-of-negro-troops-1966 https://web.archive.org/web/2020/https://history.army.mil/books/wwii/11-4/chapter3.htm; [A live_verified] src-selective-training-and-service-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg885a.pdf; [A live_verified] src-lynn-v-downer-1944 https://static.case.law/f2d/140/cases/0397-01.json; [A live_verified] src-indianapolis-recorder-1941-12-20 https://newspapers.library.in.gov/?a=d&d=INR19411220-01.1.13; [A live_verified] src-indianapolis-recorder-1940-09-21 https://newspapers.library.in.gov/?a=d&d=INR19400921-01.1.2; [B live_verified] src-negro-digest-1943-04-lynn https://archive.org/details/sim_nation_1943-02-20_156_8; [B live_verified] src-pittsburgh-courier-thompson-1942 https://perspectives.ushmm.org/item/should-i-sacrifice-to-live-half-american
+
+[E-W6-050-04] W6 1940 information TA
+The Pittsburgh Courier prints 27,992 passed over, October 1941, and calls it an undercount
+assessment: Weight: Proven (the statute; the policy text as the Army's history prints it; the official's testimony) · Supported (the named refusals, from the Black press) | Warrant: Closed (that men were refused and passed over) · Open (the number: 27,986 official, 50,000 by the Courier's estimate, 300,000 by a 1943 government estimate)
+sources: [B live_verified] src-lee-employment-of-negro-troops-1966 https://web.archive.org/web/2020/https://history.army.mil/books/wwii/11-4/chapter3.htm; [A live_verified] src-selective-training-and-service-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg885a.pdf; [A live_verified] src-lynn-v-downer-1944 https://static.case.law/f2d/140/cases/0397-01.json; [A live_verified] src-indianapolis-recorder-1941-12-20 https://newspapers.library.in.gov/?a=d&d=INR19411220-01.1.13; [A live_verified] src-indianapolis-recorder-1940-09-21 https://newspapers.library.in.gov/?a=d&d=INR19400921-01.1.2; [B live_verified] src-negro-digest-1943-04-lynn https://archive.org/details/sim_nation_1943-02-20_156_8; [B live_verified] src-pittsburgh-courier-thompson-1942 https://perspectives.ushmm.org/item/should-i-sacrifice-to-live-half-american
+
+[E-W6-051-01] W6 1940 legal TA
+The Nationality Act of 1940 names who may be naturalized; in 1941 two courts hold treaty Indians subject to the draft
+14 October 1940. Naturalization 'shall extend only to white persons, persons of African nativity or descent, and descendants of races indigenous to the Western Hemisphere'. On 28 May 1941 a court tells Yakima plaintiffs: 'This Treaty was clearly superseded by the Selective Training and Service Act of 1940'. On 24 November 1941 a court tells an Onondaga man that 'the 1940 statute unequivocally made Green a citizen', adding 'we reach that conclusion most reluctantly'.
+sources: [A live_verified] src-nationality-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg1137.pdf; [A live_verified] src-ex-parte-green-1941 https://static.case.law/f2d/123/cases/0862-01.json; [A live_verified] src-totus-v-united-states-1941 https://static.case.law/f-supp/39/cases/0007-01.json; [A live_verified] src-green-certiorari-papers-1942 https://archive.org/details/micro_IA43086415_0978; [B live_verified] src-six-nations-declaration-ap-1942 https://archive.org/details/per_atlanta-constitution_1942-06-16_75_2
+links: naturalization-act-free-white-1790, 1924-triple-lock-reclassification-chain-step-1924, thind-1923, dawes-act-allotment-classification-1887, immigration-act-1965
+
+[E-W6-051-02] W6 1940 sovereign TA
+June 1942: the Six Nations declare that 'a state of war exists between our confederacy' and the Axis, as a separate power
+assessment: Weight: Proven (the statute and both rulings) · Proven (the Six Nations' stated position, from their own printed papers) | Warrant: Closed (what the statute and courts said) · Open (the full text of the June 1942 resolution; Yakima leaders' own statements)
+sources: [A live_verified] src-nationality-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg1137.pdf; [A live_verified] src-ex-parte-green-1941 https://static.case.law/f2d/123/cases/0862-01.json; [A live_verified] src-totus-v-united-states-1941 https://static.case.law/f-supp/39/cases/0007-01.json; [A live_verified] src-green-certiorari-papers-1942 https://archive.org/details/micro_IA43086415_0978; [B live_verified] src-six-nations-declaration-ap-1942 https://archive.org/details/per_atlanta-constitution_1942-06-16_75_2
+
+[E-W6-051-03] W6 1940 military TA
+Mohawk men pleading the Jay Treaty are held liable to the draft, 1944 and 1945
+assessment: Weight: Proven (the statute and both rulings) · Proven (the Six Nations' stated position, from their own printed papers) | Warrant: Closed (what the statute and courts said) · Open (the full text of the June 1942 resolution; Yakima leaders' own statements)
+sources: [A live_verified] src-nationality-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg1137.pdf; [A live_verified] src-ex-parte-green-1941 https://static.case.law/f2d/123/cases/0862-01.json; [A live_verified] src-totus-v-united-states-1941 https://static.case.law/f-supp/39/cases/0007-01.json; [A live_verified] src-green-certiorari-papers-1942 https://archive.org/details/micro_IA43086415_0978; [B live_verified] src-six-nations-declaration-ap-1942 https://archive.org/details/per_atlanta-constitution_1942-06-16_75_2
+
+[E-W6-052-01] W6 1936 records TA
+A Treasury regulation requires every employee to apply for an account number at a post office
+November 1936. Treasury Decision 4704: every employee 'shall file an application for an account number on Form SS-5', filed with any postmaster, by 5 December. The Social Security Administration's own history says that by mid-1937 'some 35 million SSNs had been issued'. In 1940 the Alien Registration Act uses the same post offices: every alien of fourteen or over is 'to apply for registration and to be fingerprinted'.
+sources: [A live_verified] src-treasury-decision-4704-1936 https://www.govinfo.gov/content/pkg/FR-1936-11-07/pdf/FR-1936-11-07.pdf; [B live_verified] src-puckett-story-of-the-ssn-2009 https://www.ssa.gov/policy/docs/ssb/v69n2/v69n2p55.html; [A live_verified] src-alien-registration-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg670.pdf
+links: social-security-act-new-classification-database-1935, sheppard-towner-maternity-act-birth-registration-1921, executive-order-9066-japanese-internment-1942
+
+[E-W6-052-02] W6 1936 innovation TA
+The agency's historian: a punched-card collator was built 'expressly for the new Social Security program'
+assessment: Weight: Proven (the regulation and the statute) · Supported (the count and the form's contents, from the agency's own history) | Warrant: Closed (that numbering was made compulsory by Treasury regulation) · Open (the 1936 form; the Board's annual report)
+sources: [A live_verified] src-treasury-decision-4704-1936 https://www.govinfo.gov/content/pkg/FR-1936-11-07/pdf/FR-1936-11-07.pdf; [B live_verified] src-puckett-story-of-the-ssn-2009 https://www.ssa.gov/policy/docs/ssb/v69n2/v69n2p55.html; [A live_verified] src-alien-registration-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg670.pdf
+
+[E-W6-052-03] W6 1936 legal TA
+Senate Report 1515 (1950): by the end of 1940, '5,009,857 aliens were registered'
+assessment: Weight: Proven (the regulation and the statute) · Supported (the count and the form's contents, from the agency's own history) | Warrant: Closed (that numbering was made compulsory by Treasury regulation) · Open (the 1936 form; the Board's annual report)
+sources: [A live_verified] src-treasury-decision-4704-1936 https://www.govinfo.gov/content/pkg/FR-1936-11-07/pdf/FR-1936-11-07.pdf; [B live_verified] src-puckett-story-of-the-ssn-2009 https://www.ssa.gov/policy/docs/ssb/v69n2/v69n2p55.html; [A live_verified] src-alien-registration-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg670.pdf
+
+[E-W6-053-01] W6 1942 legal TA
+About eighty people are arrested in Chicago for sedition and draft refusal; their own documents state three different positions
+20 to 21 September 1942. The FBI's Chicago chief says 'no definite link' to Japan was found. The Moorish Science Temple's by-laws: 'all members must obey the laws of the government'; its scripture: 'because you are not negroes'. Mittie Gordon of the Peace Movement of Ethiopia: 'Since this time I have considered myself a citizen of Liberia'. Elijah Mohammed of the Temple of Islam: 'I have not registered under the Selective Service Act'.
+sources: [B live_verified] src-ap-chicago-arrests-1942-09-21 https://archive.org/details/per_washington-post_1942-09-22_24204; [A live_verified] src-moorish-science-temple-by-laws-in-fbi-file https://archive.org/details/MoorishScienceTempleOfAmerica; [A live_verified] src-holy-koran-moorish-science-temple-1927 https://archive.org/details/holy_koran_of_the_moorish_holy_temple_of_science; [A live_verified] src-fbi-file-peace-movement-of-ethiopia https://archive.org/details/PeaceMovementToEthiopia; [A live_verified] src-fbi-file-fard-chicago-1942 https://archive.org/details/WallaceFardMuhammed; [A live_verified] src-united-states-v-gordon-1943 https://static.case.law/f2d/138/cases/0174-01.json; [B needs_verification] src-opportunity-1942-12-martin https://archive.org/search?query=opportunity+journal+of+negro+life+1942; [A live_verified] src-congressional-record-1939-04-24-bilbo https://www.govinfo.gov/content/pkg/GPO-CRECB-1939-pt5-v84/pdf/GPO-CRECB-1939-pt5-v84-1-1.pdf
+links: noble-drew-ali-begins-organizing-the-1913, drew-ali-at-the-pan-american-1928, garvey-deported-1927, american-colonization-society-1816, liberia-removal-entertained-1867, executive-order-9066-japanese-internment-1942
+
+[E-W6-053-02] W6 1942 counter-move TA
+Moorish Science Temple members ask draft boards to strike 'Negro' and enter 'Moorish-American'; its card declares United States citizenship
+assessment: Weight: Proven (what each organisation's own documents say) · Supported (what agents and reporters say they said) · Contested (the utterances charged, which Gordon denied in part) | Warrant: Closed (the arrests, the appeal ruling, the texts) · Open (trial testimony; the Kansas City defendants' own words; the smaller groups)
+sources: [B live_verified] src-ap-chicago-arrests-1942-09-21 https://archive.org/details/per_washington-post_1942-09-22_24204; [A live_verified] src-moorish-science-temple-by-laws-in-fbi-file https://archive.org/details/MoorishScienceTempleOfAmerica; [A live_verified] src-holy-koran-moorish-science-temple-1927 https://archive.org/details/holy_koran_of_the_moorish_holy_temple_of_science; [A live_verified] src-fbi-file-peace-movement-of-ethiopia https://archive.org/details/PeaceMovementToEthiopia; [A live_verified] src-fbi-file-fard-chicago-1942 https://archive.org/details/WallaceFardMuhammed; [A live_verified] src-united-states-v-gordon-1943 https://static.case.law/f2d/138/cases/0174-01.json; [B needs_verification] src-opportunity-1942-12-martin https://archive.org/search?query=opportunity+journal+of+negro+life+1942; [A live_verified] src-congressional-record-1939-04-24-bilbo https://www.govinfo.gov/content/pkg/GPO-CRECB-1939-pt5-v84/pdf/GPO-CRECB-1939-pt5-v84-1-1.pdf
+
+[E-W6-053-03] W6 1942 records TA
+Draft boards record the same members' race as 'Negro' or as 'Moorish American', board by board
+assessment: Weight: Proven (what each organisation's own documents say) · Supported (what agents and reporters say they said) · Contested (the utterances charged, which Gordon denied in part) | Warrant: Closed (the arrests, the appeal ruling, the texts) · Open (trial testimony; the Kansas City defendants' own words; the smaller groups)
+sources: [B live_verified] src-ap-chicago-arrests-1942-09-21 https://archive.org/details/per_washington-post_1942-09-22_24204; [A live_verified] src-moorish-science-temple-by-laws-in-fbi-file https://archive.org/details/MoorishScienceTempleOfAmerica; [A live_verified] src-holy-koran-moorish-science-temple-1927 https://archive.org/details/holy_koran_of_the_moorish_holy_temple_of_science; [A live_verified] src-fbi-file-peace-movement-of-ethiopia https://archive.org/details/PeaceMovementToEthiopia; [A live_verified] src-fbi-file-fard-chicago-1942 https://archive.org/details/WallaceFardMuhammed; [A live_verified] src-united-states-v-gordon-1943 https://static.case.law/f2d/138/cases/0174-01.json; [B needs_verification] src-opportunity-1942-12-martin https://archive.org/search?query=opportunity+journal+of+negro+life+1942; [A live_verified] src-congressional-record-1939-04-24-bilbo https://www.govinfo.gov/content/pkg/GPO-CRECB-1939-pt5-v84/pdf/GPO-CRECB-1939-pt5-v84-1-1.pdf
+
+[E-W6-053-04] W6 1942 information TA
+The Urban League's magazine calls the arrested groups a 'lunatic fringe', December 1942; the Army manual repeats the phrase in 1944
+assessment: Weight: Proven (what each organisation's own documents say) · Supported (what agents and reporters say they said) · Contested (the utterances charged, which Gordon denied in part) | Warrant: Closed (the arrests, the appeal ruling, the texts) · Open (trial testimony; the Kansas City defendants' own words; the smaller groups)
+sources: [B live_verified] src-ap-chicago-arrests-1942-09-21 https://archive.org/details/per_washington-post_1942-09-22_24204; [A live_verified] src-moorish-science-temple-by-laws-in-fbi-file https://archive.org/details/MoorishScienceTempleOfAmerica; [A live_verified] src-holy-koran-moorish-science-temple-1927 https://archive.org/details/holy_koran_of_the_moorish_holy_temple_of_science; [A live_verified] src-fbi-file-peace-movement-of-ethiopia https://archive.org/details/PeaceMovementToEthiopia; [A live_verified] src-fbi-file-fard-chicago-1942 https://archive.org/details/WallaceFardMuhammed; [A live_verified] src-united-states-v-gordon-1943 https://static.case.law/f2d/138/cases/0174-01.json; [B needs_verification] src-opportunity-1942-12-martin https://archive.org/search?query=opportunity+journal+of+negro+life+1942; [A live_verified] src-congressional-record-1939-04-24-bilbo https://www.govinfo.gov/content/pkg/GPO-CRECB-1939-pt5-v84/pdf/GPO-CRECB-1939-pt5-v84-1-1.pdf
+
+[E-W6-054-01] W6 1937 legal TA
+Britain gives up its consular rights in French Morocco, leaving the United States the last treaty power there
+29 July 1937. By convention with France, the King 'renounces all rights and privileges of a capitulatory character in the French Zone of the Shereefian Empire', in force 1 January 1938. France tells Washington 'it remains today the last power in a position to avail itself of that régime'. In 1952 the International Court finds that after 1937 'no Power other than the United States has exercised consular jurisdiction in the French Zone of Morocco'.
+sources: [A live_verified] src-anglo-french-convention-morocco-1937 https://archive.org/details/31761115493421; [A live_verified] src-frus-1937-vol-2-morocco https://history.state.gov/historicaldocuments/frus1937v02/ch27subch1; [A live_verified] src-icj-rights-of-us-nationals-in-morocco-1952 https://web.archive.org/web/20190221004109if_/https://www.icj-cij.org/files/case-related/11/011-19520827-JUD-01-00-EN.pdf; [A live_verified] src-frus-1936-vol-2-spain-tangier https://history.state.gov/historicaldocuments/frus1936v02/d357
+links: algeciras-conference-1906, icj-rules-on-1787-treaty-1952, morocco-regains-formal-independence-1956, executive-order-9066-japanese-internment-1942, heir-firewall-1787-1790
+
+[E-W6-054-02] W6 1937 sovereign TA
+The French President signs the 1937 convention on behalf of the Sultan
+assessment: Weight: Proven (the convention, the diplomatic record, the Court's account) | Warrant: Closed (the United States was the last capitulatory power in the French Zone after 1937) · Open (the Moroccan government's own record; the Spanish Zone and Tangier)
+sources: [A live_verified] src-anglo-french-convention-morocco-1937 https://archive.org/details/31761115493421; [A live_verified] src-frus-1937-vol-2-morocco https://history.state.gov/historicaldocuments/frus1937v02/ch27subch1; [A live_verified] src-icj-rights-of-us-nationals-in-morocco-1952 https://web.archive.org/web/20190221004109if_/https://www.icj-cij.org/files/case-related/11/011-19520827-JUD-01-00-EN.pdf; [A live_verified] src-frus-1936-vol-2-spain-tangier https://history.state.gov/historicaldocuments/frus1936v02/d357
+
+[E-W6-054-03] W6 1937 military TA
+July 1936, the American agent at Tangier: 'Revolt of Spanish troops broke out yesterday in Melilla'
+assessment: Weight: Proven (the convention, the diplomatic record, the Court's account) | Warrant: Closed (the United States was the last capitulatory power in the French Zone after 1937) · Open (the Moroccan government's own record; the Spanish Zone and Tangier)
+sources: [A live_verified] src-anglo-french-convention-morocco-1937 https://archive.org/details/31761115493421; [A live_verified] src-frus-1937-vol-2-morocco https://history.state.gov/historicaldocuments/frus1937v02/ch27subch1; [A live_verified] src-icj-rights-of-us-nationals-in-morocco-1952 https://web.archive.org/web/20190221004109if_/https://www.icj-cij.org/files/case-related/11/011-19520827-JUD-01-00-EN.pdf; [A live_verified] src-frus-1936-vol-2-spain-tangier https://history.state.gov/historicaldocuments/frus1936v02/d357
+
+[E-W6-055-01] W6 1943 records TA
+Virginia's State Registrar records that men were jailed for refusing to be drafted as Negro and not as Indian
+January 1943. Virginia's State Registrar, W. A. Plecker, writes that descendants of people listed before 1865 as free 'have been refusing to register with war draft boards as negroes, as required by the boards', and that three men from Caroline County 'were sentenced to prison on January 12 in the United States Court at Richmond for refusing to obey the draft law unless permitted to classify themselves as "Indians."' He encloses a list of surnames by county.
+sources: [A live_verified] src-plecker-circular-1943-01 https://explore.lib.virginia.edu/files/original/d65cdacba7a15727cb7c6ee305211f01.jpg; [B needs_verification] src-plecker-circular-1943-12 https://encyclopediavirginia.org/; [B needs_verification] src-library-of-virginia-adkins-letter https://uncommonwealth.virginiamemory.com/
+links: 1924-triple-lock-reclassification-chain-step-1924, 23andme-launches-the-digital-plecker-2007, census-instructions-indian-negro-returned-as-negro-1940, sheppard-towner-maternity-act-birth-registration-1921
+threads: T-NOUN-TO-ADJECTIVE, T-RESISTANCE-COUNTER-NARRATIVE
+
+[E-W6-055-02] W6 1943 population TA
+Chickahominy Chief O. Oliver Adkins to the War Department: 'my people are American Indians of the State of Virginia'
+assessment: Weight: Proven (what the circular says, read from the page image) · Supported (the Chickahominy chief's letter, through the Library of Virginia) | Warrant: Closed (the registrar's statement of policy) · Open (the Richmond court record; the men's names; the Selective Service ruling that followed)
+sources: [A live_verified] src-plecker-circular-1943-01 https://explore.lib.virginia.edu/files/original/d65cdacba7a15727cb7c6ee305211f01.jpg; [B needs_verification] src-plecker-circular-1943-12 https://encyclopediavirginia.org/; [B needs_verification] src-library-of-virginia-adkins-letter https://uncommonwealth.virginiamemory.com/
+
+[E-W6-055-03] W6 1943 legal TA
+Birth certificates showing 'Indian' are rejected under Virginia Code section 5099a; the December 1943 circular asks for power to write a 'pedigree' on them
+assessment: Weight: Proven (what the circular says, read from the page image) · Supported (the Chickahominy chief's letter, through the Library of Virginia) | Warrant: Closed (the registrar's statement of policy) · Open (the Richmond court record; the men's names; the Selective Service ruling that followed)
+sources: [A live_verified] src-plecker-circular-1943-01 https://explore.lib.virginia.edu/files/original/d65cdacba7a15727cb7c6ee305211f01.jpg; [B needs_verification] src-plecker-circular-1943-12 https://encyclopediavirginia.org/; [B needs_verification] src-library-of-virginia-adkins-letter https://uncommonwealth.virginiamemory.com/
+
+[E-W6-056-01] W6 1942 land TA
+About 710,000 acres are taken for Army camps in three states; at Camp Stewart one Negro landowner in five gets land again
+1940 to 1942. A Farm Security Administration report to Congress counts the land taken for defense in Alabama, Georgia and South Carolina. At Camp Stewart, Georgia: 'Of the 493 Negro families, 149 were landowners, and of these 30 became owners again'. The Huntsville arsenal takes 'two small communities of Negro landowners'. At Childersburg, 'about one-fifth of all Negro farm owners in Talladega County were in this section'.
+sources: [A live_verified] src-tolan-hearings-part-32-fsa-report-1942 https://archive.org/details/nationaldefensem32unit
+links: 160-acres-free-homestead-1862, national-housing-act-fha-geographic-classification-1934, executive-order-9066-japanese-internment-1942, army-manual-leadership-and-the-negro-soldier-1944
+
+[E-W6-056-02] W6 1942 population TA
+Between four and five thousand families, some 25,000 people, lived on the land taken
+assessment: Weight: Proven (the Farm Security Administration's figures, as printed in the hearings) | Warrant: Closed (who was displaced at the named camps) · Open (what was paid; what became of the families after the first move)
+sources: [A live_verified] src-tolan-hearings-part-32-fsa-report-1942 https://archive.org/details/nationaldefensem32unit
+
+[E-W6-056-03] W6 1942 records TA
+Heirs' property at Camp Stewart: fifteen or twenty acres 'would belong to two dozen heirs, scattered from Savannah to Detroit'
+assessment: Weight: Proven (the Farm Security Administration's figures, as printed in the hearings) | Warrant: Closed (who was displaced at the named camps) · Open (what was paid; what became of the families after the first move)
+sources: [A live_verified] src-tolan-hearings-part-32-fsa-report-1942 https://archive.org/details/nationaldefensem32unit
+
+[E-W6-057-01] W6 1944 information TA
+The Army's manual for officers of Negro troops records the numbers, the land, the volunteers turned away, and no ties to any other land
+October 1944. Army Service Forces Manual M5, 'Leadership and the Negro Soldier', quotes Selective Service: 'They have neither cultural nor economic ties with kindred in any other lands'. It records that 'our small regular Army was unable to absorb all Negroes who tried to enlist', that 'By 1910 they owned over twelve million acres of land valued at over six hundred million dollars', and it calls the 1942 draft resisters 'lunatic fringe cults'.
+sources: [A live_verified] src-army-manual-m5-leadership-and-the-negro-soldier-1944 https://www.jfklibrary.org/asset-viewer/archives/lihpp-001-001
+links: army-negro-troop-policy-registrants-passed-over-1940, chicago-sedition-and-draft-arrests-1942, dixon-racial-history-of-man-1923, smithsonian-human-remains-apology-2023, fort-negro-destroyed-1816, johnson-v-casor-1655, naturalization-act-free-white-1790
+
+[E-W6-057-02] W6 1944 population TA
+'In 1790, Negroes comprised 19 percent of the total population of the country'; about 13 million in 1944
+assessment: Weight: Proven (what the manual says, read in full from page images) · Contested (two of its figures, against the census) | Warrant: Closed (the manual's text) · Open (the Selective Service report it quotes)
+sources: [A live_verified] src-army-manual-m5-leadership-and-the-negro-soldier-1944 https://www.jfklibrary.org/asset-viewer/archives/lihpp-001-001
+
+[E-W6-057-03] W6 1944 certification TA
+The manual says science 'does not support' inborn racial inferiority; its reading list carries a 1941 book co-written by Ales Hrdlicka
+assessment: Weight: Proven (what the manual says, read in full from page images) · Contested (two of its figures, against the census) | Warrant: Closed (the manual's text) · Open (the Selective Service report it quotes)
+sources: [A live_verified] src-army-manual-m5-leadership-and-the-negro-soldier-1944 https://www.jfklibrary.org/asset-viewer/archives/lihpp-001-001
+
+[E-W6-057-04] W6 1944 land TA
+It records 'foreclosures for Negro farm owners' in the Depression
+assessment: Weight: Proven (what the manual says, read in full from page images) · Contested (two of its figures, against the census) | Warrant: Closed (the manual's text) · Open (the Selective Service report it quotes)
+sources: [A live_verified] src-army-manual-m5-leadership-and-the-negro-soldier-1944 https://www.jfklibrary.org/asset-viewer/archives/lihpp-001-001
 
 [w3-1652-counter-move] W3 1652 counter-move TC
 Congregations' moral opposition offered as motivation for the 1652 Providence-Warwick statute (interpretive)
