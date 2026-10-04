@@ -59,7 +59,7 @@ export async function POST(req: Request) {
 
   /* Before the key check, because a rate-limited request should cost nothing
      and say the same thing whether or not the server is configured. */
-  const quota = checkQuota(person.id);
+  const quota = await checkQuota(person.id);
   if (!quota.ok) {
     return NextResponse.json(
       { error: quota.error },
@@ -189,7 +189,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const rec = appendRecord({
+    const rec = await appendRecord({
       surface: 'B',
       /* Was the literal 'operator' for all 64 prior records. This is the field
          the contribution view filters on, and attribution cannot be added to a

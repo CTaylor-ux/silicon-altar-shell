@@ -77,7 +77,7 @@ export async function POST(req: Request) {
    * drop the second one, and a dropped record is the one failure this route
    * exists to prevent. */
   const already = new Set(
-    readRecords()
+    (await readRecords())
       .filter((r) => r.surfaced_by === person.id)
       .map((r) => r.trigger_context.trim())
   );
@@ -107,7 +107,7 @@ export async function POST(req: Request) {
     }
 
     try {
-      const rec = appendRecord({
+      const rec = await appendRecord({
         surface: 'B',
         surfaced_by: person.id,
         trigger_context: e.question,

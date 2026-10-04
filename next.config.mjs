@@ -10,7 +10,16 @@ const nextConfig = {
   // target is a host with a persistent volume, NOT a serverless one, because
   // records/queries.jsonl is written at runtime and losing it would lose the
   // only thing the beta exists to collect.
-  output: 'standalone',
+  // On Vercel the platform packages the functions itself, so standalone is only
+  // for the container build. Records live in Postgres there (lib/db.ts).
+  ...(process.env.VERCEL ? {} : { output: 'standalone' }),
+
+  // /api/ask and /api/warm read lib/corpus.prompt.txt off disk at runtime. Name it
+  // so a serverless bundle is guaranteed to carry it.
+  outputFileTracingIncludes: {
+    '/api/ask': ['./lib/corpus.prompt.txt'],
+    '/api/warm': ['./lib/corpus.prompt.txt'],
+  },
 
   // Default '.next'. SA_DIST_DIR lets a VERIFICATION build write somewhere else so
   // it cannot clobber what a running dev server is serving out of '.next' - see

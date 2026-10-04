@@ -61,11 +61,11 @@ function utcDay(iso: string): string {
 
 export type Usage = { mine: number; everyone: number; day: string };
 
-export function usageToday(personId: string): Usage {
+export async function usageToday(personId: string): Promise<Usage> {
   const day = new Date().toISOString().slice(0, 10);
   let mine = 0;
   let everyone = 0;
-  for (const r of readRecords()) {
+  for (const r of await readRecords()) {
     if (!r.captured_at || utcDay(r.captured_at) !== day) continue;
     everyone++;
     if (r.surfaced_by === personId) mine++;
@@ -82,7 +82,7 @@ export type QuotaVerdict =
   | { ok: true; usage: Usage }
   | { ok: false; status: number; error: string; retryAfterSeconds?: number };
 
-export function checkQuota(personId: string): QuotaVerdict {
+export async function checkQuota(personId: string): Promise<QuotaVerdict> {
   const { perPersonPerDay, globalPerDay, burstSeconds } = limits();
   const now = Date.now();
 
@@ -99,7 +99,7 @@ export function checkQuota(personId: string): QuotaVerdict {
     }
   }
 
-  const usage = usageToday(personId);
+  const usage = await usageToday(personId);
 
   if (globalPerDay > 0 && usage.everyone >= globalPerDay) {
     return {

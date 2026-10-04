@@ -19,6 +19,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { timingSafeEqual } from 'node:crypto';
 import type { Person, PersonRole } from './identity';
+import { hasDb, sql, type Row } from './db';
 
 export type Invite = Person & {
   /** Bearer secret. 32 random bytes, hex. */
@@ -39,7 +40,24 @@ export function invitesPath(): string {
   return INVITES_FILE;
 }
 
-export function readInvites(): Invite[] {
+function valid(list: Invite[]): Invite[] {
+  return list.filter(
+    (i) =>
+      i &&
+      typeof i.token === 'string' &&
+      typeof i.id === 'string' &&
+      typeof i.name === 'string' &&
+      (i.role === 'operator' || i.role === 'researcher')
+  );
+}
+
+/** With DATABASE_URL set the list is the sa_invites table (lib/db.ts);
+ *  otherwise it is invites.json, as before. */
+export async function readInvites(): Promise<Invite[]> {
+  if (hasDb()) {
+    const rows = (await sql()`select body from sa_invites`) as Row[];
+    return valid(rows.map((r) => r.body as Invite));
+  }
   let raw: string;
   try {
     raw = fs.readFileSync(INVITES_FILE, 'utf8');
@@ -57,14 +75,7 @@ export function readInvites(): Invite[] {
     : ((parsed as { invites?: unknown }).invites ?? []);
   if (!Array.isArray(list)) return [];
 
-  return (list as Invite[]).filter(
-    (i) =>
-      i &&
-      typeof i.token === 'string' &&
-      typeof i.id === 'string' &&
-      typeof i.name === 'string' &&
-      (i.role === 'operator' || i.role === 'researcher')
-  );
+  return valid(list as Invite[]);
 }
 
 /** Constant-time over equal-length strings; length inequality is not secret. */
@@ -79,8 +90,8 @@ export type RedeemResult =
   | { ok: true; person: Person }
   | { ok: false; reason: 'unknown' | 'expired' | 'no-list' };
 
-export function redeem(token: string): RedeemResult {
-  const invites = readInvites();
+export async function redeem(token: string): Promise<RedeemResult> {
+  const invites = await readInvites();
   if (invites.length === 0) return { ok: false, reason: 'no-list' };
 
   const hit = invites.find((i) => tokenMatches(i.token, token));
