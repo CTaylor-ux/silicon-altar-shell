@@ -1,6 +1,6 @@
 THE SILICON ALTAR CORPUS
 
-Entries: 819. Windows: 7.
+Entries: 828. Windows: 7.
 
 The corpus states its own scope and spine. Both are load-bearing: they are
 how you tell a genuine gap from something deliberately out of scope.
@@ -15,8 +15,8 @@ WINDOWS:
   Window 2: The Corporate Grid (1602 to 1704) - 112 entries
   Window 3: Colonial Consolidation (1652 to 1787) - 79 entries
   Window 4: The Transfer (1787 to 1854) - 87 entries
-  Window 5: 75-Year Operation (1854 to 1929) - 261 entries
-  Window 6: Digital Migration (1921 to 2029) - 102 entries
+  Window 5: 75-Year Operation (1854 to 1929) - 267 entries
+  Window 6: Digital Migration (1921 to 2029) - 105 entries
 
 Each entry below: [id] window year lane tier [MILESTONE], then title, then
 body, then its curated links to other entries and its thread memberships.
@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 877 sources are opened and 136 are not.
+something is evidenced, say so. 881 sources are opened and 136 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -4187,6 +4187,39 @@ A foreign power reclassifies which Japanese authority is sovereign, mid-war
 Dispatches of 1868. A foreign power determines WHICH JAPANESE AUTHORITY IT WILL TREAT AS SOVEREIGN, while the internal conflict is still running. Recognition is exercised as a choice between contenders rather than an acknowledgement of an outcome. Fourteen years after Kanagawa, the treaty counterparty is reassigned from outside.
 sources: [B live_verified] src-frus-1868p1-d309-d311-japan https://history.state.gov/historicaldocuments/frus1868p1/d311; [A live_verified] src-us-11-597-kanagawa-1854 https://www.govinfo.gov/link/statute/11/597
 
+[E-W5-130-01] W5 1856 information TA
+The Smithsonian publishes Haven's survey of where the peoples of America came from
+1856. Volume 8 of the Smithsonian Contributions to Knowledge carries Samuel F. Haven's 'Archaeology of the United States', a survey of every theory of who first peopled America. He records that descent from the lost ten tribes of Israel 'has found the warmest and most numerous supporters', that Postel held 'all North America was peopled from Mauritania', and that Balboa's men reached a region 'in which they found only blackamoors'. His own close: 'We desire to stop where evidence ceases'.
+sources: [A live_verified] src-haven-archaeology-united-states-1856 https://archive.org/download/smithsoniancontr81856smit/smithsoniancontr81856smit_djvu.txt
+links: rafinesque-primitive-black-nations-1832, rafinesque-the-american-nations-1836, hudson-mauritanian-races-speech-1845, dixon-racial-history-of-man-1923
+
+[E-W5-130-02] W5 1856 population TA
+Hebrew, Mauritanian, Asiatic and indigenous origin theories set side by side, each with its holders named
+assessment: Weight: Proven (what the memoir records, quoted from the 1856 printing) · Supported (the corpus's reading of how it closes, via Haven's own conclusion) | Warrant: Closed (the memoir says these things) · Open (what the earlier authors he reports actually wrote: Postel, Peter Martyr, Torquemada, Thorowgood, Adair, McCulloh, Schoolcraft, all unread)
+sources: [A live_verified] src-haven-archaeology-united-states-1856 https://archive.org/download/smithsoniancontr81856smit/smithsoniancontr81856smit_djvu.txt
+
+[E-W5-130-03] W5 1856 certification TA
+Refereed for the Institution by Peter Force and Brantz Mayer; issued under the Smithsonian's name
+assessment: Weight: Proven (what the memoir records, quoted from the 1856 printing) · Supported (the corpus's reading of how it closes, via Haven's own conclusion) | Warrant: Closed (the memoir says these things) · Open (what the earlier authors he reports actually wrote: Postel, Peter Martyr, Torquemada, Thorowgood, Adair, McCulloh, Schoolcraft, all unread)
+sources: [A live_verified] src-haven-archaeology-united-states-1856 https://archive.org/download/smithsoniancontr81856smit/smithsoniancontr81856smit_djvu.txt
+
+[E-W5-131-01] W5 1923 information TA
+Dixon's The Racial History of Man names 'Proto-Negroid' the leading type in pre-contact New England skulls
+February 1923. Roland B. Dixon of Harvard publishes The Racial History of Man. Sorting skulls by three ratios into eight named types, he reports of crania from Massachusetts and Rhode Island that 'the dominant element in all this area is, most unexpectedly, the Proto-Negroid', and that 'no possibility of historic Negro mixture is admissible'. He finds the same type first among the Iroquois and Lenape. The name, he writes, 'carries with it no implication in regard to skin color, hair form'.
+sources: [A live_verified] src-dixon-racial-history-of-man-1923 https://archive.org/download/racialhistoryofm01dixo/racialhistoryofm01dixo_djvu.txt
+links: haven-archaeology-of-the-united-states-1856, thind-1923, ozawa-1922, 1924-triple-lock-reclassification-chain-step-1924, rafinesque-primitive-black-nations-1832, smithsonian-human-remains-apology-2023
+
+[E-W5-131-02] W5 1923 population TA
+Closes by urging 'conscious selection' of immigrants by type, the year before the 1924 quota law
+assessment: Weight: Proven (what Dixon reports and says, quoted from the 1923 printing) · Supported (the corpus's reading of the book's use, via its closing pages) · Contested (what the skulls show: Dixon's finding against his own stated limits and the Smithsonian's 2024 bar on such typing) | Warrant: Closed (Dixon reports the finding and restates it) · Open (the skull series themselves: Knight 1915, the Peabody and National Museum collections, and where those remains are now)
+sources: [A live_verified] src-dixon-racial-history-of-man-1923 https://archive.org/download/racialhistoryofm01dixo/racialhistoryofm01dixo_djvu.txt
+threads: T-WHITENING-PROJECT
+
+[E-W5-131-03] W5 1923 certification TA
+Built on museum skull collections, the U.S. National Museum's among them; Hrdlicka thanked in the preface
+assessment: Weight: Proven (what Dixon reports and says, quoted from the 1923 printing) · Supported (the corpus's reading of the book's use, via its closing pages) · Contested (what the skulls show: Dixon's finding against his own stated limits and the Smithsonian's 2024 bar on such typing) | Warrant: Closed (Dixon reports the finding and restates it) · Open (the skull series themselves: Knight 1915, the Peabody and National Museum collections, and where those remains are now)
+sources: [A live_verified] src-dixon-racial-history-of-man-1923 https://archive.org/download/racialhistoryofm01dixo/racialhistoryofm01dixo_djvu.txt
+
 [E-W6-001-01] W6 1921 financial TB
 Sheppard-Towner Maternity Act - BIRTH REGISTRATION AS FINANCIAL INSTRUMENT
 November 23, 1921. First federal social welfare program. Provides FEDERAL FUNDING to states for maternal and infant health. THE MECHANISM: to receive federal funds, states must establish UNIFORM BIRTH REGISTRATION. By 1929, every state has a standardized birth certificate system. THE FORENSIC READING: The Act is Layer 2 of the Matryoshka. The 14th Amendment (1868) created the jus soli citizen-class. The 1921 Act creates the DOCUMENTATION SYSTEM that registers every person born into that class. The birth certificate is not a health document - it is a financial instrument. It creates a “legal person” (the UPPERCASE name on the certificate) distinct from the living being. That legal person is a MUNICIPAL BOND - a revenue-generating unit within the Corporate ledger. Each registered birth creates a future taxpayer, debtor, and collateral unit. The 14th Amendment supplies the constitutional authority. The 1921 Act supplies the registration mechanism. The 1933 bankruptcy (HJR 192) supplies the moment when the registered citizen-class becomes the SOLE COLLATERAL for national debt. CHAIN: 14th Amendment (1868, citizen-class created) → 1870 Naturalization Act (jus soli overwrite) → 1871 DC Organic Act (Corporation installed) → 1913 Federal Reserve (Collection Engine) → HERE (registration mechanism) → 1924 Plecker (racial classification on birth certificates) → 1933 HJR 192 (citizen-class becomes debt collateral) → 1935 SSN (permanent individual identifier). The pipeline is complete by 1935. Every American born after 1921 enters the Corporate ledger at birth.
@@ -4708,6 +4741,22 @@ sources: [A live_verified] src-1000-genomes-phase3-2015 https://pmc.ncbi.nlm.nih
 Regional bank failures - Silicon Valley Bank and successors
 March 2023. Silicon Valley Bank failed following a deposit run, the second largest bank failure in United States history at the time, followed within days by Signature Bank and in May by First Republic. Regulators invoked the systemic risk exception to guarantee uninsured deposits. dossier-tc-020-bubble points here from the South Sea Bubble, tracking the recurrence of a failure pattern rather than asserting a causal chain.
 sources: [A live_verified] src-frb-svb-review-2023 https://www.federalreserve.gov/publications/files/svb-review-20230428.pdf
+
+[E-W6-042-01] W6 2023 counter-move TA
+The Smithsonian apologizes for how it collected human remains and forms a task force
+17 April 2023. The Smithsonian announces a task force on the human remains it holds. Secretary Lonnie Bunch III: 'We acknowledge and apologize for the pain our historical practices have caused people, their families and their communities'. On 10 January 2024 the task force reports that the Institution holds the remains of 'more than 30,000 individuals', many gathered under Ales Hrdlicka from 1904 to 1941, and that 'The original intent of collecting these human remains was morally abhorrent'.
+sources: [A live_verified] src-smithsonian-human-remains-release-2023 http://web.archive.org/web/20230923200423/https://www.si.edu/newsdesk/releases/smithsonian-forms-task-force-develop-guidelines-human-remains-collection; [A live_verified] src-smithsonian-human-remains-task-force-report-2024 https://www.si.edu/sites/default/files/about/human-remains-task-force-report.pdf
+links: dixon-racial-history-of-man-1923, haven-archaeology-of-the-united-states-1856, vatican-repudiates-doctrine-of-discovery-2023
+
+[E-W6-042-02] W6 2023 records TA
+Remains of more than 30,000 people held; about half Native American; names known for almost 6,000
+assessment: Weight: Proven (the apology and the task force's findings, quoted from the Institution's own documents) | Warrant: Closed (the Institution apologized and said why the remains were collected) · Open (the Secretary's August 2023 statement and the Washington Post investigation, unread; whether the recommendations became policy)
+sources: [A live_verified] src-smithsonian-human-remains-release-2023 http://web.archive.org/web/20230923200423/https://www.si.edu/newsdesk/releases/smithsonian-forms-task-force-develop-guidelines-human-remains-collection; [A live_verified] src-smithsonian-human-remains-task-force-report-2024 https://www.si.edu/sites/default/files/about/human-remains-task-force-report.pdf
+
+[E-W6-042-03] W6 2023 certification TA
+The task force would bar future research using 'racial identification based on physical features'
+assessment: Weight: Proven (the apology and the task force's findings, quoted from the Institution's own documents) | Warrant: Closed (the Institution apologized and said why the remains were collected) · Open (the Secretary's August 2023 statement and the Washington Post investigation, unread; whether the recommendations became policy)
+sources: [A live_verified] src-smithsonian-human-remains-release-2023 http://web.archive.org/web/20230923200423/https://www.si.edu/newsdesk/releases/smithsonian-forms-task-force-develop-guidelines-human-remains-collection; [A live_verified] src-smithsonian-human-remains-task-force-report-2024 https://www.si.edu/sites/default/files/about/human-remains-task-force-report.pdf
 
 [w3-1652-counter-move] W3 1652 counter-move TC
 Congregations' moral opposition offered as motivation for the 1652 Providence-Warwick statute (interpretive)

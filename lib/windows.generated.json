@@ -136,18 +136,18 @@
       "name": "75-Year Operation",
       "yearRange": "1854 to 1929",
       "overlap": null,
-      "entries": 261,
-      "dossiers": 128,
-      "rows": 261
+      "entries": 267,
+      "dossiers": 130,
+      "rows": 267
     },
     {
       "id": 6,
       "name": "Digital Migration",
       "yearRange": "1921 to 2029",
       "overlap": "overlaps W5, 1921 to 1929",
-      "entries": 102,
-      "dossiers": 41,
-      "rows": 102
+      "entries": 105,
+      "dossiers": 42,
+      "rows": 105
     }
   ]
 }
