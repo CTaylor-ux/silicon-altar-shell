@@ -38,6 +38,7 @@ import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import corpus from './corpus.generated.json';
 import type { CorpusEntry } from './locate';
+import { hasDb, sql, type Row } from './db';
 
 /* Overridable so the deployed container can point this at a mounted volume.
    In the image, cwd is /app and a redeploy replaces it — writing records there
@@ -197,7 +198,13 @@ function ensureDir() {
   if (!fs.existsSync(RECORDS_DIR)) fs.mkdirSync(RECORDS_DIR, { recursive: true });
 }
 
-export function readRecords(): QueryRecord[] {
+/** Every record line, oldest first. Async because the store may be Postgres
+ *  (lib/db.ts); with no DATABASE_URL it is the JSONL file, as before. */
+export async function readRecords(): Promise<QueryRecord[]> {
+  if (hasDb()) {
+    const rows = (await sql()`select body from sa_records order by seq`) as Row[];
+    return rows.map((r) => r.body as QueryRecord);
+  }
   try {
     return fs
       .readFileSync(RECORDS_FILE, 'utf8')
@@ -210,18 +217,25 @@ export function readRecords(): QueryRecord[] {
 }
 
 /** sb-YYYYMMDD-nnn, the Protocol v2 backlog id shape C2 mirrors. */
-function nextId(now: Date): string {
+async function nextId(now: Date): Promise<string> {
   const day = now.toISOString().slice(0, 10).replace(/-/g, '');
   const prefix = `sb-${day}-`;
-  const n = readRecords().filter((r) => r.id.startsWith(prefix)).length + 1;
+  const n = (await readRecords()).filter((r) => r.id.startsWith(prefix)).length + 1;
   return `${prefix}${String(n).padStart(3, '0')}`;
 }
 
 /** Append-only. Never rewrites, so a crash mid-write costs one line, not the file. */
-export function appendRecord(r: Omit<QueryRecord, 'id' | 'captured_at'>): QueryRecord {
-  ensureDir();
+export async function appendRecord(
+  r: Omit<QueryRecord, 'id' | 'captured_at'>
+): Promise<QueryRecord> {
   const now = new Date();
-  const full: QueryRecord = { id: nextId(now), captured_at: now.toISOString(), ...r };
+  const full: QueryRecord = { id: await nextId(now), captured_at: now.toISOString(), ...r };
+  if (hasDb()) {
+    await sql()`insert into sa_records (id, captured_at, body)
+                values (${full.id}, ${full.captured_at}, ${JSON.stringify(full)}::jsonb)`;
+    return full;
+  }
+  ensureDir();
   fs.appendFileSync(RECORDS_FILE, JSON.stringify(full) + '\n', 'utf8');
   return full;
 }

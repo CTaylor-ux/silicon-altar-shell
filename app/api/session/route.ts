@@ -78,7 +78,7 @@ export async function POST(req: Request) {
   const token = (body.token ?? '').trim();
   if (!token) return NextResponse.json({ error: 'No invite code given.' }, { status: 400 });
 
-  const result = redeem(token);
+  const result = await redeem(token);
   if (!result.ok) {
     /* One message for every failure. Distinguishing "unknown" from "expired"
        tells a guesser which half of the space they are in. The reason is

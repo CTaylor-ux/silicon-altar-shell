@@ -31,9 +31,9 @@ export async function GET(req: Request) {
   const sinceRaw = url.searchParams.get('since');
   const since = sinceRaw && !Number.isNaN(Date.parse(sinceRaw)) ? sinceRaw : null;
 
-  const contributions = contributionsFor(person.id);
+  const contributions = await contributionsFor(person.id);
   const { perPersonPerDay } = limits();
-  const usage = usageToday(person.id);
+  const usage = await usageToday(person.id);
 
   return NextResponse.json({
     person,

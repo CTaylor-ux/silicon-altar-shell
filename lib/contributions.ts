@@ -90,9 +90,9 @@ function nonEmpty(s: string | null | undefined): string | null {
  * its own decision history and the timeline needs no reconstruction. Lines for
  * one id are in file order; the last is current.
  */
-export function contributionsFor(personId: string): Contribution[] {
+export async function contributionsFor(personId: string): Promise<Contribution[]> {
   const byId = new Map<string, QueryRecord[]>();
-  for (const r of readRecords()) {
+  for (const r of await readRecords()) {
     if (r.surfaced_by !== personId) continue;
     const list = byId.get(r.id);
     if (list) list.push(r);

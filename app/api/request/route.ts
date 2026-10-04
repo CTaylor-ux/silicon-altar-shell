@@ -13,6 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { NextResponse } from 'next/server';
+import { hasDb, sql } from '@/lib/db';
 
 export const runtime = 'nodejs';
 
@@ -54,10 +55,21 @@ export async function POST(req: Request) {
   }
   recent.set(ip, [...mine, now]);
 
+  const entry = { at: new Date(now).toISOString(), name, email, role, note };
+  /* Serverless hosts keep no disk between requests, so there the request goes to
+     Postgres (lib/db.ts). The row cap plays the part of the file-size cap. */
+  if (hasDb()) {
+    const [{ n }] = (await sql()`select count(*)::int as n from sa_invite_requests`) as { n: number }[];
+    if (n >= 5000) {
+      return NextResponse.json({ error: 'Requests are closed for the moment.' }, { status: 503 });
+    }
+    await sql()`insert into sa_invite_requests (at, body) values (${entry.at}, ${JSON.stringify(entry)}::jsonb)`;
+    return NextResponse.json({ ok: true });
+  }
   if (!fs.existsSync(DIR)) fs.mkdirSync(DIR, { recursive: true });
   if (fs.existsSync(FILE) && fs.statSync(FILE).size > MAX_FILE_BYTES) {
     return NextResponse.json({ error: 'Requests are closed for the moment.' }, { status: 503 });
   }
-  fs.appendFileSync(FILE, JSON.stringify({ at: new Date(now).toISOString(), name, email, role, note }) + '\n', { mode: 0o600 });
+  fs.appendFileSync(FILE, JSON.stringify(entry) + '\n', { mode: 0o600 });
   return NextResponse.json({ ok: true });
 }

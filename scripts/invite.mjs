@@ -23,7 +23,16 @@ import { randomBytes } from 'node:crypto';
 
 const FILE = path.join(process.cwd(), 'invites.json');
 
-function read() {
+/* With DATABASE_URL set this script works on the LIVE invite list, the sa_invites
+   table (lib/db.ts), and leaves invites.json alone. Run it that way with
+     node --env-file=.env.production.local scripts/invite.mjs "Name"
+   Without it, the list is invites.json, as before. */
+const DB_URL = process.env.DATABASE_URL || process.env.POSTGRES_URL || '';
+const WHERE = DB_URL ? 'the live database (sa_invites)' : 'invites.json';
+const sql = DB_URL ? (await import('@neondatabase/serverless')).neon(DB_URL) : null;
+
+async function read() {
+  if (sql) return (await sql`select body from sa_invites order by created_at`).map((r) => r.body);
   try {
     const parsed = JSON.parse(fs.readFileSync(FILE, 'utf8'));
     return Array.isArray(parsed) ? parsed : (parsed.invites ?? []);
@@ -32,7 +41,16 @@ function read() {
   }
 }
 
-function write(list) {
+async function write(list) {
+  if (sql) {
+    const keep = list.map((i) => i.id);
+    await sql`delete from sa_invites where not (id = any(${keep}))`;
+    for (const i of list) {
+      await sql`insert into sa_invites (id, body) values (${i.id}, ${JSON.stringify(i)}::jsonb)
+                on conflict (id) do update set body = excluded.body`;
+    }
+    return;
+  }
   fs.writeFileSync(FILE, JSON.stringify({ invites: list }, null, 2) + '\n', 'utf8');
   fs.chmodSync(FILE, 0o600);
 }
@@ -53,7 +71,7 @@ function arg(flag) {
 }
 const has = (flag) => process.argv.includes(flag);
 
-const list = read();
+const list = await read();
 
 /* ------------------------------------------------------------------- --list */
 if (has('--list')) {
@@ -80,7 +98,7 @@ if (revoke) {
     console.error(`\n  No invite with id "${revoke}". Run --list to see them.\n`);
     process.exit(1);
   }
-  write(kept);
+  await write(kept);
   console.log(`\n  Revoked ${revoke}. Their existing session cookie stays valid until it`);
   console.log('  expires; rotate SESSION_SECRET to cut every session immediately.\n');
   console.log('  Their records are untouched and keep their attribution.\n');
@@ -113,13 +131,13 @@ const invite = {
   ...(arg('--expires') ? { expires: arg('--expires') } : {}),
 };
 
-write([...list, invite]);
+await write([...list, invite]);
 
 console.log(`\n  Minted ${invite.role} invite for ${invite.name}`);
 console.log(`  id:   ${invite.id}   (permanent — this is their surfaced_by)`);
 console.log(`\n  code: ${invite.token}\n`);
-console.log('  Send that code to them. It is shown once here and stored in invites.json,');
-console.log('  which is gitignored. They redeem it at /enter.\n');
+console.log(`  Send that code to them. It is shown once here and stored in ${WHERE}.`);
+console.log('  They redeem it at /enter.\n');
 
 if (invite.role === 'operator') {
   console.log('  Operator: add this line to .env.local so `npm run keepwarm` can sign in:');

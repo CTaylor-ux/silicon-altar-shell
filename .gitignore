@@ -31,3 +31,8 @@ public/landing/film.mp4
 
 # Invitation requests from the public landing page: names and email addresses. Never commit.
 records/invite-requests.jsonl
+
+# What db-pull copies down from the live database. Personal data; never commit.
+records/live/
+.env.production.local
+.vercel
