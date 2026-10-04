@@ -17,6 +17,9 @@ import { SESSION_COOKIE, signSession, verifySession } from '@/lib/identity';
 export const runtime = 'nodejs';
 
 const COOKIE_TTL_DAYS = 30;
+/* The operator asked (2026-10-04) not to be sent back to /enter every month. Only
+   the operator role gets the long session; invited researchers stay at 30 days. */
+const OPERATOR_TTL_DAYS = 365;
 
 /* Redemption is the one place a secret is guessed rather than presented, so it
    is the one place worth throttling by origin. Tokens are 32 random bytes and
@@ -91,14 +94,15 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: hint }, { status: 401 });
   }
 
-  const cookie = await signSession(result.person, got.secret, COOKIE_TTL_DAYS);
+  const ttlDays = result.person.role === 'operator' ? OPERATOR_TTL_DAYS : COOKIE_TTL_DAYS;
+  const cookie = await signSession(result.person, got.secret, ttlDays);
   const res = NextResponse.json({ person: result.person });
   res.cookies.set(SESSION_COOKIE, cookie, {
     httpOnly: true,
     sameSite: 'lax',
     secure: process.env.NODE_ENV === 'production',
     path: '/',
-    maxAge: COOKIE_TTL_DAYS * 86400,
+    maxAge: ttlDays * 86400,
   });
   console.log(`[session] ${result.person.id} (${result.person.role}) signed in`);
   return res;
