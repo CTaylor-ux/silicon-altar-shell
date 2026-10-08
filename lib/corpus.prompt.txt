@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 934 sources are opened and 136 are not.
+something is evidenced, say so. 935 sources are opened and 136 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
