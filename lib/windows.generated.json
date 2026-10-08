@@ -109,36 +109,36 @@
       "name": "The Corporate Grid",
       "yearRange": "1602 to 1704",
       "overlap": null,
-      "entries": 112,
-      "dossiers": 62,
-      "rows": 112
+      "entries": 116,
+      "dossiers": 63,
+      "rows": 116
     },
     {
       "id": 3,
       "name": "Colonial Consolidation",
       "yearRange": "1652 to 1787",
       "overlap": "overlaps W2, 1652 to 1704: Rhode Island Franchise Transition",
-      "entries": 79,
-      "dossiers": 40,
-      "rows": 79
+      "entries": 97,
+      "dossiers": 44,
+      "rows": 97
     },
     {
       "id": 4,
       "name": "The Transfer",
       "yearRange": "1787 to 1854",
       "overlap": null,
-      "entries": 87,
-      "dossiers": 63,
-      "rows": 87
+      "entries": 144,
+      "dossiers": 76,
+      "rows": 144
     },
     {
       "id": 5,
       "name": "75-Year Operation",
       "yearRange": "1854 to 1929",
       "overlap": null,
-      "entries": 267,
-      "dossiers": 130,
-      "rows": 267
+      "entries": 285,
+      "dossiers": 134,
+      "rows": 285
     },
     {
       "id": 6,

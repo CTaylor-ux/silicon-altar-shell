@@ -1,6 +1,6 @@
 THE SILICON ALTAR CORPUS
 
-Entries: 876. Windows: 7.
+Entries: 973. Windows: 7.
 
 The corpus states its own scope and spine. Both are load-bearing: they are
 how you tell a genuine gap from something deliberately out of scope.
@@ -12,10 +12,10 @@ FRAMEWORK SPINE: Three-Track Labor System (FW-006). W3 is where all three tracks
 WINDOWS:
   Window 0: The Template (deep time to pre-contact) - 77 entries
   Window 1: Launch Codes (1452 to 1602) - 101 entries
-  Window 2: The Corporate Grid (1602 to 1704) - 112 entries
-  Window 3: Colonial Consolidation (1652 to 1787) - 79 entries
-  Window 4: The Transfer (1787 to 1854) - 87 entries
-  Window 5: 75-Year Operation (1854 to 1929) - 267 entries
+  Window 2: The Corporate Grid (1602 to 1704) - 116 entries
+  Window 3: Colonial Consolidation (1652 to 1787) - 97 entries
+  Window 4: The Transfer (1787 to 1854) - 144 entries
+  Window 5: 75-Year Operation (1854 to 1929) - 285 entries
   Window 6: Digital Migration (1921 to 2029) - 153 entries
 
 Each entry below: [id] window year lane tier [MILESTONE], then title, then
@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 935 sources are opened and 136 are not.
+something is evidenced, say so. 972 sources are opened and 136 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -2074,6 +2074,27 @@ assessment: Weight: Proven (the king's question and the council's answer, the co
 sources: [A live_verified] src-scelle-traite-negriere-1906 https://archive.org/details/latraitengri01sceluoft
 threads: T-ASIENTO, T-SOFTWARE-NEUTRALITY
 
+[E-W2-050-01] W2 1674b records TA
+Woodward, on his Westo voyage, records the 'Cowatoe and Chorakae' upriver as enemies of the Westo
+Carolina, 31 December 1674. Henry Woodward reports to the Earl of Shaftesbury on his journey to the Westo town. 'Eight daies journey from ye towne' the river divides, and there 'inhabit ye Cowatoe and Chorakae' 'Indians wth whom they are at continual warrs'. He did not go there; it is what he was told lay beyond the Westo. That these are the Cherokees is an editor's note of 1911. A Carolina act of 1691 names the 'Attoho, Kolegey, or Cheraque Indians'.
+sources: [A live_verified] src-woodward-westoe-voiage-1674 https://archive.org/details/narrativesofearl00sall; [A live_verified] src-sc-statutes-at-large-v2-indian-trade-act-1691 https://archive.org/details/statutesatlargeo02edit; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+threads: T-NOUN-TO-ADJECTIVE
+
+[E-W2-050-02] W2 1674b financial TA
+The Westo 'truck drest deare skins furrs' and young Indian slaves for arms from the northward
+assessment: Weight: Proven (the wording of the letter and of the 1691 act) | Warrant: Closed (the name is in the 1674 letter) · Open (that Chorakae are the Cherokee: an editor's identification)
+sources: [A live_verified] src-woodward-westoe-voiage-1674 https://archive.org/details/narrativesofearl00sall; [A live_verified] src-sc-statutes-at-large-v2-indian-trade-act-1691 https://archive.org/details/statutesatlargeo02edit; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+
+[E-W2-050-03] W2 1674b military TA
+The Westo are 'at continual warrs' with the people upriver
+assessment: Weight: Proven (the wording of the letter and of the 1691 act) | Warrant: Closed (the name is in the 1674 letter) · Open (that Chorakae are the Cherokee: an editor's identification)
+sources: [A live_verified] src-woodward-westoe-voiage-1674 https://archive.org/details/narrativesofearl00sall; [A live_verified] src-sc-statutes-at-large-v2-indian-trade-act-1691 https://archive.org/details/statutesatlargeo02edit; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+
+[E-W2-050-04] W2 1674b legal TA
+1691: the Carolina Indian trade act names the 'Cheraque Indians'
+assessment: Weight: Proven (the wording of the letter and of the 1691 act) | Warrant: Closed (the name is in the 1674 letter) · Open (that Chorakae are the Cherokee: an editor's identification)
+sources: [A live_verified] src-woodward-westoe-voiage-1674 https://archive.org/details/narrativesofearl00sall; [A live_verified] src-sc-statutes-at-large-v2-indian-trade-act-1691 https://archive.org/details/statutesatlargeo02edit; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+
 [E-W4-001-01] W4 1789 military TA MILESTONE
 French Revolution begins
 July 14. The Senior Lienholder (Bourbon monarchy) is about to be decapitated. Louis XVI, the French party to the 1778 Treaty of Alliance (concluded in the name of 'the most Christian King' and signed for him by Conrad Alexandre Gerard), will be executed Jan 1793. The lien doesn’t die with the king; it is inherited by successor governments.
@@ -2616,6 +2637,361 @@ framework: The sovereignty instrument that survives the protectorate. Article 25
 assessment: Weight: Proven (the instrument read in full from the Statutes at Large, Article 25 and the cross-reference footnote verbatim) | Warrant: Closed (the treaty text) · Open (whether the two W6 titles are amended, which is a separate frozen-field ruling)
 sources: [A live_verified] src-treaty-morocco-1836 https://www.govinfo.gov/content/pkg/STATUTE-8/pdf/STATUTE-8-Pg484.pdf; [A live_verified] src-icj-morocco-1952 https://www.icj-cij.org/case/11
 threads: T-SOFTWARE-NEUTRALITY
+
+[E-W4-064-01] W4 1791 legal TA MILESTONE
+Treaty of Holston: the 'Cherokee nation', its lands guaranteed, to be led 'to a greater degree of civilization'
+On the bank of the Holston, 2 July 1791. William Blount and forty-one 'Chiefs and Warriors of the Cherokee Nation' sign. Article XIV: 'That the Cherokee nation may be led to a greater degree of civilization, and to become herdsmen and cultivators, instead of remaining in a state of hunters'. Article VII: 'The United States solemnly guarantee to the Cherokee nation, all their lands not hereby ceded.'
+sources: [A live_verified] src-kappler-v2-treaty-of-holston-1791 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1791-0029
+links: treaty-of-hopewell-1785
+threads: T-DISCOVERY-DOCTRINE, T-NOUN-TO-ADJECTIVE
+
+[E-W4-064-02] W4 1791 financial TA
+An annuity, 'the sum of one thousand dollars to be paid annually', raised to fifteen hundred in 1792
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (how far the clause was carried out)
+sources: [A live_verified] src-kappler-v2-treaty-of-holston-1791 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1791-0029
+links: treaty-of-hopewell-1785
+
+[E-W4-064-03] W4 1791 sovereign TA
+Six years after Hopewell's 'all the Cherokees', the text reads 'the whole Cherokee nation of Indians'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (how far the clause was carried out)
+sources: [A live_verified] src-kappler-v2-treaty-of-holston-1791 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1791-0029
+links: treaty-of-hopewell-1785
+
+[E-W4-064-04] W4 1791 counter-move TA
+A settler on Cherokee land forfeits protection: 'the Cherokees may punish him or not, as they please'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (how far the clause was carried out)
+sources: [A live_verified] src-kappler-v2-treaty-of-holston-1791 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1791-0029
+links: treaty-of-hopewell-1785
+
+[E-W4-064-05] W4 1791 innovation TA
+The United States to furnish 'useful implements of husbandry' and up to four interpreters
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (how far the clause was carried out)
+sources: [A live_verified] src-kappler-v2-treaty-of-holston-1791 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1791-0029
+links: treaty-of-hopewell-1785
+
+[E-W4-065-01] W4 1798 land TA
+Treaty of Tellico: citizens settle past the line, are removed, and the land they took is then ceded
+In the council house near Tellico, 2 October 1798. The preamble: 'divers settlements were made, by divers citizens of the United States, upon the Indian lands over and beyond the boundaries'. The settlers 'were removed from the said Indian lands by authority of the United States'. Then 'the Cherokee nation agree, and do hereby relinquish and cede to the United States' that land, for goods 'to the amount of five thousand dollars' and a thousand a year.
+sources: [A live_verified] src-kappler-v2-treaty-of-tellico-1798 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1798-0051
+links: treaty-of-holston-1791
+threads: T-DISCOVERY-DOCTRINE
+
+[E-W4-065-02] W4 1798 legal TA
+The cession is made 'In acknowledgement for the protection of the United States'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the sequence the preamble gives) · Open (the acreage)
+sources: [A live_verified] src-kappler-v2-treaty-of-tellico-1798 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1798-0051
+links: treaty-of-holston-1791
+
+[E-W4-065-03] W4 1798 financial TA
+Goods 'to the amount of five thousand dollars', and one thousand dollars a year more
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the sequence the preamble gives) · Open (the acreage)
+sources: [A live_verified] src-kappler-v2-treaty-of-tellico-1798 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1798-0051
+links: treaty-of-holston-1791
+
+[E-W4-066-01] W4 1816c land TA
+Three Cherokee treaties in 1816: land ceded to a state, roads opened, and silence counted as consent
+At Washington, 22 March 1816, six men 'duly authorized and empowered by the said Nation' 'cede to the State of South Carolina' the Cherokee land within it, for 'the sum of five thousand dollars', and agree to roads 'such road or roads, through any part of the Cherokee nation'. At the Chickasaw council house, 14 September, 'The Cherokee nation relinquish to the United States all claim' south and west of a line. If the nation does not meet, the commissioners may report 'a tacit ratification'.
+sources: [A live_verified] src-kappler-v2-cherokee-treaties-1816 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0124
+links: treaty-of-tellico-1798
+threads: T-DISCOVERY-DOCTRINE
+
+[E-W4-066-02] W4 1816c financial TA
+'an annuity of six thousand dollars, to continue for ten successive years'
+assessment: Weight: Proven (the treaties' words) | Warrant: Closed (the terms) · Open (who met at Turkey Town)
+sources: [A live_verified] src-kappler-v2-cherokee-treaties-1816 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0124
+links: treaty-of-tellico-1798
+
+[E-W4-066-03] W4 1816c sovereign TA
+'Ratified at Turkey Town, by the whole Cherokee nation in council assembled.'
+assessment: Weight: Proven (the treaties' words) | Warrant: Closed (the terms) · Open (who met at Turkey Town)
+sources: [A live_verified] src-kappler-v2-cherokee-treaties-1816 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0124
+links: treaty-of-tellico-1798
+
+[E-W4-066-04] W4 1816c military TA
+'twenty-five thousand five hundred dollars' for losses to the militia's march
+assessment: Weight: Proven (the treaties' words) | Warrant: Closed (the terms) · Open (who met at Turkey Town)
+sources: [A live_verified] src-kappler-v2-cherokee-treaties-1816 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1816-0124
+links: treaty-of-tellico-1798
+
+[E-W4-067-01] W4 1817b legal TA MILESTONE
+Treaty of the Cherokee Agency: go west, or stay as citizens of the United States on 640 acres
+Cherokee Agency, 8 July 1817. The preamble recites two wishes carried to Washington in 1808: the upper towns' 'to begin the establishment of fixed laws and a regular government'; the lower towns' 'to continue the hunter life' and 'to remove across the Mississippi river'. Land is exchanged 'acre for acre'. Article 8: heads of families 'who may wish to become citizens of the United States' are to have 'a reservation of six hundred and forty acres'.
+sources: [A live_verified] src-kappler-v2-treaty-cherokee-agency-1817 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1817-0140
+links: cherokee-treaties-of-1816, treaty-of-holston-1791
+threads: T-NOUN-TO-ADJECTIVE, T-DISCOVERY-DOCTRINE
+
+[E-W4-067-02] W4 1817b population TA
+'a census shall be taken of the whole Cherokee nation' in June 1818
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the offer) · Open (how many took it, and what became of them)
+sources: [A live_verified] src-kappler-v2-treaty-cherokee-agency-1817 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1817-0140
+links: cherokee-treaties-of-1816, treaty-of-holston-1791
+
+[E-W4-067-03] W4 1817b land TA
+The reservation is 'a life estate with a reversion in fee simple to their children'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the offer) · Open (how many took it, and what became of them)
+sources: [A live_verified] src-kappler-v2-treaty-cherokee-agency-1817 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1817-0140
+links: cherokee-treaties-of-1816, treaty-of-holston-1791
+
+[E-W4-067-04] W4 1817b financial TA
+To each emigrant: 'one rifle gun and ammunition, one blanket, and one brass kettle'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the offer) · Open (how many took it, and what became of them)
+sources: [A live_verified] src-kappler-v2-treaty-cherokee-agency-1817 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1817-0140
+links: cherokee-treaties-of-1816, treaty-of-holston-1791
+
+[E-W4-068-01] W4 1819 legal TA
+Treaty of Washington, 1819: the census dropped, a school fund made, citizenship reservations confirmed
+Washington, 27 February 1819. John C. Calhoun and twelve Cherokee sign. 'a greater part of the Cherokee nation have expressed an earnest desire to remain on this side of the Mississippi', and seek 'the civilization and preservation of their nation'. The census promised in 1817 is set aside; those gone west are taken as one third. A tract is ceded 'in trust for the Cherokee nation as a school fund'. Reservations of 640 acres stand for those 'who choose to become citizens of the United States'.
+sources: [A live_verified] src-kappler-v2-treaty-washington-1819 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1819-0177
+links: treaty-of-the-cherokee-agency-1817
+threads: T-NOUN-TO-ADJECTIVE
+
+[E-W4-068-02] W4 1819 records TA
+The annexed list: 'Total No. of reservees, 31'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (the reservees' later record)
+sources: [A live_verified] src-kappler-v2-treaty-washington-1819 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1819-0177
+links: treaty-of-the-cherokee-agency-1817
+
+[E-W4-068-03] W4 1819 financial TA
+The annuity split 'two-thirds to the Cherokees east of the Mississippi, and one-third to the Cherokees west of that river'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (the reservees' later record)
+sources: [A live_verified] src-kappler-v2-treaty-washington-1819 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1819-0177
+links: treaty-of-the-cherokee-agency-1817
+
+[E-W4-068-04] W4 1819 information TA
+The fund is 'to diffuse the benefits of education among the Cherokee nation on this side of the Mississippi'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (the reservees' later record)
+sources: [A live_verified] src-kappler-v2-treaty-washington-1819 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1819-0177
+links: treaty-of-the-cherokee-agency-1817
+
+[E-W4-069-01] W4 1802b legal TA MILESTONE
+The Georgia compact: the United States undertakes to extinguish the Indian title within Georgia
+Washington, 24 April 1802. 'The State of Georgia cedes to the United States all the right, title, and claim' to its western lands, for 'one million two hundred and fifty thousand dollars'. In return 'the United States shall, at their own expense, extinguish, for the use of Georgia, as early as the same can be peaceably obtained, on reasonable terms, the Indian title' to named Creek lands, and to all other lands in Georgia. The compact names the Creeks; the word Cherokee is not in it.
+sources: [A live_verified] src-asp-public-lands-v1-georgia-cession-1802 https://archive.org/details/americanstatepap_l01unit
+links: treaty-of-tellico-1798, indian-removal-act-1830
+threads: T-DISCOVERY-DOCTRINE, T-FRANCHISE-TRANSFER
+
+[E-W4-069-02] W4 1802b land TA
+The western claims of Georgia become 'a common fund, for the use and benefit of the United States'
+assessment: Weight: Proven (the compact's words) | Warrant: Closed (the promise) · Open (how Georgia later pressed it: unread here)
+sources: [A live_verified] src-asp-public-lands-v1-georgia-cession-1802 https://archive.org/details/americanstatepap_l01unit
+links: treaty-of-tellico-1798, indian-removal-act-1830
+
+[E-W4-069-03] W4 1802b sovereign TA
+The Northwest Ordinance is extended to the ceded country, 'that article only excepted which forbids slavery'
+assessment: Weight: Proven (the compact's words) | Warrant: Closed (the promise) · Open (how Georgia later pressed it: unread here)
+sources: [A live_verified] src-asp-public-lands-v1-georgia-cession-1802 https://archive.org/details/americanstatepap_l01unit
+links: treaty-of-tellico-1798, indian-removal-act-1830
+
+[E-W4-069-04] W4 1802b financial TA
+The price to Georgia: 'one million two hundred and fifty thousand dollars'
+assessment: Weight: Proven (the compact's words) | Warrant: Closed (the promise) · Open (how Georgia later pressed it: unread here)
+sources: [A live_verified] src-asp-public-lands-v1-georgia-cession-1802 https://archive.org/details/americanstatepap_l01unit
+links: treaty-of-tellico-1798, indian-removal-act-1830
+
+[E-W4-070-01] W4 1819b legal TA
+The Civilization Fund Act: ten thousand dollars a year for 'the habits and arts of civilization'
+3 March 1819. Congress passes 'An Act making provision for the civilization of the Indian' tribes adjoining the frontier settlements. To provide against 'the further decline and final extinction of the Indian tribes', and to introduce 'the habits and arts of civilization', the President may, 'with their own consent', employ persons to teach agriculture and 'reading, writing, and arithmetic'. The act names no tribe, no mission and no school.
+sources: [A live_verified] src-3-stat-516-civilization-fund-act-1819 https://www.govinfo.gov/content/pkg/STATUTE-3/pdf/STATUTE-3-Pg516-3.pdf; [A live_verified] src-calhoun-order-1824-mckenney-memoirs-1846 https://archive.org/details/memoirsoffpers00mckerich
+links: treaty-of-holston-1791, cherokee-treaty-of-washington-1819
+threads: T-WHITENING-PROJECT
+
+[E-W4-070-02] W4 1819b financial TA
+Appropriated: 'the annual sum of ten thousand' dollars
+assessment: Weight: Proven (the act's words) | Warrant: Closed (what Congress enacted) · Open (who was paid, and for what)
+sources: [A live_verified] src-3-stat-516-civilization-fund-act-1819 https://www.govinfo.gov/content/pkg/STATUTE-3/pdf/STATUTE-3-Pg516-3.pdf; [A live_verified] src-calhoun-order-1824-mckenney-memoirs-1846 https://archive.org/details/memoirsoffpers00mckerich
+links: treaty-of-holston-1791, cherokee-treaty-of-washington-1819
+
+[E-W4-070-03] W4 1819b records TA
+1824: 'The administration of the fund for the civilization of the Indians' is given to the new Indian bureau
+assessment: Weight: Proven (the act's words) | Warrant: Closed (what Congress enacted) · Open (who was paid, and for what)
+sources: [A live_verified] src-3-stat-516-civilization-fund-act-1819 https://www.govinfo.gov/content/pkg/STATUTE-3/pdf/STATUTE-3-Pg516-3.pdf; [A live_verified] src-calhoun-order-1824-mckenney-memoirs-1846 https://archive.org/details/memoirsoffpers00mckerich
+links: treaty-of-holston-1791, cherokee-treaty-of-washington-1819
+
+[E-W4-071-01] W4 1824b records TA
+A letter from the Secretary of War creates the Indian bureau; Congress follows in 1832 and 1849
+Department of War, 11 March 1824. John C. Calhoun to Thomas McKenney: 'To you are assigned the duties of the Bureau of Indian Affairs in this department'. He is to 'take charge of the appropriations for annuities'; the correspondence of superintendents and agents is to pass through him. It is a letter, not a statute. In 1832 Congress creates 'a commissioner of Indian affairs' under the Secretary of War. In 1849 his supervision passes to the new Department of the Interior.
+sources: [A live_verified] src-calhoun-order-1824-mckenney-memoirs-1846 https://archive.org/details/memoirsoffpers00mckerich; [A live_verified] src-4-stat-564-commissioner-of-indian-affairs-1832 https://www.govinfo.gov/content/pkg/STATUTE-4/pdf/STATUTE-4-Pg564.pdf; [A live_verified] src-9-stat-395-department-of-the-interior-1849 https://www.govinfo.gov/content/pkg/STATUTE-9/pdf/STATUTE-9-Pg395.pdf
+links: civilization-fund-act-1819
+threads: T-TRUSTEE-HIERARCHY-FIVE-TIER
+
+[E-W4-071-02] W4 1824b legal TA
+1832: the commissioner is to 'have the direction and management of all Indian affairs'
+assessment: Weight: Proven (the letter and the two acts) | Warrant: Closed (the three steps) · Open (the 1826 congressional printing of the letter)
+sources: [A live_verified] src-calhoun-order-1824-mckenney-memoirs-1846 https://archive.org/details/memoirsoffpers00mckerich; [A live_verified] src-4-stat-564-commissioner-of-indian-affairs-1832 https://www.govinfo.gov/content/pkg/STATUTE-4/pdf/STATUTE-4-Pg564.pdf; [A live_verified] src-9-stat-395-department-of-the-interior-1849 https://www.govinfo.gov/content/pkg/STATUTE-9/pdf/STATUTE-9-Pg395.pdf
+links: civilization-fund-act-1819
+
+[E-W4-071-03] W4 1824b sovereign TA
+1849: the Interior Secretary takes 'the supervisory and appellate powers now exercised by the Secretary of the War Department'
+assessment: Weight: Proven (the letter and the two acts) | Warrant: Closed (the three steps) · Open (the 1826 congressional printing of the letter)
+sources: [A live_verified] src-calhoun-order-1824-mckenney-memoirs-1846 https://archive.org/details/memoirsoffpers00mckerich; [A live_verified] src-4-stat-564-commissioner-of-indian-affairs-1832 https://www.govinfo.gov/content/pkg/STATUTE-4/pdf/STATUTE-4-Pg564.pdf; [A live_verified] src-9-stat-395-department-of-the-interior-1849 https://www.govinfo.gov/content/pkg/STATUTE-9/pdf/STATUTE-9-Pg395.pdf
+links: civilization-fund-act-1819
+
+[E-W4-071-04] W4 1824b financial TA
+The commissioner's 'salary of three thousand dollars per annum'
+assessment: Weight: Proven (the letter and the two acts) | Warrant: Closed (the three steps) · Open (the 1826 congressional printing of the letter)
+sources: [A live_verified] src-calhoun-order-1824-mckenney-memoirs-1846 https://archive.org/details/memoirsoffpers00mckerich; [A live_verified] src-4-stat-564-commissioner-of-indian-affairs-1832 https://www.govinfo.gov/content/pkg/STATUTE-4/pdf/STATUTE-4-Pg564.pdf; [A live_verified] src-9-stat-395-department-of-the-interior-1849 https://www.govinfo.gov/content/pkg/STATUTE-9/pdf/STATUTE-9-Pg395.pdf
+links: civilization-fund-act-1819
+
+[E-W4-072-01] W4 1827 legal TA MILESTONE
+The Cherokee constitution: common land, three departments, and descent rules that except 'the African race'
+New Echota, 26 July 1827. 'WE, THE REPRESENTATIVES of the people of the Cherokee Nation, in Convention assembled' adopt a constitution of three departments. The lands 'are, and shall remain, the common property of the Nation'; citizens own only their improvements and may not sell them to the United States or its citizens. Rights run to 'The descendants of Cherokee men by all free women, except the African race', and to 'the posterity of Cherokee women by all free men'.
+sources: [A live_verified] src-laws-of-the-cherokee-nation-1852 https://archive.org/details/GR_670; [B live_verified] src-cherokee-phoenix-1828-wcu-transcription https://www.wcu.edu/library/DigitalCollections/CherokeePhoenix/
+links: treaty-of-the-cherokee-agency-1817, cherokee-nation-georgia-1831
+threads: T-NOUN-TO-ADJECTIVE, T-WHITENING-PROJECT
+
+[E-W4-072-02] W4 1827 population TA
+Office is barred to any 'person who is of negro or' mulatto parentage, 'either by the father or mother side'
+assessment: Weight: Proven (the constitution's words, read on the page) | Warrant: Closed (the clauses) · Open (who called the convention, and why then)
+sources: [A live_verified] src-laws-of-the-cherokee-nation-1852 https://archive.org/details/GR_670; [B live_verified] src-cherokee-phoenix-1828-wcu-transcription https://www.wcu.edu/library/DigitalCollections/CherokeePhoenix/
+links: treaty-of-the-cherokee-agency-1817, cherokee-nation-georgia-1831
+
+[E-W4-072-03] W4 1827 land TA
+Citizens 'shall possess no right nor power to dispose of their improvements' to the United States or its citizens
+assessment: Weight: Proven (the constitution's words, read on the page) | Warrant: Closed (the clauses) · Open (who called the convention, and why then)
+sources: [A live_verified] src-laws-of-the-cherokee-nation-1852 https://archive.org/details/GR_670; [B live_verified] src-cherokee-phoenix-1828-wcu-transcription https://www.wcu.edu/library/DigitalCollections/CherokeePhoenix/
+links: treaty-of-the-cherokee-agency-1817, cherokee-nation-georgia-1831
+
+[E-W4-072-04] W4 1827 sovereign TA
+The boundaries are 'the lands solemnly guarantied and reserved forever to the Cherokee Nation by the Treaties concluded with the United States'
+assessment: Weight: Proven (the constitution's words, read on the page) | Warrant: Closed (the clauses) · Open (who called the convention, and why then)
+sources: [A live_verified] src-laws-of-the-cherokee-nation-1852 https://archive.org/details/GR_670; [B live_verified] src-cherokee-phoenix-1828-wcu-transcription https://www.wcu.edu/library/DigitalCollections/CherokeePhoenix/
+links: treaty-of-the-cherokee-agency-1817, cherokee-nation-georgia-1831
+
+[E-W4-072-05] W4 1827 records TA
+An earlier law, 1824: 'all free negroes coming into the Cherokee Nation' are to be treated 'as intruders'
+assessment: Weight: Proven (the constitution's words, read on the page) | Warrant: Closed (the clauses) · Open (who called the convention, and why then)
+sources: [A live_verified] src-laws-of-the-cherokee-nation-1852 https://archive.org/details/GR_670; [B live_verified] src-cherokee-phoenix-1828-wcu-transcription https://www.wcu.edu/library/DigitalCollections/CherokeePhoenix/
+links: treaty-of-the-cherokee-agency-1817, cherokee-nation-georgia-1831
+
+[E-W4-072-06] W4 1827 violence TA
+1824: marriage with a negro slave is punished with 'fifty-nine stripes on the bare back'
+assessment: Weight: Proven (the constitution's words, read on the page) | Warrant: Closed (the clauses) · Open (who called the convention, and why then)
+sources: [A live_verified] src-laws-of-the-cherokee-nation-1852 https://archive.org/details/GR_670; [B live_verified] src-cherokee-phoenix-1828-wcu-transcription https://www.wcu.edu/library/DigitalCollections/CherokeePhoenix/
+links: treaty-of-the-cherokee-agency-1817, cherokee-nation-georgia-1831
+
+[E-W4-073-01] W4 1828 information TB
+The Cherokee Phoenix begins, in English and in the alphabet 'lately invented by a native Cherokee'
+New Echota, 21 February 1828. The Cherokee Phoenix begins, 'the first paper ever published in the Indian country', its press 'is the property of the Nation', to be 'faithfully published in English and Cherokee'. Its prospectus speaks of 'The Alphabet lately invented by a native Cherokee'. In August it prints an account of George Guess: 'He has no knowledge of any language but the Cherokee'. Neither names a year for the invention; 1809 and 1821 are Mooney's dates, of 1900.
+sources: [B live_verified] src-cherokee-phoenix-1828-wcu-transcription https://www.wcu.edu/library/DigitalCollections/CherokeePhoenix/; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+links: cherokee-constitution-1827
+threads: T-RESISTANCE-COUNTER-NARRATIVE
+
+[E-W4-073-02] W4 1828 innovation TB
+Guess 'made some use of the English letters, as he found them in a spelling book'
+assessment: Weight: Supported via the newspaper in transcription | Warrant: Closed (what the Phoenix printed) · Open (the dates of invention; the page images)
+sources: [B live_verified] src-cherokee-phoenix-1828-wcu-transcription https://www.wcu.edu/library/DigitalCollections/CherokeePhoenix/; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+links: cherokee-constitution-1827
+
+[E-W4-073-03] W4 1828 population TB
+The Phoenix: Cherokees were 'in the course of a few months, without school, or expense of time, or money, able to read and write in their own language'
+assessment: Weight: Supported via the newspaper in transcription | Warrant: Closed (what the Phoenix printed) · Open (the dates of invention; the page images)
+sources: [B live_verified] src-cherokee-phoenix-1828-wcu-transcription https://www.wcu.edu/library/DigitalCollections/CherokeePhoenix/; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+links: cherokee-constitution-1827
+
+[E-W4-073-04] W4 1828 financial TB
+The press was bought 'principally with the charities of our white brethren'
+assessment: Weight: Supported via the newspaper in transcription | Warrant: Closed (what the Phoenix printed) · Open (the dates of invention; the page images)
+sources: [B live_verified] src-cherokee-phoenix-1828-wcu-transcription https://www.wcu.edu/library/DigitalCollections/CherokeePhoenix/; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+links: cherokee-constitution-1827
+
+[E-W4-074-01] W4 1834 records TA MILESTONE
+Cherokee citizens protest that 'whites, spaniards, negroes, & mulattoes' are being enrolled as emigrant Cherokees
+Aquohee District, 3 and 9 April 1834. Citizens write to their delegation that 'whites, spaniards, negroes, & mulattoes are permitted to alienate our land by having places assessed to them as emigrant Cherokees'. Of Hosea Morgan: 'The Old man Is supposed to be a Spaniard but calls himself a Catawba Indian. His wife & children are Negroes'. The Council had refused him citizenship; he claimed none 'till he was received as an emigrant to the Arkansas'.
+sources: [A live_verified] src-dlg-cherokee-letter-blair-1834-04-09 https://dlg.usg.edu/record/dlg_zlna_pa0249; [A live_verified] src-dlg-cherokee-letter-smith-1834-04-03 https://dlg.usg.edu/record/dlg_zlna_ch087
+links: treaty-of-the-cherokee-agency-1817
+threads: T-NOUN-TO-ADJECTIVE, T-RESISTANCE-COUNTER-NARRATIVE
+
+[E-W4-074-02] W4 1834 population TA
+The line drawn by the citizens: 'persons having no Cherokee blood and possessing no sort of title in our country'
+assessment: Weight: Proven (the letters' words) | Warrant: Closed (what the citizens wrote) · Open (the enrolment record itself; Morgan's own account)
+sources: [A live_verified] src-dlg-cherokee-letter-blair-1834-04-09 https://dlg.usg.edu/record/dlg_zlna_pa0249; [A live_verified] src-dlg-cherokee-letter-smith-1834-04-03 https://dlg.usg.edu/record/dlg_zlna_ch087
+links: treaty-of-the-cherokee-agency-1817
+
+[E-W4-074-03] W4 1834 legal TA
+They remonstrate against 'the practice of enrolling aliens' against their treaties
+assessment: Weight: Proven (the letters' words) | Warrant: Closed (what the citizens wrote) · Open (the enrolment record itself; Morgan's own account)
+sources: [A live_verified] src-dlg-cherokee-letter-blair-1834-04-09 https://dlg.usg.edu/record/dlg_zlna_pa0249; [A live_verified] src-dlg-cherokee-letter-smith-1834-04-03 https://dlg.usg.edu/record/dlg_zlna_ch087
+links: treaty-of-the-cherokee-agency-1817
+
+[E-W4-074-04] W4 1834 land TA
+A white man 'has had assessed to him the field of the Old' Soldier's widow, who denies selling it
+assessment: Weight: Proven (the letters' words) | Warrant: Closed (what the citizens wrote) · Open (the enrolment record itself; Morgan's own account)
+sources: [A live_verified] src-dlg-cherokee-letter-blair-1834-04-09 https://dlg.usg.edu/record/dlg_zlna_pa0249; [A live_verified] src-dlg-cherokee-letter-smith-1834-04-03 https://dlg.usg.edu/record/dlg_zlna_ch087
+links: treaty-of-the-cherokee-agency-1817
+
+[E-W4-074-05] W4 1834 counter-move TA
+Signed by mark 'on behalf of a full meeting of the Citizens'
+assessment: Weight: Proven (the letters' words) | Warrant: Closed (what the citizens wrote) · Open (the enrolment record itself; Morgan's own account)
+sources: [A live_verified] src-dlg-cherokee-letter-blair-1834-04-09 https://dlg.usg.edu/record/dlg_zlna_pa0249; [A live_verified] src-dlg-cherokee-letter-smith-1834-04-03 https://dlg.usg.edu/record/dlg_zlna_ch087
+links: treaty-of-the-cherokee-agency-1817
+
+[E-W4-075-01] W4 1835 legal TA MILESTONE
+Treaty of New Echota: twenty men cede everything east of the Mississippi; the nation protests by the thousand
+New Echota, 29 December 1835. Twenty men sign that 'The Cherokee nation hereby cede relinquish and convey to the United States all the lands owned claimed or possessed by them east of the Mississippi river', for five million dollars, and to 'remove to their new homes within two years'. John Ross is not among them. In 1838 his delegation lays before Congress a protest 'signed by fifteen thousand six hundred and sixty-five of them'.
+sources: [A live_verified] src-kappler-v2-treaty-of-new-echota-1835 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1835-0439; [A live_verified] src-ross-memorial-and-protest-1836-pamphlet https://archive.org/details/app-coll-e-99-c-5-c-546-cherokee-nation-principal-chief-1836-ma; [A live_verified] src-h-doc-316-25-2-cherokee-memorial-1838 https://archive.org/details/app-coll-e-99.-c-5-c-4698-memorial-of-the-cherokee-delegation-1838-ma
+links: indian-removal-act-1830, worcester-georgia-1832, trail-of-tears-1838, georgia-compact-1802
+threads: T-DISCOVERY-DOCTRINE, T-RESISTANCE-COUNTER-NARRATIVE
+
+[E-W4-075-02] W4 1835 counter-move TA
+1836: the treaty is 'made by unauthorized individuals, without the sanction, and against the wishes, of the great body of the Cherokee people'
+assessment: Weight: Proven (the treaty's words; the protests' words) | Warrant: Closed (who signed, what was ceded, what was protested) · Open (the signatures themselves)
+sources: [A live_verified] src-kappler-v2-treaty-of-new-echota-1835 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1835-0439; [A live_verified] src-ross-memorial-and-protest-1836-pamphlet https://archive.org/details/app-coll-e-99-c-5-c-546-cherokee-nation-principal-chief-1836-ma; [A live_verified] src-h-doc-316-25-2-cherokee-memorial-1838 https://archive.org/details/app-coll-e-99.-c-5-c-4698-memorial-of-the-cherokee-delegation-1838-ma
+links: indian-removal-act-1830, worcester-georgia-1832, trail-of-tears-1838, georgia-compact-1802
+
+[E-W4-075-03] W4 1835 sovereign TA
+The rule written into the treaty: those absent 'gave their assent and sanction to whatever should be transacted at this council'
+assessment: Weight: Proven (the treaty's words; the protests' words) | Warrant: Closed (who signed, what was ceded, what was protested) · Open (the signatures themselves)
+sources: [A live_verified] src-kappler-v2-treaty-of-new-echota-1835 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1835-0439; [A live_verified] src-ross-memorial-and-protest-1836-pamphlet https://archive.org/details/app-coll-e-99-c-5-c-546-cherokee-nation-principal-chief-1836-ma; [A live_verified] src-h-doc-316-25-2-cherokee-memorial-1838 https://archive.org/details/app-coll-e-99.-c-5-c-4698-memorial-of-the-cherokee-delegation-1838-ma
+links: indian-removal-act-1830, worcester-georgia-1832, trail-of-tears-1838, georgia-compact-1802
+
+[E-W4-075-04] W4 1835 population TA
+Article 12 lets those 'desirous to become citizens of the States where they reside' stay; the supplement declares the reservations 'relinquished and declared void'
+assessment: Weight: Proven (the treaty's words; the protests' words) | Warrant: Closed (who signed, what was ceded, what was protested) · Open (the signatures themselves)
+sources: [A live_verified] src-kappler-v2-treaty-of-new-echota-1835 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1835-0439; [A live_verified] src-ross-memorial-and-protest-1836-pamphlet https://archive.org/details/app-coll-e-99-c-5-c-546-cherokee-nation-principal-chief-1836-ma; [A live_verified] src-h-doc-316-25-2-cherokee-memorial-1838 https://archive.org/details/app-coll-e-99.-c-5-c-4698-memorial-of-the-cherokee-delegation-1838-ma
+links: indian-removal-act-1830, worcester-georgia-1832, trail-of-tears-1838, georgia-compact-1802
+
+[E-W4-075-05] W4 1835 financial TA
+The price: 'the sum of five millions of dollars'
+assessment: Weight: Proven (the treaty's words; the protests' words) | Warrant: Closed (who signed, what was ceded, what was protested) · Open (the signatures themselves)
+sources: [A live_verified] src-kappler-v2-treaty-of-new-echota-1835 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1835-0439; [A live_verified] src-ross-memorial-and-protest-1836-pamphlet https://archive.org/details/app-coll-e-99-c-5-c-546-cherokee-nation-principal-chief-1836-ma; [A live_verified] src-h-doc-316-25-2-cherokee-memorial-1838 https://archive.org/details/app-coll-e-99.-c-5-c-4698-memorial-of-the-cherokee-delegation-1838-ma
+links: indian-removal-act-1830, worcester-georgia-1832, trail-of-tears-1838, georgia-compact-1802
+
+[E-W4-075-06] W4 1835 records TA
+The memorial counts those who voted for the treaty: 'there were but seventy-nine for so doing'
+assessment: Weight: Proven (the treaty's words; the protests' words) | Warrant: Closed (who signed, what was ceded, what was protested) · Open (the signatures themselves)
+sources: [A live_verified] src-kappler-v2-treaty-of-new-echota-1835 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1835-0439; [A live_verified] src-ross-memorial-and-protest-1836-pamphlet https://archive.org/details/app-coll-e-99-c-5-c-546-cherokee-nation-principal-chief-1836-ma; [A live_verified] src-h-doc-316-25-2-cherokee-memorial-1838 https://archive.org/details/app-coll-e-99.-c-5-c-4698-memorial-of-the-cherokee-delegation-1838-ma
+links: indian-removal-act-1830, worcester-georgia-1832, trail-of-tears-1838, georgia-compact-1802
+
+[E-W4-076-01] W4 1846 legal TA
+Treaty of 1846: three Cherokee bodies sign, the factions are declared ended, the land goes to 'the whole Cherokee people'
+Washington, 6 August 1846. 'serious difficulties have, for a considerable time past, existed between the different portions of the people constituting and recognized as the Cherokee Nation'. John Ross's government, the Treaty Party and the Old Settlers each sign. The lands are 'secured to the whole Cherokee people for their common use and benefit', by patent. 'All party distinctions shall cease'; 'A general amnesty is hereby declared.'
+sources: [A live_verified] src-kappler-v2-treaty-washington-1846 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1846-0561
+links: treaty-of-new-echota-1835
+threads: T-NOUN-TO-ADJECTIVE
+
+[E-W4-076-02] W4 1846 financial TA
+'one hundred and fifteen thousand dollars' to the Treaty Party
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (the eastern Cherokees' saved claims)
+sources: [A live_verified] src-kappler-v2-treaty-washington-1846 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1846-0561
+links: treaty-of-new-echota-1835
+
+[E-W4-076-03] W4 1846 sovereign TA
+The Old Settlers 'had no exclusive title to the territory ceded'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (the eastern Cherokees' saved claims)
+sources: [A live_verified] src-kappler-v2-treaty-washington-1846 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1846-0561
+links: treaty-of-new-echota-1835
+
+[E-W4-076-04] W4 1846 population TA
+Saved: the claims of 'the Cherokees now residing in States east of the Mississippi River'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (the eastern Cherokees' saved claims)
+sources: [A live_verified] src-kappler-v2-treaty-washington-1846 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1846-0561
+links: treaty-of-new-echota-1835
+
+[E-W4-076-05] W4 1846 military TA
+'All armed police, light horse, and other military organization, shall be abolished'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (the eastern Cherokees' saved claims)
+sources: [A live_verified] src-kappler-v2-treaty-washington-1846 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1846-0561
+links: treaty-of-new-echota-1835
 
 [E-W5-001-01] W5 1846 information TB
 Associated Press founded
@@ -4220,6 +4596,118 @@ Built on museum skull collections, the U.S. National Museum's among them; Hrdlic
 assessment: Weight: Proven (what Dixon reports and says, quoted from the 1923 printing) · Supported (the corpus's reading of the book's use, via its closing pages) · Contested (what the skulls show: Dixon's finding against his own stated limits and the Smithsonian's 2024 bar on such typing) | Warrant: Closed (Dixon reports the finding and restates it) · Open (the skull series themselves: Knight 1915, the Peabody and National Museum collections, and where those remains are now)
 sources: [A live_verified] src-dixon-racial-history-of-man-1923 https://archive.org/download/racialhistoryofm01dixo/racialhistoryofm01dixo_djvu.txt
 
+[E-W5-132-01] W5 1866 legal TA MILESTONE
+Treaty of 1866, Article 9: freedmen and free colored persons 'shall have all the rights of native Cherokees'
+Washington, 19 July 1866. Article 9 recites that the nation had 'by an act of the national council, forever abolished slavery' in February 1863, and agrees that 'all freedmen who have been liberated by voluntary act of their former owners or by law, as well as all free colored persons who were in the country at the commencement of the rebellion', 'and their descendants, shall have all the rights of native Cherokees'. In 2017 a federal court held that the promise still binds.
+sources: [A live_verified] src-kappler-v2-treaty-washington-1866 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1866-0942; [A live_verified] src-cherokee-nation-v-nash-ddc-2017 https://www.govinfo.gov/content/pkg/USCOURTS-dcd-1_13-cv-01313/pdf/USCOURTS-dcd-1_13-cv-01313-5.pdf; [B live_verified] src-cherokee-nation-website-history-freedmen https://www.cherokee.gov/about-the-nation/history/
+links: cherokee-treaty-of-1846
+threads: T-NOUN-TO-ADJECTIVE, T-RESISTANCE-COUNTER-NARRATIVE
+
+[E-W5-132-02] W5 1866 land TA
+Article 4: Cherokees, freed persons and 'all free negroes' may take 160 acres each in the Canadian district
+assessment: Weight: Proven (the treaty's words; the 2017 holding) | Warrant: Closed (the promise and that a court enforces it) · Open (who the 'free colored persons' of 1861 were)
+sources: [A live_verified] src-kappler-v2-treaty-washington-1866 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1866-0942; [A live_verified] src-cherokee-nation-v-nash-ddc-2017 https://www.govinfo.gov/content/pkg/USCOURTS-dcd-1_13-cv-01313/pdf/USCOURTS-dcd-1_13-cv-01313-5.pdf; [B live_verified] src-cherokee-nation-website-history-freedmen https://www.cherokee.gov/about-the-nation/history/
+links: cherokee-treaty-of-1846
+
+[E-W5-132-03] W5 1866 population TA
+Article 15: other Indians settled in the country 'shall enjoy all the rights of native Cherokees'
+assessment: Weight: Proven (the treaty's words; the 2017 holding) | Warrant: Closed (the promise and that a court enforces it) · Open (who the 'free colored persons' of 1861 were)
+sources: [A live_verified] src-kappler-v2-treaty-washington-1866 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1866-0942; [A live_verified] src-cherokee-nation-v-nash-ddc-2017 https://www.govinfo.gov/content/pkg/USCOURTS-dcd-1_13-cv-01313/pdf/USCOURTS-dcd-1_13-cv-01313-5.pdf; [B live_verified] src-cherokee-nation-website-history-freedmen https://www.cherokee.gov/about-the-nation/history/
+links: cherokee-treaty-of-1846
+
+[E-W5-132-04] W5 1866 sovereign TA
+Article 19: a patent for 320 acres, 'and thereupon he and his family shall cease to be members of the nation'
+assessment: Weight: Proven (the treaty's words; the 2017 holding) | Warrant: Closed (the promise and that a court enforces it) · Open (who the 'free colored persons' of 1861 were)
+sources: [A live_verified] src-kappler-v2-treaty-washington-1866 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1866-0942; [A live_verified] src-cherokee-nation-v-nash-ddc-2017 https://www.govinfo.gov/content/pkg/USCOURTS-dcd-1_13-cv-01313/pdf/USCOURTS-dcd-1_13-cv-01313-5.pdf; [B live_verified] src-cherokee-nation-website-history-freedmen https://www.cherokee.gov/about-the-nation/history/
+links: cherokee-treaty-of-1846
+
+[E-W5-132-05] W5 1866 certification TA
+2017: the Freedmen 'have a right to citizenship so long as native Cherokees have that right'
+assessment: Weight: Proven (the treaty's words; the 2017 holding) | Warrant: Closed (the promise and that a court enforces it) · Open (who the 'free colored persons' of 1861 were)
+sources: [A live_verified] src-kappler-v2-treaty-washington-1866 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1866-0942; [A live_verified] src-cherokee-nation-v-nash-ddc-2017 https://www.govinfo.gov/content/pkg/USCOURTS-dcd-1_13-cv-01313/pdf/USCOURTS-dcd-1_13-cv-01313-5.pdf; [B live_verified] src-cherokee-nation-website-history-freedmen https://www.cherokee.gov/about-the-nation/history/
+links: cherokee-treaty-of-1846
+
+[E-W5-133-01] W5 1863 legal TB
+The Cherokee National Council emancipates 'all Negro and other slaves' in the Cherokee Nation
+21 February 1863. The Cherokee National Council passes 'AN ACT EMANCIPATING THE SLAVES IN THE' Cherokee Nation: 'That all Negro and other slaves within the lands of the Cherokee Nation be and they are hereby emancipated from slavery', from 'the twenty-fifth (25th) day of June, 1863'. The text is read here in a copy made from the nation's records and printed in 1888. It frees; it says nothing of citizenship, which came by treaty in 1866.
+sources: [B live_verified] src-century-1888-cherokee-emancipation-act-1863 https://archive.org/details/sim_century-illustrated-monthly-magazine_1888-08_36_4; [A live_verified] src-kappler-v2-treaty-washington-1866 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1866-0942
+links: cherokee-treaty-of-1866-freedmen-article-9
+threads: T-RESISTANCE-COUNTER-NARRATIVE
+
+[E-W5-133-02] W5 1863 financial TB
+Holding a slave after that day: a fine of 'a sum not less than one thousand ($1000) dollars'
+assessment: Weight: Supported via an 1888 copy and the 1866 treaty's recital | Warrant: Closed (that the council abolished slavery in February 1863) · Open (the act in the nation's own print)
+sources: [B live_verified] src-century-1888-cherokee-emancipation-act-1863 https://archive.org/details/sim_century-illustrated-monthly-magazine_1888-08_36_4; [A live_verified] src-kappler-v2-treaty-washington-1866 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1866-0942
+links: cherokee-treaty-of-1866-freedmen-article-9
+
+[E-W5-133-03] W5 1863 records TB
+Known from a visitor allowed 'to copy an act from the records', printed twenty-five years later
+assessment: Weight: Supported via an 1888 copy and the 1866 treaty's recital | Warrant: Closed (that the council abolished slavery in February 1863) · Open (the act in the nation's own print)
+sources: [B live_verified] src-century-1888-cherokee-emancipation-act-1863 https://archive.org/details/sim_century-illustrated-monthly-magazine_1888-08_36_4; [A live_verified] src-kappler-v2-treaty-washington-1866 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1866-0942
+links: cherokee-treaty-of-1866-freedmen-article-9
+
+[E-W5-134-01] W5 1890 records TA MILESTONE
+The 1890 census of the Five Tribes: 178,097 people, and a warning that some of negro descent 'are Indians by tribal law and custom'
+The Eleventh Census counts the Indian Territory by special agents. Its figures: 'Indian citizen negroes and others of negro descent, 18,636'; 'whites, including some claimants of Indian citizenship, 109,393'; Indians, 50,055. It warns that 'Negroes are frequently met who speak nothing but Indian languages,' 'and are Indians by tribal law and custom', and that among the Creeks 'the Euchees may have been enrolled among those of negro descent'.
+sources: [A live_verified] src-census-1894-extra-bulletin-five-civilized-tribes https://archive.org/details/app-coll-e-78-i-5-u-25-five-civilized-tribes-1894-ac; [B live_verified] src-blake-prologue-1996-fate-of-1890-census https://www.archives.gov/publications/prologue/1996/spring/1890-census-1.html
+links: cherokee-treaty-of-1866-freedmen-article-9, dawes-act-allotment-classification-1887
+threads: T-NOUN-TO-ADJECTIVE, T-WHITENING-PROJECT
+
+[E-W5-134-02] W5 1890 population TA
+'It is probable that the 806 of negro descent are almost all classed by the Seminoles themselves as Seminoles.'
+assessment: Weight: Proven (the bulletin's tables and words) | Warrant: Closed (the figures and the bulletin's own warnings) · Open (what became of the Indian Territory schedules)
+sources: [A live_verified] src-census-1894-extra-bulletin-five-civilized-tribes https://archive.org/details/app-coll-e-78-i-5-u-25-five-civilized-tribes-1894-ac; [B live_verified] src-blake-prologue-1996-fate-of-1890-census https://www.archives.gov/publications/prologue/1996/spring/1890-census-1.html
+links: cherokee-treaty-of-1866-freedmen-article-9, dawes-act-allotment-classification-1887
+
+[E-W5-134-03] W5 1890 information TA
+The Creek returns: 'On the abstracts they gave the Indians other than Creeks as colored.'
+assessment: Weight: Proven (the bulletin's tables and words) | Warrant: Closed (the figures and the bulletin's own warnings) · Open (what became of the Indian Territory schedules)
+sources: [A live_verified] src-census-1894-extra-bulletin-five-civilized-tribes https://archive.org/details/app-coll-e-78-i-5-u-25-five-civilized-tribes-1894-ac; [B live_verified] src-blake-prologue-1996-fate-of-1890-census https://www.archives.gov/publications/prologue/1996/spring/1890-census-1.html
+links: cherokee-treaty-of-1866-freedmen-article-9, dawes-act-allotment-classification-1887
+
+[E-W5-134-04] W5 1890 legal TA
+'The United States urged and then directed much of the legislation as to the negroes.'
+assessment: Weight: Proven (the bulletin's tables and words) | Warrant: Closed (the figures and the bulletin's own warnings) · Open (what became of the Indian Territory schedules)
+sources: [A live_verified] src-census-1894-extra-bulletin-five-civilized-tribes https://archive.org/details/app-coll-e-78-i-5-u-25-five-civilized-tribes-1894-ac; [B live_verified] src-blake-prologue-1996-fate-of-1890-census https://www.archives.gov/publications/prologue/1996/spring/1890-census-1.html
+links: cherokee-treaty-of-1866-freedmen-article-9, dawes-act-allotment-classification-1887
+
+[E-W5-134-05] W5 1890 catastrophe TA
+1921 and after: a fire, then disposal; 'Congress authorized destruction on February 21, 1933.'
+assessment: Weight: Proven (the bulletin's tables and words) | Warrant: Closed (the figures and the bulletin's own warnings) · Open (what became of the Indian Territory schedules)
+sources: [A live_verified] src-census-1894-extra-bulletin-five-civilized-tribes https://archive.org/details/app-coll-e-78-i-5-u-25-five-civilized-tribes-1894-ac; [B live_verified] src-blake-prologue-1996-fate-of-1890-census https://www.archives.gov/publications/prologue/1996/spring/1890-census-1.html
+links: cherokee-treaty-of-1866-freedmen-article-9, dawes-act-allotment-classification-1887
+
+[E-W5-135-01] W5 1909 records TA
+Guion Miller's roll: about ninety thousand claim Eastern Cherokee descent and about thirty thousand are enrolled
+28 May 1909. Guion Miller reports to the Court of Claims: '45,857 separate applications have been filed, which represent a total of about 90,000 individuals claimants'. About 30,000 are enrolled. The test is an ancestor on the rolls of 1835 or 1851, 'unless he has become disqualified through affiliation with some other tribe'. Rejected: 'He was a colored man but it is said was not a slave.' And: 'Applicant probably has some Indian blood, but the proof which he offers is insufficient'.
+sources: [A live_verified] src-guion-miller-report-1909-m685 https://catalog.archives.gov/id/231932777; [B live_verified] src-nara-m685-descriptive-pamphlet https://www.archives.gov/files/research/microfilm/m685.pdf
+links: treaty-of-new-echota-1835, census-five-civilized-tribes-indian-territory-1890
+threads: T-NOUN-TO-ADJECTIVE, T-RESISTANCE-COUNTER-NARRATIVE
+
+[E-W5-135-02] W5 1909 population TA
+Admitted: three whose 'fathers were negroes and slaves' but who 'claim through their mother, a full blood'
+assessment: Weight: Proven (the passages read on the typescript) | Warrant: Closed (the test and the totals) · Open (the rejected, as a body: most of the record is unread)
+sources: [A live_verified] src-guion-miller-report-1909-m685 https://catalog.archives.gov/id/231932777; [B live_verified] src-nara-m685-descriptive-pamphlet https://www.archives.gov/files/research/microfilm/m685.pdf
+links: treaty-of-new-echota-1835, census-five-civilized-tribes-indian-territory-1890
+
+[E-W5-135-03] W5 1909 legal TA
+The rule set by the court: not 'affiliated with any tribe of Indians other than the Eastern Cherokees or the Cherokee Nation'
+assessment: Weight: Proven (the passages read on the typescript) | Warrant: Closed (the test and the totals) · Open (the rejected, as a body: most of the record is unread)
+sources: [A live_verified] src-guion-miller-report-1909-m685 https://catalog.archives.gov/id/231932777; [B live_verified] src-nara-m685-descriptive-pamphlet https://www.archives.gov/files/research/microfilm/m685.pdf
+links: treaty-of-new-echota-1835, census-five-civilized-tribes-indian-territory-1890
+
+[E-W5-135-04] W5 1909 information TA
+About two thousand Sizemore applications rejected; witnesses called the families 'generally recognized as white people'
+assessment: Weight: Proven (the passages read on the typescript) | Warrant: Closed (the test and the totals) · Open (the rejected, as a body: most of the record is unread)
+sources: [A live_verified] src-guion-miller-report-1909-m685 https://catalog.archives.gov/id/231932777; [B live_verified] src-nara-m685-descriptive-pamphlet https://www.archives.gov/files/research/microfilm/m685.pdf
+links: treaty-of-new-echota-1835, census-five-civilized-tribes-indian-territory-1890
+
+[E-W5-135-05] W5 1909 counter-move TA
+Claimants in southern Alabama and northwestern Florida 'who, if Indians at all, are probably of Creek origin'
+assessment: Weight: Proven (the passages read on the typescript) | Warrant: Closed (the test and the totals) · Open (the rejected, as a body: most of the record is unread)
+sources: [A live_verified] src-guion-miller-report-1909-m685 https://catalog.archives.gov/id/231932777; [B live_verified] src-nara-m685-descriptive-pamphlet https://www.archives.gov/files/research/microfilm/m685.pdf
+links: treaty-of-new-echota-1835, census-five-civilized-tribes-indian-territory-1890
+
 [E-W6-001-01] W6 1921 financial TB
 Sheppard-Towner Maternity Act - BIRTH REGISTRATION AS FINANCIAL INSTRUMENT
 November 23, 1921. First federal social welfare program. Provides FEDERAL FUNDING to states for maternal and infant health. THE MECHANISM: to receive federal funds, states must establish UNIFORM BIRTH REGISTRATION. By 1929, every state has a standardized birth certificate system. THE FORENSIC READING: The Act is Layer 2 of the Matryoshka. The 14th Amendment (1868) created the jus soli citizen-class. The 1921 Act creates the DOCUMENTATION SYSTEM that registers every person born into that class. The birth certificate is not a health document - it is a financial instrument. It creates a “legal person” (the UPPERCASE name on the certificate) distinct from the living being. That legal person is a MUNICIPAL BOND - a revenue-generating unit within the Corporate ledger. Each registered birth creates a future taxpayer, debtor, and collateral unit. The 14th Amendment supplies the constitutional authority. The 1921 Act supplies the registration mechanism. The 1933 bankruptcy (HJR 192) supplies the moment when the registered citizen-class becomes the SOLE COLLATERAL for national debt. CHAIN: 14th Amendment (1868, citizen-class created) → 1870 Naturalization Act (jus soli overwrite) → 1871 DC Organic Act (Corporation installed) → 1913 Federal Reserve (Collection Engine) → HERE (registration mechanism) → 1924 Plecker (racial classification on birth certificates) → 1933 HJR 192 (citizen-class becomes debt collateral) → 1935 SSN (permanent individual identifier). The pipeline is complete by 1935. Every American born after 1921 enters the Corporate ledger at birth.
@@ -5085,6 +5573,31 @@ sources: [A citation_only] src-kamen-war-succession; [A citation_only] src-lynch
 links: w3-1713-legal
 threads: T-MERCHANT-BANKER-CONSTANT, T-TRUSTEE-HIERARCHY-FIVE-TIER
 
+[w3-1708-chereky-information] W3 1708 to 1715 information TA
+Two printings of one 1708 letter differ tenfold: 5000 men in one, 500 in the other
+assessment: Weight: Proven (what the printed calendars say) | Warrant: Closed (one name, sixty towns) · Open (the true figures: the manuscripts are unread)
+sources: [A live_verified] src-csp-colonial-1708-1709 https://archive.org/details/calendarofstatep1709grea; [B live_verified] src-rivers-sketch-south-carolina-1856 https://archive.org/details/sketchofhistoryo00rive; [A live_verified] src-csp-colonial-1719-1720-census-1715 https://archive.org/details/calendarofstatep1720grea
+links: bladen-report-1721, woodward-westo-voyage-chorakae-1674
+
+[w3-1708-chereky-population] W3 1708 to 1715 population TA
+1720: 'the Charokees may be computed reduced to about 10,000 souls'
+assessment: Weight: Proven (what the printed calendars say) | Warrant: Closed (one name, sixty towns) · Open (the true figures: the manuscripts are unread)
+sources: [A live_verified] src-csp-colonial-1708-1709 https://archive.org/details/calendarofstatep1709grea; [B live_verified] src-rivers-sketch-south-carolina-1856 https://archive.org/details/sketchofhistoryo00rive; [A live_verified] src-csp-colonial-1719-1720-census-1715 https://archive.org/details/calendarofstatep1720grea
+links: bladen-report-1721, woodward-westo-voyage-chorakae-1674
+
+[w3-1708-chereky-records] W3 1708 to 1715 records TA
+South Carolina counts the 'Chereky Indians': sixty towns in 1708, three settlements in the census of 1715
+17 September 1708. The Governor and Council of Carolina report the Chereky on a ridge of mountains: 'they are settled in sixty townes, and are at least 5000 men'. An 1856 printing of the same letter reads 'they are settled in 60 towns, and are at least 500 men'. The census of 1715, sent to London in 1720, sets the Cherokees in Upper, Middle and Lower settlements of 19, 30 and 11 villages. Its cells add to 11,210; its printed total is 11,530.
+sources: [A live_verified] src-csp-colonial-1708-1709 https://archive.org/details/calendarofstatep1709grea; [B live_verified] src-rivers-sketch-south-carolina-1856 https://archive.org/details/sketchofhistoryo00rive; [A live_verified] src-csp-colonial-1719-1720-census-1715 https://archive.org/details/calendarofstatep1720grea
+links: bladen-report-1721, woodward-westo-voyage-chorakae-1674
+threads: T-NOUN-TO-ADJECTIVE
+
+[w3-1708-chereky-sovereign] W3 1708 to 1715 sovereign TA
+1708, Nairne: 'the Cherockee nation' is Carolina's only defence on the back parts
+assessment: Weight: Proven (what the printed calendars say) | Warrant: Closed (one name, sixty towns) · Open (the true figures: the manuscripts are unread)
+sources: [A live_verified] src-csp-colonial-1708-1709 https://archive.org/details/calendarofstatep1709grea; [B live_verified] src-rivers-sketch-south-carolina-1856 https://archive.org/details/sketchofhistoryo00rive; [A live_verified] src-csp-colonial-1719-1720-census-1715 https://archive.org/details/calendarofstatep1720grea
+links: bladen-report-1721, woodward-westo-voyage-chorakae-1674
+
 [w3-1708-financial] W3 1708 financial TA
 Rhode Island L3 duty becomes recurring revenue stream funding colonial administration
 At the governor's 1708 estimate of 'betwixt twenty and thirty' imports a year, the three-pound duty yields some sixty to ninety pounds a year; by July 1715 the naval officer held 289 pounds 17 shillings in slave-import duties. Same event as w3-1708-legal but the financial-lane consequence: the classification is now generating tax revenue for the Tier 4 colonial government. The money stays in the colony: in 1715 it is granted to pave Newport's streets and build a bridge. The corpus reads the classification as a cash-generating asset for the colonial tier.
@@ -5265,6 +5778,43 @@ Population-processing throughput reaches Asiento-license peak in the mid-1720s. 
 sources: [A live_verified] src-eltis-voyages-database https://www.slavevoyages.org/voyage/database; [A live_verified] src-w3cc-helen-julia-paul-the-south-sea-company-s-slaving-8735 https://www.southampton.ac.uk/assets/imported/transforms/content-block/UsefulDownloads_Download/326F907A8F434B05B2199578407AA4B6/0924.pdf; [B live_verified] src-w3cc-south-sea-company-wikipedia-5cc4 https://en.wikipedia.org/wiki/South_Sea_Company
 links: w3-1725-financial
 threads: T-ASIENTO, T-THREE-TRACK-LABOR
+
+[w3-1730-certification] W3 September 1730 certification TA
+One copy calls the Cherokee 'His good friends and allies', the other 'his good children and subjects'
+assessment: Weight: Proven (both wordings read in full) | Warrant: Closed (the terms, and that the two copies differ) · Open (what the seven understood they had agreed)
+sources: [A live_verified] src-colonial-records-nc-v3-cherokee-articles-1730 https://archive.org/details/state-records-north-carolina_1728-1734_3; [A live_verified] src-csp-colonial-1730-cherokee-articles-bho https://www.british-history.ac.uk/cal-state-papers/colonial/america-west-indies/vol37/pp291-298
+links: carolina-counts-chereky-towns-1708-1715, bladen-report-1721, georgia-charter-1732
+
+[w3-1730-counter-move] W3 September 1730 counter-move TA
+The Cherokee answer on slaves: 'you have iron chains for yours'
+assessment: Weight: Proven (both wordings read in full) | Warrant: Closed (the terms, and that the two copies differ) · Open (what the seven understood they had agreed)
+sources: [A live_verified] src-colonial-records-nc-v3-cherokee-articles-1730 https://archive.org/details/state-records-north-carolina_1728-1734_3; [A live_verified] src-csp-colonial-1730-cherokee-articles-bho https://www.british-history.ac.uk/cal-state-papers/colonial/america-west-indies/vol37/pp291-298
+links: carolina-counts-chereky-towns-1708-1715, bladen-report-1721, georgia-charter-1732
+
+[w3-1730-financial] W3 September 1730 financial TA
+Trade with no 'white men of any other Nation but the English'
+assessment: Weight: Proven (both wordings read in full) | Warrant: Closed (the terms, and that the two copies differ) · Open (what the seven understood they had agreed)
+sources: [A live_verified] src-colonial-records-nc-v3-cherokee-articles-1730 https://archive.org/details/state-records-north-carolina_1728-1734_3; [A live_verified] src-csp-colonial-1730-cherokee-articles-bho https://www.british-history.ac.uk/cal-state-papers/colonial/america-west-indies/vol37/pp291-298
+links: carolina-counts-chereky-towns-1708-1715, bladen-report-1721, georgia-charter-1732
+
+[w3-1730-legal] W3 September 1730 legal TA MILESTONE
+The Articles of Friendship and Commerce put to seven Cherokee at Whitehall, in two wordings
+Whitehall, 7 and 9 September 1730. The Board of Trade puts Articles to seven Cherokee. Its journal says they 'have been deputed by the whole nation'; the copy sent to Newcastle says they 'have been deputed by Moytoy of Telliko' 'to attend Sir Alexander Cuming'. The English 'are his people and his children whom he loves'; the Cherokees are 'being now the children of the Great King'. No land is ceded. The Board tells Newcastle it holds 'their subjection to H.M.'.
+sources: [A live_verified] src-colonial-records-nc-v3-cherokee-articles-1730 https://archive.org/details/state-records-north-carolina_1728-1734_3; [A live_verified] src-csp-colonial-1730-cherokee-articles-bho https://www.british-history.ac.uk/cal-state-papers/colonial/america-west-indies/vol37/pp291-298
+links: carolina-counts-chereky-towns-1708-1715, bladen-report-1721, georgia-charter-1732
+threads: T-DISCOVERY-DOCTRINE, T-NOUN-TO-ADJECTIVE
+
+[w3-1730-population] W3 September 1730 population TA
+Runaway 'Negro slaves' to be returned for 'a gun and a match coat'; the Cherokee answer: 'have no pay for it'
+assessment: Weight: Proven (both wordings read in full) | Warrant: Closed (the terms, and that the two copies differ) · Open (what the seven understood they had agreed)
+sources: [A live_verified] src-colonial-records-nc-v3-cherokee-articles-1730 https://archive.org/details/state-records-north-carolina_1728-1734_3; [A live_verified] src-csp-colonial-1730-cherokee-articles-bho https://www.british-history.ac.uk/cal-state-papers/colonial/america-west-indies/vol37/pp291-298
+links: carolina-counts-chereky-towns-1708-1715, bladen-report-1721, georgia-charter-1732
+
+[w3-1730-sovereign] W3 September 1730 sovereign TA
+Cuming, in his own memorial, was 'neither sent nor pretended to be sent by H.M.'
+assessment: Weight: Proven (both wordings read in full) | Warrant: Closed (the terms, and that the two copies differ) · Open (what the seven understood they had agreed)
+sources: [A live_verified] src-colonial-records-nc-v3-cherokee-articles-1730 https://archive.org/details/state-records-north-carolina_1728-1734_3; [A live_verified] src-csp-colonial-1730-cherokee-articles-bho https://www.british-history.ac.uk/cal-state-papers/colonial/america-west-indies/vol37/pp291-298
+links: carolina-counts-chereky-towns-1708-1715, bladen-report-1721, georgia-charter-1732
 
 [w3-1732-land] W3 1732 land TA
 Yamacraw Bluff settlement via heir-broker workaround
@@ -5454,6 +6004,25 @@ sources: [A live_verified] src-somerset-lofft https://www.commonlii.org/uk/cases
 links: w3-1738-legal, w3-1738-counter-move, w4-1807-legal
 threads: T-DISCOVERY-DOCTRINE, T-WHITENING-PROJECT, T-RESISTANCE-COUNTER-NARRATIVE
 
+[w3-1775-adair-information] W3 1775 information TB
+Adair, History of the American Indians: the Cheerake name from a word for fire, and the Indians as Israelites
+London, 1775. James Adair prints his account of the Cheerake. 'Their national name is derived from Chee-ra', fire. Old traders reckoned 'they had 64 towns and villages' some forty years before. He writes that the 'Indians are of a copper or' red-clay colour, and argues the 'Indian colour is not natural'. He compares Cheerake words with Hebrew, one with 'the Hebrew name of a prophet'. Mooney, in 1900, wrote that the fire etymology 'is an error founded upon imperfect knowledge' of the language.
+sources: [A live_verified] src-adair-history-american-indians-1775 https://archive.org/details/historyofamerica00adairich; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+links: carolina-counts-chereky-towns-1708-1715
+threads: T-NOUN-TO-ADJECTIVE
+
+[w3-1775-adair-population] W3 1775 population TB
+Adair: Indians 'of a copper or' red-clay colour, which he argues is 'not natural' but acquired
+assessment: Weight: Supported via the pages read | Warrant: Closed (what Adair printed on the pages read) · Open (his whole argument; the word pairs)
+sources: [A live_verified] src-adair-history-american-indians-1775 https://archive.org/details/historyofamerica00adairich; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+links: carolina-counts-chereky-towns-1708-1715
+
+[w3-1775-adair-records] W3 1775 records TB
+'64 towns and villages' and upwards of six thousand fighting men, by old traders' reckoning
+assessment: Weight: Supported via the pages read | Warrant: Closed (what Adair printed on the pages read) · Open (his whole argument; the word pairs)
+sources: [A live_verified] src-adair-history-american-indians-1775 https://archive.org/details/historyofamerica00adairich; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+links: carolina-counts-chereky-towns-1708-1715
+
 [w3-1776-legal] W3 1776 legal TA
 Break-charter operation: colonial charters voided; new sovereign entity claimed
 The Declaration operates as break-charter instrument: it asserts termination of the colonial charter chain running back to the Papal Bull / English Crown source and installs a new sovereign entity claiming direct standing. Under the Discovery Doctrine framework, this transfer is impossible without Crown consent; the Declaration proceeds without such consent, creating a legal fiction that the 1783 Treaty of Paris later formalizes. Framework significance: the break-charter does not address the Discovery-Doctrine premise itself, which the new sovereign entity inherits and later formalizes into federal law via Johnson v M'Intosh 1823.
@@ -5542,6 +6111,37 @@ Moroccan corsairs operating under Sultan Mohammed III's authority seize the Amer
 sources: [A citation_only] src-parker-uncle-sam-barbary; [A live_verified] src-adams-jefferson-corr-barbary https://founders.archives.gov/documents/Adams/06-17-02-0237-0000; [B live_verified] src-w3cc-u-s-embassy-consulate-in-morocco-history-of-the-7ad3 https://ma.usembassy.gov/history-of-the-u-s-and-morocco/; [A live_verified] src-w3cc-james-erwin-captain-of-the-betsy-to-john-adams-1-bb26 https://www.masshist.org/publications/adams-papers/index.php/view/ADMS-06-16-02-0291; [B live_verified] src-w3cc-wikipedia-moroccan-seizure-of-the-betsey-raw-wik-8c1d https://en.wikipedia.org/wiki/Moroccan_seizure_of_the_Betsey; [B live_verified] src-w3cc-office-of-the-historian-barbary-wars-1801-1805-a-5cb8 https://history.state.gov/milestones/1801-1829/barbary-wars; [B live_verified] src-w3cc-shareamerica-state-department-how-morocco-became-3765 https://share.america.gov/how-morocco-became-americas-oldest-friend/
 links: w3-1777-certification, w3-1787-legal
 threads: T-DISCOVERY-DOCTRINE
+
+[w3-1785-hopewell-counter-move] W3 28 November 1785 counter-move TA
+A settler on their land forfeits protection: 'the Indians may punish him or not as they please'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (who the thirty-seven spoke for)
+sources: [A live_verified] src-kappler-v2-treaty-of-hopewell-1785 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1785-0008
+links: treaty-of-paris-1783, cherokee-articles-of-friendship-whitehall-1730
+
+[w3-1785-hopewell-land] W3 28 November 1785 land TA
+A boundary 'allotted to the Cherokees for their hunting grounds'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (who the thirty-seven spoke for)
+sources: [A live_verified] src-kappler-v2-treaty-of-hopewell-1785 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1785-0008
+links: treaty-of-paris-1783, cherokee-articles-of-friendship-whitehall-1730
+
+[w3-1785-hopewell-legal] W3 28 November 1785 legal TA MILESTONE
+Treaty of Hopewell: 'all the Cherokees' placed under the protection of the United States
+Hopewell on the Keowee, 28 November 1785. Four United States commissioners and thirty-seven named men, each of a town, sign for 'the Head-Men and Warriors of all the Cherokees'. They 'do acknowledge all the Cherokees to be under the protection of the United States of America, and of no other sovereign whosoever'. Congress is to have 'the sole and exclusive right of regulating the trade with the Indians'. The text says all the Cherokees, and tribes and towns; not Cherokee Nation.
+sources: [A live_verified] src-kappler-v2-treaty-of-hopewell-1785 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1785-0008
+links: treaty-of-paris-1783, cherokee-articles-of-friendship-whitehall-1730
+threads: T-DISCOVERY-DOCTRINE
+
+[w3-1785-hopewell-population] W3 28 November 1785 population TA
+'They shall also restore all the Negroes, and all other property taken during the late war'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (who the thirty-seven spoke for)
+sources: [A live_verified] src-kappler-v2-treaty-of-hopewell-1785 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1785-0008
+links: treaty-of-paris-1783, cherokee-articles-of-friendship-whitehall-1730
+
+[w3-1785-hopewell-sovereign] W3 28 November 1785 sovereign TA
+They may 'send a deputy of their choice, whenever they think fit, to Congress'
+assessment: Weight: Proven (the treaty's words) | Warrant: Closed (the terms) · Open (who the thirty-seven spoke for)
+sources: [A live_verified] src-kappler-v2-treaty-of-hopewell-1785 https://treaties.okstate.edu/treaties/treaty-with-the-cherokee-1785-0008
+links: treaty-of-paris-1783, cherokee-articles-of-friendship-whitehall-1730
 
 [w3-1787-certification] W3 1787 certification TA MILESTONE
 Pre-Constitutional treaty firewall installed
