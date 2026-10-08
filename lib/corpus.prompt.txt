@@ -614,8 +614,8 @@ sources: [A live_verified] src-lybyer-oriental-trade-routes-1915 https://www.gut
 links: dum-diversas-1452, columbus-voyage-1492
 
 [E-W1-002-02] W1 1453 financial TB
-Silk Road overland trade routes to Asia disrupted; European merchants seek maritime alternatives
-assessment: Weight: Proven | Warrant: Closed
+1453 as a marker of the Atlantic turn; Lybyer finds the search for sea routes independent of the Ottoman conquest
+Lybyer (1915), the source read for 1453, finds 'The absence of marked influence upon prices exerted by the conquest of Constantinople by the Turks' and holds that the search for sea routes came from 'A set of motives quite independent of the rise of the Turks'. The corpus reads 1453 as a marker of the Atlantic turn, not its cause.
 sources: [A live_verified] src-lybyer-oriental-trade-routes-1915 https://www.gutenberg.org/cache/epub/50860/pg50860.txt; [B live_verified] src-wikipedia-fall-of-constantinople https://en.wikipedia.org/wiki/Fall_of_Constantinople
 links: dum-diversas-1452, columbus-voyage-1492
 
@@ -658,8 +658,7 @@ threads: T-DISCOVERY-DOCTRINE
 
 [E-W1-005-01] W1 1478 population TB
 Tomás de Torquemada appointed first Grand Inquisitor 1483; targeting conversos and moriscos
-framework: FW-019 template redeployed inside Iberia; FW-020 Reconquista classification-enforcement infrastructure
-assessment: Weight: Proven (the founding bull and its baptized-Christian jurisdiction) · Sourced transition (limpieza de sangre emerges in operation) | Warrant: Closed
+The bull founding the tribunal is dated 1 November 1478; the appointment is five years later. The one source read, the New World Encyclopedia account, is quoted for the tribunal's reach over conversos and Moriscos, not for the appointment, which is stated only in the dossier's line 'Torquemada appointed 1483'.
 sources: [B live_verified] src-nwe-spanish-inquisition-1478 https://www.newworldencyclopedia.org/entry/Spanish_Inquisition
 links: toledo-blood-purity-1449, casta-system-1560s, alhambra-decree-1492, reconquest-granada-1492, virginia-slave-codes-1705, fourth-lateran-council-classification-formalized-as-1215
 threads: T-SOFTWARE-NEUTRALITY
@@ -710,8 +709,7 @@ threads: T-SOFTWARE-NEUTRALITY
 
 [E-W1-008-01] W1 1492b population TA
 An estimated 40,000 to 200,000 Jews expelled; tens of thousands more baptized to remain
-framework: FW-019 template execution; FW-020 population reclassification via expulsion; direct capitalization event for Amsterdam-Sephardic Tier 1 middleware layer
-assessment: Weight: Proven | Warrant: Closed
+A reference article's summary of modern estimates, not a count: 'modern estimates generally place the number expelled between 40,000 and 200,000'. The same article gives Kamen's figures of about 40,000 emigrated and 'Another approximately 50,000 Jews received a Christian baptism', against older figures of 800,000 (Mariana) and 300,000 (Abravanel).
 sources: [A live_verified] src-fau-alhambra-decree-1492 https://www.fau.edu/artsandletters/pjhr/chhre/pdf/hh-alhambra-1492-english.pdf; [B live_verified] src-wikipedia-expulsion-of-jews-from-spain https://en.wikipedia.org/wiki/Expulsion_of_Jews_from_Spain
 links: reconquest-granada-1492, spanish-inquisition-1478, toledo-blood-purity-1449, casta-system-1560s
 threads: T-SOFTWARE-NEUTRALITY
@@ -725,16 +723,14 @@ threads: T-SOFTWARE-NEUTRALITY
 
 [E-W1-008-03] W1 1492b financial TA
 Sephardic capital and financial expertise flow to Portugal, North Africa, the Ottoman Empire and Italy; Amsterdam follows a century later
-framework: FW-019 template execution; FW-020 population reclassification via expulsion; direct capitalization event for Amsterdam-Sephardic Tier 1 middleware layer
-assessment: Weight: Proven | Warrant: Closed
+For 1492 the reference read says 'The Sephardi Jews migrated to four major areas: North Africa, the Ottoman Empire, Portugal, and Italy.' Amsterdam is a century on: 'In 1593, Marrano Jews arrived in Amsterdam'. Both notes record where people went. That capital and financial expertise went with them is the corpus's reading.
 sources: [A live_verified] src-fau-alhambra-decree-1492 https://www.fau.edu/artsandletters/pjhr/chhre/pdf/hh-alhambra-1492-english.pdf; [B live_verified] src-wikipedia-alhambra-decree https://en.wikipedia.org/wiki/Alhambra_Decree; [B live_verified] src-wikipedia-jews-in-amsterdam https://en.wikipedia.org/wiki/History_of_the_Jews_in_Amsterdam
 links: reconquest-granada-1492, spanish-inquisition-1478, toledo-blood-purity-1449, casta-system-1560s
 threads: T-SOFTWARE-NEUTRALITY
 
 [E-W1-009-01] W1 1492c legal TA
 No prior papal authorization for Spain for territories beyond Canaries
-framework: Physical contact event triggering the 1493-1494 papal-bull software installation; forcing function for FW-017 Discovery Doctrine chain
-assessment: Weight: Proven (the voyage and the Capitulations title grant, sourced) · Framework reading (discovery-as-title-laundering, tier C, held down at H3) | Warrant: Closed (the voyage and the title instrument) · Open (the title-laundering reading)
+Davenport's edition of the bulls: Aeterni Regis (21 June 1481) confirms 'the letters of Nicholas and of Callixtus, our predecessors' and the Alcacovas terms, Portugal's exclusive rights south of the Canaries and Castile keeping the Canary Islands. Castile first receives such rights in Inter Caetera of 4 May 1493, after the landfall of 12 October 1492.
 sources: [B live_verified] src-capitulations-santa-fe-1492 https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/capitulations-santa-fe; [B live_verified] src-columbus-voyage-1492 https://www.britannica.com/biography/Christopher-Columbus/The-first-voyage; [A live_verified] src-davenport-inter-caetera-1493 https://archive.org/details/europeantreaties01daveuoft; [A live_verified] src-davenport-aeterni-regis-1481 https://archive.org/details/europeantreaties01daveuoft
 links: inter-caetera-1493, treaty-of-tordesillas-1494, waldseemuller-map-1507
 threads: T-DISCOVERY-DOCTRINE
@@ -748,8 +744,7 @@ threads: T-DISCOVERY-DOCTRINE
 
 [E-W1-009-03] W1 1492c counter-move TA
 Discovery event triggers 1493 Software installation
-framework: Physical contact event triggering the 1493-1494 papal-bull software installation; forcing function for FW-017 Discovery Doctrine chain
-assessment: Weight: Proven (the voyage and the Capitulations title grant, sourced) · Framework reading (discovery-as-title-laundering, tier C, held down at H3) | Warrant: Closed (the voyage and the title instrument) · Open (the title-laundering reading)
+Landfall was 12 October 1492. The Davenport passage read begins 'Immediately upon learning of the discoveries made by Columbus', and the demarcation bull Inter Caetera is dated 4 May 1493. Software installation is the framework's term for that bull: the corpus reads the authorisation as following the contact, not the reverse.
 sources: [B live_verified] src-capitulations-santa-fe-1492 https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/capitulations-santa-fe; [B live_verified] src-columbus-voyage-1492 https://www.britannica.com/biography/Christopher-Columbus/The-first-voyage; [A live_verified] src-davenport-inter-caetera-1493 https://archive.org/details/europeantreaties01daveuoft
 links: inter-caetera-1493, treaty-of-tordesillas-1494, waldseemuller-map-1507
 threads: T-DISCOVERY-DOCTRINE
@@ -831,8 +826,7 @@ threads: T-THREE-TRACK-LABOR
 
 [E-W1-013-03] W1 1503 financial TA
 First crown-legislated labour instrument for the Americas, after Columbus's repartimientos; the Asiento replaces its labour
-framework: FW-020 template exported to Americas; V2.1 §III.6 Three-Track Labor System foundational instrument; direct upstream of Asiento 1518 and W2 plantation system
-assessment: Weight: Proven (1501 instructions + 1503 legal definition) · Sourced continuity (Reconquista tribute -> encomienda, per Britannica) | Warrant: Closed
+Mira Caballos records 'en 1496 se introdujeron los repartimientos', before the 1501 instructions and the provision of 20 December 1503. The Asiento half rests on one reference article, read as calling it a replacement labour source as the indigenous population collapsed. No source read makes the Asiento the encomienda's descendant: that link is the corpus's reading.
 sources: [A live_verified] src-nhc-ovando-instructions-1501 https://nationalhumanitiescenter.org/pds/amerbegin/settlement/text4/OvandoHispaniola.pdf; [B live_verified] src-britannica-encomienda https://www.britannica.com/topic/encomienda; [B live_verified] src-mira-caballos-catolica-indios https://estebanmira.weebly.com/uploads/7/9/5/0/7950617/lacatolicaylosindios.pdf; [B live_verified] src-asiento-de-negros-reference https://en.wikipedia.org/wiki/Asiento_de_Negros
 links: repartimiento-1550s
 threads: T-THREE-TRACK-LABOR
@@ -852,8 +846,7 @@ links: inter-caetera-1493, treaty-of-tordesillas-1494
 
 [E-W1-014-03] W1 1507 information TA
 Name "America" enters cartographic record, honouring a European 'discoverer'; indigenous names play no part
-framework: Cartographic naming act; erases prior indigenous naming layer; V2.1 II.4 Noun-to-Adjective operation applied to the continental-name layer
-assessment: Weight: Proven (the 1507 map and the first inscription of 'America', per the LC copy) · Noted (propagated by later adoption, not authorial decree; Waldseemuller dropped it 1513/1516) | Warrant: Closed (the map and the naming) · Open (the representational-layer framework reading)
+The Library of Congress record, which was read, says 'Waldseemuller christened the new lands America'. The naming rationale comes from the Cosmographiae Introductio (Saint-Die, 1507), the booklet issued with the map, which proposes the name after Amerigo Vespucci as its discoverer. The booklet is cited only and was not opened: not yet sourced. Nothing read shows an indigenous name known and passed over.
 sources: [A live_verified] src-loc-waldseemuller-1507 https://www.loc.gov/item/2003626426/; [B citation_only] src-cosmographiae-introductio-1507
 links: inter-caetera-1493, treaty-of-tordesillas-1494
 
@@ -881,9 +874,8 @@ links: inter-caetera-1493, encomienda-1503, valladolid-debate-1550
 threads: T-DISCOVERY-DOCTRINE
 
 [E-W1-016-01] W1 1518 population TA
-Formal beginning of transatlantic slave trade under Spanish crown authorization
-framework: V2.1 III.6 Three-Track Labor System Track A foundational instrument; establishes the transatlantic Staffing Agency chain that runs through South Sea Company 1713 to modern private prison contracts
-assessment: Weight: Proven | Warrant: Closed
+First large crown licence to carry the enslaved direct from Guinea
+The charter of 18 August 1518 from Charles V to Lorenzo de Gorrevod is recorded as the first large asiento direct from Guinea, not the first rule on the trade: it ends a 1501 requirement that the enslaved be born under Christian control and keeps the condition that they be Christians on arrival. The text read is an early-access transcription under editorial review, so the source is held as provisional.
 sources: [B live_provisional] src-charter-1518-asiento https://slaverylawpower.org/chapters/antecedents/charter-1518/
 links: encomienda-1503, dutch-west-india-company-wic-chartered-1621, royal-african-company-chartered-1672, britain-relinquishes-asiento-1750
 threads: T-ASIENTO
@@ -897,8 +889,7 @@ threads: T-ASIENTO
 
 [E-W1-016-03] W1 1518 financial TA
 Contract to import 4,000 African slaves into Spanish America over 8 years
-framework: V2.1 III.6 Three-Track Labor System Track A foundational instrument; establishes the transatlantic Staffing Agency chain that runs through South Sea Company 1713 to modern private prison contracts
-assessment: Weight: Proven | Warrant: Closed
+The charter of 18 August 1518, as read, carries the four thousand figure: a licence to Lorenzo de Gorrevod, with other licences suspended until it was filled. The eight-year term is in the dossier but not in the source note: not yet sourced. The transcription read is early-access and under editorial review, so the source is held as provisional until the AGI original or a scholarly edition is read.
 sources: [B live_provisional] src-charter-1518-asiento https://slaverylawpower.org/chapters/antecedents/charter-1518/
 links: encomienda-1503, dutch-west-india-company-wic-chartered-1621, royal-african-company-chartered-1672, britain-relinquishes-asiento-1750
 threads: T-ASIENTO
@@ -912,16 +903,14 @@ threads: T-DISCOVERY-DOCTRINE
 
 [E-W1-017-02] W1 1521 land TA
 Aztec Triple Alliance destroyed; American silver later becomes the Spanish crown's largest free cash flow
-framework: Silver-flow capitalization event for Merchant-Banker Constant (Fugger, Genoese, later Amsterdam); upstream of Crime of 73 silver demonetization 1873
-assessment: Weight: Proven | Warrant: Closed
+Drelichman and Voth: 'Beginning in the 1540s, Spain received large inflows of silver from the New World.' They put colonial revenue 'in the neighborhood of 15%' in the third quarter of the century and at 29% of Castile's fiscal revenue at the peak, so silver is recorded as the largest part of the Crown's free cash flow, never as its main revenue. All of this is decades after 1521.
 sources: [A live_verified] src-cortes-third-letter-1522 https://en.wikisource.org/wiki/Letters_of_Cortes_to_Emperor_Charles_V_-_Vol_2/Third_letter,_May_15,_1522; [B live_verified] src-britannica-battle-of-tenochtitlan https://www.britannica.com/event/Battle-of-Tenochtitlan; [A live_verified] src-drelichman-voth-sustainable-debts https://crei.cat/wp-content/uploads/users/working-papers/voth_sustainabledebts.pdf; [A live_verified] src-drelichman-voth-institutions https://economics.ubc.ca/wp-content/uploads/sites/38/2013/05/pdf_bookchapter_mauricio-drelichman-institutions-resource.pdf
 links: pizarro-cajamarca-1533, requerimiento-1513
 threads: T-DISCOVERY-DOCTRINE
 
 [E-W1-017-03] W1 1521 financial TA
 Opens the Mexican source of the silver flow (from the 1540s) that will underwrite Spanish sovereign debt and contribute to the 16th-century price revolution
-framework: Silver-flow capitalization event for Merchant-Banker Constant (Fugger, Genoese, later Amsterdam); upstream of Crime of 73 silver demonetization 1873
-assessment: Weight: Proven | Warrant: Closed
+The reference notes date the strikes after 1521: Taxco 'was found in 1534 to have silver' and at Zacatecas 'The first major vein of silver was found in 1548'. Drelichman and Voth date the repayment of the Crown from the late 1540s. On prices, the article read also gives the Central European silver and population-growth explanations.
 sources: [A live_verified] src-cortes-third-letter-1522 https://en.wikisource.org/wiki/Letters_of_Cortes_to_Emperor_Charles_V_-_Vol_2/Third_letter,_May_15,_1522; [B live_verified] src-britannica-battle-of-tenochtitlan https://www.britannica.com/event/Battle-of-Tenochtitlan; [A live_verified] src-drelichman-voth-sustainable-debts https://crei.cat/wp-content/uploads/users/working-papers/voth_sustainabledebts.pdf; [B live_verified] src-wikipedia-price-revolution https://en.wikipedia.org/wiki/Price_revolution
 links: pizarro-cajamarca-1533, requerimiento-1513
 threads: T-DISCOVERY-DOCTRINE
@@ -1020,8 +1009,7 @@ threads: T-WHITENING-PROJECT
 
 [E-W1-023-02] W1 1560s legal TA
 Casta paintings and administrative records produce visible classification apparatus
-framework: FW-020 blood-purity doctrine scaled to formal racial taxonomy; direct doctrinal ancestor of Linnaean/Blumenbach race science and modern OMB Directive 15 categories
-assessment: Weight: Proven (casta as elite classification ideology, per Katzew) · Contested (rigid-enforcement reading, flagged down) | Warrant: Closed (casta as classification imaginary) · Open (enforcement intensity, contested in the literature)
+What is held is a classification imaginary, unevenly enforced. That casta ran as an administrative machine fixing daily status is 'FLAGGED DOWN as framework projection'. The one source, Katzew's Casta Painting (2004), is cited only, its body login-gated and not opened: a page-anchored citation is not yet sourced.
 sources: [A citation_only] src-katzew-casta-painting-2004 https://archive.org/details/castapaintingima0000katz
 links: franklin-observations-1751, toledo-blood-purity-1449
 threads: T-WHITENING-PROJECT
@@ -1055,8 +1043,7 @@ links: spanish-armada-1588, voc-1602
 
 [E-W1-025-02] W1 1568 financial TB
 Amsterdam begins ascent as alternative commercial-financial hub to Antwerp
-framework: Amsterdam commercial-financial hub capitalization pipeline; upstream of VOC 1602 and 17th-century Dutch corporate architecture
-assessment: Weight: Proven | Warrant: Closed
+The one source read, Wikipedia on the Eighty Years' War, records the revolt against Philip II, the war of 1568 to 1648 and its triggers. The shift of financial gravity toward Amsterdam is the corpus's reading, stated as the trigger and not a completed transfer, and the source note says it 'is not fully sourced here': not yet sourced.
 sources: [B live_verified] src-wikipedia-eighty-years-war https://en.wikipedia.org/wiki/Eighty_Years%27_War
 links: spanish-armada-1588, voc-1602
 
@@ -1068,8 +1055,7 @@ links: roanoke-1585, east-india-company-1600
 
 [E-W1-026-02] W1 1577-80 financial TA
 Elizabeth I's investment in Drake's voyage yields approximately 4,700 percent return
-framework: State-privateer joint-venture template; direct upstream of joint-stock corporate model (EIC 1600, VOC 1602) and modern defense-contractor architecture
-assessment: Weight: Proven | Warrant: Closed
+Keynes, A Treatise on Money (1930): 'even Drake had only distributed a dividend of 4700 per cent', a dividend to the syndicate's shareholders, the Crown among them. Wikipedia's Golden Hind page gives 'more than £47 for every £1 invested, or 4,700%'. The percentage rests on these two later works.
 sources: [A live_verified] src-drake-world-encompassed-1628 https://nationalhumanitiescenter.org/pds/amerbegin/contact/text5/drake.pdf; [B live_verified] src-worldhistory-francis-drake https://www.worldhistory.org/Francis_Drake/; [A live_verified] src-keynes-treatise-money-1930 https://archive.org/details/in.ernet.dli.2015.150075; [B live_verified] src-wikipedia-golden-hind https://en.wikipedia.org/wiki/Golden_Hind
 links: roanoke-1585, east-india-company-1600
 
@@ -1129,8 +1115,7 @@ links: roanoke-1585, dutch-revolt-1568
 
 [E-W1-030-02] W1 1588 financial TB
 Spanish sovereign-debt architecture strained; Amsterdam ascent accelerates
-framework: Naval-military crisis triggers Spanish sovereign-debt reconfiguration; upstream of Amsterdam ascent and Dutch corporate-form architecture
-assessment: Weight: Proven | Warrant: Closed
+The source read, World History Encyclopedia on the Armada, carries the fleet, the defeat 'at the Battle of Gravelines' and that 'only half of the Armada made it back to Spain'. The strain on Spanish sovereign debt and the shift toward Amsterdam are the corpus's reading. The source note does not carry them: not yet sourced.
 sources: [B live_verified] src-worldhistory-spanish-armada https://www.worldhistory.org/Spanish_Armada/
 links: roanoke-1585, dutch-revolt-1568
 
@@ -1141,8 +1126,7 @@ sources: [B live_verified] src-wikipedia-nine-years-war-ireland https://en.wikip
 
 [E-W1-031-02] W1 1594 population TB
 Flight of the Earls 1607 eliminates Gaelic Irish sovereign leadership
-framework: FW-019 plus FW-020 template deployed on Ireland; direct precursor to Cromwellian confiscations 1650s and American colonial land-transfer pattern
-assessment: Weight: Proven | Warrant: Closed
+The source read dates the war to 1603 and records that defeat led to the Flight of the Earls in 1607, and that in 1608 the earls' lands were confiscated and 'were soon colonised in the Plantation of Ulster'. The corpus reads this as the removal of Gaelic sovereign leadership.
 sources: [B live_verified] src-wikipedia-nine-years-war-ireland https://en.wikipedia.org/wiki/Nine_Years%27_War_(Ireland)
 threads: T-WHITENING-PROJECT
 
@@ -1163,8 +1147,7 @@ threads: T-DISCOVERY-DOCTRINE
 
 [E-W1-032-03] W1 1600 counter-move TA
 English answer to Iberian Discovery-Doctrine monopoly
-framework: Joint-stock corporate form fully installed; foundational instrument for W2 Corporate Grid window; direct doctrinal ancestor of modern shareholder corporations and BlackRock-Vanguard-State Street concentrated ownership
-assessment: Weight: Proven | Warrant: Closed
+The charter of 31 December 1600 grants trade 'beyond the Cape of Bona Esperanza, to the Streights of Magellan' but 'not to any country already possessed by any Christian Potentate in amity with Her Majesty'. Britannica records that the spice trade 'had been a monopoly of Spain and Portugal'. The corpus reads the Christian-possession qualifier as the clause the window's argument turns on.
 sources: [A live_verified] src-eic-first-charter-1600 https://en.wikisource.org/wiki/Page:A_Collection_of_Charters_and_Statutes_relating_to_the_East_India_Company.pdf/9; [B live_verified] src-worldhistory-east-india-company https://www.worldhistory.org/East_India_Company/; [B live_verified] src-britannica-east-india-company https://www.britannica.com/topic/East-India-Company
 links: voc-1602, manila-galleon-1565
 threads: T-DISCOVERY-DOCTRINE
@@ -1177,15 +1160,13 @@ links: east-india-company-1600, manila-galleon-1565
 
 [E-W1-033-02] W1 1602 financial TB
 First company to issue publicly tradable shares; first sovereign-power grant to corporate entity
-framework: W1-to-W2 hinge event; joint-stock corporate form scaled to sovereign power; Amsterdam-Sephardic Tier 1 middleware institutionalized; direct doctrinal ancestor of every subsequent multinational corporation including modern BlackRock-Vanguard-State Street
-assessment: Weight: Proven | Warrant: Closed
+World History Encyclopedia, the page read, calls the VOC the world's 'first publicly traded company' and gives it 'the right to make treaties, build fortifications, and conduct military operations'. It does not say this was the first such grant to a company: that claim is not yet sourced, and the charter itself was not read.
 sources: [B live_verified] src-worldhistory-voc https://www.worldhistory.org/Dutch_East_India_Company/
 links: east-india-company-1600, manila-galleon-1565
 
 [E-W1-033-03] W1 1602 counter-move TB
-Amsterdam-Sephardic Tier 1 middleware layer institutionalized
-framework: W1-to-W2 hinge event; joint-stock corporate form scaled to sovereign power; Amsterdam-Sephardic Tier 1 middleware institutionalized; direct doctrinal ancestor of every subsequent multinational corporation including modern BlackRock-Vanguard-State Street
-assessment: Weight: Proven | Warrant: Closed
+An Amsterdam financial middle layer institutionalized (the corpus's reading)
+The one source read, World History Encyclopedia on the VOC, records the charter of 20 March 1602, the capital and the trade monopoly, and carries nothing on who supplied the capital: that part is not yet sourced. The middleware layer is the corpus's reading, not a document's.
 sources: [B live_verified] src-worldhistory-voc https://www.worldhistory.org/Dutch_East_India_Company/
 links: east-india-company-1600, manila-galleon-1565
 
@@ -1240,15 +1221,13 @@ threads: T-DISCOVERY-DOCTRINE, T-NOUN-TO-ADJECTIVE
 
 [E-W1-037-02] W1 1524 sovereign TB
 A French survey steered 'in order not to meet with the Spaniards'
-framework: Doctrinal layer, proposed: a French royal survey of a coast the papal division of 1493 and the treaty of 1494 had assigned to other crowns, steered to avoid Spain
-assessment: Weight: Proven (the descriptions, the date and the seized boy, Hall's translation of the Cellere text) | Warrant: Closed (what he recorded) · Open (the Italian wording; the full 1910 translation)
+The letter of 8 July 1524 is addressed to Francis I. The phrase is E. H. Hall's English of 1910, read in the 1916 selections. The Italian text was not read and the full 1910 translation is not yet sourced. The corpus reads the course as reconnaissance for a French claim outside the Iberian division.
 sources: [B live_verified] src-verrazzano-hall-1916-selections https://archive.org/download/verrazanosvoyage00verr/verrazanosvoyage00verr.pdf
 threads: T-DISCOVERY-DOCTRINE, T-NOUN-TO-ADJECTIVE
 
 [E-W1-037-03] W1 1524 violence TB
 A boy of about eight taken from an old woman, 'to carry to France'
-framework: Doctrinal layer, proposed: a French royal survey of a coast the papal division of 1493 and the treaty of 1494 had assigned to other crowns, steered to avoid Spain
-assessment: Weight: Proven (the descriptions, the date and the seized boy, Hall's translation of the Cellere text) | Warrant: Closed (what he recorded) · Open (the Italian wording; the full 1910 translation)
+The letter calls the place 'Arcadia'. The editor of the 1916 selections puts it in Maryland or Delaware, so the location is the editor's, not Verrazzano's. Read in Hall's English version of the Cellere text (1910), selections only. The Italian wording is not yet sourced.
 sources: [B live_verified] src-verrazzano-hall-1916-selections https://archive.org/download/verrazanosvoyage00verr/verrazanosvoyage00verr.pdf
 threads: T-DISCOVERY-DOCTRINE, T-NOUN-TO-ADJECTIVE
 
@@ -1261,8 +1240,7 @@ threads: T-SOFTWARE-NEUTRALITY, T-DISCOVERY-DOCTRINE
 
 [E-W1-038-02] W1 1565 sovereign TA
 Spain enforces its claim: a fort built 'without the leave of Your Majesty'
-framework: Doctrinal layer: a crown enforcing its claim with confession as a stated ground for killing, in the letter's own words
-assessment: Weight: Proven (the stated grounds, the search for Catholics and who was spared, Menendez's own letter) | Warrant: Closed (why he says he killed them, and whom he spared) · Open (the French account; the Spanish original)
+Menendez's letter to Philip II of 15 October 1565 gives two grounds together, the fort and 'because they were planting their wicked Lutheran sect'. Neither stands alone. Read in Henry Ware's translation of 1894. The Spanish original was not read, and the date the French settled the fort is not yet sourced.
 sources: [A live_verified] src-mhs-proceedings-1894-menendez-letters https://archive.org/details/sim_massachusetts-historical-society-proceedings_1892-1894_8
 threads: T-SOFTWARE-NEUTRALITY, T-DISCOVERY-DOCTRINE
 
@@ -1282,7 +1260,7 @@ threads: T-NOUN-TO-ADJECTIVE, T-SOFTWARE-NEUTRALITY
 
 [E-W1-039-02] W1 1593 records TB
 Named 'moriaan' in other Amsterdam records
-assessment: Weight: Supported (marriage, origin, trade, daughter's baptism, via Ponte) · Supported (free status, Ponte's judgement) | Warrant: Closed (resident in Amsterdam 1593 to 1602) · Open (how he came; the registers themselves)
+Ponte, an archivist at the Stadsarchief Amsterdam, reports that Bastiaen Pietersz is called 'moriaan' in the sources and does not cite the registers by number. Which record uses the word is not yet sourced. The marriage and baptism registers were not read.
 sources: [B live_verified] src-ponte-eerste-zwarte-amsterdammers-2020 https://voetnoot.org/2020/11/14/de-eerste-zwarte-amsterdammers/; [B live_verified] src-ponte-tussen-slavernij-en-vrijheid-2020 https://voetnoot.org/2020/12/24/tussen-slavernij-en-vrijheid-in-amsterdam/
 threads: T-NOUN-TO-ADJECTIVE, T-SOFTWARE-NEUTRALITY
 
@@ -1295,15 +1273,13 @@ threads: T-SOFTWARE-NEUTRALITY, T-NOUN-TO-ADJECTIVE
 
 [E-W1-040-02] W1 1596 population TB
 Freedom argued from baptism, not from origin or colour
-framework: Doctrinal layer, proposed: a religious status, baptism, is argued as the ground of legal freedom, the Christian-exit principle Dum Diversas left open
-assessment: Weight: Proven (the protest's words and the release terms, minutes quoted verbatim) · Supported (the appeal and its outcome, via Zeeuwse Ankers) | Warrant: Closed (baptism was the ground argued) · Open (which body decided the second petition; what became of them)
+15 November 1596: the burgomaster's ground, in the States of Zeeland minutes as Zeeuwse Ankers quotes them, is that they are 'wesende alle gedoopte Christenen' and so not to be sold as slaves. On the owner's second petition he may do with them 'soe hy 't verstaet'. The corpus reads this as the contested case in the religion-as-key line. The minutes were not read directly.
 sources: [B live_verified] src-zeeuwse-ankers-moren-in-middelburg https://www.zeeuwseankers.nl/verhaal/moren-in-middelburg
 threads: T-SOFTWARE-NEUTRALITY, T-NOUN-TO-ADJECTIVE
 
 [E-W1-040-03] W1 1596 records TB
 The States' minutes name them 'Mooren' brought from Guinea
-framework: Doctrinal layer, proposed: a religious status, baptism, is argued as the ground of legal freedom, the Christian-exit principle Dum Diversas left open
-assessment: Weight: Proven (the protest's words and the release terms, minutes quoted verbatim) · Supported (the appeal and its outcome, via Zeeuwse Ankers) | Warrant: Closed (baptism was the ground argued) · Open (which body decided the second petition; what became of them)
+The minutes of 15 November 1596, as Zeeuwse Ankers quotes them: 'veele Mooren, wel by de hondert, zoo Mans als Vrouwen ende Kinderen'. That the people came from Guinea, on a ship taken from the Portuguese, is the article's report, not the quoted passage. A direct reading of the minutes is not yet sourced.
 sources: [B live_verified] src-zeeuwse-ankers-moren-in-middelburg https://www.zeeuwseankers.nl/verhaal/moren-in-middelburg
 threads: T-SOFTWARE-NEUTRALITY, T-NOUN-TO-ADJECTIVE
 
@@ -1978,8 +1954,7 @@ threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
 
 [E-W2-045-02] W2 1644 population TA
 Freedom for life, withheld from the children born or yet to be born
-framework: Software layer: a chartered company's council writes a status rule that frees a person and keeps the line, the same layer as the WIC charter itself
-assessment: Weight: Proven (the act's terms, O'Callaghan, Laws and Ordinances of New Netherland (1868)) · Supported (the line to Virginia 1662, the corpus's comparison) | Warrant: Closed (what the act did) · Open (whether the children clause was enforced, and whether it survived 1664)
+The act of 25 February 1644 releases eleven men and their wives 'for the term of their natural lives' and binds 'their children at present born or yet to be born' to serve the West India Company 'as Slaves'. It was read in O'Callaghan's 1868 English translation. The Dutch minute is not yet sourced, and whether the children clause was enforced is open.
 sources: [A live_verified] src-ocallaghan-laws-ordinances-nn-1868 https://archive.org/download/cu31924080779402/cu31924080779402.pdf
 threads: T-THREE-TRACK-LABOR, T-WHITENING-PROJECT
 
@@ -2020,15 +1995,13 @@ threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT, T-SOFTWARE-NEUTRALITY
 
 [E-W2-047-02] W2 1685 financial TB
 The licence bought by taking on the previous holders' debts
-framework: Capitalization layer: the crown's need for sound money buys a waiver of both the nationality and the confessional bars
-assessment: Weight: Supported (the waiver, the missionaries, the protests and the annulment, via Wright from the Archivo de Indias; Van Belle's printed account) · Contested (why it ended: Wright argues English ascendancy) | Warrant: Closed (nation and religion both named, both waived) · Open (the Spanish originals; the theologians' committee; the grant date)
+Antunes and Negron (2022), read for pp. 35 to 41, record that Balthasar Coymans was made asentista in 1685 after promising to take on Porcio's debts, and that his asiento continued Barroso and Porcio's on new conditions. The Spanish originals in the Archivo de Indias are not yet sourced.
 sources: [B live_verified] src-wright-coymans-asiento-1924 https://www.delpher.nl/nl/tijdschriften/view?coll=dts&identifier=MMKB07:000826001:00035; [A live_verified] src-van-belle-pertinent-verhaal-1689 https://archive.org/details/pertinentenwaara00unkn; [B live_verified] src-antunes-negron-2022 https://scholarlypublications.universiteitleiden.nl/access/item:3455659/view; [A live_verified] src-scelle-traite-negriere-1906 https://archive.org/details/latraitengri01sceluoft
 threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT, T-SOFTWARE-NEUTRALITY
 
 [E-W2-047-03] W2 1685 population TB
 12,000 contracted with the WIC for Curacao, April 1685
-framework: Capitalization layer: the crown's need for sound money buys a waiver of both the nationality and the confessional bars
-assessment: Weight: Supported (the waiver, the missionaries, the protests and the annulment, via Wright from the Archivo de Indias; Van Belle's printed account) · Contested (why it ended: Wright argues English ascendancy) | Warrant: Closed (nation and religion both named, both waived) · Open (the Spanish originals; the theologians' committee; the grant date)
+Antunes and Negron (2022) write that 'The WIC agreed to deliver 12,000 slaves between 1685 and 1688', citing an Amsterdam notarial deed of 10 April 1685. Van Belle's printed account of 1689 names a West India Company contract of the same date and the same figure. The deed itself is not yet sourced.
 sources: [B live_verified] src-wright-coymans-asiento-1924 https://www.delpher.nl/nl/tijdschriften/view?coll=dts&identifier=MMKB07:000826001:00035; [A live_verified] src-van-belle-pertinent-verhaal-1689 https://archive.org/details/pertinentenwaara00unkn; [B live_verified] src-antunes-negron-2022 https://scholarlypublications.universiteitleiden.nl/access/item:3455659/view; [A live_verified] src-scelle-traite-negriere-1906 https://archive.org/details/latraitengri01sceluoft
 threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT, T-SOFTWARE-NEUTRALITY
 
@@ -2041,15 +2014,13 @@ threads: T-FRANCHISE-TRANSFER
 
 [E-W2-048-02] W2 1673-74 land TB
 Manhattan and the Hudson colony restored under article 6
-framework: Software layer, proposed: a colony's property regime carried across changes of sovereign by capitulation and treaty
-assessment: Weight: Proven (treaty art. 6 and 7; the 1664 articles' property clauses) | Warrant: Closed (property of residents protected in 1664; places restored as they stood in 1674) · Open (whether enslaved people passed as property; Andros's restoration)
+Article 6 of the Treaty of Westminster, 19 February 1674, names no colony: places taken in the war 'shall be restored to the former lord and proprietor in exactly the same condition'. That its chief effect is the restoration of New Netherland is Davenport's editorial introduction. The treaty was read in English translation only, and the restoration under Andros is not yet sourced.
 sources: [A live_verified] src-davenport-european-treaties-v2-1929 https://archive.org/details/europeantreaties0002fran_l1a0; [A live_verified] src-ocallaghan-docs-colonial-ny-vol2 https://archive.org/details/documentsrelativ02newyuoft
 threads: T-FRANCHISE-TRANSFER
 
 [E-W2-048-03] W2 1673-74 legal TB
 1664 articles: 'free denizens' keep 'lands, houses, goods, shipps'
-framework: Software layer, proposed: a colony's property regime carried across changes of sovereign by capitulation and treaty
-assessment: Weight: Proven (treaty art. 6 and 7; the 1664 articles' property clauses) | Warrant: Closed (property of residents protected in 1664; places restored as they stood in 1674) · Open (whether enslaved people passed as property; Andros's restoration)
+The Articles of Capitulation of 27 August (O.S.) 1664, ten years before the Treaty of Westminster, read in O'Callaghan's 1858 volume, pp. 250 to 252. Article 4 lets those who leave remove 'wife, children, servants, goods'. No article names enslaved people, and whether they passed as property is not yet sourced.
 sources: [A live_verified] src-davenport-european-treaties-v2-1929 https://archive.org/details/europeantreaties0002fran_l1a0; [A live_verified] src-ocallaghan-docs-colonial-ny-vol2 https://archive.org/details/documentsrelativ02newyuoft
 threads: T-FRANCHISE-TRANSFER
 
@@ -2633,8 +2604,7 @@ threads: T-SOFTWARE-NEUTRALITY
 
 [E-W4-063-03] W4 1836 sovereign TA
 Binding on the United States in 1952 while Morocco was under French protectorate: the ICJ applied the 1836 treaty as subsisting law
-framework: The sovereignty instrument that survives the protectorate. Article 25's indefinite-force clause is why a United States treaty with Morocco was still operative law in 1952, which is the twentieth-century hinge the corpus had been attributing to the 1787 treaty
-assessment: Weight: Proven (the instrument read in full from the Statutes at Large, Article 25 and the cross-reference footnote verbatim) | Warrant: Closed (the treaty text) · Open (whether the two W6 titles are amended, which is a separate frozen-field ruling)
+The ICJ judgment of 27 August 1952 held that 'The import controls were contrary to the Treaty between the United States and Morocco of 1836 and the General Act of Algeciras'. The treaty was still in force under its own Article 25: fifty years, then binding 'until the one shall give twelve months notice to the other of an intention to abandon it'. No notice was given.
 sources: [A live_verified] src-treaty-morocco-1836 https://www.govinfo.gov/content/pkg/STATUTE-8/pdf/STATUTE-8-Pg484.pdf; [A live_verified] src-icj-morocco-1952 https://www.icj-cij.org/case/11
 threads: T-SOFTWARE-NEUTRALITY
 
@@ -3025,9 +2995,8 @@ sources: [A live_verified] src-brace-dangerous-classes-1872 https://archive.org/
 links: ny-times-founded-1851, screening-committees-include-editors-1854, know-nothing-press-network-1855
 
 [E-W5-004-01] W5 1854 violence TB
-Nativist rioting against Catholic immigrants at the Williamsburg election
-framework: Software layer. The placement mechanism and the narrative mechanism are the same committee, and the year's land statute lowers the price of the ground the population is being moved onto.
-assessment: Weight: Sourced (4 of 4 entries) | Warrant: Open (every entry now Sourced; not yet re-read against the hypotheses)
+Nativist rioting at the Williamsburg election; the page read speaks of 'foreigners'
+The New York Herald of 23 November 1854, page 1, reports the 'Williamsburg Election Riot' with prisoners under examination, and a witness is asked about a 'society formed [to ex]clude foreigners', a question objected to and not answered. The page as quoted speaks of foreigners: that the targets were Catholic is not yet sourced. The entry first named no city and was matched to this riot by year and character.
 sources: [B live_verified] src-nyherald-williamsburg-election-riot-1854 http://www.loc.gov/resource/sn83030313/1854-11-23/ed-1/?sp=1
 links: know-nothing-press-network-1855, dred-scott-press-coverage-1857, draft-riot-press-coverage-1863
 
@@ -3040,8 +3009,7 @@ threads: T-THREE-TRACK-LABOR
 
 [E-W5-004-03] W5 1854 legal TB
 Graduation Act cuts the price of long-unsold public land
-framework: Software layer. The placement mechanism and the narrative mechanism are the same committee, and the year's land statute lowers the price of the ground the population is being moved onto.
-assessment: Weight: Sourced (4 of 4 entries) | Warrant: Open (every entry now Sourced; not yet re-read against the hypotheses)
+The statute read is 'An Act to Graduate the Price of the Public Lands', approved 4 August 1854, 10 Stat. 574, which brings land in market for thirty years or more down to 'twelve-and-a-half cents per acre'. The entry was first titled 'Land Price Act' with an empty body, so the match to this statute is the corpus's identification, flagged for the author to confirm.
 sources: [B live_verified] src-graduation-act-1854 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_10.djvu/594
 links: 160-acres-free-homestead-1862, memphis-no-massacres-spark-national-outrage-1866, dawes-act-allotment-classification-1887, pan-american-commercial-conference-1889
 threads: T-DISCOVERY-DOCTRINE
@@ -3258,8 +3226,7 @@ links: 14th-amend-press-framing-1868, dc-organic-act-republic-becomes-corporatio
 
 [E-W5-015-02] W5 1870 legal TB
 Naturalization laws extended to aliens of African nativity and persons of African descent
-framework: Software layer. A statute defining who may become a citizen, distributed through a network that now reaches most of the country's papers.
-assessment: Weight: Sourced (3 of 3 entries) | Warrant: Open (every entry now Sourced; not yet re-read against the hypotheses)
+Section 7 of the Act of 14 July 1870, 16 Stat. 254, reads: 'That the naturalization laws are hereby extended to aliens of African nativity and to persons of African descent.' The corpus reads this as the link between the 1790 rule for 'any alien, being a free white person' and the 1882 bar on admitting Chinese to citizenship. That the section shut anyone out is an inference from where its list stops, not a statement in it.
 sources: [B live_verified] src-naturalization-act-1870 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_16.djvu/288; [A live_verified] src-us-stat-16-254-naturalization-1870 https://www.govinfo.gov/link/statute/16/254
 links: convict-leasing-peaks-1882, tulsa-covered-then-erased-1921, 1924-triple-lock-reclassification-chain-step-1924
 threads: T-WHITENING-PROJECT
@@ -3386,8 +3353,7 @@ threads: T-SOFTWARE-NEUTRALITY
 
 [E-W5-020-03] W5 1875 innovation TB
 Bell files the telephone patent, and the wire network acquires a second use
-framework: Hardware-to-software transition. Federal public-accommodations law and a communications patent arrive in the same year as continued organized violence in Mississippi.
-assessment: Weight: Sourced (3 of 3 entries) | Warrant: Open (every entry now Sourced; not yet re-read against the hypotheses)
+The patent is US 174,465, filed 14 February 1876 and granted 7 March 1876. Its own title is 'Improvement in Telegraphy', not telephone. The 1875 Bell patent, US 161,739, was checked and is a telegraph patent, so the year 1875 is recorded as a displacement and not corrected.
 sources: [A live_verified] src-bell-telephone-patent-1876 https://patents.google.com/patent/US174465A/en
 links: elijah-mccoy-automatic-lubrication-1872, fair-press-blankets-nation-1876, before-after-photos-as-propaganda-1879
 
@@ -3521,8 +3487,7 @@ links: pulitzer-buys-ny-world-1883, pan-american-commercial-conference-1889, rii
 
 [E-W5-027-02] W5 1887 population TB
 Federal Indian school enrollment counted at 15,784 by the schools' own newspaper
-framework: Extraction layer. The window's densest year: a land statute that is also an identity-assignment apparatus, a labor massacre kept local, and an invention in the communications layer.
-assessment: Weight: Sourced (4 of 6 entries) · Cited (2 of 6, a search-query measurement) | Warrant: Open (2 of 6 entries rest on no reader-checkable document)
+The Red Man of Carlisle, 1 April 1890, page 1, prints the Indian Bureau figure: enrollment 'for the year ending June 30, 1889, was 15,784'. That counts pupils in fiscal 1889, not schools in 1887. The count of 25 or more federal boarding schools by 1887 is not yet sourced: the tables that hold it are in the 1891 Commissioner's report, whose page images carry no text layer.
 sources: [A live_verified] src-red-man-enrollment-1890 http://www.loc.gov/resource/2025200871/1890-04-01/ed-1/?sp=1
 links: before-after-photos-as-propaganda-1879, convict-leasing-peaks-1882, charlotte-astor-1-113-children-sent-1884, italian-lynching-sparks-international-incident-1891
 threads: T-THREE-TRACK-LABOR
@@ -3536,8 +3501,7 @@ threads: T-DISCOVERY-DOCTRINE, T-NOUN-TO-ADJECTIVE
 
 [E-W5-027-04] W5 1887 land TB
 Land declared surplus after allotment is opened to purchase by non-Native buyers
-framework: Extraction layer. The window's densest year: a land statute that is also an identity-assignment apparatus, a labor massacre kept local, and an invention in the communications layer.
-assessment: Weight: Sourced (4 of 6 entries) · Cited (2 of 6, a search-query measurement) | Warrant: Open (2 of 6 entries rest on no reader-checkable document)
+The Dawes Act of 8 February 1887, 24 Stat. 388, provides that reservation land sold or released to the United States by a tribe is to be disposed of 'to actual and bona fide settlers only', in tracts of no more than 160 acres. The Act's word is settlers. It holds no roll or blood-quantum provision: the source record assigns those to the 1893 Commission and the 1898 Curtis Act.
 sources: [B live_verified] src-dawes-act-1887 https://en.wikisource.org/wiki/Dawes_Act
 links: pan-american-commercial-conference-1889, riis-how-the-other-half-lives-1890, spanish-american-war-dominates-press-1898, algeciras-conference-1906
 threads: T-DISCOVERY-DOCTRINE
@@ -3599,8 +3563,7 @@ links: dawes-act-allotment-classification-1887, pan-american-commercial-conferen
 
 [E-W5-029-02] W5 1890 legal TB
 Indian Depredations Act opens the Court of Claims to suits against tribes for property loss
-framework: Software layer. Two photographic and narrative operations in one year, with a claims statute running beneath them.
-assessment: Weight: Sourced (4 of 4 entries) | Warrant: Open (every entry now Sourced; not yet re-read against the hypotheses)
+The Act was approved 3 March 1891, 26 Stat. 851. It gives the Court of Claims jurisdiction over 'All claims for property of citizens of the United States taken or destroyed by Indians belonging to any band, tribe, or nation'. The one-year displacement from 1890 is recorded on the source and waits on a placement ruling.
 sources: [B live_verified] src-indian-depredations-act-1891 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_26.djvu/904
 links: dawes-act-allotment-classification-1887, pan-american-commercial-conference-1889, spanish-american-war-dominates-press-1898, algeciras-conference-1906
 threads: T-DISCOVERY-DOCTRINE
@@ -3733,8 +3696,7 @@ links: record-destruction-not-investigated-1897, mckinley-assassination-dominate
 
 [E-W5-036-03] W5 1898 legal TB
 Curtis Act abolishes tribal courts and completes allotment in Indian Territory
-framework: Software layer. The window's largest coverage displacement: a domestic coup against an elected government, unreported, beside a foreign war being manufactured.
-assessment: Weight: Sourced (3 of 5 entries) · Cited (2 of 5, a search-query measurement) | Warrant: Open (2 of 5 entries rest on no reader-checkable document)
+Approved 28 June 1898, 30 Stat. 495. Section 28, read, provides that 'on the first day of July, eighteen hundred and ninety-eight, all tribal courts in Indian Territory shall be abolished'. Two pages were read of an Act that runs from page 495 to 519: sections 22 and 23 on allotment procedure were seen, but the section under which the Commission made or completed the rolls is not yet sourced.
 sources: [B live_verified] src-curtis-act-1898 https://en.wikisource.org/wiki/Page:United_States_Statutes_at_Large_Volume_30.djvu/534
 links: pan-american-commercial-conference-1889, riis-how-the-other-half-lives-1890, algeciras-conference-1906, oklahoma-statehood-1907
 threads: T-DISCOVERY-DOCTRINE
@@ -4571,7 +4533,7 @@ links: rafinesque-primitive-black-nations-1832, rafinesque-the-american-nations-
 
 [E-W5-130-02] W5 1856 population TA
 Hebrew, Mauritanian, Asiatic and indigenous origin theories set side by side, each with its holders named
-assessment: Weight: Proven (what the memoir records, quoted from the 1856 printing) · Supported (the corpus's reading of how it closes, via Haven's own conclusion) | Warrant: Closed (the memoir says these things) · Open (what the earlier authors he reports actually wrote: Postel, Peter Martyr, Torquemada, Thorowgood, Adair, McCulloh, Schoolcraft, all unread)
+Haven's 1856 memoir is a history of opinion. It reports, for example, that Postel held 'all North America was peopled from Mauritania' (p. 13) and quotes Morton: 'I regard the American nations as the true autochthones' (p. 80). Each holder is given at second hand through Haven. The earlier authors themselves, Postel, Peter Martyr, Torquemada and the rest, are not yet sourced.
 sources: [A live_verified] src-haven-archaeology-united-states-1856 https://archive.org/download/smithsoniancontr81856smit/smithsoniancontr81856smit_djvu.txt
 
 [E-W5-130-03] W5 1856 certification TA
@@ -5238,7 +5200,7 @@ links: dixon-racial-history-of-man-1923, haven-archaeology-of-the-united-states-
 
 [E-W6-042-02] W6 2023 records TA
 Remains of more than 30,000 people held; about half Native American; names known for almost 6,000
-assessment: Weight: Proven (the apology and the task force's findings, quoted from the Institution's own documents) | Warrant: Closed (the Institution apologized and said why the remains were collected) · Open (the Secretary's August 2023 statement and the Washington Post investigation, unread; whether the recommendations became policy)
+The task force report of 10 January 2024, p. 2, read in full. The same report's draft charter says 'more than 33,000 people', and it counts 'approximately 250 brains'. Both figures are the Institution's and 'are not reconciled in the document'.
 sources: [A live_verified] src-smithsonian-human-remains-release-2023 http://web.archive.org/web/20230923200423/https://www.si.edu/newsdesk/releases/smithsonian-forms-task-force-develop-guidelines-human-remains-collection; [A live_verified] src-smithsonian-human-remains-task-force-report-2024 https://www.si.edu/sites/default/files/about/human-remains-task-force-report.pdf
 
 [E-W6-042-03] W6 2023 certification TA
@@ -5259,7 +5221,7 @@ sources: [A live_verified] src-executive-orders-6910-6964 https://www.presidency
 
 [E-W6-043-03] W6 1934 sovereign TA
 The Indian Reorganization Act ends allotment; Interior counts 'the loss of two-thirds of the 139,000,000 acres owned by Indian tribes in 1887'
-assessment: Weight: Proven (the orders, the Act, the Land Office's figures) | Warrant: Closed (entry collapsed and became discretionary) · Open (who had been entering in the last years, by race or tribe: not in what was read)
+Act of 18 June 1934, 48 Stat. 984, section 1: no reservation land 'shall be allotted in severalty to any Indian'. The dossier records that the Act applies only to tribes that voted to accept it. The count of the loss is the Secretary of the Interior's, in the annual report for fiscal 1935, p. 114.
 sources: [A live_verified] src-executive-orders-6910-6964 https://www.presidency.ucsb.edu/documents/executive-order-6910-withdrawal-public-lands-for-conservation; [A live_verified] src-taylor-grazing-act-1934 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/48/STATUTE-48-Pg1269.pdf; [A live_verified] src-interior-annual-reports-1935-1937 https://archive.org/details/annualreportofse00unit_7; [A live_verified] src-indian-reorganization-act-1934 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/48/STATUTE-48-Pg984.pdf
 
 [E-W6-044-01] W6 1935 legal TA
@@ -5302,12 +5264,12 @@ links: operation-paperclip-1947, 1924-triple-lock-reclassification-chain-step-19
 
 [E-W6-046-02] W6 1935 legal TA
 Nuremberg, 15 September 1935: the Reich Citizenship Law and the marriage law
-assessment: Weight: Proven (the handbook's table and conclusion, read in the original) · Supported (the 1934 commission meeting, known only through a later scholar) | Warrant: Closed (that the handbook cites the American statutes) · Open (the 1934 transcript; Krieger's studies)
+The citizenship law, Art. 2(1): 'A citizen of the Reich is only that subject, who is of German- or kindred blood'. Read in the English translations made for the Nuremberg trial (documents 1416-PS and 2000-PS), not in German: 'the German text was not opened', and 'The Blood Law text is a partial translation'.
 sources: [A live_verified] src-ns-handbuch-recht-gesetzgebung-1935 https://archive.org/details/hans-frank-nationalsozialistisches-handbuch-fur-recht-und-gesetzgebung-1935-2-ed; [B live_verified] src-reich-citizenship-law-1935 https://avalon.law.yale.edu/imt/1416-ps.asp; [B live_verified] src-laughlin-to-schneider-1936 https://dnalc.cshl.edu/view/11198-H-Laughlin-letter-to-C-Schneider-acknowledging-honorary-degree-from-the-University-of-Heidelberg.html; [A live_verified] src-carnegie-year-book-38-1939 https://archive.org/details/yearbookcarne38193839carn
 
 [E-W6-046-03] W6 1935 certification TA
 Carnegie renames the Eugenics Record Office in July 1939 and retires Laughlin on 1 January 1940
-assessment: Weight: Proven (the handbook's table and conclusion, read in the original) · Supported (the 1934 commission meeting, known only through a later scholar) | Warrant: Closed (that the handbook cites the American statutes) · Open (the 1934 transcript; Krieger's studies)
+The retirement is Carnegie's own record: 'Dr. Laughlin will retire from the Institution staff on January 1, 1940' (Year Book 38, pp. 13 to 14). The July 1939 renaming rests on 'Laughlin's own notes as transcribed by Cold Spring Harbor Laboratory'. The date the office closed 'is given differently by different sources'.
 sources: [A live_verified] src-ns-handbuch-recht-gesetzgebung-1935 https://archive.org/details/hans-frank-nationalsozialistisches-handbuch-fur-recht-und-gesetzgebung-1935-2-ed; [B live_verified] src-reich-citizenship-law-1935 https://avalon.law.yale.edu/imt/1416-ps.asp; [B live_verified] src-laughlin-to-schneider-1936 https://dnalc.cshl.edu/view/11198-H-Laughlin-letter-to-C-Schneider-acknowledging-honorary-degree-from-the-University-of-Heidelberg.html; [A live_verified] src-carnegie-year-book-38-1939 https://archive.org/details/yearbookcarne38193839carn
 
 [E-W6-047-01] W6 1936 to 1938 information TB
@@ -5318,12 +5280,12 @@ links: census-instructions-indian-negro-returned-as-negro-1940, virginia-registr
 
 [E-W6-047-02] W6 1936 to 1938 population TB
 About 23 speakers tell of an Indian forebear stolen, sold or held as a slave
-assessment: Weight: Supported (counts from a keyword sweep and reading of 589 narratives; every quotation checked) · Proven (the wording of each quoted narrative as transcribed) | Warrant: Closed (that these speakers said these things to an interviewer) · Open (narratives with none of the search words; the typescript images; how many would have answered a direct question)
+The count is the corpus's own, from its classification table: 'category 6: 26 rows from about 23 speakers', each quotation checked against its volume. It comes from a keyword sweep and a reading of 589 narratives out of some 2,400. Narratives with none of the search words were not read.
 sources: [B live_verified] src-fwp-slave-narratives-1936-1938 https://www.gutenberg.org/ebooks/13847
 
 [E-W6-047-03] W6 1936 to 1938 records TB
 Moble Hopson of Virginia, of being placed with the colored people: "'Twas the war done that"
-assessment: Weight: Supported (counts from a keyword sweep and reading of 589 narratives; every quotation checked) · Proven (the wording of each quoted narrative as transcribed) | Warrant: Closed (that these speakers said these things to an interviewer) · Open (narratives with none of the search words; the typescript images; how many would have answered a direct question)
+From the Virginia volume of the narratives, read in a Project Gutenberg transcription. The narrative carries an editor's note that it was written from memory within the hour. The dossier counts it as the 'one sustained account of a people placed with the colored after the war'.
 sources: [B live_verified] src-fwp-slave-narratives-1936-1938 https://www.gutenberg.org/ebooks/13847
 
 [E-W6-048-01] W6 1935 sovereign TB
@@ -5334,12 +5296,12 @@ links: bretton-woods-1944, garvey-deported-1927, chicago-sedition-and-draft-arre
 
 [E-W6-048-02] W6 1935 certification TB
 The sanctions were proposals each government applied for itself; the League Assembly took no vote
-assessment: Weight: Supported (the League's acts, from a contemporaneous chronicle) · Proven (the NAACP resolution as printed) | Warrant: Closed (finding, sanctions, lifting) · Open (the League's own record; the response of Black organisations beyond the NAACP)
+The Bulletin of International News, 26 October 1935, which the source note calls 'A contemporaneous chronicle, not the League's own Official Journal, which was not reached'. The League's own record is not yet sourced, and the item address is still to be confirmed.
 sources: [B needs_verification] src-bulletin-of-international-news-1935-1936 https://archive.org/search?query=bulletin+of+international+news+1935; [B live_verified] src-haile-selassie-league-address-1936 https://en.wikisource.org/wiki/Appeal_to_the_League_of_Nations; [B needs_verification] src-the-crisis-1935-08-naacp-resolutions https://archive.org/search?query=sim_crisis_1935-08
 
 [E-W6-048-03] W6 1935 counter-move TB
 The NAACP's St. Louis convention condemns the aggression weeks before the invasion
-assessment: Weight: Supported (the League's acts, from a contemporaneous chronicle) · Proven (the NAACP resolution as printed) | Warrant: Closed (finding, sanctions, lifting) · Open (the League's own record; the response of Black organisations beyond the NAACP)
+Printed in The Crisis, August 1935, among the resolutions of the NAACP's 26th annual conference: 'We unequivocally condemn Italian aggression in Ethiopia'. The date of the invasion, on which 'weeks before' rests, is not yet sourced from a primary document, and other organisations 'were not reached'.
 sources: [B needs_verification] src-bulletin-of-international-news-1935-1936 https://archive.org/search?query=bulletin+of+international+news+1935; [B live_verified] src-haile-selassie-league-address-1936 https://en.wikisource.org/wiki/Appeal_to_the_League_of_Nations; [B needs_verification] src-the-crisis-1935-08-naacp-resolutions https://archive.org/search?query=sim_crisis_1935-08
 
 [E-W6-049-01] W6 1940 population TA
@@ -5351,7 +5313,7 @@ threads: T-NOUN-TO-ADJECTIVE
 
 [E-W6-049-02] W6 1940 records TA
 The 1930 instructions end the 'Mulatto' count: black and mulatto 'returned as Negroes, without distinction'
-assessment: Weight: Proven (the wording of the 1930 and 1940 instructions) | Warrant: Closed (the instructions say this) · Open (how many people the rule moved: no count exists in what was read)
+Paragraph 151 of the 1930 instructions: 'Both black and mulatto persons are to be returned as Negroes, without distinction'. The category is absent from the 1900 instructions, present in 1910 and 1920, and dropped in 1930. The 1910 instructions were read in the Bureau's own reprint, not the printed booklet.
 sources: [A live_verified] src-census-1940-instructions-to-enumerators https://www.census.gov/content/dam/Census/programs-surveys/decennial/technical-documentation/questionnaires/1940instructions.pdf; [A live_verified] src-census-1930-instructions-to-enumerators https://www.census.gov/content/dam/Census/programs-surveys/decennial/technical-documentation/questionnaires/1930instructions.pdf
 
 [E-W6-049-03] W6 1940 legal TA
@@ -5367,7 +5329,7 @@ links: executive-order-9066-japanese-internment-1942, bretton-woods-1944, tuskeg
 
 [E-W6-050-02] W6 1940 population TA
 Named volunteers refused at recruiting desks: Philadelphia 1940, Indianapolis and Chicago 1941, Fort Benning 1942
-assessment: Weight: Proven (the statute; the policy text as the Army's history prints it; the official's testimony) · Supported (the named refusals, from the Black press) | Warrant: Closed (that men were refused and passed over) · Open (the number: 27,986 official, 50,000 by the Courier's estimate, 300,000 by a 1943 government estimate)
+Philadelphia is from the Indianapolis Recorder, 21 September 1940, p. 2, which names three men refused at the Customs House on 17 September, a recruiting sergeant saying 'We have no room for colored'. Indianapolis and Chicago are from the Recorder of 13 and 20 December 1941. Fort Benning rests on a clipping in the Tuskegee file 'whose newspaper attribution is to be confirmed'.
 sources: [B live_verified] src-lee-employment-of-negro-troops-1966 https://web.archive.org/web/2020/https://history.army.mil/books/wwii/11-4/chapter3.htm; [A live_verified] src-selective-training-and-service-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg885a.pdf; [A live_verified] src-lynn-v-downer-1944 https://static.case.law/f2d/140/cases/0397-01.json; [A live_verified] src-indianapolis-recorder-1941-12-20 https://newspapers.library.in.gov/?a=d&d=INR19411220-01.1.13; [A live_verified] src-indianapolis-recorder-1940-09-21 https://newspapers.library.in.gov/?a=d&d=INR19400921-01.1.2; [B live_verified] src-negro-digest-1943-04-lynn https://archive.org/details/sim_nation_1943-02-20_156_8; [B live_verified] src-pittsburgh-courier-thompson-1942 https://perspectives.ushmm.org/item/should-i-sacrifice-to-live-half-american
 
 [E-W6-050-03] W6 1940 counter-move TA
@@ -5377,7 +5339,7 @@ sources: [B live_verified] src-lee-employment-of-negro-troops-1966 https://web.a
 
 [E-W6-050-04] W6 1940 information TA
 The Pittsburgh Courier prints 27,992 passed over, October 1941, and calls it an undercount
-assessment: Weight: Proven (the statute; the policy text as the Army's history prints it; the official's testimony) · Supported (the named refusals, from the Black press) | Warrant: Closed (that men were refused and passed over) · Open (the number: 27,986 official, 50,000 by the Courier's estimate, 300,000 by a 1943 government estimate)
+From a clipping in the Tuskegee file 'under a Pittsburgh Courier masthead stamp, dateline 2 October 1941', its attribution still 'to be confirmed against the page image'. The dossier leaves the number open: '27,986 official, 50,000 by the Courier's estimate, 300,000 by a 1943 government estimate'.
 sources: [B live_verified] src-lee-employment-of-negro-troops-1966 https://web.archive.org/web/2020/https://history.army.mil/books/wwii/11-4/chapter3.htm; [A live_verified] src-selective-training-and-service-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg885a.pdf; [A live_verified] src-lynn-v-downer-1944 https://static.case.law/f2d/140/cases/0397-01.json; [A live_verified] src-indianapolis-recorder-1941-12-20 https://newspapers.library.in.gov/?a=d&d=INR19411220-01.1.13; [A live_verified] src-indianapolis-recorder-1940-09-21 https://newspapers.library.in.gov/?a=d&d=INR19400921-01.1.2; [B live_verified] src-negro-digest-1943-04-lynn https://archive.org/details/sim_nation_1943-02-20_156_8; [B live_verified] src-pittsburgh-courier-thompson-1942 https://perspectives.ushmm.org/item/should-i-sacrifice-to-live-half-american
 
 [E-W6-051-01] W6 1940 legal TA
@@ -5388,12 +5350,12 @@ links: naturalization-act-free-white-1790, 1924-triple-lock-reclassification-cha
 
 [E-W6-051-02] W6 1940 sovereign TA
 June 1942: the Six Nations declare that 'a state of war exists between our confederacy' and the Axis, as a separate power
-assessment: Weight: Proven (the statute and both rulings) · Proven (the Six Nations' stated position, from their own printed papers) | Warrant: Closed (what the statute and courts said) · Open (the full text of the June 1942 resolution; Yakima leaders' own statements)
+Known from an Associated Press report from Washington of 15 June 1942, as printed in the Atlanta Constitution the next day and read in newspaper OCR. 'The full resolution text was not reached', so the resolution itself is not yet sourced and the reading of a separate power rests on the wire report.
 sources: [A live_verified] src-nationality-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg1137.pdf; [A live_verified] src-ex-parte-green-1941 https://static.case.law/f2d/123/cases/0862-01.json; [A live_verified] src-totus-v-united-states-1941 https://static.case.law/f-supp/39/cases/0007-01.json; [A live_verified] src-green-certiorari-papers-1942 https://archive.org/details/micro_IA43086415_0978; [B live_verified] src-six-nations-declaration-ap-1942 https://archive.org/details/per_atlanta-constitution_1942-06-16_75_2
 
 [E-W6-051-03] W6 1940 military TA
 Mohawk men pleading the Jay Treaty are held liable to the draft, 1944 and 1945
-assessment: Weight: Proven (the statute and both rulings) · Proven (the Six Nations' stated position, from their own printed papers) | Warrant: Closed (what the statute and courts said) · Open (the full text of the June 1942 resolution; Yakima leaders' own statements)
+Two later rulings, both read: United States v. Claus, 63 F. Supp. 433 (W.D.N.Y. 1944), and Albany v. United States, 152 F.2d 266 (6th Cir. 1945). They follow the two rulings of 1941, in which courts held treaty Indians subject to the Selective Training and Service Act of 1940.
 sources: [A live_verified] src-nationality-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg1137.pdf; [A live_verified] src-ex-parte-green-1941 https://static.case.law/f2d/123/cases/0862-01.json; [A live_verified] src-totus-v-united-states-1941 https://static.case.law/f-supp/39/cases/0007-01.json; [A live_verified] src-green-certiorari-papers-1942 https://archive.org/details/micro_IA43086415_0978; [B live_verified] src-six-nations-declaration-ap-1942 https://archive.org/details/per_atlanta-constitution_1942-06-16_75_2
 
 [E-W6-052-01] W6 1936 records TA
@@ -5409,7 +5371,7 @@ sources: [A live_verified] src-treasury-decision-4704-1936 https://www.govinfo.g
 
 [E-W6-052-03] W6 1936 legal TA
 Senate Report 1515 (1950): by the end of 1940, '5,009,857 aliens were registered'
-assessment: Weight: Proven (the regulation and the statute) · Supported (the count and the form's contents, from the agency's own history) | Warrant: Closed (that numbering was made compulsory by Treasury regulation) · Open (the 1936 form; the Board's annual report)
+The count is from a Senate report of 1950 on registration under the Alien Registration Act of 28 June 1940 (54 Stat. 670, Title III), which sent every alien of fourteen or over to the post office. A January 1941 newspaper gives 4,741,971, so the figure rests on the later report alone.
 sources: [A live_verified] src-treasury-decision-4704-1936 https://www.govinfo.gov/content/pkg/FR-1936-11-07/pdf/FR-1936-11-07.pdf; [B live_verified] src-puckett-story-of-the-ssn-2009 https://www.ssa.gov/policy/docs/ssb/v69n2/v69n2p55.html; [A live_verified] src-alien-registration-act-1940 https://govtrackus.s3.amazonaws.com/legislink/pdf/stat/54/STATUTE-54-Pg670.pdf
 
 [E-W6-053-01] W6 1942 legal TA
@@ -5420,12 +5382,12 @@ links: noble-drew-ali-begins-organizing-the-1913, drew-ali-at-the-pan-american-1
 
 [E-W6-053-02] W6 1942 counter-move TA
 Moorish Science Temple members ask draft boards to strike 'Negro' and enter 'Moorish-American'; its card declares United States citizenship
-assessment: Weight: Proven (what each organisation's own documents say) · Supported (what agents and reporters say they said) · Contested (the utterances charged, which Gordon denied in part) | Warrant: Closed (the arrests, the appeal ruling, the texts) · Open (trial testimony; the Kansas City defendants' own words; the smaller groups)
+From a member's letters to a Richmond draft board, June 1942, 'quoted in full by an agent in the FBI file'. The card is reproduced in the same file, whose documents were 'photographed or retyped by FBI agents'. The dossier notes that the dispute recorded with draft boards 'is over the word on the form, not over registering'.
 sources: [B live_verified] src-ap-chicago-arrests-1942-09-21 https://archive.org/details/per_washington-post_1942-09-22_24204; [A live_verified] src-moorish-science-temple-by-laws-in-fbi-file https://archive.org/details/MoorishScienceTempleOfAmerica; [A live_verified] src-holy-koran-moorish-science-temple-1927 https://archive.org/details/holy_koran_of_the_moorish_holy_temple_of_science; [A live_verified] src-fbi-file-peace-movement-of-ethiopia https://archive.org/details/PeaceMovementToEthiopia; [A live_verified] src-fbi-file-fard-chicago-1942 https://archive.org/details/WallaceFardMuhammed; [A live_verified] src-united-states-v-gordon-1943 https://static.case.law/f2d/138/cases/0174-01.json; [B needs_verification] src-opportunity-1942-12-martin https://archive.org/search?query=opportunity+journal+of+negro+life+1942; [A live_verified] src-congressional-record-1939-04-24-bilbo https://www.govinfo.gov/content/pkg/GPO-CRECB-1939-pt5-v84/pdf/GPO-CRECB-1939-pt5-v84-1-1.pdf
 
 [E-W6-053-03] W6 1942 records TA
 Draft boards record the same members' race as 'Negro' or as 'Moorish American', board by board
-assessment: Weight: Proven (what each organisation's own documents say) · Supported (what agents and reporters say they said) · Contested (the utterances charged, which Gordon denied in part) | Warrant: Closed (the arrests, the appeal ruling, the texts) · Open (trial testimony; the Kansas City defendants' own words; the smaller groups)
+These are draft-record entries 'as reported in the FBI file', and the corpus cites the agents' reports in that file as a hostile party's account. No board's own record was read. The FBI's 1943 summary in the same file records the national body's members as complying with the draft.
 sources: [B live_verified] src-ap-chicago-arrests-1942-09-21 https://archive.org/details/per_washington-post_1942-09-22_24204; [A live_verified] src-moorish-science-temple-by-laws-in-fbi-file https://archive.org/details/MoorishScienceTempleOfAmerica; [A live_verified] src-holy-koran-moorish-science-temple-1927 https://archive.org/details/holy_koran_of_the_moorish_holy_temple_of_science; [A live_verified] src-fbi-file-peace-movement-of-ethiopia https://archive.org/details/PeaceMovementToEthiopia; [A live_verified] src-fbi-file-fard-chicago-1942 https://archive.org/details/WallaceFardMuhammed; [A live_verified] src-united-states-v-gordon-1943 https://static.case.law/f2d/138/cases/0174-01.json; [B needs_verification] src-opportunity-1942-12-martin https://archive.org/search?query=opportunity+journal+of+negro+life+1942; [A live_verified] src-congressional-record-1939-04-24-bilbo https://www.govinfo.gov/content/pkg/GPO-CRECB-1939-pt5-v84/pdf/GPO-CRECB-1939-pt5-v84-1-1.pdf
 
 [E-W6-053-04] W6 1942 information TA
@@ -5458,7 +5420,7 @@ threads: T-NOUN-TO-ADJECTIVE, T-RESISTANCE-COUNTER-NARRATIVE
 
 [E-W6-055-02] W6 1943 population TA
 Chickahominy Chief O. Oliver Adkins to the War Department: 'my people are American Indians of the State of Virginia'
-assessment: Weight: Proven (what the circular says, read from the page image) · Supported (the Chickahominy chief's letter, through the Library of Virginia) | Warrant: Closed (the registrar's statement of policy) · Open (the Richmond court record; the men's names; the Selective Service ruling that followed)
+Quoted from a Library of Virginia post on letters in its collection, a secondary source: 'The letters themselves were not seen', so the letter itself is not yet sourced and the post's address is still to be confirmed. The same letter, as quoted there: 'they will not go as the Negro race in the United States Army'.
 sources: [A live_verified] src-plecker-circular-1943-01 https://explore.lib.virginia.edu/files/original/d65cdacba7a15727cb7c6ee305211f01.jpg; [B needs_verification] src-plecker-circular-1943-12 https://encyclopediavirginia.org/; [B needs_verification] src-library-of-virginia-adkins-letter https://uncommonwealth.virginiamemory.com/
 
 [E-W6-055-03] W6 1943 legal TA
@@ -5499,8 +5461,8 @@ assessment: Weight: Proven (what the manual says, read in full from page images)
 sources: [A live_verified] src-army-manual-m5-leadership-and-the-negro-soldier-1944 https://www.jfklibrary.org/asset-viewer/archives/lihpp-001-001
 
 [E-W6-057-04] W6 1944 land TA
-It records 'foreclosures for Negro farm owners' in the Depression
-assessment: Weight: Proven (what the manual says, read in full from page images) · Contested (two of its figures, against the census) | Warrant: Closed (the manual's text) · Open (the Selective Service report it quotes)
+The Army manual records 'foreclosures for Negro farm owners' in the Depression
+The document is Army Service Forces Manual M5, 'Leadership and the Negro Soldier', October 1944, p. 38: the Depression 'brought foreclosures for Negro farm owners'. The same manual, p. 36, says 'By 1910 they owned over twelve million acres of land', at a value the dossier finds is Tuskegee's 1912 estimate of all property, not of land.
 sources: [A live_verified] src-army-manual-m5-leadership-and-the-negro-soldier-1944 https://www.jfklibrary.org/asset-viewer/archives/lihpp-001-001
 
 [w3-1652-counter-move] W3 1652 counter-move TC
@@ -5526,8 +5488,7 @@ threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1662-financial] W3 5 July 1662 financial TB
 Genoese merchant-banker capital holds the franchise; FW-016 continuity across operators
-framework: FW-016 Merchant-Banker Constant. A link in the asiento succession between the 1518 origin and the 1713 acquisition, showing the beneficiary network operating across national licence holders.
-assessment: Weight: Supported (1 sourced, tier B, read) | Warrant: Open (single reference source; no primary or monograph read)
+The reference article read records the 1662 contract to Domenico Grillo and Ambrogio Lomellini for 24,000 piezas across seven years, 'assisted by Dutch West India Company and English Royal Adventurers'. The corpus reads this as one link in a franchise that passes from operator to operator and on to the British holder. The source is a reference article, not a primary and not a monograph.
 sources: [B live_verified] src-asiento-de-negros-reference https://en.wikipedia.org/wiki/Asiento_de_Negros
 threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
 
@@ -5540,8 +5501,7 @@ threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1701-financial] W3 1701 financial TB
 The quarter the 1713 contract carries forward when it says 'as in the Assiento'
-framework: FW-016 Merchant-Banker Constant, and the strongest single piece of evidence in this corpus for a crown inside the revenue of the traffic rather than taxing it from outside. Directly upstream of the 1713 Additional Article's fourth part.
-assessment: Weight: Supported (1 sourced, tier B, read) | Warrant: Open (single reference source; no primary or monograph read)
+The 1713 contract's Additional Article gives the Spanish crown 'a Fourth part of the Gain, as in the Assiento'. The corpus reads that phrase as pointing back to the quarter Philip V already held from 1701 as a shareholder in the French company, at 100,000 livres, so 1713 carries a stake forward and does not create one. The 1701 shareholding rests on a reference article, not a primary.
 sources: [B live_verified] src-asiento-de-negros-reference https://en.wikipedia.org/wiki/Asiento_de_Negros
 threads: T-ASIENTO, T-MERCHANT-BANKER-CONSTANT
 
@@ -5619,8 +5579,7 @@ audit trail: UNSOURCED, ROUTE ATTEMPTED 2026-07-27. ATTEMPTED via search for the
 
 [w3-1713-corporate] W3 26 March 1713 corporate TA
 The franchise is held corporately, and is still corporate at its 1750 wind-up
-framework: FW-006 Three-Track Labor System, Track A installation. The instrument that the framework spine names and the corpus had never entered. Upstream of the 1717 Transportation Act, which builds Track C in this contract's image, and of the 1750 Treaty of Madrid, which winds the same franchise up.
-assessment: Weight: Proven (2 sourced, tier A; the primary read verbatim at Articles I, II, XLII and the Additional Article) | Warrant: Open (one source held at citation_only)
+The Treaty of Madrid of 1750, Article II, makes the hundred thousand pounds payable 'TO THE ROYAL ASIENTO COMPANY' and not to the British Crown. That a company held the franchise from the grant of 1713 is not yet sourced: it rests on Sperling's essay on the South Sea Company, identified but its text not read.
 sources: [A live_verified] src-assiento-contract-1713 https://archive.org/details/cihm_28677; [A citation_only] src-sperling-south-sea; [A live_verified] src-treaty-of-madrid-1750 https://archive.org/stream/cihm_20150/cihm_20150_djvu.txt
 threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
@@ -5648,8 +5607,7 @@ threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
 [w3-1713-sovereign] W3 26 March 1713 sovereign TA
 The Spanish crown takes a fourth part of the gain, plus 5 per cent of England's three parts
-framework: FW-006 Three-Track Labor System, Track A installation. The instrument that the framework spine names and the corpus had never entered. Upstream of the 1717 Transportation Act, which builds Track C in this contract's image, and of the 1750 Treaty of Madrid, which winds the same franchise up.
-assessment: Weight: Proven (2 sourced, tier A; the primary read verbatim at Articles I, II, XLII and the Additional Article) | Warrant: Open (one source held at citation_only)
+The Additional Article, on the annual ship: 'in which His Catholick Majesty is to partake a Fourth part of the Gain, as in the Assiento', and beyond that fourth '5 per Cent. out of the neat Gain of the other Three parts which belong to England'. The article that sets the fourth for the slave trade itself was not located: not yet sourced. The contract makes no grant to Queen Anne.
 sources: [A live_verified] src-assiento-contract-1713 https://archive.org/details/cihm_28677
 threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
 
