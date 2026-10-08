@@ -37,6 +37,7 @@ type Props = {
   targetEntryId?: string | null;
   /** Bumped to re-fire the same target (e.g. stepping 1/2 -> 2/2 -> 1/2). */
   targetNonce?: number;
+  /** Kept for the strip's bookkeeping; no longer used to place the frame. */
   initialScroll?: { x: number; y: number };
   onScroll?: (windowId: number, pos: { x: number; y: number }) => void;
   onNav?: (key: 'ArrowLeft' | 'ArrowRight') => void;
@@ -63,7 +64,6 @@ export default function WindowFrame({
   active,
   targetEntryId,
   targetNonce = 0,
-  initialScroll,
   onScroll,
   onNav,
   onTargetMiss,
@@ -106,14 +106,24 @@ export default function WindowFrame({
    *
    * The window is entered at the top, so a re-assert inside half a second can
    * only ever put the reader back where entering was supposed to leave them.
+   *
+   * THE START IS ALWAYS THE TOP LEFT (author, 2026-10-08). It used to be the
+   * reader's last position in that window when there was one, so stepping from
+   * one window to the next could land part-way down or part-way across. A
+   * window is a document read from its masthead; arriving anywhere else hides
+   * the window number and the lane headings. The one exception is arriving FOR
+   * a row (Ask, Locate, a thread or a map), which is the target effect below.
    */
   const placeAtStart = useCallback(() => {
-    const target = initialScroll ?? { x: 0, y: 0 };
-    const send = () => post({ type: 'SA_RESTORE_SCROLL', ...target });
+    const send = () => post({ type: 'SA_RESTORE_SCROLL', x: 0, y: 0 });
     placeTimers.current.forEach(clearTimeout);
     send();
     placeTimers.current = [setTimeout(send, 150), setTimeout(send, 500)];
-  }, [initialScroll, post]);
+  }, [post]);
+
+  /** Read inside the message listener, which must not re-subscribe per target. */
+  const targetRef = useRef<string | null | undefined>(targetEntryId);
+  targetRef.current = targetEntryId;
 
   useEffect(() => () => placeTimers.current.forEach(clearTimeout), []);
 
@@ -143,9 +153,9 @@ export default function WindowFrame({
              * masthead, the window number and the audit-window explanation all
              * above them, and nothing on screen saying those exist.
              *
-             * A saved position still wins when there is one, so this only adds
-             * a defined starting point where there was none. */
-            placeAtStart();
+             * Not when the reader is arriving for a row: the target effect
+             * scrolls there, and a re-assert of the top would pull them back. */
+            if (!targetRef.current) placeAtStart();
           }
           break;
         case 'SA_SCROLL':
@@ -171,7 +181,7 @@ export default function WindowFrame({
     }
     window.addEventListener('message', onMessage);
     return () => window.removeEventListener('message', onMessage);
-  }, [windowId, initialScroll, onScroll, onNav, onTargetMiss, onGlossary, onMap, post, placeAtStart]);
+  }, [windowId, onScroll, onNav, onTargetMiss, onGlossary, onMap, post, placeAtStart]);
 
   /* Place the frame when it BECOMES the open window, not only when it loads.
    *
@@ -188,7 +198,8 @@ export default function WindowFrame({
    * nearly always already mounted by the time they were entered.
    *
    * Resets when the window stops being current, so every entry starts at the
-   * top. A saved position still wins when one exists. */
+   * top left. A remembered position no longer wins (author, 2026-10-08); only
+   * arriving for a row does, and that is the target effect's to place. */
   const wasActive = useRef(false);
   useEffect(() => {
     if (!active) {
@@ -199,6 +210,7 @@ export default function WindowFrame({
     wasActive.current = true;
     // Not yet loaded: SA_READY has not fired, and its branch will do this.
     if (!ready.current) return;
+    if (targetRef.current) return;
     placeAtStart();
   }, [active, placeAtStart]);
 
@@ -241,6 +253,8 @@ export default function WindowFrame({
   // silently dropped. Retrying until ack is race-free in both directions.
   useEffect(() => {
     if (!active || !targetEntryId) return;
+    // A pending re-assert of the top would undo the scroll to the row.
+    placeTimers.current.forEach(clearTimeout);
     acked.current = null;
     let tries = 0;
     let timer: ReturnType<typeof setTimeout>;
