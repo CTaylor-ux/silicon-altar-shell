@@ -1,6 +1,6 @@
 THE SILICON ALTAR CORPUS
 
-Entries: 973. Windows: 7.
+Entries: 974. Windows: 7.
 
 The corpus states its own scope and spine. Both are load-bearing: they are
 how you tell a genuine gap from something deliberately out of scope.
@@ -10,7 +10,7 @@ SCOPE NOTE: T9 State Reconciliation. W3 entries preserved from live L4. W0/W1/W4
 FRAMEWORK SPINE: Three-Track Labor System (FW-006). W3 is where all three tracks lock in simultaneously between 1713 and 1718. Track A (Asiento) via SSC 1713 renewal. Track B (Yamasee reclassification) via TC-009 reframe 1717 (existing in v7 timeline). Track C (Transportation Act) via TC-015 through TC-018 sequence 1717 to 1718.
 
 WINDOWS:
-  Window 0: The Template (deep time to pre-contact) - 77 entries
+  Window 0: The Template (deep time to pre-contact) - 78 entries
   Window 1: Launch Codes (1452 to 1602) - 101 entries
   Window 2: The Corporate Grid (1602 to 1704) - 116 entries
   Window 3: Colonial Consolidation (1652 to 1787) - 97 entries
@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 984 sources are opened and 136 are not.
+something is evidenced, say so. 985 sources are opened and 136 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -420,7 +420,7 @@ threads: T-MERCHANT-BANKER-CONSTANT, T-SOFTWARE-NEUTRALITY
 Italian merchant companies as Crown bankers, in place before 1290: Staffing Agency model demonstrated
 Italian merchant companies were the Crown's bankers before the expulsion of 1290; they did not arrive after it. Merchants of Lucca are in the royal records from 1245, and the Riccardi of Lucca served Edward I as his bankers from 1272 to 1294 (Kaeuper, pp. viii, 5). On 19 May 1275 a writ of aid names Luke of Lucca and his fellows 'keepers and bailiffs' of the new custom on wool (Calendar of the Patent Rolls 1272 to 1281, p. 90). On 12 August 1289 the King acknowledges that he owes 'the society of the Ricardi of Lucca' 380,609 pounds 5s. 6d. in black money of Tours and a further 12,632 pounds 19s. 6d. sterling (Calendar of the Patent Rolls 1281 to 1292, p. 318). Money taken from the Jews was paid over to them: on 11 June 1274, 2,000 pounds 'of the tallage assessed upon divers Jews' to Luke of Lucca, 'king's merchant'; on 13 November 1278, 3,000 marks of the tallage on 'the commonalty of the Jews of England' to two merchants of Lucca, for the works of the Tower (Calendar of the Patent Rolls 1272 to 1281, pp. 52, 282). The Riccardi themselves fell in 1294, when the King took the customs from them and seized their goods; the Frescobaldi of Florence followed, and the Bardi and Peruzzi after them (Kaeuper, pp. viii, 209). Abrahams (1895, p. 37) drew the link: Edward's 'close connection with a body of financiers so rich and powerful made the Jews unnecessary to him'. The corpus reads this as the canonical Staffing Agency demonstration: the extraction requires an intermediary; when one is exhausted, another is installed. No source read places the Italian companies on Lombard Street in 1290, or in any house sold after the expulsion; Stow (1603) found no record of when the street took its name, only that it had it before the reign of Edward II. Lombards to Medici to Fugger to the Amsterdam Wisselbank and exchange to Rothschild network to BlackRock/Vanguard/State Street: the technology persists through every personnel change (FW-016 Merchant-Banker Constant).
 sources: [A live_verified] src-cpr-edward-i-lucca-merchants-1274-1281 https://archive.org/details/calendarofpatent01grea/page/n103/mode/1up; [A live_verified] src-cpr-edward-i-riccardi-1289 https://archive.org/details/calendarofpatent02grea/page/n329/mode/1up; [A citation_only] src-kaeuper-bankers-to-the-crown; [A citation_only] src-kaeuper-frescobaldi-english-crown; [B live_verified] src-abrahams-expulsion-1290 https://archive.org/details/expulsionofjewsf00abrauoft/page/n42/mode/1up; [B live_verified] src-stow-survey-of-london https://archive.org/details/cu31924031041589/page/n312/mode/1up
-links: edict-of-expulsion-1290, templar-banking-formation-1100, hans-fugger-arrives-in-augsburg-banking-1367, medici-bank-founded-1397
+links: edict-of-expulsion-1290, templar-banking-formation-1100, hans-fugger-arrives-in-augsburg-banking-1367, medici-bank-founded-1397, riccardi-fall-crown-bankers-1294
 threads: T-MERCHANT-BANKER-CONSTANT, T-COLLAPSE-SURVIVAL-N1, T-FRANCHISE-TRANSFER
 
 [E-W0-029-02] W0 1290b innovation TB
@@ -584,6 +584,13 @@ The statute bars conversos of Jewish descent from office and from acting as nota
 sources: [A live_verified] src-toledo-1449-sentencia-estatuto https://www.kbwolf.sites.pomona.edu/sentencia-estatuto.pdf
 links: linnaeus-systema-1758, virginia-slave-codes-1705, 1924-triple-lock-reclassification-chain-step-1924
 threads: T-IBERIAN-RECONQUISTA-SOFTWARE
+
+[E-W0-043-01] W0 1294 financial TB
+The Riccardi fall: the Crown takes the customs from its bankers and seizes their goods
+In 1294 the Riccardi of Lucca, the King's bankers since 1272, lost their place. On 29 July, as war with France opened, Edward I ordered them to give up the seals of the wool custom they had collected for nineteen years (Kaeuper, pp. 168, 209). Their wool, goods and debts were taken for the King. The order that survives in print is for Ireland: on 28 October 1294 the Exchequer of Dublin is 'to attach all merchants of the company of the Rici (Ricorum) of Lucca staying in Ireland, they being held to the king in so large a sum that their resources are insufficient for payment thereof', and 'to take into the king's hand all their goods and debts in part payment of their debts to the king' (Calendar of the Fine Rolls 1272 to 1307, p. 347). The London branch was bankrupt by November 1301 (Kaeuper, p. 244). No successor was ready: for eight years the King borrowed from eleven Italian companies, and the Frescobaldi of Florence became his bankers only between 1299 and 1302 (Kaeuper's article). Kaeuper does not blame the King: he puts the fall down to the war, the French King's seizures and the company's own lending, finds the Exchequer's later charges against them false, and judges that they were on the whole fairly treated (pp. 216, 250). He also draws the general rule, that for a king's banker the connection always ended in ruin, and names the Bardi, the Peruzzi, the Medici and the Fugger after them (p. 249). The corpus reads this as the Staffing Agency pattern met in the Italian companies themselves: the intermediary is used up, and the arrangement is rebuilt on the next.
+sources: [A live_verified] src-cfr-edward-i-riccardi-1294 https://archive.org/details/calendaroffinero01lond/page/n362/mode/1up; [A citation_only] src-kaeuper-bankers-to-the-crown; [A citation_only] src-kaeuper-frescobaldi-english-crown
+links: lombards-replace-jews-1290, medici-bank-founded-1397, hans-fugger-arrives-in-augsburg-banking-1367
+threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W1-001-01] W1 1452 population TA
 Authorizes perpetual enslavement of "Saracens, pagans, and other unbelievers"
