@@ -21,7 +21,7 @@ import { createContext, useContext, useEffect, useMemo, useRef, useState } from 
 import MapCanvas, { type CanvasLine, type CanvasPoint } from './MapCanvas';
 import MapViewer from './MapViewer';
 import {
-  CLOSE_YEARS, atPlaceIds, closestPeriodMaps, namedMapsForEvent, noPlaceReason, shownYear, entryRow, eventLayer, eventTitle, eventWindow, eventYear, hasShownImage, imageUrl, periodMapSeries, place, placeHasRecord, placeRecord,
+  CLOSE_YEARS, atPlaceIds, closestPeriodMaps, deepTimeGraphics, isDeepTime, isDeepTimeGraphic, namedMapsForEvent, noPlaceReason, shownYear, entryRow, eventLayer, eventTitle, eventWindow, eventYear, hasShownImage, imageUrl, periodMapSeries, place, placeHasRecord, placeRecord,
   threadInfo, threadStops, threadTitle, threadsForEvent, type ThreadStop, topLevelPlace, type Place, type PlaceLink, type PeriodMap,
 } from '@/lib/maps';
 import { laneVar } from '@/lib/windows';
@@ -191,8 +191,9 @@ function Quote({ l, onJump, targetForEvent }: { l: PlaceLink } & Pick<Props, 'on
  * is still context, and the contrast shows the lines being redrawn. Every card
  * names its maker: a map is its maker's view, not the ground truth. */
 function MapCard({ m, year }: { m: PeriodMap; year: number | null }) {
+  const graphic = isDeepTimeGraphic(m);
   let rel = '';
-  if (year !== null) {
+  if (year !== null && !graphic) {
     const d = Math.round(shownYear(m) - year);
     const n = Math.abs(d), yrs = n === 1 ? 'year' : 'years';
     rel = d === 0 ? 'drawn the same year' : d > 0 ? `drawn ${n} ${yrs} later` : `drawn ${n} ${yrs} earlier`;
@@ -212,6 +213,8 @@ function MapCard({ m, year }: { m: PeriodMap; year: number | null }) {
         </button>
       )}
       <span className={styles.mapTitle}>{m.title}, {m.date}</span>
+      {graphic && <span className={styles.mapMeta}>A modern scientific graphic, published {m.date}; not a map drawn at the time.</span>}
+      {graphic && m.shows && <span className={styles.mapMeta}>{m.shows}</span>}
       {m.depicts_date && m.depicts_date !== m.date && (
         <span className={styles.mapMeta}>A {m.date} copy of a work of {m.depicts_date}</span>
       )}
@@ -221,7 +224,7 @@ function MapCard({ m, year }: { m: PeriodMap; year: number | null }) {
       {showImg && m.credit && <span className={styles.mapMeta}>Image: {m.credit}</span>}
       {m.status === 'candidate' && <span className={styles.flag}>candidate: not verified at the holder</span>}
       {!m.memberVisible && m.status === 'verified' && <span className={styles.mapMeta}>Rights allow a link only.</span>}
-      {m.memberVisible && !m.image && <span className={styles.mapMeta}>Image not yet recorded; see it at the holder.</span>}
+      {m.memberVisible && !m.image && <span className={styles.mapMeta}>{graphic ? 'Published as a document; open it at the holder.' : 'Image not yet recorded; see it at the holder.'}</span>}
       {m.catalog_url && (
         <a className={styles.linkBtn} href={m.catalog_url} target="_blank" rel="noopener noreferrer">
           Open at {m.holder.split(',')[0]} ↗
@@ -241,6 +244,20 @@ function closestFor(year: number | null, windowId: number | null, placeIds: stri
 function ClosestMaps({ year, windowId, placeIds, atIds, operator, exclude = [], named = false }: { year: number | null; windowId: number | null; placeIds: string[]; atIds: string[]; operator: boolean; exclude?: string[]; named?: boolean }) {
   const maps = closestFor(year, windowId, placeIds, atIds, operator, exclude);
   const cut = CLOSE_YEARS[windowId ?? 1] ?? 5;
+  if (isDeepTime(year)) {
+    const graphics = deepTimeGraphics(placeIds, operator);
+    return (
+      <section className={styles.sec}>
+        <h3>The event, as scientists draw it</h3>
+        <p className={styles.fine}>No map was drawn at the time: this row is set in deep time. These are modern scientific graphics, each its makers&rsquo; reconstruction.</p>
+        {graphics.length ? (
+          <ul className={styles.maps}>{graphics.map((m) => <MapCard key={m.id} m={m} year={year} />)}</ul>
+        ) : (
+          <p className={styles.fine}>No graphic catalogued for this row yet.</p>
+        )}
+      </section>
+    );
+  }
   return (
     <section className={styles.sec}>
       <h3>Closest to this moment</h3>

@@ -28,6 +28,9 @@ export interface PeriodMap {
   depicts_date?: number;
   /** Rows whose own words name this map (Thread 36): shown on those rows whatever its date. */
   named_in?: { entry_id: string; quote: string }[];
+  /** A modern scientific graphic for a row set in deep time (Thread 38), not a period map:
+   *  offered only on deep-time rows; `shows` says in a sentence what it shows. */
+  kind?: 'deep-time-graphic'; shows?: string;
   /** The map's own sheet, from the holder: a IIIF image service, or (holders with no
    *  IIIF) a full-size image at its public address. null until one is recorded. */
   image?: {
@@ -182,11 +185,27 @@ export function atPlaceIds(eventId: string, operator = false): string[] {
   ])];
 }
 
+/* Deep time (author, Thread 38, 2026-10-10). A row set millions of years ago has no period map:
+ * matched by place alone, the ~300 Ma row was offered a copy of about 1200 captioned "drawn
+ * 300001035 years later". Such a row is offered modern scientific graphics instead, labelled as
+ * that, and no period map; and those graphics are offered on no other row and no place page. */
+export const DEEP_TIME_BEFORE = -10000;
+export const isDeepTime = (year: number | null | undefined): boolean => year != null && year < DEEP_TIME_BEFORE;
+export const isDeepTimeGraphic = (m: PeriodMap): boolean => m.kind === 'deep-time-graphic';
+
+/** The graphics catalogued for deep-time rows that cover any place this row names, in catalogue
+ *  order. A link-only one is listed too, as a link: there is nothing else to show in its place. */
+export function deepTimeGraphics(placeIds: string[], operator = false): PeriodMap[] {
+  const want = new Set(placeIds.flatMap((id) => (placeById.get(id) ? regionsOf(placeById.get(id)!) : [])));
+  if (!want.size) return [];
+  return (data.maps ?? []).filter((m) => isDeepTimeGraphic(m) && (operator || m.memberVisible || m.memberLinkable) && m.covers.some((c) => want.has(c)));
+}
+
 function mapsFor(placeIds: string[], operator: boolean) {
   const want = new Set(placeIds.flatMap((id) => (placeById.get(id) ? regionsOf(placeById.get(id)!) : [])));
   if (!want.size) return [];
   return (data.maps ?? [])
-    .filter((m) => (operator || m.memberVisible) && m.covers.some((c) => want.has(c)))
+    .filter((m) => !isDeepTimeGraphic(m) && (operator || m.memberVisible) && m.covers.some((c) => want.has(c)))
     .map((m) => ({ m, local: isLocalPlan(m), regional: m.covers.some((c) => c !== 'atlantic' && want.has(c)) }));
 }
 
@@ -195,6 +214,7 @@ function mapsFor(placeIds: string[], operator: boolean) {
  *  a city or fort plan ranks after both at the same distance, unless it is a plan of
  *  a city the row is at (atIds), which stands level with a regional map. */
 export function closestPeriodMaps(year: number, windowId: number | null, placeIds: string[], operator = false, limit = 3, atIds: string[] = []): PeriodMap[] {
+  if (isDeepTime(year)) return [];
   const cut = closeYears(windowId);
   const atRegions = new Set(atIds.flatMap((id) => (placeById.get(id) ? regionsOf(placeById.get(id)!) : [])));
   const late = (x: { m: PeriodMap; local: boolean }) => (x.local && !(ownPlan(x.m) && x.m.covers.some((c) => atRegions.has(c))) ? 8 : 0);
@@ -215,6 +235,7 @@ export function closestPeriodMaps(year: number, windowId: number | null, placeId
  *  place page), the whole regional series, and with it the plans of that very city
  *  (Thread 36): on a place's own page a plan of the place is not 'somewhere else'. */
 export function periodMapSeries(placeIds: string[], operator = false, around?: { year: number; exclude: string[] }): PeriodMap[] {
+  if (around && isDeepTime(around.year)) return [];
   const byDate = (a: PeriodMap, b: PeriodMap) => shownYear(a) - shownYear(b) || a.id.localeCompare(b.id);
   const all = mapsFor(placeIds, operator).filter((x) => !x.local || (!around && ownPlan(x.m)));
   const regional = all.filter((x) => x.regional);
