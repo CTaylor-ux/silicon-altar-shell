@@ -1,6 +1,6 @@
 THE SILICON ALTAR CORPUS
 
-Entries: 980. Windows: 7.
+Entries: 981. Windows: 7.
 
 The corpus states its own scope and spine. Both are load-bearing: they are
 how you tell a genuine gap from something deliberately out of scope.
@@ -10,7 +10,7 @@ SCOPE NOTE: T9 State Reconciliation. W3 entries preserved from live L4. W0/W1/W4
 FRAMEWORK SPINE: Three-Track Labor System (FW-006). W3 is where all three tracks lock in simultaneously between 1713 and 1718. Track A (Asiento) via SSC 1713 renewal. Track B (Yamasee reclassification) via TC-009 reframe 1717 (existing in v7 timeline). Track C (Transportation Act) via TC-015 through TC-018 sequence 1717 to 1718.
 
 WINDOWS:
-  Window 0: The Template (deep time to pre-contact) - 80 entries
+  Window 0: The Template (deep time to pre-contact) - 81 entries
   Window 1: Launch Codes (1452 to 1602) - 103 entries
   Window 2: The Corporate Grid (1602 to 1704) - 117 entries
   Window 3: Colonial Consolidation (1652 to 1787) - 98 entries
@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 1011 sources are opened and 138 are not.
+something is evidenced, say so. 1015 sources are opened and 138 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -559,30 +559,37 @@ threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W0-042-01] W0 1449 military TA MILESTONE
 Toledo anti-converso violence: first limpieza de sangre statute
-1449 Toledo revolt against conversos (converts from Judaism). First limpieza de sangre (blood purity) statute: the Sentencia-Estatuto de Toledo. Conversos excluded from public office in Toledo based on Jewish descent, 'in whatever situation they may be', regardless of Christian faith. Classification follows the BLOOD, not the belief. You cannot convert out of the Adjective. This is the prototype for the racial classification that the Asiento (1518, W1) will commercialize and Plecker's Racial Integrity Act (1924, W5) will automate. Three years before Dum Diversas (1452, W1).
-sources: [A live_verified] src-toledo-1449-sentencia-estatuto https://www.kbwolf.sites.pomona.edu/sentencia-estatuto.pdf
+1449 Toledo revolt against conversos (converts from Judaism and their descendants). On 5 June 1449 Pedro Sarmiento and the city pronounced the Sentencia-Estatuto: 'todos los dichos conversos descendientes del perverso linaje de los judios, en cualquier guisa que sea' are held 'infames, inhabiles, incapaces é indignos' for any office in Toledo ('in whatever situation they may be', in Wolf's translation), and it is to run 'contra los conversos pretéritos y presentes é por venir'. It names fourteen office-holders and removes them on pain of death. Its stated ground is that they are suspect in the faith; its sentence runs on lineage. Lea calls it the first sign of the purity-of-blood rule (vol. 2, p. 285). It did not stand as law: on 24 September 1449 Nicholas V confirmed the laws of Alfonso the Wise that between converts and old Christians there be 'nulla in honoribus, dignitatibus, officiis' any distinction, and extended them to the converts' descendants, 'ac eorum posteros'; Lea: 'It never, in fact, was of binding force' (vol. 1, p. 127). Classification follows the BLOOD, not the belief. You cannot convert out of the Adjective. The corpus reads this as the prototype for the racial classification that the Asiento (1518, W1) will commercialize and Plecker's Racial Integrity Act (1924, W5) will automate; no document read connects them. Three years before Dum Diversas (1452, W1).
+sources: [A live_verified] src-toledo-1449-sentencia-estatuto https://www.kbwolf.sites.pomona.edu/sentencia-estatuto.pdf; [A live_verified] src-gamero-sentencia-estatuto-1862 https://archive.org/details/historiadelaciu00gamegoog; [A live_verified] src-raynaldus-nicholas-v-bull-1449 https://archive.org/details/annalesecclesias28barouoft; [A live_verified] src-lea-inquisition-of-spain-1906 https://archive.org/details/ahistoryoftheinq01leahuoft
 links: reconquista-financial-operation-1400, spanish-inquisition-1478, alhambra-decree-1492
 threads: T-IBERIAN-RECONQUISTA-SOFTWARE
 
 [E-W0-042-02] W0 1449 population TA
 Blood purity doctrine emerging: Adjective becomes heritable
-No matter how sincere the conversion, the classification is permanent. The Noun (Jew) is overwritten by the Adjective (converso), and the Adjective follows the bloodline. Same operational logic as Partus Sequitur Ventrem (Virginia, 1662, W2): the classification is heritable. The 1449 Toledo statute is the doctrinal source; Partus is the American execution.
-sources: [A live_verified] src-toledo-1449-sentencia-estatuto https://www.kbwolf.sites.pomona.edu/sentencia-estatuto.pdf
+No matter how sincere the conversion, the classification is permanent. The Noun (Jew) is overwritten by the Adjective (converso), and the Adjective follows the bloodline. Same operational logic as Partus Sequitur Ventrem (Virginia, 1662, W2): the classification is heritable. The corpus reads the 1449 Toledo statute as the doctrinal source and Partus as the American execution. The documents read do not join them: the rule that the child follows a slave mother is in the Siete Partidas two centuries before Toledo, in the title on slaves (Partida 4, title 21, law 2), and Virginia's act of 1662 names no source, reciting only that 'some doubts have arrisen'.
+sources: [A live_verified] src-toledo-1449-sentencia-estatuto https://www.kbwolf.sites.pomona.edu/sentencia-estatuto.pdf; [A live_verified] src-siete-partidas-rah-1807 https://archive.org/details/lassietepartidas03castuoft; [A live_verified] src-va-act-xii-1662-partus https://encyclopediavirginia.org/entries/negro-womens-children-to-serve-according-to-the-condition-of-the-mother-1662/
 links: spanish-inquisition-1478, partus-sequitur-ventrem-1662, 1924-triple-lock-reclassification-chain-step-1924
 threads: T-IBERIAN-RECONQUISTA-SOFTWARE
 
 [E-W0-042-03] W0 1449 legal TA MILESTONE
 Limpieza de sangre codified: inflection point where Adjective becomes permanent
-Toledo Sentencia-Estatuto de Toledo, 1449. Blood purity as legal doctrine. The classification moves from behavior (faith) to biology (blood). This is the inflection point: the Adjective becomes PERMANENT. Under V2.1 II.4 Software Neutrality, this is the earliest documented execution of a Managerial classification code operating on heritable biological criteria rather than behavior or profession. Every subsequent US federal race classification descends from this doctrinal source.
-sources: [A live_verified] src-toledo-1449-sentencia-estatuto https://www.kbwolf.sites.pomona.edu/sentencia-estatuto.pdf
+Toledo Sentencia-Estatuto de Toledo, 1449. Blood purity as legal doctrine. The classification moves from behavior (faith) to biology (blood). This is the inflection point: the Adjective becomes PERMANENT. Under V2.1 II.4 Software Neutrality, this is the earliest documented execution of a Managerial classification code operating on heritable biological criteria rather than behavior or profession. The corpus reads every subsequent US federal race classification as descending from this doctrinal source; no statute read cites it. What Crown law did carry across the Atlantic is a bar of the same kind for the Spanish Indies: from 1522 no one newly converted 'de Moro, ó Judío, ni sus hijos', and from 1518 no 'hijo, ni nieto de quemado', might pass there (Recopilacion de Indias, book 9, title 26, laws 15 and 16).
+sources: [A live_verified] src-toledo-1449-sentencia-estatuto https://www.kbwolf.sites.pomona.edu/sentencia-estatuto.pdf; [A live_verified] src-gamero-sentencia-estatuto-1862 https://archive.org/details/historiadelaciu00gamegoog; [A live_verified] src-recopilacion-indias-9-26 https://archive.org/details/b28770055_0003
 links: spanish-inquisition-1478, partus-sequitur-ventrem-1662, virginia-slave-codes-1705, 1924-triple-lock-reclassification-chain-step-1924
 threads: T-IBERIAN-RECONQUISTA-SOFTWARE, T-SOFTWARE-NEUTRALITY
 
 [E-W0-042-04] W0 1449 information TA
 Blood purity as information regime: genealogical audit infrastructure
-The statute bars conversos of Jewish descent from office and from acting as notaries or witnesses; the translated text sets out no procedure for proving descent. The corpus reads it as the start of the genealogical-audit infrastructure later purity-of-blood statutes built. The bureaucratic infrastructure of racial classification. Plecker will do the same thing with birth certificates 475 years later. Same information architecture: parentage records checked against ancestry criteria to enforce classification consequences.
-sources: [A live_verified] src-toledo-1449-sentencia-estatuto https://www.kbwolf.sites.pomona.edu/sentencia-estatuto.pdf
+The statute bars conversos of Jewish descent from office and from acting as notaries or witnesses; the translated text sets out no procedure for proving descent; the Spanish text names fourteen men as conversos because it is 'notorio'. The corpus reads it as the start of the genealogical-audit infrastructure later purity-of-blood statutes built. That infrastructure is documented later: in 1530 the Inquisition's tribunals compiled registers of genealogies, and the Toledo cathedral statute of 1547 required each aspirant to present his genealogy and pay for the inquiry (Lea, vol. 2, pp. 288, 291); the law of the Indies of 1518 orders officials to verify descent, 'lo averigüen en las informaciones'. The bureaucratic infrastructure of racial classification. The corpus compares Plecker's use of birth certificates 475 years later. Same information architecture: parentage records checked against ancestry criteria to enforce classification consequences.
+sources: [A live_verified] src-toledo-1449-sentencia-estatuto https://www.kbwolf.sites.pomona.edu/sentencia-estatuto.pdf; [A live_verified] src-gamero-sentencia-estatuto-1862 https://archive.org/details/historiadelaciu00gamegoog; [A live_verified] src-lea-inquisition-of-spain-1906 https://archive.org/details/ahistoryoftheinq01leahuoft; [A live_verified] src-recopilacion-indias-9-26 https://archive.org/details/b28770055_0003
 links: linnaeus-systema-1758, virginia-slave-codes-1705, 1924-triple-lock-reclassification-chain-step-1924
+threads: T-IBERIAN-RECONQUISTA-SOFTWARE
+
+[E-W0-042-05] W0 1449 counter-move TA
+The Pope answers the Toledo statute: converts and their descendants to hold every office
+On 24 September 1449 Nicholas V answered the quarrel in Castile between new converts and old Christians. His bull recites the laws of Alfonso the Wise, of Henry and of King John, by which between converts, 'maxime de Israelitico populo', and old Christians there is to be 'nulla in honoribus, dignitatibus, officiis' any distinction; it confirms them and orders, under excommunication, that converts 'ac eorum posteros' be admitted to every dignity, office, notariate and testimony other Christians hold (Raynaldus, anno 1449, n. 12). The law of Alfonso is the Siete Partidas, which says of converts 'ninguno non sea osado de retraer á ellos nin á su linage'. Lea: in 1450 the Pope excommunicated Sarmiento, in 1451 he repeated the bull, two synods condemned the statute and the jurist Montalvo pronounced it illegal; 'It never, in fact, was of binding force' (vol. 1, p. 127). The rule it announced spread all the same, through orders, colleges and cathedral chapters (Lea, vol. 2, pp. 285 to 291). The part of the bull read does not name Toledo.
+sources: [A live_verified] src-raynaldus-nicholas-v-bull-1449 https://archive.org/details/annalesecclesias28barouoft; [A live_verified] src-lea-inquisition-of-spain-1906 https://archive.org/details/ahistoryoftheinq01leahuoft; [A live_verified] src-siete-partidas-rah-1807 https://archive.org/details/lassietepartidas03castuoft; [A live_verified] src-gamero-sentencia-estatuto-1862 https://archive.org/details/historiadelaciu00gamegoog
+links: siete-partidas-1263, spanish-inquisition-1478
 threads: T-IBERIAN-RECONQUISTA-SOFTWARE
 
 [E-W0-043-01] W0 1294 financial TB
