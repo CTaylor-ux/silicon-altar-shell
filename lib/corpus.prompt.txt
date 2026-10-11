@@ -1,6 +1,6 @@
 THE SILICON ALTAR CORPUS
 
-Entries: 979. Windows: 7.
+Entries: 980. Windows: 7.
 
 The corpus states its own scope and spine. Both are load-bearing: they are
 how you tell a genuine gap from something deliberately out of scope.
@@ -10,7 +10,7 @@ SCOPE NOTE: T9 State Reconciliation. W3 entries preserved from live L4. W0/W1/W4
 FRAMEWORK SPINE: Three-Track Labor System (FW-006). W3 is where all three tracks lock in simultaneously between 1713 and 1718. Track A (Asiento) via SSC 1713 renewal. Track B (Yamasee reclassification) via TC-009 reframe 1717 (existing in v7 timeline). Track C (Transportation Act) via TC-015 through TC-018 sequence 1717 to 1718.
 
 WINDOWS:
-  Window 0: The Template (deep time to pre-contact) - 79 entries
+  Window 0: The Template (deep time to pre-contact) - 80 entries
   Window 1: Launch Codes (1452 to 1602) - 103 entries
   Window 2: The Corporate Grid (1602 to 1704) - 117 entries
   Window 3: Colonial Consolidation (1652 to 1787) - 98 entries
@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 1002 sources are opened and 138 are not.
+something is evidenced, say so. 1011 sources are opened and 138 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -87,29 +87,29 @@ threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W0-002-01] W0 ~1400 military TA
 Moorish territories falling incrementally: each city a template execution
-Each Iberian city that falls (Cordoba 1236, Seville 1248, and dozens of intermediate conquests) executes the same template: massacre or expulsion, infrastructure seized, population reclassified. Cumulative execution of the Reconquista Software (FW-020). Only Granada remains by 1400.
-sources: [A citation_only] src-o-callaghan-reconquest
+Iberian cities fall one by one (Cordoba 1236, Seville 1248) and the outcome is not the same in each. At Seville the terms were 'quel uaziasen la uilla': the Moors were to empty the city, taking their goods and arms, with a month to sell what they could not carry (Primera Cronica General, chs. 1123 to 1124). O'Callaghan describes evacuation as Fernando III's general policy for the chief cities of Andalucia (p. 140). Elsewhere Moors stayed under terms as Mudejares, as at Valencia in 1238 (Lea, p. 4), and some places saw massacre: Barbastro in 1064 (O'Callaghan, p. 26), Ubeda in 1212 (Lea, p. 4). The Siete Partidas protect the property of Moors living under the King, 'non les deben tomar nin robar lo suyo por fuerza', and make the old mosques his to give; by the same code the towns and castles won in war are the King's. Cumulative execution of the Reconquista Software (FW-020). Only Granada remains by 1400.
+sources: [A citation_only] src-o-callaghan-reconquest; [A live_verified] src-primera-cronica-general-1906 https://archive.org/details/PrimeraCrnicaGeneral; [A live_verified] src-siete-partidas-rah-1807 https://archive.org/details/lassietepartidas03castuoft; [A live_verified] src-lea-moriscos-1901 https://archive.org/details/moriscosofspaint00leahuoft
 links: al-andalus-711-1248, toledo-blood-purity-1449, alhambra-decree-1492
 threads: T-IBERIAN-RECONQUISTA-SOFTWARE
 
 [E-W0-002-02] W0 ~1400 financial TA
 Moorish estates redistributed: encomienda template rehearsed
-Conquered Moorish agricultural estates, the most productive in Europe, redistributed to Spanish military nobility. The Reconquista land-patent model that will be exported to the Americas via the encomienda system (post-1493) and repartimiento (mid-16th century). The land-transfer template rehearsed on Iberia before deployment in the Americas.
-sources: [A citation_only] src-o-callaghan-reconquest
+Conquered land was divided among those who had helped take it. When Seville fell in 1248 the King 'diola a partir, heredo y las ordenes et muchos buenos caualleros, et a infantes et a ricos omnes heredo y otrosi' (Primera Cronica General, ch. 1129). The division book of 1253, as printed in 1630, endows the King's kin, the ricos omes, bishops, orders and two hundred knights and gives the rest to the people of Seville; the Valencia register names each Christian grantee beside the Muslim whose houses he received. The Siete Partidas give the King what is won: 'otrosi debe haber las villas, et los castiellos et las fortalezas'. These were agricultural estates, the most productive in Europe (not yet sourced). A Crown jurist drew the line to the Indies himself: Solorzano (1647) says Spain's great houses hold their towns and rents 'solo por haberlas ayudado á ganar en las guerras contra los Moros' and that the encomenderos represent them 'como en sombra'; Simpson (1929) calls the encomienda 'a system analogous to that used by Ferdinand and Isabella in the apportionment of the Moorish lands of Granada'. Both call it a likeness, and the encomienda granted tribute and labour, not land (Solorzano). The corpus reads the Iberian division this way. The land-transfer template rehearsed on Iberia before deployment in the Americas.
+sources: [A citation_only] src-o-callaghan-reconquest; [A live_verified] src-primera-cronica-general-1906 https://archive.org/details/PrimeraCrnicaGeneral; [A live_verified] src-espinosa-sevilla-1630 https://archive.org/details/bub_gb_9RWcVIfj_v4C; [A live_verified] src-bofarull-repartimientos-1856 https://archive.org/details/colecindedocume00unkngoog; [A live_verified] src-siete-partidas-rah-1807 https://archive.org/details/lassietepartidas03castuoft; [A live_verified] src-solorzano-politica-indiana-1647 https://archive.org/details/politica-indiana-tomo1-1776; [A live_verified] src-simpson-encomienda-1929 https://archive.org/details/the-encomienda-in-new-spain-forced-native-labor-in-the-spanish-colonies-1492-1550
 links: al-andalus-711-1248, albigensian-crusade-1209, encomienda-1503
 threads: T-IBERIAN-RECONQUISTA-SOFTWARE
 
 [E-W0-002-03] W0 ~1400 records TA MILESTONE
 Reconquista as financial operation: 800-year franchise acquisition
-The Reconquista (711 to 1492) was fought and understood as a religious war; O'Callaghan: 'the reconquest became a religious war between Christians and Muslims'. The corpus reads it also as a FRANCHISE ACQUISITION operating on 800-year timescales. Each conquered Moorish territory: agricultural infrastructure seized, trade networks captured, population reclassified (Moor to mudejar to morisco). The model exports directly to the Americas after 1492: conquer to seize land to redistribute to financiers to reclassify inhabitants. Cordoba fell 1236; Seville fell 1248; only Granada remains by 1400 (falls 1492). Under FW-020 Iberian Reconquista Software (framework construct), the entire 700-year sequence is a single continuous Software installation.
-sources: [A citation_only] src-o-callaghan-reconquest
+The Reconquista (711 to 1492) was fought and understood as a religious war; O'Callaghan: 'the reconquest became a religious war between Christians and Muslims'. The corpus reads it also as a FRANCHISE ACQUISITION operating on 800-year timescales. Each conquered Moorish territory: agricultural infrastructure seized, trade networks captured, population reclassified (Moor to mudejar to morisco). The model exports directly to the Americas after 1492: conquer to seize land to redistribute to the conquerors to reclassify inhabitants. Cordoba fell 1236; Seville fell 1248; only Granada remains by 1400 (falls 1492). Under FW-020 Iberian Reconquista Software (framework construct), the entire 700-year sequence is a single continuous Software installation.
+sources: [A citation_only] src-o-callaghan-reconquest; [A live_verified] src-siete-partidas-rah-1807 https://archive.org/details/lassietepartidas03castuoft
 links: al-andalus-711-1248, toledo-blood-purity-1449, dum-diversas-1452, inter-caetera-1493
 threads: T-IBERIAN-RECONQUISTA-SOFTWARE
 
-[E-W0-002-04] W0 ~1400 innovation TC
+[E-W0-002-04] W0 ~1400 innovation TB
 Arabic books translated and burned: the corpus reads a selective pattern
-Arabic learning passes to Christian Europe largely through translation, notably at Toledo after 1085, while Arabic books are also destroyed: in Granada in 1499 to 1501 Cardinal Cisneros had Arabic manuscripts burned, sparing works of medicine. The corpus reads this as selective: keep the science, erase the standing. The great Cordoba library of al-Hakam II (reputedly 400,000 volumes) is not part of this story: it was purged under al-Mansur and destroyed or scattered in the civil war of 1009 to 1013, two centuries before Castile took Cordoba in 1236.
-sources: [A citation_only] src-o-callaghan-reconquest
+Arabic learning passes to Christian Europe largely through translation, notably at Toledo after 1085 (Haskins, p. 12), while Arabic books are also destroyed: in Granada in 1499 to 1501 Cardinal Cisneros had the religious books of the Muslim scholars given up, 'five thousand were brought to him', and burned, sparing a few on medicine for the library at Alcala (Lea, p. 32). The corpus reads this as selective: keep the science, erase the standing. The great Cordoba library of al-Hakam II (reputedly 400,000 volumes) is not part of this story: it was purged under al-Mansur and destroyed or scattered in the civil war of 1009 to 1013, two centuries before Castile took Cordoba in 1236 (not yet sourced).
+sources: [A live_verified] src-haskins-mediaeval-science-1924 https://archive.org/details/studiesinhistory00hask; [A live_verified] src-lea-moriscos-1901 https://archive.org/details/moriscosofspaint00leahuoft
 links: al-andalus-711-1248, albigensian-crusade-1209, templar-suppression-1307
 threads: T-IBERIAN-RECONQUISTA-SOFTWARE
 
@@ -315,8 +315,8 @@ threads: T-CATHAR-TEMPLAR-SUPPRESSION
 
 [E-W0-018-03] W0 1209 financial TA
 Languedoc estates redistributed: the Reconquista template in miniature
-Trencavel and Toulouse lands seized and redistributed to northern French nobility loyal to the Crown. The Reconquista land-patent model in miniature: conquer, seize land, redistribute to financiers/allies, reclassify inhabitants. Completed before the Reconquista reaches its endgame; exports the pattern eastward to Iberia.
-sources: [A citation_only] src-pegg-most-holy-war
+Trencavel and Toulouse lands seized and redistributed to northern French nobility loyal to the Crown. The Reconquista land-patent model in miniature: conquer, seize land, redistribute to financiers/allies, reclassify inhabitants. The Iberian practice is the older: the kings were dividing lands not yet conquered by treaty in 1151 and 1179 (O'Callaghan, pp. 51, 56). The corpus reads Languedoc as the same template run in parallel.
+sources: [A citation_only] src-pegg-most-holy-war; [A citation_only] src-o-callaghan-reconquest
 links: reconquista-financial-operation-1400, templar-suppression-1307, encomienda-1503
 threads: T-CATHAR-TEMPLAR-SUPPRESSION
 
@@ -598,6 +598,13 @@ In 1388 Parliament confirmed 'all the Statutes of Artificers, Labourers, Servant
 sources: [A live_verified] src-sr-12-ric-ii-1388-text https://archive.org/details/statutes-of-the-realm-v-2-1377-1509/page/n75/mode/1up; [A live_verified] src-hmc-salisbury-considerations-1559 https://archive.org/details/calendarmanusc01grea/page/n187/mode/1up
 links: statute-of-labourers-1349, vagabonds-act-1547
 threads: T-VAGRANCY-CHAIN
+
+[E-W0-045-01] W0 1263 legal TA
+Las Siete Partidas: the Castilian code sets the terms for Moors, Jews, converts and slaves
+The law code compiled under Alfonso X of Castile between 1256 and 1263; the Academy's editors of 1807 say neither he nor his two successors gave it the force of law. It gives the King a fifth of what is won in war and 'las villas, et los castiellos et las fortalezas'. Moors live among Christians keeping their law, without mosques in Christian towns, and 'non les deben tomar nin robar lo suyo por fuerza'. Of converts it says 'ninguno non sea osado de retraer á ellos nin á su linage de como fueron judios en manera de denuesto', and that they may hold every office other Christians hold: the rule the Toledo statute of 1449 breaks. Of slaves, those born of a free father and a slave mother 'son siervos porque siguen la condicion de la madre'. That law was still in force in 1820 in Louisiana, where a translation made for the legislature prints it, 'they follow the condition of their mother', with the note 'Slavery, in this state, is confined to negroes, brought immediately from Africa, or their descendants'. This is the code's wording, not a record of what was done, and no source read ties the code to Virginia's act of 1662.
+sources: [A live_verified] src-siete-partidas-rah-1807 https://archive.org/details/lassietepartidas03castuoft; [A live_verified] src-partidas-louisiana-1820 https://archive.org/details/10564976bsb
+links: reconquista-financial-operation-1400, toledo-blood-purity-1449
+threads: T-IBERIAN-RECONQUISTA-SOFTWARE
 
 [E-W1-001-01] W1 1452 population TA
 Authorizes perpetual enslavement of "Saracens, pagans, and other unbelievers"
