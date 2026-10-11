@@ -91,36 +91,36 @@
       "name": "The Template",
       "yearRange": "deep time to pre-contact",
       "overlap": null,
-      "entries": 78,
-      "dossiers": 44,
-      "rows": 78
+      "entries": 79,
+      "dossiers": 45,
+      "rows": 79
     },
     {
       "id": 1,
       "name": "Launch Codes",
       "yearRange": "1452 to 1602",
       "overlap": null,
-      "entries": 101,
-      "dossiers": 40,
-      "rows": 101
+      "entries": 103,
+      "dossiers": 42,
+      "rows": 103
     },
     {
       "id": 2,
       "name": "The Corporate Grid",
       "yearRange": "1602 to 1704",
       "overlap": null,
-      "entries": 116,
-      "dossiers": 63,
-      "rows": 116
+      "entries": 117,
+      "dossiers": 64,
+      "rows": 117
     },
     {
       "id": 3,
       "name": "Colonial Consolidation",
       "yearRange": "1652 to 1787",
       "overlap": "overlaps W2, 1652 to 1704: Rhode Island Franchise Transition",
-      "entries": 97,
-      "dossiers": 44,
-      "rows": 97
+      "entries": 98,
+      "dossiers": 45,
+      "rows": 98
     },
     {
       "id": 4,

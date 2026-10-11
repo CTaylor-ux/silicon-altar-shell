@@ -1,6 +1,6 @@
 THE SILICON ALTAR CORPUS
 
-Entries: 974. Windows: 7.
+Entries: 979. Windows: 7.
 
 The corpus states its own scope and spine. Both are load-bearing: they are
 how you tell a genuine gap from something deliberately out of scope.
@@ -10,10 +10,10 @@ SCOPE NOTE: T9 State Reconciliation. W3 entries preserved from live L4. W0/W1/W4
 FRAMEWORK SPINE: Three-Track Labor System (FW-006). W3 is where all three tracks lock in simultaneously between 1713 and 1718. Track A (Asiento) via SSC 1713 renewal. Track B (Yamasee reclassification) via TC-009 reframe 1717 (existing in v7 timeline). Track C (Transportation Act) via TC-015 through TC-018 sequence 1717 to 1718.
 
 WINDOWS:
-  Window 0: The Template (deep time to pre-contact) - 78 entries
-  Window 1: Launch Codes (1452 to 1602) - 101 entries
-  Window 2: The Corporate Grid (1602 to 1704) - 116 entries
-  Window 3: Colonial Consolidation (1652 to 1787) - 97 entries
+  Window 0: The Template (deep time to pre-contact) - 79 entries
+  Window 1: Launch Codes (1452 to 1602) - 103 entries
+  Window 2: The Corporate Grid (1602 to 1704) - 117 entries
+  Window 3: Colonial Consolidation (1652 to 1787) - 98 entries
   Window 4: The Transfer (1787 to 1854) - 144 entries
   Window 5: 75-Year Operation (1854 to 1929) - 285 entries
   Window 6: Digital Migration (1921 to 2029) - 153 entries
@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 985 sources are opened and 136 are not.
+something is evidenced, say so. 1002 sources are opened and 138 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -517,9 +517,9 @@ threads: T-MERCHANT-BANKER-CONSTANT, T-VAGRANCY-CHAIN
 
 [E-W0-037-01] W0 1349 legal TA MILESTONE
 Statute of Labourers 1349: first data-layer instance of the Vagrancy Chain
-Edward III's Ordinance of Labourers (1349) followed by the Statute of Labourers (1351) freezes wages at pre-plague levels and criminalizes refusal to work at those rates. Any able-bodied worker who declines pre-plague-rate work may be arrested and forced to labor. The corpus reads this as the first data-layer instance of FW-006 Vagrancy Chain, directly ancestral to the Vagrancy Act 1824 (repealed in England and Wales on 29 June 2026), the Poor Law Amendment Act 1834, the American Black Codes of 1865 and 1866, and modern workfare and gig-economy independent-contractor classification. Under V2.1 II.4 Software Neutrality, the code operates on a jurisdictional category (able-bodied unemployed); its later racial appearance is downstream of the operation.
-sources: [A live_verified] src-statute-labourers-1349-text https://archive.org/download/statutes-of-the-realm-v-1-1101-1377/Statutes-of-the-Realm-v1-1101-1377_djvu.txt; [A live_verified] src-uksi-2026-690-vagrancy-repeal https://www.legislation.gov.uk/uksi/2026/690/made; [B live_verified] src-wikipedia-poor-law-amendment-act-1834 https://en.wikipedia.org/wiki/Poor_Law_Amendment_Act_1834; [B live_verified] src-wikipedia-black-codes-united-states https://en.wikipedia.org/wiki/Black_Codes_(United_States)
-links: black-death-1347-51, transportation-act-1717-royal-assent, 13th-amendment-1865, convict-leasing-peaks-1882
+Edward III's Ordinance of Labourers (1349) followed by the Statute of Labourers (1351) freezes wages at pre-plague levels and criminalizes refusal to work at those rates. Any able-bodied worker who declines pre-plague-rate work may be arrested and forced to labor. Parliament confirmed it by name in 1360-1, adding that the labourer who left his service 'shall be burnt in the Forehead, with an Iron made and formed to this Letter F. in Token of Falsity' (34 Edw. III c. 10), made the Ordinance a statute in 1378, and in 1388 applied it to the poor at large: 'of every Person that goeth begging, and is able to serve or labour, it shall be done of him as of him that departeth out of the Hundred ... without Letter Testimonial' (12 Ric. II c. 7). From there the statute book carries the line, most acts naming or repealing an earlier one, through 1495, 1531, 1536, 1547, 1563, 1572, 1598, 1604 and 1662 to the act of 1713. The corpus reads this as the first data-layer instance of FW-006 Vagrancy Chain, directly ancestral to the Vagrancy Act 1824 (repealed in England and Wales on 29 June 2026), the Poor Law Amendment Act 1834, the American Black Codes of 1865 and 1866, and modern workfare and gig-economy independent-contractor classification. Under V2.1 II.4 Software Neutrality, the code operates on a jurisdictional category (able-bodied unemployed); its later racial appearance is downstream of the operation.
+sources: [A live_verified] src-statute-labourers-1349-text https://archive.org/download/statutes-of-the-realm-v-1-1101-1377/Statutes-of-the-Realm-v1-1101-1377_djvu.txt; [A live_verified] src-uksi-2026-690-vagrancy-repeal https://www.legislation.gov.uk/uksi/2026/690/made; [B live_verified] src-wikipedia-poor-law-amendment-act-1834 https://en.wikipedia.org/wiki/Poor_Law_Amendment_Act_1834; [B live_verified] src-wikipedia-black-codes-united-states https://en.wikipedia.org/wiki/Black_Codes_(United_States); [A live_verified] src-sr-34-edw-iii-labourers-1361-text https://archive.org/details/statutes-of-the-realm-v-1-1101-1377/page/n556/mode/1up; [A live_verified] src-sr-2-ric-ii-labourers-1378-text https://archive.org/details/statutes-of-the-realm-v-2-1377-1509/page/n30/mode/1up; [A live_verified] src-sr-12-ric-ii-1388-text https://archive.org/details/statutes-of-the-realm-v-2-1377-1509/page/n75/mode/1up; [A live_verified] src-sr-11-hen-vii-c2-1495-text https://archive.org/details/statutes-of-the-realm-v-2-1377-1509/page/n590/mode/1up; [A live_verified] src-sr-22-hen-viii-c12-1531-text https://archive.org/details/the-statutes-of-the-realm-3/page/n385/mode/1up; [A live_verified] src-sr-27-hen-viii-c25-1536-text https://archive.org/details/the-statutes-of-the-realm-3/page/n616/mode/1up; [A live_verified] src-sal-5-eliz-c4-artificers-1563-text https://archive.org/details/statutesatlargef02grea/page/n584/mode/1up
+links: black-death-1347-51, transportation-act-1717-royal-assent, 13th-amendment-1865, convict-leasing-peaks-1882, labour-statute-1388, vagabonds-act-1547, vagabonds-act-1597, settlement-act-1662, vagrants-act-1713
 threads: T-VAGRANCY-CHAIN
 
 [E-W0-038-01] W0 1367 records TB
@@ -591,6 +591,13 @@ In 1294 the Riccardi of Lucca, the King's bankers since 1272, lost their place. 
 sources: [A live_verified] src-cfr-edward-i-riccardi-1294 https://archive.org/details/calendaroffinero01lond/page/n362/mode/1up; [A citation_only] src-kaeuper-bankers-to-the-crown; [A citation_only] src-kaeuper-frescobaldi-english-crown
 links: lombards-replace-jews-1290, medici-bank-founded-1397, hans-fugger-arrives-in-augsburg-banking-1367
 threads: T-MERCHANT-BANKER-CONSTANT
+
+[E-W0-044-01] W0 1388 legal TA
+Labour statute of 1388: the able-bodied beggar treated as a labourer who left without leave
+In 1388 Parliament confirmed 'all the Statutes of Artificers, Labourers, Servants, and Victuallers' made under Richard II and 'his noble Grandfather' Edward III, and went further (12 Ric. II c. 3; Statutes of the Realm vol. 2, p. 56). It ordered that 'no Servant nor Labourer, be he Man or Woman, shall depart at the End of his Term out of the Hundred' without a letter under the King's seal giving 'the Cause of his going, and the Time of his Return'; one found 'wandering without such Letter' was to be put in the stocks until he found surety to go back. Chapter 7 turned this on the beggar: 'of every Person that goeth begging, and is able to serve or labour, it shall be done of him as of him that departeth out of the Hundred and other Places aforesaid without Letter Testimonial' (p. 58). Beggars unable to work were to stay where they were. Chapter 9 names the classes together: 'Servants and Labourers, Beggars and Vagabonds'. The words are the Record Commission's English for the French of the roll. This is the law's wording, not a record of what was done. The corpus reads it as the point where the wage law of 1349 becomes a vagrancy law.
+sources: [A live_verified] src-sr-12-ric-ii-1388-text https://archive.org/details/statutes-of-the-realm-v-2-1377-1509/page/n75/mode/1up; [A live_verified] src-hmc-salisbury-considerations-1559 https://archive.org/details/calendarmanusc01grea/page/n187/mode/1up
+links: statute-of-labourers-1349, vagabonds-act-1547
+threads: T-VAGRANCY-CHAIN
 
 [E-W1-001-01] W1 1452 population TA
 Authorizes perpetual enslavement of "Saracens, pagans, and other unbelievers"
@@ -1289,6 +1296,20 @@ The States' minutes name them 'Mooren' brought from Guinea
 The minutes of 15 November 1596, as Zeeuwse Ankers quotes them: 'veele Mooren, wel by de hondert, zoo Mans als Vrouwen ende Kinderen'. That the people came from Guinea, on a ship taken from the Portuguese, is the article's report, not the quoted passage. A direct reading of the minutes is not yet sourced.
 sources: [B live_verified] src-zeeuwse-ankers-moren-in-middelburg https://www.zeeuwseankers.nl/verhaal/moren-in-middelburg
 threads: T-SOFTWARE-NEUTRALITY, T-NOUN-TO-ADJECTIVE
+
+[E-W1-041-01] W1 1547 legal TA
+Vagabonds Act 1547: refusing work makes a vagabond, and the vagabond a branded slave for two years
+In 1547 Parliament repealed every earlier act 'for the punishment of vagaboundes and sturdie beggers' and put one in their place (1 Edw. VI c. 3; Statutes of the Realm vol. 4, p. 5). A man or woman with no land or income who would not offer to work, or who took work and did 'leave their worck owt of convenyent tyme or runne awaye', 'shalbe taken for a Vagabounde'. Two justices were to have such a person 'marked with an whott Iron in the brest the marke of V.' and adjudged to whoever brought him in 'to be his Slave' for two years, kept on 'breade and water' and made to work 'by beating cheyninge or otherwise'. One who ran away was to be marked 'with the Signe of an S.' and be a 'Slave for ever'; a second flight was felony. The word slave is the statute's. The act names no nation and no colour: its test is that a person has no living and will not work for a master. It was repealed in 1549-50 by an act that describes it as the statute 'concerning ydle parsons and vacabondes in certaine caces to be made Slaves' (3 and 4 Edw. VI c. 16; vol. 4, p. 115), and a paper before the Parliament of 1559 asked that it 'be revived, with additions' (Hatfield calendar, part 1, p. 162). This is the law's wording, not a record of anyone enslaved under it.
+sources: [A live_verified] src-sr-1-edw-vi-c3-1547-text https://archive.org/details/statutesrealm00etcgoog/page/n94/mode/1up; [A live_verified] src-sr-3-4-edw-vi-c16-1550-text https://archive.org/details/statutesrealm00etcgoog/page/n206/mode/1up; [A live_verified] src-hmc-salisbury-considerations-1559 https://archive.org/details/calendarmanusc01grea/page/n187/mode/1up; [B live_verified] src-ribton-turner-vagrants-1887 https://archive.org/details/historyofvagrant00ribt
+links: labour-statute-1388, vagabonds-act-1597
+threads: T-VAGRANCY-CHAIN
+
+[E-W1-042-01] W1 1597-98 legal TA
+Vagabonds Act 1597: the labourer who refuses the set wage is a rogue, and the dangerous rogue may be banished overseas
+The act of 1597 to 1598 repealed the earlier vagabond laws and set out who was a rogue (39 Eliz. c. 4; Statutes of the Realm vol. 4, pp. 899, 900). Its list includes 'common Labourers being persons able in bodye using loytering and refusing to worcke for such reasonable Wages as is taxed or commonly gyven'. The wage 'taxed' is the wage set by the justices under the Statute of Artificers of 1563, which had gathered the labour statutes into one; the clause had stood in the act of 1572 (Ribton-Turner, p. 107). A rogue was to be 'openly whipped untill his or her body be bloudye' and sent home 'to labour as a true Subject ought to do'. One thought dangerous could 'be banyshed out of this Realme' and 'conveied unto such partes beyond the Seas as shalbe at any tyme hereafter for that purpose assigned by the Privie Counsell', or sent 'to the Gallyes'. In 1603 the Council named the places; Ribton-Turner prints the order as 'The New found Lande, the East and West Indies, Fraunce, Germanie, Spayne, and the Lowe Countries' (p. 133). The act of 1603 to 1604 added a brand, 'a greate Romane R', on the left shoulder (1 Jac. I c. 7; p. 1025). This is the law's wording. On its use the historians differ: Aydelotte counts forty-four vagabonds sentenced to be branded and five to be hanged at the Middlesex sessions from 1572 to 1575 (p. 70); Smith finds few sentences of banishment (p. 138); Beier counts several thousand people removed to the colonies in the seventeenth century (pp. 162 to 163).
+sources: [A live_verified] src-sr-39-eliz-c4-1598-text https://archive.org/details/statutesrealm01etcgoog/page/n159/mode/1up; [A live_verified] src-sr-1-jac-i-c7-1604-text https://archive.org/details/statutesrealm01etcgoog/page/n295/mode/1up; [A live_verified] src-sal-5-eliz-c4-artificers-1563-text https://archive.org/details/statutesatlargef02grea/page/n584/mode/1up; [B live_verified] src-ribton-turner-vagrants-1887 https://archive.org/details/historyofvagrant00ribt; [A live_verified] src-aydelotte-rogues-vagabonds-1913 https://archive.org/details/elizabethanrogue00aydeuoft; [A citation_only] src-smith-colonists-in-bondage-1947; [A citation_only] src-beier-masterless-men-1985
+links: vagabonds-act-1547, settlement-act-1662, vagrants-act-1713
+threads: T-VAGRANCY-CHAIN
 
 [E-W2-001-01] W2 1600 financial TB
 East India Company chartered
@@ -2072,6 +2093,13 @@ sources: [A live_verified] src-woodward-westoe-voiage-1674 https://archive.org/d
 1691: the Carolina Indian trade act names the 'Cheraque Indians'
 South Carolina's Act No. 73, passed 'this six and twentieth day of September, 1691', lists the 'Attoho, Kolegey, or Cheraque Indians', with two other peoples. Seventeen years after Woodward's letter, the name is in Carolina's statute book.
 sources: [A live_verified] src-woodward-westoe-voiage-1674 https://archive.org/details/narrativesofearl00sall; [A live_verified] src-sc-statutes-at-large-v2-indian-trade-act-1691 https://archive.org/details/statutesatlargeo02edit; [B live_verified] src-mooney-myths-of-the-cherokee-1900-bae19 https://archive.org/details/cu31924104080076
+
+[E-W2-051-01] W2 1662c legal TA
+Settlement Act 1662: rogues and vagabonds may be sent to the plantations as servants for seven years
+The poor relief act of 1662, later called the Settlement Act (14 Car. II c. 12), has a section on the workhouse corporations of London, Westminster, Middlesex and Surrey. It let the justices in quarter sessions 'signify unto His Majesties Privy Councell the names of such Rogues Vagabonds idle and disorderly persons and sturdy Beggars as they shall thinke fitt to be transported to the English Plantations'. With the Council's approval, two justices could send them 'to any of the English Plantations beyond the Seas there to be disposed in the usual way of Servants for a terme not exceeding seaven yeares' (s. 6; Statutes of the Realm vol. 5, p. 402). The power ran for three years. Smith finds at least eighteen people reported to the Council under it and says the procedure was not revived (p. 143). Seven years is the term the Transportation Act gave the courts in 1718. That act does not cite this one.
+sources: [A live_verified] src-sr-14-car-ii-c12-1662-text https://archive.org/details/statutes_of_the_realm_5/page/n427/mode/1up; [A citation_only] src-smith-colonists-in-bondage-1947
+links: vagabonds-act-1597, vagrants-act-1713, transportation-act-1717-royal-assent
+threads: T-VAGRANCY-CHAIN
 
 [E-W4-001-01] W4 1789 military TA MILESTONE
 French Revolution begins
@@ -5617,6 +5645,13 @@ The Spanish crown takes a fourth part of the gain, plus 5 per cent of England's 
 The Additional Article, on the annual ship: 'in which His Catholick Majesty is to partake a Fourth part of the Gain, as in the Assiento', and beyond that fourth '5 per Cent. out of the neat Gain of the other Three parts which belong to England'. The article that sets the fourth for the slave trade itself was not located: not yet sourced. The contract makes no grant to Queen Anne.
 sources: [A live_verified] src-assiento-contract-1713 https://archive.org/details/cihm_28677
 threads: T-ASIENTO, T-THREE-TRACK-LABOR, T-MERCHANT-BANKER-CONSTANT
+
+[w3-1713-vagrants-legal] W3 1713 (statute book) legal TA
+Vagrants Act 1713: a justice may commit a vagrant to a master for seven years, in Britain or the plantations
+In 1713 the vagrancy laws were put into one act (13 Anne c. 26 in Statutes of the Realm vol. 9, pp. 976 to 983; 12 Ann. stat. 2 c. 23 in the common editions). Its 'Rogues and Vagabonds' still include those who 'use Loytring and refuse to work for the usual and common Wages'. Section 18 let a justice commit a person with no settlement, or 'a dangerous and incorrigible Rogue', to whoever had caught him 'as his or their Apprentice or Servant for the Space of Seven Years', to be kept and set to work 'either within this Realm of Great Britain or in any of Her Majesties Plantations or any British Factory or Factories beyond the Seas'. No one was to be 'transported beyond the Seas' until the master gave a bond to free the person at the end of the term (s. 19). The act repeals the acts of 1598 and 1604 (s. 28). This is the law's wording; no record of its use was read. Four years later the Transportation Act gave the courts the same seven-year term for convicted felons. That act does not cite this one; the corpus reads the two as one policy.
+sources: [A live_verified] src-sr-13-anne-c26-1713-text https://archive.org/details/pp63095186/page/n1025/mode/1up; [A citation_only] src-smith-colonists-in-bondage-1947
+links: vagabonds-act-1597, settlement-act-1662, transportation-act-1717-royal-assent
+threads: T-VAGRANCY-CHAIN
 
 [w3-1714-legal] W3 1714 legal TA MILESTONE
 Rhode Island passes runaway law and restricts Indian imports as classification-franchise protection (F1 prototype)
