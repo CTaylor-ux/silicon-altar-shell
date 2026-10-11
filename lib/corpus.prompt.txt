@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 1015 sources are opened and 138 are not.
+something is evidenced, say so. 1017 sources are opened and 138 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -253,22 +253,22 @@ threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W0-016-01] W0 1095 military TA MILESTONE
 First Crusade launched: the operational prototype for the Papal-military-financial pipeline
-Pope Urban II preaches the First Crusade at Clermont in November 1095. Between 60,000 and 100,000 crusaders march east; Jerusalem falls in July 1099 with the mass killing of its Muslim and Jewish population. The operational template is: Papal authority (spiritual instrument) authorizes military conquest (kinetic) to seize territory (geographic) and resources (financial). The same spiritual-to-military-to-financial pipeline will be redeployed on the American Levant via Dum Diversas (1452, W1). The Crusades are the rehearsal.
-sources: [A citation_only] src-riley-smith-first-crusade
+Pope Urban II preaches the First Crusade at Clermont in November 1095. His own letter to Flanders the next month says what he granted: he enjoined the expedition 'pro remissione omnium peccatorum' (for the remission of all their sins), 'ad liberationem Orientalium ecclesiarum'. The numbers are each source's own: Fulcher of Chartres gives 600,000 at Nicaea; the leaders' letter of 1099 gives more than 300,000; Riley-Smith estimates about 43,000 at Nicaea and 15,000 before Jerusalem, and calls both guesses (p. 63). Jerusalem falls in July 1099. The Gesta Francorum, an eyewitness, says the crusaders killed 'even to the Temple of Solomon, where the slaughter was so great that our men waded in blood up to their ankles'. Riley-Smith adds that the city's Jewish community was wiped out: its synagogue destroyed, many sold into slavery, most of those apparently ransomed (p. 109). The operational template is: Papal authority (spiritual instrument) authorizes military conquest (kinetic) to seize territory (geographic) and resources (financial). The corpus reads the same spiritual-to-military-to-financial pipeline as redeployed on the American Levant via Dum Diversas (1452, W1). That bull carries the crusade's own grant beside its power to conquer: a 'plenariam remissionem' of sins for all who fight 'in hac fidei pugna'. It does not name the First Crusade. The Crusades are the rehearsal.
+sources: [A citation_only] src-riley-smith-first-crusade; [A live_verified] src-krey-first-crusade-1921 https://archive.org/details/firstcrusadeacco00krey; [A live_verified] src-hagenmeyer-kreuzzugsbriefe-1901 https://archive.org/details/epistulaeetchart00hageuoft; [B live_verified] src-bullarium-dum-diversas-1452 https://books.google.com/books?id=WDNOAAAAYAAJ&pg=PA22
 links: albigensian-crusade-1209, omne-datum-optimum-1139, templar-banking-formation-1100
 threads: T-CATHAR-TEMPLAR-SUPPRESSION
 
 [E-W0-016-02] W0 1095 legal TA
 Papal authority as legal instrument for territorial seizure
-Urban II's preaching converts spiritual authority into legal warrant for conquest. The Dum Diversas (1452) template is present here in embryo: the Church declares a war just; the just war then produces legal title over conquered land. This is the Software prototype for every subsequent papal-authorized conquest through 1493 Inter Caetera and the Discovery Doctrine chain leading to Johnson v M'Intosh 1823.
-sources: [A citation_only] src-riley-smith-first-crusade
+Urban II's preaching converts spiritual authority into warrant for war. Riley-Smith: Urban had no doubt the war was just, and presented it as a war of liberation (pp. 17 to 18). The corpus reads the Dum Diversas (1452) template as present here in embryo: the Church declares a war just; the just war then produces legal title over conquered land. The documents of 1095 carry the first half. On title they are silent or point elsewhere: the Clermont decree did not refer to land (Riley-Smith, p. 42); Urban's letter to Bologna promises remission to those who go 'non terreni commodi cupiditate', not from desire of earthly gain; and the leaders swore to restore reconquered imperial land to the Byzantine Emperor (p. 58). Two versions of the speech written after the conquest do have Urban speak of the land: 'wrest that land from the wicked race, and subject it to yourselves' (Robert the Monk). The second half is in the Pope's own words by 1455, when Romanus Pontifex says the King of Portugal, by the 1452 grant, 'juste et legitime' acquired what he took. This is the Software prototype for every subsequent papal-authorized conquest through 1493 Inter Caetera and the Discovery Doctrine chain leading to Johnson v M'Intosh 1823, in the corpus's reading.
+sources: [A citation_only] src-riley-smith-first-crusade; [A live_verified] src-krey-first-crusade-1921 https://archive.org/details/firstcrusadeacco00krey; [A live_verified] src-hagenmeyer-kreuzzugsbriefe-1901 https://archive.org/details/epistulaeetchart00hageuoft; [A live_verified] src-davenport-romanus-pontifex-1455 https://archive.org/details/europeantreaties01daveuoft
 links: albigensian-crusade-1209, dum-diversas-1452, inter-caetera-1493, requerimiento-1513
 threads: T-DISCOVERY-DOCTRINE
 
 [E-W0-016-03] W0 1095 financial TA
 Crusader States established: European franchises on Levantine territory
-Kingdom of Jerusalem (1099), County of Tripoli, Principality of Antioch, County of Edessa. European legal frameworks are installed on captured Levantine land, ruled by resident Frankish princes and lords rather than from Europe. This is the first documented instance of the 'franchise' pattern that reappears in the Templar preceptories, VOC factories, English North American colonies, and modern US military bases.
-sources: [A citation_only] src-riley-smith-first-crusade
+Kingdom of Jerusalem (1099), County of Tripoli, Principality of Antioch, County of Edessa. European legal frameworks are installed on captured Levantine land, ruled by resident Frankish princes and lords rather than from Europe. The princes in council, not the Pope, chose Godfrey to rule Jerusalem eight days after its capture (Gesta Francorum, in Krey, p. 262). Most crusaders went home; Fulcher counted about 300 knights left in 1100 (Riley-Smith, p. 42). The corpus reads this as the first instance of the 'franchise' pattern that reappears in the Templar preceptories, VOC factories, English North American colonies, and modern US military bases.
+sources: [A citation_only] src-riley-smith-first-crusade; [A live_verified] src-krey-first-crusade-1921 https://archive.org/details/firstcrusadeacco00krey
 links: omne-datum-optimum-1139, encomienda-1503
 
 [E-W0-016-04] W0 1095 innovation TA
@@ -280,8 +280,8 @@ threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W0-016-05] W0 1095 counter-move TA MILESTONE
 First Crusade as MILITARY TEMPLATE for the American Levant deployment
-The Crusades are the rehearsal for the 1452 to 1607 to 1776 to 2026 chain. Papal authority (spiritual) authorizes military conquest (kinetic) to seize territory (geographic) and resources (financial). The exact same pipeline is redeployed on the American Levant via Dum Diversas (1452, W1), Inter Caetera (1493, W1), and Discovery Doctrine (1823, W4). Read as Phase 1 Designation of the first patch cycle installation.
-sources: [A citation_only] src-riley-smith-first-crusade
+The Crusades are the rehearsal for the 1452 to 1607 to 1776 to 2026 chain. Papal authority (spiritual) authorizes military conquest (kinetic) to seize territory (geographic) and resources (financial). The corpus reads the exact same pipeline as redeployed on the American Levant via Dum Diversas (1452, W1), Inter Caetera (1493, W1), and Discovery Doctrine (1823, W4). What the documents show: Dum Diversas grants a 'plenariam remissionem' of sins to those who fight, the grant Urban II made in 1095, in the same bull as the power to conquer; Romanus Pontifex (1455) says that by it the King 'juste et legitime' acquired what he took. Neither names the First Crusade. Read as Phase 1 Designation of the first patch cycle installation.
+sources: [A citation_only] src-riley-smith-first-crusade; [B live_verified] src-bullarium-dum-diversas-1452 https://books.google.com/books?id=WDNOAAAAYAAJ&pg=PA22; [A live_verified] src-davenport-romanus-pontifex-1455 https://archive.org/details/europeantreaties01daveuoft
 links: albigensian-crusade-1209, templar-suppression-1307, dum-diversas-1452, spanish-inquisition-1478
 threads: T-CATHAR-TEMPLAR-SUPPRESSION, T-DISCOVERY-DOCTRINE
 
