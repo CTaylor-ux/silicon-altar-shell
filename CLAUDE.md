@@ -39,7 +39,7 @@ the operator; never enter an invite code. Worked examples:
 every prepare script (npm `pre` hooks), so before `dev`, `build`, `build:check`
 and `vercel build`. It refuses unless the corpus folder has main checked out, has
 no uncommitted changes to tracked files, is not behind origin/main, and is ahead
-only in `docket/`. It exists because the corpus folder once had a side branch
+only in notes (`docket/` and Markdown files). It exists because the corpus folder once had a side branch
 checked out, cut before an install, and a rebuild would have served it silently.
 If it refuses, fix the corpus folder; do not reach for the override
 (`SA_ALLOW_CORPUS_NOT_MAIN=1`) except for a deliberate test build. For a deploy

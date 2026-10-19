@@ -16,7 +16,7 @@
  *   2. has no uncommitted changes to tracked files (the windows are read from the
  *      generated HTML, so even date-stamp debris would be served);
  *   3. is not behind origin/main;
- *   4. is not ahead of origin/main except in docket/ (notes, not data).
+ *   4. is not ahead of origin/main except in notes: docket/ and Markdown files.
  * origin is GitHub for the canonical folder, and the canonical folder for a
  * `git clone --local` of it (the deploy procedure): clone main, do not check out a
  * bare commit.
@@ -104,7 +104,7 @@ if (behind > 0) {
 
 const ahead = Number(git('rev-list', '--count', `${remote}..HEAD`));
 if (ahead > 0) {
-  const data = git('diff', '--name-only', remote, 'HEAD').split('\n').filter((f) => f && !f.startsWith('docket/'));
+  const data = git('diff', '--name-only', remote, 'HEAD').split('\n').filter((f) => f && !f.startsWith('docket/') && !f.endsWith('.md'));
   if (data.length) {
     refuse(`Its main has ${ahead} unpushed commit(s) that change data, for example:\n    ${data.slice(0, 5).join('\n    ')}`,
       'Push main first (merges and pushes are gated: ask the author), so what the app serves is on GitHub.');
@@ -113,7 +113,7 @@ if (ahead > 0) {
 
 const head = git('rev-parse', '--short', 'HEAD');
 const note = [
-  ahead ? `${ahead} unpushed commit(s), docket/ only` : 'matches origin/main',
+  ahead ? `${ahead} unpushed commit(s), notes only` : 'matches origin/main',
   fetched ? '' : 'origin not reachable; compared with the last fetch',
 ].filter(Boolean).join('; ');
 console.log(`${TAG} corpus main @ ${head} (${note}).`);
