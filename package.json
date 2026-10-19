@@ -4,6 +4,10 @@
   "private": true,
   "scripts": {
     "prepare-windows": "node scripts/prepare-windows.mjs",
+    "preprepare-windows": "node scripts/guard-corpus.mjs",
+    "preprepare-corpus": "node scripts/guard-corpus.mjs",
+    "preprepare-maps": "node scripts/guard-corpus.mjs",
+    "preprepare-landing": "node scripts/guard-corpus.mjs",
     "dev": "npm run prepare-windows && npm run prepare-corpus && npm run prepare-maps && npm run prepare-landing && next dev -p 3210",
     "build": "npm run guard-dev-port && npm run prepare-windows && npm run prepare-corpus && npm run prepare-maps && npm run prepare-landing && next build",
     "start": "next start -p 3210",
