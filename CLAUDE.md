@@ -35,6 +35,17 @@ The windows sit behind the invite gate, so a look inside the running app needs
 the operator; never enter an invite code. Worked examples:
 `docs/APP_PROPAGATION_2026-09-20.md`, `docs/APP_REBUILD_UTAH_2026-09-21.md`.
 
+**The corpus guard (added 2026-10-19).** `scripts/guard-corpus.mjs` runs before
+every prepare script (npm `pre` hooks), so before `dev`, `build`, `build:check`
+and `vercel build`. It refuses unless the corpus folder has main checked out, has
+no uncommitted changes to tracked files, is not behind origin/main, and is ahead
+only in `docket/`. It exists because the corpus folder once had a side branch
+checked out, cut before an install, and a rebuild would have served it silently.
+If it refuses, fix the corpus folder; do not reach for the override
+(`SA_ALLOW_CORPUS_NOT_MAIN=1`) except for a deliberate test build. For a deploy
+clone of the corpus, use a plain `git clone --local` (it lands on main); a clone
+checked out at a bare commit is refused.
+
 When a saved finding is acted on in the corpus, write it back:
 `npm run records -- --set ID STATUS "reason" --repin --backlog SB-ID`. App record
 ids and audit backlog ids are numbered separately and collide; state the link.
