@@ -50,7 +50,7 @@ Most entries also carry a sources line, in the form
 These are not the same evidential situation and should not be described as
 though they were. An entry at tier A whose sources are all citation_only is
 a confident claim resting on unread evidence, and when asked how well
-something is evidenced, say so. 1040 sources are opened and 138 are not.
+something is evidenced, say so. 1046 sources are opened and 138 are not.
 Absence of a sources line means the entry carries no source at all.
 
 A few entries with no source carry an audit trail line instead. It is the
@@ -350,8 +350,8 @@ threads: T-SOFTWARE-NEUTRALITY
 
 [E-W0-021-01] W0 1215 land TB
 Lateran Council as certification: 400+ bishops enforce continent-wide
-The classification is certified at the highest institutional level. 400+ bishops attend (not yet sourced). The canon is addressed to 'every Christian province'; in England the bishops had to repeat the rulings on Jews through the century, which Mundill takes to show the policy was 'not wholly successful'. Certification lane: the classification receives supra-jurisdictional validation before deployment.
-sources: [B live_verified] src-lateran-canon-68-1215 https://history.hanover.edu/courses/excerpts/344latj.html; [A citation_only] src-mundill-england-jewish-solution
+The classification is certified at the highest institutional level. 412 bishops attend, with 71 primates and metropolitans and more than 800 abbots and priors, by the council's protocol (Hefele and Leclercq, Histoire des conciles, 1913, pp. 1318, 1722; Lea, A History of the Inquisition of the Middle Ages, vol. 1, p. 181); the detailed list Luchaire found totals 401 sees (Hefele and Leclercq, p. 1726). The canon is addressed to 'every Christian province'; in England the bishops had to repeat the rulings on Jews through the century, which Mundill takes to show the policy was 'not wholly successful'. The same council decided the Albigensian case, granting the crusaders' conquests to de Montfort (Lea, pp. 181 to 182). Certification lane: the classification receives supra-jurisdictional validation before deployment.
+sources: [B live_verified] src-lateran-canon-68-1215 https://history.hanover.edu/courses/excerpts/344latj.html; [A citation_only] src-mundill-england-jewish-solution; [A live_verified] src-hefele-leclercq-conciles-5-2-1913 https://archive.org/details/histoiredesconci52hefeuoft; [A live_verified] src-lea-inquisition-middle-ages-1887 https://archive.org/details/historyofinquisiww01leah
 links: fourth-lateran-council-classification-formalized-as-1215
 threads: T-SOFTWARE-NEUTRALITY
 
@@ -378,8 +378,8 @@ threads: T-SOFTWARE-NEUTRALITY
 
 [E-W0-025-01] W0 1275 counter-move TB
 Edward I military campaigns simultaneous: conquered population deployed against conquered population
-While extracting Jewish financial capacity domestically (1275 to 1290), Edward wages the Welsh Wars (1277, 1282 to 1283) and Scottish Wars (1296 to 1307). He uses Welsh longbowmen against the Scots: conquered population deployed against other conquered population. The same template deploys on USCT and Buffalo Soldiers 600 years later (W5). Military conquest and financial extraction run on parallel tracks under a single sovereign coordinator, an early Tier 4 (V2.1 II.2) execution.
-sources: [B live_verified] src-edward-i-1275 https://en.wikipedia.org/wiki/Conquest_of_Wales_by_Edward_I
+While extracting Jewish financial capacity domestically (1275 to 1290), Edward wages the Welsh Wars (1277, 1282 to 1283) and Scottish Wars (1296 to 1307). He uses Welsh foot against the Scots: 10,500 Welsh were summoned for the campaign that ended at Falkirk in 1298, and 4,000 of the 8,000 foot in Flanders in 1297 were from Wales (Morris, The Welsh Wars of Edward I, 1901, p. 96): conquered population deployed against other conquered population. The same template deploys on USCT and Buffalo Soldiers 600 years later (W5). Military conquest and financial extraction run on parallel tracks under a single sovereign coordinator, an early Tier 4 (V2.1 II.2) execution. The Riccardi of Lucca financed the Welsh wars, and part of what the Crown paid them came from the Jewish tallages (Kaeuper, Bankers to the Crown, 1973, pp. 182, 199), though Kaeuper finds no sums linked to the war spending and Mundill judges the Jewish revenue small beside the war's cost (England's Jewish Solution, 1998, p. 107).
+sources: [A live_verified] src-morris-welsh-wars-1901 https://archive.org/details/welshwarsofedwar00morr; [A citation_only] src-kaeuper-bankers-to-the-crown; [A citation_only] src-mundill-england-jewish-solution; [B live_verified] src-edward-i-1275 https://en.wikipedia.org/wiki/Conquest_of_Wales_by_Edward_I
 links: coin-clipping-accusations-create-the-crime-1278, 300-executed-in-london-violence-as-1278, edward-i-statute-of-jewry-the-1275, statute-of-the-jewry-codified-extraction-1275, jewish-population-restricted-badge-geography-occupation-1275
 
 [E-W0-026-01] W0 1278 military TB
@@ -432,8 +432,8 @@ threads: T-MERCHANT-BANKER-CONSTANT, T-COLLAPSE-SURVIVAL-N1
 
 [E-W0-030-01] W0 1291 records TB
 Swiss Confederation founded: possible Templar-personnel connection
-The Federal Charter of 1291 (a treaty of alliance between Uri, Schwyz, and Unterwalden, dated early August 1291 - the origin of Swiss National Day) is the documented founding of the Old Swiss Confederacy (tier B). NOTE: its status AS the founding document is itself a modern (1889) historiographical designation; the older traditional date was 1307. The Templar-personnel claim - that suppressed Templars (post-1307) resettled in Switzerland and seeded its decentralized banking - is speculative and unsupported: the reached source makes 'no mention whatsoever of the Knights Templar', and chronologically the Templar suppression (1307-1314) POSTDATES the 1291 founding, so it cannot have founded the Confederation. Held at tier C-speculative, explicitly unproven; the documented decentralized cantonal sovereignty stands on its own.
-sources: [B live_verified] src-swiss-confederation-1291 https://en.wikipedia.org/wiki/Federal_Charter_of_1291
+The Federal Charter of 1291 (a treaty of alliance between Uri, Schwyz, and Unterwalden, dated early August 1291 - the origin of Swiss National Day) is the documented founding of the Old Swiss Confederacy (tier B). The charter names the people of the valley of Uri, the assembly of Schwyz and the community of lower Unterwalden, and is dated in the first half of August 1291 (Oechsli, Quellenbuch zur Schweizergeschichte, 1901, no. 21, pp. 65 to 67). NOTE: its status AS the founding document is itself a modern (1889) historiographical designation; the older traditional date was 1307. The Templar-personnel claim - that suppressed Templars (post-1307) resettled in Switzerland and seeded its decentralized banking - is speculative and unsupported: the reached source makes 'no mention whatsoever of the Knights Templar', and chronologically the Templar suppression (1307-1314) POSTDATES the 1291 founding, so it cannot have founded the Confederation. Held at tier C-speculative, explicitly unproven; the documented decentralized cantonal sovereignty stands on its own.
+sources: [A live_verified] src-swiss-federal-charter-1291 https://archive.org/details/quellenbuchzursc1901oech; [B live_verified] src-swiss-confederation-1291 https://en.wikipedia.org/wiki/Federal_Charter_of_1291
 links: templar-banking-formation-1100
 
 [E-W0-031-01] W0 1307 military TA
@@ -524,8 +524,8 @@ threads: T-VAGRANCY-CHAIN
 
 [E-W0-038-01] W0 1367 records TB
 Hans Fugger arrives in Augsburg: banking succession node initialized
-Hans Fugger, weaver and small trader, arrives in Augsburg 1367. His descendants control approximately 2 percent of European GDP at peak and buy the election of Holy Roman Emperor Charles V (1519). The Fugger dynasty begins in textiles (same as Medici). The banking succession Templar to Lombard to Medici to Fugger initializes here. Each node inherits the technology and the Vatican relationship. FW-016 Merchant-Banker Constant reads this succession as personnel changing while the extraction architecture persists.
-sources: [B live_verified] src-fugger-1367 https://www.britannica.com/biography/Hans-Fugger
+Hans Fugger, weaver and small trader, arrives in Augsburg 1367: 'Fucker advenit', the city's tax book records, 'dedit XLIIII den.' (Jansen, Die Anfaenge der Fugger, 1907, p. 8); he was a weaver who also traded (Ehrenberg, Das Zeitalter der Fugger, 1896, vol. 1, p. 85). His descendants control approximately 2 percent of European GDP at peak (not yet sourced) and find 543,000 of the more than 850,000 florins the election of Charles V cost in 1519 (Ehrenberg, p. 107). The Fugger dynasty begins in textiles, trading in silk and woollen cloth with Venice (Ehrenberg, p. 86); the comparison with the Medici is the corpus's (not yet sourced). The banking succession Templar to Lombard to Medici to Fugger initializes here. Each node inherits the technology and the Vatican relationship. FW-016 Merchant-Banker Constant reads this succession as personnel changing while the extraction architecture persists.
+sources: [A live_verified] src-jansen-anfaenge-fugger-1907 https://archive.org/details/dieanfngederfu00jans; [A live_verified] src-ehrenberg-zeitalter-fugger-1896 https://archive.org/details/daszeitalterderf01unse; [B live_verified] src-fugger-1367 https://www.britannica.com/biography/Hans-Fugger
 links: medici-depositor-of-apostolic-chamber-banking-1420
 threads: T-MERCHANT-BANKER-CONSTANT
 
@@ -545,15 +545,15 @@ threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W0-040-01] W0 1420 land TB
 Papal banking relationship certified: instrumental warrant for 1452 Dum Diversas
-Formal appointment as Depositor of the Apostolic Chamber (~1420s, under Martin V). When the Medici collapse (1494), the Fuggers inherit this position and use it to fund the Asiento. Certification lane: the papal-financial fusion certified. The 'instrumental warrant for Dum Diversas' reading - that papal banking enabled the 1452 Discovery-Doctrine bulls - is the audit's interpretive forward-link (structural and temporal adjacency), not a documented causal chain; held, not asserted.
-sources: [B live_verified] src-papal-banking-1420s https://en.wikipedia.org/wiki/Medici_Bank
+Formal appointment as Depositor of the Apostolic Chamber (~1420s, under Martin V): after the Spini failed in November 1420, Bartolomeo de' Bardi, the Medici manager at the Curia, held the office, the start of a Medici tenure Holmes counts as twenty-two years without a break and some forty more with interruptions (Holmes, 1968, p. 378; de Roover, 1963, p. 198). When the Medici collapse (1494), the Fuggers inherit this position and use it to fund the Asiento. The documents read differ: the Medici had lost the depositary's office by July 1474 (de Roover, p. 198); after 1492 the general depositaries were Usodimare, the Spanocchi, Paolo Sauli and Filippo Strozzi, none of them Fugger, though the Fugger paid papal dues for bishops from 1496 and had a Roman bank by 1500 (Schulte, Die Fugger in Rom, 1904, pp. 16 to 17; Ehrenberg, Das Zeitalter der Fugger, 1896, vol. 1, p. 98). No source read ties the Fugger's papal business to the Asiento. Certification lane: the papal-financial fusion certified. The 'instrumental warrant for Dum Diversas' reading - that papal banking enabled the 1452 Discovery-Doctrine bulls - is the audit's interpretive forward-link (structural and temporal adjacency), not a documented causal chain; held, not asserted.
+sources: [A citation_only] src-de-roover-medici-bank; [A citation_only] src-holmes-medici-popes-bankers-1968; [A live_verified] src-schulte-fugger-in-rom-1904 https://archive.org/details/diefuggerinrom1400schuuoft; [A live_verified] src-ehrenberg-zeitalter-fugger-1896 https://archive.org/details/daszeitalterderf01unse; [B live_verified] src-papal-banking-1420s https://en.wikipedia.org/wiki/Medici_Bank
 links: medici-depositor-of-apostolic-chamber-banking-1420, hans-fugger-arrives-in-augsburg-banking-1367, dum-diversas-1452
 threads: T-MERCHANT-BANKER-CONSTANT
 
 [E-W0-041-01] W0 1420 records TB
 Medici = Depositor of Apostolic Chamber: banking-papal relationship consolidated
-The Medici hold the Vatican's money. The banking technology plus the papal relationship equals the instrument that will fund Columbus, finance the Asiento, and underwrite every Papal Bull from Dum Diversas (1452) forward. The Templar to Medici pipeline is complete. Under FW-016 Merchant-Banker Constant, this consolidation is the operational precondition for the 1452 to 1493 papal bulls chain and the subsequent Discovery Doctrine architecture.
-sources: [B live_verified] src-medici-papal-banker-1420s https://en.wikipedia.org/wiki/Giovanni_di_Bicci_de%27_Medici
+The Medici hold the Vatican's money. From 1420 the manager of their Rome branch was usually the pope's Depositary General; in 1427 the branch held nearly 25,000 florins of the Camera Apostolica among close to 100,000 in deposits, almost four times the bank's capital (de Roover, 1963, pp. 106, 198). In the corpus's reading, the banking technology plus the papal relationship equals the instrument that will fund Columbus, finance the Asiento, and underwrite every Papal Bull from Dum Diversas (1452) forward; no source read makes that connection. The Templar to Medici pipeline is complete. Under FW-016 Merchant-Banker Constant, this consolidation is the operational precondition for the 1452 to 1493 papal bulls chain and the subsequent Discovery Doctrine architecture.
+sources: [A citation_only] src-de-roover-medici-bank; [A citation_only] src-holmes-medici-popes-bankers-1968; [B live_verified] src-medici-papal-banker-1420s https://en.wikipedia.org/wiki/Giovanni_di_Bicci_de%27_Medici
 links: papal-banking-relationship-certified-instrumental-warrant-1420, hans-fugger-arrives-in-augsburg-banking-1367
 threads: T-MERCHANT-BANKER-CONSTANT
 
